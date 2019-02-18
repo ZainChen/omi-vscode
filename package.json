@@ -1,7 +1,7 @@
 {
 	"name": "omi",
 	"displayName": "omi",
-	"description": "omi vscode extensions",
+	"description": "Omi for Visual Studio Code",
 	"keywords": [
 		"zain",
 		"ZainChen",
@@ -107,7 +107,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ZainChen/vscode-extensions-omi"
+		"url": "https://github.com/ZainChen/vscode-extension-omi"
 	},
-	"homepage": "https://github.com/ZainChen/vscode-extensions-omi/blob/master/README.md"
+	"homepage": "https://github.com/ZainChen/vscode-extension-omi/blob/master/README.md"
 }
