@@ -1,4 +1,4 @@
-# Omi for Visual Studio Code
+# Omi for Visual Studio Code (Develop)
 
 - This preview release of the extension adds support for omi to Visual Studio Code including.
 - In development
