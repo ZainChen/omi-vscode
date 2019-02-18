@@ -37,8 +37,6 @@ https://github.com/Tencent/omi
 
 <a href="https://zainzy.com"><img src="https://raw.githubusercontent.com/ZainChen/vscode-extension-omi/master/images/zain.png" style="height:80px; width:80px;" /></a><br/><a href="https://zainzy.com" style="color: #BBB">ZainChen(志银)</a>
 <p style="float:left; margin-right:5px; margin-left:5px; text-align:center"><a href="https://zainzy.com"><img src="https://raw.githubusercontent.com/ZainChen/vscode-extension-omi/master/images/zain.png" style="height:80px; width:80px;" /></a><br/><a href="https://zainzy.com" style="color: #BBB">ZainChen</a></p>
-<p style="float:left; margin-right:5px; margin-left:5px; text-align:center"><a href="https://zainzy.com"><img src="https://raw.githubusercontent.com/ZainChen/vscode-extension-omi/master/images/zain.png" style="height:80px; width:80px;" /></a><br/><a href="https://zainzy.com" style="color: #BBB">zain</a></p>
 
-
-<!-- <div style="float:left; margin-right:5px; margin-left:5px; text-align:center; border:2px solid #555; border-radius:5px; padding: 5px"><a href="https://zainzy.com"><img src="https://raw.githubusercontent.com/ZainChen/vscode-extension-omi/master/images/zain.png" style="height:80px; width:80px; border-radius:20px" /></a><br/><a href="https://zainzy.com" style="color: #BBB">zain</a></div> -->
+<div style="float:left; margin-right:5px; margin-left:5px; text-align:center; border:2px solid #555; border-radius:5px; padding: 5px"><a href="https://zainzy.com"><img src="https://raw.githubusercontent.com/ZainChen/vscode-extension-omi/master/images/zain.png" style="height:80px; width:80px; border-radius:20px" /></a><br/><a href="https://zainzy.com" style="color: #BBB">zain</a></div>
 
