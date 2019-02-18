@@ -1,4 +1,7 @@
 # Omi for Visual Studio Code (Develop)
+[![Version](https://img.shields.io/badge/Visual%20Studio%20Marketplace-v1.0.1-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi-develop)
+[![Downloads](https://img.shields.io/badge/downloads-8-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi-develop)
+[![Time](https://img.shields.io/badge/Update%20time-2019%2F2%2F18%2019%3A04%3A25-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi-develop)
 
 This preview release of the extension adds support for omi to Visual Studio Code including.
 
@@ -6,8 +9,6 @@ This preview release of the extension adds support for omi to Visual Studio Code
 - Snippet
 - Code hints
 - In development...
-
->2019/02/18/18:44
 
 # About
 

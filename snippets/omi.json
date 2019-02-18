@@ -1,9 +1,14 @@
 {
-    "omi": {
-        "prefix": "omi",
+    "zain": {
+        "prefix": "zain",
         "body": [
-            "omi厉害了我的哥"
+            "zain love jane"
         ],
-        "description": "omi模块"
-    }
+        "description": "zain"
+    },
+    "import": {
+        "prefix": "imp",
+        "body": "import ${2:moduleName} from '${1:module}';$0",
+        "description": "Imports entire module statement in ES6 syntax"
+      }
 }

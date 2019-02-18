@@ -2,6 +2,9 @@
 	"name": "omi-develop",
 	"displayName": "omi-develop",
 	"description": "Omi for Visual Studio Code (develop)",
+	"publisher": "ZainChen",
+	"icon": "images/omi-logo2019-128.png",
+	"version": "1.0.1",
 	"keywords": [
 		"zain",
 		"ZainChen",
@@ -10,27 +13,21 @@
 		"tencent",
 		"nodejs"
 	],
-	"version": "1.0.1",
-	"publisher": "ZainChen",
 	"engines": {
 		"vscode": "^1.31.0"
 	},
 	"categories": [
+		"Snippets",
 		"Other"
 	],
-	"icon": "images/omi-logo2019-128.png",
+	"main": "./src/index.js",
 	"activationEvents": [
 		"onCommand:command.omi",
 		"onLanguage:json",
 		"onLanguage:javascript"
 	],
-	"main": "./src/index.js",
 	"contributes": {
 		"commands": [
-			{
-				"command": "command.omi",
-				"title": "omi"
-			},
 			{
 				"command": "command.omi",
 				"title": "omi"
@@ -62,8 +59,7 @@
 				"aliases": [
 					"Json"
 				]
-			},
-			{
+			}, {
 				"id": "javascript",
 				"extensions": [
 					".js"
@@ -79,6 +75,18 @@
 		"snippets": [
 			{
 				"path": "./snippets/omi.code-snippets"
+			}, {
+				"language": "javascript",
+        		"path": "./snippets/omi.json"
+			}, {
+				"language": "typescript",
+				"path": "./snippets/omi.json"
+			}, {
+				"language": "json",
+        		"path": "./snippets/omi.json"
+			}, {
+				"language": "html",
+				"path": "./snippets/omi.json"
 			}
 		],
 		"configuration": {
@@ -111,12 +119,10 @@
 				{
 					"id": "zain-views1",
 					"name": "zain"
-				},
-				{
+				}, {
 					"id": "zain-views2",
 					"name": "jane"
-				},
-				{
+				}, {
 					"id": "zain-views3",
 					"name": "help"
 				}
