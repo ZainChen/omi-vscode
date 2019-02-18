@@ -90,16 +90,14 @@ function commandOmi() {
  */
 function provideHover(document, position, token) {
 	const fileName	= document.fileName;
-	const workDir	 = path.dirname(fileName);
-	const word		= document.getText(document.getWordRangeAtPosition(position));
 
 	//json文件
 	if(strTailMatch(fileName, ".json", 2)) {
-		return provideHoverJson(fileName, workDir, word);
+		return provideHoverJson(document, position, token);
 	}
 	//javascript文件
 	if(strTailMatch(fileName, ".js", 2)) {
-		return provideHoverJavaScript(fileName, workDir, word);
+		return provideHoverJavaScript(document, position, token);
 	}
 	
 	return new vscode.Hover(`zain`);
@@ -111,7 +109,11 @@ function provideHover(document, position, token) {
  * @参数 workDir
  * @参数 word
  */
-function provideHoverJson(fileName, workDir, word) {
+function provideHoverJson(document, position, token) {
+	const fileName	= document.fileName;
+	const workDir	 = path.dirname(fileName);
+	const word		= document.getText(document.getWordRangeAtPosition(position));
+	
 	//当鼠标停在package.json的dependencies或者devDependencies时，自动显示对应包的名称、版本号和许可协议
 	if (/package\.json$/.test(fileName)) {
 		console.log('进入provideHover方法');
@@ -137,8 +139,8 @@ function provideHoverJson(fileName, workDir, word) {
  * @参数 workDir 
  * @参数 word 
  */
-function provideHoverJavaScript(fileName, workDir, word) {
-
+function provideHoverJavaScript(document, position, token) {
+	return new vscode.Hover(`zain`);
 }
 
 
