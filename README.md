@@ -4,6 +4,7 @@ This preview release of the extension adds support for omi to Visual Studio Code
 
 # Function
 - Snippet
+- Code hints
 - In development...
 
 

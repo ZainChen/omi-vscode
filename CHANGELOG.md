@@ -4,8 +4,9 @@
 
 ### New Features
 
-- Update README.md
+- Update README.md, CHANGELOG.md...
 - Add snippet
+- Add code hints
 
 ### Bug Fixes
 
