@@ -1,0 +1,113 @@
+{
+	"name": "omi",
+	"displayName": "omi",
+	"description": "omi vscode extensions",
+	"keywords": [
+		"zain",
+		"ZainChen",
+		"omi",
+		"志银",
+		"tencent",
+		"nodejs"
+	],
+	"version": "1.0.0",
+	"publisher": "ZainChen",
+	"engines": {
+		"vscode": "^1.31.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"icon": "images/omi-logo2019-128.png",
+	"activationEvents": [
+		"onCommand:extension.zain-omi"
+	],
+	"main": "./src/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.zain-omi",
+				"title": "omi"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "zain-omi",
+			"properties": {
+				"vscodePluginDemo.yourName": {
+					"type": "string",
+					"default": "guest",
+					"description": "ZainChen"
+				},
+				"vscodePluginDemo.showTip": {
+					"type": "boolean",
+					"default": true,
+					"description": "是否在每次启动时显示欢迎提示！"
+				}
+			}
+		},
+		"keybindings": [
+			{
+				"command": "extension.zain-omi",
+				"key": "ctrl+f10",
+				"mac": "cmd+f10",
+				"when": "editorTextFocus"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"when": "editorFocus",
+					"command": "extension.zain-omi",
+					"group": "navigation"
+				}
+			]
+		},
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "zain-views",
+					"title": "omi",
+					"icon": "./images/omi-logo2019-30-30.svg"
+				}
+			]
+		},
+		"views": {
+			"zain-views": [
+				{
+					"id": "zain-views1",
+					"name": "zain"
+				},
+				{
+					"id": "zain-views2",
+					"name": "jane"
+				},
+				{
+					"id": "zain-views3",
+					"name": "ZainChen"
+				}
+			]
+		},
+		"snippets": [
+			{
+				"path": "./snippets/omi.code-snippets"
+			}
+		]
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.3.1",
+		"vscode": "^1.1.28",
+		"eslint": "^5.13.0",
+		"@types/node": "^10.12.21",
+		"@types/mocha": "^2.2.42"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ZainChen/zain-resource/tree/master/project/vscode-extensions/vscode-extensions-omi"
+	},
+	"homepage": "https://github.com/ZainChen/zain-resource/blob/master/project/vscode-extensions/vscode-extensions-omi/README.md"
+}
