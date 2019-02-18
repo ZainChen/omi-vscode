@@ -57,13 +57,24 @@
 		"languages": [
 			{
 				"id": "json",
-				"extensions": [ ".json" ],
-				"aliases": [ "Json" ]
+				"extensions": [
+					".json"
+				],
+				"aliases": [
+					"Json"
+				]
 			},
 			{
 				"id": "javascript",
-				"extensions": [ ".js" ],
-				"aliases": [ "JavaScript", "js", "JS", "Js" ]
+				"extensions": [
+					".js"
+				],
+				"aliases": [
+					"JavaScript",
+					"js",
+					"JS",
+					"Js"
+				]
 			}
 		],
 		"configuration": {
