@@ -10,7 +10,7 @@
 		"tencent",
 		"nodejs"
 	],
-	"version": "8.8.8",
+	"version": "1.0.1",
 	"publisher": "ZainChen",
 	"engines": {
 		"vscode": "^1.31.0"
