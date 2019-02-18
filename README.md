@@ -1,7 +1,10 @@
 # Omi for Visual Studio Code (Develop)
 
-- This preview release of the extension adds support for omi to Visual Studio Code including.
-- In development
+This preview release of the extension adds support for omi to Visual Studio Code including.
+
+# Function
+- Snippet
+- In development...
 
 
 
@@ -80,6 +83,3 @@ https://github.com/Tencent/omi
         </tr>
     </tbody>
 </table>
-
-<!-- <div style="float:left; margin-right:5px; margin-left:5px; text-align:center; border:2px solid #555; border-radius:5px; padding: 5px"><a href="https://zainzy.com"><img src="https://raw.githubusercontent.com/ZainChen/vscode-extension-omi/master/images/zain.png" style="height:80px; width:80px; border-radius:20px" /></a><br/><a href="https://zainzy.com" style="color: #BBB">zain</a></div> -->
-

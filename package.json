@@ -1,7 +1,7 @@
 {
 	"name": "omi-develop",
 	"displayName": "omi-develop",
-	"description": "Omi for Visual Studio Code",
+	"description": "Omi for Visual Studio Code (develop)",
 	"keywords": [
 		"zain",
 		"ZainChen",
@@ -84,7 +84,7 @@
 				},
 				{
 					"id": "zain-views3",
-					"name": "ZainChen"
+					"name": "help"
 				}
 			]
 		},
