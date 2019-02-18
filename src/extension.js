@@ -32,9 +32,9 @@ function activate(context) {
 
 	
 	//zain自定义激活功能
-	context.subscriptions.push(vscode.commands.registerCommand('command.omi', commandOmi));  //查看omi帮助命令
-	context.subscriptions.push(vscode.languages.registerHoverProvider('json', {provideHover}));  // 注册鼠标悬停提示
-	context.subscriptions.push(vscode.languages.registerHoverProvider('javascript', {provideHover}));
+	context.subscriptions.push(vscode.commands.registerCommand('command.omi', commandOmi));  //注册查看omi帮助命令
+	context.subscriptions.push(vscode.languages.registerHoverProvider('json', {provideHover}));  //注册鼠标悬停提示(json)
+	context.subscriptions.push(vscode.languages.registerHoverProvider('javascript', {provideHover}));  ////注册鼠标悬停提示(javascript)
 
 }
 exports.activate = activate;
@@ -105,24 +105,24 @@ function provideHover(document, position, token) {
 
 /**
  * json文件鼠标悬停提示配置
- * @参数 fileName
- * @参数 workDir
- * @参数 word
+ * @参数 document — 调用命令的文档。
+ * @参数 position — 调用命令的位置。
+ * @参数 token — 取消令牌。
  */
 function provideHoverJson(document, position, token) {
 	const fileName	= document.fileName;
 	const workDir	 = path.dirname(fileName);
 	const word		= document.getText(document.getWordRangeAtPosition(position));
-	
-	//当鼠标停在package.json的dependencies或者devDependencies时，自动显示对应包的名称、版本号和许可协议
+
+	//当鼠标停在package.json中
 	if (/package\.json$/.test(fileName)) {
-		console.log('进入provideHover方法');
+		console.log('provideHover');
 		const json = document.getText();
 		if (new RegExp(`"(dependencies|devDependencies)":\\s*?\\{[\\s\\S]*?${word.replace(/\//g, '\\/')}[\\s\\S]*?\\}`, 'gm').test(json)) {
 			let destPath = `${workDir}/node_modules/${word.replace(/"/g, '')}/package.json`;
 			if (fs.existsSync(destPath)) {
 				const content = require(destPath);
-				console.log('hover已生效');
+				console.log('hover');
 				// hover内容支持markdown语法
 				return new vscode.Hover(`* **名称**：${content.name}\n* **版本**：${content.version}\n* **许可协议**：${content.license}`);
 			}
@@ -135,12 +135,15 @@ function provideHoverJson(document, position, token) {
 
 /**
  * JavaScript文件鼠标悬停提示配置
- * @参数 fileName 
- * @参数 workDir 
- * @参数 word 
+ * @参数 document — 调用命令的文档。
+ * @参数 position — 调用命令的位置。
+ * @参数 token — 取消令牌。
  */
 function provideHoverJavaScript(document, position, token) {
-	return new vscode.Hover(`zain`);
+	//return new vscode.Hover(`zain`);
+	return {
+		contents: ['Hover Content']
+	};
 }
 
 
