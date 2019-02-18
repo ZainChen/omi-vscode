@@ -22,7 +22,8 @@
 	"activationEvents": [
 		"onCommand:command.omi-init",
 		"onCommand:command.omi",
-		"onLanguage:json"
+		"onLanguage:json",
+		"onLanguage:javascript"
 	],
 	"main": "./src/extension.js",
 	"contributes": {
@@ -53,6 +54,18 @@
 				}
 			]
 		},
+		"languages": [
+			{
+				"id": "json",
+				"extensions": [ ".json" ],
+				"aliases": [ "Json" ]
+			},
+			{
+				"id": "javascript",
+				"extensions": [ ".js" ],
+				"aliases": [ "JavaScript", "js", "JS", "Js" ]
+			}
+		],
 		"configuration": {
 			"type": "object",
 			"title": "omi",

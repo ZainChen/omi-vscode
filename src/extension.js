@@ -34,7 +34,8 @@ function activate(context) {
 	//zain自定义激活功能
 	context.subscriptions.push(vscode.commands.registerCommand('command.omi', commandOmi));  //查看omi帮助命令
 	context.subscriptions.push(vscode.languages.registerHoverProvider('json', {provideHover}));  // 注册鼠标悬停提示
-	
+	context.subscriptions.push(vscode.languages.registerHoverProvider('javascript', {provideHover}));
+
 }
 exports.activate = activate;
 
@@ -55,6 +56,10 @@ module.exports = {
 
 
 
+//==============================================================================================================================
+//=====命令功能=====
+//==============================================================================================================================
+
 /** 
  * 查看omi帮助命令
 */
@@ -64,19 +69,50 @@ function commandOmi() {
 
 
 
+
+
+//==============================================================================================================================
+//=====鼠标悬停提示=====
+//==============================================================================================================================
+
 /**
- * 鼠标悬停提示，当鼠标停在package.json的dependencies或者devDependencies时，
- * 自动显示对应包的名称、版本号和许可协议
- * @param {*} document 
- * @param {*} position 
- * @param {*} token 
+ * 鼠标悬停提示入口函数。
+ * 为给定的位置和文档提供悬停提示。
+ * 编辑器将合并多个位于同一位置的悬停。
+ * 悬停的范围可以默认为省略时位置的单词范围。
+ * @依赖文件 const vscode = require('vscode');
+ * @依赖文件 const path = require('path');
+ * @依赖文件 const fs = require('fs');
+ * @参数 document — 调用命令的文档。
+ * @参数 position — 调用命令的位置。
+ * @参数 token — 取消令牌。
+ * @参数 悬停或可解决的问题。可以通过返回“undefined”或“null”来表示缺少结果。
  */
 function provideHover(document, position, token) {
-	return new vscode.Hover(`zain`);
 	const fileName	= document.fileName;
 	const workDir	 = path.dirname(fileName);
 	const word		= document.getText(document.getWordRangeAtPosition(position));
 
+	//json文件
+	if(strTailMatch(fileName, ".json", 2)) {
+		return provideHoverJson(fileName, workDir, word);
+	}
+	//javascript文件
+	if(strTailMatch(fileName, ".js", 2)) {
+		return provideHoverJavaScript(fileName, workDir, word);
+	}
+	
+	return new vscode.Hover(`zain`);
+}
+
+/**
+ * json文件鼠标悬停提示配置
+ * @参数 fileName
+ * @参数 workDir
+ * @参数 word
+ */
+function provideHoverJson(fileName, workDir, word) {
+	//当鼠标停在package.json的dependencies或者devDependencies时，自动显示对应包的名称、版本号和许可协议
 	if (/package\.json$/.test(fileName)) {
 		console.log('进入provideHover方法');
 		const json = document.getText();
@@ -90,8 +126,55 @@ function provideHover(document, position, token) {
 			}
 		}
 	}
+
+	return new vscode.Hover(`zain`);
+
+}
+
+/**
+ * JavaScript文件鼠标悬停提示配置
+ * @参数 fileName 
+ * @参数 workDir 
+ * @参数 word 
+ */
+function provideHoverJavaScript(fileName, workDir, word) {
+
 }
 
 
 
+
+
+
+
+//==============================================================================================================================
+//=====zain算法函数=====
+//==============================================================================================================================
+
+/**
+ * 字符串尾部匹配(判断字符串后几位是否等于给定值,可用于文件后缀名判断)
+ * @param {*} str 待匹配的字符串
+ * @param {*} value 待匹配的值
+ * @param {*} mode 1:匹配大小写;2:忽略大小写
+ */
+function strTailMatch(str, value, mode) {
+	let ls = str.length;
+	let lv = value.length;
+	if(ls < lv) {
+		return false;
+	}
+	let strNew = "";
+	for(let i = ls-lv; i < ls; i++) {
+		strNew += str[i];
+	}
+	if(mode == 2) {
+		strNew = strNew.toUpperCase();  //字符串转换为大写(toLowerCase():字符串转换为小写)
+		value = value.toUpperCase();
+	}
+	if(strNew == value) {
+		return true;
+	} else {
+		false;
+	}
+}
 
