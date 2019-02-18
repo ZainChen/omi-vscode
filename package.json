@@ -1,6 +1,6 @@
 {
-	"name": "omi",
-	"displayName": "omi",
+	"name": "omi-develop",
+	"displayName": "omi-develop",
 	"description": "Omi for Visual Studio Code",
 	"keywords": [
 		"zain",
@@ -10,7 +10,7 @@
 		"tencent",
 		"nodejs"
 	],
-	"version": "1.0.0",
+	"version": "8.8.8",
 	"publisher": "ZainChen",
 	"engines": {
 		"vscode": "^1.31.0"
