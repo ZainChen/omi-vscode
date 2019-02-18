@@ -8,7 +8,7 @@ This preview release of the extension adds support for omi to Visual Studio Code
 
 
 
-# About Omi
+# About
 
 https://github.com/Tencent/omi
 

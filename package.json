@@ -20,16 +20,39 @@
 	],
 	"icon": "images/omi-logo2019-128.png",
 	"activationEvents": [
-		"onCommand:extension.zain-omi"
+		"onCommand:command.omi-init",
+		"onCommand:command.omi",
+		"onLanguage:json"
 	],
 	"main": "./src/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.zain-omi",
+				"command": "command.omi-init",
+				"title": "omi-init"
+			},
+			{
+				"command": "command.omi",
 				"title": "omi"
 			}
 		],
+		"keybindings": [
+			{
+				"command": "command.omi-init",
+				"key": "ctrl+f10",
+				"mac": "cmd+f10",
+				"when": "editorTextFocus"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"when": "editorFocus",
+					"command": "command.omi-init",
+					"group": "navigation"
+				}
+			]
+		},
 		"configuration": {
 			"type": "object",
 			"title": "omi",
@@ -45,23 +68,6 @@
 					"description": "是否在每次启动时显示欢迎提示！"
 				}
 			}
-		},
-		"keybindings": [
-			{
-				"command": "extension.zain-omi",
-				"key": "ctrl+f10",
-				"mac": "cmd+f10",
-				"when": "editorTextFocus"
-			}
-		],
-		"menus": {
-			"editor/context": [
-				{
-					"when": "editorFocus",
-					"command": "extension.zain-omi",
-					"group": "navigation"
-				}
-			]
 		},
 		"viewsContainers": {
 			"activitybar": [
