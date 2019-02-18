@@ -32,7 +32,7 @@
 		],
 		"configuration": {
 			"type": "object",
-			"title": "zain-omi",
+			"title": "omi",
 			"properties": {
 				"vscodePluginDemo.yourName": {
 					"type": "string",

@@ -11,7 +11,7 @@ https://github.com/Tencent/omi
 
 <p align="right">Omi <strong>v5.0.22</strong></p>
 <p align="right">Omio <strong>v1.3.5</strong></p>
-<p align="center"><img src="https://raw.githubusercontent.com/ZainChen/zain-resource/master/project/vscode-extensions/vscode-extensions-omi/images/omi-logo2019.png" alt="omi" width="300"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/ZainChen/vscode-extension-omi/master/images/omi-logo2019.png" alt="omi" width="300"/></p>
 <h2 align="center">Omi - Next generation web framework using web components with omio fallback(IE8+) in tiny js.</h2>
 
 ## Why Omi?
@@ -35,6 +35,7 @@ https://github.com/Tencent/omi
 
 # Developer
 
-<p><a href="https://zainzy.com"><img src="https://raw.githubusercontent.com/ZainChen/zain-resource/master/project/vscode-extensions/vscode-extensions-omi/images/zain.png" height="100px" width="100px" /></a></p>
-<p><a href="https://zainzy.com">ZainChen(志银)</a></p>
+<div style="float:left; margin-right:5px; margin-left:5px; text-align:center"><a href="https://zainzy.com"><img src="https://raw.githubusercontent.com/ZainChen/vscode-extension-omi/master/images/zain.png" style="height:80px; width:80px; border-radius:20px" /></a><br/><a href="https://zainzy.com" style="color: #BBB">ZainChen(??)</a></div>
+
+<!-- <div style="float:left; margin-right:5px; margin-left:5px; text-align:center; border:2px solid #555; border-radius:5px; padding: 5px"><a href="https://zainzy.com"><img src="https://raw.githubusercontent.com/ZainChen/vscode-extension-omi/master/images/zain.png" style="height:80px; width:80px; border-radius:20px" /></a><br/><a href="https://zainzy.com" style="color: #BBB">zain</a></div> -->
 
