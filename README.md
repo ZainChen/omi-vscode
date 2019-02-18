@@ -35,7 +35,7 @@ https://github.com/Tencent/omi
 
 # Developer
 
-<p style="float:left; margin-right:5px; margin-left:5px; text-align:center"><a href="https://zainzy.com"><img src="https://raw.githubusercontent.com/ZainChen/vscode-extension-omi/master/images/zain.png" style="height:80px; width:80px;" /></a><br/><a href="https://zainzy.com" style="color: #BBB">ZainChen(志银)</a></p>
+<a href="https://zainzy.com"><img src="https://raw.githubusercontent.com/ZainChen/vscode-extension-omi/master/images/zain.png" style="height:80px; width:80px;" /></a><br/><a href="https://zainzy.com" style="color: #BBB">ZainChen(志银)</a>
 <p style="float:left; margin-right:5px; margin-left:5px; text-align:center"><a href="https://zainzy.com"><img src="https://raw.githubusercontent.com/ZainChen/vscode-extension-omi/master/images/zain.png" style="height:80px; width:80px;" /></a><br/><a href="https://zainzy.com" style="color: #BBB">ZainChen</a></p>
 <p style="float:left; margin-right:5px; margin-left:5px; text-align:center"><a href="https://zainzy.com"><img src="https://raw.githubusercontent.com/ZainChen/vscode-extension-omi/master/images/zain.png" style="height:80px; width:80px;" /></a><br/><a href="https://zainzy.com" style="color: #BBB">zain</a></p>
 
