@@ -20,17 +20,16 @@
 	],
 	"icon": "images/omi-logo2019-128.png",
 	"activationEvents": [
-		"onCommand:command.omi-init",
 		"onCommand:command.omi",
 		"onLanguage:json",
 		"onLanguage:javascript"
 	],
-	"main": "./src/extension.js",
+	"main": "./src/index.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "command.omi-init",
-				"title": "omi-init"
+				"command": "command.omi",
+				"title": "omi"
 			},
 			{
 				"command": "command.omi",
@@ -39,7 +38,7 @@
 		],
 		"keybindings": [
 			{
-				"command": "command.omi-init",
+				"command": "command.omi",
 				"key": "ctrl+f10",
 				"mac": "cmd+f10",
 				"when": "editorTextFocus"
@@ -49,7 +48,7 @@
 			"editor/context": [
 				{
 					"when": "editorFocus",
-					"command": "command.omi-init",
+					"command": "command.omi",
 					"group": "navigation"
 				}
 			]
@@ -75,6 +74,11 @@
 					"JS",
 					"Js"
 				]
+			}
+		],
+		"snippets": [
+			{
+				"path": "./snippets/omi.code-snippets"
 			}
 		],
 		"configuration": {
@@ -117,12 +121,7 @@
 					"name": "help"
 				}
 			]
-		},
-		"snippets": [
-			{
-				"path": "./snippets/omi.code-snippets"
-			}
-		]
+		}
 	},
 	"scripts": {
 		"postinstall": "node ./node_modules/vscode/bin/install",

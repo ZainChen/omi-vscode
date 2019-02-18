@@ -1,47 +1,28 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
-const vscode = require('vscode');
+const vscode = require('vscode');  //导入模块并在下面的代码中使用别名vscode引用它(模块“vscode”包含VS代码可扩展性API)
 const path = require('path');
 const fs = require('fs');
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
+//zain自定义模块
+const alg = require("./algorithm/index");  //算法模块
+const hover = require("./hover/index");  //鼠标悬停提示模块
+
 
 /**
- * 插件被激活时触发，所有代码总入口
- * @param {vscode.ExtensionContext} context
+ * 插件被激活时触发，所有代码总入口。
+ * 激活扩展时调用此方法，您的扩展将在命令第一次执行时被激活。
+ * @依赖文件 const vscode = require('vscode');
+ * @param {vscode.ExtensionContext} context 扩展内容
  */
 function activate(context) {
-
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "omi" is now active!');
-
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with  registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('command.omi-init', function () {
-		// The code you place here will be executed every time your command is executed
-
-		// Display a message box to the user
-		vscode.window.showInformationMessage('omi init!');
-	});
-
-	// 注册命令
-	context.subscriptions.push(disposable);
-
-	
-	//zain自定义激活功能
 	context.subscriptions.push(vscode.commands.registerCommand('command.omi', commandOmi));  //注册查看omi帮助命令
 	context.subscriptions.push(vscode.languages.registerHoverProvider('json', {provideHover}));  //注册鼠标悬停提示(json)
-	context.subscriptions.push(vscode.languages.registerHoverProvider('javascript', {provideHover}));  ////注册鼠标悬停提示(javascript)
-
+	context.subscriptions.push(vscode.languages.registerHoverProvider('javascript', {provideHover}));  //注册鼠标悬停提示(javascript)
 }
 exports.activate = activate;
 
-// this method is called when your extension is deactivated
 /**
- * 插件被释放时触发
+ * 插件被释放时触发。
+ * 当您的扩展被停用时，将调用此方法。
  */
 function deactivate() {
 	console.log('Your extension "omi" has been released');
@@ -53,7 +34,6 @@ module.exports = {
 	commandOmi,
 	provideHover
 }
-
 
 
 //==============================================================================================================================
@@ -83,20 +63,22 @@ function commandOmi() {
  * @依赖文件 const vscode = require('vscode');
  * @依赖文件 const path = require('path');
  * @依赖文件 const fs = require('fs');
- * @参数 document — 调用命令的文档。
- * @参数 position — 调用命令的位置。
- * @参数 token — 取消令牌。
- * @参数 悬停或可解决的问题。可以通过返回“undefined”或“null”来表示缺少结果。
+ * @param document — 调用命令的文档。
+ * @param position — 调用命令的位置。
+ * @param token — 取消令牌。
+ * @return 悬停或可解决的问题。可以通过返回“undefined”或“null”来表示缺少结果。
  */
 function provideHover(document, position, token) {
 	const fileName	= document.fileName;
 
+	hover.show('zainzainzainzainzainzain');
+
 	//json文件
-	if(strTailMatch(fileName, ".json", 2)) {
+	if(alg.strTailMatch(fileName, ".json", 2)) {
 		return provideHoverJson(document, position, token);
 	}
 	//javascript文件
-	if(strTailMatch(fileName, ".js", 2)) {
+	if(alg.strTailMatch(fileName, ".js", 2)) {
 		return provideHoverJavaScript(document, position, token);
 	}
 	
@@ -105,9 +87,10 @@ function provideHover(document, position, token) {
 
 /**
  * json文件鼠标悬停提示配置
- * @参数 document — 调用命令的文档。
- * @参数 position — 调用命令的位置。
- * @参数 token — 取消令牌。
+ * @param document — 调用命令的文档。
+ * @param position — 调用命令的位置。
+ * @param token — 取消令牌。
+ * @return 提示内容
  */
 function provideHoverJson(document, position, token) {
 	const fileName	= document.fileName;
@@ -135,51 +118,15 @@ function provideHoverJson(document, position, token) {
 
 /**
  * JavaScript文件鼠标悬停提示配置
- * @参数 document — 调用命令的文档。
- * @参数 position — 调用命令的位置。
- * @参数 token — 取消令牌。
+ * @param document — 调用命令的文档。
+ * @param position — 调用命令的位置。
+ * @param token — 取消令牌。
+ * @return 提示内容
  */
 function provideHoverJavaScript(document, position, token) {
 	//return new vscode.Hover(`zain`);
 	return {
 		contents: ['Hover Content']
 	};
-}
-
-
-
-
-
-
-
-//==============================================================================================================================
-//=====zain算法函数=====
-//==============================================================================================================================
-
-/**
- * 字符串尾部匹配(判断字符串后几位是否等于给定值,可用于文件后缀名判断)
- * @param {*} str 待匹配的字符串
- * @param {*} value 待匹配的值
- * @param {*} mode 1:匹配大小写;2:忽略大小写
- */
-function strTailMatch(str, value, mode) {
-	let ls = str.length;
-	let lv = value.length;
-	if(ls < lv) {
-		return false;
-	}
-	let strNew = "";
-	for(let i = ls-lv; i < ls; i++) {
-		strNew += str[i];
-	}
-	if(mode == 2) {
-		strNew = strNew.toUpperCase();  //字符串转换为大写(toLowerCase():字符串转换为小写)
-		value = value.toUpperCase();
-	}
-	if(strNew == value) {
-		return true;
-	} else {
-		false;
-	}
 }
 
