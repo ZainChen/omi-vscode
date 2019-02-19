@@ -107,7 +107,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ZainChen/vscode-extension-omi"
+		"url": "https://github.com/ZainChen/vscode-omi"
 	},
-	"homepage": "https://github.com/ZainChen/vscode-extension-omi/blob/master/README.md"
+	"homepage": "https://github.com/ZainChen/vscode-omi/blob/master/README.md"
 }
