@@ -16,7 +16,7 @@ https://github.com/Tencent/omi
 
 <p align="right">Omi <strong>v5.0.22</strong></p>
 <p align="right">Omio <strong>v1.3.5</strong></p>
-<p align="center"><img src="https://raw.githubusercontent.com/ZainChen/vscode-extension-omi/master/images/omi-logo2019.png" alt="omi" width="300"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/ZainChen/vscode-omi/dev/images/omi-logo2019.png" alt="omi" width="300"/></p>
 <h2 align="center">Omi - Next generation web framework using web components with omio fallback(IE8+) in tiny js.</h2>
 
 ## Why Omi?
@@ -45,41 +45,41 @@ https://github.com/Tencent/omi
         <tr>
             <td>
                 <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/images/zain.png">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/dev/images/zain.png">
                 </a>
             </td>
             <td>
                 <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/images/zain.png">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/dev/images/zain.png">
                 </a>
             </td>
             <td>
                 <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/images/zain.png">
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/images/zain.png">
-                </a>
-            </td>
-            <td>
-                <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/images/zain.png">
-                </a>
-            </td>
-            <td>
-                <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/images/zain.png">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/dev/images/zain.png">
                 </a>
             </td>
         </tr>
         <tr>
             <td>
                 <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/images/zain.png">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/dev/images/zain.png">
+                </a>
+            </td>
+            <td>
+                <a target="_blank" href="https://zainzy.com">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/dev/images/zain.png">
+                </a>
+            </td>
+            <td>
+                <a target="_blank" href="https://zainzy.com">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/dev/images/zain.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a target="_blank" href="https://zainzy.com">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/dev/images/zain.png">
                 </a>
             </td>
         </tr>

@@ -2,12 +2,12 @@ const vscode = require('vscode');  //导入模块并在下面的代码中使用�
 
 //zain自定义模块
 const hover = require("./hover/index");  //鼠标悬停提示模块
+const cmd = require("./command/index");  //命令模块
 
 
 module.exports = {
 	activate,
-	deactivate,
-	commandOmi
+	deactivate
 }
 
 
@@ -18,10 +18,17 @@ module.exports = {
  * @param {vscode.ExtensionContext} context 扩展内容
  */
 function activate(context) {
+	
+	//命令注册
+	context.subscriptions.push(vscode.commands.registerCommand('command.omi', cmd.commandOmi));  //注册查看omi帮助命令
+
+	//鼠标悬停提示注册
 	let provideHover = hover.provideHover;
-	context.subscriptions.push(vscode.commands.registerCommand('command.omi', commandOmi));  //注册查看omi帮助命令
 	context.subscriptions.push(vscode.languages.registerHoverProvider('json', { provideHover }));  //注册鼠标悬停提示(json)
 	context.subscriptions.push(vscode.languages.registerHoverProvider('javascript', {provideHover}));  //注册鼠标悬停提示(javascript)
+
+	//
+	
 }
 exports.activate = activate;
 
@@ -33,17 +40,4 @@ function deactivate() {
 	console.log('Your extension "omi" has been released');
 }
 
-
-
-
-//==============================================================================================================================
-//=====命令功能=====
-//==============================================================================================================================
-
-/** 
- * 查看omi帮助命令
-*/
-function commandOmi() {
-	vscode.window.showInformationMessage('omi help');
-}
 

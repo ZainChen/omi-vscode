@@ -1,9 +1,16 @@
+const path = require('path');
+const fs = require('fs');
+
+
 /**
  * zain算法模块
  */
 module.exports = {
-    strTailMatch
+	strTailMatch,
+	getfilePathName,
+	getFileContent
 }
+
 
 /**
  * 字符串尾部匹配(判断字符串后几位是否等于给定值,可用于文件后缀名判断)
@@ -31,3 +38,34 @@ function strTailMatch(str, value, mode) {
 		false;
 	}
 }
+
+/**
+ * 获取指定路径下所有文件夹名或文件名（不包含子文件夹）
+ * @param {*} strPath 文件路径，不能带有文件名
+ */
+function getfilePathName(strPath) {
+	//当前文件夹下所有文件内容读取
+	return fs.readdirSync(path.join(strPath));  //获取当前文件夹下所有文件名
+	// console.log(__dirname);  // 当前文件所在的绝对路径。
+	// console.log(__filename);  // 当前文件的文件名,包括全路径。  __dirname和__filename都是全局对象。
+}
+
+/**
+ * 获取指定文件所有内容
+ * @param {*} strFileNamePath 文件名及路径（一定要带有文件名）
+ */
+function getFileContent(strFileNamePath) {
+	let file = path.join(strFileNamePath); //文件路径，__dirname为当前运行js文件的目录
+	let data = fs.readFileSync(file);  //同步读取文件内容
+	return data.toString();
+	// 异步读取
+	// fs.readFile(file, function (err, data) {
+	// 	if (err) {
+	// 		return console.error(err);
+	// 	}
+	// 	console.log("异步读取: " + data.toString());
+	// });
+	// console.log(__dirname);  // 当前文件所在的绝对路径。
+	// console.log(__filename);  // 当前文件的文件名,包括全路径。  __dirname和__filename都是全局对象。
+}
+

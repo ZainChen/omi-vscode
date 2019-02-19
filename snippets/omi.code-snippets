@@ -5,5 +5,19 @@
             "omi厉害了我的哥"
         ],
         "description": "omi模块"
+    },
+    "vscode.commands.registerCommand()": {
+        "prefix": "vscode",
+        "body": [
+            "vscode.commands.registerCommand()"
+        ],
+        "description": "vscode.commands.registerCommand()"
+    },
+    "vscode.zain()": {
+        "prefix": "vscode",
+        "body": [
+            "vscode.zain()"
+        ],
+        "description": "vscode.zain()"
     }
 }

@@ -4,12 +4,12 @@ const fs = require('fs');
 
 //zain自定义模块
 const alg = require("../algorithm/index");  //算法模块
+const hoverJson = require("./json");  //json文件内容提示
+const hoverJavascript = require("./javascript");  //javascript文件内容提示
 
 
 module.exports = {
-    provideHover,
-    provideHoverJson,
-    provideHoverJavaScript
+    provideHover
 }
 
 //==============================================================================================================================
@@ -34,58 +34,14 @@ function provideHover(document, position, token) {
 
 	//json文件
 	if(alg.strTailMatch(fileName, ".json", 2)) {
-		return provideHoverJson(document, position, token);
+		return hoverJson.provideHoverJson(document, position, token);
 	}
 	//javascript文件
 	if(alg.strTailMatch(fileName, ".js", 2)) {
-		return provideHoverJavaScript(document, position, token);
+		return hoverJavascript.provideHoverJavaScript(document, position, token);
 	}
 	
 	return new vscode.Hover(`zain`);
 }
 
-/**
- * json文件鼠标悬停提示配置
- * @param document — 调用命令的文档。
- * @param position — 调用命令的位置。
- * @param token — 取消令牌。
- * @return 提示内容
- */
-function provideHoverJson(document, position, token) {
-	const fileName	= document.fileName;
-	const workDir	 = path.dirname(fileName);
-	const word		= document.getText(document.getWordRangeAtPosition(position));
-
-	//当鼠标停在package.json中
-	if (/package\.json$/.test(fileName)) {
-		console.log('provideHover');
-		const json = document.getText();
-		if (new RegExp(`"(dependencies|devDependencies)":\\s*?\\{[\\s\\S]*?${word.replace(/\//g, '\\/')}[\\s\\S]*?\\}`, 'gm').test(json)) {
-			let destPath = `${workDir}/node_modules/${word.replace(/"/g, '')}/package.json`;
-			if (fs.existsSync(destPath)) {
-				const content = require(destPath);
-				console.log('hover');
-				// hover内容支持markdown语法
-				return new vscode.Hover(`* **名称**：${content.name}\n* **版本**：${content.version}\n* **许可协议**：${content.license}`);
-			}
-		}
-	}
-
-	return new vscode.Hover(`zain`);
-
-}
-
-/**
- * JavaScript文件鼠标悬停提示配置
- * @param document — 调用命令的文档。
- * @param position — 调用命令的位置。
- * @param token — 取消令牌。
- * @return 提示内容
- */
-function provideHoverJavaScript(document, position, token) {
-	//return new vscode.Hover(`zain`);
-	return {
-		contents: ['Hover Content']
-	};
-}
 
