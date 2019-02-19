@@ -1,0 +1,155 @@
+{
+	"name": "omi-develop",
+	"displayName": "omi-develop",
+	"description": "Omi for Visual Studio Code (develop)",
+	"version": "1.0.1",
+	"publisher": "ZainChen",
+	"icon": "images/omi-logo2019-128.png",
+	"homepage": "https://github.com/ZainChen/vscode-omi/blob/dev/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ZainChen/vscode-omi"
+	},
+	"keywords": [
+		"zain",
+		"ZainChen",
+		"omi",
+		"志银",
+		"tencent",
+		"nodejs"
+	],
+	"engines": {
+		"vscode": "^1.31.0"
+	},
+	"categories": [
+		"Snippets",
+		"Other"
+	],
+	"main": "./src/index.js",
+	"activationEvents": [
+		"onCommand:command.omi",
+		"onLanguage:json",
+		"onLanguage:javascript"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "command.omi",
+				"title": "omi"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "command.omi",
+				"key": "ctrl+f10",
+				"mac": "cmd+f10",
+				"when": "editorTextFocus"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"when": "editorFocus",
+					"command": "command.omi",
+					"group": "navigation"
+				}
+			]
+		},
+		"languages": [
+			{
+				"id": "json",
+				"extensions": [
+					".json"
+				],
+				"aliases": [
+					"Json"
+				]
+			},
+			{
+				"id": "javascript",
+				"extensions": [
+					".js"
+				],
+				"aliases": [
+					"JavaScript",
+					"js",
+					"JS",
+					"Js"
+				]
+			}
+		],
+		"snippets": [
+			{
+				"path": "./snippets/omi.code-snippets"
+			},
+			{
+				"language": "javascript",
+				"path": "./snippets/omi.json"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/omi.json"
+			},
+			{
+				"language": "json",
+				"path": "./snippets/omi.json"
+			},
+			{
+				"language": "html",
+				"path": "./snippets/omi.json"
+			}
+		],
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "zain-views",
+					"title": "omi",
+					"icon": "./images/omi-logo2019-30-30.svg"
+				}
+			]
+		},
+		"views": {
+			"zain-views": [
+				{
+					"id": "zain-views1",
+					"name": "zain"
+				},
+				{
+					"id": "zain-views2",
+					"name": "jane"
+				},
+				{
+					"id": "zain-views3",
+					"name": "help"
+				}
+			]
+		},
+		"configuration": {
+			"type": "object",
+			"title": "omi",
+			"properties": {
+				"omi.Author.ZainChen": {
+					"type": "string",
+					"default": "Welcome to omi.",
+					"description": "Omi for Visual Studio Code"
+				},
+				"omi.start.welcome": {
+					"type": "boolean",
+					"default": false,
+					"description": "是否在每次启动时显示欢迎提示！"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.3.1",
+		"vscode": "^1.1.28",
+		"eslint": "^5.13.0",
+		"@types/node": "^10.12.21",
+		"@types/mocha": "^2.2.42"
+	}
+}
