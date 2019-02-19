@@ -9,7 +9,7 @@ const hoverJavascript = require("./javascript");  //javascript文件内容提示
 
 
 module.exports = {
-    provideHover
+	provideHover
 }
 
 //==============================================================================================================================
@@ -43,5 +43,3 @@ function provideHover(document, position, token) {
 	
 	return new vscode.Hover(`zain`);
 }
-
-

@@ -22,7 +22,7 @@ function provideHoverJson(document, position, token) {
 	const workDir	= path.dirname(fileName);
 	const line      = document.lineAt(position);
 	const word		= document.getText(document.getWordRangeAtPosition(position));
-
+	
 	//指定vscode-omi/package.json配置文件提示内容
 	if (alg.strTailMatch(fileName, "vscode-omi\\package.json", 2)) {
 		if(line.text.indexOf("\"name\"") != -1) {
@@ -60,3 +60,4 @@ function provideHoverJson(document, position, token) {
 	return new vscode.Hover(`zain`);
 
 }
+

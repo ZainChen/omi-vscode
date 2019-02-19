@@ -2,7 +2,7 @@
 
 
 module.exports = {
-    provideHoverJavaScript
+	provideHoverJavaScript
 }
 
 
@@ -14,8 +14,10 @@ module.exports = {
  * @return 提示内容
  */
 function provideHoverJavaScript(document, position, token) {
+
 	//return new vscode.Hover(`zain`);
 	return {
 		contents: ['Hover Content']
 	};
 }
+
