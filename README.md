@@ -45,41 +45,41 @@ https://github.com/Tencent/omi
         <tr>
             <td>
                 <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-extension-omi/master/images/zain.png">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/images/zain.png">
                 </a>
             </td>
             <td>
                 <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-extension-omi/master/images/zain.png">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/images/zain.png">
                 </a>
             </td>
             <td>
                 <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-extension-omi/master/images/zain.png">
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-extension-omi/master/images/zain.png">
-                </a>
-            </td>
-            <td>
-                <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-extension-omi/master/images/zain.png">
-                </a>
-            </td>
-            <td>
-                <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-extension-omi/master/images/zain.png">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/images/zain.png">
                 </a>
             </td>
         </tr>
         <tr>
             <td>
                 <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-extension-omi/master/images/zain.png">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/images/zain.png">
+                </a>
+            </td>
+            <td>
+                <a target="_blank" href="https://zainzy.com">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/images/zain.png">
+                </a>
+            </td>
+            <td>
+                <a target="_blank" href="https://zainzy.com">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/images/zain.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a target="_blank" href="https://zainzy.com">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/images/zain.png">
                 </a>
             </td>
         </tr>
