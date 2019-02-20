@@ -2,7 +2,7 @@
 	"name": "omi-develop",
 	"displayName": "omi-develop",
 	"description": "Omi for Visual Studio Code (develop)",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"publisher": "ZainChen",
 	"icon": "images/omi-logo2019-128.png",
 	"homepage": "https://github.com/ZainChen/vscode-omi/blob/dev/README.md",

@@ -7,6 +7,7 @@ const fs = require('fs');
  */
 module.exports = {
 	strTailMatch,
+	strInFindLP,
 	getfilePathName,
 	getFileContent
 }
@@ -37,6 +38,21 @@ function strTailMatch(str, value, mode) {
 	} else {
 		false;
 	}
+}
+
+/**
+ * 字符串查找，忽略大小写
+ * @param strO 待查找的字符串
+ * @param strF 需要查找的字符串
+ * @return true|false：找到|未找到
+ */
+function strInFindLP(strO, strF) {
+	let bso = strO.toUpperCase();  //字符串转换为大写(toLowerCase():字符串转换为小写)
+	let bsf = strF.toUpperCase();
+	if(bso.indexOf(bsf) != -1) {
+		return true;
+	}
+	return false;
 }
 
 /**
