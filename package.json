@@ -33,41 +33,6 @@
 		"onLanguage:javascript"
 	],
 	"contributes": {
-		"menus": {
-			"editor/context": [
-				{
-					"when": "editorFocus",
-					"command": "command.omi",
-					"group": "navigation"
-				},
-				{
-					"when": "resourceLangId == markdown",
-					"command": "markdown.showPreview",
-					"alt": "markdown.showPreviewToSide",
-					"group": "navigation"
-				}
-			],
-			"editor/title": [
-				{
-					"command": "command.omi",
-					"group": "navigation"
-				},
-				{
-					"when": "resourceLangId == markdown",
-					"command": "markdown.showPreview",
-					"alt": "markdown.showPreviewToSide",
-					"group": "navigation"
-				}
-			]
-		},
-		"keybindings": [
-			{
-				"command": "command.omi",
-				"key": "ctrl+f10",
-				"mac": "cmd+f10",
-				"when": "editorTextFocus"
-			}
-		],
 		"commands": [
 			{
 				"command": "command.omi",
@@ -79,7 +44,11 @@
 			},
 			{
 				"command": "command.omi-wv",
-				"title": "omi wv"
+				"title": "omi wv",
+				"icon": {
+					"light": "./images/add1.svg",
+					"dark": "./images/add1.svg"
+				}
 			}
 		],
 		"languages": [
@@ -129,28 +98,74 @@
 		"viewsContainers": {
 			"activitybar": [
 				{
-					"id": "zain-views",
+					"id": "omi-views",
 					"title": "omi",
 					"icon": "./images/omi-logo2019-30-30.svg"
 				}
 			]
 		},
 		"views": {
-			"zain-views": [
+			"omi-views": [
 				{
-					"id": "zain-views1",
-					"name": "zain"
+					"id": "omi-ecosystem",
+					"name": "ecosystem"
 				},
 				{
-					"id": "zain-views2",
+					"id": "omi-views2",
 					"name": "jane"
 				},
 				{
-					"id": "zain-views3",
+					"id": "omi-views3",
 					"name": "help"
 				}
 			]
 		},
+		"menus": {
+			"editor/context": [
+				{
+					"when": "editorFocus",
+					"command": "command.omi",
+					"group": "navigation"
+				},
+				{
+					"when": "resourceLangId == markdown",
+					"command": "markdown.showPreview",
+					"alt": "markdown.showPreviewToSide",
+					"group": "navigation"
+				}
+			],
+			"editor/title": [
+				{
+					"command": "command.omi",
+					"group": "navigation"
+				},
+				{
+					"when": "resourceLangId == markdown",
+					"command": "markdown.showPreview",
+					"alt": "markdown.showPreviewToSide",
+					"group": "navigation"
+				}
+			],
+			"view/title": [
+				{
+					"command": "command.omi",
+					"when": "view == omi-ecosystem",
+					"group": "navigation"
+				},
+				{
+					"command": "command.omi-wv",
+					"when": "view == omi-ecosystem"
+				}
+			]
+		},
+		"keybindings": [
+			{
+				"command": "command.omi",
+				"key": "ctrl+f10",
+				"mac": "cmd+f10",
+				"when": "editorTextFocus"
+			}
+		],
 		"configuration": {
 			"type": "object",
 			"title": "omi",
