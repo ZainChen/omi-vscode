@@ -1,14 +1,16 @@
 # Omi for Visual Studio Code (Develop)
-[![Version](https://github.com/ZainChen/vscode-omi/tree/dev/images/vscode-omi-dev-v1.0.2.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi-develop)
-[![Downloads](https://github.com/ZainChen/vscode-omi/tree/dev/images/vscode-omi-dev-downloads.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi-develop)
-[![Update Time](https://github.com/ZainChen/vscode-omi/tree/dev/images/vscode-omi-dev-update-time.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi-develop)
+[![Version](https://img.shields.io/badge/Visual%20Studio%20Marketplace-v1.0.3-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi-develop)
+[![Downloads](https://img.shields.io/badge/Downloads-999999-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi-develop)
+[![Update Time](https://img.shields.io/badge/Update%20Time-2019%2F02%2F20%2020%3A13%3A14-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi-develop)
 
 This preview release of the extension adds support for omi to Visual Studio Code including.
 
 
 # Function
 - Snippet
-- Code hints
+- Code hint
+- Definition
+- Webview
 - In development...
 
 # About
@@ -16,7 +18,7 @@ This preview release of the extension adds support for omi to Visual Studio Code
 https://github.com/Tencent/omi
 
 <p align="right">Omi <strong>v5.0.22</strong></p>
-<p align="right">Omio <strong>v1.3.5</strong></p>
+<p align="right">Omio <strong>v1.3.7</strong></p>
 <p align="center"><img src="https://raw.githubusercontent.com/ZainChen/vscode-omi/dev/images/omi-logo2019.png" alt="omi" width="300"/></p>
 <h2 align="center">Omi - Next generation web framework using web components with omio fallback(IE8+) in tiny js.</h2>
 
