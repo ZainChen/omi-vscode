@@ -24,11 +24,12 @@ function activate(context) {
 	let provideHover = hover.provideHover;
 	let provideDefinition = def.provideDefinition;
 
-	context.subscriptions.push(vscode.commands.registerCommand('command.omi', cmd.commandOmi));  //omi命令注册
+    context.subscriptions.push(vscode.commands.registerCommand('command.omi', cmd.commandOmi));  //"omi"命令注册
+    context.subscriptions.push(vscode.commands.registerCommand('command.omi-wv', cmd.commandOmiWebview));  ////"omi wv"命令注册
 	context.subscriptions.push(vscode.languages.registerHoverProvider(['json', 'javascript'], {provideHover}));  //鼠标悬停提示注册
     context.subscriptions.push(vscode.languages.registerDefinitionProvider(['json', 'javascript'], {provideDefinition}));  //跳转到定义注册
-	context.subscriptions.push(vscode.languages.registerCompletionItemProvider(['json', 'javascript'], {provideCompletionItems, resolveCompletionItem}, '.'));  //代码提示功能2注册
-	
+	context.subscriptions.push(vscode.languages.registerCompletionItemProvider(['json', 'javascript'], {provideCompletionItems, resolveCompletionItem}, '.'));  //代码提示功能注册(未出效果，待解决...)
+    
 }
 exports.activate = activate;
 

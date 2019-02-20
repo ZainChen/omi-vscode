@@ -28,16 +28,38 @@
 	"main": "./src/index.js",
 	"activationEvents": [
 		"onCommand:command.omi",
+		"onCommand:command.omi-wv",
 		"onLanguage:json",
 		"onLanguage:javascript"
 	],
 	"contributes": {
-		"commands": [
-			{
-				"command": "command.omi",
-				"title": "omi"
-			}
-		],
+		"menus": {
+			"editor/context": [
+				{
+					"when": "editorFocus",
+					"command": "command.omi",
+					"group": "navigation"
+				},
+				{
+					"when": "resourceLangId == markdown",
+					"command": "markdown.showPreview",
+					"alt": "markdown.showPreviewToSide",
+					"group": "navigation"
+				}
+			],
+			"editor/title": [
+				{
+					"command": "command.omi",
+					"group": "navigation"
+				},
+				{
+					"when": "resourceLangId == markdown",
+					"command": "markdown.showPreview",
+					"alt": "markdown.showPreviewToSide",
+					"group": "navigation"
+				}
+			]
+		},
 		"keybindings": [
 			{
 				"command": "command.omi",
@@ -46,15 +68,20 @@
 				"when": "editorTextFocus"
 			}
 		],
-		"menus": {
-			"editor/context": [
-				{
-					"when": "editorFocus",
-					"command": "command.omi",
-					"group": "navigation"
+		"commands": [
+			{
+				"command": "command.omi",
+				"title": "omi",
+				"icon": {
+					"light": "./images/omi-set.svg",
+					"dark": "./images/omi-set.svg"
 				}
-			]
-		},
+			},
+			{
+				"command": "command.omi-wv",
+				"title": "omi wv"
+			}
+		],
 		"languages": [
 			{
 				"id": "json",
