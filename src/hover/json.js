@@ -62,6 +62,10 @@ function hoverVomiPackage(document, position, token) {
 	if(line.text.indexOf("\"type\"") != -1)                                  { bHaveText = true; showText += `\n\n* [键] "type"：类型。`; }
 	if(line.text.indexOf("\"url\"") != -1)                                   { bHaveText = true; showText += `\n\n* [键] "url"：网址。`; }
 	if(line.text.indexOf("\"keywords\"") != -1)                              { bHaveText = true; showText += `\n\n* [键] "keywords"：扩展包的关键字，有助于人们发现你的包，它是列在“npm搜索引擎”中。`; }
+	if(line.text.indexOf("\"engines\"") != -1)                               { bHaveText = true; showText += `\n\n* [键] "engines"：引擎兼容性，插件需要vscode版本的最低限制。`; }
+	if(line.text.indexOf("\"vscode\"") != -1)                                { bHaveText = true; showText += `\n\n* [键] "vscode"：对于 VS Code 扩展，指定与其兼容的 VS Code 版本。不能为 *。 例如: ^0.10.5 表示最低兼容 VS Code 版本 0.10.5。`; }
+	if(line.text.indexOf("\"categories\"") != -1)                            { bHaveText = true; showText += `\n\n* [键] "categories"：VS Code 库用于对扩展进行分类的类别。`; }
+	if(line.text.indexOf("\"activationEvents\"") != -1)                      { bHaveText = true; showText += `\n\n* [键] "activationEvents"：VS Code 扩展的激活事件。`; }
 	
 	if(alg.strInFindLP(line.text, "omi-develop"))                            { bHaveText = true; showText += `\n\n* [值] "omi-develop"：omi的vscode扩展(开发版)`; }
 	if(alg.strInFindLP(line.text, "ZainChen"))                               { bHaveText = true; showText += `\n\n* [值] "ZainChen"：帅气程序猿^_^，中文名"志银"，个人网站-[https://zainzy.com/](https://zainzy.com/ "志银")，GitHub-[https://github.com/ZainChen](https://github.com/ZainChen "志银GitHub")`; }

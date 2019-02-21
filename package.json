@@ -2,13 +2,20 @@
 	"name": "omi-develop",
 	"displayName": "omi-develop",
 	"description": "Omi for Visual Studio Code (develop)",
+	"license": "Omi",
 	"version": "1.0.3",
 	"publisher": "ZainChen",
-	"icon": "images/omi-logo2019-128.png",
+	"author": {
+		"name": "ZainChen"
+	},
+	"icon": "assets/omi-logo2019-128.png",
 	"homepage": "https://github.com/ZainChen/vscode-omi/blob/dev/README.md",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/ZainChen/vscode-omi"
+	},
+	"bugs": {
+		"url": "https://github.com/ZainChen/vscode-omi/issues"
 	},
 	"keywords": [
 		"zain",
@@ -18,36 +25,36 @@
 		"tencent",
 		"nodejs"
 	],
-	"engines": {
-		"vscode": "^1.31.0"
-	},
 	"categories": [
 		"Snippets",
 		"Other"
 	],
-	"main": "./src/index.js",
+	"engines": {
+		"vscode": "^1.31.0"
+	},
 	"activationEvents": [
-		"onCommand:command.omi",
-		"onCommand:command.omi-wv",
+		"onCommand:omi.help",
+		"onCommand:omi.webview",
 		"onLanguage:json",
 		"onLanguage:javascript"
 	],
+	"main": "./src/index.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "command.omi",
-				"title": "omi",
+				"command": "omi.help",
+				"title": "omi help",
 				"icon": {
-					"light": "./images/omi-set.svg",
-					"dark": "./images/omi-set.svg"
+					"light": "./assets/omi-set.svg",
+					"dark": "./assets/omi-set.svg"
 				}
 			},
 			{
-				"command": "command.omi-wv",
+				"command": "omi.webview",
 				"title": "omi wv",
 				"icon": {
-					"light": "./images/add1.svg",
-					"dark": "./images/add1.svg"
+					"light": "./assets/add1.svg",
+					"dark": "./assets/add1.svg"
 				}
 			}
 		],
@@ -76,23 +83,23 @@
 		],
 		"snippets": [
 			{
-				"path": "./snippets/omi.code-snippets"
+				"path": "./src/snippets/omi.code-snippets"
 			},
 			{
 				"language": "javascript",
-				"path": "./snippets/omi.json"
+				"path": "./src/snippets/omi.json"
 			},
 			{
 				"language": "typescript",
-				"path": "./snippets/omi.json"
+				"path": "./src/snippets/omi.json"
 			},
 			{
 				"language": "json",
-				"path": "./snippets/omi.json"
+				"path": "./src/snippets/omi.json"
 			},
 			{
 				"language": "html",
-				"path": "./snippets/omi.json"
+				"path": "./src/snippets/omi.json"
 			}
 		],
 		"viewsContainers": {
@@ -100,22 +107,22 @@
 				{
 					"id": "omi-views",
 					"title": "omi",
-					"icon": "./images/omi-logo2019-30-30.svg"
+					"icon": "./assets/omi-logo2019-30-30.svg"
 				}
 			]
 		},
 		"views": {
 			"omi-views": [
 				{
-					"id": "omi-ecosystem",
+					"id": "omi-view-ecosystem",
 					"name": "ecosystem"
 				},
 				{
-					"id": "omi-views2",
-					"name": "jane"
+					"id": "omi-view-json",
+					"name": "json"
 				},
 				{
-					"id": "omi-views3",
+					"id": "omi-view-help",
 					"name": "help"
 				}
 			]
@@ -124,7 +131,7 @@
 			"editor/context": [
 				{
 					"when": "editorFocus",
-					"command": "command.omi",
+					"command": "omi.help",
 					"group": "navigation"
 				},
 				{
@@ -136,7 +143,7 @@
 			],
 			"editor/title": [
 				{
-					"command": "command.omi",
+					"command": "omi.help",
 					"group": "navigation"
 				},
 				{
@@ -148,19 +155,19 @@
 			],
 			"view/title": [
 				{
-					"command": "command.omi",
-					"when": "view == omi-ecosystem",
+					"command": "omi.help",
+					"when": "view == omi-view-ecosystem",
 					"group": "navigation"
 				},
 				{
-					"command": "command.omi-wv",
-					"when": "view == omi-ecosystem"
+					"command": "omi.webview",
+					"when": "view == omi-view-ecosystem"
 				}
 			]
 		},
 		"keybindings": [
 			{
-				"command": "command.omi",
+				"command": "omi.help",
 				"key": "ctrl+f10",
 				"mac": "cmd+f10",
 				"when": "editorTextFocus"
@@ -168,12 +175,16 @@
 		],
 		"configuration": {
 			"type": "object",
-			"title": "omi",
+			"title": "Omi",
 			"properties": {
 				"omi.Author.ZainChen": {
 					"type": "string",
 					"default": "Welcome to omi.",
 					"description": "Omi for Visual Studio Code"
+				},
+				"omi.json.autorefresh": {
+					"type": "boolean",
+					"default": false
 				},
 				"omi.start.welcome": {
 					"type": "boolean",
@@ -192,6 +203,7 @@
 		"vscode": "^1.1.28",
 		"eslint": "^5.13.0",
 		"@types/node": "^10.12.21",
-		"@types/mocha": "^2.2.42"
+		"@types/mocha": "^2.2.42",
+		"jsonc-parser": "^0.4.2"
 	}
 }
