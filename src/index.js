@@ -2,12 +2,13 @@ const vscode = require('vscode');  //导入模块并在下面的代码中使用�
 const path = require('path');
 const fs = require('fs');
 
-//zain自定义模块
-const cmd = require("./command/index");  //命令模块
-const hover = require("./hover/index");  //鼠标悬停提示模块
-const def = require("./jump/index");  //跳转功能模块
-const tv = require("./treeview/index");  //树视图模块
+//zain自定义功能模块
+const hover = require("./hover/index");  //鼠标悬停提示功能模块
+const jump = require("./jump/index");  //跳转功能模块
+const ayjson = require("./ayjson/index");  //json文件解析功能模块
 
+const wv = require('./webview/index');  //导入模块并在下面的代码中使用别名vscode引用它(模块“vscode”包含VS代码可扩展性API)
+const cmd = require("./command/index");  //命令模块
 
 
 module.exports = {
@@ -23,21 +24,33 @@ module.exports = {
  * @param {vscode.ExtensionContext} context 扩展内容
  */
 function activate(context) {
-	let provideHover = hover.provideHover;
-	let provideDefinition = def.provideDefinition;
-	const jsonOutlineProvider = new tv.JsonOutlineProvider(context);
+	//鼠标悬停提示功能注册
+	const provideHover = hover.provideHover;
+	context.subscriptions.push(vscode.languages.registerHoverProvider(['json', 'javascript'], {provideHover}));  
 
+	//跳转功能注册
+	const provideDefinition = jump.provideDefinition;
+	context.subscriptions.push(vscode.languages.registerDefinitionProvider(['json', 'javascript'], {provideDefinition}));
+
+	//json文件解析功能注册
+	const jsonOutlineProvider = new ayjson.JsonOutlineProvider(context);
+	context.subscriptions.push(vscode.window.registerTreeDataProvider('omi-view-json', jsonOutlineProvider));
+	vscode.commands.registerCommand('extension.openJsonSelection', range => jsonOutlineProvider.select(range));
+
+
+	//Webview功能注册(命令:"omi wv")(实验)
+	context.subscriptions.push(vscode.commands.registerCommand('omi.webview', wv.showWebviewIndex));
+	//其他命令，暂无特定功能
     context.subscriptions.push(vscode.commands.registerCommand('omi.help', cmd.commandOmiHelp));  //"omi"命令注册
-    context.subscriptions.push(vscode.commands.registerCommand('omi.webview', cmd.commandOmiWebview));  ////"omi wv"命令注册
-	context.subscriptions.push(vscode.languages.registerHoverProvider(['json', 'javascript'], {provideHover}));  //鼠标悬停提示注册
-    context.subscriptions.push(vscode.languages.registerDefinitionProvider(['json', 'javascript'], {provideDefinition}));  //跳转功能注册
-	context.subscriptions.push(vscode.window.registerTreeDataProvider('omi-view-json', jsonOutlineProvider));  //注册json文件解析菜单视图
+    
+    
 	//context.subscriptions.push(vscode.languages.registerCompletionItemProvider(['json', 'javascript'], {provideCompletionItems, resolveCompletionItem}, '.'));  //代码提示功能注册(未出效果，待解决...)
 	
 
 
 }
 exports.activate = activate;
+exports.deactivate = deactivate;
 
 /**
  * 插件被释放时触发。
