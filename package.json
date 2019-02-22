@@ -120,7 +120,8 @@
 				},
 				{
 					"id": "omi-view-json",
-					"name": "json"
+					"name": "json",
+					"when": "viewJson"
 				},
 				{
 					"id": "omi-view-help",

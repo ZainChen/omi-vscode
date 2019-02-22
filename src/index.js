@@ -2,19 +2,13 @@ const vscode = require('vscode');  //导入模块并在下面的代码中使用�
 const path = require('path');
 const fs = require('fs');
 
-//zain自定义功能模块
+const eco = require("./ecosystem/index");  //omi生态更新、下载、项目创建(创建项目包含在线和离线两种方式)
 const hover = require("./hover/index");  //鼠标悬停提示功能模块
 const jump = require("./jump/index");  //跳转功能模块
-const ayjson = require("./ayjson/index");  //json文件解析功能模块
 
+const ayjson = require("./ayjson/index");  //json文件解析功能模块
 const wv = require('./webview/index');  //导入模块并在下面的代码中使用别名vscode引用它(模块“vscode”包含VS代码可扩展性API)
 const cmd = require("./command/index");  //命令模块
-
-
-module.exports = {
-	activate,
-	deactivate
-}
 
 
 /**
@@ -24,20 +18,27 @@ module.exports = {
  * @param {vscode.ExtensionContext} context 扩展内容
  */
 function activate(context) {
+	//omi生态更新、下载、项目创建(创建项目包含在线和离线两种方式)
+	const ecoProvider = new eco.ecoProvider(context);
+	context.subscriptions.push(vscode.window.registerTreeDataProvider('omi-view-ecosystem', ecoProvider));
+
+
+
+
 	//鼠标悬停提示功能注册
 	const provideHover = hover.provideHover;
-	context.subscriptions.push(vscode.languages.registerHoverProvider(['json', 'javascript'], {provideHover}));  
+	context.subscriptions.push(vscode.languages.registerHoverProvider(['json', 'javascript'], {provideHover}));
 
 	//跳转功能注册
 	const provideDefinition = jump.provideDefinition;
 	context.subscriptions.push(vscode.languages.registerDefinitionProvider(['json', 'javascript'], {provideDefinition}));
 
+
+
 	//json文件解析功能注册
 	const jsonOutlineProvider = new ayjson.JsonOutlineProvider(context);
 	context.subscriptions.push(vscode.window.registerTreeDataProvider('omi-view-json', jsonOutlineProvider));
 	vscode.commands.registerCommand('extension.openJsonSelection', range => jsonOutlineProvider.select(range));
-
-
 	//Webview功能注册(命令:"omi wv")(实验)
 	context.subscriptions.push(vscode.commands.registerCommand('omi.webview', wv.showWebviewIndex));
 	//其他命令，暂无特定功能
