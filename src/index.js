@@ -41,7 +41,8 @@ function activate(context) {
 	//Webview功能注册(命令:"omi wv")(实验)
 	context.subscriptions.push(vscode.commands.registerCommand('omi.webview', wv.showWebviewIndex));
 	//其他命令，暂无特定功能
-    context.subscriptions.push(vscode.commands.registerCommand('omi.help', cmd.commandOmiHelp));  //"omi"命令注册
+	context.subscriptions.push(vscode.commands.registerCommand('omi.help', cmd.commandOmiHelp));  //"omi"命令注册
+	
     
     
 	//context.subscriptions.push(vscode.languages.registerCompletionItemProvider(['json', 'javascript'], {provideCompletionItems, resolveCompletionItem}, '.'));  //代码提示功能注册(未出效果，待解决...)

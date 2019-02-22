@@ -35,6 +35,7 @@
 	"activationEvents": [
 		"onCommand:omi.help",
 		"onCommand:omi.webview",
+		"onCommand:omi.tstojs",
 		"onLanguage:json",
 		"onLanguage:javascript"
 	],
@@ -147,8 +148,8 @@
 					"group": "navigation"
 				},
 				{
-					"when": "resourceLangId == markdown",
 					"command": "markdown.showPreview",
+					"when": "resourceLangId == markdown",
 					"alt": "markdown.showPreviewToSide",
 					"group": "navigation"
 				}
