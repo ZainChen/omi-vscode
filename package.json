@@ -33,17 +33,34 @@
 		"vscode": "^1.31.0"
 	},
 	"activationEvents": [
-		"onCommand:omi.help",
-		"onCommand:omi.webview",
-		"onCommand:omi.tstojs",
+		"onView:omi.view.ecosystem",
+		"onCommand:omi.cmd.help",
+		"onCommand:omi.cmd.webview",
+		"onLanguage:c",
+		"onLanguage:cpp",
+		"onLanguage:css",
+		"onLanguage:html",
+		"onLanguage:javascript",
+		"onLanguage:javascriptreact",
+		"onLanguage:markdown",
+		"onLanguage:php",
+		"onLanguage:python",
 		"onLanguage:json",
-		"onLanguage:javascript"
+		"onLanguage:jsonc",
+		"onLanguage:objective-c",
+		"onLanguage:xml",
+		"onLanguage:sql",
+		"onLanguage:java",
+		"onLanguage:swift",
+		"onLanguage:tex",
+		"onLanguage:go",
+		"onLanguage:csharp"
 	],
 	"main": "./src/index.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "omi.help",
+				"command": "omi.cmd.help",
 				"title": "omi help",
 				"icon": {
 					"light": "./assets/omi-set.svg",
@@ -51,7 +68,7 @@
 				}
 			},
 			{
-				"command": "omi.webview",
+				"command": "omi.cmd.webview",
 				"title": "omi wv",
 				"icon": {
 					"light": "./assets/add1.svg",
@@ -79,6 +96,15 @@
 					"js",
 					"JS",
 					"Js"
+				]
+			},
+			{
+				"id": "tex",
+				"extensions": [
+					".txt"
+				],
+				"aliases": [
+					"text"
 				]
 			}
 		],
@@ -115,16 +141,16 @@
 		"views": {
 			"omi-views": [
 				{
-					"id": "omi-view-ecosystem",
+					"id": "omi.view.ecosystem",
 					"name": "ecosystem"
 				},
 				{
-					"id": "omi-view-json",
+					"id": "omi.ayjson",
 					"name": "json",
 					"when": "viewJson"
 				},
 				{
-					"id": "omi-view-help",
+					"id": "omi.view.help",
 					"name": "help"
 				}
 			]
@@ -132,8 +158,8 @@
 		"menus": {
 			"editor/context": [
 				{
+					"command": "omi.cmd.help",
 					"when": "editorFocus",
-					"command": "omi.help",
 					"group": "navigation"
 				},
 				{
@@ -145,7 +171,7 @@
 			],
 			"editor/title": [
 				{
-					"command": "omi.help",
+					"command": "omi.cmd.help",
 					"group": "navigation"
 				},
 				{
@@ -157,19 +183,19 @@
 			],
 			"view/title": [
 				{
-					"command": "omi.help",
-					"when": "view == omi-view-ecosystem",
+					"command": "omi.cmd.help",
+					"when": "view == omi.view.ecosystem",
 					"group": "navigation"
 				},
 				{
-					"command": "omi.webview",
-					"when": "view == omi-view-ecosystem"
+					"command": "omi.cmd.webview",
+					"when": "view == omi.view.ecosystem"
 				}
 			]
 		},
 		"keybindings": [
 			{
-				"command": "omi.help",
+				"command": "omi.cmd.help",
 				"key": "ctrl+f10",
 				"mac": "cmd+f10",
 				"when": "editorTextFocus"

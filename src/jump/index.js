@@ -28,7 +28,8 @@ function provideDefinition(document, position, token) {
         
         const json = document.getText();
         if (new RegExp(`"(dependencies|devDependencies)":\\s*?\\{[\\s\\S]*?${word.replace(/\//g, '\\/')}[\\s\\S]*?\\}`, 'gm').test(json)) {
-            let destPath = `${workDir}/node_modules/${word.replace(/"/g, '')}/package.json`;
+            //let destPath = `${workDir}/node_modules/${word.replace(/"/g, '')}/package.json`;
+            let destPath = `${workDir}/README.md`;
             if (fs.existsSync(destPath)) {
                 // new vscode.Position(0, 0) 表示跳转到某个文件的第一行第一列
                 return new vscode.Location(vscode.Uri.file(destPath), new vscode.Position(0, 0));

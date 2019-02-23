@@ -19,15 +19,12 @@ const cmd = require("./command/index");  //命令模块
  */
 function activate(context) {
 	//omi生态更新、下载、项目创建(创建项目包含在线和离线两种方式)
-	const ecoProvider = new eco.ecoProvider(context);
-	context.subscriptions.push(vscode.window.registerTreeDataProvider('omi-view-ecosystem', ecoProvider));
+	const ecoProvider = new eco.ecoProvider();
+	context.subscriptions.push(vscode.window.registerTreeDataProvider('omi.view.ecosystem', ecoProvider));  //omi生态内容注册
 
-
-
-
-	//鼠标悬停提示功能注册
+	//鼠标悬停提示功能
 	const provideHover = hover.provideHover;
-	context.subscriptions.push(vscode.languages.registerHoverProvider(['json', 'javascript'], {provideHover}));
+	context.subscriptions.push(vscode.languages.registerHoverProvider(['json', 'javascript', 'tex'], { provideHover }));  //鼠标悬停提示功能注册
 
 	//跳转功能注册
 	const provideDefinition = jump.provideDefinition;
@@ -37,12 +34,12 @@ function activate(context) {
 
 	//json文件解析功能注册
 	const jsonOutlineProvider = new ayjson.JsonOutlineProvider(context);
-	context.subscriptions.push(vscode.window.registerTreeDataProvider('omi-view-json', jsonOutlineProvider));
+	context.subscriptions.push(vscode.window.registerTreeDataProvider('omi.ayjson', jsonOutlineProvider));
 	vscode.commands.registerCommand('extension.openJsonSelection', range => jsonOutlineProvider.select(range));
 	//Webview功能注册(命令:"omi wv")(实验)
-	context.subscriptions.push(vscode.commands.registerCommand('omi.webview', wv.showWebviewIndex));
+	context.subscriptions.push(vscode.commands.registerCommand('omi.cmd.webview', wv.showWebviewIndex));
 	//其他命令，暂无特定功能
-	context.subscriptions.push(vscode.commands.registerCommand('omi.help', cmd.commandOmiHelp));  //"omi"命令注册
+	context.subscriptions.push(vscode.commands.registerCommand('omi.cmd.help', cmd.commandOmiHelp));  //"omi"命令注册
 	
     
     
