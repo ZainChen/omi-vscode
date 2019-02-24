@@ -6,7 +6,10 @@ const eco = require("./ecosystem/index");  //omi生态更新、下载、项目�
 const hover = require("./hover/index");  //鼠标悬停提示功能模块
 const jump = require("./jump/index");  //跳转功能模块
 
+
+const filex = require("./filex/index");  //文件管理功能模块
 const ayjson = require("./ayjson/index");  //json文件解析功能模块
+const dep = require("./dependencies/index");  //json文件解析功能模块
 const wv = require('./webview/index');  //导入模块并在下面的代码中使用别名vscode引用它(模块“vscode”包含VS代码可扩展性API)
 const cmd = require("./command/index");  //命令模块
 
@@ -19,27 +22,41 @@ const cmd = require("./command/index");  //命令模块
  */
 function activate(context) {
 	//omi生态更新、下载、项目创建(创建项目包含在线和离线两种方式)
-	const ecoProvider = new eco.ecoProvider();
+	const ecoProvider = new eco.EcoProvider();
 	context.subscriptions.push(vscode.window.registerTreeDataProvider('omi.view.ecosystem', ecoProvider));  //omi生态内容注册
-
+	
 	//鼠标悬停提示功能
 	const provideHover = hover.provideHover;
 	context.subscriptions.push(vscode.languages.registerHoverProvider(['json', 'javascript', 'tex'], { provideHover }));  //鼠标悬停提示功能注册
-
-	//跳转功能注册
+	
+	//跳转功能
 	const provideDefinition = jump.provideDefinition;
-	context.subscriptions.push(vscode.languages.registerDefinitionProvider(['json', 'javascript'], {provideDefinition}));
+	context.subscriptions.push(vscode.languages.registerDefinitionProvider(['json', 'javascript'], {provideDefinition}));  //跳转功能注册
 
 
 
-	//json文件解析功能注册
+	//文件管理功能
+	new filex.FileExplorer(context);
+	//json文件解析功能
 	const jsonOutlineProvider = new ayjson.JsonOutlineProvider(context);
-	context.subscriptions.push(vscode.window.registerTreeDataProvider('omi.ayjson', jsonOutlineProvider));
-	vscode.commands.registerCommand('extension.openJsonSelection', range => jsonOutlineProvider.select(range));
+    vscode.window.registerTreeDataProvider('jsonOutline', jsonOutlineProvider);
+    vscode.commands.registerCommand('jsonOutline.refresh', () => jsonOutlineProvider.refresh());
+    vscode.commands.registerCommand('jsonOutline.refreshNode', offset => jsonOutlineProvider.refresh(offset));
+    vscode.commands.registerCommand('jsonOutline.renameNode', offset => jsonOutlineProvider.rename(offset));
+    vscode.commands.registerCommand('extension.openJsonSelection', range => jsonOutlineProvider.select(range));
+    //工程依赖模块菜单功能
+	const nodeDependenciesProvider = new dep.DepNodeProvider(vscode.workspace.rootPath);
+    vscode.window.registerTreeDataProvider('nodeDependencies', nodeDependenciesProvider);
+    vscode.commands.registerCommand('nodeDependencies.refreshEntry', () => nodeDependenciesProvider.refresh());
+    vscode.commands.registerCommand('extension.openPackageOnNpm', moduleName => vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(`https://www.npmjs.com/package/${moduleName}`)));
+    vscode.commands.registerCommand('nodeDependencies.addEntry', () => vscode.window.showInformationMessage(`Successfully called add entry.`));
+    vscode.commands.registerCommand('nodeDependencies.editEntry', (node) => vscode.window.showInformationMessage(`Successfully called edit entry on ${node.label}.`));
+    vscode.commands.registerCommand('nodeDependencies.deleteEntry', (node) => vscode.window.showInformationMessage(`Successfully called delete entry on ${node.label}.`));
+    
 	//Webview功能注册(命令:"omi wv")(实验)
-	context.subscriptions.push(vscode.commands.registerCommand('omi.cmd.webview', wv.showWebviewIndex));
+	context.subscriptions.push(vscode.commands.registerCommand('omi.cmd.webview', wv.showWebviewIndex));  //Webview功能注册(命令:"omi wv")(实验)
 	//其他命令，暂无特定功能
-	context.subscriptions.push(vscode.commands.registerCommand('omi.cmd.help', cmd.commandOmiHelp));  //"omi"命令注册
+	context.subscriptions.push(vscode.commands.registerCommand('omi.cmd.help', cmd.commandOmiHelp));  //"omi.cmd.help"命令注册
 	
     
     
@@ -48,8 +65,8 @@ function activate(context) {
 
 
 }
-exports.activate = activate;
-exports.deactivate = deactivate;
+exports.activate = activate;  //插件被激活触发(函数接口)
+
 
 /**
  * 插件被释放时触发。
@@ -58,6 +75,7 @@ exports.deactivate = deactivate;
 function deactivate() {
 	console.log('Your extension "omi" has been released');
 }
+exports.deactivate = deactivate;  //插件被释放触发(函数接口)
 
 
 

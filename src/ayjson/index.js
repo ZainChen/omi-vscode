@@ -1,12 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const vscode = require('vscode');  //导入模块并在下面的代码中使用别名vscode引用它(模块“vscode”包含VS代码可扩展性API)
+const vscode = require("vscode");
 const json = require("jsonc-parser");
 const path = require("path");
-
-
-
-
 class JsonOutlineProvider {
     constructor(context) {
         this.context = context;
@@ -16,9 +12,9 @@ class JsonOutlineProvider {
         vscode.window.onDidChangeActiveTextEditor(() => this.onActiveEditorChanged());
         vscode.workspace.onDidChangeTextDocument(e => this.onDocumentChanged(e));
         this.parseTree();
-        this.autoRefresh = vscode.workspace.getConfiguration('omi.json').get('autorefresh');
+        this.autoRefresh = vscode.workspace.getConfiguration('jsonOutline').get('autorefresh');
         vscode.workspace.onDidChangeConfiguration(() => {
-            this.autoRefresh = vscode.workspace.getConfiguration('omi.json').get('autorefresh');
+            this.autoRefresh = vscode.workspace.getConfiguration('jsonOutline').get('autorefresh');
         });
         this.onActiveEditorChanged();
     }
@@ -55,14 +51,14 @@ class JsonOutlineProvider {
         if (vscode.window.activeTextEditor) {
             if (vscode.window.activeTextEditor.document.uri.scheme === 'file') {
                 const enabled = vscode.window.activeTextEditor.document.languageId === 'json' || vscode.window.activeTextEditor.document.languageId === 'jsonc';
-                vscode.commands.executeCommand('setContext', 'viewJson', enabled);
+                vscode.commands.executeCommand('setContext', 'jsonOutlineEnabled', enabled);
                 if (enabled) {
                     this.refresh();
                 }
             }
         }
         else {
-            vscode.commands.executeCommand('setContext', 'viewJson', false);
+            vscode.commands.executeCommand('setContext', 'jsonOutlineEnabled', false);
         }
     }
     onDocumentChanged(changeEvent) {
@@ -130,20 +126,20 @@ class JsonOutlineProvider {
         let nodeType = node.type;
         if (nodeType === 'boolean') {
             return {
-                light: this.context.asAbsolutePath(path.join('resources', 'light', 'boolean.svg')),
-                dark: this.context.asAbsolutePath(path.join('resources', 'dark', 'boolean.svg'))
+                light: this.context.asAbsolutePath(path.join('assets', 'light', 'boolean.svg')),
+                dark: this.context.asAbsolutePath(path.join('assets', 'dark', 'boolean.svg'))
             };
         }
         if (nodeType === 'string') {
             return {
-                light: this.context.asAbsolutePath(path.join('resources', 'light', 'string.svg')),
-                dark: this.context.asAbsolutePath(path.join('resources', 'dark', 'string.svg'))
+                light: this.context.asAbsolutePath(path.join('assets', 'light', 'string.svg')),
+                dark: this.context.asAbsolutePath(path.join('assets', 'dark', 'string.svg'))
             };
         }
         if (nodeType === 'number') {
             return {
-                light: this.context.asAbsolutePath(path.join('resources', 'light', 'number.svg')),
-                dark: this.context.asAbsolutePath(path.join('resources', 'dark', 'number.svg'))
+                light: this.context.asAbsolutePath(path.join('assets', 'light', 'number.svg')),
+                dark: this.context.asAbsolutePath(path.join('assets', 'dark', 'number.svg'))
             };
         }
         return null;
@@ -175,3 +171,4 @@ class JsonOutlineProvider {
     }
 }
 exports.JsonOutlineProvider = JsonOutlineProvider;
+//# sourceMappingURL=jsonOutline.js.map

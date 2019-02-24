@@ -34,6 +34,9 @@
 	},
 	"activationEvents": [
 		"onView:omi.view.ecosystem",
+		"onView:fileExplorer",
+		"onView:omi.nodeDependencies",
+		"onView:jsonOutline",
 		"onCommand:omi.cmd.help",
 		"onCommand:omi.cmd.webview",
 		"onLanguage:c",
@@ -59,6 +62,54 @@
 	"main": "./src/index.js",
 	"contributes": {
 		"commands": [
+			{
+				"command": "fileExplorer.openFile",
+				"title": "Open File"
+			},
+			{
+				"command": "nodeDependencies.refreshEntry",
+				"title": "Refresh",
+				"icon": {
+					"light": "./assets/light/refresh.svg",
+					"dark": "./assets/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "nodeDependencies.addEntry",
+				"title": "Add"
+			},
+			{
+				"command": "nodeDependencies.editEntry",
+				"title": "Edit",
+				"icon": {
+					"light": "./assets/light/edit.svg",
+					"dark": "./assets/dark/edit.svg"
+				}
+			},
+			{
+				"command": "nodeDependencies.deleteEntry",
+				"title": "Delete"
+			},
+			{
+				"command": "jsonOutline.refresh",
+				"title": "Refresh",
+				"icon": {
+					"light": "./assets/light/refresh.svg",
+					"dark": "./assets/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "jsonOutline.refreshNode",
+				"title": "Refresh",
+				"icon": {
+					"light": "./assets/light/refresh.svg",
+					"dark": "./assets/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "jsonOutline.renameNode",
+				"title": "Rename"
+			},
 			{
 				"command": "omi.cmd.help",
 				"title": "omi help",
@@ -145,13 +196,17 @@
 					"name": "ecosystem"
 				},
 				{
-					"id": "omi.ayjson",
-					"name": "json",
-					"when": "viewJson"
+					"id": "fileExplorer",
+					"name": "File Explorer"
 				},
 				{
-					"id": "omi.view.help",
-					"name": "help"
+					"id": "jsonOutline",
+					"name": "json",
+					"when": "jsonOutlineEnabled"
+				},
+				{
+					"id": "nodeDependencies",
+					"name": "Node Dependencies"
 				}
 			]
 		},
@@ -183,6 +238,20 @@
 			],
 			"view/title": [
 				{
+					"command": "nodeDependencies.refreshEntry",
+					"when": "view == nodeDependencies",
+					"group": "navigation"
+				},
+				{
+					"command": "nodeDependencies.addEntry",
+					"when": "view == nodeDependencies"
+				},
+				{
+					"command": "jsonOutline.refresh",
+					"when": "view == jsonOutline",
+					"group": "navigation"
+				},
+				{
 					"command": "omi.cmd.help",
 					"when": "view == omi.view.ecosystem",
 					"group": "navigation"
@@ -190,6 +259,26 @@
 				{
 					"command": "omi.cmd.webview",
 					"when": "view == omi.view.ecosystem"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "nodeDependencies.editEntry",
+					"when": "view == nodeDependencies && viewItem == dependency",
+					"group": "inline"
+				},
+				{
+					"command": "nodeDependencies.deleteEntry",
+					"when": "view == nodeDependencies && viewItem == dependency"
+				},
+				{
+					"command": "jsonOutline.renameNode",
+					"when": "view == jsonOutline"
+				},
+				{
+					"command": "jsonOutline.refreshNode",
+					"when": "view == jsonOutline",
+					"group": "inline"
 				}
 			]
 		},
@@ -205,14 +294,15 @@
 			"type": "object",
 			"title": "Omi",
 			"properties": {
-				"omi.Author.ZainChen": {
+				"omi.author.dntzhang": {
 					"type": "string",
 					"default": "Welcome to omi.",
 					"description": "Omi for Visual Studio Code"
 				},
-				"omi.json.autorefresh": {
+				"omi.jsonOutline.autorefresh": {
 					"type": "boolean",
-					"default": false
+					"default": false,
+					"description": "是否根据 json 文件内容，实时更新菜单！"
 				},
 				"omi.start.welcome": {
 					"type": "boolean",
