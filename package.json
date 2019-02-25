@@ -125,7 +125,11 @@
 					"light": "./assets/add1.svg",
 					"dark": "./assets/add1.svg"
 				}
-			}
+			},
+            {
+                "command": "extension.demo.showWelcome",
+                "title": "显示自定义欢迎页"
+            }
 		],
 		"languages": [
 			{
@@ -299,7 +303,7 @@
 					"default": "Welcome to omi.",
 					"description": "Omi for Visual Studio Code"
 				},
-				"omi.jsonOutline.autorefresh": {
+				"jsonOutline.autorefresh": {
 					"type": "boolean",
 					"default": false,
 					"description": "是否根据 json 文件内容，实时更新菜单！"
@@ -308,7 +312,12 @@
 					"type": "boolean",
 					"default": false,
 					"description": "是否在每次启动时显示欢迎提示！"
-				}
+				},
+                "vscodePluginDemo.showTip": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "启动时显示自定义欢迎页"
+                }
 			}
 		}
 	},
@@ -324,6 +333,8 @@
 		"@types/mocha": "^2.2.42"
 	},
 	"dependencies": {
-		"jsonc-parser": "^0.4.2"
+		"jsonc-parser": "^0.4.2",
+		"mkdirp": "^0.5.1",
+		"rimraf": "^2.6.2"
 	}
 }

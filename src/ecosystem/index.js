@@ -21,9 +21,8 @@ class EcoProvider {
      */
     getChildren() {
         //ecoZain();
+        
 
-        const filePath = path.join(vscode.workspace.rootPath, 'package.json');
-        const file = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
         const toDep = (moduleName, version) => {
             //if (this.pathExists(path.join(vscode.workspace.rootPath, 'node_modules', moduleName))) {
                 return new trioe.TreeItemOmiEco(moduleName, version, vscode.TreeItemCollapsibleState.Collapsed);
@@ -36,8 +35,17 @@ class EcoProvider {
             //     });
             // }
         };
+
+        if(typeof(vscode.workspace.rootPath) == "undefined") {
+            let zain1 = {omi: "ok", omio: "okokok"};
+            zain1 = Object.keys(zain1).map(dep => toDep(dep, zain1[dep]))
+            return Promise.resolve(zain1);
+        }
+        const filePath = path.join(vscode.workspace.rootPath, 'package.json');
+        const file = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+        
         const zain = Object.keys(file.devDependencies).map(dep => toDep(dep, file.devDependencies[dep]));
-        let zain1 = {jane: "love zain", zain: "okokok"};
+        let zain1 = {omi: "ok", omio: "okokok"};
         zain1 = Object.keys(zain1).map(dep => toDep(dep, zain1[dep]))
         return Promise.resolve(zain1);
     }

@@ -1,15 +1,18 @@
 # Omi for Visual Studio Code (Develop)
 [![Version](https://img.shields.io/badge/Visual%20Studio%20Marketplace-v1.0.4-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi-develop)
 [![Downloads](https://img.shields.io/badge/Downloads-999999-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi-develop)
-[![Update Time](https://img.shields.io/badge/Update%20Time-2019%2F02%2F20%2020%3A13%3A14-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi-develop)
+[![Update Time](https://img.shields.io/badge/Update%20Time-2019%2F02%2F25%2008%3A50%3A15-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi-develop)
 
 This preview release of the extension adds support for omi to Visual Studio Code including.
 
 
 # Function
+- Ecosystem
 - Snippet
 - Code hint
 - Definition
+- File Explorer
+- Node Dependencies
 - Webview
 - In development...
 

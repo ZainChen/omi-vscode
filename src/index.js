@@ -52,7 +52,8 @@ function activate(context) {
     vscode.commands.registerCommand('nodeDependencies.addEntry', () => vscode.window.showInformationMessage(`Successfully called add entry.`));
     vscode.commands.registerCommand('nodeDependencies.editEntry', (node) => vscode.window.showInformationMessage(`Successfully called edit entry on ${node.label}.`));
     vscode.commands.registerCommand('nodeDependencies.deleteEntry', (node) => vscode.window.showInformationMessage(`Successfully called delete entry on ${node.label}.`));
-    
+	
+	require('./welcome/index')(context); //迎提示(未详细整理)
 	//Webview功能注册(命令:"omi wv")(实验)
 	context.subscriptions.push(vscode.commands.registerCommand('omi.cmd.webview', wv.showWebviewIndex));  //Webview功能注册(命令:"omi wv")(实验)
 	//其他命令，暂无特定功能

@@ -239,6 +239,9 @@ class FileSystemProvider {
                 const children = yield this.readDirectory(element.uri);
                 return children.map(([name, type]) => ({ uri: vscode.Uri.file(path.join(element.uri.fsPath, name)), type }));
             }
+            if(typeof(vscode.workspace.workspaceFolders) == "undefined") {
+                return [];
+            }
             const workspaceFolder = vscode.workspace.workspaceFolders.filter(folder => folder.uri.scheme === 'file')[0];
             if (workspaceFolder) {
                 const children = yield this.readDirectory(workspaceFolder.uri);
