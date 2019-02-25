@@ -84,4 +84,3 @@ function getFileContent(strFileNamePath) {
 	// console.log(__dirname);  // 当前文件所在的绝对路径。
 	// console.log(__filename);  // 当前文件的文件名,包括全路径。  __dirname和__filename都是全局对象。
 }
-

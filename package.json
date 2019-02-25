@@ -126,10 +126,10 @@
 					"dark": "./assets/add1.svg"
 				}
 			},
-            {
-                "command": "extension.demo.showWelcome",
-                "title": "显示自定义欢迎页"
-            }
+			{
+				"command": "extension.demo.showWelcome",
+				"title": "显示自定义欢迎页"
+			}
 		],
 		"languages": [
 			{
@@ -313,11 +313,11 @@
 					"default": false,
 					"description": "是否在每次启动时显示欢迎提示！"
 				},
-                "vscodePluginDemo.showTip": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "启动时显示自定义欢迎页"
-                }
+				"vscodePluginDemo.showTip": {
+					"type": "boolean",
+					"default": true,
+					"description": "启动时显示自定义欢迎页"
+				}
 			}
 		}
 	},
@@ -335,6 +335,7 @@
 	"dependencies": {
 		"jsonc-parser": "^0.4.2",
 		"mkdirp": "^0.5.1",
-		"rimraf": "^2.6.2"
+		"rimraf": "^2.6.2",
+		"cheerio": "^1.0.0-rc.2"
 	}
 }
