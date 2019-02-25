@@ -13,7 +13,7 @@ class TreeItemOmiEco extends vscode.TreeItem {
     constructor(label, labelAdd, collapsibleState, command) {
         super(label, collapsibleState);  //添加菜单节点并设置菜单节点的折叠状态
         this.label = label;  //菜单节点主内容(突出显示)
-        //this.labelAdd = labelAdd;    //菜单附加内容(不突出显示)
+        this.labelAdd = labelAdd;    //菜单附加内容(不突出显示)
         this.collapsibleState = collapsibleState;  //菜单节点折叠状态(菜单节点是否可折叠)
         this.command = command;  //选择菜单树项时应该执行的命令
         //菜单树图标路径

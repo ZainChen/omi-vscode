@@ -26,7 +26,7 @@ function getWebViewContent() {
  * @param {*} resp 
  */
 function invokeCallback(panel, message, resp) {
-    console.log('回调消息：', resp);
+    console.log('callback message:', resp);
     // 错误码在400-600之间的，默认弹出错误提示
     if (typeof resp == 'object' && resp.code && resp.code >= 400 && resp.code < 600) {
         vscode.window.showInformationMessage('发生未知错误！');
@@ -45,7 +45,7 @@ const messageHandler = {
     setConfig(global, message) {
         // 写入配置文件，注意，默认写入工作区配置，而不是用户配置，最后一个true表示写入全局用户配置
         vscode.workspace.getConfiguration().update(message.key, message.value, true);
-        vscode.window.showInformationMessage('修改配置成功！');
+        vscode.window.showInformationMessage('Configuration modification successful!');
     }
 };
 

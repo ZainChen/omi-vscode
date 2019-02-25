@@ -3,8 +3,10 @@ const path = require('path');
 const fs = require('fs');
 const json = require("jsonc-parser");
 const { execFile } = require('child_process');
-var https = require('https');  // http模块
-var cheerio = require('cheerio');  // cheerio 是一个Node.js的库， 它可以从html的片断中构建DOM结构，然后提供像jquery一样的css选择器查询
+const request = require('request');
+const rp = require('request-promise');  //同步获取网页模块
+const https = require('https');  // http模块
+const cheerio = require('cheerio');  // cheerio 是一个Node.js的库， 它可以从html的片断中构建DOM结构，然后提供像jquery一样的css选择器查询
 
 const trioe = require("./treeItemOmiEco");  //omi生态专用菜单树模块
 
@@ -16,7 +18,7 @@ class EcoProvider {
      * EcoProvider 类的构造函数
      */
     constructor() {
-
+        
     }
     
     /**
@@ -31,22 +33,28 @@ class EcoProvider {
     /**
      * 菜单树数据写入入口
      */
-    getChildren(offset) {
+    getChildren(element) {
         //ecoZain();
 
-        //this.httpsGetHtml('https://github.com/Tencent/omi/tree/master');
-
-        
-
-        if(typeof(vscode.workspace.rootPath) == "undefined") {
+        if (element) {
+            let zain = {omi: "{dir}", omio: "[file]"};
+            return this.addMenuNodeAll(zain);
+            //return Promise.resolve([]);
+        } else {
+            this.httpsGetSyn('https://github.com/Tencent/omi');
             let zain1 = {omi: "{dir}", omio: "[file]"};
             return this.addMenuNodeAll(zain1);
-        } else {
-            let zain = {omi: "[file]", omio: "{dir}"};
-            return this.addMenuNodeAll(zain);
         }
+
         
-        
+
+        // if(typeof(vscode.workspace.rootPath) == "undefined") {
+        //     let zain1 = {omi: "{dir}", omio: "[file]"};
+        //     return this.addMenuNodeAll(zain1);
+        // } else {
+        //     let zain = {omi: "[file]", omio: "{dir}"};
+        //     return this.addMenuNodeAll(zain);
+        // }
 
     }
 
@@ -67,29 +75,50 @@ class EcoProvider {
     }
 
     /**
+     * 同步读取并解析网站内容(待实现)
+     * @param url 网址
+     */
+    httpsGetSyn(url) {
+        var options = {
+            uri: url,
+            transform: function (text) {
+                return cheerio.load(text);
+            }
+        };
+        rp(options).then(function ($) {
+            // Process html like you would with jQuery...
+            let html = $('a[class=js-navigation-open]').html()
+            console.log(html);
+        }).catch(function (err) {
+            // Crawling failed or Cheerio choked...
+            console.log(err);
+        });
+    }
+
+    /**
      * 异步读取并解析网站内容
      * @param url 网址
      */
-    httpsGetHtml(url) {
+    httpsGetAsy(url) {
         // 定义网络爬虫的目标地址：自如友家的主页
         //var url = 'https://github.com/Tencent/omi/tree/master';
         //let url = 'https://www.zainzy.com/';
         //var url = "https://www.lagou.com/";
         //process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';  //防止部分网站无法访问(有是后会获取不到数据，原因暂不明)
         const ht = https.get(url, function (res) {
-            let html = '';
-            // 每当我们从指定的url中得到数据的时候,就会触发res的data事件,事件中的chunk是每次得到的数据,data事件会触发多次,因为一个网页的源代码并不是一次性就可以下完的
-            res.on("data", function (chunk) {
-                html += chunk;
+            console.log('statusCode:', res.statusCode);
+            console.log('headers:', res.headers);
+            htmlText = '';
+            res.on("data", function(d) {  //每当我们从指定的url中得到数据的时候,就会触发res的data事件,事件中的chunk是每次得到的数据,data事件会触发多次,因为一个网页的源代码并不是一次性就可以下完的
+                htmlText += d;
             });
-            // 当网页的源代码下载完成后, 就会触发end事件
-            res.on("end", function () {
-                //这里我们对下载的源代码进行一些处理,
-                console.log("html complete");
-                //console.log(html);
-
+            res.on("end", function() {  //当网页的源代码下载完成后, 就会触发end事件
+                console.log("html complete.");
+                console.log(htmlText);  //对下载的源代码进行处理
+                return ht;
             });
-            //res.on("error", function() { console.log("error");});
+        }).on("error", function(e) {
+            console.error(e);
         });
     }
 
