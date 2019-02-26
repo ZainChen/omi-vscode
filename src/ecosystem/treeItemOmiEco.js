@@ -25,8 +25,8 @@ class TreeItemOmiEco extends vscode.TreeItem {
             };
         } else {
             this.iconPath = {
-                light: path.join(__filename, '..', '..', '..', 'assets', 'light', 'boolean.svg'),
-                dark: path.join(__filename, '..', '..', '..', 'assets', 'dark', 'boolean.svg')
+                light: path.join(__filename, '..', '..', '..', 'assets', 'light', 'folder.svg'),
+                dark: path.join(__filename, '..', '..', '..', 'assets', 'dark', 'folder.svg')
             };
         }
         this.contextValue = 'edit';  //树项的上下文值。这可以用于在树中贡献项目(contribute)特定的操作。

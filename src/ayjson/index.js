@@ -12,9 +12,9 @@ class JsonOutlineProvider {
         vscode.window.onDidChangeActiveTextEditor(() => this.onActiveEditorChanged());
         vscode.workspace.onDidChangeTextDocument(e => this.onDocumentChanged(e));
         this.parseTree();
-        this.autoRefresh = vscode.workspace.getConfiguration('jsonOutline').get('autorefresh');
+        this.autoRefresh = vscode.workspace.getConfiguration('omi.json').get('parsing');
         vscode.workspace.onDidChangeConfiguration(() => {
-            this.autoRefresh = vscode.workspace.getConfiguration('jsonOutline').get('autorefresh');
+            this.autoRefresh = vscode.workspace.getConfiguration('omi.json').get('parsing');
         });
         this.onActiveEditorChanged();
     }

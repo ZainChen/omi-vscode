@@ -71,7 +71,7 @@ module.exports = function(context) {
         }, undefined, context.subscriptions);
     }));
 
-    const key = 'vscodePluginDemo.showTip';
+    const key = 'omi.start.welcome';
     // 如果设置里面开启了欢迎页显示，启动欢迎页
     if (vscode.workspace.getConfiguration().get(key)) {
         vscode.commands.executeCommand('extension.demo.showWelcome');

@@ -3,7 +3,7 @@
 	"displayName": "omi-develop",
 	"description": "Omi for Visual Studio Code (develop)",
 	"license": "Omi",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"publisher": "ZainChen",
 	"author": {
 		"name": "ZainChen"
@@ -146,7 +146,7 @@
 			},
 			{
 				"command": "extension.demo.showWelcome",
-				"title": "显示自定义欢迎页"
+				"title": "Displays a custom welcome page"
 			}
 		],
 		"languages": [
@@ -331,20 +331,15 @@
 					"default": "Welcome to omi.",
 					"description": "Omi for Visual Studio Code"
 				},
-				"jsonOutline.autorefresh": {
+				"omi.json.parsing": {
 					"type": "boolean",
 					"default": false,
-					"description": "是否根据 json 文件内容，实时更新菜单！"
+					"description": "Whether to update the menu in real time based on the contents of the json file!"
 				},
 				"omi.start.welcome": {
 					"type": "boolean",
-					"default": false,
-					"description": "是否在每次启动时显示欢迎提示！"
-				},
-				"vscodePluginDemo.showTip": {
-					"type": "boolean",
 					"default": true,
-					"description": "启动时显示自定义欢迎页"
+					"description": "Whether to display a welcome prompt every time you start!"
 				}
 			}
 		}

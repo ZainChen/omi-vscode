@@ -26,10 +26,7 @@ function activate(context) {
 	context.subscriptions.push(vscode.window.registerTreeDataProvider('omi.view.ecosystem', ecoProvider));  //omi生态内容注册
 	vscode.commands.registerCommand('omi.cmd.ecoRefresh', () => ecoProvider.refresh());
 	vscode.commands.registerCommand('omi.cmd.ecoRefreshNode', offset => ecoProvider.refresh(offset));
-	vscode.commands.registerCommand(
-		'omi.cmd.openGithub',
-		nodeName => vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(`https://github.com/Tencent/omi/tree/master/${nodeName}`))
-	);
+	vscode.commands.registerCommand('omi.cmd.openGithub', nodeLink => vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(nodeLink)));
 
 	//鼠标悬停提示功能
 	const provideHover = hover.provideHover;
@@ -49,7 +46,10 @@ function activate(context) {
     vscode.commands.registerCommand('jsonOutline.refresh', () => jsonOutlineProvider.refresh());
     vscode.commands.registerCommand('jsonOutline.refreshNode', offset => jsonOutlineProvider.refresh(offset));
     vscode.commands.registerCommand('jsonOutline.renameNode', offset => jsonOutlineProvider.rename(offset));
-    vscode.commands.registerCommand('extension.openJsonSelection', range => jsonOutlineProvider.select(range));
+    vscode.commands.registerCommand(
+		'extension.openJsonSelection',
+		range => jsonOutlineProvider.select(range)
+	);
     //工程依赖模块菜单功能
 	const nodeDependenciesProvider = new dep.DepNodeProvider(vscode.workspace.rootPath);
     vscode.window.registerTreeDataProvider('nodeDependencies', nodeDependenciesProvider);

@@ -22,6 +22,7 @@ class EcoProvider {
         this.urlGitHub = 'https://github.com';  //要获取内容的初始网址
         this.urlGitHubUser = 'Tencent';
         this.urlGitHubRepositories = 'omi';
+        this.urlGitBranch = 'master';  //分支
         this._onDidChangeTreeData = new vscode.EventEmitter();
         this.onDidChangeTreeData = this._onDidChangeTreeData.event;
     }
@@ -36,6 +37,13 @@ class EcoProvider {
     }
 
     async refresh(offset) {
+        
+        //可根据不同项目链接刷新菜单
+        // this.urlGitHubUser = 'ZainChen';
+        // this.urlGitHubRepositories = 'vscode-omi';
+        // this.urlGitBranch = 'master';  //分支
+        this.getChildren();
+
         if (offset) {
             this._onDidChangeTreeData.fire(offset);
         } else {
@@ -52,30 +60,86 @@ class EcoProvider {
         let url = '';
         if(element) {
             url = element.filePathlink;
+            let dataGitHub = await this.httpsGetGithubDataSyn(url);  //获取当前节点和当前节点下所有内容
+            if(dataGitHub.branchVersionNow == '') {
+                vscode.window.showInformationMessage('Ecosystem no data!');
+                return Promise.resolve([]);
+            } else {
+                return this.addMenuNodeGitHubFile(dataGitHub);
+            }
         } else {
-            url = this.urlGitHub+"/"+this.urlGitHubUser+"/"+this.urlGitHubRepositories+"/tree/master";
+            url = this.urlGitHub+"/"+this.urlGitHubUser+"/"+this.urlGitHubRepositories+"/tree/"+this.urlGitBranch;
+            //await标识，等待一个异步函数执行完成后再执行下一步
+            let dataGitHub = await this.httpsGetGithubDataSyn(url);  //获取当前节点和当前节点下所有内容
+            if(dataGitHub.branchVersionNow == '') {
+                vscode.window.showInformationMessage('Ecosystem no data!');
+                return Promise.resolve([]);
+            } else {
+                return this.addMenuNodeGitHubBV(dataGitHub);
+            }
         }
-        //await标识，等待一个异步函数执行完成后再执行下一步
-        let dataGitHub = await this.httpsGetGithubDataSyn(url);  //获取当前节点和当前节点下所有内容
-        if(dataGitHub.branchVersionNow == '') {
-            vscode.window.showInformationMessage('Ecosystem no data!');
-            return Promise.resolve([]);
-        } else {
-            return this.addMenuNodeGitHub(dataGitHub);
-        }
-
-        // if (element) {
-        //     let zain = {omi: "{dir}", omio: "[file]"};
-        //     return this.addMenuNodeAll(zain);
-        //     //return Promise.resolve([]);
+        // //await标识，等待一个异步函数执行完成后再执行下一步
+        // let dataGitHub = await this.httpsGetGithubDataSyn(url);  //获取当前节点和当前节点下所有内容
+        // if(dataGitHub.branchVersionNow == '') {
+        //     vscode.window.showInformationMessage('Ecosystem no data!');
+        //     return Promise.resolve([]);
         // } else {
-        //     let zain1 = {omi: "{dir}", omio: "[file]"};
-        //     return this.addMenuNodeAll(zain1);
+        //     return this.addMenuNodeGitHubFile(dataGitHub);
         // }
 
     }
 
-    addMenuNodeGitHub(dataGitHub) {
+    /**
+     * 将GitHub获取到的分支和版本及链接添加到菜单中
+     * @param dataGitHub GitHub获取到的数据
+     */
+    addMenuNodeGitHubBV(dataGitHub) {
+        let bvnToLink = {};  //分支和版本名对应链接
+        let bvnToFOD = {};  //文件名对应"文件或文件夹"标记
+        let bnsLen = dataGitHub.branchNames.length;
+        let bnlsLen = dataGitHub.branchLinks.length;
+        let vnsLen = dataGitHub.versionNames.length
+        let vnlsLen = dataGitHub.versionLinks.length;
+        if(bnsLen != bnlsLen || vnsLen != vnlsLen) {
+            vscode.window.showInformationMessage(`Branch Or Version Error!!!`);
+            return Promise.resolve([]);
+        }
+        bvnToLink['[branch]'] = '';
+        bvnToFOD['[branch]'] = 'file';
+        for(let i = 0; i < bnsLen; i++) {
+            bvnToLink[dataGitHub.branchNames[i]] = dataGitHub.branchLinks[i];
+            bvnToFOD[dataGitHub.branchNames[i]] = 'directory';
+        }
+        bvnToLink['[version]'] = '';
+        bvnToFOD['[version]'] = 'file';
+        for(let i = 0; i < vnsLen; i++) {
+            bvnToLink[dataGitHub.versionNames[i]] = dataGitHub.versionLinks[i];
+            bvnToFOD[dataGitHub.versionNames[i]] = 'directory';
+        }
+        const toDep = (label, labelAdd, filePathlink, isDirectory) => {
+            if (isDirectory == "directory") {
+                return new trioe.TreeItemOmiEco(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.Collapsed, {
+                    command: 'omi.cmd.openGithub',
+                    title: '',
+                    arguments: [filePathlink]
+                });
+            } else {
+                return new trioe.TreeItemOmiEco(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.None, {
+                    command: 'omi.cmd.openGithub',
+                    title: '',
+                    arguments: [filePathlink]
+                });
+            }
+        };
+        let retObj = Object.keys(bvnToLink).map(dep => toDep(dep, '', bvnToLink[dep], bvnToFOD[dep]));
+        return Promise.resolve(retObj);
+    }
+
+    /**
+     * 将GitHub获取到的文件和文件名及链接添加到菜单中
+     * @param dataGitHub GitHub获取到的数据
+     */
+    addMenuNodeGitHubFile(dataGitHub) {
         let fileNameToStatus = {};  //文件名对应更新状态
         let fileNameToFOD = {};  //文件名对应"文件或文件夹"标记
         let fileNameToLink = {};  //文件名对应文件或文件夹内容所在网址
@@ -83,7 +147,7 @@ class EcoProvider {
         let fpnLen = dataGitHub.filePathsNames.length;
         let fpslen = dataGitHub.filePathStatus.length;
         let fnplkLen = dataGitHub.filePathlinks.length;
-        if(fodLen != fpnLen && fnplkLen != fpnLen) {
+        if(fodLen != fpnLen || fnplkLen != fpnLen) {
             vscode.window.showInformationMessage(`FileOrDir Or filePathlinks Error!!!`);
             return Promise.resolve([]);
         }
@@ -102,40 +166,22 @@ class EcoProvider {
         }
         const toDep = (label, labelAdd, filePathlink, isDirectory) => {
             if (isDirectory == "directory") {
-                return new trioe.TreeItemOmiEco(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.Collapsed);
+                return new trioe.TreeItemOmiEco(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.Collapsed, {
+                    command: 'omi.cmd.openGithub',
+                    title: '',
+                    arguments: [filePathlink]
+                });
             } else {
                 return new trioe.TreeItemOmiEco(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.None, {
                     command: 'omi.cmd.openGithub',
                     title: '',
-                    arguments: [label]
+                    arguments: [filePathlink]
                 });
             }
         };
         let retObj = Object.keys(fileNameToStatus).map(dep => toDep(dep, fileNameToStatus[dep], fileNameToLink[dep], fileNameToFOD[dep]));
         return Promise.resolve(retObj);
     }
-
-    /**
-     * 向菜单添加节点。
-     * 样例：let zain = {omi: "{dir}", omio: "[file]"}; return this.addMenuNodeAll(zain);
-     * @param obj obj的对象值不能为空
-     */
-    // addMenuNodeAll(obj) {
-    //     const toDep = (label, labelAdd, isDirectory) => {
-    //         if (isDirectory.length > 0 &&  isDirectory[0] == "{") {
-    //             return new trioe.TreeItemOmiEco(label, labelAdd, vscode.TreeItemCollapsibleState.Collapsed);
-    //         } else {
-    //             return new trioe.TreeItemOmiEco(label, labelAdd, vscode.TreeItemCollapsibleState.None, {
-    //                 command: 'omi.cmd.openGithub',
-    //                 title: '',
-    //                 arguments: [label]
-    //             });
-    //         }
-    //     };
-    //     obj = Object.keys(obj).map(dep => toDep(dep, obj[dep], obj[dep][0]));
-    //     return Promise.resolve(obj);
-    // }
-
 
     /**
      * 获取并解析Github所有分支和版本
