@@ -318,11 +318,6 @@
 					"default": "Welcome to omi.",
 					"description": "Omi for Visual Studio Code"
 				},
-				"omi.json.parsing": {
-					"type": "boolean",
-					"default": false,
-					"description": "Whether to update the menu in real time based on the contents of the json file!"
-				},
 				"omi.start.welcome": {
 					"type": "boolean",
 					"default": true,

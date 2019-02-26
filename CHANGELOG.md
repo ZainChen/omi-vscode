@@ -1,27 +1,11 @@
-# Omi for Visual Studio Code Change Log (Develop)
-## Version *
+# Omi for Visual Studio Code Change Log
 
-### New Features
-
-- null
-
-### Bug Fixes
-
-- null
----
-## Version 1.0.5 February 27, 2019
+## Version 1.0.1 February 27, 2019
 
 ### New Features
 
 - Omi ecosystem `[All branches and versions]`
 - Welcome omi `[Welcome Screen]`
-- Snippet `[Code completion]`
-- Code hint `[Code hover prompt]`
-- Jump `[Jump function]`
-- Dependencies menu
-- Json analysis menu
-- File explorer
-- Webview test 
 - In development...
 
 ### Bug Fixes

@@ -11,7 +11,7 @@ This extension adds omi support for Visual Studio Code.
 - Welcome omi `[Welcome Screen]`
 - In development...
 
-<p><img src="https://raw.githubusercontent.com/ZainChen/vscode-omi/dev/assets/function1.png" alt="omi"/></p>
+<p><img src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/assets/function2.png" alt="omi"/></p>
 
 # About
 
@@ -41,14 +41,7 @@ https://github.com/Tencent/omi
 
 
 
-<<<<<<< HEAD
-# Developer
-
-<p><a href="https://zainzy.com"><img src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/images/zain.png" height="100px" width="100px" /></a></p>
-<p><a href="https://zainzy.com">ZainChen(志银)</a></p>
-=======
 # Extension Developer
->>>>>>> dev
 
 <table>
     <tbody>
