@@ -38,8 +38,7 @@ class EcoProvider {
     async refresh(offset) {
         if (offset) {
             this._onDidChangeTreeData.fire(offset);
-        }
-        else {
+        } else {
             this._onDidChangeTreeData.fire();
         }
     }
