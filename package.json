@@ -37,6 +37,8 @@
 		"onView:fileExplorer",
 		"onView:omi.nodeDependencies",
 		"onView:jsonOutline",
+		"onCommand:omi.cmd.ecoRefresh",
+		"onCommand:omi.cmd.ecoRefreshNode",
 		"onCommand:omi.cmd.help",
 		"onCommand:omi.cmd.webview",
 		"onLanguage:c",
@@ -62,6 +64,38 @@
 	"main": "./src/index.js",
 	"contributes": {
 		"commands": [
+			{
+				"command": "omi.cmd.ecoRefresh",
+				"title": "omi refresh ecosystem",
+				"icon": {
+					"light": "./assets/light/refresh.svg",
+					"dark": "./assets/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "omi.cmd.ecoRefreshNode",
+				"title": "omi refresh node ecosystem",
+				"icon": {
+					"light": "./assets/light/refresh.svg",
+					"dark": "./assets/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "omi.cmd.help",
+				"title": "omi help",
+				"icon": {
+					"light": "./assets/omi-set.svg",
+					"dark": "./assets/omi-set.svg"
+				}
+			},
+			{
+				"command": "omi.cmd.webview",
+				"title": "omi wv",
+				"icon": {
+					"light": "./assets/add1.svg",
+					"dark": "./assets/add1.svg"
+				}
+			},
 			{
 				"command": "fileExplorer.openFile",
 				"title": "Open File"
@@ -109,22 +143,6 @@
 			{
 				"command": "jsonOutline.renameNode",
 				"title": "Rename"
-			},
-			{
-				"command": "omi.cmd.help",
-				"title": "omi help",
-				"icon": {
-					"light": "./assets/omi-set.svg",
-					"dark": "./assets/omi-set.svg"
-				}
-			},
-			{
-				"command": "omi.cmd.webview",
-				"title": "omi wv",
-				"icon": {
-					"light": "./assets/add1.svg",
-					"dark": "./assets/add1.svg"
-				}
 			},
 			{
 				"command": "extension.demo.showWelcome",
@@ -242,6 +260,11 @@
 			],
 			"view/title": [
 				{
+					"command": "omi.cmd.ecoRefresh",
+					"when": "view == omi.view.ecosystem",
+					"group": "navigation"
+				},
+				{
 					"command": "nodeDependencies.refreshEntry",
 					"when": "view == nodeDependencies",
 					"group": "navigation"
@@ -266,6 +289,11 @@
 				}
 			],
 			"view/item/context": [
+				{
+					"command": "omi.cmd.ecoRefreshNode",
+					"when": "view == omi.view.ecosystem",
+					"group": "inline"
+				},
 				{
 					"command": "nodeDependencies.editEntry",
 					"when": "view == nodeDependencies && viewItem == dependency",

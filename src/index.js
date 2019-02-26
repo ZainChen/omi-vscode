@@ -24,7 +24,12 @@ function activate(context) {
 	//omi生态更新、下载、项目创建(创建项目包含在线和离线两种方式)
 	const ecoProvider = new eco.EcoProvider();
 	context.subscriptions.push(vscode.window.registerTreeDataProvider('omi.view.ecosystem', ecoProvider));  //omi生态内容注册
-	vscode.commands.registerCommand('omi.cmd.openGithub', nodeName => vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(`https://github.com/Tencent/omi/tree/master/${nodeName}`)));
+	vscode.commands.registerCommand('omi.cmd.ecoRefresh', () => ecoProvider.refresh());
+	vscode.commands.registerCommand('omi.cmd.ecoRefreshNode', offset => ecoProvider.refresh(offset));
+	vscode.commands.registerCommand(
+		'omi.cmd.openGithub',
+		nodeName => vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(`https://github.com/Tencent/omi/tree/master/${nodeName}`))
+	);
 
 	//鼠标悬停提示功能
 	const provideHover = hover.provideHover;

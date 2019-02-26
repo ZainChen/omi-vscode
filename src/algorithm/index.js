@@ -9,7 +9,8 @@ module.exports = {
 	strTailMatch,
 	strInFindLP,
 	getfilePathName,
-	getFileContent
+	getFileContent,
+	strDelHtLineSpace
 }
 
 
@@ -83,4 +84,29 @@ function getFileContent(strFileNamePath) {
 	// });
 	// console.log(__dirname);  // 当前文件所在的绝对路径。
 	// console.log(__filename);  // 当前文件的文件名,包括全路径。  __dirname和__filename都是全局对象。
+}
+
+/**
+ * 去除字符串中首部和尾部的空格和换行符
+ * @param str 待处理字符串
+ */
+function strDelHtLineSpace(str) {
+	let reStr = '';
+	let l = 0, r = str.length-1;
+	while(l <= r) {
+		if(str[l] != ' ' && str[l] != '\n') {
+			break;
+		}
+		l++;
+	}
+	while(r > 0 && r >= l) {
+		if(str[r] != ' ' && str[r] != '\n') {
+			break;
+		}
+		r--;
+	}
+	for(let i = l; i <= r; i++) {
+		reStr += str[i];
+	}
+	return reStr;
 }

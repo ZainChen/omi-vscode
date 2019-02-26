@@ -12,7 +12,7 @@ module.exports = {
  * 查看omi帮助命令
 */
 function commandOmiHelp() {
-	vscode.window.showInformationMessage('omi help');
+	vscode.window.showInformationMessage('Hi Omi.');
 }
 
 
