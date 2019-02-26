@@ -1,15 +1,15 @@
 {
-	"name": "omi-develop",
-	"displayName": "omi-develop",
-	"description": "Omi for Visual Studio Code (develop)",
+	"name": "omi",
+	"displayName": "omi",
+	"description": "Omi for Visual Studio Code",
 	"license": "Omi",
-	"version": "1.0.5",
+	"version": "1.0.1",
 	"publisher": "ZainChen",
 	"author": {
 		"name": "ZainChen"
 	},
 	"icon": "assets/omi-logo2019-128.png",
-	"homepage": "https://github.com/ZainChen/vscode-omi/blob/dev/README.md",
+	"homepage": "https://github.com/ZainChen/vscode-omi/blob/master/README.md",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/ZainChen/vscode-omi"
@@ -216,19 +216,6 @@
 				{
 					"id": "omi.view.ecosystem",
 					"name": "ecosystem"
-				},
-				{
-					"id": "fileExplorer",
-					"name": "File Explorer"
-				},
-				{
-					"id": "jsonOutline",
-					"name": "json",
-					"when": "jsonOutlineEnabled"
-				},
-				{
-					"id": "nodeDependencies",
-					"name": "Node Dependencies"
 				}
 			]
 		},
@@ -355,13 +342,6 @@
 		"@types/node": "^10.12.21",
 		"@types/mocha": "^2.2.42"
 	},
-<<<<<<< HEAD
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/ZainChen/vscode-omi"
-	},
-	"homepage": "https://github.com/ZainChen/vscode-omi/blob/master/README.md"
-=======
 	"dependencies": {
 		"jsonc-parser": "^0.4.2",
 		"mkdirp": "^0.5.1",
@@ -370,5 +350,4 @@
 		"request": "^2.88.0",
 		"request-promise": "^4.2.4"
 	}
->>>>>>> dev
 }
