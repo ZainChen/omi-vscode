@@ -90,7 +90,7 @@ class EcoProvider {
         }
         for(let i = 0; i < fpnLen; i++) {
             if(i < fpslen) {
-                fileNameToStatus[dataGitHub.filePathsNames[i]] = dataGitHub.filePathStatus[i]; // 新增文件名对应更新状态键值对
+                fileNameToStatus[dataGitHub.filePathsNames[i]] = dataGitHub.filePathStatus[i]+"  【"+dataGitHub.timesMode1[i]+"】"; // 新增文件名对应更新状态键值对
             } else {
                 fileNameToStatus[dataGitHub.filePathsNames[i]] = '';
             }
