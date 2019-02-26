@@ -19,10 +19,11 @@ class EcoProvider {
      * EcoProvider 类的构造函数
      */
     constructor() {
-        this._onDidChangeTreeData = new vscode.EventEmitter();
         this.urlGitHub = 'https://github.com';  //要获取内容的初始网址
         this.urlGitHubUser = 'ZainChen';
         this.urlGitHubRepositories = 'vscode-omi';
+        this._onDidChangeTreeData = new vscode.EventEmitter();
+        this.onDidChangeTreeData = this._onDidChangeTreeData.event;
     }
     
     /**
@@ -35,11 +36,11 @@ class EcoProvider {
     }
 
     async refresh(offset) {
+        this.getChildren();
         if (offset) {
             this._onDidChangeTreeData.fire(offset);
         }
         else {
-            await this.getChildren();
             this._onDidChangeTreeData.fire();
         }
     }
