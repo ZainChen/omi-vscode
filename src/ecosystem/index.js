@@ -20,8 +20,8 @@ class EcoProvider {
      */
     constructor() {
         this.urlGitHub = 'https://github.com';  //要获取内容的初始网址
-        this.urlGitHubUser = 'ZainChen';
-        this.urlGitHubRepositories = 'vscode-omi';
+        this.urlGitHubUser = 'Tencent';
+        this.urlGitHubRepositories = 'omi';
         this._onDidChangeTreeData = new vscode.EventEmitter();
         this.onDidChangeTreeData = this._onDidChangeTreeData.event;
     }
@@ -53,7 +53,7 @@ class EcoProvider {
         if(element) {
             url = element.filePathlink;
         } else {
-            url = this.urlGitHub+"/"+this.urlGitHubUser+"/"+this.urlGitHubRepositories+"/tree/dev";
+            url = this.urlGitHub+"/"+this.urlGitHubUser+"/"+this.urlGitHubRepositories+"/tree/master";
         }
         //await标识，等待一个异步函数执行完成后再执行下一步
         let dataGitHub = await this.httpsGetGithubDataSyn(url);  //获取当前节点和当前节点下所有内容
@@ -183,6 +183,7 @@ class EcoProvider {
             // Crawling failed or Cheerio choked...
             vscode.window.showInformationMessage(`Network Error!!!`);
             console.log(err);
+            return new _structGithubDataOne();
         });
         return bvfContent;
     }
@@ -237,6 +238,7 @@ class EcoProvider {
             // Crawling failed or Cheerio choked...
             vscode.window.showInformationMessage(`Network Error!!!`);
             console.log(err);
+            return new _structGithubDataOne();
         });
         let bvfc = await this.httpsGetGithubBvAllSyn(bvfContent.getBvLink);
         bvfContent.branchNames = bvfc.branchNames;
