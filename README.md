@@ -18,7 +18,7 @@ This extension adds omi support for Visual Studio Code.
 - Webview test 
 - In development...
 
-<p align="center"><img src="https://raw.githubusercontent.com/ZainChen/vscode-omi/dev/assets/function1.png" alt="omi" width="300"/></p>
+<p><img src="https://raw.githubusercontent.com/ZainChen/vscode-omi/dev/assets/function1.png" alt="omi"/></p>
 
 # About
 
