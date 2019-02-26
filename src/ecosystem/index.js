@@ -104,14 +104,14 @@ class EcoProvider {
             vscode.window.showInformationMessage(`Branch Or Version Error!!!`);
             return Promise.resolve([]);
         }
-        bvnToLink['[branch]'] = '';
-        bvnToFOD['[branch]'] = 'file';
+        bvnToLink['[Branches]'] = '';
+        bvnToFOD['[Branches]'] = 'file';
         for(let i = 0; i < bnsLen; i++) {
             bvnToLink[dataGitHub.branchNames[i]] = dataGitHub.branchLinks[i];
             bvnToFOD[dataGitHub.branchNames[i]] = 'directory';
         }
-        bvnToLink['[version]'] = '';
-        bvnToFOD['[version]'] = 'file';
+        bvnToLink['[Tags]'] = '';
+        bvnToFOD['[Tags]'] = 'file';
         for(let i = 0; i < vnsLen; i++) {
             bvnToLink[dataGitHub.versionNames[i]] = dataGitHub.versionLinks[i];
             bvnToFOD[dataGitHub.versionNames[i]] = 'directory';

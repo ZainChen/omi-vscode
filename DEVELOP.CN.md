@@ -49,5 +49,5 @@ npm install
 >
 >[tsconfig.json](./tsconfig.json "tsconfig.json") `TypeScript编译文件(可用于TypeScript转JavaScript)`
 
-# 3.
+# 3.Pending upgrade...
 
