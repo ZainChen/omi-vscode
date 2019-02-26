@@ -1,7 +1,22 @@
 {
-	"name": "omi",
-	"displayName": "omi",
-	"description": "Omi for Visual Studio Code",
+	"name": "omi-develop",
+	"displayName": "omi-develop",
+	"description": "Omi for Visual Studio Code (develop)",
+	"license": "Omi",
+	"version": "1.0.5",
+	"publisher": "ZainChen",
+	"author": {
+		"name": "ZainChen"
+	},
+	"icon": "assets/omi-logo2019-128.png",
+	"homepage": "https://github.com/ZainChen/vscode-omi/blob/dev/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ZainChen/vscode-omi"
+	},
+	"bugs": {
+		"url": "https://github.com/ZainChen/vscode-omi/issues"
+	},
 	"keywords": [
 		"zain",
 		"ZainChen",
@@ -10,89 +25,324 @@
 		"tencent",
 		"nodejs"
 	],
-	"version": "1.0.0",
-	"publisher": "ZainChen",
+	"categories": [
+		"Snippets",
+		"Other"
+	],
 	"engines": {
 		"vscode": "^1.31.0"
 	},
-	"categories": [
-		"Other"
-	],
-	"icon": "images/omi-logo2019-128.png",
 	"activationEvents": [
-		"onCommand:extension.zain-omi"
+		"onView:omi.view.ecosystem",
+		"onView:fileExplorer",
+		"onView:omi.nodeDependencies",
+		"onView:jsonOutline",
+		"onCommand:omi.cmd.ecoRefresh",
+		"onCommand:omi.cmd.ecoRefreshNode",
+		"onCommand:omi.cmd.help",
+		"onCommand:omi.cmd.webview",
+		"onLanguage:c",
+		"onLanguage:cpp",
+		"onLanguage:css",
+		"onLanguage:html",
+		"onLanguage:javascript",
+		"onLanguage:javascriptreact",
+		"onLanguage:markdown",
+		"onLanguage:php",
+		"onLanguage:python",
+		"onLanguage:json",
+		"onLanguage:jsonc",
+		"onLanguage:objective-c",
+		"onLanguage:xml",
+		"onLanguage:sql",
+		"onLanguage:java",
+		"onLanguage:swift",
+		"onLanguage:tex",
+		"onLanguage:go",
+		"onLanguage:csharp"
 	],
-	"main": "./src/extension.js",
+	"main": "./src/index.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.zain-omi",
-				"title": "omi"
+				"command": "omi.cmd.ecoRefresh",
+				"title": "omi refresh ecosystem",
+				"icon": {
+					"light": "./assets/light/refresh.svg",
+					"dark": "./assets/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "omi.cmd.ecoRefreshNode",
+				"title": "omi refresh node ecosystem",
+				"icon": {
+					"light": "./assets/light/refresh.svg",
+					"dark": "./assets/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "omi.cmd.help",
+				"title": "omi help",
+				"icon": {
+					"light": "./assets/omi-set.svg",
+					"dark": "./assets/omi-set.svg"
+				}
+			},
+			{
+				"command": "omi.cmd.webview",
+				"title": "omi wv",
+				"icon": {
+					"light": "./assets/add1.svg",
+					"dark": "./assets/add1.svg"
+				}
+			},
+			{
+				"command": "fileExplorer.openFile",
+				"title": "Open File"
+			},
+			{
+				"command": "nodeDependencies.refreshEntry",
+				"title": "Refresh",
+				"icon": {
+					"light": "./assets/light/refresh.svg",
+					"dark": "./assets/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "nodeDependencies.addEntry",
+				"title": "Add"
+			},
+			{
+				"command": "nodeDependencies.editEntry",
+				"title": "Edit",
+				"icon": {
+					"light": "./assets/light/edit.svg",
+					"dark": "./assets/dark/edit.svg"
+				}
+			},
+			{
+				"command": "nodeDependencies.deleteEntry",
+				"title": "Delete"
+			},
+			{
+				"command": "jsonOutline.refresh",
+				"title": "Refresh",
+				"icon": {
+					"light": "./assets/light/refresh.svg",
+					"dark": "./assets/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "jsonOutline.refreshNode",
+				"title": "Refresh",
+				"icon": {
+					"light": "./assets/light/refresh.svg",
+					"dark": "./assets/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "jsonOutline.renameNode",
+				"title": "Rename"
+			},
+			{
+				"command": "extension.demo.showWelcome",
+				"title": "Displays a custom welcome page"
 			}
 		],
-		"configuration": {
-			"type": "object",
-			"title": "zain-omi",
-			"properties": {
-				"vscodePluginDemo.yourName": {
-					"type": "string",
-					"default": "guest",
-					"description": "ZainChen"
-				},
-				"vscodePluginDemo.showTip": {
-					"type": "boolean",
-					"default": true,
-					"description": "是否在每次启动时显示欢迎提示！"
-				}
+		"languages": [
+			{
+				"id": "json",
+				"extensions": [
+					".json"
+				],
+				"aliases": [
+					"Json"
+				]
+			},
+			{
+				"id": "javascript",
+				"extensions": [
+					".js"
+				],
+				"aliases": [
+					"JavaScript",
+					"js",
+					"JS",
+					"Js"
+				]
+			},
+			{
+				"id": "tex",
+				"extensions": [
+					".txt"
+				],
+				"aliases": [
+					"text"
+				]
 			}
+		],
+		"snippets": [
+			{
+				"path": "./src/snippets/omi.code-snippets"
+			},
+			{
+				"language": "javascript",
+				"path": "./src/snippets/omi.json"
+			},
+			{
+				"language": "typescript",
+				"path": "./src/snippets/omi.json"
+			},
+			{
+				"language": "json",
+				"path": "./src/snippets/omi.json"
+			},
+			{
+				"language": "html",
+				"path": "./src/snippets/omi.json"
+			}
+		],
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "omi-views",
+					"title": "omi",
+					"icon": "./assets/omi-logo2019-30-30.svg"
+				}
+			]
+		},
+		"views": {
+			"omi-views": [
+				{
+					"id": "omi.view.ecosystem",
+					"name": "ecosystem"
+				},
+				{
+					"id": "fileExplorer",
+					"name": "File Explorer"
+				},
+				{
+					"id": "jsonOutline",
+					"name": "json",
+					"when": "jsonOutlineEnabled"
+				},
+				{
+					"id": "nodeDependencies",
+					"name": "Node Dependencies"
+				}
+			]
+		},
+		"menus": {
+			"editor/context": [
+				{
+					"command": "omi.cmd.help",
+					"when": "editorFocus",
+					"group": "navigation"
+				},
+				{
+					"when": "resourceLangId == markdown",
+					"command": "markdown.showPreview",
+					"alt": "markdown.showPreviewToSide",
+					"group": "navigation"
+				}
+			],
+			"editor/title": [
+				{
+					"command": "omi.cmd.help",
+					"group": "navigation"
+				},
+				{
+					"command": "markdown.showPreview",
+					"when": "resourceLangId == markdown",
+					"alt": "markdown.showPreviewToSide",
+					"group": "navigation"
+				}
+			],
+			"view/title": [
+				{
+					"command": "omi.cmd.ecoRefresh",
+					"when": "view == omi.view.ecosystem",
+					"group": "navigation"
+				},
+				{
+					"command": "nodeDependencies.refreshEntry",
+					"when": "view == nodeDependencies",
+					"group": "navigation"
+				},
+				{
+					"command": "nodeDependencies.addEntry",
+					"when": "view == nodeDependencies"
+				},
+				{
+					"command": "jsonOutline.refresh",
+					"when": "view == jsonOutline",
+					"group": "navigation"
+				},
+				{
+					"command": "omi.cmd.help",
+					"when": "view == omi.view.ecosystem",
+					"group": "navigation"
+				},
+				{
+					"command": "omi.cmd.webview",
+					"when": "view == omi.view.ecosystem"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "omi.cmd.ecoRefreshNode",
+					"when": "view == omi.view.ecosystem",
+					"group": "inline"
+				},
+				{
+					"command": "nodeDependencies.editEntry",
+					"when": "view == nodeDependencies && viewItem == dependency",
+					"group": "inline"
+				},
+				{
+					"command": "nodeDependencies.deleteEntry",
+					"when": "view == nodeDependencies && viewItem == dependency"
+				},
+				{
+					"command": "jsonOutline.renameNode",
+					"when": "view == jsonOutline"
+				},
+				{
+					"command": "jsonOutline.refreshNode",
+					"when": "view == jsonOutline",
+					"group": "inline"
+				}
+			]
 		},
 		"keybindings": [
 			{
-				"command": "extension.zain-omi",
+				"command": "omi.cmd.help",
 				"key": "ctrl+f10",
 				"mac": "cmd+f10",
 				"when": "editorTextFocus"
 			}
 		],
-		"menus": {
-			"editor/context": [
-				{
-					"when": "editorFocus",
-					"command": "extension.zain-omi",
-					"group": "navigation"
-				}
-			]
-		},
-		"viewsContainers": {
-			"activitybar": [
-				{
-					"id": "zain-views",
-					"title": "omi",
-					"icon": "./images/omi-logo2019-30-30.svg"
-				}
-			]
-		},
-		"views": {
-			"zain-views": [
-				{
-					"id": "zain-views1",
-					"name": "zain"
+		"configuration": {
+			"type": "object",
+			"title": "Omi",
+			"properties": {
+				"omi.author.dntzhang": {
+					"type": "string",
+					"default": "Welcome to omi.",
+					"description": "Omi for Visual Studio Code"
 				},
-				{
-					"id": "zain-views2",
-					"name": "jane"
+				"omi.json.parsing": {
+					"type": "boolean",
+					"default": false,
+					"description": "Whether to update the menu in real time based on the contents of the json file!"
 				},
-				{
-					"id": "zain-views3",
-					"name": "ZainChen"
+				"omi.start.welcome": {
+					"type": "boolean",
+					"default": true,
+					"description": "Whether to display a welcome prompt every time you start!"
 				}
-			]
-		},
-		"snippets": [
-			{
-				"path": "./snippets/omi.code-snippets"
 			}
-		]
+		}
 	},
 	"scripts": {
 		"postinstall": "node ./node_modules/vscode/bin/install",
@@ -105,9 +355,20 @@
 		"@types/node": "^10.12.21",
 		"@types/mocha": "^2.2.42"
 	},
+<<<<<<< HEAD
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/ZainChen/vscode-omi"
 	},
 	"homepage": "https://github.com/ZainChen/vscode-omi/blob/master/README.md"
+=======
+	"dependencies": {
+		"jsonc-parser": "^0.4.2",
+		"mkdirp": "^0.5.1",
+		"rimraf": "^2.6.2",
+		"cheerio": "^1.0.0-rc.2",
+		"request": "^2.88.0",
+		"request-promise": "^4.2.4"
+	}
+>>>>>>> dev
 }

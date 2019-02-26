@@ -1,0 +1,14 @@
+{
+    "zain": {
+        "prefix": "zain",
+        "body": [
+            "zain love jane"
+        ],
+        "description": "zain"
+    },
+    "import": {
+        "prefix": "imp",
+        "body": "import ${2:moduleName} from '${1:module}';$0",
+        "description": "Imports entire module statement in ES6 syntax"
+      }
+}

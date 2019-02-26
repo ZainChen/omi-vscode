@@ -1,18 +1,40 @@
-# Omi for Visual Studio Code
+# Omi for Visual Studio Code (Develop)
+[![Version](https://img.shields.io/badge/Visual%20Studio%20Marketplace-v1.0.5-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi-develop)
+[![Downloads](https://img.shields.io/badge/Downloads-50%2B-green.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi-develop)
+[![Update Time](https://img.shields.io/badge/Update%20Time-2019%2F02%2F27%2003%3A27%3A50-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi-develop)
 
-- This preview release of the extension adds support for omi to Visual Studio Code including.
-- In development
+This extension adds omi support for Visual Studio Code.
 
 
+# Function
+- Omi ecosystem `[All branches and versions]`
+- Welcome omi `[Welcome Screen]`
+- Snippet `[Code completion]`
+- Code hint `[Code hover prompt]`
+- Jump `[Jump function]`
+- Dependencies menu
+- Json analysis menu
+- File explorer
+- Webview test 
+- In development...
 
-# About Omi
+<p><img src="https://raw.githubusercontent.com/ZainChen/vscode-omi/dev/assets/function1.png" alt="omi"/></p>
+
+# About
 
 https://github.com/Tencent/omi
 
+<<<<<<< HEAD
 <p align="right">Omi <strong>v5.0.22</strong></p>
 <p align="right">Omio <strong>v1.3.5</strong></p>
 <p align="center"><img src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/images/omi-logo2019.png" alt="omi" width="300"/></p>
 <h2 align="center">Omi - Next generation web framework using web components with omio fallback(IE8+) in tiny js.</h2>
+=======
+<p align="right">Omi <strong>v5.0.23</strong></p>
+<p align="right">Omio <strong>v1.3.7</strong></p>
+<p align="center"><img src="https://raw.githubusercontent.com/ZainChen/vscode-omi/dev/assets/omi-logo2019.png" alt="omi" width="300"/></p>
+<h2 align="center">Omi - Next generation front end framework using web components with omio(IE8+) and omip(小程序) fallback in tiny js.</h2>
+>>>>>>> dev
 
 ## Why Omi?
 
@@ -33,8 +55,57 @@ https://github.com/Tencent/omi
 
 
 
+<<<<<<< HEAD
 # Developer
 
 <p><a href="https://zainzy.com"><img src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/images/zain.png" height="100px" width="100px" /></a></p>
 <p><a href="https://zainzy.com">ZainChen(志银)</a></p>
+=======
+# Extension Developer
+>>>>>>> dev
 
+<table>
+    <tbody>
+        <tr>
+            <td>
+                <a target="_blank" href="https://zainzy.com">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/dev/assets/zain.png">
+                </a>
+            </td>
+            <td>
+                <a target="_blank" href="https://zainzy.com">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/dev/assets/zain.png">
+                </a>
+            </td>
+            <td>
+                <a target="_blank" href="https://zainzy.com">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/dev/assets/zain.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a target="_blank" href="https://zainzy.com">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/dev/assets/zain.png">
+                </a>
+            </td>
+            <td>
+                <a target="_blank" href="https://zainzy.com">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/dev/assets/zain.png">
+                </a>
+            </td>
+            <td>
+                <a target="_blank" href="https://zainzy.com">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/dev/assets/zain.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a target="_blank" href="https://zainzy.com">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/dev/assets/zain.png">
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
