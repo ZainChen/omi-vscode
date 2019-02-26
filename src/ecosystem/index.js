@@ -54,7 +54,7 @@ class EcoProvider {
         if(element) {
             url = element.filePathlink;
         } else {
-            url = this.urlGitHub+"/"+this.urlGitHubUser+"/"+this.urlGitHubRepositories+"/tree/master";
+            url = this.urlGitHub+"/"+this.urlGitHubUser+"/"+this.urlGitHubRepositories+"/tree/dev";
         }
         //await标识，等待一个异步函数执行完成后再执行下一步
         let dataGitHub = await this.httpsGetGithubDataSyn(url);  //获取当前节点和当前节点下所有内容
