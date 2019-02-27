@@ -1,5 +1,16 @@
 # Omi for Visual Studio Code Change Log
 
+## Version *
+
+### New Features
+
+- null
+
+### Bug Fixes
+
+- Solve the file name special case "examples/simple" identification problem.
+---
+
 ## Version 1.0.1 February 27, 2019
 
 ### New Features

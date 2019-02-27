@@ -252,7 +252,7 @@ class EcoProvider {
         let bvfContent = await rp(options).then(function ($) {
             //Process html like you would with jQuery...
             let data = new _structGithubDataOne();
-            data.getBvLink = 'https://github.com'+$('.select-menu-modal.position-absolute').attr('src');
+            data.getBvLink = 'https://github.com'+$('.select-menu-modal.position-absolute').attr('src');  //此处必须用'https://github.com'，调用不到外部类的成员变量
             data.branchVersionNow = $('span[class=css-truncate-target]').html();
             data.dirFileName = $('strong[class=final-path]').html();  //当前所在目录名(值为空说明在根目录)
             let fodir = $('td[class=icon]').find('svg');  //获取标记文件或文件夹节点
@@ -265,12 +265,19 @@ class EcoProvider {
             //let fpnls = $('a[class=js-navigation-open]');
             let fpnls = $('td[class=content]').find('a');  //获取文件名和文件链接节点
             for(let i = 0; i < fpnls.length; i++) {
-                data.filePathsNames.push(fpnls.eq(i).html());
+                //文件名特殊情况"examples/simple"
+                let strPath = fpnls.eq(i).find('span').html();
+                if(strPath) {
+                    data.filePathsNames.push(fpnls.eq(i).text());
+                } else {
+                    data.filePathsNames.push(fpnls.eq(i).html());
+                }
                 data.filePathlinks.push('https://github.com'+fpnls.eq(i).attr('href'));
             }
+
             let fpsl = $('td[class=message]').find('a');  //获取状态和状态链接节点
             for(let i = 0; i < fpsl.length; i++) {
-                data.filePathStatus.push(fpsl.eq(i).html());
+                data.filePathStatus.push(fpsl.eq(i).text());
                 data.filePathStatusLinks.push(fpsl.eq(i).attr('href'));
             }
             let times = $('td[class=age]').find('time-ago');  //获取更新时间节点
