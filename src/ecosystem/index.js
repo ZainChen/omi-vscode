@@ -42,7 +42,7 @@ class EcoProvider {
         // this.urlGitHubUser = 'ZainChen';
         // this.urlGitHubRepositories = 'vscode-omi';
         // this.urlGitBranch = 'master';  //分支
-        this.getChildren();
+        //this.getChildren();
 
         if (offset) {
             this._onDidChangeTreeData.fire(offset);
@@ -314,7 +314,7 @@ class EcoProvider {
         const ht = https.get(url, function (res) {
             console.log('statusCode:', res.statusCode);
             console.log('headers:', res.headers);
-            htmlText = '';
+            let htmlText = '';
             res.on("data", function(d) {  //每当我们从指定的url中得到数据的时候,就会触发res的data事件,事件中的chunk是每次得到的数据,data事件会触发多次,因为一个网页的源代码并不是一次性就可以下完的
                 htmlText += d;
             });
