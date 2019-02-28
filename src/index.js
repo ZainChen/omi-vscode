@@ -7,11 +7,8 @@ const hover = require("./hover/index");  //鼠标悬停提示功能模块
 const jump = require("./jump/index");  //跳转功能模块
 
 
-const filex = require("./filex/index");  //文件管理功能模块
-const ayjson = require("./ayjson/index");  //json文件解析功能模块
-const dep = require("./dependencies/index");  //json文件解析功能模块
-const wv = require('./webview/index');  //导入模块并在下面的代码中使用别名vscode引用它(模块“vscode”包含VS代码可扩展性API)
-const cmd = require("./command/index");  //命令模块
+const wv = require('./webview/index');  //Webview功能模块(test)
+const cmd = require("./command/index");  //命令模块(test)
 
 
 /**
@@ -22,12 +19,14 @@ const cmd = require("./command/index");  //命令模块
  */
 function activate(context) {
 	//omi生态更新、下载、项目创建(创建项目包含在线和离线两种方式)
-	const ecoProvider = new eco.EcoProvider();
-	context.subscriptions.push(vscode.window.registerTreeDataProvider('omi.view.ecosystem', ecoProvider));  //omi生态内容注册
-	vscode.commands.registerCommand('omi.cmd.ecoRefresh', () => ecoProvider.refresh());
-	vscode.commands.registerCommand('omi.cmd.ecoRefreshNode', offset => ecoProvider.refresh(offset));
-	vscode.commands.registerCommand('omi.cmd.openGithub', nodeLink => vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(nodeLink)));
-
+	const ecoProvider = new eco.EcoProvider(context);
+	//context.subscriptions.push(vscode.window.registerTreeDataProvider('omi.view.ecosystem', ecoProvider));  //omi生态内容注册(无法添加showCollapseAll功能)
+	//omi生态内容创建和注册(用此方法可添加showCollapseAll功能)
+	context.subscriptions.push(vscode.window.createTreeView('omi.view.ecosystem', { treeDataProvider: ecoProvider, showCollapseAll: true }));
+	context.subscriptions.push(vscode.commands.registerCommand('omi.cmd.ecoRefresh', () => ecoProvider.refreshAll()));  //刷新所有菜单节点
+	context.subscriptions.push(vscode.commands.registerCommand('omi.cmd.ecoRefreshNode', offset => ecoProvider.refreshDesignation(offset)));  //刷新指定菜单节点
+	context.subscriptions.push(vscode.commands.registerCommand('omi.cmd.openGithub', nodeLink => vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(nodeLink))));
+	
 	//鼠标悬停提示功能
 	const provideHover = hover.provideHover;
 	context.subscriptions.push(vscode.languages.registerHoverProvider(['json', 'javascript', 'tex'], { provideHover }));  //鼠标悬停提示功能注册
@@ -38,26 +37,6 @@ function activate(context) {
 
 
 
-	//文件管理功能
-	// new filex.FileExplorer(context);
-	// //json文件解析功能
-	// const jsonOutlineProvider = new ayjson.JsonOutlineProvider(context);
-    // vscode.window.registerTreeDataProvider('jsonOutline', jsonOutlineProvider);
-    // vscode.commands.registerCommand('jsonOutline.refresh', () => jsonOutlineProvider.refresh());
-    // vscode.commands.registerCommand('jsonOutline.refreshNode', offset => jsonOutlineProvider.refresh(offset));
-    // vscode.commands.registerCommand('jsonOutline.renameNode', offset => jsonOutlineProvider.rename(offset));
-    // vscode.commands.registerCommand(
-	// 	'extension.openJsonSelection',
-	// 	range => jsonOutlineProvider.select(range)
-	// );
-    // //工程依赖模块菜单功能
-	// const nodeDependenciesProvider = new dep.DepNodeProvider(vscode.workspace.rootPath);
-    // vscode.window.registerTreeDataProvider('nodeDependencies', nodeDependenciesProvider);
-    // vscode.commands.registerCommand('nodeDependencies.refreshEntry', () => nodeDependenciesProvider.refresh());
-    // vscode.commands.registerCommand('extension.openPackageOnNpm', moduleName => vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(`https://www.npmjs.com/package/${moduleName}`)));
-    // vscode.commands.registerCommand('nodeDependencies.addEntry', () => vscode.window.showInformationMessage(`Successfully called add entry.`));
-    // vscode.commands.registerCommand('nodeDependencies.editEntry', (node) => vscode.window.showInformationMessage(`Successfully called edit entry on ${node.label}.`));
-    // vscode.commands.registerCommand('nodeDependencies.deleteEntry', (node) => vscode.window.showInformationMessage(`Successfully called delete entry on ${node.label}.`));
 	
 	require('./welcome/index')(context); //迎提示(未详细整理)
 	//Webview功能注册(命令:"omi wv")(实验)

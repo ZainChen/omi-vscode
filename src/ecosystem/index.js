@@ -18,12 +18,13 @@ class EcoProvider {
     /**
      * EcoProvider 类的构造函数
      */
-    constructor() {
+    constructor(context) {
+        this.context = context;
         this.urlGitHub = 'https://github.com';  //要获取内容的初始网址
         this.urlGitHubUser = 'Tencent';
         this.urlGitHubRepositories = 'omi';
         this.urlGitBranch = 'master';  //分支
-        this._onDidChangeTreeData = new vscode.EventEmitter();
+        this._onDidChangeTreeData = new vscode.EventEmitter();  //刷新菜单节点使用
         this.onDidChangeTreeData = this._onDidChangeTreeData.event;
     }
     
@@ -34,21 +35,6 @@ class EcoProvider {
      */
     getTreeItem(element) {
         return element;
-    }
-
-    async refresh(offset) {
-        
-        //可根据不同项目链接刷新菜单
-        // this.urlGitHubUser = 'ZainChen';
-        // this.urlGitHubRepositories = 'vscode-omi';
-        // this.urlGitBranch = 'master';  //分支
-        //this.getChildren();
-
-        if (offset) {
-            this._onDidChangeTreeData.fire(offset);
-        } else {
-            this._onDidChangeTreeData.fire();
-        }
     }
 
     /**
@@ -86,6 +72,7 @@ class EcoProvider {
         // } else {
         //     return this.addMenuNodeGitHubFile(dataGitHub);
         // }
+        
 
     }
 
@@ -299,6 +286,32 @@ class EcoProvider {
         bvfContent.versionNames = bvfc.versionNames;
         bvfContent.versionLinks = bvfc.versionLinks;
         return bvfContent;
+    }
+
+    /**
+     * 刷新所有菜单节点
+     */
+    async refreshAll() {
+        this._onDidChangeTreeData.fire();
+    }
+
+    /**
+     * 刷新指定节点内容，参数为空时刷新全部节点
+     * @param offset 获取到的指定节点，为空时刷新全部节点
+     */
+    async refreshDesignation(offset) {
+        
+        //可根据不同项目链接刷新菜单
+        // this.urlGitHubUser = 'ZainChen';
+        // this.urlGitHubRepositories = 'vscode-omi';
+        // this.urlGitBranch = 'master';  //分支
+        //this.getChildren();
+
+        if (offset) {
+            this._onDidChangeTreeData.fire(offset);
+        } else {
+            this._onDidChangeTreeData.fire();
+        }
     }
 
     /**

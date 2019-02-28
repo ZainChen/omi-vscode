@@ -3,7 +3,7 @@
 	"displayName": "omi",
 	"description": "Omi for Visual Studio Code",
 	"license": "Omi",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"publisher": "ZainChen",
 	"author": {
 		"name": "ZainChen"
@@ -20,10 +20,53 @@
 	"keywords": [
 		"zain",
 		"ZainChen",
-		"omi",
+		"zy",
+		"银",
 		"志银",
+		"陈志银",
+		"陈志振",
+		"omi",
+		"json",
+		"html",
+		"css",
+		"javascript",
+		"js",
+		"nodejs",
+		"github",
+		"gitlab",
+		"git",
+		"c",
+		"C++",
+		"web",
+		"js",
+		"npm",
+		"python",
+		"java",
+		"Ruby",
+		"webpack",
+		"php",
+		"mysql",
+		"sql",
+		"apache",
+		"nginx",
+		"iis",
+		"wordpress",
+		"hexo",
 		"tencent",
-		"nodejs"
+		"linux",
+		"window",
+		"mac",
+		"vs",
+		"google",
+		"markdown",
+		"xml",
+		"run",
+		"commands",
+		"view",
+		"diff",
+		"tree",
+		"compare",
+		"vscode"
 	],
 	"categories": [
 		"Snippets",
@@ -35,8 +78,6 @@
 	"activationEvents": [
 		"onView:omi.view.ecosystem",
 		"onView:fileExplorer",
-		"onView:omi.nodeDependencies",
-		"onView:jsonOutline",
 		"onCommand:omi.cmd.ecoRefresh",
 		"onCommand:omi.cmd.ecoRefreshNode",
 		"onCommand:omi.cmd.help",
@@ -99,50 +140,6 @@
 			{
 				"command": "fileExplorer.openFile",
 				"title": "Open File"
-			},
-			{
-				"command": "nodeDependencies.refreshEntry",
-				"title": "Refresh",
-				"icon": {
-					"light": "./assets/light/refresh.svg",
-					"dark": "./assets/dark/refresh.svg"
-				}
-			},
-			{
-				"command": "nodeDependencies.addEntry",
-				"title": "Add"
-			},
-			{
-				"command": "nodeDependencies.editEntry",
-				"title": "Edit",
-				"icon": {
-					"light": "./assets/light/edit.svg",
-					"dark": "./assets/dark/edit.svg"
-				}
-			},
-			{
-				"command": "nodeDependencies.deleteEntry",
-				"title": "Delete"
-			},
-			{
-				"command": "jsonOutline.refresh",
-				"title": "Refresh",
-				"icon": {
-					"light": "./assets/light/refresh.svg",
-					"dark": "./assets/dark/refresh.svg"
-				}
-			},
-			{
-				"command": "jsonOutline.refreshNode",
-				"title": "Refresh",
-				"icon": {
-					"light": "./assets/light/refresh.svg",
-					"dark": "./assets/dark/refresh.svg"
-				}
-			},
-			{
-				"command": "jsonOutline.renameNode",
-				"title": "Rename"
 			},
 			{
 				"command": "extension.demo.showWelcome",
@@ -249,26 +246,12 @@
 				{
 					"command": "omi.cmd.ecoRefresh",
 					"when": "view == omi.view.ecosystem",
-					"group": "navigation"
-				},
-				{
-					"command": "nodeDependencies.refreshEntry",
-					"when": "view == nodeDependencies",
-					"group": "navigation"
-				},
-				{
-					"command": "nodeDependencies.addEntry",
-					"when": "view == nodeDependencies"
-				},
-				{
-					"command": "jsonOutline.refresh",
-					"when": "view == jsonOutline",
-					"group": "navigation"
+					"group": "navigation@2"
 				},
 				{
 					"command": "omi.cmd.help",
 					"when": "view == omi.view.ecosystem",
-					"group": "navigation"
+					"group": "navigation@1"
 				},
 				{
 					"command": "omi.cmd.webview",
@@ -279,24 +262,6 @@
 				{
 					"command": "omi.cmd.ecoRefreshNode",
 					"when": "view == omi.view.ecosystem",
-					"group": "inline"
-				},
-				{
-					"command": "nodeDependencies.editEntry",
-					"when": "view == nodeDependencies && viewItem == dependency",
-					"group": "inline"
-				},
-				{
-					"command": "nodeDependencies.deleteEntry",
-					"when": "view == nodeDependencies && viewItem == dependency"
-				},
-				{
-					"command": "jsonOutline.renameNode",
-					"when": "view == jsonOutline"
-				},
-				{
-					"command": "jsonOutline.refreshNode",
-					"when": "view == jsonOutline",
 					"group": "inline"
 				}
 			]

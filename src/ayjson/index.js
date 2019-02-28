@@ -109,7 +109,7 @@ class JsonOutlineProvider {
             let hasChildren = valueNode.type === 'object' || valueNode.type === 'array';
             let treeItem = new vscode.TreeItem(this.getLabel(valueNode), hasChildren ? valueNode.type === 'object' ? vscode.TreeItemCollapsibleState.Expanded : vscode.TreeItemCollapsibleState.Collapsed : vscode.TreeItemCollapsibleState.None);
             treeItem.command = {
-                command: 'extension.openJsonSelection',
+                command: 'extension1.openJsonSelection',
                 title: '',
                 arguments: [new vscode.Range(this.editor.document.positionAt(valueNode.offset), this.editor.document.positionAt(valueNode.offset + valueNode.length))]
             };
@@ -121,6 +121,7 @@ class JsonOutlineProvider {
     }
     select(range) {
         this.editor.selection = new vscode.Selection(range.start, range.end);
+        this.editor.revealRange(range, vscode.TextEditorRevealType.InCenter);  //编辑窗跳转到指定范围
     }
     getIcon(node) {
         let nodeType = node.type;

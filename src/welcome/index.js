@@ -4,8 +4,8 @@ const path = require('path');
 
 /**
  * 从某个HTML文件读取能被Webview加载的HTML内容
- * @param {*} context 上下文
- * @param {*} templatePath 相对于插件根目录的html文件相对路径
+ * @a param {*} context 上下文
+ * @a param {*} templatePath 相对于插件根目录的html文件相对路径
  */
 function getWebViewContent() {
     //const resourcePath = util.getExtensionFileAbsolutePath(context, templatePath);

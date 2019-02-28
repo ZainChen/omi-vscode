@@ -1,14 +1,15 @@
 # Omi for Visual Studio Code Change Log
 
-## Version *
+## Version 1.0.2 February 28, 2019
 
 ### New Features
 
-- null
+- Add menu node one-click folding function.
 
 ### Bug Fixes
 
 - Solve the file name special case "examples/simple" identification problem.
+
 ---
 
 ## Version 1.0.1 February 27, 2019
