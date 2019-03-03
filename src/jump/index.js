@@ -2,6 +2,8 @@ const vscode = require('vscode');  //导入模块并在下面的代码中使用�
 const path = require('path');
 const fs = require('fs');
 
+const alg = require("../algorithm/index");  //算法模块
+
 
 module.exports = {
 	provideDefinition
@@ -36,4 +38,15 @@ function provideDefinition(document, position, token) {
             }
         }
     }
+
+    //test
+    if(alg.strInFindLP(line.text, "define")) {
+        let destPath = `${workDir}/omi.js`;
+        if (fs.existsSync(destPath)) {
+            // new vscode.Position(0, 0) 表示跳转到某个文件的第一行第一列
+            return new vscode.Location(vscode.Uri.file(destPath), new vscode.Position(0, 0));
+        }
+    }
+	
+
 }

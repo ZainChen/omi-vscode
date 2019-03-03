@@ -33,7 +33,7 @@ function activate(context) {
 	
 	//跳转功能
 	const provideDefinition = jump.provideDefinition;
-	context.subscriptions.push(vscode.languages.registerDefinitionProvider(['json', 'javascript'], {provideDefinition}));  //跳转功能注册
+	context.subscriptions.push(vscode.languages.registerDefinitionProvider(['html', 'json', 'javascript'], {provideDefinition}));  //跳转功能注册
 
 
 

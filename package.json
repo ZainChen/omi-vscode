@@ -148,6 +148,16 @@
 		],
 		"languages": [
 			{
+				"id": "html",
+				"extensions": [
+					".html"
+				],
+				"aliases": [
+					"HTML",
+					"html"
+				]
+			},
+			{
 				"id": "json",
 				"extensions": [
 					".json"
