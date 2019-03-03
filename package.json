@@ -193,6 +193,14 @@
 				"path": "./src/snippets/omi.code-snippets"
 			},
 			{
+				"language": "html",
+				"path": "./src/snippets/omiu.json"
+			},
+			{
+				"language": "javascript",
+				"path": "./src/snippets/omiu.json"
+			},
+			{
 				"language": "javascript",
 				"path": "./src/snippets/omi.json"
 			},

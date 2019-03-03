@@ -1,0 +1,151 @@
+{
+    "o-button": {
+        "prefix": "o-button",
+        "body": "<o-button>${1:button}</o-button>",
+        "description": "[omiu] Click or touch it to trigger an operation. The encapsulated logic is triggered in response to user clicks."
+    },
+    "<o-icon></o-icon>": {
+        "prefix": "o-icon",
+        "body": "<o-icon>${1}</o-icon>",
+        "description": "[omiu] Icon using svg."
+    },
+    "<o-icon />": {
+        "prefix": "o-icon",
+        "body": "<o-icon ${1} />",
+        "description": "[omiu] Icon using svg."
+    },
+    "o-row": {
+        "prefix": "o-row",
+        "body": [
+            "<o-row>",
+            "    <col span={${1}}>${2}</col>",
+            "</o-row>"
+        ],
+        "description": "[omiu] Row of the 24 grid system."
+    },
+    "o-equal-space": {
+        "prefix": "o-equal-space",
+        "body": "<o-equal-space>${1}</o-equal-space>",
+        "description": "[omiu] Horizontal average allocation space layout."
+    },
+    "o-pagination": {
+        "prefix": "o-pagination",
+        "body": "<o-pagination ${1:} />",
+        "description": "[omiu] Paging component."
+    },
+    "o-timeline": {
+        "prefix": "o-timeline",
+        "body": [
+            "<o-timeline data={[",
+            "    {${1}}",
+            "]} />"
+        ],
+        "description": "[omiu] Time or step schedule."
+    },
+    "o-nav": {
+        "prefix": "o-nav",
+        "body": [
+            "<o-nav>",
+            "    <item>${1}</item>",
+            "</o-nav>"
+        ],
+        "description": "[omiu] Navigation."
+    },
+    "o-tab": {
+        "prefix": "o-tab",
+        "body": [
+            "<o-tab>",
+            "    <item>${1}</item>",
+            "</o-tab>"
+        ],
+        "description": "[omiu] Omiu is the official UI component library of Omi, based on Omio(IE8+) and compatible with Omi, using the design style of Wechat 7.0."
+    },
+    "o-dropdown-menu": {
+        "prefix": "o-dropdown-menu",
+        "body": [
+            "<o-dropdown-menu>",
+            "    <item icon={{ path: '${1:path string}', color: '${2:any color string}' }} text='${3:any text string}'></item>",
+            "</o-dropdown-menu>"
+        ],
+        "description": "[omiu] DropdownMenu."
+    },
+    "o-action-sheet": {
+        "prefix": "o-action-sheet",
+        "body": [
+            "<o-action-sheet",
+            "    menus={${1}}",
+            "    actions={${2}}",
+            "    show={${3}}",
+            "    type=\"${4:android,ios}\"",
+            "    onClose={e => { ${5} }}",
+            "/>"
+        ],
+        "description": "[omiu] Selection component in pop-up mode."
+    },
+    "o-toast": {
+        "prefix": "o-toast",
+        "body": "<o-toast type='${1:loading,success}' show={${2:true|false}}>${3}</o-toast>",
+        "description": "[omiu] Simple reminder notification."
+    },
+    "o-popup": {
+        "prefix": "o-popup",
+        "body": [
+            "<o-popup",
+            "    onClose={${1}}",
+            "    onConfirm={${2}}",
+            "    show={${3}}",
+            "    title='${4:My Title}'",
+            "    cancelText='${5:cancel}'",
+            "    confirmText='${6:confirm}'",
+            ">",
+            "    <div>${7:Content}</div>",
+            "</o-popup>"
+        ],
+        "description": "[omiu] Popup content layer."
+    },
+    "o-dialog": {
+        "prefix": "o-dialog",
+        "body": [
+            "<o-dialog",
+            "    onClose={${1}}",
+            "    onConfirm={${2}}",
+            "    show={${3}}",
+            "    type='${4:alert,confirm}'",
+            "    title='${5:My Title}'",
+            "    msg='${6:My Alert!}'",
+            "    cancelText='${7:cancel}'",
+            "    confirmText='${8:confirm}'",
+            "/>"
+        ],
+        "description": "[omiu] Alert or confirm dialog."
+    },
+    "o-popover": {
+        "prefix": "o-popover",
+        "body": [
+            "<o-popover",
+            "    show={${1}}",
+            "    target={${2}}",
+            "    direction={${3}}",
+            "    onClose='${4}'",
+            ">",
+            "    <div>${5:Content}</div>",
+            "</o-popover>"
+        ],
+        "description": "[omiu] Popover."
+    },
+    "o-input": {
+        "prefix": "o-input",
+        "body": "<o-input  placeholder=\"${1:Content}\" />",
+        "description": "[omiu] User's input box, enter some content for submission to the server."
+    },
+    "o-input-label": {
+        "prefix": "o-input-label",
+        "body": "<o-input-label label='${1:UserName}' />",
+        "description": "[omiu] User's input box, enter some content for submission to the server."
+    },
+    "o-input-button": {
+        "prefix": "o-input-button",
+        "body": "<o-input-button buttonText='${1:submit}' onClick={${2:this.onClick}} />",
+        "description": "[omiu] User's input box, enter some content for submission to the server."
+    }
+}
