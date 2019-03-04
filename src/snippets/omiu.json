@@ -30,7 +30,14 @@
     },
     "o-pagination": {
         "prefix": "o-pagination",
-        "body": "<o-pagination ${1:} />",
+        "body": [
+            "<o-pagination",
+            "    total={${1:number}}",
+            "    currentPage={${2:number}}",
+            "    pageSize={${3:number}}",
+            "    onChange={${4:function}}",
+            "/>"
+        ],
         "description": "[omiu] Paging component."
     },
     "o-timeline": {
@@ -46,7 +53,7 @@
         "prefix": "o-nav",
         "body": [
             "<o-nav>",
-            "    <item>${1}</item>",
+            "    <item>${1:string}</item>",
             "</o-nav>"
         ],
         "description": "[omiu] Navigation."
@@ -55,7 +62,7 @@
         "prefix": "o-tab",
         "body": [
             "<o-tab>",
-            "    <item>${1}</item>",
+            "    <item>${1:string}</item>",
             "</o-tab>"
         ],
         "description": "[omiu] Omiu is the official UI component library of Omi, based on Omio(IE8+) and compatible with Omi, using the design style of Wechat 7.0."
@@ -73,10 +80,10 @@
         "prefix": "o-action-sheet",
         "body": [
             "<o-action-sheet",
-            "    menus={${1}}",
-            "    actions={${2}}",
-            "    show={${3}}",
-            "    type=\"${4:android,ios}\"",
+            "    menus={${1:json array}}",
+            "    actions={${2:json array}}",
+            "    show={${3:bool}}",
+            "    type=\"${4:string}\"",
             "    onClose={e => { ${5} }}",
             "/>"
         ],
@@ -84,21 +91,20 @@
     },
     "o-toast": {
         "prefix": "o-toast",
-        "body": "<o-toast type='${1:loading,success}' show={${2:true|false}}>${3}</o-toast>",
+        "body": "<o-toast type='${1:string}' show={${2:bool}}>${3:string}</o-toast>",
         "description": "[omiu] Simple reminder notification."
     },
     "o-popup": {
         "prefix": "o-popup",
         "body": [
             "<o-popup",
-            "    onClose={${1}}",
-            "    onConfirm={${2}}",
-            "    show={${3}}",
-            "    title='${4:My Title}'",
-            "    cancelText='${5:cancel}'",
-            "    confirmText='${6:confirm}'",
-            ">",
-            "    <div>${7:Content}</div>",
+            "    onClose={${1:function}}",
+            "    onConfirm={${2:function}}",
+            "    show={${3:bool}}",
+            "    title='${4:string}'",
+            "    cancelText='${5:string}'",
+            "    confirmText='${6:string}'>",
+            "    <div>${7:string}</div>",
             "</o-popup>"
         ],
         "description": "[omiu] Popup content layer."
@@ -107,14 +113,14 @@
         "prefix": "o-dialog",
         "body": [
             "<o-dialog",
-            "    onClose={${1}}",
-            "    onConfirm={${2}}",
-            "    show={${3}}",
-            "    type='${4:alert,confirm}'",
-            "    title='${5:My Title}'",
-            "    msg='${6:My Alert!}'",
-            "    cancelText='${7:cancel}'",
-            "    confirmText='${8:confirm}'",
+            "    onClose={${1:function}}",
+            "    onConfirm={${2:function}}",
+            "    show={${3:bool}}",
+            "    type='${4:string}'",
+            "    title='${5:string}'",
+            "    msg='${6:string}'",
+            "    cancelText='${7:string}'",
+            "    confirmText='${8:string}'",
             "/>"
         ],
         "description": "[omiu] Alert or confirm dialog."
@@ -123,29 +129,171 @@
         "prefix": "o-popover",
         "body": [
             "<o-popover",
-            "    show={${1}}",
-            "    target={${2}}",
-            "    direction={${3}}",
-            "    onClose='${4}'",
-            ">",
-            "    <div>${5:Content}</div>",
+            "    show={${1:bool}}",
+            "    target={${2:dom element}}",
+            "    direction={${3:string}}",
+            "    onClose='${4:function}'>",
+            "    <div>${5:string}</div>",
             "</o-popover>"
         ],
         "description": "[omiu] Popover."
     },
     "o-input": {
         "prefix": "o-input",
-        "body": "<o-input  placeholder=\"${1:Content}\" />",
+        "body": "<o-input  placeholder=\"${1:string}\" />",
         "description": "[omiu] User's input box, enter some content for submission to the server."
     },
     "o-input-label": {
         "prefix": "o-input-label",
-        "body": "<o-input-label label='${1:UserName}' />",
+        "body": "<o-input-label label='${1:string}' />",
         "description": "[omiu] User's input box, enter some content for submission to the server."
     },
     "o-input-button": {
         "prefix": "o-input-button",
-        "body": "<o-input-button buttonText='${1:submit}' onClick={${2:this.onClick}} />",
+        "body": "<o-input-button buttonText='${1:string}' onClick={${2:function}} />",
         "description": "[omiu] User's input box, enter some content for submission to the server."
+    },
+    "o-input-number": {
+        "prefix": "o-input-number",
+        "body": [
+            "<o-input-number",
+            "    onChange={${1:function}}",
+            "    min={${2:number}}",
+            "    max={${3:number}}",
+            "    step={${4:number}}",
+            "    value={${5:number}}",
+            "    label=\"${6:string}\"",
+            "/>"
+        ],
+        "description": "[omiu] Digital input box."
+    },
+    "<o-checkbox></o-checkbox>": {
+        "prefix": "o-checkbox",
+        "body": "<o-checkbox checked='${1:bool}' label='${2:string}'></o-checkbox>",
+        "description": "[omiu] Checkbox."
+    },
+    "<o-checkbox />": {
+        "prefix": "o-checkbox",
+        "body": "<o-checkbox checked='${1:bool}' label='${2:string}' />",
+        "description": "[omiu] Checkbox."
+    },
+    "<o-radio></o-radio>": {
+        "prefix": "o-radio",
+        "body": "<o-radio name='${1:string}' checked='${2:bool}' label='${3:string}'></o-radio>",
+        "description": "[omiu] Radio."
+    },
+    "<o-radio />": {
+        "prefix": "o-radio",
+        "body": "<o-radio name='${1:string}' checked='${2:bool}' label='${3:string}' />",
+        "description": "[omiu] Radio."
+    },
+    "o-dropdown": {
+        "prefix": "o-dropdown",
+        "body": [
+            "<o-dropdown",
+            "    selectedIndex={${1:number}}",
+            "    show={${2:this.showSelect}}",
+            "    onToggle={${3:this.onToggle}}",
+            "    onSelect={${4:this.onSelect}}>",
+            "    <item value={${5}}>${6:Item1}</item>",
+            "</o-dropdown>"
+        ],
+        "description": "[omiu] Dropdown."
+    },
+    "<o-switch></o-switch>": {
+        "prefix": "o-switch",
+        "body": "<o-switch onChange={${1:function}} checked={${2:bool}}></o-switch>",
+        "description": "[omiu] Switch."
+    },
+    "<o-switch />": {
+        "prefix": "o-switch",
+        "body": "<o-switch onChange={${1:function}} checked={${2:bool}} />",
+        "description": "[omiu] Switch."
+    },
+    "o-date-picker": {
+        "prefix": "o-date-picker",
+        "body": [
+            "<o-date-picker",
+            "    selectedDate={${1:string}}",
+            "    onSelect={${2:function}}",
+            "    show={${3:bool}}",
+            "    onToggle={${4:function}}>",
+            "</o-date-picker>"
+        ],
+        "description": "[omiu] Date picker."
+    },
+    "o-rate": {
+        "prefix": "o-rate",
+        "body": "<o-rate total={${1:number}} value={${2:number}} color='${3:string}' onSelect={${4:function}} />",
+        "description": "[omiu] Rate."
+    },
+    "o-select-list": {
+        "prefix": "o-select-list",
+        "body": [
+            "<o-select-list",
+            "    onSelect={${1:function}}",
+            "    list={${2:json array}}",
+            "    selectedIndex={${3:number}}",
+            "/>"
+        ],
+        "description": "[omiu] SelectList."
+    },
+    "o-table": {
+        "prefix": "o-table",
+        "body": [
+            "<o-table",
+            "    ref={e => { ${1} }}",
+            "    dataSource={${2:json array}}",
+            "    columns={${3}}>",
+            "</o-table>"
+        ],
+        "description": "[omiu] Data is presented and processed in the form of tables."
+    },
+    "o-input-table": {
+        "prefix": "o-input-table",
+        "body": [
+            "<o-input-table ",
+            "    dataSource={${2:json array}}",
+            "    columns={${3:json array}}>",
+            "</o-input-table>"
+        ],
+        "description": "[omiu] Editable table."
+    },
+    "o-badge": {
+        "prefix": "o-badge",
+        "body": [
+            "<o-badge content=${1:string}>",
+            "    <o-icon ${2} />",
+            "</o-badge>"
+        ],
+        "description": "[omiu] The number of circular logo in the upper right corner of the icon."
+    },
+    "o-progress": {
+        "prefix": "o-progress",
+        "body": "<o-progress bgColor='${1:string}' innerColor='${2:string}' value={${3:number}} />",
+        "description": "[omiu] Show the progress of a task."
+    },
+    "o-path-progress": {
+        "prefix": "o-path-progress",
+        "body": [
+            "<o-path-progress",
+            "    type='${1:string}'",
+            "    progress={${2:number}}",
+            "    text={'${3:string}'}",
+            "    options={${4:json}}",
+            "    initialAnimate={${5:bool}}",
+            "    containerStyle={{",
+            "        width: '${6}',",
+            "        height: '${7}'",
+            "    }}",
+            "    containerClassName={'${8:string}'}",
+            "></o-path-progress>"
+        ],
+        "description": "[omiu] Progress by SVG."
+    },
+    "o-step": {
+        "prefix": "o-step",
+        "body": "<o-step items={${1:json array}} />",
+        "description": "[omiu] Step of workflow or other."
     }
 }
