@@ -3,7 +3,7 @@
 	"displayName": "omi",
 	"description": "Omi for Visual Studio Code",
 	"license": "Omi",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"publisher": "ZainChen",
 	"author": {
 		"name": "ZainChen"
