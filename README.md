@@ -19,7 +19,7 @@ https://github.com/Tencent/omi
 
 <p align="right">Omi <strong>v5.0.24</strong></p>
 <p align="right">Omio <strong>v1.3.8</strong></p>
-<p align="center"><img src="./assets/omi-logo2019.svg" alt="omi" width="300"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/assets/omi-logo2019.png" alt="omi" width="300"/></p>
 <h2 align="center">Omi - Next generation front end framework using web components with omio(IE8+) and omip(小程序) fallback in tiny js.</h2>
 
 ---
@@ -73,7 +73,7 @@ https://github.com/Tencent/omi
 - **Shadow DOM merges with Virtual DOM**, Omi uses both virtual DOM and real Shadow DOM to make view updates more accurate and faster
 - **Scoped CSS**'s best solution is [**Shadow DOM**](https://developers.google.com/web/fundamentals/web-components/shadowdom), the community churning out frameworks and libraries for Scoped CSS (using JS or JSON writing styles such as Radium, jsxstyle, react-style; binding to webpack using generated unique `className` `filename-classname-hash`, such as CSS Modules, Vue), are hack technologies; _and Shadow DOM Style is the perfect solution_.
 
-# Extension Developer
+# Contributors
 
 <table>
     <tbody>
