@@ -7,7 +7,7 @@ This extension adds omi support for Visual Studio Code.
 
 # Function
 - Omi ecosystem `[All branches and versions]`
-- Omiu snippets `[All omiu component snippets. Multiple overlays, press TAB to jump to the transition position]`
+- Omi, Omiu snippets `[All omiu component snippets. Multiple overlays, press TAB to jump to the transition position]`
 - Welcome omi `[Welcome Screen]`
 - In development...
 
