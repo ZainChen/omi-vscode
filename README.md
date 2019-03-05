@@ -1,17 +1,17 @@
-# Omi for Visual Studio Code
-[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v1.0.4-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi-develop)
-[![Downloads](https://img.shields.io/badge/Downloads-460%2B-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi-develop)
-[![UpdateTime](https://img.shields.io/badge/UpdateTime-2019%2F03%2F05%2009%3A56%3A14-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi-develop)
+# Omi Visual Studio Code extension
+[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v1.0.5-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi-develop)
+[![Downloads](https://img.shields.io/badge/Downloads-468%2B-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi-develop)
+[![UpdateTime](https://img.shields.io/badge/UpdateTime-2019%2F03%2F05%2012%3A05%3A20-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi-develop)
 
 This extension adds omi support for Visual Studio Code.
 
 # Function
 - Omi ecosystem `[All branches and versions]`
-- Omiu snippets `[All omiu component snippets]`
+- Omiu snippets `[All omiu component snippets. Multiple overlays, press TAB to jump to the transition position]`
 - Welcome omi `[Welcome Screen]`
 - In development...
 
-<p><img src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/assets/function3.png" alt="omi"/></p>
+<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function3.png" alt="omi"/></p>
 
 # About
 
@@ -19,7 +19,7 @@ https://github.com/Tencent/omi
 
 <p align="right">Omi <strong>v5.0.24</strong></p>
 <p align="right">Omio <strong>v1.3.8</strong></p>
-<p align="center"><img src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/assets/omi-logo2019.png" alt="omi" width="300"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omi-logo2019.png" alt="omi" width="300"/></p>
 <h2 align="center">Omi - Next generation front end framework using web components with omio(IE8+) and omip(小程序) fallback in tiny js.</h2>
 
 ---
@@ -80,41 +80,41 @@ https://github.com/Tencent/omi
         <tr>
             <td>
                 <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/assets/zain.png">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/zain.png">
                 </a>
             </td>
             <td>
                 <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/assets/zain.png">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/zain.png">
                 </a>
             </td>
             <td>
                 <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/assets/zain.png">
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/assets/zain.png">
-                </a>
-            </td>
-            <td>
-                <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/assets/zain.png">
-                </a>
-            </td>
-            <td>
-                <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/assets/zain.png">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/zain.png">
                 </a>
             </td>
         </tr>
         <tr>
             <td>
                 <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/vscode-omi/master/assets/zain.png">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/zain.png">
+                </a>
+            </td>
+            <td>
+                <a target="_blank" href="https://zainzy.com">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/zain.png">
+                </a>
+            </td>
+            <td>
+                <a target="_blank" href="https://zainzy.com">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/zain.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a target="_blank" href="https://zainzy.com">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/zain.png">
                 </a>
             </td>
         </tr>

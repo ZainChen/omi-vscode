@@ -1,6 +1,6 @@
-# Omi for Visual Studio Code Change Log
+# Omi Visual Studio Code extension Change Log
 
-## Version 1.0.5 *
+## Version 1.0.5 March 5, 2019
 
 ### New Features
 
@@ -8,7 +8,8 @@
 
 ### Modify
 
-- null
+- Rename vscode-omi to omi-vscode
+- Update GitHub url.
 
 ### Bug Fixes
 

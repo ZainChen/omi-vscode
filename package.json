@@ -1,21 +1,21 @@
 {
 	"name": "omi",
 	"displayName": "omi",
-	"description": "Omi for Visual Studio Code",
+	"description": "Visual Studio Code extension for Omi",
 	"license": "Omi",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"publisher": "ZainChen",
 	"author": {
 		"name": "ZainChen"
 	},
 	"icon": "assets/omi-logo2019-128.png",
-	"homepage": "https://github.com/ZainChen/vscode-omi/blob/master/README.md",
+	"homepage": "https://github.com/ZainChen/omi-vscode/blob/master/README.md",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ZainChen/vscode-omi"
+		"url": "https://github.com/ZainChen/omi-vscode"
 	},
 	"bugs": {
-		"url": "https://github.com/ZainChen/vscode-omi/issues"
+		"url": "https://github.com/ZainChen/omi-vscode/issues"
 	},
 	"keywords": [
 		"zain",

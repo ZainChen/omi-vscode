@@ -23,8 +23,8 @@ function provideHoverJson(document, position, token) {
 	const line      = document.lineAt(position);
 	const word		= document.getText(document.getWordRangeAtPosition(position));
 	
-	//指定vscode-omi/package.json配置文件提示内容
-	if (alg.strTailMatch(fileName, "vscode-omi\\package.json", 2)) {
+	//指定omi-vscode/package.json配置文件提示内容
+	if (alg.strTailMatch(fileName, "omi-vscode\\package.json", 2)) {
 		return hoverVomiPackage(document, position, token);
 	}
 
@@ -41,7 +41,7 @@ function provideHoverJson(document, position, token) {
 }
 
 /**
- * 指定vscode-omi/package.json配置文件提示内容
+ * 指定omi-vscode/package.json配置文件提示内容
  * @param document — 调用命令的文档。
  * @param position — 调用命令的位置。
  * @param token — 取消令牌。
@@ -76,14 +76,14 @@ function hoverVomiPackage(document, position, token) {
 	if(alg.strInFindLP(line.text, "ZainChen"))                               { bHaveText += 1; showText += `\n\n* [值] "ZainChen"：帅气程序猿^_^，中文名"志银"，个人网站-[https://zainzy.com/](https://zainzy.com/ "志银")，GitHub-[https://github.com/ZainChen](https://github.com/ZainChen "志银GitHub")`; }
 	if(alg.strInFindLP(line.text, "志银"))                                    { bHaveText += 1; showText += `\n\n* [值] "志银"：帅气程序猿^_^，英文名"ZainChen"，个人网站-[https://zainzy.com/](https://zainzy.com/ "志银")，GitHub-[https://github.com/ZainChen](https://github.com/ZainChen "志银GitHub")`; }
 	if(alg.strInFindLP(line.text, "zain"))                                   { bHaveText += 1; showText += `\n\n* [值] "zain"：帅气程序猿^_^，中文名"志银"，个人网站-[https://zainzy.com/](https://zainzy.com/ "志银")，GitHub-[https://github.com/ZainChen](https://github.com/ZainChen "志银GitHub")`; }
-	if(alg.strInFindLP(line.text, "https://github.com/ZainChen/vscode-omi")) { bHaveText += 1; showText += `\n\n* [值] "[https://github.com/ZainChen/vscode-omi](https://github.com/ZainChen/vscode-omi "vscode-omi")"：vscode-omi源码网址`; }
+	if(alg.strInFindLP(line.text, "https://github.com/ZainChen/omi-vscode")) { bHaveText += 1; showText += `\n\n* [值] "[https://github.com/ZainChen/omi-vscode](https://github.com/ZainChen/omi-vscode "omi-vscode")"：omi-vscode源码网址`; }
 	if(alg.strInFindLP(line.text, "omi"))                                    { bHaveText += 1; showText += `\n\n* [值] "omi"：开发者-[dntzhang](https://github.com/dntzhang "张磊的GitHub")，项目储存库-[https://github.com/Tencent/omi](https://github.com/Tencent/omi "omi GitHub")，下一代 Web 框架，去万物糟粕，合精华为一点点 JS。`; }
 	
 
 
 
 	if(bHaveText) {
-		showText = `【vscode-omi 配置文件 package.json 说明】`+showText;
+		showText = `【omi-vscode 配置文件 package.json 说明】`+showText;
 	}
 
 	return { contents: [showText] };
