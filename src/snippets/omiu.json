@@ -18,7 +18,7 @@
         "prefix": "o-row",
         "body": [
             "<o-row>",
-            "    <col span={${1}}>${2}</col>",
+            "\t<col span={${1}}>${2}</col>",
             "</o-row>"
         ],
         "description": "[omiu] Row of the 24 grid system."
@@ -32,10 +32,10 @@
         "prefix": "o-pagination",
         "body": [
             "<o-pagination",
-            "    total={${1:number}}",
-            "    currentPage={${2:number}}",
-            "    pageSize={${3:number}}",
-            "    onChange={${4:function}}",
+            "\ttotal={${1:number}}",
+            "\tcurrentPage={${2:number}}",
+            "\tpageSize={${3:number}}",
+            "\tonChange={${4:function}}",
             "/>"
         ],
         "description": "[omiu] Paging component."
@@ -44,7 +44,7 @@
         "prefix": "o-timeline",
         "body": [
             "<o-timeline data={[",
-            "    {${1}}",
+            "\t{${1}}",
             "]} />"
         ],
         "description": "[omiu] Time or step schedule."
@@ -53,7 +53,7 @@
         "prefix": "o-nav",
         "body": [
             "<o-nav>",
-            "    <item>${1:string}</item>",
+            "\t<item>${1:string}</item>",
             "</o-nav>"
         ],
         "description": "[omiu] Navigation."
@@ -62,7 +62,7 @@
         "prefix": "o-tab",
         "body": [
             "<o-tab>",
-            "    <item>${1:string}</item>",
+            "\t<item>${1:string}</item>",
             "</o-tab>"
         ],
         "description": "[omiu] Omiu is the official UI component library of Omi, based on Omio(IE8+) and compatible with Omi, using the design style of Wechat 7.0."
@@ -71,7 +71,7 @@
         "prefix": "o-dropdown-menu",
         "body": [
             "<o-dropdown-menu>",
-            "    <item icon={{ path: '${1:path string}', color: '${2:any color string}' }} text='${3:any text string}'></item>",
+            "\t<item icon={{ path: '${1:path string}', color: '${2:any color string}' }} text='${3:any text string}'></item>",
             "</o-dropdown-menu>"
         ],
         "description": "[omiu] DropdownMenu."
@@ -80,11 +80,11 @@
         "prefix": "o-action-sheet",
         "body": [
             "<o-action-sheet",
-            "    menus={${1:json array}}",
-            "    actions={${2:json array}}",
-            "    show={${3:bool}}",
-            "    type=\"${4:string}\"",
-            "    onClose={e => { ${5} }}",
+            "\tmenus={${1:json array}}",
+            "\tactions={${2:json array}}",
+            "\tshow={${3:bool}}",
+            "\ttype=\"${4:string}\"",
+            "\tonClose={e => { ${5} }}",
             "/>"
         ],
         "description": "[omiu] Selection component in pop-up mode."
@@ -98,13 +98,13 @@
         "prefix": "o-popup",
         "body": [
             "<o-popup",
-            "    onClose={${1:function}}",
-            "    onConfirm={${2:function}}",
-            "    show={${3:bool}}",
-            "    title='${4:string}'",
-            "    cancelText='${5:string}'",
-            "    confirmText='${6:string}'>",
-            "    <div>${7:string}</div>",
+            "\tonClose={${1:function}}",
+            "\tonConfirm={${2:function}}",
+            "\tshow={${3:bool}}",
+            "\ttitle='${4:string}'",
+            "\tcancelText='${5:string}'",
+            "\tconfirmText='${6:string}'>",
+            "\t<div>${7:string}</div>",
             "</o-popup>"
         ],
         "description": "[omiu] Popup content layer."
@@ -113,14 +113,14 @@
         "prefix": "o-dialog",
         "body": [
             "<o-dialog",
-            "    onClose={${1:function}}",
-            "    onConfirm={${2:function}}",
-            "    show={${3:bool}}",
-            "    type='${4:string}'",
-            "    title='${5:string}'",
-            "    msg='${6:string}'",
-            "    cancelText='${7:string}'",
-            "    confirmText='${8:string}'",
+            "\tonClose={${1:function}}",
+            "\tonConfirm={${2:function}}",
+            "\tshow={${3:bool}}",
+            "\ttype='${4:string}'",
+            "\ttitle='${5:string}'",
+            "\tmsg='${6:string}'",
+            "\tcancelText='${7:string}'",
+            "\tconfirmText='${8:string}'",
             "/>"
         ],
         "description": "[omiu] Alert or confirm dialog."
@@ -129,11 +129,11 @@
         "prefix": "o-popover",
         "body": [
             "<o-popover",
-            "    show={${1:bool}}",
-            "    target={${2:dom element}}",
-            "    direction={${3:string}}",
-            "    onClose='${4:function}'>",
-            "    <div>${5:string}</div>",
+            "\tshow={${1:bool}}",
+            "\ttarget={${2:dom element}}",
+            "\tdirection={${3:string}}",
+            "\tonClose='${4:function}'>",
+            "\t<div>${5:string}</div>",
             "</o-popover>"
         ],
         "description": "[omiu] Popover."
@@ -157,12 +157,12 @@
         "prefix": "o-input-number",
         "body": [
             "<o-input-number",
-            "    onChange={${1:function}}",
-            "    min={${2:number}}",
-            "    max={${3:number}}",
-            "    step={${4:number}}",
-            "    value={${5:number}}",
-            "    label=\"${6:string}\"",
+            "\tonChange={${1:function}}",
+            "\tmin={${2:number}}",
+            "\tmax={${3:number}}",
+            "\tstep={${4:number}}",
+            "\tvalue={${5:number}}",
+            "\tlabel=\"${6:string}\"",
             "/>"
         ],
         "description": "[omiu] Digital input box."
@@ -191,11 +191,11 @@
         "prefix": "o-dropdown",
         "body": [
             "<o-dropdown",
-            "    selectedIndex={${1:number}}",
-            "    show={${2:this.showSelect}}",
-            "    onToggle={${3:this.onToggle}}",
-            "    onSelect={${4:this.onSelect}}>",
-            "    <item value={${5}}>${6:Item1}</item>",
+            "\tselectedIndex={${1:number}}",
+            "\tshow={${2:this.showSelect}}",
+            "\tonToggle={${3:this.onToggle}}",
+            "\tonSelect={${4:this.onSelect}}>",
+            "\t<item value={${5}}>${6:Item1}</item>",
             "</o-dropdown>"
         ],
         "description": "[omiu] Dropdown."
@@ -214,10 +214,10 @@
         "prefix": "o-date-picker",
         "body": [
             "<o-date-picker",
-            "    selectedDate={${1:string}}",
-            "    onSelect={${2:function}}",
-            "    show={${3:bool}}",
-            "    onToggle={${4:function}}>",
+            "\tselectedDate={${1:string}}",
+            "\tonSelect={${2:function}}",
+            "\tshow={${3:bool}}",
+            "\tonToggle={${4:function}}>",
             "</o-date-picker>"
         ],
         "description": "[omiu] Date picker."
@@ -231,9 +231,9 @@
         "prefix": "o-select-list",
         "body": [
             "<o-select-list",
-            "    onSelect={${1:function}}",
-            "    list={${2:json array}}",
-            "    selectedIndex={${3:number}}",
+            "\tonSelect={${1:function}}",
+            "\tlist={${2:json array}}",
+            "\tselectedIndex={${3:number}}",
             "/>"
         ],
         "description": "[omiu] SelectList."
@@ -242,9 +242,9 @@
         "prefix": "o-table",
         "body": [
             "<o-table",
-            "    ref={e => { ${1} }}",
-            "    dataSource={${2:json array}}",
-            "    columns={${3}}>",
+            "\tref={e => { ${1} }}",
+            "\tdataSource={${2:json array}}",
+            "\tcolumns={${3}}>",
             "</o-table>"
         ],
         "description": "[omiu] Data is presented and processed in the form of tables."
@@ -253,8 +253,8 @@
         "prefix": "o-input-table",
         "body": [
             "<o-input-table ",
-            "    dataSource={${2:json array}}",
-            "    columns={${3:json array}}>",
+            "\tdataSource={${2:json array}}",
+            "\tcolumns={${3:json array}}>",
             "</o-input-table>"
         ],
         "description": "[omiu] Editable table."
@@ -263,7 +263,7 @@
         "prefix": "o-badge",
         "body": [
             "<o-badge content=${1:string}>",
-            "    <o-icon ${2} />",
+            "\t<o-icon ${2} />",
             "</o-badge>"
         ],
         "description": "[omiu] The number of circular logo in the upper right corner of the icon."
@@ -277,16 +277,16 @@
         "prefix": "o-path-progress",
         "body": [
             "<o-path-progress",
-            "    type='${1:string}'",
-            "    progress={${2:number}}",
-            "    text={'${3:string}'}",
-            "    options={${4:json}}",
-            "    initialAnimate={${5:bool}}",
-            "    containerStyle={{",
-            "        width: '${6}',",
-            "        height: '${7}'",
-            "    }}",
-            "    containerClassName={'${8:string}'}",
+            "\ttype='${1:string}'",
+            "\tprogress={${2:number}}",
+            "\ttext={'${3:string}'}",
+            "\toptions={${4:json}}",
+            "\tinitialAnimate={${5:bool}}",
+            "\tcontainerStyle={{",
+            "\t\twidth: '${6}',",
+            "\t\theight: '${7}'",
+            "\t}}",
+            "\tcontainerClassName={'${8:string}'}",
             "></o-path-progress>"
         ],
         "description": "[omiu] Progress by SVG."

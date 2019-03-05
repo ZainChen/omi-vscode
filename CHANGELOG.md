@@ -1,5 +1,21 @@
 # Omi for Visual Studio Code Change Log
 
+## Version 1.0.4 March 5, 2019
+
+### New Features
+
+- Tab indentation adapts to vscode system settings.
+
+### Modify
+
+- Modify the activitybar icon size.
+
+### Bug Fixes
+
+- null
+
+---
+
 ## Version 1.0.3 March 4, 2019
 
 ### New Features
