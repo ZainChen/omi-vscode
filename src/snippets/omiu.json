@@ -4,14 +4,27 @@
         "body": "<o-button>${1:button}</o-button>",
         "description": "[omiu] Click or touch it to trigger an operation. The encapsulated logic is triggered in response to user clicks."
     },
-    "<o-icon></o-icon>": {
-        "prefix": "o-icon",
-        "body": "<o-icon>${1}</o-icon>",
-        "description": "[omiu] Icon using svg."
-    },
     "<o-icon />": {
         "prefix": "o-icon",
         "body": "<o-icon ${1} />",
+        "description": "[omiu] Icon using svg."
+    },
+    "<o-icon paths />": {
+        "prefix": "o-icon",
+        "body": [
+            "<o-icon paths={[{",
+            "\tcolor: '${1:string}',",
+            "\tpath: '${2:string}'",
+            "}, {",
+            "\tcolor: '${3:string}',",
+            "\tpath: '${4:string}'",
+            "}]} />"
+        ],
+        "description": "[omiu] Icon using svg."
+    },
+    "<o-icon></o-icon>": {
+        "prefix": "o-icon",
+        "body": "<o-icon ${1}>${2}</o-icon>",
         "description": "[omiu] Icon using svg."
     },
     "o-row": {

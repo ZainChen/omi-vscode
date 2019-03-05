@@ -1,5 +1,21 @@
 # Omi for Visual Studio Code Change Log
 
+## Version 1.0.5 *
+
+### New Features
+
+- Omiu snippets added \<o-icon paths /\>
+
+### Modify
+
+- null
+
+### Bug Fixes
+
+- null
+
+---
+
 ## Version 1.0.4 March 5, 2019
 
 ### New Features
