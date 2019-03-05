@@ -1,5 +1,22 @@
 # Omi Visual Studio Code extension Change Log
 
+## Version *
+
+### New Features
+
+- Omi snippets added: import, define, render
+- Omiu snippets added \<o-icon paths /\>\</o-icon\>
+
+### Modify
+
+- null
+
+### Bug Fixes
+
+- null
+
+---
+
 ## Version 1.0.5 March 5, 2019
 
 ### New Features

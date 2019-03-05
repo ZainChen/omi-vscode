@@ -22,6 +22,19 @@
         ],
         "description": "[omiu] Icon using svg."
     },
+    "<o-icon paths /></o-icon>": {
+        "prefix": "o-icon",
+        "body": [
+            "<o-icon paths={[{",
+            "\tcolor: '${1:string}',",
+            "\tpath: '${2:string}'",
+            "}, {",
+            "\tcolor: '${3:string}',",
+            "\tpath: '${4:string}'",
+            "}]}>${5:string}</o-icon>"
+        ],
+        "description": "[omiu] Icon using svg."
+    },
     "<o-icon></o-icon>": {
         "prefix": "o-icon",
         "body": "<o-icon ${1}>${2}</o-icon>",
