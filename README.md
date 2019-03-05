@@ -12,6 +12,7 @@ This extension adds omi support for Visual Studio Code.
 - In development...
 
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function3.png" alt="omi"/></p>
+<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function4.png" alt="omi"/></p>
 
 # About
 
