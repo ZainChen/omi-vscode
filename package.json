@@ -81,7 +81,6 @@
 	},
 	"activationEvents": [
 		"onView:omi.view.ecosystem",
-		"onView:fileExplorer",
 		"onCommand:omi.cmd.ecoRefresh",
 		"onCommand:omi.cmd.ecoRefreshNode",
 		"onCommand:omi.cmd.help",
@@ -140,10 +139,6 @@
 					"light": "./assets/add1.svg",
 					"dark": "./assets/add1.svg"
 				}
-			},
-			{
-				"command": "fileExplorer.openFile",
-				"title": "Open File"
 			},
 			{
 				"command": "extension.demo.showWelcome",

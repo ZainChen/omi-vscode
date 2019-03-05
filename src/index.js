@@ -38,7 +38,7 @@ function activate(context) {
 
 
 	
-	require('./welcome/index')(context); //迎提示(未详细整理)
+	require('./welcome/index')(context); //欢迎提示(未详细整理)
 	//Webview功能注册(命令:"omi wv")(实验)
 	context.subscriptions.push(vscode.commands.registerCommand('omi.cmd.webview', wv.showWebviewIndex));  //Webview功能注册(命令:"omi wv")(实验)
 	//其他命令，暂无特定功能
