@@ -93,45 +93,6 @@ https://github.com/Tencent/omi
                     <img width="60px" src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/zain.png">
                 </a>
             </td>
-            <td>
-                <a target="_blank" href="https://github.com/dntzhang">
-                    <img width="60px" src="https://avatars2.githubusercontent.com/u/7917954?s=60&amp;v=4">
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/zain.png">
-                </a>
-            </td>
-            <td>
-                <a target="_blank" href="https://github.com/dntzhang">
-                    <img width="60px" src="https://avatars2.githubusercontent.com/u/7917954?s=60&amp;v=4">
-                </a>
-            </td>
-            <td>
-                <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/zain.png">
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <a target="_blank" href="https://github.com/dntzhang">
-                    <img width="60px" src="https://avatars2.githubusercontent.com/u/7917954?s=60&amp;v=4">
-                </a>
-            </td>
-            <td>
-                <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/zain.png">
-                </a>
-            </td>
-            <td>
-                <a target="_blank" href="https://github.com/dntzhang">
-                    <img width="60px" src="https://avatars2.githubusercontent.com/u/7917954?s=60&amp;v=4">
-                </a>
-            </td>
         </tr>
     </tbody>
 </table>
