@@ -1,7 +1,7 @@
 # Omi Visual Studio Code extension
 [![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v1.0.5-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi-develop)
 [![Downloads](https://img.shields.io/badge/Downloads-468%2B-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi-develop)
-[![UpdateTime](https://img.shields.io/badge/UpdateTime-2019%2F03%2F05%2012%3A05%3A20-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi-develop)
+[![UpdateTime](https://img.shields.io/badge/UpdateTime-2019%2F03%2F05%2012%3A49%3A20-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi-develop)
 
 This extension adds omi support for Visual Studio Code.
 
@@ -24,35 +24,39 @@ https://github.com/Tencent/omi
 
 ---
 
-## Ecosystem of Omi
+## Omi 生态
 
-| **Project**                         | **Description**                           |
+[→ Omi 生态学习路线图](https://github.com/Tencent/omi/tree/master/assets/rm.md)
+
+| **项目**                         | **描述**                           |
 | ------------------------------- | ----------------------------------- |
-| [omi-docs](https://github.com/Tencent/omi/blob/master/docs/main-concepts.md)| Omi official documents |
+| [omi-docs](https://github.com/Tencent/omi/blob/master/docs/main-concepts.cn.md)| Omi 官方文档 |
 | [omip![](https://raw.githubusercontent.com/dntzhang/cax/master/asset/hot.png) ](https://github.com/Tencent/omi/tree/master/packages/omip)| 直接使用 Omi 开发小程序！！！|
-| [omio![](https://raw.githubusercontent.com/dntzhang/cax/master/asset/hot.png) ](https://github.com/Tencent/omi/tree/master/packages/omio)| Omi for old browsers(IE8+ and mobile browsers).|
-| [omiu![](https://raw.githubusercontent.com/dntzhang/cax/master/asset/hot.png)](https://tencent.github.io/omi/packages/omiu/examples/build/index.html)| Omi official UI|
-| [omix![](https://raw.githubusercontent.com/dntzhang/cax/master/asset/hot.png) ](https://github.com/Tencent/omi/tree/master/packages/omix)| Tiny size mini programe framework.|
-| [omi-chart](https://github.com/Tencent/omi/tree/master/packages/omi-chart)| Simple HTML5 Charts using chart-x tag.|
-| [md2site](https://tencent.github.io/omi/assets/md2site/)| Static Site Generator with markdown powered by Omio.|
-| [omi-mvvm](https://github.com/Tencent/omi/blob/master/tutorial/omi-mvvm.md)| MVVM comes back bravely with [mappingjs](https://github.com/Tencent/omi/tree/master/packages/mappingjs) strong support.|
+| [omio![](https://raw.githubusercontent.com/dntzhang/cax/master/asset/hot.png) ](https://github.com/Tencent/omi/tree/master/packages/omio)| 兼容老浏览器的 Omi 版本(支持到IE8+和移动端浏览器)。|
+| [omiu![](https://raw.githubusercontent.com/dntzhang/cax/master/asset/hot.png)](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html)| Omi 官方 UI。|
+| [omix![](https://raw.githubusercontent.com/dntzhang/cax/master/asset/hot.png) ](https://github.com/Tencent/omi/tree/master/packages/omix)| 极小却精巧的小程序框架。|
+| [omi-mp](https://github.com/Tencent/omi/tree/master/packages/omi-mp)| 通过微信小程序开发和生成 Web 单页应用(H5 SPA)|
+| [md2site](https://tencent.github.io/omi/assets/md2site/)| 用 markdown 生成静态网站文档.|
+| [omi-mvvm](https://github.com/Tencent/omi/blob/master/tutorial/omi-mvvm.cn.md)| MVVM 王者归来, [mappingjs](https://github.com/Tencent/omi/tree/master/packages/mappingjs) 强力加持。|
+| [omi-chart](https://github.com/Tencent/omi/tree/master/packages/omi-chart)| 一个 chart-x 标签搞定报表|
+| [mp-mvvm ](https://github.com/Tencent/omi/tree/master/packages/mp-mvvm)| 小程序插上 MVVM 的翅膀, [mappingjs](https://github.com/Tencent/omi/tree/master/packages/mappingjs) 强力加持。|
 | [omi-html](https://github.com/Tencent/omi/tree/master/packages/omi-html)| Using [htm](https://github.com/developit/htm) in omi.|
-| [omi-30-seconds](https://github.com/Tencent/omi/tree/master/packages/omi-30-seconds)| Useful Omi snippets that you can understand in 30 seconds.|
-| [omi-canvas](https://github.com/Tencent/omi/tree/master/packages/omi-canvas)| Perfect fusion of web components, jsx and canvas.|
-| [omi-mp](https://github.com/Tencent/omi/tree/master/packages/omi-mp)| Develop and generate Web HTML5 Single-Page Applications by wechat mini program. The output source is base on omi + [omi-router](https://github.com/Tencent/omi/tree/master/packages/omi-router)|
-| [omi-router](https://github.com/Tencent/omi/tree/master/packages/omi-router) |Omi official router in 1KB js. [→ DEMO](https://tencent.github.io/omi/packages/omi-router/examples/spa/build/) |
-| [omi-devtools](https://github.com/f/omi-devtools)| Browser DevTools extension |
-| [omi-cli](https://github.com/Tencent/omi/tree/master/packages/omi-cli)| Project scaffolding |
+| [omi-30-seconds](https://github.com/Tencent/omi/tree/master/packages/omi-30-seconds)| 30 秒理解一段有用的 Omi 代码片段.|
 | [omi-swiper](https://github.com/loo41/Omi-Swiper)| Omi + Swiper  |
-| [omi-ex](https://github.com/Tencent/omi/tree/master/packages/omi-ex)| Omi.js extension(TypeScript) |
-| [omi-transform](https://github.com/Tencent/omi/tree/master/packages/omi-transform)|Omi / [css3transform](https://tencent.github.io/omi/packages/omi-transform/css3transform/) integration. Made css3 transform super easy in your Omi project.|
-| [omi-tap](https://github.com/Tencent/omi/releases/tag/v4.0.24)| Native tap event support(omi v4.0.24+）|
-| [omi-finger](https://github.com/Tencent/omi/tree/master/packages/omi-finger)|Support touch and gesture events in your Omi project.|
-| [omi-touch](https://github.com/Tencent/omi/tree/master/packages/omi-touch)|Smooth scrolling, rotation, pull to refresh and any motion for the web.|
-| [omi-use](https://github.com/Tencent/omi/blob/master/docs/main-concepts.md#use)|React hooks like API|
-| [omi-native](https://github.com/Tencent/omi/tree/master/packages/omi-native)|Render web components to native|
-|[omi-i18n](https://github.com/i18next/omi-i18n)| Internationalization solution for omi.js using i18next ecosystem |
-| [omi-page](https://github.com/Tencent/omi/tree/master/packages/omi-page) |Tiny client-side router by [page](https://github.com/visionmedia/page.js)|
+| [omi-vscode](https://github.com/ZainChen/omi-vscode)| Vscode extension for omi, [Install now!](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi) |
+| [omi-sprite](https://github.com/Tencent/omi/tree/master/packages/omi-sprite)| Web Components, JSX 和 Canvas 的完美融合|
+| [omi-canvas](https://github.com/Tencent/omi/tree/master/packages/omi-canvas)| Web Components, JSX 和 Canvas 的完美融合|
+| [omi-router ](https://github.com/Tencent/omi/tree/master/packages/omi-router) |Omi 官方路由,超级小的尺寸，只有 1KB 的 js。[→ DEMO](https://tencent.github.io/omi/packages/omi-router/examples/spa/build/)|
+| [omi-devtools](https://github.com/f/omi-devtools)| 谷歌浏览器开发工具扩展|
+| [omi-cli](https://github.com/Tencent/omi/tree/master/packages/omi-cli)| 项目脚手架工具，各种模板任你选。 |
+| [omi-ex](https://github.com/Tencent/omi/tree/master/packages/omi-ex)| Omi.js 扩展(TypeScript) |
+| [omi-transform](https://github.com/Tencent/omi/tree/master/packages/omi-transform)|Omi 和 [css3transform](https://tencent.github.io/omi/packages/omi-transform/css3transform/) 完美结合. 让 css3 transform 在你的 Omi项目中变得超级简单.|
+| [omi-tap](https://github.com/Tencent/omi/releases/tag/v4.0.24)| Omi 原生支持 tap 事件（omi v4.0.24+）|
+| [omi-finger](https://github.com/Tencent/omi/tree/master/packages/omi-finger)|Omi 官方手势库|
+| [omi-touch](https://github.com/Tencent/omi/tree/master/packages/omi-touch)|丝般顺滑的触摸运动|
+| [omi-snap](https://github.com/Tencent/omi/blob/master/tutorial/omi-snap.cn.md)|预渲染骨架屏|
+|[omi-i18n](https://github.com/i18next/omi-i18n)| Omi 国际化解决方案 |
+| [omi-page](https://github.com/Tencent/omi/tree/master/packages/omi-page) | 基于 [page.js](https://github.com/visionmedia/page.js) 的 Omi 路由|
 
 ---
 
@@ -79,13 +83,30 @@ https://github.com/Tencent/omi
     <tbody>
         <tr>
             <td>
-                <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/zain.png">
+                <a target="_blank" href="https://github.com/dntzhang">
+                    <img width="60px" src="https://avatars2.githubusercontent.com/u/7917954?s=60&amp;v=4">
                 </a>
             </td>
             <td>
                 <a target="_blank" href="https://zainzy.com">
                     <img width="60px" src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/zain.png">
+                </a>
+            </td>
+            <td>
+                <a target="_blank" href="https://github.com/dntzhang">
+                    <img width="60px" src="https://avatars2.githubusercontent.com/u/7917954?s=60&amp;v=4">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a target="_blank" href="https://zainzy.com">
+                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/zain.png">
+                </a>
+            </td>
+            <td>
+                <a target="_blank" href="https://github.com/dntzhang">
+                    <img width="60px" src="https://avatars2.githubusercontent.com/u/7917954?s=60&amp;v=4">
                 </a>
             </td>
             <td>
@@ -96,8 +117,8 @@ https://github.com/Tencent/omi
         </tr>
         <tr>
             <td>
-                <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/zain.png">
+                <a target="_blank" href="https://github.com/dntzhang">
+                    <img width="60px" src="https://avatars2.githubusercontent.com/u/7917954?s=60&amp;v=4">
                 </a>
             </td>
             <td>
@@ -106,15 +127,8 @@ https://github.com/Tencent/omi
                 </a>
             </td>
             <td>
-                <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/zain.png">
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/zain.png">
+                <a target="_blank" href="https://github.com/dntzhang">
+                    <img width="60px" src="https://avatars2.githubusercontent.com/u/7917954?s=60&amp;v=4">
                 </a>
             </td>
         </tr>
