@@ -1,23 +1,32 @@
 {
-    "omi": {
-        "prefix": "omi",
-        "body": [
-            "omi厉害了我的哥"
-        ],
-        "description": "omi模块"
+    "import": {
+        "prefix": "omi-import",
+        "body": "import { ${1:define, WeElement, extractClass} } from 'omi'",
+        "description": "Omi module"
     },
-    "vscode.commands.registerCommand()": {
-        "prefix": "vscode",
+    "define": {
+        "prefix": "omi-define",
         "body": [
-            "vscode.commands.registerCommand()"
+            "define('${1}', class extends WeElement {",
+            "\t",
+            "\trender() {",
+            "\t\treturn (",
+            "\t\t\t${2}",
+            "\t\t)",
+            "\t}",
+            "})"
         ],
-        "description": "vscode.commands.registerCommand()"
+        "description": "Omi function struct"
     },
-    "vscode.zain()": {
-        "prefix": "vscode",
+    "render": {
+        "prefix": "omi-render",
         "body": [
-            "vscode.zain()"
+            "render(${1}) {",
+            "\treturn (",
+            "\t\t${2}",
+            "\t)",
+            "}"
         ],
-        "description": "vscode.zain()"
+        "description": "Omi function struct"
     }
 }
