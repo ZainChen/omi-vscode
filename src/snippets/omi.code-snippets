@@ -1,7 +1,7 @@
 {
     "import": {
         "prefix": "omi-import",
-        "body": "import { ${1:define, WeElement, extractClass} } from 'omi'",
+        "body": "import { ${1:define, WeElement, extractClass} } from '${2:omi}'",
         "description": "Omi module"
     },
     "define": {
