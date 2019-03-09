@@ -4,8 +4,9 @@
 
 ### New Features
 
-- Omi snippets added: import, define, render
-- Omiu snippets added \<o-icon paths /\>\</o-icon\>
+- omi snippets added: import, define, render
+- omiu snippets added \<o-icon paths /\>\</o-icon\>
+- omi and omiu support snippets: JavaScript Reacthe、TypeScript React
 
 ### Modify
 

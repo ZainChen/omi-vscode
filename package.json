@@ -190,40 +190,52 @@
 		"snippets": [
 			{
 				"path": "./src/snippets/omi.code-snippets"
-			}, {
+			},
+			{
 				"language": "html",
 				"path": "./src/snippets/omi.json"
-			}, {
+			},
+			{
 				"language": "javascript",
 				"path": "./src/snippets/omi.json"
-			}, {
+			},
+			{
 				"language": "javascriptreact",
 				"path": "./src/snippets/omi.json"
-			}, {
+			},
+			{
 				"language": "typescript",
 				"path": "./src/snippets/omi.json"
-			}, {
+			},
+			{
 				"language": "typescriptreact",
 				"path": "./src/snippets/omi.json"
-			} , {
+			},
+			{
 				"language": "json",
 				"path": "./src/snippets/omi.json"
-			}, {
+			},
+			{
 				"language": "html",
 				"path": "./src/snippets/omiu.json"
-			}, {
+			},
+			{
 				"language": "javascript",
 				"path": "./src/snippets/omiu.json"
-			}, {
+			},
+			{
 				"language": "javascriptreact",
 				"path": "./src/snippets/omiu.json"
-			}, {
+			},
+			{
 				"language": "typescript",
 				"path": "./src/snippets/omiu.json"
-			}, {
+			},
+			{
 				"language": "typescriptreact",
 				"path": "./src/snippets/omiu.json"
-			} , {
+			},
+			{
 				"language": "json",
 				"path": "./src/snippets/omiu.json"
 			}

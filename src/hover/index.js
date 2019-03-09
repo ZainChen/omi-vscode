@@ -33,9 +33,11 @@ function provideHover(document, position, token) {
 		return hoverJson.provideHoverJson(document, position, token);
 	}
 	//javascript文件
-	if(alg.strTailMatch(fileName, ".js", 2)) {
-		return hoverJavascript.provideHoverJavaScript(document, position, token);
-	}
+	// if(alg.strTailMatch(fileName, ".js", 2)) {
+	// 	return hoverJavascript.provideHoverJavaScript(document, position, token);
+	// }
 	
-	return new vscode.Hover(`zain`);
+	// return new vscode.Hover(`zain`);
+
+	return null;
 }

@@ -78,21 +78,10 @@ https://github.com/Tencent/omi
 - **Shadow DOM merges with Virtual DOM**, Omi uses both virtual DOM and real Shadow DOM to make view updates more accurate and faster
 - **Scoped CSS**'s best solution is [**Shadow DOM**](https://developers.google.com/web/fundamentals/web-components/shadowdom), the community churning out frameworks and libraries for Scoped CSS (using JS or JSON writing styles such as Radium, jsxstyle, react-style; binding to webpack using generated unique `className` `filename-classname-hash`, such as CSS Modules, Vue), are hack technologies; _and Shadow DOM Style is the perfect solution_.
 
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 # Contributors
 
-<table>
-    <tbody>
-        <tr>
-            <td>
-                <a target="_blank" href="https://github.com/dntzhang">
-                    <img width="60px" src="https://avatars2.githubusercontent.com/u/7917954?s=60&amp;v=4">
-                </a>
-            </td>
-            <td>
-                <a target="_blank" href="https://zainzy.com">
-                    <img width="60px" src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/zain.png">
-                </a>
-            </td>
-        </tr>
-    </tbody>
-</table>
+| [<img src="https://avatars2.githubusercontent.com/u/7917954?s=60&amp;v=4" width="60px;"/><br /><sub>dntzhang</sub>](https://github.com/dntzhang)<br />[💻](https://github.com/Tencent/omi "Code") [📖](https://github.com/Tencent/omi "Documentation") [♥](https://github.com/Tencent/omi "Tests") | [<img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/zain.png" width="60px;"/><br /><sub>ZainChen</sub>](https://zainzy.com)<br />[💻](https://github.com/ZainChen "Code") [📖](https://github.com/ZainChen "Documentation") [♥](https://github.com/ZainChen "Tests") |
+| :---: | :---: |
+|  |  |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
