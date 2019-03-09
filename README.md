@@ -83,5 +83,6 @@ https://github.com/Tencent/omi
 
 | [<img src="https://avatars2.githubusercontent.com/u/7917954?s=60&amp;v=4" width="60px;"/><br /><sub>dntzhang</sub>](https://github.com/dntzhang)<br />[💻](https://github.com/Tencent/omi "Code") [📖](https://github.com/Tencent/omi "Documentation") [♥](https://github.com/Tencent/omi "Tests") | [<img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/zain.png" width="60px;"/><br /><sub>ZainChen</sub>](https://zainzy.com)<br />[💻](https://github.com/ZainChen "Code") [📖](https://github.com/ZainChen "Documentation") [♥](https://github.com/ZainChen "Tests") |
 | :---: | :---: |
-|  |  |
+
+<!-- |  |  | -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
