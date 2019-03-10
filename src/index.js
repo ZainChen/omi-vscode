@@ -18,18 +18,19 @@ const cmd = require("./command/index");  //命令模块(test)
  * @param {vscode.ExtensionContext} context 扩展内容
  */
 function activate(context) {
+	const ecoProvider = new eco.EcoProvider(context);  //omi生态更新、下载、项目创建(创建项目包含在线和离线两种方式)
 
-	// context.subscriptions.push();
+	context.subscriptions.push(
+		//omi生态更新、下载、项目创建(创建项目包含在线和离线两种方式)
+		//vscode.window.registerTreeDataProvider('omi.view.ecosystem', ecoProvider);  //omi生态内容注册(无法添加showCollapseAll功能)
+		//omi生态内容创建和注册(用此方法可添加showCollapseAll功能)，支持此功能的vscode最低版本为1.30.1
+		vscode.window.createTreeView('omi.view.ecosystem', { treeDataProvider: ecoProvider, showCollapseAll: true }),
+		vscode.commands.registerCommand('omi.cmd.ecoRefresh', () => ecoProvider.refreshAll()),  //刷新所有菜单节点
+		vscode.commands.registerCommand('omi.cmd.ecoRefreshNode', offset => ecoProvider.refreshDesignation(offset)),  //刷新指定菜单节点
+		vscode.commands.registerCommand('omi.cmd.openGithub', nodeLink => vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(nodeLink))),
 
-	//omi生态更新、下载、项目创建(创建项目包含在线和离线两种方式)
-	const ecoProvider = new eco.EcoProvider(context);
-	//context.subscriptions.push(vscode.window.registerTreeDataProvider('omi.view.ecosystem', ecoProvider));  //omi生态内容注册(无法添加showCollapseAll功能)
-	//omi生态内容创建和注册(用此方法可添加showCollapseAll功能)
-	context.subscriptions.push(vscode.window.createTreeView('omi.view.ecosystem', { treeDataProvider: ecoProvider, showCollapseAll: true }));
-	context.subscriptions.push(vscode.commands.registerCommand('omi.cmd.ecoRefresh', () => ecoProvider.refreshAll()));  //刷新所有菜单节点
-	context.subscriptions.push(vscode.commands.registerCommand('omi.cmd.ecoRefreshNode', offset => ecoProvider.refreshDesignation(offset)));  //刷新指定菜单节点
-	context.subscriptions.push(vscode.commands.registerCommand('omi.cmd.openGithub', nodeLink => vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(nodeLink))));
-	
+	);
+
 	//鼠标悬停提示功能
 	const provideHover = hover.provideHover;
 	context.subscriptions.push(vscode.languages.registerHoverProvider(['json', 'javascript', 'tex'], { provideHover }));  //鼠标悬停提示功能注册
