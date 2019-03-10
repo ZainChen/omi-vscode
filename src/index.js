@@ -18,6 +18,9 @@ const cmd = require("./command/index");  //命令模块(test)
  * @param {vscode.ExtensionContext} context 扩展内容
  */
 function activate(context) {
+
+	// context.subscriptions.push();
+
 	//omi生态更新、下载、项目创建(创建项目包含在线和离线两种方式)
 	const ecoProvider = new eco.EcoProvider(context);
 	//context.subscriptions.push(vscode.window.registerTreeDataProvider('omi.view.ecosystem', ecoProvider));  //omi生态内容注册(无法添加showCollapseAll功能)
@@ -45,7 +48,7 @@ function activate(context) {
 	context.subscriptions.push(vscode.commands.registerCommand('omi.cmd.help', cmd.commandOmiHelp));  //"omi.cmd.help"命令注册
 	
     
-    
+    //自动补全
 	//context.subscriptions.push(vscode.languages.registerCompletionItemProvider(['json', 'javascript'], {provideCompletionItems, resolveCompletionItem}, '.'));  //代码提示功能注册(未出效果，待解决...)
 	
 
