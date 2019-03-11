@@ -1,5 +1,6 @@
 const vscode = require('vscode');
 
+const oci = require('./completion-item');
 
 /**
  * omi自动补全功能实现类
@@ -21,7 +22,8 @@ class OmiCompletion {
 		//const lineText = line.text.substring(0, position.character);  //只截取到光标位置，防止一些特殊情况
 		const dependencies = ['zain', 'jane'];
 		return dependencies.map( (dep) => {
-			return new vscode.CompletionItem(dep, vscode.CompletionItemKind.Field);  //vscode.CompletionItemKind 表示提示类型
+			//return new vscode.CompletionItem(dep, vscode.CompletionItemKind.Field);  //vscode.CompletionItemKind 表示提示类型
+			return new oci.OmiCompletionItem(dep, vscode.CompletionItemKind.Field, 'omiomiomi',new vscode.MarkdownString(`# gfaweuihgilawehl\n\n---\n\n[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v1.0.5-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)`));
 		})
 	}
 
