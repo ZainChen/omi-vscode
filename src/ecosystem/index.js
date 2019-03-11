@@ -8,7 +8,7 @@ const rp = require('request-promise');  //同步获取网页模块
 const https = require('https');  // http模块
 const cheerio = require('cheerio');  // cheerio 是一个Node.js的库， 它可以从html的片断中构建DOM结构，然后提供像jquery一样的css选择器查询
 
-const trioe = require("./treeItemOmiEco");  //omi生态专用菜单树模块
+const trioe = require("./tree-item");  //omi生态专用菜单树模块
 const alg = require("../algorithm/index");  //算法模块
 
 /**
@@ -19,7 +19,7 @@ class EcoProvider {
      * EcoProvider 类的构造函数
      */
     constructor(context) {
-        this.context = context;
+        this.context = context;  //暂时没用到
         this.urlGitHub = 'https://github.com';  //要获取内容的初始网址
         this.urlGitHubUser = 'Tencent';
         this.urlGitHubRepositories = 'omi';
@@ -105,13 +105,13 @@ class EcoProvider {
         }
         const toDep = (label, labelAdd, filePathlink, isDirectory) => {
             if (isDirectory == "directory") {
-                return new trioe.TreeItemOmiEco(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.Collapsed, {
+                return new trioe.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.Collapsed, {
                     command: 'omi.cmd.openGithub',
                     title: '',
                     arguments: [filePathlink]
                 });
             } else {
-                return new trioe.TreeItemOmiEco(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.None, {
+                return new trioe.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.None, {
                     command: 'omi.cmd.openGithub',
                     title: '',
                     arguments: [filePathlink]
@@ -153,13 +153,13 @@ class EcoProvider {
         }
         const toDep = (label, labelAdd, filePathlink, isDirectory) => {
             if (isDirectory == "directory") {
-                return new trioe.TreeItemOmiEco(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.Collapsed, {
+                return new trioe.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.Collapsed, {
                     command: 'omi.cmd.openGithub',
                     title: '',
                     arguments: [filePathlink]
                 });
             } else {
-                return new trioe.TreeItemOmiEco(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.None, {
+                return new trioe.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.None, {
                     command: 'omi.cmd.openGithub',
                     title: '',
                     arguments: [filePathlink]
