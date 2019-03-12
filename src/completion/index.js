@@ -47,10 +47,25 @@ class OmiCompletion {
 
 
 	labelCompletion() {
+		let retCom = [];
+		let comp = new vscode.CompletionItem('o-icon ', vscode.CompletionItemKind.Field);
+		comp.command = this.autoSuggestCommand();
+		comp.documentation = new vscode.MarkdownString(`# gfaweuihgilawehl\n\n---\n\n[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v1.0.5-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)`);
+		comp.insertText = new vscode.SnippetString(`<o-icon \$${0} >`);
+		retCom.push(comp);
+		return retCom;
+
+
 		const dependencies = ['zain ', 'jane '];
 		return dependencies.map( (dep) => {
 			//return new vscode.CompletionItem(dep, vscode.CompletionItemKind.Field);  //vscode.CompletionItemKind 表示提示类型
-			return new oci.OmiCompletionItem(dep, vscode.CompletionItemKind.Field, 'omiomiomi',new vscode.MarkdownString(`# gfaweuihgilawehl\n\n---\n\n[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v1.0.5-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)`), autoSuggestCommand());
+			return new oci.OmiCompletionItem(
+				dep,
+				vscode.CompletionItemKind.Field,
+				'omiomiomi',
+				new vscode.MarkdownString(`# gfaweuihgilawehl\n\n---\n\n[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v1.0.5-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)`),
+				this.autoSuggestCommand()
+			);
 		})
 	}
 
@@ -58,8 +73,16 @@ class OmiCompletion {
 		const dependencies = ['attribute1.', 'attribute2.'];
 		return dependencies.map( (dep) => {
 			//return new vscode.CompletionItem(dep, vscode.CompletionItemKind.Field);  //vscode.CompletionItemKind 表示提示类型
-			return new oci.OmiCompletionItem(dep, vscode.CompletionItemKind.Field, 'omi',new vscode.MarkdownString(`# gfaweuihgilawehl\n\n---\n\n[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v1.0.5-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)`), autoSuggestCommand());
+			return new oci.OmiCompletionItem(dep, vscode.CompletionItemKind.Field, 'omi',new vscode.MarkdownString(`# gfaweuihgilawehl\n\n---\n\n[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v1.0.5-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)`));
 		})
+	}
+
+
+	autoSuggestCommand() {
+		return {
+			command: 'editor.action.triggerSuggest',
+			title: 'triggerSuggest'
+		};
 	}
 
 
@@ -67,12 +90,6 @@ class OmiCompletion {
 exports.OmiCompletion = OmiCompletion;
 
 
-function autoSuggestCommand() {
-    return {
-        command: 'editor.action.triggerSuggest',
-        title: 'triggerSuggest'
-    };
-}
 
 
 //样例
