@@ -110,3 +110,9 @@ function strDelHtLineSpace(str) {
 	}
 	return reStr;
 }
+
+
+function getLastChar(doc, pos) {
+    return doc.getText(new vscode.Range(new vscode.Position(pos.line, pos.character - 1), pos));
+}
+exports.getLastChar = getLastChar;

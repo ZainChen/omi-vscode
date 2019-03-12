@@ -1,12 +1,13 @@
 const vscode = require('vscode');
 
 const oci = require('./completion-item');
+const alg = require('../algorithm/index');
 
 /**
  * omi自动补全功能实现类
  */
 class OmiCompletion {
-
+	
 	/**
 	 *提供给定职位和文件的完成项目。
 	 *
@@ -19,12 +20,14 @@ class OmiCompletion {
 	 */
 	provideCompletionItems(document, position, token, context) {
 		const line = document.lineAt(position);
-		//const lineText = line.text.substring(0, position.character);  //只截取到光标位置，防止一些特殊情况
-		const dependencies = ['zain', 'jane'];
-		return dependencies.map( (dep) => {
-			//return new vscode.CompletionItem(dep, vscode.CompletionItemKind.Field);  //vscode.CompletionItemKind 表示提示类型
-			return new oci.OmiCompletionItem(dep, vscode.CompletionItemKind.Field, 'omiomiomi',new vscode.MarkdownString(`# gfaweuihgilawehl\n\n---\n\n[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v1.0.5-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)`));
-		})
+		const lineText = line.text.substring(0, position.character);  //只截取到光标位置，防止一些特殊情况
+		let ch = context.triggerCharacter || alg.getLastChar(document, position);
+		switch(ch) {
+			case '.': return this.labelCompletion();  //标签补全
+			case ' ': return this.attributesCompletion();  //属性补全
+			default: return [];
+		}
+
 	}
 
 	/**
@@ -43,11 +46,33 @@ class OmiCompletion {
 	}
 
 
+	labelCompletion() {
+		const dependencies = ['zain ', 'jane '];
+		return dependencies.map( (dep) => {
+			//return new vscode.CompletionItem(dep, vscode.CompletionItemKind.Field);  //vscode.CompletionItemKind 表示提示类型
+			return new oci.OmiCompletionItem(dep, vscode.CompletionItemKind.Field, 'omiomiomi',new vscode.MarkdownString(`# gfaweuihgilawehl\n\n---\n\n[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v1.0.5-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)`), autoSuggestCommand());
+		})
+	}
+
+	attributesCompletion() {
+		const dependencies = ['attribute1.', 'attribute2.'];
+		return dependencies.map( (dep) => {
+			//return new vscode.CompletionItem(dep, vscode.CompletionItemKind.Field);  //vscode.CompletionItemKind 表示提示类型
+			return new oci.OmiCompletionItem(dep, vscode.CompletionItemKind.Field, 'omi',new vscode.MarkdownString(`# gfaweuihgilawehl\n\n---\n\n[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v1.0.5-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)`), autoSuggestCommand());
+		})
+	}
+
+
 }
 exports.OmiCompletion = OmiCompletion;
 
 
-
+function autoSuggestCommand() {
+    return {
+        command: 'editor.action.triggerSuggest',
+        title: 'triggerSuggest'
+    };
+}
 
 
 //样例
