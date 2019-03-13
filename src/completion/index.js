@@ -1,13 +1,11 @@
 const vscode = require('vscode');
 
-const oci = require('./completion-item');
 const alg = require('../algorithm/index');
 
 /**
  * omi自动补全功能实现类
  */
 class OmiCompletion {
-	
 	/**
 	 *提供给定职位和文件的完成项目。
 	 *
@@ -18,12 +16,12 @@ class OmiCompletion {
 	 * @return 一个完成数组，一个[补全列表]（＃CompletionList），或一个解析为其中任何一个的thenable。
 	 *可以通过返回`undefined`，`null`或空数组来表示缺少结果。
 	 */
-	provideCompletionItems(document, position, token, context) {
-		const line = document.lineAt(position);
-		const lineText = line.text.substring(0, position.character);  //只截取到光标位置，防止一些特殊情况
-		let ch = context.triggerCharacter || alg.getLastChar(document, position);
+	async provideCompletionItems(document, position, token, context) {
+		let aaa = this.getLastChar(document, position);
+		let bbb = context.triggerCharacter;
+		let ch = bbb || aaa;
 		switch(ch) {
-			case '.': return this.labelCompletion();  //标签补全
+			case '<': return this.labelCompletion();  //标签补全
 			case ' ': return this.attributesCompletion();  //属性补全
 			default: return [];
 		}
@@ -46,35 +44,30 @@ class OmiCompletion {
 	}
 
 
-	labelCompletion() {
-		let retCom = [];
-		let comp = new vscode.CompletionItem('o-icon ', vscode.CompletionItemKind.Field);
-		comp.command = this.autoSuggestCommand();
-		comp.documentation = new vscode.MarkdownString(`# gfaweuihgilawehl\n\n---\n\n[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v1.0.5-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)`);
-		comp.insertText = new vscode.SnippetString(`<o-icon \$${0} >`);
-		retCom.push(comp);
+	async labelCompletion() {
+		let retCom = new Array();
+		for(let i = 0; i < 25; i++) {
+			let comp = new vscode.CompletionItem('o-button <o-button></o-button>', vscode.CompletionItemKind.Field);
+			comp.kind = vscode.CompletionItemKind.TypeParameter;
+			comp.insertText = new vscode.SnippetString(`o-button>\${${'1'}}</o-button>`);  //<o-icon${' '}\${${1}}>\${${2}}</o-icon>
+			comp.detail = "[omiu] Click or touch it to trigger an operation. The encapsulated logic is triggered in response to user clicks.";
+			comp.documentation = new vscode.MarkdownString(`## Button 按钮 \n\n点击或触摸触发一个操作的元素。响应用户点击操作，触发封装的逻辑。\n\n## 使用\n\n\`\`\`js\n<o-button>我是按钮</o-button>\n\`\`\`\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| type  | string| primary |Options: primary, default, warn, vcode|\n| size | string   |   normal |Options: normal, small|\n| disabled | bool| false ||`);
+			comp.sortText = 'a';
+			comp.command = this.autoSuggestCommand();
+			retCom.push(comp);
+		}
 		return retCom;
-
-
-		const dependencies = ['zain ', 'jane '];
-		return dependencies.map( (dep) => {
-			//return new vscode.CompletionItem(dep, vscode.CompletionItemKind.Field);  //vscode.CompletionItemKind 表示提示类型
-			return new oci.OmiCompletionItem(
-				dep,
-				vscode.CompletionItemKind.Field,
-				'omiomiomi',
-				new vscode.MarkdownString(`# gfaweuihgilawehl\n\n---\n\n[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v1.0.5-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)`),
-				this.autoSuggestCommand()
-			);
-		})
 	}
 
-	attributesCompletion() {
-		const dependencies = ['attribute1.', 'attribute2.'];
-		return dependencies.map( (dep) => {
-			//return new vscode.CompletionItem(dep, vscode.CompletionItemKind.Field);  //vscode.CompletionItemKind 表示提示类型
-			return new oci.OmiCompletionItem(dep, vscode.CompletionItemKind.Field, 'omi',new vscode.MarkdownString(`# gfaweuihgilawehl\n\n---\n\n[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v1.0.5-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)`));
-		})
+	async attributesCompletion() {
+		let retCom = [];
+		let comp = new vscode.CompletionItem('type', vscode.CompletionItemKind.Field);
+		comp.command = this.autoSuggestCommand();
+		comp.documentation = new vscode.MarkdownString(`# gfaweuihgilawehl\n\n---\n\n[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v1.0.5-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)`);
+		comp.insertText = new vscode.SnippetString("type=\"${1|aaa,success,success_no_circle,info,warn,waiting,cancel,download,search,clear|}\"");
+		comp.sortText = 'a';
+		retCom.push(comp);
+		return retCom;
 	}
 
 
@@ -83,6 +76,10 @@ class OmiCompletion {
 			command: 'editor.action.triggerSuggest',
 			title: 'triggerSuggest'
 		};
+	}
+
+	getLastChar(doc, pos) {
+		return doc.getText(new vscode.Range(new vscode.Position(pos.line, pos.character - 1), pos));
 	}
 
 

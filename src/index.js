@@ -33,7 +33,7 @@ function activate(context) {
 		vscode.commands.registerCommand('omi.cmd.openGithub', nodeLink => vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(nodeLink))),
 
 		//自动补全
-		vscode.languages.registerCompletionItemProvider(['json', 'javascript'], omiCompletion, '<', ' ', ':', '@', '.', '-', '"', '\''),  //代码提示功能注册
+		vscode.languages.registerCompletionItemProvider(['javascript'], omiCompletion, '<', ' '),  //代码提示功能注册
 		
 		//鼠标悬停提示功能
 		vscode.languages.registerHoverProvider(['json', 'javascript', 'tex'], { provideHover }),  //鼠标悬停提示功能注册
