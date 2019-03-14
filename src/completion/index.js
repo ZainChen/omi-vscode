@@ -1,11 +1,15 @@
 const vscode = require('vscode');
+const fs = require('fs');
 
-const alg = require('../algorithm/index');
+//const alg = require('../algorithm/index');
 
 /**
  * omi自动补全功能实现类
  */
 class OmiCompletion {
+	constructor() {
+		this.objJson = new Object();
+	}
 	/**
 	 *提供给定职位和文件的完成项目。
 	 *
@@ -17,12 +21,12 @@ class OmiCompletion {
 	 *可以通过返回`undefined`，`null`或空数组来表示缺少结果。
 	 */
 	async provideCompletionItems(document, position, token, context) {
-		let bbb = context.triggerCharacter;
-		let aaa = this.getLastChar(document, position);
-		let ch = bbb || aaa;
+		let ch = context.triggerCharacter || this.getLastChar(document, position);
 		switch(ch) {
-			case '<': return this.labelCompletion();  //标签补全
-			case ' ': return this.attributesCompletion();  //属性补全
+			case '<': return this.omiuLabelCompletion();  //标签补全
+			case '\'':
+			case '\"':
+			case ' ': return this.omiuAttributesCompletion(document, position);  //属性补全
 			default: return [];
 		}
 
@@ -43,48 +47,46 @@ class OmiCompletion {
 		return item;
 	}
 
-
-	async labelCompletion() {
+	omiuLabelCompletion() {
 		let retCom = new Array();
-		for(let i = 0; i < 25; i++) {
-			let comp = new vscode.CompletionItem('o-button', vscode.CompletionItemKind.Field);
-			comp.kind = vscode.CompletionItemKind.TypeParameter;
-			comp.detail = "[omiu]";
-			comp.insertText = new vscode.SnippetString(`o-button\${${1}}>\${${2}}</o-button>`);  //o-button${' '}\${${1}}>\${${2}}</o-button>
-			comp.documentation = new vscode.MarkdownString(`## Button 按钮\n\n简介：点击或触摸触发一个操作的元素。响应用户点击操作，触发封装的逻辑。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/button?index=1&subIndex=0 \'官网链接\') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/button?index=1&subIndex=0 \'官网链接\')\n\n---\n\n## 使用\n\n\`\`\`js\n<o-button>我是按钮</o-button>\n\`\`\`\n\n---\n\n## API\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n|:-------------|:-------------|:-----|:-------------|\n| type  | string| primary |Options: primary, default, warn, vcode|\n| size | string   |   normal |Options: normal, small|\n| disabled | bool| false ||\n\n---\n\n## 样例\n\n![button](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/button1.png \'button\')\n\n![button](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/button2.png \'button\')\n\n![button](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/button3.png \'button\')\n`);
-			comp.sortText = 'a';
-			// comp.command = this.autoSuggestCommand();
+		let data = fs.readFileSync(__dirname+'/comjson/omiu-com.json', 'utf8');  //同步获取json文件内容
+		this.objJson = JSON.parse(data);
+		for(let i in this.objJson) {
+			let comp = new vscode.CompletionItem(this.objJson[i]['label'], this.objJson[i]['kind']);
+			comp.detail = this.objJson[i]['detail'];
+			comp.insertText = new vscode.SnippetString(this.objJson[i]['insertText']);
+			comp.documentation = new vscode.MarkdownString(this.objJson[i]['documentation']);
+			comp.sortText = this.objJson[i]['sortText'];
+			if(this.objJson[i]['cmd']) {
+				comp.command = this.autoSuggestCommand();
+			}
 			retCom.push(comp);
 		}
 		return retCom;
 	}
 
-	async attributesCompletion() {
+	omiuAttributesCompletion(document, position) {
 		let retCom = [];
-		let comp = new vscode.CompletionItem('type', vscode.CompletionItemKind.Field);
-		comp.kind = vscode.CompletionItemKind.Event;
-		comp.detail = "[omiu]o-button";
-		comp.insertText = new vscode.SnippetString("type=\'${1|primary,default,warn,vcode|}\'");
-		comp.documentation = new vscode.MarkdownString(`## type\n\n**string**\n\nOptions: primary, default, warn, vcode`);
-		comp.sortText = 'a';
-		comp.command = this.autoSuggestCommand();
-		retCom.push(comp);
-		comp = new vscode.CompletionItem('size', vscode.CompletionItemKind.Field);
-		comp.kind = vscode.CompletionItemKind.Event;
-		comp.detail = "[omiu]o-button";
-		comp.insertText = new vscode.SnippetString("size=\'${1|normal,small|}\'");
-		comp.documentation = new vscode.MarkdownString(`## size\n\n**string**\n\nOptions: normal, small`);
-		comp.sortText = 'a';
-		comp.command = this.autoSuggestCommand();
-		retCom.push(comp);
-		comp = new vscode.CompletionItem('disabled', vscode.CompletionItemKind.Field);
-		comp.kind = vscode.CompletionItemKind.Event;
-		comp.detail = "[omiu]o-button";
-		comp.insertText = new vscode.SnippetString("disabled=\'${1|false,true|}\'");
-		comp.documentation = new vscode.MarkdownString(`## disabled\n\n**bool**\n\nOptions: false, true`);
-		comp.sortText = 'a';
-		comp.command = this.autoSuggestCommand();
-		retCom.push(comp);
+		const lineStr = document.lineAt(position).text;
+		let lineLen = lineStr.length;
+		let ip = position.character;
+		let label = this.getPosOmiLabe(lineStr, lineLen, ip);
+		if(label) {
+			for(let i in this.objJson[label]['attribute']) {
+				if(this.labeHaveattributes(lineStr, lineLen, ip, this.objJson[label]['attribute'][i]['label'])) {  //标签内已有的属性值不添加
+					continue;
+				}
+				let comp = new vscode.CompletionItem(this.objJson[label]['attribute'][i]['label'], this.objJson[label]['attribute'][i]['kind']);
+				comp.detail = this.objJson[label]['attribute'][i]['detail'];
+				comp.insertText = new vscode.SnippetString(this.objJson[label]['attribute'][i]['insertText']);
+				comp.documentation = new vscode.MarkdownString(this.objJson[label]['attribute'][i]['documentation']);
+				comp.sortText = this.objJson[label]['attribute'][i]['sortText'];
+				if(this.objJson[label]['attribute'][i]['cmd']) {
+					comp.command = this.autoSuggestCommand();
+				}
+				retCom.push(comp);
+			}
+		}
 		return retCom;
 	}
 
@@ -99,48 +101,101 @@ class OmiCompletion {
 	getLastChar(doc, pos) {
 		return doc.getText(new vscode.Range(new vscode.Position(pos.line, pos.character - 1), pos));
 	}
+	
+	/**
+	 * 获取光标所在的标签名，
+	 * 如果光标不在一个完整标签内，则返回空(完整标签:<>)
+	 * @param lineStr 整行字符串
+	 * @param lineLen 整行字符串长度
+	 * @param ip 当前光标所在位置
+	 * @return null | string
+	 */
+	getPosOmiLabe(lineStr, lineLen, ip) {
+		let retStr = '';
+		let il = 0;  //'<'的位置
+		for(let i = ip-1; i >= 0; i--) {  //从光标位置往左查找，找到'<'位置,先找到'>'或未找到'<'都表示光标不在完整标签内
+			if(lineStr[i] == '>') {
+				return '';
+			} else if(lineStr[i] == '<') {
+				il = i;
+				break;
+			}
+		}
+		if(il == 0 && lineStr[0] != '<') {  //未找到'<'
+			return '';
+		}
+		//判断光标是否在引号中(''或"")，从而判断是否要给属性提示
+		//算法：在标签内从左往右数'或"的数量，如果为双数则光标不在其中,如果为单数且光标右边还有'或"则光标在其中
+		//判断单引号'
+		let ldyn = 0;
+		for(let i = il+1; i < ip; i++) {
+			if(lineStr[i] == '\'') {
+				ldyn += 1;
+			}
+		}
+		if(ldyn%2 != 0) {
+			return '';
+		}
+		//判断双引号"
+		let lsyn = 0;
+		for(let i = il+1; i < ip; i++) {
+			if(lineStr[i] == '\"') {
+				lsyn += 1;
+			}
+		}
+		if(lsyn%2 != 0) {
+			return '';
+		}
+		for(let i = il+1; i < lineLen; i++) {
+			if(lineStr[i] == ' ') {
+				break;
+			}
+			retStr += lineStr[i];
+		}
+		return retStr;
+	}
+	
+	/**
+	 * 查找标签内是否存在attr属性，如果存在，返回true，否则返回false
+	 * @param {*} lineStr 整行字符串
+	 * @param {*} lineLen 整行字符串长度
+	 * @param {*} ip 当前光标所在位置
+	 * @param {*} attr 待查找的属性
+	 */
+	labeHaveattributes(lineStr, lineLen, ip, attr) {
+		let il = 0;  //'<'的位置
+		for(let i = ip-1; i >= 0; i--) {  //从光标位置往左查找，找到'<'位置,先找到'>'或未找到'<'都表示光标不在完整标签内
+			if(lineStr[i] == '>') {
+				return false;
+			} else if(lineStr[i] == '<') {
+				il = i;
+				break;
+			}
+		}
+		if(il == 0 && lineStr[0] != '<') {  //未找到'<'
+			return false;
+		}
+		let findStr = ' ';
+		for(let i = il+1; i < lineLen; i++) {
+			findStr += lineStr[i];
+		}
+		//属性串的合法格式
+		let sf = [
+			" "+attr+" ",
+			" "+attr+"=",
+			"\""+attr+" ",
+			"\""+attr+"=",
+			"\'"+attr+" ",
+			"\'"+attr+"="
+		];
+		for(let i = 0; i < sf.length; i++) {
+			if(findStr.indexOf(sf[i]) != -1) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 
 }
 exports.OmiCompletion = OmiCompletion;
-
-
-
-
-//样例
-// /**
-//  * (未出效果，待解决...)
-//  * 自动提示实现，这里模拟一个很简单的操作
-//  * 当输入 this.dependencies.xxx时自动把package.json中的依赖带出来
-//  * 当然这个例子没啥实际意义，仅仅是为了演示如何实现功能
-//  * @param {*} document 
-//  * @param {*} position 
-//  * @param {*} token 
-//  * @param {*} context 
-//  */
-// provideCompletionItems(document, position, token, context) {
-// 	const line        = document.lineAt(position);
-// 	const projectPath = __dirname;
-
-// 	// 只截取到光标位置为止，防止一些特殊情况
-// 	const lineText = line.text.substring(0, position.character);
-// 	// 简单匹配，只要当前光标前的字符串为`this.dependencies.`都自动带出所有的依赖
-// 	if(/(^|=| )\w+\.dependencies\.$/g.test(lineText)) {
-// 		const json = require(`${projectPath}/package.json`);
-// 		const dependencies = Object.keys(json.dependencies || {}).concat(Object.keys(json.devDependencies || {}));
-// 		//return new vscode.CompletionItem(dependencies[0], vscode.CompletionItemKind.Field);
-// 		return dependencies.map( (dep) => {
-// 			// vscode.CompletionItemKind 表示提示的类型
-// 			return new vscode.CompletionItem(dep, vscode.CompletionItemKind.Field);
-// 		})
-// 	}
-// }
-
-// /**
-//  * 光标选中当前自动补全item时触发动作，一般情况下无需处理
-//  * @param {*} item 
-//  * @param {*} token 
-//  */
-// resolveCompletionItem(item, token) {
-// 	return item;
-// }

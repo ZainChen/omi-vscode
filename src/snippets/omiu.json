@@ -1,7 +1,7 @@
 {
     "o-button": {
         "prefix": "o-button",
-        "body": "<o-button>${1:button}</o-button>",
+        "body": "<o-button${1}>${2:button}</o-button>",
         "description": "[omiu] Click or touch it to trigger an operation. The encapsulated logic is triggered in response to user clicks."
     },
     "<o-icon />": {
