@@ -47,33 +47,41 @@ class OmiCompletion {
 		return item;
 	}
 
+	/**
+	 * 标签补全
+	 */
 	omiuLabelCompletion() {
 		let retCom = new Array();
 		let data = fs.readFileSync(__dirname+'/comjson/omiu-com.json', 'utf8');  //同步获取json文件内容
-		this.objJson = JSON.parse(data);
+		this.objJson = JSON.parse(data);  //字符串转json对象
 		for(let i in this.objJson) {
-			let comp = new vscode.CompletionItem(this.objJson[i]['label'], this.objJson[i]['kind']);
-			comp.detail = this.objJson[i]['detail'];
-			comp.insertText = new vscode.SnippetString(this.objJson[i]['insertText']);
-			comp.documentation = new vscode.MarkdownString(this.objJson[i]['documentation']);
-			comp.sortText = this.objJson[i]['sortText'];
+			let comp = new vscode.CompletionItem(this.objJson[i]['label'], this.objJson[i]['kind']);  //创建补全对象(初始化标签和类型)
+			comp.detail = this.objJson[i]['detail'];  //提示信息
+			comp.insertText = new vscode.SnippetString(this.objJson[i]['insertText']);  //插入的内容
+			comp.documentation = new vscode.MarkdownString(this.objJson[i]['documentation']);  //Markdown说明
+			comp.sortText = this.objJson[i]['sortText'];  //权值排序
 			if(this.objJson[i]['cmd']) {
-				comp.command = this.autoSuggestCommand();
+				comp.command = this.autoSuggestCommand();  //补全后立马开启新的补全提示
 			}
 			retCom.push(comp);
 		}
 		return retCom;
 	}
 
+	/**
+	 * 属性补全
+	 * @param document 调用命令的文档。
+	 * @param position 调用命令的位置。
+	 */
 	omiuAttributesCompletion(document, position) {
 		let retCom = [];
-		const lineStr = document.lineAt(position).text;
+		const lineStr = document.lineAt(position).text;  //当前光标所在整行文本
 		let lineLen = lineStr.length;
-		let ip = position.character;
-		let label = this.getPosOmiLabe(lineStr, lineLen, ip);
+		let ip = position.character;  //当前光标所在位置
+		let label = this.getPosOmiLabe(lineStr, lineLen, ip);  //获取合法标签中的标签，如果标签不合法，返回空
 		if(label) {
 			for(let i in this.objJson[label]['attribute']) {
-				if(this.labeHaveattributes(lineStr, lineLen, ip, this.objJson[label]['attribute'][i]['label'])) {  //标签内已有的属性值不添加
+				if(this.labeHaveattributes(lineStr, lineLen, ip, this.objJson[label]['attribute'][i]['label'])) {  //标签内已有的属性值不添加(只支持光标在标签行)
 					continue;
 				}
 				let comp = new vscode.CompletionItem(this.objJson[label]['attribute'][i]['label'], this.objJson[label]['attribute'][i]['kind']);
