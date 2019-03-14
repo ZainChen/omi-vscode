@@ -17,7 +17,6 @@ class OmiCompletion {
 	 *可以通过返回`undefined`，`null`或空数组来表示缺少结果。
 	 */
 	async provideCompletionItems(document, position, token, context) {
-		let aaa = this.getLastChar(document, position);
 		let bbb = context.triggerCharacter;
 		let ch = bbb || aaa;
 		switch(ch) {
@@ -47,11 +46,11 @@ class OmiCompletion {
 	async labelCompletion() {
 		let retCom = new Array();
 		for(let i = 0; i < 25; i++) {
-			let comp = new vscode.CompletionItem('o-button <o-button></o-button>', vscode.CompletionItemKind.Field);
+			let comp = new vscode.CompletionItem('o-button', vscode.CompletionItemKind.Field);
 			comp.kind = vscode.CompletionItemKind.TypeParameter;
 			comp.insertText = new vscode.SnippetString(`o-button>\${${'1'}}</o-button>`);  //<o-icon${' '}\${${1}}>\${${2}}</o-icon>
-			comp.detail = "[omiu] Click or touch it to trigger an operation. The encapsulated logic is triggered in response to user clicks.";
-			comp.documentation = new vscode.MarkdownString(`## Button 按钮 \n\n点击或触摸触发一个操作的元素。响应用户点击操作，触发封装的逻辑。\n\n## 使用\n\n\`\`\`js\n<o-button>我是按钮</o-button>\n\`\`\`\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| type  | string| primary |Options: primary, default, warn, vcode|\n| size | string   |   normal |Options: normal, small|\n| disabled | bool| false ||`);
+			// comp.detail = "[omiu]";
+			comp.documentation = new vscode.MarkdownString(`## Button 按钮 [omiu] \n\n点击或触摸触发一个操作的元素。响应用户点击操作，触发封装的逻辑。\n\n## 使用\n\n\`\`\`js\n<o-button>我是按钮</o-button>\n\`\`\`\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n|:-------------|:-------------|:-----|:-------------|\n| type  | string| primary |Options: primary, default, warn, vcode|\n| size | string   |   normal |Options: normal, small|\n| disabled | bool| false ||`);
 			comp.sortText = 'a';
 			comp.command = this.autoSuggestCommand();
 			retCom.push(comp);
