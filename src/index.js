@@ -68,6 +68,17 @@ exports.deactivate = deactivate;  //插件被释放触发(函数接口)
 /** 
  * 查看omi帮助命令
 */
-function commandOmiHelp() {
+async function commandOmiHelp() {
 	vscode.window.showInformationMessage('Hi Omi.');
+	// const choice = await vscode.window.showQuickPick(['https://github.com/Tencent/omi'], {
+	// 	matchOnDetail: true,
+	// 	placeHolder: "请输入GitHub地址",
+	// });
+	const githubUrl = await vscode.window.showInputBox({  //此功能准备加入omi生态系统功能中
+		prompt: "Please enter the url of GitHub.",
+		validateInput: (s) => s && s.trim() ? undefined : "GitHub url must not be empty",
+	});
+	if (!githubUrl) {
+		return;
+	}
 }
