@@ -18,6 +18,7 @@ class OmiCompletion {
 	 */
 	async provideCompletionItems(document, position, token, context) {
 		let bbb = context.triggerCharacter;
+		let aaa = this.getLastChar(document, position);
 		let ch = bbb || aaa;
 		switch(ch) {
 			case '<': return this.labelCompletion();  //标签补全
@@ -48,11 +49,11 @@ class OmiCompletion {
 		for(let i = 0; i < 25; i++) {
 			let comp = new vscode.CompletionItem('o-button', vscode.CompletionItemKind.Field);
 			comp.kind = vscode.CompletionItemKind.TypeParameter;
-			comp.insertText = new vscode.SnippetString(`o-button>\${${'1'}}</o-button>`);  //<o-icon${' '}\${${1}}>\${${2}}</o-icon>
-			// comp.detail = "[omiu]";
-			comp.documentation = new vscode.MarkdownString(`## Button 按钮\n\n简介：点击或触摸触发一个操作的元素。响应用户点击操作，触发封装的逻辑。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/button?index=1&subIndex=0 \"官网链接\") | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/button?index=1&subIndex=0 \"官网链接\")\n\n---\n\n## 使用\n\n\`\`\`js\n<o-button>我是按钮</o-button>\n\`\`\`\n\n---\n\n## API\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n|:-------------|:-------------|:-----|:-------------|\n| type  | string| primary |Options: primary, default, warn, vcode|\n| size | string   |   normal |Options: normal, small|\n| disabled | bool| false ||\n\n---\n\n## 样例\n\n![button](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/button1-330.png \"button\")\n\n![button](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/button2-330.png \"button\")\n\n![button](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/button3-330.png \"button\")\n`);
+			comp.detail = "[omiu]";
+			comp.insertText = new vscode.SnippetString(`o-button\${${1}}>\${${2}}</o-button>`);  //o-button${' '}\${${1}}>\${${2}}</o-button>
+			comp.documentation = new vscode.MarkdownString(`## Button 按钮\n\n简介：点击或触摸触发一个操作的元素。响应用户点击操作，触发封装的逻辑。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/button?index=1&subIndex=0 \'官网链接\') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/button?index=1&subIndex=0 \'官网链接\')\n\n---\n\n## 使用\n\n\`\`\`js\n<o-button>我是按钮</o-button>\n\`\`\`\n\n---\n\n## API\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n|:-------------|:-------------|:-----|:-------------|\n| type  | string| primary |Options: primary, default, warn, vcode|\n| size | string   |   normal |Options: normal, small|\n| disabled | bool| false ||\n\n---\n\n## 样例\n\n![button](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/button1.png \'button\')\n\n![button](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/button2.png \'button\')\n\n![button](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/button3.png \'button\')\n`);
 			comp.sortText = 'a';
-			comp.command = this.autoSuggestCommand();
+			// comp.command = this.autoSuggestCommand();
 			retCom.push(comp);
 		}
 		return retCom;
@@ -61,10 +62,28 @@ class OmiCompletion {
 	async attributesCompletion() {
 		let retCom = [];
 		let comp = new vscode.CompletionItem('type', vscode.CompletionItemKind.Field);
-		comp.command = this.autoSuggestCommand();
-		comp.documentation = new vscode.MarkdownString(`# gfaweuihgilawehl\n\n---\n\n[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v1.0.5-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)`);
-		comp.insertText = new vscode.SnippetString("type=\"${1|aaa,success,success_no_circle,info,warn,waiting,cancel,download,search,clear|}\"");
+		comp.kind = vscode.CompletionItemKind.Event;
+		comp.detail = "[omiu]o-button";
+		comp.insertText = new vscode.SnippetString("type=\'${1|primary,default,warn,vcode|}\'");
+		comp.documentation = new vscode.MarkdownString(`## type\n\n**string**\n\nOptions: primary, default, warn, vcode`);
 		comp.sortText = 'a';
+		comp.command = this.autoSuggestCommand();
+		retCom.push(comp);
+		comp = new vscode.CompletionItem('size', vscode.CompletionItemKind.Field);
+		comp.kind = vscode.CompletionItemKind.Event;
+		comp.detail = "[omiu]o-button";
+		comp.insertText = new vscode.SnippetString("size=\'${1|normal,small|}\'");
+		comp.documentation = new vscode.MarkdownString(`## size\n\n**string**\n\nOptions: normal, small`);
+		comp.sortText = 'a';
+		comp.command = this.autoSuggestCommand();
+		retCom.push(comp);
+		comp = new vscode.CompletionItem('disabled', vscode.CompletionItemKind.Field);
+		comp.kind = vscode.CompletionItemKind.Event;
+		comp.detail = "[omiu]o-button";
+		comp.insertText = new vscode.SnippetString("disabled=\'${1|false,true|}\'");
+		comp.documentation = new vscode.MarkdownString(`## disabled\n\n**bool**\n\nOptions: false, true`);
+		comp.sortText = 'a';
+		comp.command = this.autoSuggestCommand();
 		retCom.push(comp);
 		return retCom;
 	}
