@@ -78,6 +78,7 @@
 	],
 	"activationEvents": [
 		"onView:omi.view.ecosystem",
+		"onCommand:omi.cmd.ecoGithubSwitch",
 		"onCommand:omi.cmd.ecoRefresh",
 		"onCommand:omi.cmd.ecoRefreshNode",
 		"onCommand:omi.cmd.help",
@@ -106,6 +107,14 @@
 	"contributes": {
 		"commands": [
 			{
+				"command": "omi.cmd.ecoGithubSwitch",
+				"title": "omi Github Switch",
+				"icon": {
+					"light": "./assets/light/github.svg",
+					"dark": "./assets/dark/github.svg"
+				}
+			},
+			{
 				"command": "omi.cmd.ecoRefresh",
 				"title": "omi refresh ecosystem",
 				"icon": {
@@ -125,8 +134,8 @@
 				"command": "omi.cmd.help",
 				"title": "omi help",
 				"icon": {
-					"light": "./assets/omi-set.svg",
-					"dark": "./assets/omi-set.svg"
+					"light": "./assets/light/omi.svg",
+					"dark": "./assets/dark/omi.svg"
 				}
 			},
 			{
@@ -282,9 +291,14 @@
 			],
 			"view/title": [
 				{
-					"command": "omi.cmd.ecoRefresh",
+					"command": "omi.cmd.ecoGithubSwitch",
 					"when": "view == omi.view.ecosystem",
 					"group": "navigation@2"
+				},
+				{
+					"command": "omi.cmd.ecoRefresh",
+					"when": "view == omi.view.ecosystem",
+					"group": "navigation@3"
 				},
 				{
 					"command": "omi.cmd.help",

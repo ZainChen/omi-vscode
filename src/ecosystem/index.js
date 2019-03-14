@@ -91,31 +91,35 @@ class EcoProvider {
             vscode.window.showInformationMessage(`Branch Or Version Error!!!`);
             return Promise.resolve([]);
         }
+        bvnToLink[this.urlGitHub+"/"+this.urlGitHubUser+"/"+this.urlGitHubRepositories] = '';
+        bvnToFOD[this.urlGitHub+"/"+this.urlGitHubUser+"/"+this.urlGitHubRepositories] = 'github';
         bvnToLink['[Branches]'] = '';
-        bvnToFOD['[Branches]'] = 'file';
+        bvnToFOD['[Branches]'] = 'branches';
         for(let i = 0; i < bnsLen; i++) {
             bvnToLink[dataGitHub.branchNames[i]] = dataGitHub.branchLinks[i];
             bvnToFOD[dataGitHub.branchNames[i]] = 'directory';
         }
         bvnToLink['[Tags]'] = '';
-        bvnToFOD['[Tags]'] = 'file';
+        bvnToFOD['[Tags]'] = 'tags';
         for(let i = 0; i < vnsLen; i++) {
             bvnToLink[dataGitHub.versionNames[i]] = dataGitHub.versionLinks[i];
             bvnToFOD[dataGitHub.versionNames[i]] = 'directory';
         }
-        const toDep = (label, labelAdd, filePathlink, isDirectory) => {
-            if (isDirectory == "directory") {
-                return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.Collapsed, {
+        const toDep = (label, labelAdd, filePathlink, fileType) => {
+            if (fileType == "directory") {
+                return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.Collapsed, fileType, {
+                    command: 'omi.cmd.openGithub',
+                    title: '',
+                    arguments: [filePathlink]
+                });
+            } else if(fileType == 'file') {
+                return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.None, fileType, {
                     command: 'omi.cmd.openGithub',
                     title: '',
                     arguments: [filePathlink]
                 });
             } else {
-                return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.None, {
-                    command: 'omi.cmd.openGithub',
-                    title: '',
-                    arguments: [filePathlink]
-                });
+                return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.None, fileType);
             }
         };
         let retObj = Object.keys(bvnToLink).map(dep => toDep(dep, '', bvnToLink[dep], bvnToFOD[dep]));
@@ -151,19 +155,21 @@ class EcoProvider {
         for(let i = 0; i < fodLen; i++) {
             fileNameToLink[dataGitHub.filePathsNames[i]] = dataGitHub.filePathlinks[i];   //新增文件名对应"文件或文件夹"标记
         }
-        const toDep = (label, labelAdd, filePathlink, isDirectory) => {
-            if (isDirectory == "directory") {
-                return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.Collapsed, {
+        const toDep = (label, labelAdd, filePathlink, fileType) => {
+            if (fileType == "directory") {
+                return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.Collapsed, fileType, {
+                    command: 'omi.cmd.openGithub',
+                    title: '',
+                    arguments: [filePathlink]
+                });
+            } else if(fileType == 'file') {
+                return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.None, fileType, {
                     command: 'omi.cmd.openGithub',
                     title: '',
                     arguments: [filePathlink]
                 });
             } else {
-                return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.None, {
-                    command: 'omi.cmd.openGithub',
-                    title: '',
-                    arguments: [filePathlink]
-                });
+                return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.None, fileType);
             }
         };
         let retObj = Object.keys(fileNameToStatus).map(dep => toDep(dep, fileNameToStatus[dep], fileNameToLink[dep], fileNameToFOD[dep]));
@@ -286,6 +292,25 @@ class EcoProvider {
         bvfContent.versionNames = bvfc.versionNames;
         bvfContent.versionLinks = bvfc.versionLinks;
         return bvfContent;
+    }
+
+    /**
+     * 切换github，生成新的菜单树
+     */
+    async githubSwitch() {
+        const githubUrl = await vscode.window.showInputBox({  //此功能准备加入omi生态系统功能中
+            prompt: "Please enter the url of GitHub.",
+            validateInput: (s) => s && s.trim() ? undefined : "GitHub url must not be empty",
+        });
+        if (!githubUrl) {
+            return;
+        }
+        //待更新，处理获取的网址
+        //this.urlGitHub = 'https://github.com';  //要获取内容的初始网址
+        this.urlGitHubUser = 'ZainChen';
+        this.urlGitHubRepositories = 'omi-vscode';
+        this.urlGitBranch = 'master';  //分支
+        this.refreshAll();  //刷新所有菜单节点
     }
 
     /**
