@@ -34,6 +34,15 @@
                 "documentation": "---\n\n## disabled\n\n类型：bool\n\n属性值: false, true",
                 "sortText": "a",
                 "cmd": false
+            },
+            "plain": {
+                "label": "plain",
+                "kind": 22,
+                "detail": "[omiu]o-button",
+                "insertText": "plain${1}",
+                "documentation": "---\n\n## plain\n\n类型：无\n\n属性值: 无",
+                "sortText": "a",
+                "cmd": false
             }
         }
     },
