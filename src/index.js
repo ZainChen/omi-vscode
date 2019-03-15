@@ -28,6 +28,7 @@ function activate(context) {
 		//vscode.window.registerTreeDataProvider('omi.view.ecosystem', ecoProvider);  //omi生态内容注册(无法添加showCollapseAll功能)
 		//omi生态内容创建和注册(用此方法可添加showCollapseAll功能)，支持此功能的vscode最低版本为1.30.1
 		vscode.window.createTreeView('omi.view.ecosystem', { treeDataProvider: ecoProvider, showCollapseAll: true }),
+		vscode.commands.registerCommand('omi.cmd.ecoHello', () => ecoProvider.commandOmiHello()),  //"omi.cmd.ecoHello"命令注册
 		vscode.commands.registerCommand('omi.cmd.ecoGithubSwitch', () => ecoProvider.githubSwitch()),  //切换github，生成新的菜单树
 		vscode.commands.registerCommand('omi.cmd.ecoRefresh', () => ecoProvider.refreshAll()),  //刷新所有菜单节点
 		vscode.commands.registerCommand('omi.cmd.ecoRefreshNode', offset => ecoProvider.refreshDesignation(offset)),  //刷新指定菜单节点
@@ -43,10 +44,7 @@ function activate(context) {
 		vscode.languages.registerDefinitionProvider(['html', 'json', 'javascript'], {provideDefinition}),  //跳转功能注册
 
 		//Webview功能注册(命令:"omi wv")(实验)
-		vscode.commands.registerCommand('omi.cmd.webview', wv.showWebviewIndex),  //Webview功能注册(命令:"omi wv")(实验)
-	
-		//其他命令，暂无特定功能
-		vscode.commands.registerCommand('omi.cmd.help', commandOmiHelp)  //"omi.cmd.help"命令注册
+		vscode.commands.registerCommand('omi.cmd.webview', wv.showWebviewIndex)  //Webview功能注册(命令:"omi wv")(实验)
 	
 	);
 	
@@ -66,20 +64,3 @@ function deactivate() {
 exports.deactivate = deactivate;  //插件被释放触发(函数接口)
 
 
-/** 
- * 查看omi帮助命令
-*/
-async function commandOmiHelp() {
-	vscode.window.showInformationMessage('Hi Omi.');
-	// const choice = await vscode.window.showQuickPick(['https://github.com/Tencent/omi'], {
-	// 	matchOnDetail: true,
-	// 	placeHolder: "请输入GitHub地址",
-	// });
-	const githubUrl = await vscode.window.showInputBox({  //此功能准备加入omi生态系统功能中
-		prompt: "Please enter the url of GitHub.",
-		validateInput: (s) => s && s.trim() ? undefined : "GitHub url must not be empty",
-	});
-	if (!githubUrl) {
-		return;
-	}
-}

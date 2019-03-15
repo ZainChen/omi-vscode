@@ -78,10 +78,10 @@
 	],
 	"activationEvents": [
 		"onView:omi.view.ecosystem",
+		"onCommand:omi.cmd.ecoHello",
 		"onCommand:omi.cmd.ecoGithubSwitch",
 		"onCommand:omi.cmd.ecoRefresh",
 		"onCommand:omi.cmd.ecoRefreshNode",
-		"onCommand:omi.cmd.help",
 		"onCommand:omi.cmd.webview",
 		"onLanguage:c",
 		"onLanguage:cpp",
@@ -131,8 +131,8 @@
 				}
 			},
 			{
-				"command": "omi.cmd.help",
-				"title": "omi help",
+				"command": "omi.cmd.ecoHello",
+				"title": "Github switches to omi",
 				"icon": {
 					"light": "./assets/light/omi.svg",
 					"dark": "./assets/dark/omi.svg"
@@ -266,7 +266,7 @@
 		"menus": {
 			"editor/context": [
 				{
-					"command": "omi.cmd.help",
+					"command": "omi.cmd.ecoHello",
 					"when": "editorFocus",
 					"group": "navigation"
 				},
@@ -279,7 +279,7 @@
 			],
 			"editor/title": [
 				{
-					"command": "omi.cmd.help",
+					"command": "omi.cmd.ecoHello",
 					"group": "navigation"
 				},
 				{
@@ -301,7 +301,7 @@
 					"group": "navigation@3"
 				},
 				{
-					"command": "omi.cmd.help",
+					"command": "omi.cmd.ecoHello",
 					"when": "view == omi.view.ecosystem",
 					"group": "navigation@1"
 				},
@@ -320,7 +320,7 @@
 		},
 		"keybindings": [
 			{
-				"command": "omi.cmd.help",
+				"command": "omi.cmd.ecoHello",
 				"key": "ctrl+f10",
 				"mac": "cmd+f10",
 				"when": "editorTextFocus"

@@ -1,12 +1,30 @@
 # Omi Visual Studio Code extension Change Log
 
-## Version *
+## Version *(dev)
 
 ### New Features
 
-- omi snippets added: import, define, render
-- omiu snippets added \<o-icon paths /\>\</o-icon\>
-- omi and omiu support snippets: JavaScript Reacthe、TypeScript React
+- Add omiu mouse hover prompt, prompt message in markdown format
+
+### Modify
+
+- null
+
+### Bug Fixes
+
+- null
+
+---
+
+## Version 1.1.0 March 15, 2019
+
+### New Features
+
+- Add GitHub tree view to switch any url function
+- Add omiu official component tag and attribute completion, completion prompt for markdown format
+- Omi snippets added: import, define, render
+- Omiu snippets added \<o-icon paths /\>\</o-icon\>
+- Omi and omiu support snippets: JavaScript Reacthe、TypeScript React
 
 ### Modify
 

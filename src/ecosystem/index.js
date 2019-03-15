@@ -294,22 +294,52 @@ class EcoProvider {
         return bvfContent;
     }
 
+    /** 
+     * 查看omi帮助命令
+    */
+    commandOmiHello() {
+        vscode.window.showInformationMessage('Hi Omi.');
+        this.urlGitHubUser = 'Tencent';
+        this.urlGitHubRepositories = 'omi';
+        this.refreshAll();  //刷新所有菜单节点
+    }
+
     /**
      * 切换github，生成新的菜单树
      */
     async githubSwitch() {
         const githubUrl = await vscode.window.showInputBox({  //此功能准备加入omi生态系统功能中
             prompt: "Please enter the url of GitHub.",
-            validateInput: (s) => s && s.trim() ? undefined : "GitHub url must not be empty",
+            validateInput: (s) => s && s.trim() ? undefined : "GitHub url must not be empty!",
         });
         if (!githubUrl) {
+            vscode.window.showInformationMessage('GitHub url must not be empty!');
             return;
         }
-        //待更新，处理获取的网址
-        //this.urlGitHub = 'https://github.com';  //要获取内容的初始网址
-        this.urlGitHubUser = 'ZainChen';
-        this.urlGitHubRepositories = 'omi-vscode';
-        this.urlGitBranch = 'master';  //分支
+        if(!alg.strInFindLP(githubUrl, "github.com")) {
+            vscode.window.showInformationMessage('Not a GitHub URL!');
+            return;
+        }
+        let guleng = githubUrl.length;
+        let k = githubUrl.indexOf('github.com', 0)+10;
+        while(k < guleng && (githubUrl[k] == '/' || githubUrl[k] == '\\' || githubUrl[k] == ':')) {
+            k += 1;
+        }
+        let ls = '';
+        while(k < guleng && !(githubUrl[k] == '/' || githubUrl[k] == '\\' || githubUrl[k] == ':')) {
+            ls += githubUrl[k];
+            k += 1;
+        }
+        this.urlGitHubUser = ls;
+        while(k < guleng && (githubUrl[k] == '/' || githubUrl[k] == '\\' || githubUrl[k] == ':')) {
+            k += 1;
+        }
+        ls = '';
+        while(k < guleng && !(githubUrl[k] == '/' || githubUrl[k] == '\\' || githubUrl[k] == ':' || githubUrl[k] == '.')) {
+            ls += githubUrl[k];
+            k += 1;
+        }
+        this.urlGitHubRepositories = ls;
         this.refreshAll();  //刷新所有菜单节点
     }
 
@@ -325,13 +355,6 @@ class EcoProvider {
      * @param offset 获取到的指定节点，为空时刷新全部节点
      */
     async refreshDesignation(offset) {
-        
-        //可根据不同项目链接刷新菜单
-        // this.urlGitHubUser = 'ZainChen';
-        // this.urlGitHubRepositories = 'vscode-omi';
-        // this.urlGitBranch = 'master';  //分支
-        //this.getChildren();
-
         if (offset) {
             this._onDidChangeTreeData.fire(offset);
         } else {

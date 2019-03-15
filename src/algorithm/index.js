@@ -10,7 +10,8 @@ module.exports = {
 	strInFindLP,
 	getfilePathName,
 	getFileContent,
-	strDelHtLineSpace
+	strDelHtLineSpace,
+	SplitStringChar
 }
 
 
@@ -109,4 +110,38 @@ function strDelHtLineSpace(str) {
 		reStr += str[i];
 	}
 	return reStr;
+}
+
+/*
+按指定字符拆分指定string字符串到容器中
+头文件:
+#include<vector>
+#include<string>
+#include<iostream>
+using namespace std;
+参数:
+string str:  待拆分的字符串
+string sk:  用来判断的拆分符
+返回值:
+拆分后的N个字符串
+例子:
+vector<string> sn = SplitStringChar("1	*INFINITI EX35 Camp:P8202	J50	2008	NULL	VI_202	2	NULL1	NULL2", '\t');
+for(int i = 0; i < sn.size(); i++) cout << sn[i] << endl;
+*/
+function SplitStringChar(str, ck) {
+	let sr = [];
+	let s = '';
+	for (let i = 0; i < str.length; i++) {
+		if (str[i] == ck) {
+			sr.push(s);
+			s = '';
+		}
+		else {
+			s += str[i];
+		}
+	}
+	if (s != '') {
+		sr.push(s);
+	}
+	return sr;
 }

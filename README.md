@@ -7,7 +7,9 @@ This extension adds omi support for Visual Studio Code.
 
 # Function
 - Omi ecosystem `[All branches and versions]`
+- Omiu official component tag and attribute completion, completion prompt for markdown format
 - Omi, Omiu snippets `[All omiu component snippets. Multiple overlays, press TAB to jump to the transition position]`
+- GitHub switch `[GitHub tree view to switch any url function]`
 - Welcome omi `[Welcome Screen]`
 - In development...
 
