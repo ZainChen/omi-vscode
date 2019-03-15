@@ -28,7 +28,7 @@ function activate(context) {
 		//vscode.window.registerTreeDataProvider('omi.view.ecosystem', ecoProvider);  //omi生态内容注册(无法添加showCollapseAll功能)
 		//omi生态内容创建和注册(用此方法可添加showCollapseAll功能)，支持此功能的vscode最低版本为1.30.1
 		vscode.window.createTreeView('omi.view.ecosystem', { treeDataProvider: ecoProvider, showCollapseAll: true }),
-		vscode.commands.registerCommand('omi.cmd.ecoHello', () => ecoProvider.commandOmiHello()),  //"omi.cmd.ecoHello"命令注册
+		vscode.commands.registerCommand('omi.cmd.ecoHello', () => ecoProvider.commandOmiHello()),  //将omi生态切换到Tencent/omi
 		vscode.commands.registerCommand('omi.cmd.ecoGithubSwitch', () => ecoProvider.githubSwitch()),  //切换github，生成新的菜单树
 		vscode.commands.registerCommand('omi.cmd.ecoRefresh', () => ecoProvider.refreshAll()),  //刷新所有菜单节点
 		vscode.commands.registerCommand('omi.cmd.ecoRefreshNode', offset => ecoProvider.refreshDesignation(offset)),  //刷新指定菜单节点

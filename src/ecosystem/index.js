@@ -295,7 +295,7 @@ class EcoProvider {
     }
 
     /** 
-     * 查看omi帮助命令
+     * 将omi生态切换到Tencent/omi
     */
     commandOmiHello() {
         //vscode.window.showInformationMessage('Hi Omi.');
