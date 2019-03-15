@@ -298,7 +298,7 @@ class EcoProvider {
      * 查看omi帮助命令
     */
     commandOmiHello() {
-        vscode.window.showInformationMessage('Hi Omi.');
+        //vscode.window.showInformationMessage('Hi Omi.');
         this.urlGitHubUser = 'Tencent';
         this.urlGitHubRepositories = 'omi';
         this.refreshAll();  //刷新所有菜单节点
@@ -313,7 +313,7 @@ class EcoProvider {
             validateInput: (s) => s && s.trim() ? undefined : "GitHub url must not be empty!",
         });
         if (!githubUrl) {
-            vscode.window.showInformationMessage('GitHub url must not be empty!');
+            //vscode.window.showInformationMessage('GitHub url must not be empty!');
             return;
         }
         if(!alg.strInFindLP(githubUrl, "github.com")) {
