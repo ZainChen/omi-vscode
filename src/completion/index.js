@@ -28,6 +28,7 @@ class OmiCompletion {
 		console.log(">>>\""+this.getLastChar(document, position)+"\"");
 		let ch = context.triggerCharacter || this.getLastChar(document, position);
 		switch(ch) {
+			case 'o':  //实验，暂时不能加
 			case '<': return this.omiuLabelCompletion();  //标签补全
 			case ' ': return this.omiuAttributesCompletion(document, position);  //属性补全
 			default: return [];
