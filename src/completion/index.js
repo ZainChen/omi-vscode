@@ -25,11 +25,10 @@ class OmiCompletion {
 			let data = fs.readFileSync(__dirname+'/comjson/omiu-com.json', 'utf8');  //同步获取json文件内容
 			this.objJsonOmiu = JSON.parse(data);  //字符串转json对象
 		}
+		console.log(">>>\""+this.getLastChar(document, position)+"\"");
 		let ch = context.triggerCharacter || this.getLastChar(document, position);
 		switch(ch) {
 			case '<': return this.omiuLabelCompletion();  //标签补全
-			case '\'':
-			case '\"':
 			case ' ': return this.omiuAttributesCompletion(document, position);  //属性补全
 			default: return [];
 		}
@@ -77,13 +76,10 @@ class OmiCompletion {
 	 */
 	omiuAttributesCompletion(document, position) {
 		let retCom = [];
-		const lineStr = document.lineAt(position).text;  //当前光标所在整行文本
-		let lineLen = lineStr.length;
-		let ip = position.character;  //当前光标所在位置
 		let objLabel = this.getPosOmiLabe(document, position);  //获取合法标签对象(包含标签、'<'和'>'的位置，如果标签和引号不合法，返回空对象)
 		if(objLabel.label != '') {
 			for(let i in this.objJsonOmiu[objLabel.label]['attribute']) {
-				if(this.labeHaveattributes(lineStr, lineLen, ip, this.objJsonOmiu[objLabel.label]['attribute'][i]['label'])) {  //标签内已有的属性值不添加(只支持光标在标签行)
+				if(this.labeHaveattributes(document, objLabel, this.objJsonOmiu[objLabel.label]['attribute'][i]['label'])) {  //标签内已有的属性值不添加(只支持光标在标签行)
 					continue;
 				}
 				let comp = new vscode.CompletionItem(this.objJsonOmiu[objLabel.label]['attribute'][i]['label'], this.objJsonOmiu[objLabel.label]['attribute'][i]['kind']);
@@ -155,7 +151,8 @@ class OmiCompletion {
 		//查找'>'位置
 		let posr = { x: pos.line, y: pos.character };  //坐标扫描实时位置，查找'>'
 		let findNotr = true;  //记录是否找到'>'
-		while(posr.x < 52 && findNotr) {
+		//console.log(doc.lineCount); //doc.lineCount为当前文档总行数
+		while(posr.x < doc.lineCount && findNotr) {
 			let xstr = doc.lineAt(posr.x).text;  //获取当前行的整行内容
 			if(posr.x != pos.line) {  //不在光标所在行时从当前行内容最后一列开始扫描
 				posr.y = 0;
@@ -200,7 +197,7 @@ class OmiCompletion {
 			strLabel += strLine[y];
 		}
 		
-		console.log(strLabel+": "+"<("+pl.x+","+pl.y+")|>("+pr.x+","+pr.y+")");
+		//console.log(strLabel+": "+"<("+pl.x+","+pl.y+")|>("+pr.x+","+pr.y+")");
 
 		//返回的标签对象
 		objLabel.label = strLabel;
@@ -212,30 +209,14 @@ class OmiCompletion {
 	
 	/**
 	 * 查找标签内是否存在attr属性，如果存在，返回true，否则返回false
-	 * @param {*} lineStr 整行字符串
-	 * @param {*} lineLen 整行字符串长度
-	 * @param {*} ip 当前光标所在位置
-	 * @param {*} attr 待查找的属性
+	 * @param doc 调用命令文档。
+	 * @param ol 标签对象
+	 * @param attr 待查找的属性
+	 * @return true | false
 	 */
-	labeHaveattributes(lineStr, lineLen, ip, attr) {
-		let il = 0;  //'<'的位置
-		for(let i = ip-1; i >= 0; i--) {  //从光标位置往左查找，找到'<'位置,先找到'>'或未找到'<'都表示光标不在完整标签内
-			if(lineStr[i] == '>') {
-				return false;
-			} else if(lineStr[i] == '<') {
-				il = i;
-				break;
-			}
-		}
-		if(il == 0 && lineStr[0] != '<') {  //未找到'<'
-			return false;
-		}
-		let findStr = ' ';
-		for(let i = il+1; i < lineLen; i++) {
-			findStr += lineStr[i];
-		}
+	labeHaveattributes(doc, ol, attr) {
 		//属性串的合法格式
-		let sf = [
+		let attrs = [
 			" "+attr+" ",
 			" "+attr+"=",
 			"\""+attr+" ",
@@ -243,15 +224,32 @@ class OmiCompletion {
 			"\'"+attr+" ",
 			"\'"+attr+"=",
 			" "+attr+">",
-			" "+attr+">",
-			"\""+attr+">",
 			"\""+attr+">",
 			"\'"+attr+">",
-			"\'"+attr+">"
+			"}"+attr+" ",
+			"}"+attr+"=",
+			"}"+attr+">"
 		];
-		for(let i = 0; i < sf.length; i++) {
-			if(findStr.indexOf(sf[i]) != -1) {
-				return true;
+		for(let x = ol.posl.x; x <= ol.posr.x; x++ ) {
+			let strLine = doc.lineAt(x).text;  //获取当前行的整行内容
+			let slLen = strLine.length;
+			let findStr = '';  //待查找的字符串
+			if(x == ol.posl.x) {
+				for(let y = ol.posl.y; y < slLen; y++) {
+					findStr += strLine[y];
+				}
+			} else if(x == ol.posr.x) {
+				for(let y = 0; y <= ol.posr.y; y++) {
+					findStr += strLine[y];
+				}
+			} else {
+				findStr = strLine;
+			}
+			findStr += " ";
+			for(let i = 0; i < attrs.length; i++) {
+				if(findStr.indexOf(attrs[i]) != -1) {
+					return true;
+				}
 			}
 		}
 		return false;

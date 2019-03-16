@@ -4,7 +4,7 @@
         "kind": 24,
         "detail": "[omiu]Click or touch it to trigger an operation. The encapsulated logic is triggered in response to user clicks.",
         "insertText": "o-button${1}>${2}</o-button>",
-        "documentation": "---\n\n## Button 按钮\n\n简介：点击或触摸触发一个操作的元素。响应用户点击操作，触发封装的逻辑。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/button?index=1&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/button?index=1&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-button>我是按钮</o-button>\n```\n\n---\n\n## API\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n|:-------------|:-------------|:-----|:-------------|\n| type  | string| primary |Options: primary, default, warn, vcode|\n| size | string   |   normal |Options: normal, small|\n| disabled | bool| false ||\n\n---\n\n## 样例\n\n![button](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/button.png 'button')\n\n---",
+        "documentation": "---\n\n## Button 按钮\n\n简介：点击或触摸触发一个操作的元素。响应用户点击操作，触发封装的逻辑。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/button?index=1&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/button?index=1&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-button>我是按钮</o-button>\n```\n\n---\n\n## API\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n|:-------------|:-------------|:-----|:-------------|\n| type  | string| primary |Options: primary, default, warn, vcode|\n| size | string   |   normal |Options: normal, small|\n| disabled | bool| false ||\n| plain | bool | false ||\n\n\n---\n\n## 样例\n\n![button](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/button.png 'button')\n\n---",
         "sortText": "a",
         "cmd": false,
         "attribute": {
@@ -13,7 +13,7 @@
                 "kind": 22,
                 "detail": "[omiu]o-button",
                 "insertText": "type=\"${1|primary,default,warn,vcode|}\"",
-                "documentation": "---\n\n## type\n\n类型：string\n\n属性值: primary, default, warn, vcode",
+                "documentation": "---\n\n## type\n\n类型：string\n\n属性值: primary, default, warn, vcode\n\n---",
                 "sortText": "a",
                 "cmd": false
             },
@@ -22,7 +22,7 @@
                 "kind": 22,
                 "detail": "[omiu]o-button",
                 "insertText": "size=\"${1|normal,small|}\"",
-                "documentation": "---\n\n## size\n\n类型：string\n\n属性值: normal, small",
+                "documentation": "---\n\n## size\n\n类型：string\n\n属性值: normal, small\n\n---",
                 "sortText": "a",
                 "cmd": false
             },
@@ -30,8 +30,8 @@
                 "label": "disabled",
                 "kind": 22,
                 "detail": "[omiu]o-button",
-                "insertText": "disabled=\"${1|false,true|}\"",
-                "documentation": "---\n\n## disabled\n\n类型：bool\n\n属性值: false, true",
+                "insertText": "disabled${1}",
+                "documentation": "---\n\n## disabled\n\n类型：bool\n\n属性值: false, true\n\n---",
                 "sortText": "a",
                 "cmd": false
             },
@@ -40,7 +40,7 @@
                 "kind": 22,
                 "detail": "[omiu]o-button",
                 "insertText": "plain${1}",
-                "documentation": "---\n\n## plain\n\n类型：无\n\n属性值: 无",
+                "documentation": "---\n\n## plain\n\n类型：无\n\n属性值: 无\n\n---",
                 "sortText": "a",
                 "cmd": false
             }
@@ -51,7 +51,7 @@
         "kind": 24,
         "detail": "[omiu]Icon using svg.",
         "insertText": "o-icon ${1}>${2}</o-icon>",
-        "documentation": "---\n\n## Icon \n\n简介：SVG 制作的 Icon.\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/icon?index=1&subIndex=1 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/icon?index=1&subIndex=1 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-icon \n  path='M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z'>\n</o-icon>\n```\n\n也可以支持多 path：\n\n```js\n<o-icon paths={[{\n  color: '#F98080',\n  path: 'M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z'\n}, {\n  color: '#F95050',\n  path: 'M464 688a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm24-112h48c4.4 0 8-3.6 8-8V296c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8z'\n}]} />\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| :------------- |:-------------|:-----|:-------------|\n| paths  | json array |--  | 传入 paths ， path 不用传入  |\n| path  | string|--  ||\n| scale | number   |   2 | |\n| color | string| black ||\n| rotate | bool| false ||\n| isFill | bool| false |不推荐，建议用 path|\n| type  | string| -- | 不推荐，建议用 path |\n\n* [→ 你可以直接使用 antd 的海量 svg path 作为 icon 的 path](https://ant.design/components/icon-cn/),你可以通过开发者工具查看对应 icon 的 path\n* [→ 也可以直接上 antd github 获取 svg path](https://github.com/ant-design/ant-design-icons/tree/master/packages/icons/svg)\n\n---\n\n## 样例\n\n![icon](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/icon.png 'icon')\n\n---",
+        "documentation": "---\n\n## Icon \n\n简介：SVG 制作的 Icon.\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/icon?index=1&subIndex=1 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/icon?index=1&subIndex=1 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-icon \n  path='M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z'>\n</o-icon>\n```\n\n也可以支持多 path：\n\n```js\n<o-icon paths={[{\n  color: '#F98080',\n  path: 'M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z'\n}, {\n  color: '#F95050',\n  path: 'M464 688a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm24-112h48c4.4 0 8-3.6 8-8V296c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8z'\n}]} />\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| :------------- |:-------------|:-----|:-------------|\n| paths  | json array |--  | 传入 paths ， path 不用传入  |\n| path  | string|--  ||\n| scale | number   |   2 | |\n| color | string| black ||\n| rotate | bool| false ||\n| isFill | bool| false |不推荐，建议用 path|\n| type  | string| -- | 不推荐，建议用 path |\n\n* [→ 你可以直接使用 antd 的海量 svg path 作为 icon 的 path](https://ant.design/components/icon-cn/),你可以通过开发者工具查看对应 icon 的 path\n\n* [→ 也可以直接上 antd github 获取 svg path](https://github.com/ant-design/ant-design-icons/tree/master/packages/icons/svg)\n\n---\n\n## 样例\n\n![icon](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/icon.png 'icon')\n\n---",
         "sortText": "a",
         "cmd": true,
         "attribute": {
@@ -60,7 +60,7 @@
                 "kind": 22,
                 "detail": "[omiu]o-icon",
                 "insertText": "paths={[{${1}}]}",
-                "documentation": "---\n\n## paths\n\n类型：json array\n",
+                "documentation": "---\n\n## paths\n\n类型：json array\n\n---",
                 "sortText": "a",
                 "cmd": false
             },
@@ -69,8 +69,17 @@
                 "kind": 22,
                 "detail": "[omiu]o-icon",
                 "insertText": "path=\"${1}\"",
-                "documentation": "---\n\n## path\n\n类型：string\n",
+                "documentation": "---\n\n## path\n\n类型：string\n\n---",
                 "sortText": "a",
+                "cmd": false
+            },
+            "path:": {
+                "label": "path:",
+                "kind": 21,
+                "detail": "[omiu]o-icon",
+                "insertText": "path: \"${1}\"",
+                "documentation": "---\n\n## path\n\n类型：string\n\n---",
+                "sortText": "b",
                 "cmd": false
             },
             "scale": {
@@ -78,7 +87,7 @@
                 "kind": 22,
                 "detail": "[omiu]o-icon",
                 "insertText": "scale=\"${1|2|}\"",
-                "documentation": "---\n\n## path\n\n类型：number\n",
+                "documentation": "---\n\n## path\n\n类型：number\n\n---",
                 "sortText": "a",
                 "cmd": false
             },
@@ -96,15 +105,15 @@
                 "kind": 21,
                 "detail": "[omiu]o-icon",
                 "insertText": "color: \"${1|black,yellow,red|}\"",
-                "documentation": "---\n\n## color\n\n类型：string\n",
-                "sortText": "a",
+                "documentation": "---\n\n## color\n\n类型：string\n\n---",
+                "sortText": "b",
                 "cmd": false
             },
             "rotate": {
                 "label": "rotate",
                 "kind": 22,
                 "detail": "[omiu]o-icon",
-                "insertText": "rotate=\"${1|false,true|}\"",
+                "insertText": "rotate${1}",
                 "documentation": "---\n\n## rotate\n\n类型：bool\n",
                 "sortText": "a",
                 "cmd": false
@@ -113,7 +122,7 @@
                 "label": "isFill",
                 "kind": 22,
                 "detail": "[omiu]o-icon",
-                "insertText": "isFill=\"${1|false,true|}\"",
+                "insertText": "isFill${1}",
                 "documentation": "---\n\n## isFill\n\n类型：bool\n",
                 "sortText": "a",
                 "cmd": false
@@ -122,8 +131,141 @@
                 "label": "type",
                 "kind": 22,
                 "detail": "[omiu]o-icon",
-                "insertText": "type=\"${1}\"",
-                "documentation": "---\n\n## type\n\n类型：string\n",
+                "insertText": "type=\"${1|loading,close,pay,chat,scan,add-friend|}\"",
+                "documentation": "---\n\n## type\n\n类型：string\n\n属性值: loading, close, pay, chat, scan, add-friend\n\n---",
+                "sortText": "a",
+                "cmd": false
+            }
+        }
+    },
+    "o-icon <o-icon />": {
+        "label": "o-icon <o-icon />",
+        "kind": 24,
+        "detail": "[omiu]Icon using svg.",
+        "insertText": "o-icon ${1} />",
+        "documentation": "---\n\n## Icon \n\n简介：SVG 制作的 Icon.\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/icon?index=1&subIndex=1 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/icon?index=1&subIndex=1 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-icon \n  path='M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z'>\n</o-icon>\n```\n\n也可以支持多 path：\n\n```js\n<o-icon paths={[{\n  color: '#F98080',\n  path: 'M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z'\n}, {\n  color: '#F95050',\n  path: 'M464 688a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm24-112h48c4.4 0 8-3.6 8-8V296c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8z'\n}]} />\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| :------------- |:-------------|:-----|:-------------|\n| paths  | json array |--  | 传入 paths ， path 不用传入  |\n| path  | string|--  ||\n| scale | number   |   2 | |\n| color | string| black ||\n| rotate | bool| false ||\n| isFill | bool| false |不推荐，建议用 path|\n| type  | string| -- | 不推荐，建议用 path |\n\n* [→ 你可以直接使用 antd 的海量 svg path 作为 icon 的 path](https://ant.design/components/icon-cn/),你可以通过开发者工具查看对应 icon 的 path\n\n* [→ 也可以直接上 antd github 获取 svg path](https://github.com/ant-design/ant-design-icons/tree/master/packages/icons/svg)\n\n---\n\n## 样例\n\n![icon](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/icon.png 'icon')\n\n---",
+        "sortText": "a",
+        "cmd": true
+    },
+    "o-row": {
+        "label": "o-row",
+        "kind": 24,
+        "detail": "[omiu]Row of the 24 grid system.",
+        "insertText": "o-row${2}>\n\t${1}\n</o-row>",
+        "documentation": "---\n\n## Row \n\n简介：24栅格布局里的一行。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/row?index=2&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/row?index=2&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-row>\n  <col span={12}>col12</col>\n  <col span={12}>col12</col>\n</o-row>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| :------------- |:-------------|:-----|:-------------|\n| children         |   json array with col   |    --   |             |\n\n---\n\n## 样例\n\n![row](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/row.png 'row')\n\n---",
+        "sortText": "a",
+        "cmd": false,
+        "attribute": {
+            "class": {
+                "label": "class",
+                "kind": 22,
+                "detail": "[omiu]o-row",
+                "insertText": "class=\"${1|row|}\"",
+                "documentation": "---\n\n## type\n\n类型：string\n\n属性值:row\n\n---",
+                "sortText": "a",
+                "cmd": false
+            }
+        }
+    },
+    "col": {
+        "label": "col",
+        "kind": 24,
+        "detail": "[omiu]Row of the 24 grid system.(col)",
+        "insertText": "col ${1}>${2}</col>",
+        "documentation": "---\n\n## Row \n\n简介：24栅格布局里的一行。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/row?index=2&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/row?index=2&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-row>\n  <col span={12}>col12</col>\n  <col span={12}>col12</col>\n</o-row>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| :------------- |:-------------|:-----|:-------------|\n| children         |   json array with col   |    --   |             |\n\n---\n\n## 样例\n\n![row](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/row.png 'row')\n\n---",
+        "sortText": "a",
+        "cmd": true,
+        "attribute": {
+            "class": {
+                "label": "class",
+                "kind": 22,
+                "detail": "[omiu]col",
+                "insertText": "class=\"${1|col|}\"",
+                "documentation": "---\n\n## type\n\n类型：string\n\n属性值:col\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "span": {
+                "label": "span",
+                "kind": 22,
+                "detail": "[omiu]col",
+                "insertText": "span={${1|12,1,2,6,18|}}",
+                "documentation": "---\n\n## type\n\n类型：number\n\n---",
+                "sortText": "a",
+                "cmd": false
+            }
+        }
+    },
+    "o-equal-space": {
+        "label": "o-equal-space",
+        "kind": 24,
+        "detail": "[omiu]Horizontal average allocation space layout.",
+        "insertText": "o-equal-space${2}>\n\t${1}\n</o-equal-space>",
+        "documentation": "---\n\n## EqualSpace  \n\n简介：横向平分空间布局。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/equal-space?index=2&subIndex=1 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/equal-space?index=2&subIndex=1 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-equal-space>\n  <div class='a'></div>\n  <div class='b'></div>\n  <div class='c'></div>\n  <div class='d'></div>\n  <div class='e'></div>\n</o-equal-space>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| children  | json array |   --    |           |\n\n---\n\n## 样例\n\n![equal-space](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/equal-space.png 'equal-space')\n\n---",
+        "sortText": "a",
+        "cmd": false,
+        "attribute": {}
+    },
+    "o-pagination": {
+        "label": "o-pagination",
+        "kind": 24,
+        "detail": "[omiu]Paging component.",
+        "insertText": "o-pagination ${1} />",
+        "documentation": "---\n\n## Pagination \n\n简介：分页组件.\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/pagination?index=3&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/pagination?index=3&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-pagination\n  total={25}\n  currentPage={1}\n  pageSize={5}\n  onChange={this.onChange}\n/>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| :------------- |:-------------|:-----|:-------------|\n| total         | number|    --       |          |\n| currentPage  | number          |   0 |           |\n| pageSize | number            | 10   |        |\n| numDisplay | number| 5 ||\n| numEdge | number| 3 ||\n| ellipseText | string| ... ||\n\n---\n\n## 样例\n\n![pagination](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/pagination.png 'pagination')\n\n---",
+        "sortText": "a",
+        "cmd": true,
+        "attribute": {
+            "total": {
+                "label": "total",
+                "kind": 22,
+                "detail": "[omiu]o-pagination",
+                "insertText": "total={${1}}",
+                "documentation": "---\n\n## type\n\n类型：number\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "currentPage": {
+                "label": "currentPage",
+                "kind": 22,
+                "detail": "[omiu]o-pagination",
+                "insertText": "currentPage={${1}}",
+                "documentation": "---\n\n## type\n\n类型：number\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "pageSize": {
+                "label": "pageSize",
+                "kind": 22,
+                "detail": "[omiu]o-pagination",
+                "insertText": "pageSize={${1}}",
+                "documentation": "---\n\n## type\n\n类型：number\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "numDisplay": {
+                "label": "numDisplay",
+                "kind": 22,
+                "detail": "[omiu]o-pagination",
+                "insertText": "numDisplay={${1}}",
+                "documentation": "---\n\n## type\n\n类型：number\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "numEdge": {
+                "label": "numEdge",
+                "kind": 22,
+                "detail": "[omiu]o-pagination",
+                "insertText": "numEdge={${1}}",
+                "documentation": "---\n\n## type\n\n类型：number\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "ellipseText": {
+                "label": "ellipseText",
+                "kind": 22,
+                "detail": "[omiu]o-pagination",
+                "insertText": "ellipseText={${1}}",
+                "documentation": "---\n\n## type\n\n类型：string\n\n---",
                 "sortText": "a",
                 "cmd": false
             }
