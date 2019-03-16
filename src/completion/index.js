@@ -8,7 +8,7 @@ const fs = require('fs');
  */
 class OmiCompletion {
 	constructor() {
-		this.objJson = new Object();
+		this.objJsonOmiu = new Object();
 	}
 	/**
 	 *提供给定职位和文件的完成项目。
@@ -21,6 +21,10 @@ class OmiCompletion {
 	 *可以通过返回`undefined`，`null`或空数组来表示缺少结果。
 	 */
 	async provideCompletionItems(document, position, token, context) {
+		if(JSON.stringify(this.objJsonOmiu) == "{}") {  //如果omiu标签属性库为空，则从文件读取导入
+			let data = fs.readFileSync(__dirname+'/comjson/omiu-com.json', 'utf8');  //同步获取json文件内容
+			this.objJsonOmiu = JSON.parse(data);  //字符串转json对象
+		}
 		let ch = context.triggerCharacter || this.getLastChar(document, position);
 		switch(ch) {
 			case '<': return this.omiuLabelCompletion();  //标签补全
@@ -52,15 +56,13 @@ class OmiCompletion {
 	 */
 	omiuLabelCompletion() {
 		let retCom = new Array();
-		let data = fs.readFileSync(__dirname+'/comjson/omiu-com.json', 'utf8');  //同步获取json文件内容
-		this.objJson = JSON.parse(data);  //字符串转json对象
-		for(let i in this.objJson) {
-			let comp = new vscode.CompletionItem(this.objJson[i]['label'], this.objJson[i]['kind']);  //创建补全对象(初始化标签和类型)
-			comp.detail = this.objJson[i]['detail'];  //提示信息
-			comp.insertText = new vscode.SnippetString(this.objJson[i]['insertText']);  //插入的内容
-			comp.documentation = new vscode.MarkdownString(this.objJson[i]['documentation']);  //Markdown说明
-			comp.sortText = this.objJson[i]['sortText'];  //权值排序
-			if(this.objJson[i]['cmd']) {
+		for(let i in this.objJsonOmiu) {
+			let comp = new vscode.CompletionItem(this.objJsonOmiu[i]['label'], this.objJsonOmiu[i]['kind']);  //创建补全对象(初始化标签和类型)
+			comp.detail = this.objJsonOmiu[i]['detail'];  //提示信息
+			comp.insertText = new vscode.SnippetString(this.objJsonOmiu[i]['insertText']);  //插入的内容
+			comp.documentation = new vscode.MarkdownString(this.objJsonOmiu[i]['documentation']);  //Markdown说明
+			comp.sortText = this.objJsonOmiu[i]['sortText'];  //权值排序
+			if(this.objJsonOmiu[i]['cmd']) {
 				comp.command = this.autoSuggestCommand();  //补全后立马开启新的补全提示
 			}
 			retCom.push(comp);
@@ -78,18 +80,18 @@ class OmiCompletion {
 		const lineStr = document.lineAt(position).text;  //当前光标所在整行文本
 		let lineLen = lineStr.length;
 		let ip = position.character;  //当前光标所在位置
-		let label = this.getPosOmiLabe(lineStr, lineLen, ip);  //获取合法标签中的标签，如果标签不合法，返回空
-		if(label) {
-			for(let i in this.objJson[label]['attribute']) {
-				if(this.labeHaveattributes(lineStr, lineLen, ip, this.objJson[label]['attribute'][i]['label'])) {  //标签内已有的属性值不添加(只支持光标在标签行)
+		let objLabel = this.getPosOmiLabe(document, position);  //获取合法标签对象(包含标签、'<'和'>'的位置，如果标签和引号不合法，返回空对象)
+		if(objLabel.label != '') {
+			for(let i in this.objJsonOmiu[objLabel.label]['attribute']) {
+				if(this.labeHaveattributes(lineStr, lineLen, ip, this.objJsonOmiu[objLabel.label]['attribute'][i]['label'])) {  //标签内已有的属性值不添加(只支持光标在标签行)
 					continue;
 				}
-				let comp = new vscode.CompletionItem(this.objJson[label]['attribute'][i]['label'], this.objJson[label]['attribute'][i]['kind']);
-				comp.detail = this.objJson[label]['attribute'][i]['detail'];
-				comp.insertText = new vscode.SnippetString(this.objJson[label]['attribute'][i]['insertText']);
-				comp.documentation = new vscode.MarkdownString(this.objJson[label]['attribute'][i]['documentation']);
-				comp.sortText = this.objJson[label]['attribute'][i]['sortText'];
-				if(this.objJson[label]['attribute'][i]['cmd']) {
+				let comp = new vscode.CompletionItem(this.objJsonOmiu[objLabel.label]['attribute'][i]['label'], this.objJsonOmiu[objLabel.label]['attribute'][i]['kind']);
+				comp.detail = this.objJsonOmiu[objLabel.label]['attribute'][i]['detail'];
+				comp.insertText = new vscode.SnippetString(this.objJsonOmiu[objLabel.label]['attribute'][i]['insertText']);
+				comp.documentation = new vscode.MarkdownString(this.objJsonOmiu[objLabel.label]['attribute'][i]['documentation']);
+				comp.sortText = this.objJsonOmiu[objLabel.label]['attribute'][i]['sortText'];
+				if(this.objJsonOmiu[objLabel.label]['attribute'][i]['cmd']) {
 					comp.command = this.autoSuggestCommand();
 				}
 				retCom.push(comp);
@@ -112,55 +114,100 @@ class OmiCompletion {
 	
 	/**
 	 * 获取光标所在的标签名，
-	 * 如果光标不在一个完整标签内，则返回空(完整标签:<>)
-	 * @param lineStr 整行字符串
-	 * @param lineLen 整行字符串长度
-	 * @param ip 当前光标所在位置
-	 * @return null | string
+	 * 如果光标不在一个标签内，则返回空(支持单行和多行查找匹配，例:<>、<\n\n>)(匹配到<符号即可)
+	 * @param doc 调用命令文档。
+	 * @param pos 调用命令位置。
+	 * @return Object Json 标签对象
 	 */
-	getPosOmiLabe(lineStr, lineLen, ip) {
-		let retStr = '';
-		let il = 0;  //'<'的位置
-		for(let i = ip-1; i >= 0; i--) {  //从光标位置往左查找，找到'<'位置,先找到'>'或未找到'<'都表示光标不在完整标签内
-			if(lineStr[i] == '>') {
-				return '';
-			} else if(lineStr[i] == '<') {
-				il = i;
-				break;
+	getPosOmiLabe(doc, pos) { //pos,当前光标所在位置(光标所在行:pos.line,光标所在列:pos.character)
+		let objLabel = {
+			"label": '',
+			"posl": { "x": -1, "y": -1},
+			"posr": { "x": -1, "y": -1}
+		}
+		let pl = { "x": -1, "y": -1 }  //'<'的位置
+		let pr = { "x": -1, "y": -1 }  //'>'的位置
+		//查找'<'位置
+		let posl = { "x": pos.line, "y": pos.character };  //坐标扫描实时位置，查找'<'
+		let findNotl = true;  //记录是否找到'<'
+		while(posl.x >= 0 && findNotl) {
+			let xstr = doc.lineAt(posl.x).text;  //获取当前行的整行内容
+			if(posl.x != pos.line) {  //不在光标所在行时从当前行内容最后一列开始扫描
+				posl.y = xstr.length;
 			}
+			for(let y = posl.y-1; y >= 0; y--) {
+				if(xstr[y] == '>') {
+					return objLabel;
+				} else if(xstr[y] == '<') {  //找到'<'后记录位置并不再查找
+					pl.x = posl.x;
+					pl.y = y;
+					findNotl = false;
+					break;
+				}
+			}
+			posl.x -= 1;  //当前行没有，继续查找上一行
 		}
-		if(il == 0 && lineStr[0] != '<') {  //未找到'<'
-			return '';
+		if(pl.x == -1) {  //未找到'<'
+			return objLabel;
 		}
+		//console.log("<:"+pl.x+"\t"+pl.y);
+
+		//查找'>'位置
+		let posr = { x: pos.line, y: pos.character };  //坐标扫描实时位置，查找'>'
+		let findNotr = true;  //记录是否找到'>'
+		while(posr.x < 52 && findNotr) {
+			let xstr = doc.lineAt(posr.x).text;  //获取当前行的整行内容
+			if(posr.x != pos.line) {  //不在光标所在行时从当前行内容最后一列开始扫描
+				posr.y = 0;
+			}
+			for(let y = posr.y; y < xstr.length; y++) {
+				if(xstr[y] == '<') {
+					return objLabel;
+				} else if(xstr[y] == '>') {  //找到'>'后记录位置并不再查找
+					pr.x = posr.x;
+					pr.y = y;
+					findNotr = false;
+					break;
+				}
+			}
+			posr.x += 1;
+		}
+		if(pr.x == -1) {  //未找到'<'
+			return objLabel;
+		}
+		//console.log(">:"+pr.x+"\t"+pr.y);
+
 		//判断光标是否在引号中(''或"")，从而判断是否要给属性提示
-		//算法：在标签内从左往右数'或"的数量，如果为双数则光标不在其中,如果为单数且光标右边还有'或"则光标在其中
-		//判断单引号'
-		let ldyn = 0;
-		for(let i = il+1; i < ip; i++) {
-			if(lineStr[i] == '\'') {
-				ldyn += 1;
-			}
+		//算法：扫描'<'位置到光标当前位置，计算'或"数量，如果为双数则光标不在其中,如果为单数且光标右边还有'或"则光标在其中
+		//记录单引号数量'character
+		let on = this.findCharNum(doc, pl, pos, '\'');  //坐标区间查找字符出现数量，不包含坐标位置。
+		if(on%2 != 0) {
+			return objLabel;
 		}
-		if(ldyn%2 != 0) {
-			return '';
+		//记录双引号数量"
+		let en = this.findCharNum(doc, pl, pos, '\"');  //坐标区间查找字符出现数量，不包含坐标位置。
+		if(en%2 != 0) {
+			return objLabel;
 		}
-		//判断双引号"
-		let lsyn = 0;
-		for(let i = il+1; i < ip; i++) {
-			if(lineStr[i] == '\"') {
-				lsyn += 1;
-			}
-		}
-		if(lsyn%2 != 0) {
-			return '';
-		}
-		for(let i = il+1; i < lineLen; i++) {
-			if(lineStr[i] == ' ') {
+		
+		//获取标签值
+		let strLabel = '';
+		let strLine = doc.lineAt(pl.x).text;  //获取当前行的整行内容
+		for(let y = pl.y+1; y < strLine.length; y++) {
+			if(strLine[y] == ' ') {
 				break;
 			}
-			retStr += lineStr[i];
+			strLabel += strLine[y];
 		}
-		return retStr;
+		
+		console.log(strLabel+": "+"<("+pl.x+","+pl.y+")|>("+pr.x+","+pr.y+")");
+
+		//返回的标签对象
+		objLabel.label = strLabel;
+		objLabel.posl = pl;
+		objLabel.posr = pr;
+		
+		return objLabel;
 	}
 	
 	/**
@@ -194,7 +241,13 @@ class OmiCompletion {
 			"\""+attr+" ",
 			"\""+attr+"=",
 			"\'"+attr+" ",
-			"\'"+attr+"="
+			"\'"+attr+"=",
+			" "+attr+">",
+			" "+attr+">",
+			"\""+attr+">",
+			"\""+attr+">",
+			"\'"+attr+">",
+			"\'"+attr+">"
 		];
 		for(let i = 0; i < sf.length; i++) {
 			if(findStr.indexOf(sf[i]) != -1) {
@@ -202,6 +255,34 @@ class OmiCompletion {
 			}
 		}
 		return false;
+	}
+
+	/**
+	 * 坐标区间查找字符出现数量，不包含坐标位置。
+	 * @param {*} doc 调用命令文档
+	 * @param {*} pStart 起始坐标
+	 * @param {*} pEnd 结束坐标
+	 */
+	findCharNum(doc, pStart, pEnd, ch) {
+		let num = 0;
+		for(let x = pStart.x; x <= pEnd.line; x++) {
+			let xstr = doc.lineAt(x).text;  //获取当前行的整行内容
+			let y = 0;
+			if(x == pStart.x) {
+				y = pStart.y;
+			}
+			let ymax = xstr.length;
+			if(x == pEnd.line) {
+				ymax = pEnd.character-1;
+			}
+			while(y < ymax) {
+				if(xstr[y] == ch) {
+					num += 1;
+				}
+				y++;
+			}
+		}
+		return num;
 	}
 
 
