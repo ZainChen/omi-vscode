@@ -20,20 +20,22 @@ class OmiCompletion {
 	 * @return 一个完成数组，一个[补全列表]（＃CompletionList），或一个解析为其中任何一个的thenable。
 	 *可以通过返回`undefined`，`null`或空数组来表示缺少结果。
 	 */
-	async provideCompletionItems(document, position, token, context) {
+	provideCompletionItems(document, position, token, context) {
 		if(JSON.stringify(this.objJsonOmiu) == "{}") {  //如果omiu标签属性库为空，则从文件读取导入
 			let data = fs.readFileSync(__dirname+'/comjson/omiu-com.json', 'utf8');  //同步获取json文件内容
 			this.objJsonOmiu = JSON.parse(data);  //字符串转json对象
 		}
-		console.log(">>>\""+this.getLastChar(document, position)+"\"");
-		let ch = context.triggerCharacter || this.getLastChar(document, position);
-		switch(ch) {
-			case 'o':  //实验，暂时不能加
-			case '<': return this.omiuLabelCompletion();  //标签补全
-			case ' ': return this.omiuAttributesCompletion(document, position);  //属性补全
-			default: return [];
+		let ctc = context.triggerCharacter;
+		let glc = this.getLastChar(document, position);  //获取当前输入的字符或字符串
+		let ch = ctc || glc;
+		console.log("\""+ctc+"\"\t\""+glc+"\"");
+		if(ch != '-' && ch != ' ') {
+			return this.omiuLabelCompletion();  //标签补全
+		} else if(ch == ' ') {
+			return this.omiuAttributesCompletion(document, position);  //属性补全
+		} else {
+			return [];
 		}
-
 	}
 
 	/**
