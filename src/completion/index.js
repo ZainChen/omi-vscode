@@ -28,11 +28,11 @@ class OmiCompletion {
 		let ctc = context.triggerCharacter;
 		let glc = this.getLastChar(document, position);  //获取当前输入的字符或字符串
 		let ch = ctc || glc;
-		console.log("\""+ctc+"\"\t\""+glc+"\"");
+		//console.log("\""+ctc+"\"\t\""+glc+"\"");
 		if(ch != '-' && ch != ' ') {
-			return this.omiuLabelCompletion();  //标签补全
+			return this.omiuLabelCompletion();  //标签补全(准备将函数内循环放到函数外只载入一次数据，提高效率)
 		} else if(ch == ' ') {
-			return this.omiuAttributesCompletion(document, position);  //属性补全
+			return this.omiuAttributesCompletion(document, position);  //属性补全(准备将函数内循环放到函数外只载入一次数据，提高效率)
 		} else {
 			return [];
 		}

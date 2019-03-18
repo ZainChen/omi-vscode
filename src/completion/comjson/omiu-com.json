@@ -392,6 +392,15 @@
         "sortText": "a",
         "cmd": false,
         "attribute": {
+            "value": {
+                "label": "value",
+                "kind": 22,
+                "detail": "[omiu]o-dropdown",
+                "insertText": "value={${1}}",
+                "documentation": "---\n\n## value\n\n类型: number\n\n属性值: number\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
             "icon": {
                 "label": "icon",
                 "kind": 22,
@@ -914,6 +923,120 @@
                 "detail": "[omiu]o-input-number",
                 "insertText": "onChange={${1}}",
                 "documentation": "---\n\n## onChange\n\n类型: function\n\n属性值: function\n\n---",
+                "sortText": "c",
+                "cmd": false
+            }
+        }
+    },
+    "o-checkbox": {
+        "label": "o-checkbox",
+        "kind": 24,
+        "detail": "[omiu]Checkbox.",
+        "insertText": "<o-checkbox label='${1}'${2}></o-checkbox>",
+        "documentation": "---\n\n## Checkbox  \n\n简介：复选框。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/checkbox?index=5&subIndex=2 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/checkbox?index=5&subIndex=2 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-checkbox checked label='my label' />\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| checked  | bool|   false    |           |\n| label  | string|       |           |\n\n---\n\n## 样例\n\n![checkbox](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/checkbox.png 'checkbox')\n\n---",
+        "sortText": "a",
+        "cmd": false,
+        "attribute": {
+            "label": {
+                "label": "label",
+                "kind": 22,
+                "detail": "[omiu]o-checkbox",
+                "insertText": "label='${1}'",
+                "documentation": "---\n\n## label\n\n类型: string\n\n属性值: string\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "checked": {
+                "label": "checked",
+                "kind": 22,
+                "detail": "[omiu]o-checkbox",
+                "insertText": "checked",
+                "documentation": "---\n\n## checked\n\n类型: bool\n\n属性值: bool\n\n---",
+                "sortText": "a",
+                "cmd": false
+            }
+        }
+    },
+    "o-radio": {
+        "label": "o-radio",
+        "kind": 24,
+        "detail": "[omiu]Radio.",
+        "insertText": "<o-radio name='${1}' label='${2}'${3}></o-radio>",
+        "documentation": "---\n\n## Radio  \n\n简介：单选框。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/radio?index=5&subIndex=3 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/radio?index=5&subIndex=3 '官网链接')\n\n---\n\n## Usage\n\n```js\n<o-radio name='group' checked label='my label' />\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| checked  | bool|   false    |           |\n| label  | string|       |           |\n| name  | string|       |           |\n\n---\n\n## 样例\n\n![radio](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/radio.png 'radio')\n\n---",
+        "sortText": "a",
+        "cmd": false,
+        "attribute": {
+            "label": {
+                "label": "label",
+                "kind": 22,
+                "detail": "[omiu]o-radio",
+                "insertText": "label='${1}'",
+                "documentation": "---\n\n## label\n\n类型: string\n\n属性值: string\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "name": {
+                "label": "name",
+                "kind": 22,
+                "detail": "[omiu]o-radio",
+                "insertText": "name='${1}'",
+                "documentation": "---\n\n## name\n\n类型: string\n\n属性值: string\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "checked": {
+                "label": "checked",
+                "kind": 22,
+                "detail": "[omiu]o-radio",
+                "insertText": "checked",
+                "documentation": "---\n\n## checked\n\n类型: bool\n\n属性值: bool\n\n---",
+                "sortText": "a",
+                "cmd": false
+            }
+        }
+    },
+    "o-dropdown": {
+        "label": "o-dropdown",
+        "kind": 24,
+        "detail": "[omiu]Dropdown.",
+        "insertText": "<o-dropdown\n\tselectedIndex={${1}}\n\tshow={${2|true,false|}}\n\tonToggle={${3}}\n\tonSelect={${4}}\n>\n\t<item value={${5}}>${6}</item>\n</o-dropdown>",
+        "documentation": "---\n\n## Dropdown  \n\n简介：下拉框。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/dropdown?index=5&subIndex=4 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/dropdown?index=5&subIndex=4 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-dropdown selectedIndex={this.selectedIndex}\n  show={this.showSelect}\n  onToggle={this.onToggle}\n  onSelect={this.onSelect}>\n  <item value={1}>Item 1</item>\n  <item value={2}>Item 2</item>\n  <item value={3}>Item 3</item>\n</o-dropdown>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| selectedIndex  | number|       |           |\n| show  | bool|   false    |           |\n| children  | json array|       |           |\n| onToggle  | function|       |           |\n| onSelect  | function|       |           |\n\n---\n\n## 样例\n\n![dropdown](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/dropdown.png 'dropdown')\n\n---",
+        "sortText": "a",
+        "cmd": false,
+        "attribute": {
+            "selectedIndex": {
+                "label": "selectedIndex",
+                "kind": 22,
+                "detail": "[omiu]o-dropdown",
+                "insertText": "selectedIndex={${1}}",
+                "documentation": "---\n\n## selectedIndex\n\n类型: number\n\n属性值: number\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "show": {
+                "label": "show",
+                "kind": 22,
+                "detail": "[omiu]o-dropdown",
+                "insertText": "show={${1|true,false|}}",
+                "documentation": "---\n\n## show\n\n类型: bool\n\n属性值: true, false\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "onToggle": {
+                "label": "onToggle",
+                "kind": 2,
+                "detail": "[omiu]o-dropdown",
+                "insertText": "onToggle={${1}}",
+                "documentation": "---\n\n## onToggle\n\n类型: function\n\n属性值: function\n\n---",
+                "sortText": "c",
+                "cmd": false
+            },
+            "onSelect": {
+                "label": "onSelect",
+                "kind": 2,
+                "detail": "[omiu]o-dropdown",
+                "insertText": "onSelect={${1}}",
+                "documentation": "---\n\n## onSelect\n\n类型: function\n\n属性值: function\n\n---",
                 "sortText": "c",
                 "cmd": false
             }
