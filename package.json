@@ -304,10 +304,6 @@
 					"command": "omi.cmd.ecoHello",
 					"when": "view == omi.view.ecosystem",
 					"group": "navigation@1"
-				},
-				{
-					"command": "omi.cmd.webview",
-					"when": "view == omi.view.ecosystem"
 				}
 			],
 			"view/item/context": [

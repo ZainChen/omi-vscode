@@ -1,27 +1,32 @@
 # Omi Visual Studio Code extension
-[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v1.0.5-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
-[![Downloads](https://img.shields.io/badge/Downloads-1K%2B-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
-[![UpdateTime](https://img.shields.io/badge/UpdateTime-2019%2F03%2F05%2012%3A49%3A20-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
+[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v2.0.0-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
+[![Downloads](https://img.shields.io/badge/Downloads-1.1K%2B-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
+[![UpdateTime](https://img.shields.io/badge/UpdateTime-2019%2F03%2F19%2000%3A51%3A32-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
 
 This extension adds omi support for Visual Studio Code.
 
 # Function
 - Omi ecosystem `[All branches and versions]`
-- Omiu official component tag and attribute completion, completion prompt for markdown format
+- Omiu component tag and attribute completion(completion prompt for markdown format)
 - Omi, Omiu snippets `[All omiu component snippets. Multiple overlays, press TAB to jump to the transition position]`
-- GitHub switch `[GitHub tree view to switch any url function]`
+- GitHub switch `[GitHub tree view to switch url]`
 - Welcome omi `[Welcome Screen]`
 - In development...
 
-<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function3.png" alt="omi"/></p>
-<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function4.png" alt="omi"/></p>
+<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun1.gif" alt="omi"/></p>
+<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun2.gif" alt="omi"/></p>
+<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun3.gif" alt="omi"/></p>
+<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun4.gif" alt="omi"/></p>
+<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun5.gif" alt="omi"/></p>
+<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun6.gif" alt="omi"/></p>
+<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun7.gif" alt="omi"/></p>
 
 # About
 
 https://github.com/Tencent/omi
 
-<p align="right">Omi <strong>v5.0.24</strong></p>
-<p align="right">Omio <strong>v1.3.8</strong></p>
+<p align="right">Omi <strong>v6.0.1</strong></p>
+<p align="right">Omio <strong>v2.0.3</strong></p>
 <p align="center"><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omi-logo2019.png" alt="omi" width="300"/></p>
 <h2 align="center">Omi - Next generation front end framework using web components with omio(IE8+) and omip(小程序) fallback in tiny js.</h2>
 
