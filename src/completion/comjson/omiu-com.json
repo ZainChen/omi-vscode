@@ -8,11 +8,11 @@
         "sortText": "a",
         "cmd": false,
         "attribute": {
-            ".type": {
+            "type": {
                 "label": "type",
                 "kind": 22,
                 "detail": "[omiu]o-button",
-                "insertText": "type=\"${1|primary,default,warn,vcode|}\"",
+                "insertText": "type='${1|primary,default,warn,vcode|}'",
                 "documentation": "---\n\n## type\n\n类型：string\n\n属性值: primary, default, warn, vcode\n\n---",
                 "sortText": "a",
                 "cmd": false
@@ -21,7 +21,7 @@
                 "label": "size",
                 "kind": 22,
                 "detail": "[omiu]o-button",
-                "insertText": "size=\"${1|normal,small|}\"",
+                "insertText": "size='${1|normal,small|}'",
                 "documentation": "---\n\n## size\n\n类型：string\n\n属性值: normal, small\n\n---",
                 "sortText": "a",
                 "cmd": false
@@ -42,6 +42,15 @@
                 "insertText": "plain${1}",
                 "documentation": "---\n\n## plain\n\n类型：无\n\n属性值: 无\n\n---",
                 "sortText": "a",
+                "cmd": false
+            },
+            "onClick": {
+                "label": "onClick",
+                "kind": 2,
+                "detail": "[omiu]o-popup",
+                "insertText": "onClick={${1}}",
+                "documentation": "---\n\n## onClick\n\n类型：function\n\n属性值: function\n\n---",
+                "sortText": "c",
                 "cmd": false
             }
         }
@@ -68,7 +77,7 @@
                 "label": "path",
                 "kind": 22,
                 "detail": "[omiu]o-icon",
-                "insertText": "path=\"${1}\"",
+                "insertText": "path='${1}'",
                 "documentation": "---\n\n## path\n\n类型：string\n\n---",
                 "sortText": "a",
                 "cmd": false
@@ -77,7 +86,7 @@
                 "label": "path:",
                 "kind": 21,
                 "detail": "[omiu]o-icon",
-                "insertText": "path: \"${1}\"",
+                "insertText": "path: '${1}'",
                 "documentation": "---\n\n## path\n\n类型：string\n\n---",
                 "sortText": "b",
                 "cmd": false
@@ -86,7 +95,7 @@
                 "label": "scale",
                 "kind": 22,
                 "detail": "[omiu]o-icon",
-                "insertText": "scale=\"${1|2|}\"",
+                "insertText": "scale='${1|2|}'",
                 "documentation": "---\n\n## path\n\n类型：number\n\n---",
                 "sortText": "a",
                 "cmd": false
@@ -95,7 +104,7 @@
                 "label": "color",
                 "kind": 22,
                 "detail": "[omiu]o-icon",
-                "insertText": "color=\"${1|black,yellow,red|}\"",
+                "insertText": "color='${1|black,yellow,red|}'",
                 "documentation": "---\n\n## color\n\n类型：string\n",
                 "sortText": "a",
                 "cmd": false
@@ -104,7 +113,7 @@
                 "label": "color:",
                 "kind": 21,
                 "detail": "[omiu]o-icon",
-                "insertText": "color: \"${1|black,yellow,red|}\"",
+                "insertText": "color: '${1|black,yellow,red|}'",
                 "documentation": "---\n\n## color\n\n类型：string\n\n---",
                 "sortText": "b",
                 "cmd": false
@@ -131,7 +140,7 @@
                 "label": "type",
                 "kind": 22,
                 "detail": "[omiu]o-icon",
-                "insertText": "type=\"${1|loading,close,pay,chat,scan,add-friend|}\"",
+                "insertText": "type='${1|loading,close,pay,chat,scan,add-friend|}'",
                 "documentation": "---\n\n## type\n\n类型：string\n\n属性值: loading, close, pay, chat, scan, add-friend\n\n---",
                 "sortText": "a",
                 "cmd": false
@@ -151,17 +160,26 @@
         "label": "o-row",
         "kind": 24,
         "detail": "[omiu]Row of the 24 grid system.",
-        "insertText": "<o-row${2}>\n\t${1}\n</o-row>",
+        "insertText": "<o-row${2}>\n\t<col span={${1|12,1,2,6,18|}}>${3}</col>${4}\n</o-row>",
         "documentation": "---\n\n## Row \n\n简介：24栅格布局里的一行。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/row?index=2&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/row?index=2&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-row>\n  <col span={12}>col12</col>\n  <col span={12}>col12</col>\n</o-row>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| :------------- |:-------------|:-----|:-------------|\n| children         |   json array with col   |    --   |             |\n\n---\n\n## 样例\n\n![row](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/row.png 'row')\n\n---",
         "sortText": "a",
-        "cmd": false,
+        "cmd": true,
         "attribute": {
             "class": {
                 "label": "class",
                 "kind": 22,
                 "detail": "[omiu]o-row",
-                "insertText": "class=\"${1|row|}\"",
+                "insertText": "class='${1|row|}'",
                 "documentation": "---\n\n## type\n\n类型：string\n\n属性值:row\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "span": {
+                "label": "span",
+                "kind": 22,
+                "detail": "[omiu]col",
+                "insertText": "span={${1|12,1,2,6,18|}}",
+                "documentation": "---\n\n## type\n\n类型：number\n\n---",
                 "sortText": "a",
                 "cmd": false
             }
@@ -180,7 +198,7 @@
                 "label": "class",
                 "kind": 22,
                 "detail": "[omiu]col",
-                "insertText": "class=\"${1|col|}\"",
+                "insertText": "class='${1|col|}'",
                 "documentation": "---\n\n## type\n\n类型：string\n\n属性值:col\n\n---",
                 "sortText": "a",
                 "cmd": false
@@ -267,6 +285,636 @@
                 "insertText": "ellipseText={${1}}",
                 "documentation": "---\n\n## type\n\n类型：string\n\n---",
                 "sortText": "a",
+                "cmd": false
+            },
+            "onChange": {
+                "label": "onChange",
+                "kind": 2,
+                "detail": "[omiu]o-pagination",
+                "insertText": "onChange={${1}}",
+                "documentation": "---\n\n## function\n\n类型：function\n\n---",
+                "sortText": "c",
+                "cmd": false
+            }
+        }
+    },
+    "o-timeline": {
+        "label": "o-timeline",
+        "kind": 24,
+        "detail": "[omiu]Time or step schedule.",
+        "insertText": "<o-timeline data={[\n\t{ ${1} }${2}\n]} />",
+        "documentation": "---\n\n## Timeline \n\n简介：时间线.\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/timeline?index=3&subIndex=1 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/timeline?index=3&subIndex=1 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-timeline data={[\n  { msgA: '2018.11.11', msgB: '15:22:09', msgC: 'create project', msgD: '[sub msg]' },\n  { msgA: '2018.11.11', msgB: '15:22:09', msgC: 'delete readme', msgD: '[sub msg]' },\n  { msgA: '2018.11.11', msgB: '15:22:09', msgC: 'update readme', msgD: '[sub msg]' },\n  { msgA: '2018.11.11', msgB: '15:22:09', msgC: 'others', msgD: '[sub others]' }\n]} />\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------|\n| data         | json array|    --       |  数组项的结构: <br> { <br>　msgA: '2018.11.11',<br>　msgB: '15:22:09', <br>　msgC: 'create project',<br>　msgD: '[sub msg]' <br>}     |\n\n---\n\n## 样例\n\n![timeline](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/timeline.png 'timeline')\n\n---",
+        "sortText": "a",
+        "cmd": true,
+        "attribute": {
+            "data": {
+                "label": "data",
+                "kind": 22,
+                "detail": "[omiu]o-timeline",
+                "insertText": "data='{[{ ${1} }]}'",
+                "documentation": "---\n\n## data\n\n类型：json array\n\n属性值: 数组项的结构: <br> { <br>　msgA: '2018.11.11',<br>　msgB: '15:22:09', <br>　msgC: 'create project',<br>　msgD: '[sub msg]' <br>}\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "msgA": {
+                "label": "msgA",
+                "kind": 21,
+                "detail": "[omiu]o-timeline",
+                "insertText": "msgA: '${1}'${2}",
+                "documentation": "---\n\n## msgA\n\n类型：string\n\n---",
+                "sortText": "b",
+                "cmd": false
+            },
+            "msgB": {
+                "label": "msgB",
+                "kind": 21,
+                "detail": "[omiu]o-timeline",
+                "insertText": "msgB: '${1}'${2}",
+                "documentation": "---\n\n## msgB\n\n类型：string\n\n---",
+                "sortText": "b",
+                "cmd": false
+            },
+            "msgC": {
+                "label": "msgC",
+                "kind": 21,
+                "detail": "[omiu]o-timeline",
+                "insertText": "msgC: '${1}'${2}",
+                "documentation": "---\n\n## msgC\n\n类型：string\n\n---",
+                "sortText": "b",
+                "cmd": false
+            },
+            "msgD": {
+                "label": "msgD",
+                "kind": 21,
+                "detail": "[omiu]o-timeline",
+                "insertText": "msgD: '${1}'${2}",
+                "documentation": "---\n\n## msgD\n\n类型：string\n\n---",
+                "sortText": "b",
+                "cmd": false
+            }
+        }
+    },
+    "o-nav": {
+        "label": "o-nav",
+        "kind": 24,
+        "detail": "[omiu]Navigation.",
+        "insertText": "<o-nav${2}>\n\t<item${3}>${1}</item>\n</o-nav>",
+        "documentation": "---\n\n## Nav \n\n简介：导航。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/nav?index=3&subIndex=2 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/nav?index=3&subIndex=2 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-nav>\n  <item active={true}>NavA</item>\n  <item>NavB</item>\n</o-nav>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------|\n| onChange         |   function  |    --   |             |　\n| children         |    json array  |    --   |             | \n\n---\n\n## 样例\n\n![nav](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/nav.png 'nav')\n\n---",
+        "sortText": "a",
+        "cmd": false,
+        "attribute": {
+            "onChange": {
+                "label": "onChange",
+                "kind": 2,
+                "detail": "[omiu]o-nav",
+                "insertText": "onChange={${1}}",
+                "documentation": "---\n\n## onChange\n\n类型：function\n\n属性值: function\n\n---",
+                "sortText": "c",
+                "cmd": false
+            },
+            "active": {
+                "label": "active",
+                "kind": 2,
+                "detail": "[omiu]o-nav",
+                "insertText": "active={${1}}",
+                "documentation": "---\n\n## active\n\n类型：function\n\n属性值: function\n\n---",
+                "sortText": "c",
+                "cmd": false
+            }
+        }
+    },
+    "item": {
+        "label": "item",
+        "kind": 24,
+        "detail": "[omiu]item.",
+        "insertText": "<item${1}>${2}</item>",
+        "documentation": "---\n\n## item \n\n简介：item。\n\n---",
+        "sortText": "a",
+        "cmd": false,
+        "attribute": {
+            "icon": {
+                "label": "icon",
+                "kind": 22,
+                "detail": "[omiu]o-dropdown-menu",
+                "insertText": "icon={{${1}}}",
+                "documentation": "---\n\n## icon\n\n类型：Json Object\n\n属性值: Json Object\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "text": {
+                "label": "text",
+                "kind": 22,
+                "detail": "[omiu]o-dropdown-menu",
+                "insertText": "text='${1}'",
+                "documentation": "---\n\n## text\n\n类型：string\n\n属性值: string\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "path:": {
+                "label": "path:",
+                "kind": 21,
+                "detail": "[omiu]o-dropdown-menu",
+                "insertText": "path:${1| '', |}",
+                "documentation": "---\n\n## path\n\n类型：string\n\n属性值: string\n\n---",
+                "sortText": "b",
+                "cmd": false
+            },
+            "color:": {
+                "label": "color:",
+                "kind": 21,
+                "detail": "[omiu]o-dropdown-menu",
+                "insertText": "color: '${1|black,yellow,red|}'",
+                "documentation": "---\n\n## color\n\n类型：string\n\n---",
+                "sortText": "b",
+                "cmd": false
+            },
+            "onChange": {
+                "label": "onChange",
+                "kind": 2,
+                "detail": "[omiu]o-nav",
+                "insertText": "onChange={${1}}",
+                "documentation": "---\n\n## onChange\n\n类型：function\n\n属性值: function\n\n---",
+                "sortText": "c",
+                "cmd": false
+            },
+            "active": {
+                "label": "active",
+                "kind": 2,
+                "detail": "[omiu]o-nav",
+                "insertText": "active={${1}}",
+                "documentation": "---\n\n## active\n\n类型：function\n\n属性值: function\n\n---",
+                "sortText": "c",
+                "cmd": false
+            }
+        }
+    },
+    "o-tab": {
+        "label": "o-tab",
+        "kind": 24,
+        "detail": "[omiu]Navigation.",
+        "insertText": "<o-tab${2}>\n\t<item${3}>${1}</item>\n</o-tab>",
+        "documentation": "---\n\n## Tab \n\n简介：选项卡。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/tab?index=3&subIndex=3 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/tab?index=3&subIndex=3 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-tab onChange={this.tabChange}>\n  <item active={true}>朋友相册</item>\n  <item >时刻视频</item>\n</o-tab>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------|\n| onChange         |   function  |    --   |             |　\n| children         |    json array  |    --   |             |　\n\n---\n\n## 样例\n\n![tab](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/tab.png 'tab')\n\n---",
+        "sortText": "a",
+        "cmd": false,
+        "attribute": {
+            "onChange": {
+                "label": "onChange",
+                "kind": 2,
+                "detail": "[omiu]o-nav",
+                "insertText": "onChange={${1}}",
+                "documentation": "---\n\n## onChange\n\n类型：function\n\n属性值: function\n\n---",
+                "sortText": "c",
+                "cmd": false
+            },
+            "active": {
+                "label": "active",
+                "kind": 2,
+                "detail": "[omiu]o-nav",
+                "insertText": "active={${1}}",
+                "documentation": "---\n\n## active\n\n类型：function\n\n属性值: function\n\n---",
+                "sortText": "c",
+                "cmd": false
+            }
+        }
+    },
+    "o-dropdown-menu": {
+        "label": "o-dropdown-menu",
+        "kind": 24,
+        "detail": "[omiu]DropdownMenu.",
+        "insertText": "<o-dropdown-menu>\n\t<item icon={{ path:${1| '', |}, color: '${2}' }} text='${3}'></item>\n</o-dropdown-menu>",
+        "documentation": "---\n\n## DropdownMenu \n\n简介：下拉菜单。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/dropdown-menu?index=3&subIndex=4 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/dropdown-menu?index=3&subIndex=4 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-dropdown-menu >\n  <item icon={{ path: path.pathA, color: '#F2F2F2' }} text='Chat'></item>\n  <item icon={{ path: path.pathB, color: '#F2F2F2' }} text='Add Friend'></item>\n  <item icon={{ path: path.pathC, color: '#F2F2F2' }} text='Scan'></item>\n  <item icon={{ path: path.pathD, color: '#F2F2F2' }} text='Pay'></item>\n</o-dropdown-menu>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------|\n| children         | json array|    --       |  数组项的结构: `<item icon={{ path: 'path string', color: 'any color string' }} text='any text string'></item>`    |　\n\n---\n\n## 样例\n\n![dropdown-menu](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/dropdown-menu.png 'dropdown-menu')\n\n---",
+        "sortText": "a",
+        "cmd": false,
+        "attribute": {}
+    },
+    "o-action-sheet": {
+        "label": "o-action-sheet",
+        "kind": 24,
+        "detail": "[omiu]Selection component in pop-up mode.",
+        "insertText": "<o-action-sheet\n\tmenus={${1}}\n\tactions={${2}}\n\tshow={${3|false,true|}}\n\ttype='${4|ios,android|}'\n\tonClose={e => { ${5} }}\n/>",
+        "documentation": "---\n\n## ActionSheet \n\n简介：弹出式选择组件。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/action-sheet?index=4&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/action-sheet?index=4&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-action-sheet\n  menus={[{\n      label: 'Option 1',\n      onClick: () => { }\n    }, {\n      label: 'Option 2',\n      onClick: () => { }\n  }]}\n  actions={[\n      {\n        label: 'Cancel',\n        onClick: this.hide\n      }\n  ]}\n  show={true}\n  type='ios'\n  onClose={e => { }}\n/>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| menus  | json array|--  ||\n| actions  | json array| -- ||\n| scale | number   |   2 | |\n| show | bool| false ||\n| type | string| ios | options: ios, android|\n| onClose | function| -- ||\n\n---\n\n## 样例\n\n![action-sheet](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/action-sheet.png 'action-sheet')\n\n---",
+        "sortText": "a",
+        "cmd": false,
+        "attribute": {
+            "menus": {
+                "label": "menus",
+                "kind": 22,
+                "detail": "[omiu]o-action-sheet",
+                "insertText": "menus={${1}}",
+                "documentation": "---\n\n## menus\n\n类型：json array\n\n属性值: json array\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "actions": {
+                "label": "actions",
+                "kind": 22,
+                "detail": "[omiu]o-action-sheet",
+                "insertText": "actions={${1}}",
+                "documentation": "---\n\n## actions\n\n类型：json array\n\n属性值: json array\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "scale": {
+                "label": "scale",
+                "kind": 22,
+                "detail": "[omiu]o-action-sheet",
+                "insertText": "scale='${1|2|}'",
+                "documentation": "---\n\n## scale\n\n类型：number\n\n属性值: 2、number\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "show": {
+                "label": "show",
+                "kind": 22,
+                "detail": "[omiu]o-action-sheet",
+                "insertText": "show={${3|false,true|}}",
+                "documentation": "---\n\n## show\n\n类型：bool\n\n属性值: false、true\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "type": {
+                "label": "type",
+                "kind": 22,
+                "detail": "[omiu]o-action-sheet",
+                "insertText": "type='${4|ios,android|}'",
+                "documentation": "---\n\n## type\n\n类型：string\n\n属性值: ios, android\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "onClose": {
+                "label": "onClose",
+                "kind": 2,
+                "detail": "[omiu]o-action-sheet",
+                "insertText": "onClose={e => { ${5} }}",
+                "documentation": "---\n\n## onClose\n\n类型：function\n\n属性值: function\n\n---",
+                "sortText": "c",
+                "cmd": false
+            }
+        }
+    },
+    "o-toast": {
+        "label": "o-toast",
+        "kind": 24,
+        "detail": "[omiu]Simple reminder notification.",
+        "insertText": "<o-toast type='${1|loading,success|}' show={${2|true,false|}}>${3}</o-toast>",
+        "documentation": "---\n\n## Toast \n\n简介：简单的提醒通知。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/toast?index=4&subIndex=1 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/toast?index=4&subIndex=1 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-toast type='success' show={true}>支付成功</o-toast>\n<o-toast type='loading' show={false}>加载中</o-toast>\n```\n\n你也可以使用命令的方式：\n\n```js\nimport toast from 'omiu/toast'\n\n//显示\ntoast.showLoading()\n//隐藏\ntoast.hideLoading()\n//支持自定义文字\ntoast.showLoading('请求中...')\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| show  | bool | false  ||\n| type  | string | -- |Options: loading, success|\n\n---\n\n## 样例\n\n![toast](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/toast.png 'toast')\n\n---",
+        "sortText": "a",
+        "cmd": false,
+        "attribute": {
+            "show": {
+                "label": "show",
+                "kind": 22,
+                "detail": "[omiu]o-toast",
+                "insertText": "show={${2|true,false|}}",
+                "documentation": "---\n\n## show\n\n类型：bool\n\n属性值: false, true\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "type": {
+                "label": "type",
+                "kind": 22,
+                "detail": "[omiu]o-toast",
+                "insertText": "type='${3|loading,success|}'",
+                "documentation": "---\n\n## type\n\n类型：string\n\n属性值: loading, success\n\n---",
+                "sortText": "a",
+                "cmd": false
+            }
+        }
+    },
+    "o-popup": {
+        "label": "o-popup",
+        "kind": 24,
+        "detail": "[omiu]Popup content layer.",
+        "insertText": "<o-popup\n\tonClose={${1}}\n\tonConfirm={${2}}\n\tshow={${3|true,false|}}\n\ttitle='${4}'\n\tcancelText='${5}'\n\tconfirmText='${6}'\n>\n\t<div>${7}</div>${8}\n</o-popup>",
+        "documentation": "---\n\n## Popup  \n\n简介：弹出层。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/popup?index=4&subIndex=2 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/popup?index=4&subIndex=2 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-popup\n  onClose={this.closePopup}\n  onConfirm={this.onConfirm}\n  show={this.popupShow}  \n  title='My Title'\n  cancelText='cancel'\n  confirmText='confirm'\n>\n  <div>I am content</div>\n  <div>I am content</div>\n  <div>I am content</div>\n  <div>I am content</div>\n</o-popup>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| show  | bool |   --    |           |\n| title  | string |   --    |           |\n| width  | number |   --    |           |\n| cancelText  | string |   --    |           |\n| confirmText  | string |   --    |           |\n| onClose  |function |    --   |           |\n| onConfirm  | function |    --   |           |\n| children  | vdom json array |    --   |           |\n\n---\n\n## 样例\n\n![popup](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/popup.png 'popup')\n\n---",
+        "sortText": "a",
+        "cmd": false,
+        "attribute": {
+            "show": {
+                "label": "show",
+                "kind": 22,
+                "detail": "[omiu]o-popup",
+                "insertText": "show={${2|true,false|}}",
+                "documentation": "---\n\n## show\n\n类型：bool\n\n属性值: false, true\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "title": {
+                "label": "title",
+                "kind": 22,
+                "detail": "[omiu]o-popup",
+                "insertText": "title='${1}'",
+                "documentation": "---\n\n## title\n\n类型：string\n\n属性值: string\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "width": {
+                "label": "width",
+                "kind": 22,
+                "detail": "[omiu]o-popup",
+                "insertText": "width={${1}}",
+                "documentation": "---\n\n## width\n\n类型：number\n\n属性值: number\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "cancelText": {
+                "label": "cancelText",
+                "kind": 22,
+                "detail": "[omiu]o-popup",
+                "insertText": "cancelText='${1}'",
+                "documentation": "---\n\n## cancelText\n\n类型：string\n\n属性值: string\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "confirmText": {
+                "label": "confirmText",
+                "kind": 22,
+                "detail": "[omiu]o-popup",
+                "insertText": "confirmText='${1}'",
+                "documentation": "---\n\n## confirmText\n\n类型：string\n\n属性值: string\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "onClose": {
+                "label": "onClose",
+                "kind": 2,
+                "detail": "[omiu]o-popup",
+                "insertText": "onClose={${1}}",
+                "documentation": "---\n\n## onClose\n\n类型：function\n\n属性值: function\n\n---",
+                "sortText": "c",
+                "cmd": false
+            },
+            "onConfirm": {
+                "label": "onConfirm",
+                "kind": 2,
+                "detail": "[omiu]o-popup",
+                "insertText": "onConfirm={${1}}",
+                "documentation": "---\n\n## onConfirm\n\n类型：function\n\n属性值: function\n\n---",
+                "sortText": "c",
+                "cmd": false
+            }
+        }
+    },
+    "o-dialog": {
+        "label": "o-dialog",
+        "kind": 24,
+        "detail": "[omiu]Alert or confirm dialog.",
+        "insertText": "<o-dialog\n\tonClose={${1}}\n\ttype='${2}'\n\tonConfirm={${3}}\n\tshow={${4|true,false|}}\n\ttitle='${5}'\n\tmsg='${6}'\n\tcancelText='${7}'\n\tconfirmText='${8}'\n/>",
+        "documentation": "---\n\n## Dialog  \n\n简介：对话框。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/dialog?index=4&subIndex=3 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/dialog?index=4&subIndex=3 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-dialog\n  onClose={this.closePopup}\n  onConfirm={this.onConfirm}\n  show={this.popupShow}\n  type='confirm'\n  title='My Title'\n  msg='My Msg!'\n  cancelText='cancel'\n  confirmText='confirm'\n/>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| type  | string |   alert    | Options: alert, confirm  |\n| show  | bool |   --    |           |\n| title  | string |   --    |           |\n| msg  | string |    --   |           |\n| cancelText  | string |   --    |           |\n| confirmText  | string |   --    |           |\n| onClose  |function |    --   |           |\n| onConfirm  | function |    --   |           |\n\n---\n\n## 样例\n\n![dialog](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/dialog.png 'dialog')\n\n---",
+        "sortText": "a",
+        "cmd": false,
+        "attribute": {
+            "type": {
+                "label": "type",
+                "kind": 22,
+                "detail": "[omiu]o-dialog",
+                "insertText": "type='${1|alert,confirm|}'",
+                "documentation": "---\n\n## type\n\n类型：string\n\n属性值: alert, confirm\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "show": {
+                "label": "show",
+                "kind": 22,
+                "detail": "[omiu]o-dialog",
+                "insertText": "show={${1|true,false|}}",
+                "documentation": "---\n\n## show\n\n类型：bool\n\n属性值: false, true\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "title": {
+                "label": "title",
+                "kind": 22,
+                "detail": "[omiu]o-dialog",
+                "insertText": "title='${1}'",
+                "documentation": "---\n\n## title\n\n类型：string\n\n属性值: string\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "msg": {
+                "label": "msg",
+                "kind": 22,
+                "detail": "[omiu]o-dialog",
+                "insertText": "msg='${1}'",
+                "documentation": "---\n\n## msg\n\n类型：string\n\n属性值: string\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "cancelText": {
+                "label": "cancelText",
+                "kind": 22,
+                "detail": "[omiu]o-dialog",
+                "insertText": "cancelText='${1}'",
+                "documentation": "---\n\n## cancelText\n\n类型：string\n\n属性值: string\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "confirmText": {
+                "label": "confirmText",
+                "kind": 22,
+                "detail": "[omiu]o-dialog",
+                "insertText": "confirmText='${1}'",
+                "documentation": "---\n\n## confirmText\n\n类型：string\n\n属性值: string\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "onClose": {
+                "label": "onClose",
+                "kind": 2,
+                "detail": "[omiu]o-dialog",
+                "insertText": "onClose={${1}}",
+                "documentation": "---\n\n## onClose\n\n类型：function\n\n属性值: function\n\n---",
+                "sortText": "c",
+                "cmd": false
+            },
+            "onConfirm": {
+                "label": "onConfirm",
+                "kind": 2,
+                "detail": "[omiu]o-dialog",
+                "insertText": "onConfirm={${1}}",
+                "documentation": "---\n\n## onConfirm\n\n类型：function\n\n属性值: function\n\n---",
+                "sortText": "c",
+                "cmd": false
+            }
+        }
+    },
+    "o-popover": {
+        "label": "o-popover",
+        "kind": 24,
+        "detail": "[omiu]Popover.",
+        "insertText": "<o-popover\n\tshow={${1|true,false|}}\n\ttarget={${2}}\n\tdirection=${3|{},''|}\n\tonClose={${4}}>\n\t\t<div>${5}</div>${6}\n</o-popover>",
+        "documentation": "---\n\n## Popover  \n\n简介：气泡卡片。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/popover?index=4&subIndex=4 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/popover?index=4&subIndex=4 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-popover \n  show={this.popoverShow} \n  target={this.popoverTarget} \n  direction={this.direction} \n  onClose={this.onClose}>\n    <div>测试内容....</div>\n    <div>测试内容</div>\n    <div>测试内容测试内容</div>\n</o-popover>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| show  | bool |   --    |           |\n| target  | dom element |   --    |     环绕的目标      |\n| direction  | string |    --   |    环绕的方向       |\n| onClose  | function |   --    |           |\n| children  | json array |   --    |           |\n\n---\n\n## 样例\n\n![popover](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/popover.png 'popover')\n\n---",
+        "sortText": "a",
+        "cmd": false,
+        "attribute": {
+            "show": {
+                "label": "show",
+                "kind": 22,
+                "detail": "[omiu]o-popover",
+                "insertText": "show={${1|true,false|}}",
+                "documentation": "---\n\n## show\n\n类型：bool\n\n属性值: true, false\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "target": {
+                "label": "target",
+                "kind": 22,
+                "detail": "[omiu]o-popover",
+                "insertText": "target={${1}}",
+                "documentation": "---\n\n## target\n\n类型：dom element\n\n属性值: dom element\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "direction": {
+                "label": "direction",
+                "kind": 22,
+                "detail": "[omiu]o-popover",
+                "insertText": "direction=${1|{},''|}",
+                "documentation": "---\n\n## direction\n\n类型：string\n\n属性值: string\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "onClose": {
+                "label": "onClose",
+                "kind": 2,
+                "detail": "[omiu]o-popover",
+                "insertText": "onClose={${1}}",
+                "documentation": "---\n\n## onClose\n\n类型：function\n\n属性值: function\n\n---",
+                "sortText": "c",
+                "cmd": false
+            }
+        }
+    },
+    "o-input": {
+        "label": "o-input",
+        "kind": 24,
+        "detail": "[omiu]User's input box, enter some content for submission to the server.",
+        "insertText": "<o-input placeholder='${1}' />",
+        "documentation": "---\n\n## Input  \n\n简介：用户的输入框，输入一些内容用来提交给服务器。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/input?index=5&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/input?index=5&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-input  placeholder='请输入用户名' />\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| placeholder  | string|       |     占位字符串      |\n\n## 其他类型\n\n```js\n<o-input-label label='UserName' />\n<o-input-button buttonText='提交' onClick={this.onClick} />\n```\n\n---\n\n## 样例\n\n![input](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/input.png 'input')\n\n---",
+        "sortText": "a",
+        "cmd": false,
+        "attribute": {
+            "placeholder": {
+                "label": "placeholder",
+                "kind": 22,
+                "detail": "[omiu]o-input",
+                "insertText": "placeholder='${1}'",
+                "documentation": "---\n\n## placeholder\n\n类型：string\n\n属性值: string\n\n---",
+                "sortText": "a",
+                "cmd": false
+            }
+        }
+    },
+    "o-input-label": {
+        "label": "o-input-label",
+        "kind": 24,
+        "detail": "[omiu]User's input box, enter some content for submission to the server.",
+        "insertText": "<o-input-label label='${1}' />",
+        "documentation": "---\n\n## Input  \n\n简介：用户的输入框，输入一些内容用来提交给服务器。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/input?index=5&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/input?index=5&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-input  placeholder='请输入用户名' />\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| placeholder  | string|       |     占位字符串      |\n\n## 其他类型\n\n```js\n<o-input-label label='UserName' />\n<o-input-button buttonText='提交' onClick={this.onClick} />\n```\n\n---\n\n## 样例\n\n![input](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/input.png 'input')\n\n---",
+        "sortText": "a",
+        "cmd": false,
+        "attribute": {
+            "label": {
+                "label": "label",
+                "kind": 22,
+                "detail": "[omiu]o-input-label",
+                "insertText": "label='${1}'",
+                "documentation": "---\n\n## label\n\n类型：string\n\n属性值: string\n\n---",
+                "sortText": "a",
+                "cmd": false
+            }
+        }
+    },
+    "o-input-button": {
+        "label": "o-input-button",
+        "kind": 24,
+        "detail": "[omiu]User's input box, enter some content for submission to the server.",
+        "insertText": "<o-input-button buttonText='${1}' onClick={${2}} />",
+        "documentation": "---\n\n## Input  \n\n简介：用户的输入框，输入一些内容用来提交给服务器。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/input?index=5&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/input?index=5&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-input  placeholder='请输入用户名' />\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| placeholder  | string|       |     占位字符串      |\n\n## 其他类型\n\n```js\n<o-input-label label='UserName' />\n<o-input-button buttonText='提交' onClick={this.onClick} />\n```\n\n---\n\n## 样例\n\n![input](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/input.png 'input')\n\n---",
+        "sortText": "a",
+        "cmd": false,
+        "attribute": {
+            "buttonText": {
+                "label": "buttonText",
+                "kind": 22,
+                "detail": "[omiu]o-input-button",
+                "insertText": "buttonText='${1}'",
+                "documentation": "---\n\n## buttonText\n\n类型：string\n\n属性值: string\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "onClick": {
+                "label": "onClick",
+                "kind": 2,
+                "detail": "[omiu]o-input-button",
+                "insertText": "onClick={${1}}",
+                "documentation": "---\n\n## onClick\n\n类型：function\n\n属性值: function\n\n---",
+                "sortText": "c",
+                "cmd": false
+            }
+        }
+    },
+    "o-input-number": {
+        "label": "o-input-number",
+        "kind": 24,
+        "detail": "[omiu]Digital input box.",
+        "insertText": "<o-input-number\n\tonChange={${1}}\n\tmin={${2}}\n\tmax={${3}}\n\tstep={${4}}\n\tvalue={${5}}\n\tlabel='${6}'\n/>",
+        "documentation": "---\n\n## InputNumber \n\n简介：可以调整的数字输入框。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/input-number?index=5&subIndex=1 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/input-number?index=5&subIndex=1 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-input-number\n  onChange={this.onInputNumberChange}\n  min={1}\n  max={10}\n  step={1}\n  value={2}\n  label='描述文字'\n/>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| min  | number|--  ||\n| max  | number| -- |  |\n| step | number   |    | |\n| value | number| -- ||\n| label | string| -- ||\n| onChange | function| -- ||\n\n---\n\n## 样例\n\n![input-number](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/input-number.png 'input-number')\n\n---",
+        "sortText": "a",
+        "cmd": false,
+        "attribute": {
+            "min": {
+                "label": "min",
+                "kind": 22,
+                "detail": "[omiu]o-input-number",
+                "insertText": "min={${1}}",
+                "documentation": "---\n\n## min\n\n类型: number\n\n属性值: number\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "max": {
+                "label": "max",
+                "kind": 22,
+                "detail": "[omiu]o-input-number",
+                "insertText": "max={${1}}",
+                "documentation": "---\n\n## max\n\n类型: number\n\n属性值: number\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "step": {
+                "label": "step",
+                "kind": 22,
+                "detail": "[omiu]o-input-number",
+                "insertText": "step={${1}}",
+                "documentation": "---\n\n## step\n\n类型: number\n\n属性值: number\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "value": {
+                "label": "value",
+                "kind": 22,
+                "detail": "[omiu]o-input-number",
+                "insertText": "value={${1}}",
+                "documentation": "---\n\n## value\n\n类型: number\n\n属性值: number\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "label": {
+                "label": "label",
+                "kind": 22,
+                "detail": "[omiu]o-input-number",
+                "insertText": "label='${1}'",
+                "documentation": "---\n\n## label\n\n类型: string\n\n属性值: string\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "onChange": {
+                "label": "onChange",
+                "kind": 2,
+                "detail": "[omiu]o-input-number",
+                "insertText": "onChange={${1}}",
+                "documentation": "---\n\n## onChange\n\n类型: function\n\n属性值: function\n\n---",
+                "sortText": "c",
                 "cmd": false
             }
         }

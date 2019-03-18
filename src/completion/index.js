@@ -135,7 +135,7 @@ class OmiCompletion {
 				posl.y = xstr.length;
 			}
 			for(let y = posl.y-1; y >= 0; y--) {
-				if(xstr[y] == '>') {
+				if(xstr[y] == '>') {  //标注：如果标签内含有算法表达式且含有'>'符号，在'>'符号后不会触发属性补全
 					return objLabel;
 				} else if(xstr[y] == '<') {  //找到'<'后记录位置并不再查找
 					pl.x = posl.x;
