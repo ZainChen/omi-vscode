@@ -92,7 +92,7 @@ class EcoProvider {
             return Promise.resolve([]);
         }
         bvnToLink[this.urlGitHub+"/"+this.urlGitHubUser+"/"+this.urlGitHubRepositories] = '';
-        bvnToFOD[this.urlGitHub+"/"+this.urlGitHubUser+"/"+this.urlGitHubRepositories] = 'github';
+        bvnToFOD[this.urlGitHub+"/"+this.urlGitHubUser+"/"+this.urlGitHubRepositories] = '';
         bvnToLink['[Branches]'] = '';
         bvnToFOD['[Branches]'] = 'branches';
         for(let i = 0; i < bnsLen; i++) {
