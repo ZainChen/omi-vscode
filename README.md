@@ -1,25 +1,38 @@
 # Omi Visual Studio Code extension
-[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v2.0.0-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
+[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v2.0.1-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
 [![Downloads](https://img.shields.io/badge/Downloads-1.1K%2B-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
-[![UpdateTime](https://img.shields.io/badge/UpdateTime-2019%2F03%2F19%2000%3A51%3A32-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
+[![UpdateTime](https://img.shields.io/badge/UpdateTime-2019%2F03%2F19%2001%3A54%3A32-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
 
 This extension adds omi support for Visual Studio Code.
 
 # Function
 - Omi ecosystem `[All branches and versions]`
-- Omiu component tag and attribute completion(completion prompt for markdown format)
+- Omiu component tag and attribute completion `[completion prompt for markdown format]`
 - Omi, Omiu snippets `[All omiu component snippets. Multiple overlays, press TAB to jump to the transition position]`
 - GitHub switch `[GitHub tree view to switch url]`
 - Welcome omi `[Welcome Screen]`
 - In development...
 
+# Label completion
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun1.gif" alt="omi"/></p>
+
+# Attribute completion
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun2.gif" alt="omi"/></p>
+
+# Omi ecosystem
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun3.gif" alt="omi"/></p>
+
+# GitHub switch
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun4.gif" alt="omi"/></p>
+
+# Function snippets
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun5.gif" alt="omi"/></p>
-<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun6.gif" alt="omi"/></p>
-<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun7.gif" alt="omi"/></p>
+
+# Omi Welcome
+<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun6.png" alt="omi"/></p>
+
+# Omi set
+<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun7.png" alt="omi"/></p>
 
 # About
 

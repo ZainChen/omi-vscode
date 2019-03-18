@@ -3,7 +3,7 @@
 	"displayName": "omi",
 	"description": "Visual Studio Code extension for Omi",
 	"license": "Omi",
-	"version": "1.0.5",
+	"version": "2.0.1",
 	"publisher": "ZainChen",
 	"author": {
 		"name": "ZainChen"
