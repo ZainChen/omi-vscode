@@ -1042,6 +1042,196 @@
             }
         }
     },
+    "o-switch": {
+        "label": "o-switch",
+        "kind": 24,
+        "detail": "[omiu]Switch.",
+        "insertText": "<o-switch onChange={${1}} checked={${2|false,true|}}></o-switch>",
+        "documentation": "---\n\n## Switch  \n\n简介：开关。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/switch?index=5&subIndex=5 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/switch?index=5&subIndex=5 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-switch onChange={this.onChangeB} checked={false} />\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| checked  | bool|  false     |           |\n| onChange  | function|  --     |           |\n\n---\n\n## 样例\n\n![switch](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/switch.png 'switch')\n\n---",
+        "sortText": "a",
+        "cmd": false,
+        "attribute": {
+            "checked": {
+                "label": "checked",
+                "kind": 22,
+                "detail": "[omiu]o-switch",
+                "insertText": "checked={${2|false,true|}}",
+                "documentation": "---\n\n## checked\n\n类型: bool\n\n属性值: false, true\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "onChange": {
+                "label": "onChange",
+                "kind": 2,
+                "detail": "[omiu]o-switch",
+                "insertText": "onChange={${1}}",
+                "documentation": "---\n\n## onChange\n\n类型: function\n\n属性值: function\n\n---",
+                "sortText": "c",
+                "cmd": false
+            }
+        }
+    },
+    "o-date-picker": {
+        "label": "o-date-picker",
+        "kind": 24,
+        "detail": "[omiu]Date Picker.",
+        "insertText": "<o-date-picker\n\tselectedDate={${1}}\n\tonSelect={${2}}\n\tshow={${3|false,true|}}\n\tonToggle={${4}}\n>\n</o-date-picker>",
+        "documentation": "---\n\n## DatePicker \n\n简介：日期选择器。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/date-picker?index=5&subIndex=6 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/date-picker?index=5&subIndex=6 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-date-picker\n  selectedDate={this.selectedDate}\n  onSelect={this.onSelect}\n  show={this.showPicker}\n  onToggle={this.onToggle}>\n</o-date-picker>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| show  | bool|--  ||\n| selectedDate  | string| -- |  |\n| onToggle | function   |  --  | |\n| onSelect | function| -- ||\n\n---\n\n## 样例\n\n![date-picker](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/date-picker.png 'date-picker')\n\n---",
+        "sortText": "a",
+        "cmd": false,
+        "attribute": {
+            "show": {
+                "label": "show",
+                "kind": 22,
+                "detail": "[omiu]o-date-picker",
+                "insertText": "show={${1|false,true|}}",
+                "documentation": "---\n\n## show\n\n类型: bool\n\n属性值: false, true\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "selectedDate": {
+                "label": "selectedDate",
+                "kind": 22,
+                "detail": "[omiu]o-date-picker",
+                "insertText": "selectedDate={${1}}",
+                "documentation": "---\n\n## selectedDate\n\n类型: string\n\n属性值: string\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "onToggle": {
+                "label": "onToggle",
+                "kind": 2,
+                "detail": "[omiu]o-date-picker",
+                "insertText": "onToggle={${1}}",
+                "documentation": "---\n\n## onToggle\n\n类型: function\n\n属性值: function\n\n---",
+                "sortText": "c",
+                "cmd": false
+            },
+            "onSelect": {
+                "label": "onSelect",
+                "kind": 2,
+                "detail": "[omiu]o-date-picker",
+                "insertText": "onSelect={${1}}",
+                "documentation": "---\n\n## onSelect\n\n类型: function\n\n属性值: function\n\n---",
+                "sortText": "c",
+                "cmd": false
+            }
+        }
+    },
+    "o-rate": {
+        "label": "o-rate",
+        "kind": 24,
+        "detail": "[omiu]Rate.",
+        "insertText": "<o-rate total={${1}} value={${2}}${3} />",
+        "documentation": "---\n\n## Rate \n\n简介：评分。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/rate?index=5&subIndex=7 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/rate?index=5&subIndex=7 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-rate \n  total={5} \n  value={this.valueA} \n  color='#07C160' \n  onSelect={this.onSelect} />\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------|\n| total         |   number  |    --   |      总的星星个数       |　\n| value         |    number  |    --   |   支持小数打半星          |　\n| color         |   string  |    --   |             |　\n| onSelect         |    function  |    --   |             |　\n\n---\n\n## 样例\n\n![rate](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/rate.png 'rate')\n\n---",
+        "sortText": "a",
+        "cmd": false,
+        "attribute": {
+            "total": {
+                "label": "total",
+                "kind": 22,
+                "detail": "[omiu]o-rate",
+                "insertText": "total={${1}}",
+                "documentation": "---\n\n## total\n\n类型: number\n\n属性值: number\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "value": {
+                "label": "value",
+                "kind": 22,
+                "detail": "[omiu]o-rate",
+                "insertText": "value={${1}}",
+                "documentation": "---\n\n## value\n\n类型: number\n\n属性值: number\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "color": {
+                "label": "color",
+                "kind": 22,
+                "detail": "[omiu]o-rate",
+                "insertText": "color='${1|red,yellow,#07C160|}'",
+                "documentation": "---\n\n## color\n\n类型: string\n\n属性值: string\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "onSelect": {
+                "label": "onSelect",
+                "kind": 2,
+                "detail": "[omiu]o-rate",
+                "insertText": "onSelect={${1}}",
+                "documentation": "---\n\n## onSelect\n\n类型: function\n\n属性值: function\n\n---",
+                "sortText": "c",
+                "cmd": false
+            }
+        }
+    },
+    "o-select-list": {
+        "label": "o-select-list",
+        "kind": 24,
+        "detail": "[omiu]SelectList.",
+        "insertText": "<o-select-list\n\tonSelect={${1}}\n\tlist={${2}}\n\tselectedIndex={${3}}\n/>",
+        "documentation": "---\n\n## SelectList\n\n简介：选项列表。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/select-list?index=5&subIndex=8 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/select-list?index=5&subIndex=8 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-select-list\n  onSelect={this.onSelect}\n  list={this.list}\n  selectedIndex={this.selectedIndex}\n/>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| list  | json array|       |           |\n| selectedIndex  | number |       |           |\n| onSelect  | function|       |           |\n\n---\n\n## 样例\n\n![select-list](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/select-list.png 'select-list')\n\n---",
+        "sortText": "a",
+        "cmd": false,
+        "attribute": {
+            "list": {
+                "label": "list",
+                "kind": 22,
+                "detail": "[omiu]o-select-list",
+                "insertText": "list={${1}}",
+                "documentation": "---\n\n## list\n\n类型: json array\n\n属性值: json array\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "selectedIndex": {
+                "label": "selectedIndex",
+                "kind": 22,
+                "detail": "[omiu]o-select-list",
+                "insertText": "selectedIndex={${1}}",
+                "documentation": "---\n\n## selectedIndex\n\n类型: number\n\n属性值: number\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "onSelect": {
+                "label": "onSelect",
+                "kind": 2,
+                "detail": "[omiu]o-select-list",
+                "insertText": "onSelect={${1}}",
+                "documentation": "---\n\n## onSelect\n\n类型: function\n\n属性值: function\n\n---",
+                "sortText": "c",
+                "cmd": false
+            }
+        }
+    },
+    "o-table": {
+        "label": "o-table",
+        "kind": 24,
+        "detail": "[omiu]Data is presented and processed in the form of tables.",
+        "insertText": "<o-table\n\tdataSource={${1}}\n\tcolumns={${2}}\n\tref={e => { this.table = e }}\n>\n</o-table>",
+        "documentation": "---\n\n## Table  \n\n简介：表格的形式展现和处理数据。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/table?index=6&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/table?index=6&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```js\ndefine('my-app', class extends WeElement {\n  dataSource = [{\n    id: 1,\n    name: 'xwang',\n    age: 18,\n    address: '腾讯大厦'\n  }, {\n    id: 2,\n    name: 'dntzhang',\n    age: 12,\n    address: '滨海大厦'\n  }, {\n    id: 3,\n    name: 'dntzhang2',\n    age: 12,\n    address: '滨海大厦'\n  }, {\n    id: 4,\n    name: 'dntzhang3',\n    age: 12,\n    address: '滨海大厦'\n  }, {\n    id: 5,\n    name: 'dntzhang4',\n    age: 12,\n    address: '滨海大厦'\n  }]\n\n  columns = [{\n    title: '姓名',\n    key: 'name',\n  }, {\n    title: '年龄',\n    key: 'age',\n  }, {\n    title: '住址',\n    key: 'address',\n  }, {\n    title: '操作',\n    render: (item) => (\n      <span>\n        <a href='javascript:;' onClick={e => { this.removeItem(item) }}>Delete</a>\n      </span>\n    )\n  }]\n\n  removeItem = (item) => {\n    this.table.removeItem(item)\n  }\n\n  render() {\n    return (\n      <o-table \n        ref={e => { this.table = e }} \n        dataSource={this.dataSource} \n        columns={this.columns}>\n      </o-table>\n    )\n  }\n})\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| dataSource  | json array |   --    |           |\n| columns  | json array |   --    |           |\n\n---\n\n## 样例\n\n![table](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/table.png 'table')\n\n---",
+        "sortText": "a",
+        "cmd": false,
+        "attribute": {
+            "dataSource": {
+                "label": "dataSource",
+                "kind": 22,
+                "detail": "[omiu]o-table",
+                "insertText": "dataSource={${1}}",
+                "documentation": "---\n\n## dataSource\n\n类型: json array\n\n属性值: json array\n\n---",
+                "sortText": "a",
+                "cmd": false
+            },
+            "columns": {
+                "label": "columns",
+                "kind": 22,
+                "detail": "[omiu]o-table",
+                "insertText": "columns={${1}}",
+                "documentation": "---\n\n## columns\n\n类型: json array\n\n属性值: json array\n\n---",
+                "sortText": "a",
+                "cmd": false
+            }
+        }
+    },
     "o-test0": { "label": "o-test0", "kind": 0 },
     "o-test1": { "label": "o-test1", "kind": 1 },
     "o-test2": { "label": "o-test2", "kind": 2 },
