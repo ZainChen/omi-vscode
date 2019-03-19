@@ -11,6 +11,8 @@ const cheerio = require('cheerio');  // cheerio 是一个Node.js的库， 它可
 const tri = require("./tree-item");  //omi生态专用菜单树模块
 const alg = require("../algorithm/index");  //算法模块
 
+const ourl = require('./open-url');  //webview打开网页功能
+
 /**
  * omi生态功能实现类
  */
@@ -29,7 +31,7 @@ class EcoProvider {
     }
     
     /**
-     * 菜单树内容，()
+     * 菜单树内容，每个子节点都分别刷新一次该函数
      * @param element 元素
      * @return element — 必须返回元素，否则菜单树不显示内容
      */
@@ -38,7 +40,7 @@ class EcoProvider {
     }
 
     /**
-     * 菜单树数据写入入口
+     * 菜单树数据写入入口，生成子节点
      * @声明标识符 async 标识符标识当前函数是异步执行函数
      * @param element 菜单中单击选中的节点文本
      */
@@ -87,19 +89,20 @@ class EcoProvider {
         let bnlsLen = dataGitHub.branchLinks.length;
         let vnsLen = dataGitHub.versionNames.length
         let vnlsLen = dataGitHub.versionLinks.length;
+        let url = this.urlGitHub+"/"+this.urlGitHubUser+"/"+this.urlGitHubRepositories;
         if(bnsLen != bnlsLen || vnsLen != vnlsLen) {
             vscode.window.showInformationMessage(`Branch Or Version Error!!!`);
             return Promise.resolve([]);
         }
-        bvnToLink[this.urlGitHub+"/"+this.urlGitHubUser+"/"+this.urlGitHubRepositories] = '';
-        bvnToFOD[this.urlGitHub+"/"+this.urlGitHubUser+"/"+this.urlGitHubRepositories] = '';
-        bvnToLink['[Branches]'] = '';
+        bvnToLink[url] = url;
+        bvnToFOD[url] = '';
+        bvnToLink['[Branches]'] = url;
         bvnToFOD['[Branches]'] = 'branches';
         for(let i = 0; i < bnsLen; i++) {
             bvnToLink[dataGitHub.branchNames[i]] = dataGitHub.branchLinks[i];
             bvnToFOD[dataGitHub.branchNames[i]] = 'directory';
         }
-        bvnToLink['[Tags]'] = '';
+        bvnToLink['[Tags]'] = url;
         bvnToFOD['[Tags]'] = 'tags';
         for(let i = 0; i < vnsLen; i++) {
             bvnToLink[dataGitHub.versionNames[i]] = dataGitHub.versionLinks[i];
@@ -107,14 +110,10 @@ class EcoProvider {
         }
         const toDep = (label, labelAdd, filePathlink, fileType) => {
             if (fileType == "directory") {
-                return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.Collapsed, fileType, {
-                    command: 'omi.cmd.openGithub',
-                    title: '',
-                    arguments: [filePathlink]
-                });
+                return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.Collapsed, fileType);
             } else if(fileType == 'file') {
                 return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.None, fileType, {
-                    command: 'omi.cmd.openGithub',
+                    command: 'omi.cmd.openGithubFile',
                     title: '',
                     arguments: [filePathlink]
                 });
@@ -157,14 +156,10 @@ class EcoProvider {
         }
         const toDep = (label, labelAdd, filePathlink, fileType) => {
             if (fileType == "directory") {
-                return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.Collapsed, fileType, {
-                    command: 'omi.cmd.openGithub',
-                    title: '',
-                    arguments: [filePathlink]
-                });
+                return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.Collapsed, fileType);
             } else if(fileType == 'file') {
                 return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.None, fileType, {
-                    command: 'omi.cmd.openGithub',
+                    command: 'omi.cmd.openGithubFile',
                     title: '',
                     arguments: [filePathlink]
                 });
@@ -352,14 +347,40 @@ class EcoProvider {
 
     /**
      * 刷新指定节点内容，参数为空时刷新全部节点
-     * @param offset 获取到的指定节点，为空时刷新全部节点
+     * @param node 获取到的当前节点对象，为空时刷新全部节点
      */
-    async refreshDesignation(offset) {
-        if (offset) {
-            this._onDidChangeTreeData.fire(offset);
+    async refreshDesignation(node) {
+        if (node) {
+            this._onDidChangeTreeData.fire(node);
         } else {
             this._onDidChangeTreeData.fire();
         }
+    }
+
+    /**
+     * 打开当前菜单树节点链接的GitHub页面
+     * @param {*} node 当前节点对象
+     */
+    openGithub(node) {
+        if(node.filePathlink != "") {
+            vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(node.filePathlink));
+        } else {
+            vscode.window.showInformationMessage(`github url null.`);
+        }
+    }
+
+    openGithubFile(nodeLink) {
+        // vscode.window.showInformationMessage(`open github file.`);
+        let fileName = "";
+        let nl = nodeLink.length;
+        let k = nl;
+        while(k >= 0 && nodeLink[k] != '/' && nodeLink[k] != '\\') {
+            k--;
+        }
+        for(let i = k+1; i < nl; i++) {
+            fileName += nodeLink[i];
+        }
+        new ourl("/"+fileName, nodeLink);
     }
 
     /**

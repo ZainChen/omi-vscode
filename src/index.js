@@ -31,9 +31,10 @@ function activate(context) {
 		vscode.commands.registerCommand('omi.cmd.ecoHello', () => ecoProvider.commandOmiHello()),  //将omi生态切换到Tencent/omi
 		vscode.commands.registerCommand('omi.cmd.ecoGithubSwitch', () => ecoProvider.githubSwitch()),  //切换github，生成新的菜单树
 		vscode.commands.registerCommand('omi.cmd.ecoRefresh', () => ecoProvider.refreshAll()),  //刷新所有菜单节点
-		vscode.commands.registerCommand('omi.cmd.ecoRefreshNode', offset => ecoProvider.refreshDesignation(offset)),  //刷新指定菜单节点
-		vscode.commands.registerCommand('omi.cmd.openGithub', nodeLink => vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(nodeLink))),
-
+		vscode.commands.registerCommand('omi.cmd.ecoRefreshNode', node => ecoProvider.refreshDesignation(node)),  //刷新指定菜单节点
+		vscode.commands.registerCommand('omi.cmd.ecoOpenGithub', node => ecoProvider.openGithub(node)),  //打开当前菜单树节点链接的GitHub页面
+		vscode.commands.registerCommand('omi.cmd.openGithubFile', nodeLink => ecoProvider.openGithubFile(nodeLink)),
+		
 		//自动补全
 		vscode.languages.registerCompletionItemProvider(['html', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact'], omiCompletion, ' '),  //代码提示功能注册
 		

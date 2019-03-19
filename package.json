@@ -82,6 +82,7 @@
 		"onCommand:omi.cmd.ecoGithubSwitch",
 		"onCommand:omi.cmd.ecoRefresh",
 		"onCommand:omi.cmd.ecoRefreshNode",
+		"onCommand:omi.cmd.ecoOpenGithub",
 		"onCommand:omi.cmd.webview",
 		"onLanguage:c",
 		"onLanguage:cpp",
@@ -107,6 +108,14 @@
 	"contributes": {
 		"commands": [
 			{
+				"command": "omi.cmd.ecoHello",
+				"title": "Github switches to omi",
+				"icon": {
+					"light": "./assets/light/omi.svg",
+					"dark": "./assets/dark/omi.svg"
+				}
+			},
+			{
 				"command": "omi.cmd.ecoGithubSwitch",
 				"title": "omi Github Switch",
 				"icon": {
@@ -131,11 +140,11 @@
 				}
 			},
 			{
-				"command": "omi.cmd.ecoHello",
-				"title": "Github switches to omi",
+				"command": "omi.cmd.ecoOpenGithub",
+				"title": "open github",
 				"icon": {
-					"light": "./assets/light/omi.svg",
-					"dark": "./assets/dark/omi.svg"
+					"light": "./assets/light/github-web.svg",
+					"dark": "./assets/dark/github-web.svg"
 				}
 			},
 			{
@@ -308,9 +317,14 @@
 			],
 			"view/item/context": [
 				{
+					"command": "omi.cmd.ecoOpenGithub",
+					"when": "view == omi.view.ecosystem",
+					"group": "inline@1"
+				},
+				{
 					"command": "omi.cmd.ecoRefreshNode",
 					"when": "view == omi.view.ecosystem",
-					"group": "inline"
+					"group": "inline@2"
 				}
 			]
 		},
