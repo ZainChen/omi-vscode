@@ -374,19 +374,29 @@ class EcoProvider {
      * @param {*} nodeLink github文件链接
      */
     openGithubFile(nodeLink) {
-
-
-
-
-        
-        let url = __dirname+"/cache/app.css";
-        let rawPath = "https://raw.githubusercontent.com/Tencent/omi/master/packages/omip/my-app-ts/src/app.css";
+        let rawPath = this.toGithubDownLink(nodeLink);  //将github文件链接转换为github下载链接
+        let fileName = "";
+        let nl = nodeLink.length;
+        let k = nl;
+        while(k >= 0 && nodeLink[k] != '/' && nodeLink[k] != '\\') {
+            k--;
+        }
+        for(let i = k+1; i < nl; i++) {
+            fileName += nodeLink[i];
+        }
+        let url = __dirname+"/cache/"+fileName;
         let stream = fs.createWriteStream(url);
-        request(rawPath).pipe(stream).on("close", function (err) {
-            console.log("文件[app.css]下载完毕");
+        request(rawPath, (err) => {
+            if(err) {
+                //console.log(err);
+                //vscode.window.showInformationMessage(err.stack);
+                alg.writeFileSync(url, err.stack, "utf-8", 'a+');
+            }
+        }).pipe(stream).on("close", () => {
+            console.log(fileName+" ok.");
         });
-
-        vscode.window.showTextDocument(vscode.Uri.file(url));  //vscode编辑窗口打开文件
+        alg.writeFileSync(url, "file loading...", "utf-8", 'r+');
+        vscode.window.showTextDocument(vscode.Uri.file(url));  //vscode编辑窗口打开文件await async
         
 
 
@@ -402,6 +412,30 @@ class EcoProvider {
         //     fileName += nodeLink[i];
         // }
         // new ourl("/"+fileName, nodeLink);
+    }
+
+    /**
+     * 将github文件链接转换为github下载链接
+     * @param {*} url github文件链接
+     */
+    toGithubDownLink(url) {
+        let rl = "https://raw.githubusercontent.com/";
+        let t = 0;  //记录遍历遇到的'/'符号数量
+        let addOk = false;  //标记是否添加字符
+        for(let i = 0; i < url.length; i++) {
+            if(t == 3 || t == 6) {
+                addOk = true;
+            } else if(t == 5) {
+                addOk = false;
+            }
+            if(addOk) {
+                rl += url[i];
+            }
+            if(url[i] == '/') {
+                t++;
+            }
+        }
+        return rl;
     }
 
     /**

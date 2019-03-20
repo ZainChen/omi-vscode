@@ -6,12 +6,42 @@ const fs = require('fs');
  * zain算法模块
  */
 module.exports = {
+	writeFileSync,
 	strTailMatch,
 	strInFindLP,
 	getfilePathName,
 	getFileContent,
 	strDelHtLineSpace,
 	SplitStringChar
+}
+
+/**
+ * 同步写入文件
+ * @param {*} path 文件路径
+ * @param {*} data 写入数据
+ * @param {*} coding 文件编码
+ * @param {*} mode 打开文件的方式
+ * 'r' -   以读取模式打开文件。
+ * 'r+' - 以读写模式打开文件。
+ * 'rs' - 使用同步模式打开并读取文件。指示操作系统忽略本地文件系统缓存。
+ * 'rs+' - 以同步的方式打开，读取 并 写入文件。
+ * 'w' - 以读取模式打开文件，如果文件不存在则创建。
+ * 'wx' - 和 ' w ' 模式一样，如果文件存在则返回失败。
+ * 'w+' - 以读写模式打开文件，如果文件不存在则创建。
+ * 'wx+' - 和 ' w+ ' 模式一样，如果文件存在则返回失败。
+ * 'a' - 以追加模式打开文件，如果文件不存在则创建。
+ * 'ax' - 和 ' a ' 模式一样，如果文件存在则返回失败。
+ * 'a+' - 以读取追加模式打开文件，如果文件不存在则创建。
+ * 'ax+' - 和 ' a+ ' 模式一样，如果文件存在则返回失败。
+ */
+function writeFileSync(path, data, coding, mode) {
+	var fops = fs.openSync(path, mode);
+	fs.writeSync(fops, data, coding);
+	fs.close(fops, (err) =>{
+		if (err) {
+			console.log(err);
+		}
+	})
 }
 
 
