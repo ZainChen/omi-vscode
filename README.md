@@ -1,7 +1,7 @@
 # Omi Visual Studio Code extension
-[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v2.0.1-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
+[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v2.0.5-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
 [![Downloads](https://img.shields.io/badge/Downloads-1.1K%2B-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
-[![UpdateTime](https://img.shields.io/badge/UpdateTime-2019%2F03%2F19%2001%3A54%3A32-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
+[![UpdateTime](https://img.shields.io/badge/UpdateTime-2019%2F03%2F19%2016%3A24%3A24-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
 
 This extension adds omi support for Visual Studio Code.
 
@@ -10,6 +10,7 @@ This extension adds omi support for Visual Studio Code.
 - Omiu component tag and attribute completion `[completion prompt for markdown format]`
 - Omi, Omiu snippets `[All omiu component snippets. Multiple overlays, press TAB to jump to the transition position]`
 - GitHub switch `[GitHub tree view to switch url]`
+- GitHub file view `[open github file]`
 - Welcome omi `[Welcome Screen]`
 - In development...
 

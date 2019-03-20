@@ -28,6 +28,9 @@ class EcoProvider {
         this.urlGitBranch = 'master';  //分支
         this._onDidChangeTreeData = new vscode.EventEmitter();  //刷新菜单节点使用
         this.onDidChangeTreeData = this._onDidChangeTreeData.event;
+
+        this.cacheNum = 0;  //记录缓存文件打开次数
+        vscode.window.setStatusBarMessage("omi:"+this.cacheNum.toString());  //状态栏显示缓存文件打开次数
     }
     
     /**
@@ -390,6 +393,8 @@ class EcoProvider {
         let stream = fs.createWriteStream(url);
         vscode.window.showTextDocument(vscode.Uri.file(url));  //vscode编辑窗口打开文件await async
         alg.writeFileSync(url, "file loading...", "utf-8", 'w+');
+        this.cacheNum += 1;  //记录缓存文件打开次数
+        vscode.window.setStatusBarMessage("omi:"+this.cacheNum.toString());  //状态栏显示缓存文件打开次数
         request(rawPath, (err) => {
             if(err) {
                 //console.log(err);
@@ -421,7 +426,9 @@ class EcoProvider {
      */
     clearCache() {
         alg.delDirFile(__dirname+"/cache/");  //删除指定文件夹下所有文件(不实时清除缓存)
-        vscode.window.showInformationMessage("clear success.");
+        this.cacheNum = 0;  //记录缓存文件打开次数
+        vscode.window.setStatusBarMessage("omi:"+this.cacheNum.toString());  //状态栏显示缓存文件打开次数
+        vscode.window.showInformationMessage("clear success.(omi:0)");
     }
 
     /**

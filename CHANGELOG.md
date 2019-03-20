@@ -4,6 +4,7 @@
 
 ### New Features
 
+- Add gitgub file download function.(Any files and folders)
 - Add omiu mouse hover prompt, prompt message in markdown format
 
 ### Modify
@@ -15,6 +16,31 @@
 - null
 
 --- -->
+
+## Version 2.0.5 March 20, 2019
+
+### New Features
+
+- Add github file view function, open github file.
+- Add github file clear cache function.
+- Add keywords.
+- Add categories.
+
+### Modify
+
+- GitHub browser open function add independent key.
+- Modify github menu tree icon.
+
+### Bug Fixes
+
+- null
+
+### Problem
+
+- Menu icon need to be remade svg image.
+- omiu component need to add a new attribute completion button, the attribute completion trigger needs to be perfected.
+
+---
 
 ## Version 2.0.1 March 19, 2019
 
