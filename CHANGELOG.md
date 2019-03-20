@@ -17,7 +17,7 @@
 
 --- -->
 
-## Version 2.0.5 March 20, 2019
+## Version 2.0.6 March 20, 2019
 
 ### New Features
 

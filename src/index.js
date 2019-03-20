@@ -7,10 +7,6 @@ const cpln = require("./completion/index");  //自动补全功能模块
 const hover = require("./hover/index");  //鼠标悬停提示功能模块
 const jump = require("./jump/index");  //跳转功能模块
 
-const alg = require("./algorithm/index");  //算法
-
-const wv = require('./webview/index');  //Webview功能模块(test)
-
 
 /**
  * 插件被激活时触发，所有代码总入口。
@@ -46,9 +42,6 @@ function activate(context) {
 		//跳转功能
 		vscode.languages.registerDefinitionProvider(['html', 'json', 'javascript'], {provideDefinition}),  //跳转功能注册
 
-		//Webview功能注册(命令:"omi wv")(实验)
-		vscode.commands.registerCommand('omi.cmd.webview', wv.showWebviewIndex)  //Webview功能注册(命令:"omi wv")(实验)
-	
 	);
 	
 	require('./welcome/index')(context); //欢迎提示(未详细整理)

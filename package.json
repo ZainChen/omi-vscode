@@ -3,7 +3,7 @@
 	"displayName": "omi",
 	"description": "Visual Studio Code extension for Omi",
 	"license": "Omi",
-	"version": "2.0.5",
+	"version": "2.0.6",
 	"publisher": "ZainChen",
 	"author": {
 		"name": "ZainChen"
@@ -122,6 +122,7 @@
 		"onCommand:omi.cmd.ecoRefresh",
 		"onCommand:omi.cmd.ecoRefreshNode",
 		"onCommand:omi.cmd.ecoOpenGithub",
+		"onCommand:omi.cmd.openGithubFile",
 		"onCommand:omi.cmd.ecoClearCache",
 		"onLanguage:c",
 		"onLanguage:cpp",
