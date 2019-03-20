@@ -83,7 +83,7 @@
 		"onCommand:omi.cmd.ecoRefresh",
 		"onCommand:omi.cmd.ecoRefreshNode",
 		"onCommand:omi.cmd.ecoOpenGithub",
-		"onCommand:omi.cmd.webview",
+		"onCommand:omi.cmd.ecoClearCache",
 		"onLanguage:c",
 		"onLanguage:cpp",
 		"onLanguage:css",
@@ -148,8 +148,8 @@
 				}
 			},
 			{
-				"command": "omi.cmd.webview",
-				"title": "omi wv",
+				"command": "omi.cmd.ecoClearCache",
+				"title": "clear cache",
 				"icon": {
 					"light": "./assets/add1.svg",
 					"dark": "./assets/add1.svg"
@@ -313,6 +313,10 @@
 					"command": "omi.cmd.ecoHello",
 					"when": "view == omi.view.ecosystem",
 					"group": "navigation@1"
+				},
+				{
+					"command": "omi.cmd.ecoClearCache",
+					"when": "view == omi.view.ecosystem"
 				}
 			],
 			"view/item/context": [

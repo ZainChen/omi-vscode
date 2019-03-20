@@ -384,23 +384,25 @@ class EcoProvider {
         for(let i = k+1; i < nl; i++) {
             fileName += nodeLink[i];
         }
-        let url = __dirname+"/cache/"+fileName;
+        let cph = __dirname+"/cache/";
+        let url = cph+fileName;
+        //alg.delDirFile(cph);  //删除指定文件夹下所有文件(不实时清除缓存)
         let stream = fs.createWriteStream(url);
+        vscode.window.showTextDocument(vscode.Uri.file(url));  //vscode编辑窗口打开文件await async
+        alg.writeFileSync(url, "file loading...", "utf-8", 'w+');
         request(rawPath, (err) => {
             if(err) {
                 //console.log(err);
                 //vscode.window.showInformationMessage(err.stack);
-                alg.writeFileSync(url, err.stack, "utf-8", 'a+');
+                alg.writeFileSync(url, err.stack, "utf-8", 'w+');
             }
         }).pipe(stream).on("close", () => {
-            console.log(fileName+" ok.");
+            //console.log(fileName+" ok.");
         });
-        alg.writeFileSync(url, "file loading...", "utf-8", 'r+');
-        vscode.window.showTextDocument(vscode.Uri.file(url));  //vscode编辑窗口打开文件await async
         
 
 
-
+        //webview方式打开github文件(不好，除非可以直接打开github网页)
         // vscode.window.showInformationMessage(`open github file.`);
         // let fileName = "";
         // let nl = nodeLink.length;
@@ -412,6 +414,14 @@ class EcoProvider {
         //     fileName += nodeLink[i];
         // }
         // new ourl("/"+fileName, nodeLink);
+    }
+
+    /**
+     * 清除缓存文件(查看文件时生成的)
+     */
+    clearCache() {
+        alg.delDirFile(__dirname+"/cache/");  //删除指定文件夹下所有文件(不实时清除缓存)
+        vscode.window.showInformationMessage("clear success.");
     }
 
     /**

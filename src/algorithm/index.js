@@ -7,6 +7,7 @@ const fs = require('fs');
  */
 module.exports = {
 	writeFileSync,
+	delDirFile,
 	strTailMatch,
 	strInFindLP,
 	getfilePathName,
@@ -42,6 +43,40 @@ function writeFileSync(path, data, coding, mode) {
 			console.log(err);
 		}
 	})
+}
+
+
+/**
+ * 删除指定文件夹下所有文件(不包含子文件夹和文件)
+ * @param {*} path 文件夹路径
+ */
+function delDirFile(path){
+    if(fs.existsSync(path)){
+		let files = fs.readdirSync(path);
+		for(let i = 0; i < files.length; i++) {
+			fs.unlinkSync(path+"/"+files[i]); //删除文件，多线程访问会报错
+		}
+    }
+}
+
+/**
+ * 删除文件夹下所有文件(包含子文件夹和文件)，多线程访问会报错
+ * @param {*} path 文件夹路径
+ */
+function delDirFileAll(path){
+    let files = [];
+    if(fs.existsSync(path)){
+		files = fs.readdirSync(path);
+		for(let i = 0; i < files.length; i++) {
+			let curPath = path + "/" + files[i];
+			if(fs.statSync(curPath).isDirectory()){  //此处判断文件夹是否存在，多线程访问会报错
+                delDirFileAll(curPath); //递归删除文件夹
+            } else {
+                fs.unlinkSync(curPath); //删除文件，多线程访问会报错
+            }
+		}
+        fs.rmdirSync(path);
+    }
 }
 
 

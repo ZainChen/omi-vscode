@@ -7,6 +7,7 @@ const cpln = require("./completion/index");  //自动补全功能模块
 const hover = require("./hover/index");  //鼠标悬停提示功能模块
 const jump = require("./jump/index");  //跳转功能模块
 
+const alg = require("./algorithm/index");  //算法
 
 const wv = require('./webview/index');  //Webview功能模块(test)
 
@@ -34,6 +35,7 @@ function activate(context) {
 		vscode.commands.registerCommand('omi.cmd.ecoRefreshNode', node => ecoProvider.refreshDesignation(node)),  //刷新指定菜单节点
 		vscode.commands.registerCommand('omi.cmd.ecoOpenGithub', node => ecoProvider.openGithub(node)),  //打开当前菜单树节点链接的GitHub页面
 		vscode.commands.registerCommand('omi.cmd.openGithubFile', nodeLink => ecoProvider.openGithubFile(nodeLink)),
+		vscode.commands.registerCommand('omi.cmd.ecoClearCache', () => ecoProvider.clearCache()),  //清除缓存文件(查看文件时生成的)
 		
 		//自动补全
 		vscode.languages.registerCompletionItemProvider(['html', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact'], omiCompletion, ' '),  //代码提示功能注册
