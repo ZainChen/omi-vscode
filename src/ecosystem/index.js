@@ -369,18 +369,39 @@ class EcoProvider {
         }
     }
 
+    /**
+     * 本地缓存并打开GitHub文件
+     * @param {*} nodeLink github文件链接
+     */
     openGithubFile(nodeLink) {
+
+
+
+
+        
+        let url = __dirname+"/cache/app.css";
+        let rawPath = "https://raw.githubusercontent.com/Tencent/omi/master/packages/omip/my-app-ts/src/app.css";
+        let stream = fs.createWriteStream(url);
+        request(rawPath).pipe(stream).on("close", function (err) {
+            console.log("文件[app.css]下载完毕");
+        });
+
+        vscode.window.showTextDocument(vscode.Uri.file(url));  //vscode编辑窗口打开文件
+        
+
+
+
         // vscode.window.showInformationMessage(`open github file.`);
-        let fileName = "";
-        let nl = nodeLink.length;
-        let k = nl;
-        while(k >= 0 && nodeLink[k] != '/' && nodeLink[k] != '\\') {
-            k--;
-        }
-        for(let i = k+1; i < nl; i++) {
-            fileName += nodeLink[i];
-        }
-        new ourl("/"+fileName, nodeLink);
+        // let fileName = "";
+        // let nl = nodeLink.length;
+        // let k = nl;
+        // while(k >= 0 && nodeLink[k] != '/' && nodeLink[k] != '\\') {
+        //     k--;
+        // }
+        // for(let i = k+1; i < nl; i++) {
+        //     fileName += nodeLink[i];
+        // }
+        // new ourl("/"+fileName, nodeLink);
     }
 
     /**
