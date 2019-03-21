@@ -376,7 +376,7 @@ class EcoProvider {
      * 本地缓存并打开GitHub文件
      * @param {*} nodeLink github文件链接
      */
-    openGithubFile(nodeLink) {
+    async openGithubFile(nodeLink) {
         let rawPath = this.toGithubDownLink(nodeLink);  //将github文件链接转换为github下载链接
         let fileName = "";
         let nl = nodeLink.length;
@@ -388,25 +388,20 @@ class EcoProvider {
             fileName += nodeLink[i];
         }
         let cph = __dirname+"/cache/";
+        if(fs.existsSync(cph) == false) {  //判断文件夹是否存在
+            fs.mkdirSync(cph);  //创建文件夹
+        }
         let url = cph+fileName;
-        //alg.delDirFile(cph);  //删除指定文件夹下所有文件(不实时清除缓存)
-        let stream = fs.createWriteStream(url);
-        vscode.window.showTextDocument(vscode.Uri.file(url));  //vscode编辑窗口打开文件await async
-        alg.writeFileSync(url, "file loading...", "utf-8", 'w+');
+        await alg.writeFileSync(url, "file loading...", "utf-8", 'w+');
+        await vscode.window.showTextDocument(vscode.Uri.file(url));  //vscode编辑窗口打开文件await async
         this.cacheNum += 1;  //记录缓存文件打开次数
         vscode.window.setStatusBarMessage("omi:"+this.cacheNum.toString());  //状态栏显示缓存文件打开次数
-        request(rawPath, (err) => {
-            if(err) {
-                //console.log(err);
-                //vscode.window.showInformationMessage(err.stack);
-                alg.writeFileSync(url, err.stack, "utf-8", 'w+');
-            }
-        }).pipe(stream).on("close", () => {
-            //console.log(fileName+" ok.");
+        await rp(rawPath).then((html) => {
+            alg.writeFileSync(url, html, "utf-8", 'w+');
+        }).catch((err) => {
+            alg.writeFileSync(url, err.stack, "utf-8", 'w+');
         });
         
-
-
         //webview方式打开github文件(不好，除非可以直接打开github网页)
         // vscode.window.showInformationMessage(`open github file.`);
         // let fileName = "";
@@ -425,7 +420,9 @@ class EcoProvider {
      * 清除缓存文件(查看文件时生成的)
      */
     clearCache() {
-        alg.delDirFile(__dirname+"/cache/");  //删除指定文件夹下所有文件(不实时清除缓存)
+        let ph = __dirname+"/cache/";
+        alg.delDirFile(ph);  //删除指定文件夹下所有文件(不实时清除缓存)
+        fs.rmdirSync(ph);
         this.cacheNum = 0;  //记录缓存文件打开次数
         vscode.window.setStatusBarMessage("omi:"+this.cacheNum.toString());  //状态栏显示缓存文件打开次数
         vscode.window.showInformationMessage("clear success.(omi:0)");

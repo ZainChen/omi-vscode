@@ -43,6 +43,7 @@ function writeFileSync(path, data, coding, mode) {
 			console.log(err);
 		}
 	})
+	
 }
 
 
