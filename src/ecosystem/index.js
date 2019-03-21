@@ -399,7 +399,7 @@ class EcoProvider {
         await rp(rawPath).then((html) => {
             alg.writeFileSync(url, html, "utf-8", 'w+');
         }).catch((err) => {
-            alg.writeFileSync(url, err.stack, "utf-8", 'w+');
+            alg.writeFileSync(url, "Open failure!\n"+err.stack, "utf-8", 'w+');
         });
         
         //webview方式打开github文件(不好，除非可以直接打开github网页)
