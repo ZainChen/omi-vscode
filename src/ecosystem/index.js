@@ -29,7 +29,7 @@ class EcoProvider {
         this._onDidChangeTreeData = new vscode.EventEmitter();  //刷新菜单节点使用
         this.onDidChangeTreeData = this._onDidChangeTreeData.event;
 
-        // this.wstream = fs.createWriteStream("");
+        this.wstream = fs.createWriteStream("");
         this.cacheNum = 0;  //记录缓存文件打开次数
         vscode.window.setStatusBarMessage("omi:"+this.cacheNum.toString());  //状态栏显示缓存文件打开次数
     }
@@ -393,28 +393,35 @@ class EcoProvider {
             fs.mkdirSync(cph);  //创建文件夹
         }
         let url = cph+fileName;
-        await alg.writeFileSync(url, "file loading...", "utf-8", 'w+');
-        await vscode.window.showTextDocument(vscode.Uri.file(url));  //vscode编辑窗口打开文件await async
-        await rp(rawPath).then((html) => {
-            alg.writeFileSync(url, html, "utf-8", 'w+');
-        }).catch((err) => {
-            alg.writeFileSync(url, "Open failure!\n"+err.stack, "utf-8", 'w+');
-        });
-        this.cacheNum += 1;  //记录缓存文件打开次数
-        vscode.window.setStatusBarMessage("omi:"+this.cacheNum.toString());  //状态栏显示缓存文件打开次数
-        
-        // this.wstream.end();
-        // this.wstream = fs.createWriteStream(url);
-        // vscode.window.showTextDocument(vscode.Uri.file(url));
-        // let req = await request(rawPath, (err) => {
-        //     if(err) {
-        //         alg.writeFileSync(url, "Open failure!\n"+err.stack, "utf-8", 'w+');
-        //         this.wstream.end();
-        //     }
-        // });
-        // req.pipe(this.wstream).on("close", () => {
-        //     console.log(fileName+" ok.");
-        // });
+        if(alg.strTailMatch(fileName, ".png", 2) ||
+           alg.strTailMatch(fileName, ".jpg", 2) ||
+           alg.strTailMatch(fileName, ".gif", 2) ||
+           alg.strTailMatch(fileName, ".ico", 2)) {
+            this.wstream.end();
+            this.wstream = fs.createWriteStream(url);
+            vscode.window.showInformationMessage("file loading...");
+            let req = await request(rawPath, (err) => {
+                if(err) {
+                    vscode.window.showInformationMessage("Open failure!\n"+err.stack);
+                    this.wstream.end();
+                }
+            });
+            req.pipe(this.wstream).on("close", () => {
+                new ourl(fileName, rawPath);  //webview方式打开图片相关文件
+                vscode.window.showInformationMessage(fileName+" ok.");
+                //console.log(fileName+" ok.");
+            });
+        } else {
+            alg.writeFileSync(url, "file loading...", "utf-8", 'w+');
+            vscode.window.showTextDocument(vscode.Uri.file(url));  //vscode编辑窗口打开文件await async
+            await rp(rawPath).then((html) => {
+                alg.writeFileSync(url, html, "utf-8", 'w+');
+            }).catch((err) => {
+                alg.writeFileSync(url, "Open failure!\n"+err.stack, "utf-8", 'w+');
+            });
+            this.cacheNum += 1;  //记录缓存文件打开次数
+            vscode.window.setStatusBarMessage("omi:"+this.cacheNum.toString());  //状态栏显示缓存文件打开次数
+        }
 
 
         //webview方式打开github文件(不好，除非可以直接打开github网页)
@@ -435,7 +442,7 @@ class EcoProvider {
      * 清除缓存文件(查看文件时生成的)
      */
     clearCache() {
-        // this.wstream.end();
+        this.wstream.end();
         let ph = __dirname+"/cache/";
         alg.delDirFile(ph);  //删除指定文件夹下所有文件(不实时清除缓存)
         fs.rmdirSync(ph);

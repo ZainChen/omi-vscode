@@ -22,15 +22,15 @@ class OpenURL {
           <style>
             body, html
               {
-                margin: 0; padding: 0; height: 100%;
+                margin: 0; padding: 0; height: 100%; width: 100%;
               }
               .vscode-light {
-                  background: #fff;
+                  background: #282C34;
               }
           </style>
         </head>
         <body>
-          <script src="${"http://gist-it.appspot.com/"+url}"></script>
+          <img src="${url}" alt="${url}" />
         </body>
         </html>
           `;
@@ -39,4 +39,6 @@ class OpenURL {
 }
 module.exports = OpenURL;
 
+{/* <img src="${url}" alt="${url}" /> */}
+{/* <script src="${"http://gist-it.appspot.com/"+url}"></script> */}
 {/* <iframe class="vscode-light" id= "iframe" width="100%" height="100%" src="${url}" frameborder="0"></iframe> */}

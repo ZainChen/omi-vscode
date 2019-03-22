@@ -17,6 +17,27 @@
 
 --- -->
 
+## Version 2.0.8 March 22, 2019
+
+### New Features
+
+- Github file view support *.png, *.jpg, *.gif, *.ico
+
+### Modify
+
+- null
+
+### Bug Fixes
+
+- null
+
+### Problem
+
+- Menu icon need to be remade svg image.
+- omiu component need to add a new attribute completion button, the attribute completion trigger needs to be perfected.
+
+---
+
 ## Version 2.0.6 March 20, 2019
 
 ### New Features

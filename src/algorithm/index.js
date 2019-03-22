@@ -86,6 +86,7 @@ function delDirFileAll(path){
  * @param str 待匹配的字符串
  * @param value 待匹配的值
  * @param mode 1:匹配大小写;2:忽略大小写
+ * @return true,false | 匹配值等于待匹配值,匹配值不等于待匹配值
  */
 function strTailMatch(str, value, mode) {
 	let ls = str.length;
