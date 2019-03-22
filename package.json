@@ -124,6 +124,7 @@
 		"onCommand:omi.cmd.ecoOpenGithub",
 		"onCommand:omi.cmd.ecoOpenGithubFile",
 		"onCommand:omi.cmd.ecoClearCache",
+		"onCommand:omi.cmd.ecoGithubFileDownload",
 		"onLanguage:c",
 		"onLanguage:cpp",
 		"onLanguage:css",
@@ -185,6 +186,14 @@
 				"icon": {
 					"light": "./assets/light/github-web.svg",
 					"dark": "./assets/dark/github-web.svg"
+				}
+			},
+			{
+				"command": "omi.cmd.ecoGithubFileDownload",
+				"title": "github file download",
+				"icon": {
+					"light": "./assets/light/download.svg",
+					"dark": "./assets/dark/download.svg"
 				}
 			},
 			{
@@ -361,14 +370,19 @@
 			],
 			"view/item/context": [
 				{
-					"command": "omi.cmd.ecoOpenGithub",
+					"command": "omi.cmd.ecoGithubFileDownload",
 					"when": "view == omi.view.ecosystem",
 					"group": "inline@1"
 				},
 				{
-					"command": "omi.cmd.ecoRefreshNode",
+					"command": "omi.cmd.ecoOpenGithub",
 					"when": "view == omi.view.ecosystem",
 					"group": "inline@2"
+				},
+				{
+					"command": "omi.cmd.ecoRefreshNode",
+					"when": "view == omi.view.ecosystem",
+					"group": "inline@3"
 				}
 			]
 		},

@@ -13,7 +13,8 @@ module.exports = {
 	getfilePathName,
 	getFileContent,
 	strDelHtLineSpace,
-	SplitStringChar
+	SplitStringChar,
+	urlGetLastStr
 }
 
 /**
@@ -211,4 +212,21 @@ function SplitStringChar(str, ck) {
 		sr.push(s);
 	}
 	return sr;
+}
+
+/**
+ * 获取路径最后的不包含'/'或'\'的字符串
+ * @param url 待处理的路径字符串
+ */
+function urlGetLastStr(url) {
+	let retStr = "";
+	let nl = url.length;
+	let k = nl;
+	while(k >= 0 && url[k] != '/' && url[k] != '\\') {
+		k--;
+	}
+	for(let i = k+1; i < nl; i++) {
+		retStr += url[i];
+	}
+	return retStr;
 }

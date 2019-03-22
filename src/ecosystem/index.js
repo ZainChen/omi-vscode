@@ -31,7 +31,7 @@ class EcoProvider {
 
         this.wstream = fs.createWriteStream("");
         this.cacheNum = 0;  //记录缓存文件打开次数
-        vscode.window.setStatusBarMessage("omi:"+this.cacheNum.toString());  //状态栏显示缓存文件打开次数
+        vscode.window.setStatusBarMessage("omi.coche:"+this.cacheNum.toString());  //状态栏显示缓存文件打开次数
     }
     
     /**
@@ -379,20 +379,13 @@ class EcoProvider {
      */
     async openGithubFile(nodeLink) {
         let rawPath = this.toGithubDownLink(nodeLink);  //将github文件链接转换为github下载链接
-        let fileName = "";
-        let nl = nodeLink.length;
-        let k = nl;
-        while(k >= 0 && nodeLink[k] != '/' && nodeLink[k] != '\\') {
-            k--;
-        }
-        for(let i = k+1; i < nl; i++) {
-            fileName += nodeLink[i];
-        }
+        let fileName = alg.urlGetLastStr(nodeLink);  //从链接获取文件名
         let cph = __dirname+"/cache/";
         if(fs.existsSync(cph) == false) {  //判断文件夹是否存在
             fs.mkdirSync(cph);  //创建文件夹
         }
         let url = cph+fileName;
+        let bimgOk = true;
         if(alg.strTailMatch(fileName, ".png", 2) ||
            alg.strTailMatch(fileName, ".jpg", 2) ||
            alg.strTailMatch(fileName, ".gif", 2) ||
@@ -400,16 +393,19 @@ class EcoProvider {
             this.wstream.end();
             this.wstream = fs.createWriteStream(url);
             vscode.window.showInformationMessage("file loading...");
-            let req = await request(rawPath, (err) => {
+            let req = request(rawPath, (err) => {
                 if(err) {
                     vscode.window.showInformationMessage("Open failure!\n"+err.stack);
                     this.wstream.end();
+                    bimgOk = false;
                 }
             });
             req.pipe(this.wstream).on("close", () => {
-                new ourl(fileName, rawPath);  //webview方式打开图片相关文件
-                vscode.window.showInformationMessage(fileName+" ok.");
-                //console.log(fileName+" ok.");
+                if(bimgOk) {
+                    new ourl(fileName, rawPath);  //webview方式打开图片相关文件
+                    vscode.window.showInformationMessage(fileName+" ok.");
+                    //console.log(fileName+" ok.");
+                }
             });
         } else {
             alg.writeFileSync(url, "file loading...", "utf-8", 'w+');
@@ -420,7 +416,7 @@ class EcoProvider {
                 alg.writeFileSync(url, "Open failure!\n"+err.stack, "utf-8", 'w+');
             });
             this.cacheNum += 1;  //记录缓存文件打开次数
-            vscode.window.setStatusBarMessage("omi:"+this.cacheNum.toString());  //状态栏显示缓存文件打开次数
+            vscode.window.setStatusBarMessage("omi.coche:"+this.cacheNum.toString());  //状态栏显示缓存文件打开次数
         }
 
 
@@ -447,8 +443,45 @@ class EcoProvider {
         alg.delDirFile(ph);  //删除指定文件夹下所有文件(不实时清除缓存)
         fs.rmdirSync(ph);
         this.cacheNum = 0;  //记录缓存文件打开次数
-        vscode.window.setStatusBarMessage("omi:"+this.cacheNum.toString());  //状态栏显示缓存文件打开次数
+        vscode.window.setStatusBarMessage("omi.coche:"+this.cacheNum.toString());  //状态栏显示缓存文件打开次数
         vscode.window.showInformationMessage("clear success.(omi:0)");
+    }
+
+    /**
+     * github文件下载(支持任意子文件和文件夹)
+     * @param node 当前节点对象
+     */
+    async githubFileDownload(node) {
+        // vscode.window.showInformationMessage("github file download.");
+        let dialog = await vscode.window.showOpenDialog({
+            canSelectFiles: false,
+            canSelectFolders: true,
+            canSelectMany: false
+        });
+        //console.log(dialog);
+        if(node.fileType == "file") {
+            vscode.window.setStatusBarMessage("omi.down:1/0");  //下载进度
+            let bOk = true;
+            let downPath = this.toGithubDownLink(node.filePathlink);  //获取下载路径
+            let fileName = alg.urlGetLastStr(node.filePathlink);  //从链接获取文件名
+            let wst = fs.createWriteStream(dialog[0].fsPath+"\\"+fileName);
+            request(downPath, (err) => {
+                if(err) {
+                    vscode.window.showInformationMessage("Open failure!\n"+err.stack);
+                    wst.end();
+                    bOk = false;
+                }
+            }).pipe(wst).on("close", () => {
+                if(bOk) {
+                    vscode.window.setStatusBarMessage("omi.down:1/1");  //下载进度
+                    vscode.window.showInformationMessage("Download completed.");
+                }
+            });
+        } else if(node.fileType == "directory") {
+            vscode.window.showInformationMessage("Developing...");
+        } else {
+            vscode.window.showInformationMessage("err: unknown file type!");
+        }
     }
 
     /**
