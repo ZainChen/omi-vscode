@@ -398,6 +398,8 @@ class EcoProvider {
                     vscode.window.showInformationMessage("open failure!\n"+err.stack);
                     this.wstream.end();
                     bimgOk = false;
+                    this.cacheNum += 1;  //记录缓存文件打开次数
+                    vscode.window.setStatusBarMessage("omi.coche:"+this.cacheNum.toString());  //状态栏显示缓存文件打开次数
                 }
             });
             req.pipe(this.wstream).on("close", () => {
@@ -410,6 +412,8 @@ class EcoProvider {
                 }
             });
         } else {
+            this.cacheNum += 1;  //记录缓存文件打开次数
+            vscode.window.setStatusBarMessage("omi.coche:"+this.cacheNum.toString());  //状态栏显示缓存文件打开次数
             alg.writeFileSync(url, "file loading...", "utf-8", 'w+');
             vscode.window.showTextDocument(vscode.Uri.file(url));  //vscode编辑窗口打开文件await async
             await rp(rawPath).then((html) => {
@@ -417,8 +421,6 @@ class EcoProvider {
             }).catch((err) => {
                 alg.writeFileSync(url, "open failure!\n"+err.stack, "utf-8", 'w+');
             });
-            this.cacheNum += 1;  //记录缓存文件打开次数
-            vscode.window.setStatusBarMessage("omi.coche:"+this.cacheNum.toString());  //状态栏显示缓存文件打开次数
         }
 
 
@@ -442,11 +444,13 @@ class EcoProvider {
     clearCache() {
         this.wstream.end();
         let ph = __dirname+"/cache/";
-        alg.delDirFile(ph);  //删除指定文件夹下所有文件(不实时清除缓存)
-        fs.rmdirSync(ph);
-        this.cacheNum = 0;  //记录缓存文件打开次数
-        vscode.window.setStatusBarMessage("omi.coche:"+this.cacheNum.toString());  //状态栏显示缓存文件打开次数
-        vscode.window.showInformationMessage("clear success.(omi:0)");
+        if(this.cacheNum > 0) {  //判断方式需要优化(这样只能打开最少一个文件才能清除缓存)
+            alg.delDirFile(ph);  //删除指定文件夹下所有文件(不实时清除缓存)
+            fs.rmdirSync(ph);
+            this.cacheNum = 0;  //记录缓存文件打开次数
+            vscode.window.setStatusBarMessage("omi.coche:"+this.cacheNum.toString());  //状态栏显示缓存文件打开次数
+            vscode.window.showInformationMessage("clear success.(omi:0)");
+        }
     }
 
     /**
