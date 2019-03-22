@@ -395,7 +395,7 @@ class EcoProvider {
             vscode.window.showInformationMessage("file loading...");
             let req = request(rawPath, (err) => {
                 if(err) {
-                    vscode.window.showInformationMessage("Open failure!\n"+err.stack);
+                    vscode.window.showInformationMessage("open failure!\n"+err.stack);
                     this.wstream.end();
                     bimgOk = false;
                 }
@@ -405,6 +405,8 @@ class EcoProvider {
                     new ourl(fileName, rawPath);  //webview方式打开图片相关文件
                     vscode.window.showInformationMessage(fileName+" ok.");
                     //console.log(fileName+" ok.");
+                    this.cacheNum += 1;  //记录缓存文件打开次数
+                    vscode.window.setStatusBarMessage("omi.coche:"+this.cacheNum.toString());  //状态栏显示缓存文件打开次数
                 }
             });
         } else {
@@ -413,7 +415,7 @@ class EcoProvider {
             await rp(rawPath).then((html) => {
                 alg.writeFileSync(url, html, "utf-8", 'w+');
             }).catch((err) => {
-                alg.writeFileSync(url, "Open failure!\n"+err.stack, "utf-8", 'w+');
+                alg.writeFileSync(url, "open failure!\n"+err.stack, "utf-8", 'w+');
             });
             this.cacheNum += 1;  //记录缓存文件打开次数
             vscode.window.setStatusBarMessage("omi.coche:"+this.cacheNum.toString());  //状态栏显示缓存文件打开次数
@@ -458,6 +460,9 @@ class EcoProvider {
             canSelectFolders: true,
             canSelectMany: false
         });
+        if(typeof(dialog) == "undefined") {
+            return;
+        }
         //console.log(dialog);
         if(node.fileType == "file") {
             vscode.window.setStatusBarMessage("omi.down:1/0");  //下载进度
@@ -467,18 +472,18 @@ class EcoProvider {
             let wst = fs.createWriteStream(dialog[0].fsPath+"\\"+fileName);
             request(downPath, (err) => {
                 if(err) {
-                    vscode.window.showInformationMessage("Open failure!\n"+err.stack);
+                    vscode.window.showInformationMessage("open failure!\n"+err.stack);
                     wst.end();
                     bOk = false;
                 }
             }).pipe(wst).on("close", () => {
                 if(bOk) {
                     vscode.window.setStatusBarMessage("omi.down:1/1");  //下载进度
-                    vscode.window.showInformationMessage("Download completed.");
+                    vscode.window.showInformationMessage("download completed.");
                 }
             });
         } else if(node.fileType == "directory") {
-            vscode.window.showInformationMessage("Developing...");
+            vscode.window.showInformationMessage("developing...");
         } else {
             vscode.window.showInformationMessage("err: unknown file type!");
         }
