@@ -30,7 +30,7 @@ function activate(context) {
 		vscode.commands.registerCommand('omi.cmd.ecoRefresh', () => ecoProvider.refreshAll()),  //刷新所有菜单节点
 		vscode.commands.registerCommand('omi.cmd.ecoRefreshNode', node => ecoProvider.refreshDesignation(node)),  //刷新指定菜单节点
 		vscode.commands.registerCommand('omi.cmd.ecoOpenGithub', node => ecoProvider.openGithub(node)),  //打开当前菜单树节点链接的GitHub页面
-		vscode.commands.registerCommand('omi.cmd.openGithubFile', nodeLink => ecoProvider.openGithubFile(nodeLink)),
+		vscode.commands.registerCommand('omi.cmd.ecoOpenGithubFile', nodeLink => ecoProvider.openGithubFile(nodeLink)),
 		vscode.commands.registerCommand('omi.cmd.ecoClearCache', () => ecoProvider.clearCache()),  //清除缓存文件(查看文件时生成的)
 		
 		//自动补全

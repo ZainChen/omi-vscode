@@ -117,7 +117,7 @@ class EcoProvider {
                 return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.Collapsed, fileType);
             } else if(fileType == 'file') {
                 return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.None, fileType, {
-                    command: 'omi.cmd.openGithubFile',
+                    command: 'omi.cmd.ecoOpenGithubFile',
                     title: '',
                     arguments: [filePathlink]
                 });
@@ -163,7 +163,7 @@ class EcoProvider {
                 return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.Collapsed, fileType);
             } else if(fileType == 'file') {
                 return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.None, fileType, {
-                    command: 'omi.cmd.openGithubFile',
+                    command: 'omi.cmd.ecoOpenGithubFile',
                     title: '',
                     arguments: [filePathlink]
                 });
