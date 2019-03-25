@@ -475,15 +475,24 @@ class EcoProvider {
         this.scheduleDown.sum = 0;
         this.scheduleDown.count = 0;
         //console.log(dialog);
+        vscode.window.showInformationMessage("start download...");
         if(node.fileType == "file") {
             this.scheduleDown.sum = 1;
             this.downGithubFileOne(this.toGithubDownLink(node.filePathlink), dialog[0].fsPath);
+            vscode.window.showInformationMessage("download completed.");
         } else if(node.fileType == "directory") {
             let dirName = dialog[0].fsPath+"\\"+alg.urlGetLastStr(node.filePathlink);
             if(fs.existsSync(dirName) == false) {  //判断文件夹是否存在
                 fs.mkdirSync(dirName);  //创建文件夹
             }
-            this.downGithubFileDirAllDFS(node.filePathlink, node.fileType, node.filePathlink, dirName);
+            let spfn = 0;
+            for(let i = 0; i < node.filePathlink.length; i++) {
+                if(node.filePathlink[i] == '/') {
+                    spfn += 1;
+                }
+            }
+            await this.downGithubFileDirAllDFS(node.filePathlink, node.fileType, spfn, dirName);
+            vscode.window.showInformationMessage("download completed.");
         } else {
             vscode.window.showInformationMessage("err: unknown file type!");
         }
@@ -509,7 +518,7 @@ class EcoProvider {
             if(bOk) {
                 this.scheduleDown.count += 1;
                 vscode.window.setStatusBarMessage("omi.down:"+this.scheduleDown.sum+"/"+this.scheduleDown.count);  //下载进度
-                vscode.window.showInformationMessage(fileName+" download completed.");
+                //vscode.window.showInformationMessage(fileName+" download completed.");
             }
         });
     }
@@ -518,17 +527,40 @@ class EcoProvider {
      * 深搜遍历获取所有文件链接
      * @param {*} nodeLink 文件或文件夹链接
      */
-    async downGithubFileDirAllDFS(nodeLink, nodeType, startLink, starSavePath) {
+    async downGithubFileDirAllDFS(nodeLink, nodeType, spfn, starSavePath) {
         if(nodeType == "file") {
             //按需求创建子文件夹
-            
+            let strPath = "";
+            let k = 0;
+            let addOk = false;
+            for(let i = 0; i < nodeLink.length; i++) {
+                if(k == spfn+1) {
+                    addOk = true;
+                }
+                if(addOk) {
+                    strPath += nodeLink[i];
+                }
+                if(nodeLink[i] == '/') {
+                    k++;
+                }
+            }
+            let hPth = "";
+            let t = strPath.length;
+            while(t >= 0 && strPath[t] != '/' && strPath[t] != '\\') {
+                t--;
+            }
+            for(let i = 0; i < t; i++) {
+                hPth += strPath[i];
+            }
+            let savePath = starSavePath+"\\"+hPth;
+            alg.mkdirsSync(savePath);
             this.scheduleDown.sum += 1;
-            this.downGithubFileOne(this.toGithubDownLink(nodeLink), starSavePath);
+            this.downGithubFileOne(this.toGithubDownLink(nodeLink), savePath);
             return;
         } else if(nodeType == "directory") {
             let dataGitHub = await this.httpsGetGithubDataSyn(nodeLink);  //获取当前节点和当前节点下所有内容
             for(let i = 0; i < dataGitHub.filePathlinks.length; i++) {
-                await this.downGithubFileDirAllDFS(dataGitHub.filePathlinks[i], dataGitHub.fileOrDir[i], startLink, starSavePath);
+                await this.downGithubFileDirAllDFS(dataGitHub.filePathlinks[i], dataGitHub.fileOrDir[i], spfn, starSavePath);
             }
         } else {
             vscode.window.showInformationMessage("err: unknown file type!");

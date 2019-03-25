@@ -14,7 +14,8 @@ module.exports = {
 	getFileContent,
 	strDelHtLineSpace,
 	SplitStringChar,
-	urlGetLastStr
+	urlGetLastStr,
+	mkdirsSync
 }
 
 /**
@@ -229,4 +230,16 @@ function urlGetLastStr(url) {
 		retStr += url[i];
 	}
 	return retStr;
+}
+
+// 递归创建目录 同步方法
+function mkdirsSync(dirname) {
+	if (fs.existsSync(dirname)) {
+		return true;
+	} else {
+		if (mkdirsSync(path.dirname(dirname))) {
+			fs.mkdirSync(dirname);
+			return true;
+		}
+	}
 }
