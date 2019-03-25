@@ -4,7 +4,6 @@
 
 ### New Features
 
-- Add gitgub file download function.(Any files and folders)
 - Add omiu mouse hover prompt, prompt message in markdown format
 
 ### Modify
@@ -17,10 +16,11 @@
 
 --- -->
 
-## Version 2.0.8 March 22, 2019
+## Version 2.0.8 March 25, 2019
 
 ### New Features
 
+- Add gitgub file download function.(Any files and folders)
 - Github file view support *.png, *.jpg, *.gif, *.ico
 
 ### Modify
