@@ -31,9 +31,6 @@
 		"志银",
 		"陈志银",
 		"陈志振",
-		"jane",
-		"娟",
-		"娟娟",
 		"omi",
 		"json",
 		"html",
@@ -98,8 +95,7 @@
 		"typescript",
 		"jquery",
 		"node",
-		"nodejs",
-		""
+		"nodejs"
 	],
 	"categories": [
 		"Snippets",
