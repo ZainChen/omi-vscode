@@ -16,9 +16,9 @@ const ourl = require('./open-url');  //webview打开网页功能
 /**
  * omi生态功能实现类
  */
-class EcoProvider {
+class omiEcoProvider {
     /**
-     * EcoProvider 类的构造函数
+     * omiEcoProvider 类的构造函数
      */
     constructor(context) {
         this.context = context;  //暂时没用到
@@ -646,7 +646,7 @@ class EcoProvider {
         return true;
     }
 }
-exports.EcoProvider = EcoProvider;
+exports.omiEcoProvider = omiEcoProvider;
 
 
 

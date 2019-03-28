@@ -15,30 +15,30 @@ const jump = require("./jump/index");  //跳转功能模块
  * @param {vscode.ExtensionContext} context 扩展内容
  */
 function activate(context) {
-	const ecoProvider = new eco.EcoProvider(context);  //omi生态更新、下载、项目创建(创建项目包含在线和离线两种方式)
+	const omiEco = new eco.omiEcoProvider(context);  //omi生态更新、下载、项目创建(创建项目包含在线和离线两种方式)
 	const omiCompletion = new cpln.OmiCompletion();  //自动补全功能
-	const provideHover = hover.provideHover;  //鼠标悬停提示功能
+	const omiHover = new hover.omiHover();  //鼠标悬停提示功能
 	const provideDefinition = jump.provideDefinition;  //跳转功能
 
 	context.subscriptions.push(
 		//omi生态更新、下载、项目创建(创建项目包含在线和离线两种方式)
-		//vscode.window.registerTreeDataProvider('omi.view.ecosystem', ecoProvider);  //omi生态内容注册(无法添加showCollapseAll功能)
+		//vscode.window.registerTreeDataProvider('omi.view.ecosystem', omiEco);  //omi生态内容注册(无法添加showCollapseAll功能)
 		//omi生态内容创建和注册(用此方法可添加showCollapseAll功能)，支持此功能的vscode最低版本为1.30.1
-		vscode.window.createTreeView('omi.view.ecosystem', { treeDataProvider: ecoProvider, showCollapseAll: true }),
-		vscode.commands.registerCommand('omi.cmd.ecoHello', () => ecoProvider.commandOmiHello()),  //将omi生态切换到Tencent/omi
-		vscode.commands.registerCommand('omi.cmd.ecoGithubSwitch', () => ecoProvider.githubSwitch()),  //切换github，生成新的菜单树
-		vscode.commands.registerCommand('omi.cmd.ecoRefresh', () => ecoProvider.refreshAll()),  //刷新所有菜单节点
-		vscode.commands.registerCommand('omi.cmd.ecoRefreshNode', node => ecoProvider.refreshDesignation(node)),  //刷新指定菜单节点
-		vscode.commands.registerCommand('omi.cmd.ecoOpenGithub', node => ecoProvider.openGithub(node)),  //打开当前菜单树节点链接的GitHub页面
-		vscode.commands.registerCommand('omi.cmd.ecoOpenGithubFile', nodeLink => ecoProvider.openGithubFile(nodeLink)),  //vscode打开github文件
-		vscode.commands.registerCommand('omi.cmd.ecoClearCache', () => ecoProvider.clearCache()),  //清除缓存文件(查看文件时生成的)
-		vscode.commands.registerCommand('omi.cmd.ecoGithubFileDownload', node => ecoProvider.githubFileDownload(node)),  //github文件下载(支持任意子文件和文件夹)
+		vscode.window.createTreeView('omi.view.ecosystem', { treeDataProvider: omiEco, showCollapseAll: true }),
+		vscode.commands.registerCommand('omi.cmd.ecoHello', () => omiEco.commandOmiHello()),  //将omi生态切换到Tencent/omi
+		vscode.commands.registerCommand('omi.cmd.ecoGithubSwitch', () => omiEco.githubSwitch()),  //切换github，生成新的菜单树
+		vscode.commands.registerCommand('omi.cmd.ecoRefresh', () => omiEco.refreshAll()),  //刷新所有菜单节点
+		vscode.commands.registerCommand('omi.cmd.ecoRefreshNode', node => omiEco.refreshDesignation(node)),  //刷新指定菜单节点
+		vscode.commands.registerCommand('omi.cmd.ecoOpenGithub', node => omiEco.openGithub(node)),  //打开当前菜单树节点链接的GitHub页面
+		vscode.commands.registerCommand('omi.cmd.ecoOpenGithubFile', nodeLink => omiEco.openGithubFile(nodeLink)),  //vscode打开github文件
+		vscode.commands.registerCommand('omi.cmd.ecoClearCache', () => omiEco.clearCache()),  //清除缓存文件(查看文件时生成的)
+		vscode.commands.registerCommand('omi.cmd.ecoGithubFileDownload', node => omiEco.githubFileDownload(node)),  //github文件下载(支持任意子文件和文件夹)
 		
 		//自动补全
 		vscode.languages.registerCompletionItemProvider(['html', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact'], omiCompletion, ' '),  //代码提示功能注册
 		
 		//鼠标悬停提示功能
-		vscode.languages.registerHoverProvider(['json', 'javascript', 'tex'], { provideHover }),  //鼠标悬停提示功能注册
+		vscode.languages.registerHoverProvider(['json', 'javascript', 'tex'], omiHover),  //鼠标悬停提示功能注册
 	
 		//跳转功能
 		vscode.languages.registerDefinitionProvider(['html', 'json', 'javascript'], {provideDefinition}),  //跳转功能注册
