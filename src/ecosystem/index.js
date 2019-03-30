@@ -339,7 +339,10 @@ class omiEcoProvider {
             k += 1;
         }
         ls = '';
-        while(k < guleng && !(githubUrl[k] == '/' || githubUrl[k] == '\\' || githubUrl[k] == ':' || githubUrl[k] == '.')) {
+        if(githubUrl[guleng-1] == 't' && githubUrl[guleng-2] == 'i' && githubUrl[guleng-3] == 'g' && githubUrl[guleng-4] == '.') {
+            guleng -= 3;
+        }
+        while(k < guleng && !(githubUrl[k] == '/' || githubUrl[k] == '\\' || githubUrl[k] == ':')) {
             ls += githubUrl[k];
             k += 1;
         }
