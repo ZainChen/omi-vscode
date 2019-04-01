@@ -10,7 +10,7 @@ const hoverJavascript = require("./javascript");  //javascript文件内容提示
 
 class omiHover {
 	constructor() {
-
+		this.objJsonOmiu = new Object();
 	}
 
 	/**
@@ -27,6 +27,11 @@ class omiHover {
 	 * @return 悬停或可解决的问题。可以通过返回“undefined”或“null”来表示缺少结果。
 	 */
 	provideHover(document, position, token) {
+		if(JSON.stringify(this.objJsonOmiu) == "{}") {  //如果omiu标签属性库为空，则从文件读取导入
+			let data = fs.readFileSync(__dirname+'/hoverjson/omiu-hover.json', 'utf8');  //同步获取json文件内容
+			this.objJsonOmiu = JSON.parse(data);  //字符串转json对象
+		}
+
 		const fileName	= document.fileName;
 
 		//json文件
