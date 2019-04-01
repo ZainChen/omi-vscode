@@ -10,7 +10,7 @@ const hoverJavascript = require("./javascript");  //javascript文件内容提示
 
 class omiHover {
 	constructor() {
-		this.objJsonOmiu = new Object();
+		this.objJson = new Object();
 	}
 
 	/**
@@ -27,10 +27,14 @@ class omiHover {
 	 * @return 悬停或可解决的问题。可以通过返回“undefined”或“null”来表示缺少结果。
 	 */
 	provideHover(document, position, token) {
-		if(JSON.stringify(this.objJsonOmiu) == "{}") {  //如果omiu标签属性库为空，则从文件读取导入
-			let data = fs.readFileSync(__dirname+'/hoverjson/omiu-hover.json', 'utf8');  //同步获取json文件内容
-			this.objJsonOmiu = JSON.parse(data);  //字符串转json对象
-		}
+		let showText = "";
+
+		showText += this.addHover(document, position, "omiu-hover.json");
+
+
+		return { contents: [showText] };
+
+
 
 		const fileName	= document.fileName;
 
@@ -46,6 +50,48 @@ class omiHover {
 		// return new vscode.Hover(`zain`);
 
 		return null;
+	}
+
+	addHover(document, position, fileName) {
+		//const fileName	= document.fileName;
+		//const workDir	= path.dirname(fileName);
+		const line      = document.lineAt(position);
+		const word		= document.getText(document.getWordRangeAtPosition(position));
+
+		let showText = "";
+
+		//此处导入json文件要写到函数外面
+		if(JSON.stringify(this.objJson) == "{}") {  //如果omiu标签属性库为空，则从文件读取导入
+			let data = fs.readFileSync(__dirname+'/hoverjson/'+fileName, 'utf8');  //同步获取json文件内容
+			this.objJson = JSON.parse(data);  //字符串转json对象
+		}
+		
+		for(let i in this.objJson) {
+			if(this.objJson[i]["matchingMethod"] == "line") {  //整行匹配
+				if(this.objJson[i]["ignoreAZ"]) {  //忽略大小写匹配
+					if(alg.strInFindLP(line.text, this.objJson[i]["keyword"])) {
+						showText += this.objJson[i]["markdownText"]+"\n\n";
+					}
+				} else {  //不忽略大小写
+					if(line.text.indexOf(this.objJson[i]["keyword"]) != -1) {
+						showText += this.objJson[i]["markdownText"]+"\n\n";
+					}
+				}
+			} else if(this.objJson[i]["matchingMethod"] == "continuous") {  //光标所在连续字符串匹配(不包含空格等)
+				if(this.objJson[i]["ignoreAZ"]) {
+					if(alg.strInFindLP(word.text, this.objJson[i]["keyword"])) {
+						showText += this.objJson[i]["markdownText"]+"\n\n";
+					}
+				} else {
+					if(word.text.indexOf(this.objJson[i]["keyword"]) != -1) {
+						showText += this.objJson[i]["markdownText"]+"\n\n";
+					}
+				}
+			} else {
+				vscode.window.showInformationMessage(`Unknown match mode!`);
+			}
+		}
+		return showText;
 	}
 
 }

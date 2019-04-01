@@ -1,3 +1,14 @@
 {
-    
+    "zain": {
+        "keyword": "zain",
+        "matchingMethod": "line",
+        "ignoreAZ": true,
+        "markdownText": "zainzainzain"
+    },
+    "jane": {
+        "keyword": "jane",
+        "matchingMethod": "continuous",
+        "ignoreAZ": false,
+        "markdownText": "janejanejane"
+    }
 }
