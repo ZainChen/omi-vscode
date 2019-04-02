@@ -1,10 +1,10 @@
 # Omi Visual Studio Code extension Change Log
-<!-- 
-## Version *(dev)
+
+## Version 2.0.9 April 2, 2019
 
 ### New Features
 
-- Add omiu mouse hover prompt, prompt message in markdown format
+- Add the omiu mouse hover prompt, the prompt content is in markdown format. Support user-defined add prompt information.
 
 ### Modify
 
@@ -14,7 +14,12 @@
 
 - null
 
---- -->
+### Problem
+
+- Menu icon need to be remade svg image.
+- omiu component need to add a new attribute completion button, the attribute completion trigger needs to be perfected.
+
+---
 
 ## Version 2.0.8 March 25, 2019
 

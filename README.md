@@ -1,7 +1,7 @@
 # Omi Visual Studio Code extension
-[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v2.0.8-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
-[![Downloads](https://img.shields.io/badge/Downloads-1.3K%2B-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
-[![UpdateTime](https://img.shields.io/badge/UpdateTime-2019%2F03%2F25%2020%3A21%3A21-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
+[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v2.0.9-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
+[![Downloads](https://img.shields.io/badge/Downloads-1.7K%2B-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
+[![UpdateTime](https://img.shields.io/badge/UpdateTime-2019%2F04%2F02%2016%3A24%3A24-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
 
 This extension adds omi support for Visual Studio Code.
 
@@ -9,6 +9,7 @@ This extension adds omi support for Visual Studio Code.
 - Omi ecosystem `[All branches and versions]`
 - Omiu component tag and attribute completion `[completion prompt for markdown format]`
 - Omi, Omiu snippets `[All omiu component snippets. Multiple overlays, press TAB to jump to the transition position]`
+- Omi, Omiu mouse hover prompt, the prompt content is in markdown format `[Support user-defined add prompt information]`
 - GitHub switch `[GitHub tree view to switch url]`
 - GitHub file view `[open github file]`
 - Gitgub file download function. `[Any files and folders]`
@@ -23,6 +24,9 @@ This extension adds omi support for Visual Studio Code.
 
 # Function snippets
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun3.gif" alt="omi"/></p>
+
+# Hover
+<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun9.gif" alt="omi"/></p>
 
 # GitHub switch
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun4.gif" alt="omi"/></p>

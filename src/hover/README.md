@@ -46,7 +46,7 @@ omi-vscode/tree/master/src/hover
     "hovers": {  //有所提示信息
         "o-button": {  //一个提示信息配置
             "keyword": "o-button",  //提示信息匹配的关键字
-            "matchingMethod": "line",  //匹配模式(line整行匹配；continuous不含空格或其它特殊字符的连续字符串匹配)
+            "matchingMethod": "line",  //匹配模式(line光标所在整行匹配；continuous光标所在不含空格的连续字符串匹配)
             "ignoreAZ": false,  //是否忽略大小写(true忽略，false不忽略)
             "markdownText": "markdown text"  //提示文本，支持Markdown
         },

@@ -64,10 +64,12 @@ class omiHover {
 	 * @param {*} position 可获取光标所在位置相关信息
 	 */
 	addHover(document, position) {
-		//const fileName	= document.fileName;
+		//const fileName = document.fileName;
 		//const workDir	= path.dirname(fileName);
-		const line      = document.lineAt(position).text;
-		const word		= document.getText(document.getWordRangeAtPosition(position));
+		//const word = document.getText(document.getWordRangeAtPosition(position));
+		const line = document.lineAt(position).text;
+		const word = this.posDelSpaces(line, position);  //获取光标所在无空格的单词
+		
 		let showText = "";
 		for(let k in this.jsonData) {
 			for(let i in this.jsonData[k]["hovers"]) {
@@ -97,6 +99,27 @@ class omiHover {
 			}
 		}
 		return showText;
+	}
+
+	/**
+	 * 获取光标所在无空格的单词
+	 * @param {*} line 光标所在的整行文本串
+	 * @param {*} position 光标位置
+	 */
+	posDelSpaces(line, position) {
+		let word = "";
+		let il = position.character;
+		let ir = position.character;
+		while(il >= 0 && line[il] != ' ') {
+			il--;
+		}
+		while(ir < line.length && line[ir] != ' ') {
+			ir++;
+		}
+		for(let i = il+1; i < ir; i++) {
+			word += line[i];
+		}
+		return word;
 	}
 
 }
