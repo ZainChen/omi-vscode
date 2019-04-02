@@ -43,7 +43,7 @@ omi-vscode/tree/master/src/hover
 ```json
 {
     "fileTypes": [ ".*", ".js", "zain.js" ],  //支持鼠标提示的文件类型，'.*'为任意类型，'.js'为指定后缀名，'zain.js'为指定文件
-    "hovers": {  //有所提示信息
+    "hovers": {  //所有提示信息
         "o-button": {  //一个提示信息配置
             "keyword": "o-button",  //提示信息匹配的关键字
             "matchingMethod": "line",  //匹配模式(line光标所在整行匹配；continuous光标所在不含空格的连续字符串匹配)
