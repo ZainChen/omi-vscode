@@ -38,7 +38,7 @@ class omiHover {
 		const hoverfileName	= document.fileName;
 		const fileNames = alg.getfilePathName(__dirname+"/hoverjson");
 		for(let i = 0; i < fileNames.length; i++) {
-			if(typeof(this.jsonData[fileNames[i]]) == "undefined") {
+			//if(typeof(this.jsonData[fileNames[i]]) == "undefined") {  //支持配置文件动态加载需注释(效率比静态加载低)，用于实现用户自定义配置功能
 				let data = JSON.parse(fs.readFileSync(__dirname+'/hoverjson/'+fileNames[i], 'utf8'));
 				let k = false;
 				for(let j = 0; j < data["fileTypes"].length; j++) {
@@ -54,7 +54,7 @@ class omiHover {
 				if(k) {
 					this.jsonData[fileNames[i]] = data;
 				}
-			}
+			//}
 		}
 	}
 

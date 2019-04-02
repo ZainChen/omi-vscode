@@ -38,7 +38,7 @@ function activate(context) {
 		vscode.languages.registerCompletionItemProvider(['html', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact'], omiCompletion, ' '),  //代码提示功能注册
 		
 		//鼠标悬停提示功能
-		vscode.languages.registerHoverProvider(['json', 'javascript', 'tex'], omiHover),  //鼠标悬停提示功能注册
+		vscode.languages.registerHoverProvider(['html', 'json', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'tex', 'c', 'cpp', 'css', 'markdown', 'php', 'python', 'jsonc', 'objective-c', 'xml', 'sql', 'java', 'swift', 'go', 'csharp'], omiHover),  //鼠标悬停提示功能注册
 	
 		//跳转功能
 		vscode.languages.registerDefinitionProvider(['html', 'json', 'javascript'], {provideDefinition}),  //跳转功能注册
