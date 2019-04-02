@@ -1,6 +1,6 @@
 # omi鼠标悬停提示功能
 
-支持的语言：`html`, `json`, `javascript`, `javascriptreact`, `typescript`, `typescriptreact`, `tex`, `c`, `cpp`, `css`, `markdown`, `php`, `python`, `jsonc`, `objective-c`, `xml`, `sql`, `java`, `swift`, `go`, `csharp`
+支持语言：`html`, `json`, `javascript`, `javascriptreact`, `typescript`, `typescriptreact`, `tex`, `c`, `cpp`, `css`, `markdown`, `php`, `python`, `jsonc`, `objective-c`, `xml`, `sql`, `java`, `swift`, `go`, `csharp`
 
 ## 1.结构
 
@@ -46,8 +46,8 @@ omi-vscode/tree/master/src/hover
     "hovers": {  //有所提示信息
         "o-button": {  //一个提示信息配置
             "keyword": "o-button",  //提示信息匹配的关键字
-            "matchingMethod": "line",  //匹配模式(line 整行匹配；continuous 不含空格或其它特殊字符的连续字符串匹配)
-            "ignoreAZ": false,  //是否忽略大小写(true 忽略，false 不忽略)
+            "matchingMethod": "line",  //匹配模式(line整行匹配；continuous不含空格或其它特殊字符的连续字符串匹配)
+            "ignoreAZ": false,  //是否忽略大小写(true忽略，false不忽略)
             "markdownText": "markdown text"  //提示文本，支持Markdown
         },
         "o-icon": {
