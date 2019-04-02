@@ -88,39 +88,7 @@ function hoverVomiPackage(document, position, token) {
 
 	return { contents: [showText] };
 
-	// if(line.text.indexOf("\"name\"") != -1) {
-	// 	//return new vscode.Hover(`扩展包名称：\`vsce package\`命令打包后的文件名`);
-	// 	let show = {
-	// 		contents: [`扩展包名称：\`vsce package\`命令打包后的文件名。`]
-	// 	}
-	// 	return show;
-	// }
-	// if(line.text.indexOf("\"displayName\"") != -1) {
-	// 	return new vscode.Hover(`VS Code库中使用的扩展名称。`);
-	// }
-
-
-
-
-
-	// //当鼠标停在package.json的dependencies或者devDependencies时，自动显示对应包的名称、版本号和许可协议。
-	// if (/package\.json$/.test(fileName)) {
-	// 	//console.log('provideHover');
-	// 	const json = document.getText();
-	// 	if (new RegExp(`"(dependencies|devDependencies)":\\s*?\\{[\\s\\S]*?${word.replace(/\//g, '\\/')}[\\s\\S]*?\\}`, 'gm').test(json)) {
-	// 		let destPath = `${workDir}/node_modules/${word.replace(/"/g, '')}/package.json`;
-	// 		if (fs.existsSync(destPath)) {
-	// 			const content = require(destPath);
-	// 			//console.log('hover');
-	// 			// hover内容支持markdown语法
-	// 			//return new vscode.Hover(`\`\`\`志银\`\`\`\n * **名称**：${content.name}\n * **版本**：${content.version}\n * **许可协议**：${content.license}`);
-	// 			let sss = ` * **名称**：${content.name}\n * **版本**：${content.version}\n * **许可协议**：${content.license}`;
-	// 			return {
-	// 				contents: [sss]
-	// 			};
-	// 		}
-	// 	}
-	// }
+	
 
 
 }
