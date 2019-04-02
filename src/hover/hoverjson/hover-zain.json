@@ -1,0 +1,29 @@
+{
+    "fileTypes": [ ".*" ],
+    "hovers": {
+        "zain": {
+            "keyword": "zain",
+            "matchingMethod": "line",
+            "ignoreAZ": true,
+            "markdownText": "* \"zain\"：帅气程序猿^_^，中文名\"志银\"，个人网站-[https://zainzy.com/](https://zainzy.com/ \"志银\")，GitHub-[https://github.com/ZainChen](https://github.com/ZainChen \"志银GitHub\")"
+        },
+        "ZainChen": {
+            "keyword": "ZainChen",
+            "matchingMethod": "continuous",
+            "ignoreAZ": true,
+            "markdownText": "* \"ZainChen\"：帅气程序猿^_^，中文名\"志银\"，个人网站-[https://zainzy.com/](https://zainzy.com/ \"志银\")，GitHub-[https://github.com/ZainChen](https://github.com/ZainChen \"志银GitHub\")"
+        },
+        "志银": {
+            "keyword": "志银",
+            "matchingMethod": "continuous",
+            "ignoreAZ": true,
+            "markdownText": "* \"志银\"：帅气程序猿^_^，中文名\"志银\"，个人网站-[https://zainzy.com/](https://zainzy.com/ \"志银\")，GitHub-[https://github.com/ZainChen](https://github.com/ZainChen \"志银GitHub\")"
+        },
+        "https://github.com/ZainChen/omi-vscode": {
+            "keyword": "https://github.com/ZainChen/omi-vscode",
+            "matchingMethod": "continuous",
+            "ignoreAZ": true,
+            "markdownText": "* \"[https://github.com/ZainChen/omi-vscode](https://github.com/ZainChen/omi-vscode \"omi-vscode\")\"：omi-vscode源码网址"
+        }
+    }
+}

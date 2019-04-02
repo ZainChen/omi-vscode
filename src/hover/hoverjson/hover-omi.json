@@ -1,14 +1,11 @@
 {
-    "omi": {
-        "keyword": "omi",
-        "matchingMethod": "line",
-        "ignoreAZ": true,
-        "markdownText": "\n\n* [值] \"omi\"：开发者-[dntzhang](https://github.com/dntzhang \"张磊的GitHub\")，项目储存库-[https://github.com/Tencent/omi](https://github.com/Tencent/omi \"omi GitHub\")，下一代 Web 框架，去万物糟粕，合精华为一点点 JS。"
-    },
-    "zain": {
-        "keyword": "zain",
-        "matchingMethod": "continuous",
-        "ignoreAZ": false,
-        "markdownText": "\n\n* [值] \"zain\"：帅气程序猿^_^，中文名\"志银\"，个人网站-[https://zainzy.com/](https://zainzy.com/ \"志银\")，GitHub-[https://github.com/ZainChen](https://github.com/ZainChen \"志银GitHub\")"
-    }
+    "fileTypes": [ ".*" ],
+    "hovers": {
+		"omi": {
+            "keyword": "omi",
+            "matchingMethod": "line",
+            "ignoreAZ": true,
+            "markdownText": "\n\n* [值] \"omi\"：开发者-[dntzhang](https://github.com/dntzhang \"张磊的GitHub\")，项目储存库-[https://github.com/Tencent/omi](https://github.com/Tencent/omi \"omi GitHub\")，下一代 Web 框架，去万物糟粕，合精华为一点点 JS。"
+        }
+	}
 }

@@ -1,0 +1,95 @@
+{
+    "fileTypes": [ "package.json" ],
+    "hovers": {
+        "\"name\"": {
+            "keyword": "\"name\"",
+            "matchingMethod": "line",
+            "ignoreAZ": false,
+            "markdownText": "* [键] \"name\"：扩展包名称，vsce package 命令打包后的文件名。"
+        },
+        "\"displayName\"": {
+            "keyword": "\"displayName\"",
+            "matchingMethod": "continuous",
+            "ignoreAZ": false,
+            "markdownText": "* [键] \"displayName\"：扩展发布显示名称。"
+        },
+        "\"description\"": {
+            "keyword": "\"description\"",
+            "matchingMethod": "continuous",
+            "ignoreAZ": false,
+            "markdownText": "* [键] \"description\"：描述内容，可以帮助人们发现您的包，因为它被列在“npm搜索引擎”中。"
+        },
+        "\"version\"": {
+            "keyword": "\"version\"",
+            "matchingMethod": "continuous",
+            "ignoreAZ": false,
+            "markdownText": "* [键] \"version\"：扩展包版本号，版本必须能够被node-semver解析，它作为依赖项与npm绑定在一起。"
+        },
+        "\"publisher\"": {
+            "keyword": "\"publisher\"",
+            "matchingMethod": "continuous",
+            "ignoreAZ": false,
+            "markdownText": "* [键] \"publisher\"：VS Code 扩展发布者。"
+        },
+        "\"icon\"": {
+            "keyword": "\"icon\"",
+            "matchingMethod": "continuous",
+            "ignoreAZ": false,
+            "markdownText": "* [键] \"icon\"：扩展logo，网上浏览，128 x 128 像素图标。"
+        },
+        "\"homepage\"": {
+            "keyword": "\"homepage\"",
+            "matchingMethod": "continuous",
+            "ignoreAZ": false,
+            "markdownText": "* [键] \"homepage\"：项目主页(必须为网址url)，*.md(Markdown)文件。"
+        },
+        "\"repository\"": {
+            "keyword": "\"repository\"",
+            "matchingMethod": "continuous",
+            "ignoreAZ": false,
+            "markdownText": "* [键] \"repository\"：代码储存库，指定源码所在的位置，这对那些想要做出贡献的人是有帮助的。"
+        },
+        "\"type\"": {
+            "keyword": "\"type\"",
+            "matchingMethod": "continuous",
+            "ignoreAZ": false,
+            "markdownText": "* [键] \"type\"：类型。"
+        },
+        "\"url\"": {
+            "keyword": "\"url\"",
+            "matchingMethod": "continuous",
+            "ignoreAZ": false,
+            "markdownText": "* [键] \"url\"：网址。"
+        },
+        "\"keywords\"": {
+            "keyword": "\"keywords\"",
+            "matchingMethod": "continuous",
+            "ignoreAZ": false,
+            "markdownText": "* [键] \"keywords\"：扩展包的关键字，有助于人们发现你的包，它是列在“npm搜索引擎”中。"
+        },
+        "\"engines\"": {
+            "keyword": "\"engines\"",
+            "matchingMethod": "continuous",
+            "ignoreAZ": false,
+            "markdownText": "* [键] \"engines\"：引擎兼容性，插件需要vscode版本的最低限制。"
+        },
+        "\"vscode\"": {
+            "keyword": "\"vscode\"",
+            "matchingMethod": "continuous",
+            "ignoreAZ": false,
+            "markdownText": "* [键] \"vscode\"：对于 VS Code 扩展，指定与其兼容的 VS Code 版本。不能为 *。 例如: ^0.10.5 表示最低兼容 VS Code 版本 0.10.5。"
+        },
+        "\"categories\"": {
+            "keyword": "\"categories\"",
+            "matchingMethod": "continuous",
+            "ignoreAZ": false,
+            "markdownText": "* [键] \"categories\"：VS Code 库用于对扩展进行分类的类别。"
+        },
+        "\"activationEvents\"": {
+            "keyword": "\"activationEvents\"",
+            "matchingMethod": "continuous",
+            "ignoreAZ": false,
+            "markdownText": "* [键] \"activationEvents\"：VS Code 扩展的激活事件。"
+        }
+    }
+}

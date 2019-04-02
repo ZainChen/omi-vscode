@@ -35,16 +35,26 @@ class omiHover {
 	 * 初始化鼠标悬停json数据
 	 */
 	initData(document) {
-		const fileName	= document.fileName;
-		console.log(this.jsonData["hover-omi"]);
-		//javascript文件(示例：指定文件类型提示)
-		if(alg.strTailMatch(fileName, ".json", 2) && typeof(this.jsonData["hover-omi"]) == "undefined") {
-			let data = fs.readFileSync(__dirname+'/hoverjson/hover-omi.json', 'utf8');
-			this.jsonData["hover-omi"] = JSON.parse(data);
-		}
-		if(typeof(this.jsonData["hover-omiu"]) == "undefined") {  //如果omiu标签属性库为空，则从文件读取导入(JSON.stringify(this.jsonData) == "{}")
-			let data = fs.readFileSync(__dirname+'/hoverjson/hover-omiu.json', 'utf8');  //同步获取json文件内容
-			this.jsonData["hover-omiu"] = JSON.parse(data);  //字符串转json对象
+		const hoverfileName	= document.fileName;
+		const fileNames = alg.getfilePathName(__dirname+"/hoverjson");
+		for(let i = 0; i < fileNames.length; i++) {
+			if(typeof(this.jsonData[fileNames[i]]) == "undefined") {
+				let data = JSON.parse(fs.readFileSync(__dirname+'/hoverjson/'+fileNames[i], 'utf8'));
+				let k = false;
+				for(let j = 0; j < data["fileTypes"].length; j++) {
+					if(data["fileTypes"][j] == ".*") {
+						k = true;
+						break;
+					}
+					if(alg.strTailMatch(hoverfileName, data["fileTypes"][j], 2)) {
+						k = true;
+						break;
+					}
+				}
+				if(k) {
+					this.jsonData[fileNames[i]] = data;
+				}
+			}
 		}
 	}
 
@@ -60,25 +70,25 @@ class omiHover {
 		const word		= document.getText(document.getWordRangeAtPosition(position));
 		let showText = "";
 		for(let k in this.jsonData) {
-			for(let i in this.jsonData[k]) {
-				if(this.jsonData[k][i]["matchingMethod"] == "line") {  //整行匹配
-					if(this.jsonData[k][i]["ignoreAZ"]) {  //忽略大小写匹配
-						if(alg.strInFindLP(line, this.jsonData[k][i]["keyword"])) {
-							showText += this.jsonData[k][i]["markdownText"]+"\n\n";
+			for(let i in this.jsonData[k]["hovers"]) {
+				if(this.jsonData[k]["hovers"][i]["matchingMethod"] == "line") {  //整行匹配
+					if(this.jsonData[k]["hovers"][i]["ignoreAZ"]) {  //忽略大小写匹配
+						if(alg.strInFindLP(line, this.jsonData[k]["hovers"][i]["keyword"])) {
+							showText += this.jsonData[k]["hovers"][i]["markdownText"]+"\n\n";
 						}
 					} else {  //不忽略大小写
-						if(line.indexOf(this.jsonData[k][i]["keyword"]) != -1) {
-							showText += this.jsonData[k][i]["markdownText"]+"\n\n";
+						if(line.indexOf(this.jsonData[k]["hovers"][i]["keyword"]) != -1) {
+							showText += this.jsonData[k]["hovers"][i]["markdownText"]+"\n\n";
 						}
 					}
-				} else if(this.jsonData[k][i]["matchingMethod"] == "continuous") {  //光标所在连续字符串匹配(不包含空格等)
-					if(this.jsonData[k][i]["ignoreAZ"]) {
-						if(alg.strInFindLP(word, this.jsonData[k][i]["keyword"])) {
-							showText += this.jsonData[k][i]["markdownText"]+"\n\n";
+				} else if(this.jsonData[k]["hovers"][i]["matchingMethod"] == "continuous") {  //光标所在连续字符串匹配(不包含空格等)
+					if(this.jsonData[k]["hovers"][i]["ignoreAZ"]) {
+						if(alg.strInFindLP(word, this.jsonData[k]["hovers"][i]["keyword"])) {
+							showText += this.jsonData[k]["hovers"][i]["markdownText"]+"\n\n";
 						}
 					} else {
-						if(word.indexOf(this.jsonData[k][i]["keyword"]) != -1) {
-							showText += this.jsonData[k][i]["markdownText"]+"\n\n";
+						if(word.indexOf(this.jsonData[k]["hovers"][i]["keyword"]) != -1) {
+							showText += this.jsonData[k]["hovers"][i]["markdownText"]+"\n\n";
 						}
 					}
 				} else {
