@@ -48,7 +48,7 @@ This extension adds omi support for Visual Studio Code.
 https://github.com/Tencent/omi
 
 <p align="right">Omi <strong>v6.0.3</strong></p>
-<p align="right">Omio <strong>v2.0.8</strong></p>
+<p align="right">Omio <strong>v2.1.0</strong></p>
 <p align="center"><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omi-logo2019.png" alt="omi" width="300"/></p>
 <h2 align="center">Omi - Next front end framework using web components with omio(IE8+) and omip(小程序) fallback in tiny js.</h2>
 <p align="center"><b>基于 Web Components 并支持 IE8+(omio) 和 小程序(omip)</b></p>
