@@ -40,7 +40,7 @@ omi-vscode/tree/master/src/hover
 
 配置文件结构说明：
 
-```json
+```js
 {
     "fileTypes": [ ".*", ".js", "zain.js" ],  //支持鼠标提示的文件类型，'.*'为任意类型，'.js'为指定后缀名，'zain.js'为指定文件
     "hovers": {  //所有提示信息
