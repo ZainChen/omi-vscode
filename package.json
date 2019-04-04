@@ -112,6 +112,7 @@
 		"Other"
 	],
 	"activationEvents": [
+		"onView:omi.view.template",
 		"onView:omi.view.github",
 		"onCommand:omi.cmd.ghOmi",
 		"onCommand:omi.cmd.ghGithubSwitch",
@@ -313,6 +314,10 @@
 		},
 		"views": {
 			"omi-views": [
+				{
+					"id": "omi.view.template",
+					"name": "template"
+				},
 				{
 					"id": "omi.view.github",
 					"name": "github"
