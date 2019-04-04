@@ -424,7 +424,6 @@
 		"@types/mocha": "^2.2.42"
 	},
 	"dependencies": {
-		"jsonc-parser": "^0.4.2",
 		"mkdirp": "^0.5.1",
 		"rimraf": "^2.6.2",
 		"cheerio": "^1.0.0-rc.2",

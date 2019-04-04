@@ -8,7 +8,7 @@ const alg = require("../algorithm/index");  //算法模块
 /**
  * omi鼠标悬停对象
  */
-class omiHover {
+class OmiHover {
 	constructor() {
 		this.jsonData = new Object();
 	}
@@ -123,7 +123,7 @@ class omiHover {
 	}
 
 }
-exports.omiHover = omiHover;
+exports.OmiHover = OmiHover;
 
 
 //方法示例

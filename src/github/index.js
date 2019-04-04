@@ -1,7 +1,6 @@
 const vscode = require('vscode');  //导入模块并在下面的代码中使用别名vscode引用它(模块“vscode”包含VS代码可扩展性API)
 const path = require('path');
 const fs = require('fs');
-const json = require("jsonc-parser");
 const { execFile } = require('child_process');
 const request = require('request');
 const rp = require('request-promise');  //同步获取网页模块
@@ -16,7 +15,7 @@ const ourl = require('./open-url');  //webview打开网页功能
 /**
  * omi生态功能实现类
  */
-class omiGitHub {
+class OmiGitHub {
     /**
      * omiGitHub 类的构造函数
      */
@@ -649,7 +648,7 @@ class omiGitHub {
         return true;
     }
 }
-exports.omiGitHub = omiGitHub;
+exports.OmiGitHub = OmiGitHub;
 
 
 

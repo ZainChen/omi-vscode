@@ -2,7 +2,7 @@ const vscode = require('vscode');  //导入模块并在下面的代码中使用�
 const path = require('path');
 const fs = require('fs');
 
-//omi项目模板更新、下载、项目创建(创建项目包含在线(在线分为npm拉取和github拉取)和离线两种方式)
+const tp = require("./template/index")  //omi项目模板更新、下载、项目创建(创建项目包含在线(在线分为npm拉取和github拉取)和离线两种方式)
 const gh = require("./github/index");  //github菜单树，实时浏览，下载任意文件和子文件夹，切换任意github项目
 const cpln = require("./completion/index");  //自动补全功能模块
 const hover = require("./hover/index");  //鼠标悬停提示功能模块
@@ -16,9 +16,9 @@ const jump = require("./jump/index");  //跳转功能模块
  * @param {vscode.ExtensionContext} context 扩展内容
  */
 function activate(context) {
-	const omiGithub = new gh.omiGitHub(context);  //omi生态更新、下载、项目创建(创建项目包含在线和离线两种方式)
+	const omiGithub = new gh.OmiGitHub(context);  //omi生态更新、下载、项目创建(创建项目包含在线和离线两种方式)
 	const omiCompletion = new cpln.OmiCompletion();  //自动补全功能
-	const omiHover = new hover.omiHover();  //鼠标悬停提示功能
+	const omiHover = new hover.OmiHover();  //鼠标悬停提示功能
 	const provideDefinition = jump.provideDefinition;  //跳转功能
 
 	context.subscriptions.push(
