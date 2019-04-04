@@ -16,9 +16,9 @@ const ourl = require('./open-url');  //webview打开网页功能
 /**
  * omi生态功能实现类
  */
-class omiEcoProvider {
+class omiGitHub {
     /**
-     * omiEcoProvider 类的构造函数
+     * omiGitHub 类的构造函数
      */
     constructor(context) {
         this.context = context;  //暂时没用到
@@ -122,7 +122,7 @@ class omiEcoProvider {
                 return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.Collapsed, fileType);
             } else if(fileType == 'file') {
                 return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.None, fileType, {
-                    command: 'omi.cmd.ecoOpenGithubFile',
+                    command: 'omi.cmd.ghOpenGithubFile',
                     title: '',
                     arguments: [filePathlink]
                 });
@@ -168,7 +168,7 @@ class omiEcoProvider {
                 return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.Collapsed, fileType);
             } else if(fileType == 'file') {
                 return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.None, fileType, {
-                    command: 'omi.cmd.ecoOpenGithubFile',
+                    command: 'omi.cmd.ghOpenGithubFile',
                     title: '',
                     arguments: [filePathlink]
                 });
@@ -301,7 +301,7 @@ class omiEcoProvider {
     /** 
      * 将omi生态切换到Tencent/omi
     */
-    commandOmiHello() {
+    commandShowOmi() {
         //vscode.window.showInformationMessage('Hi Omi.');
         this.urlGitHubUser = 'Tencent';
         this.urlGitHubRepositories = 'omi';
@@ -649,7 +649,7 @@ class omiEcoProvider {
         return true;
     }
 }
-exports.omiEcoProvider = omiEcoProvider;
+exports.omiGitHub = omiGitHub;
 
 
 
@@ -680,8 +680,8 @@ function _structGithubDataOne() {
 
 
 
-function ecoZain() {
+function ghZain() {
 	vscode.window.showInformationMessage('No dependency in empty workspace');
 }
-exports.ecoZain = ecoZain;
+exports.ghZain = ghZain;
 

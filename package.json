@@ -112,15 +112,15 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onView:omi.view.ecosystem",
-		"onCommand:omi.cmd.ecoHello",
-		"onCommand:omi.cmd.ecoGithubSwitch",
-		"onCommand:omi.cmd.ecoRefresh",
-		"onCommand:omi.cmd.ecoRefreshNode",
-		"onCommand:omi.cmd.ecoOpenGithub",
-		"onCommand:omi.cmd.ecoOpenGithubFile",
-		"onCommand:omi.cmd.ecoClearCache",
-		"onCommand:omi.cmd.ecoGithubFileDownload",
+		"onView:omi.view.github",
+		"onCommand:omi.cmd.ghOmi",
+		"onCommand:omi.cmd.ghGithubSwitch",
+		"onCommand:omi.cmd.ghRefresh",
+		"onCommand:omi.cmd.ghRefreshNode",
+		"onCommand:omi.cmd.ghOpenGithub",
+		"onCommand:omi.cmd.ghOpenGithubFile",
+		"onCommand:omi.cmd.ghClearCache",
+		"onCommand:omi.cmd.ghGithubFileDownload",
 		"onLanguage:c",
 		"onLanguage:cpp",
 		"onLanguage:css",
@@ -147,7 +147,7 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "omi.cmd.ecoHello",
+				"command": "omi.cmd.ghOmi",
 				"title": "Github switches to omi",
 				"icon": {
 					"light": "./assets/light/omi.svg",
@@ -155,7 +155,7 @@
 				}
 			},
 			{
-				"command": "omi.cmd.ecoGithubSwitch",
+				"command": "omi.cmd.ghGithubSwitch",
 				"title": "omi Github Switch",
 				"icon": {
 					"light": "./assets/light/github.svg",
@@ -163,23 +163,23 @@
 				}
 			},
 			{
-				"command": "omi.cmd.ecoRefresh",
-				"title": "omi refresh ecosystem",
+				"command": "omi.cmd.ghRefresh",
+				"title": "omi refresh github",
 				"icon": {
 					"light": "./assets/light/refresh.svg",
 					"dark": "./assets/dark/refresh.svg"
 				}
 			},
 			{
-				"command": "omi.cmd.ecoRefreshNode",
-				"title": "omi refresh node ecosystem",
+				"command": "omi.cmd.ghRefreshNode",
+				"title": "omi refresh node github",
 				"icon": {
 					"light": "./assets/light/refresh.svg",
 					"dark": "./assets/dark/refresh.svg"
 				}
 			},
 			{
-				"command": "omi.cmd.ecoOpenGithub",
+				"command": "omi.cmd.ghOpenGithub",
 				"title": "open github",
 				"icon": {
 					"light": "./assets/light/github-web.svg",
@@ -187,7 +187,7 @@
 				}
 			},
 			{
-				"command": "omi.cmd.ecoGithubFileDownload",
+				"command": "omi.cmd.ghGithubFileDownload",
 				"title": "github file download",
 				"icon": {
 					"light": "./assets/light/download.svg",
@@ -195,7 +195,7 @@
 				}
 			},
 			{
-				"command": "omi.cmd.ecoClearCache",
+				"command": "omi.cmd.ghClearCache",
 				"title": "clear cache",
 				"icon": {
 					"light": "./assets/add1.svg",
@@ -314,15 +314,15 @@
 		"views": {
 			"omi-views": [
 				{
-					"id": "omi.view.ecosystem",
-					"name": "ecosystem"
+					"id": "omi.view.github",
+					"name": "github"
 				}
 			]
 		},
 		"menus": {
 			"editor/context": [
 				{
-					"command": "omi.cmd.ecoHello",
+					"command": "omi.cmd.ghOmi",
 					"when": "editorFocus",
 					"group": "navigation"
 				},
@@ -335,7 +335,7 @@
 			],
 			"editor/title": [
 				{
-					"command": "omi.cmd.ecoHello",
+					"command": "omi.cmd.ghOmi",
 					"group": "navigation"
 				},
 				{
@@ -347,46 +347,46 @@
 			],
 			"view/title": [
 				{
-					"command": "omi.cmd.ecoGithubSwitch",
-					"when": "view == omi.view.ecosystem",
+					"command": "omi.cmd.ghGithubSwitch",
+					"when": "view == omi.view.github",
 					"group": "navigation@2"
 				},
 				{
-					"command": "omi.cmd.ecoRefresh",
-					"when": "view == omi.view.ecosystem",
+					"command": "omi.cmd.ghRefresh",
+					"when": "view == omi.view.github",
 					"group": "navigation@3"
 				},
 				{
-					"command": "omi.cmd.ecoHello",
-					"when": "view == omi.view.ecosystem",
+					"command": "omi.cmd.ghOmi",
+					"when": "view == omi.view.github",
 					"group": "navigation@1"
 				},
 				{
-					"command": "omi.cmd.ecoClearCache",
-					"when": "view == omi.view.ecosystem"
+					"command": "omi.cmd.ghClearCache",
+					"when": "view == omi.view.github"
 				}
 			],
 			"view/item/context": [
 				{
-					"command": "omi.cmd.ecoGithubFileDownload",
-					"when": "view == omi.view.ecosystem",
+					"command": "omi.cmd.ghGithubFileDownload",
+					"when": "view == omi.view.github",
 					"group": "inline@1"
 				},
 				{
-					"command": "omi.cmd.ecoOpenGithub",
-					"when": "view == omi.view.ecosystem",
+					"command": "omi.cmd.ghOpenGithub",
+					"when": "view == omi.view.github",
 					"group": "inline@2"
 				},
 				{
-					"command": "omi.cmd.ecoRefreshNode",
-					"when": "view == omi.view.ecosystem",
+					"command": "omi.cmd.ghRefreshNode",
+					"when": "view == omi.view.github",
 					"group": "inline@3"
 				}
 			]
 		},
 		"keybindings": [
 			{
-				"command": "omi.cmd.ecoHello",
+				"command": "omi.cmd.ghOmi",
 				"key": "ctrl+f10",
 				"mac": "cmd+f10",
 				"when": "editorTextFocus"
