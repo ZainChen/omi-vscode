@@ -24,13 +24,28 @@ class OmiTemplate {
      * @param element 菜单中单击选中的节点文本
      */
     getChildren(element) {
-        let nodes = new Array();
-        for(let i = 0; i < 10; i++) {
-            let node = new vscode.TreeItem("zain"+i.toString(), vscode.TreeItemCollapsibleState.None);
-            node.description = "jane"+i.toString();
+        if(element) {
+            if(element.label == "omip") {
+                let nodes = new Array();
+                let node = new vscode.TreeItem("npm", vscode.TreeItemCollapsibleState.None);
+                node.description = "创建项目";
+                nodes.push(node);
+                return Promise.resolve(nodes);
+            }
+        } else {
+            let nodes = new Array();
+            let node = new vscode.TreeItem("omip", vscode.TreeItemCollapsibleState.Collapsed);
+            node.description = "Omi 跨端云开发";
             nodes.push(node);
+
+
+            for(let i = 0; i < 10; i++) {
+                node = new vscode.TreeItem("zain"+i.toString(), vscode.TreeItemCollapsibleState.None);
+                node.description = "jane"+i.toString();
+                nodes.push(node);
+            }
+            return Promise.resolve(nodes);
         }
-        return Promise.resolve(nodes);
     }
     
 
