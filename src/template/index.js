@@ -30,8 +30,8 @@ class OmiTemplate {
         if(element) {
             if(element.label == "Base") {
                 let nodes = new Array();
-                let node = new vscode.TreeItem("npm", vscode.TreeItemCollapsibleState.None);
-                node.description = "创建项目";
+                let node = new vscode.TreeItem("omio", vscode.TreeItemCollapsibleState.None);
+                node.description = "兼容老浏览器的 Omi 版本(支持到IE8+和移动端浏览器)。";
                 nodes.push(node);
                 return Promise.resolve(nodes);
             }
