@@ -298,7 +298,7 @@ class OmiGitHub {
     }
 
     /** 
-     * 将omi生态切换到Tencent/omi
+     * 将github切换到Tencent/omi
     */
     commandShowOmi() {
         //vscode.window.showInformationMessage('Hi Omi.');
