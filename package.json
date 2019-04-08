@@ -114,6 +114,7 @@
 	"activationEvents": [
 		"onView:omi.view.template",
 		"onView:omi.view.github",
+		"onCommand:omi.cmd.tpShowProject",
 		"onCommand:omi.cmd.ghOmi",
 		"onCommand:omi.cmd.ghGithubSwitch",
 		"onCommand:omi.cmd.ghRefresh",

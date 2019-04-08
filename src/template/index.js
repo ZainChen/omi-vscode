@@ -1,8 +1,11 @@
 const vscode = require('vscode');
+const path = require('path');
+
+const ourl = require('./open-url');  //webview打开网页功能
 
 class OmiTemplate {
-    constructor() {
-
+    constructor(context) {
+        this.context = context;
     }
 
     /**
@@ -25,7 +28,7 @@ class OmiTemplate {
      */
     getChildren(element) {
         if(element) {
-            if(element.label == "omip") {
+            if(element.label == "Base") {
                 let nodes = new Array();
                 let node = new vscode.TreeItem("npm", vscode.TreeItemCollapsibleState.None);
                 node.description = "创建项目";
@@ -35,19 +38,36 @@ class OmiTemplate {
         } else {
             let nodes = new Array();
             let node = new vscode.TreeItem("Omi", vscode.TreeItemCollapsibleState.None);
-            // node.description = "安装与项目创建总览";
+            node.id = "0";
+            node.description = "project creation overview";
+            node.iconPath = {
+                light: path.join(__filename, '..', '..', '..', 'assets', 'light', 'file.svg'),
+                dark: path.join(__filename, '..', '..', '..', 'assets', 'dark', 'file.svg')
+            }
+            node.command = {
+                command: 'omi.cmd.tpShowProject',
+                title: '',
+                arguments: [this.context.extensionPath+"\\src\\template\\project\\omi\\index.html"]
+            }
             nodes.push(node);
-            node = new vscode.TreeItem("Base", vscode.TreeItemCollapsibleState.Collapsed);
-            // node.description = "基础生态";
+            node = new vscode.TreeItem("Base", vscode.TreeItemCollapsibleState.Expanded);
+            node.id = "1";
+            node.description = "base ecology";
             nodes.push(node);
-            node = new vscode.TreeItem("Mini Program", vscode.TreeItemCollapsibleState.Collapsed);
+            node = new vscode.TreeItem("Mini Program", vscode.TreeItemCollapsibleState.Expanded);
+            node.id = "2";
             // node.description = "小程序生态";
             nodes.push(node);
-            node = new vscode.TreeItem("Other", vscode.TreeItemCollapsibleState.Collapsed);
+            node = new vscode.TreeItem("Other", vscode.TreeItemCollapsibleState.Expanded);
+            node.id = "3";
             // node.description = "其它";
             nodes.push(node);
             return Promise.resolve(nodes);
         }
+    }
+
+    OpenWebview(link) {
+        new ourl("omi", link);
     }
     
 

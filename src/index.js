@@ -14,7 +14,7 @@ const jump = require("./jump/index");  //跳转功能模块
  * @param {vscode.ExtensionContext} context 扩展内容
  */
 function activate(context) {
-	const omiTemplate = new tp.OmiTemplate();  //omi项目模板
+	const omiTemplate = new tp.OmiTemplate(context);  //omi项目模板
 	const omiGithub = new gh.OmiGitHub(context);  //omi生态更新、下载、项目创建(创建项目包含在线和离线两种方式)
 	const omiCompletion = new cpln.OmiCompletion();  //自动补全功能
 	const omiHover = new hover.OmiHover();  //鼠标悬停提示功能
@@ -24,6 +24,7 @@ function activate(context) {
 
 		//omi项目模板更新、下载、项目创建(创建项目包含在线(在线分为npm拉取和github拉取)和离线(离线为直接从omi-vscode扩展中数据拉取)两种方式)
 		vscode.window.createTreeView('omi.view.template', { treeDataProvider: omiTemplate, showCollapseAll: true }),
+		vscode.commands.registerCommand('omi.cmd.tpShowProject', link => omiTemplate.OpenWebview(link)),
 
 		//github菜单树，实时浏览，下载任意文件和子文件夹，切换任意github项目
 		//vscode.window.registerTreeDataProvider('omi.view.github', omiGithub);  //github菜单树注册(无法添加showCollapseAll功能)
