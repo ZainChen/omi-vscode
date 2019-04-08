@@ -34,16 +34,18 @@ class OmiTemplate {
             }
         } else {
             let nodes = new Array();
-            let node = new vscode.TreeItem("omip", vscode.TreeItemCollapsibleState.Collapsed);
-            node.description = "Omi 跨端云开发";
+            let node = new vscode.TreeItem("Omi", vscode.TreeItemCollapsibleState.None);
+            // node.description = "安装与项目创建总览";
             nodes.push(node);
-
-
-            for(let i = 0; i < 10; i++) {
-                node = new vscode.TreeItem("zain"+i.toString(), vscode.TreeItemCollapsibleState.None);
-                node.description = "jane"+i.toString();
-                nodes.push(node);
-            }
+            node = new vscode.TreeItem("Base", vscode.TreeItemCollapsibleState.Collapsed);
+            // node.description = "基础生态";
+            nodes.push(node);
+            node = new vscode.TreeItem("Mini Program", vscode.TreeItemCollapsibleState.Collapsed);
+            // node.description = "小程序生态";
+            nodes.push(node);
+            node = new vscode.TreeItem("Other", vscode.TreeItemCollapsibleState.Collapsed);
+            // node.description = "其它";
+            nodes.push(node);
             return Promise.resolve(nodes);
         }
     }
