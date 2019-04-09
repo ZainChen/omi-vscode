@@ -2,20 +2,18 @@ const vscode = require('vscode');
 const fs = require('fs');
 const path = require('path');
 
-
-
 class OmiWelcome {
     constructor(context) {
         this.context = context;
+        
         //存放所有消息回调函数，根据 message.cmd 来决定调用哪个方法
-
         this.messageHandler = {
-            getConfig(global, message) {
+            getConfig(panel, message) {
                 const result = vscode.workspace.getConfiguration().get(message.key);
-                this.invokeCallback(global.panel, message, result);
+                this.invokeCallback(panel, message, result);
             },
 
-            setConfig(global, message) {
+            setConfig(panel, message) {
                 // 写入配置文件，注意，默认写入工作区配置，而不是用户配置，最后一个true表示写入全局用户配置
                 vscode.workspace.getConfiguration().update(message.key, message.value, true);
                 vscode.window.showInformationMessage('Configuration modification successful!');
@@ -60,7 +58,7 @@ class OmiWelcome {
         panel.webview.html = this.getWebViewContent();
         panel.webview.onDidReceiveMessage(message => {
             if (this.messageHandler[message.cmd]) {
-                this.messageHandler[message.cmd]({ panel}, message);
+                this.messageHandler[message.cmd](panel, message);
             } else {
                 vscode.window.showInformationMessage(`未找到名为 ${message.cmd} 回调方法!`);
             }
