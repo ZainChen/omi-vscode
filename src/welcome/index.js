@@ -18,28 +18,29 @@ class OmiWelcome {
             }
         };
 
-        const key = 'omi.start.welcome';
         // 如果设置里面开启了欢迎页显示，启动欢迎页
-        if (vscode.workspace.getConfiguration().get(key)) {
+        if (vscode.workspace.getConfiguration().get('omi.start.welcome')) {
             vscode.commands.executeCommand('omi.cmd.welcome');
         }
 
     }
 
+    /**
+     * 欢迎界面入口
+     */
     mainWelcome() {
         const panel = vscode.window.createWebviewPanel(
-            'testWelcome', // viewType
-            "Omi welcome", // 视图标题
-            vscode.ViewColumn.One, // 显示在编辑器的哪个部位
+            'omiWelcome', //viewType
+            "Omi welcome", //视图标题
+            vscode.ViewColumn.One, //显示在编辑器的哪个部位
             {
-                enableScripts: true, // 启用JS，默认禁用
+                enableScripts: true, //启用JS，默认禁用
             }
         );
-        let global = { panel};
         panel.webview.html = this.getWebViewContent();
         panel.webview.onDidReceiveMessage(message => {
             if (this.messageHandler[message.cmd]) {
-                this.messageHandler[message.cmd](global, message);
+                this.messageHandler[message.cmd]({ panel}, message);
             } else {
                 vscode.window.showInformationMessage(`未找到名为 ${message.cmd} 回调方法!`);
             }
