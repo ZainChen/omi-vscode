@@ -149,6 +149,10 @@
 	"contributes": {
 		"commands": [
 			{
+				"command": "omi.cmd.welcome",
+				"title": "Displays a custom welcome page"
+			},
+			{
 				"command": "omi.cmd.ghOmi",
 				"title": "Github switches to omi",
 				"icon": {
@@ -203,10 +207,6 @@
 					"light": "./assets/add1.svg",
 					"dark": "./assets/add1.svg"
 				}
-			},
-			{
-				"command": "extension.demo.showWelcome",
-				"title": "Displays a custom welcome page"
 			}
 		],
 		"languages": [
