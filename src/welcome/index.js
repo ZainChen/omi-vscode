@@ -50,7 +50,8 @@ class OmiWelcome {
      * HTML文件读内容并将本地资源链接转换为vscode支持的链接
      */
     getWebViewContent() {
-        const resourcePath = path.join(__dirname, 'web-welcome', "index.html");
+        //const resourcePath = path.join(__dirname, 'omi-welcome', 'build', 'index.html');
+        const resourcePath = path.join(this.context.extensionPath, 'src', 'welcome', 'omi-welcome-bf', 'index.html');
         const dirPath = path.dirname(resourcePath);
         let html = fs.readFileSync(resourcePath, 'utf-8');
         //vscode不支持直接加载本地资源，需要替换成其专有路径格式，将样式、JS、iframe的路径替换
