@@ -35,7 +35,7 @@ class OpenURL {
         </body>
         </html>
           `;
-    //vscode不支持直接加载本地资源，需要替换成其专有路径格式，这里将样式、JS、iframe的路径替换
+    //vscode不支持直接加载本地资源，需要替换成其专有路径格式，将样式、JS、iframe的路径替换
     html = html.replace(/(<link.+?href="|<script.+?src="|<img.+?src="|<iframe.+?src=")(.+?)"/g, (m, $1, $2) => {
       return $1 + vscode.Uri.file(path.resolve(url, $2)).with({ scheme: 'vscode-resource' }).toString() + '"';
     });
