@@ -2,20 +2,40 @@ const vscode = require('vscode');
 const fs = require('fs');
 const path = require('path');
 
+
+
 class OmiWelcome {
     constructor(context) {
         this.context = context;
         //存放所有消息回调函数，根据 message.cmd 来决定调用哪个方法
+
         this.messageHandler = {
             getConfig(global, message) {
                 const result = vscode.workspace.getConfiguration().get(message.key);
                 this.invokeCallback(global.panel, message, result);
             },
+
             setConfig(global, message) {
                 // 写入配置文件，注意，默认写入工作区配置，而不是用户配置，最后一个true表示写入全局用户配置
                 vscode.workspace.getConfiguration().update(message.key, message.value, true);
                 vscode.window.showInformationMessage('Configuration modification successful!');
+            },
+
+            /**
+             * 执行回调函数
+             * @param {*} panel 
+             * @param {*} message 
+             * @param {*} resp 
+             */
+            invokeCallback(panel, message, resp) {
+                console.log('callback message:', resp);
+                // 错误码在400-600之间的，默认弹出错误提示
+                if (typeof resp == 'object' && resp.code && resp.code >= 400 && resp.code < 600) {
+                    vscode.window.showInformationMessage('发生未知错误！');
+                }
+                panel.webview.postMessage({cmd: 'vscodeCallback', cbid: message.cbid, data: resp});
             }
+            
         };
 
         // 如果设置里面开启了欢迎页显示，启动欢迎页
@@ -44,7 +64,10 @@ class OmiWelcome {
             } else {
                 vscode.window.showInformationMessage(`未找到名为 ${message.cmd} 回调方法!`);
             }
-        }, undefined, this.context.subscriptions);
+        },
+        undefined,
+        this.context.subscriptions
+        );
     }
 
     /**
@@ -64,20 +87,7 @@ class OmiWelcome {
         return html;
     }
 
-    /**
-     * 执行回调函数
-     * @param {*} panel 
-     * @param {*} message 
-     * @param {*} resp 
-     */
-    invokeCallback(panel, message, resp) {
-        console.log('callback message:', resp);
-        // 错误码在400-600之间的，默认弹出错误提示
-        if (typeof resp == 'object' && resp.code && resp.code >= 400 && resp.code < 600) {
-            vscode.window.showInformationMessage('发生未知错误！');
-        }
-        panel.webview.postMessage({cmd: 'vscodeCallback', cbid: message.cbid, data: resp});
-    }
+    
 
 }
 exports.OmiWelcome = OmiWelcome;

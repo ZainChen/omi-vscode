@@ -40,7 +40,7 @@ new Vue({
     },
     mounted() {
         this.time = this.getTime();
-        callVscode({cmd: 'getConfig', key: 'vscodePluginDemo.yourName'}, userName => this.userName = userName);
+        callVscode({cmd: 'getConfig', key: 'omi.user.name'}, userName => this.userName = userName);
         callVscode({cmd: 'getConfig', key: 'omi.start.welcome'}, show => this.show = show);
     },
     watch: {
