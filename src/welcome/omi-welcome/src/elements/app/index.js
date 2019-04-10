@@ -10,12 +10,12 @@ const callbacks = {};
 window.addEventListener('message', event => {
   const message = event.data;
   switch (message.cmd) {
-      case 'vscodeCallback':
-          console.log(message.data);
-          (callbacks[message.cbid] || function () { })(message.data);
-          delete callbacks[message.cbid];
-          break;
-      default: break;
+    case 'vscodeCallback':
+      console.log(message.data);
+      (callbacks[message.cbid] || function () { })(message.data);
+      delete callbacks[message.cbid];
+      break;
+    default: break;
   }
 });
 
@@ -31,7 +31,9 @@ define('my-app', class extends WeElement {
   install() {
     this.time = this.getTime()
     this.callVscode({cmd: 'getConfig', key: 'omi.user.name'}, userName => this.userName = userName)
-    this.callVscode({cmd: 'getConfig', key: 'omi.start.welcome'}, show => this.show = show);
+    this.callVscode({cmd: 'getConfig', key: 'omi.start.welcome'}, show => this.show = show)
+    this.userName = "aaaaaaaaaaaa"
+    this.update()
   }
 
   clickHandler = () => {
@@ -41,11 +43,12 @@ define('my-app', class extends WeElement {
 
   clickShow = () => {
     if(this.show) {
-      this.show = false;
+      this.show = false
     } else {
-      this.show = true;
+      this.show = true
     }
-    this.callVscode({cmd: 'setConfig', key: 'omi.start.welcome', value: this.show}, null);
+    this.callVscode({cmd: 'setConfig', key: 'omi.start.welcome', value: this.show}, null)
+    this.update()
   }
 
   getTime() {
