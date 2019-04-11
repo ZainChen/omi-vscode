@@ -1,5 +1,5 @@
 import { define, WeElement } from 'omi'
-// import logo from './logo.svg'  //vscode不支持编译后的js文件中存在本地相对路径，所有资源文件尽量放到html文件中
+// import logo from './logo.svg'  //vscode不支持编译后的js文件中存在本地相对路径，所有资源文件尽量放到html中
 import '../app-intro'
 // import 'omiu/button'
 import 'omiu'
@@ -22,33 +22,32 @@ window.addEventListener('message', event => {
 define('my-app', class extends WeElement {
   css = require('./_index.css')
 
-  name = 'Omi'
-
-  userName = ''
-  time = ''
-  show = true
+  data = {
+    name: 'Omi',
+    userName: '',
+    time: '',
+    show: true
+  }
+  
 
   install() {
-    this.time = this.getTime()
-    this.callVscode({cmd: 'getConfig', key: 'omi.user.name'}, userName => this.userName = userName)
-    this.callVscode({cmd: 'getConfig', key: 'omi.start.welcome'}, show => this.show = show)
-    this.userName = "aaaaaaaaaaaa"
-    this.update()
+    this.data.time = this.getTime()
+    this.callVscode({cmd: 'getConfig', key: 'omi.user.name'}, userName => this.data.userName = userName)
+    this.callVscode({cmd: 'getConfig', key: 'omi.start.welcome'}, show => this.data.show = show)
   }
 
   clickHandler = () => {
-    this.name = 'Omio'
+    this.data.name = 'Omio'
     this.update()
   }
 
-  clickShow = () => {
-    if(this.show) {
-      this.show = false
+  onChangeA = () => {
+    if(this.data.show) {
+      this.data.show = false
     } else {
-      this.show = true
+      this.data.show = true
     }
-    this.callVscode({cmd: 'setConfig', key: 'omi.start.welcome', value: this.show}, null)
-    this.update()
+    this.callVscode({cmd: 'setConfig', key: 'omi.start.welcome', value: this.data.show}, null)
   }
 
   getTime() {
@@ -83,14 +82,16 @@ define('my-app', class extends WeElement {
             class="app-logo"
             alt="logo"
           />
-          <h2 class="app-title">Hi {this.userName}, {this.time}！Welcome to {this.name}！</h2>
+          <h2 class="app-title">Hi {this.data.userName}, {this.data.time}！Welcome to {this.data.name}！</h2>
         </header>
         {/* <app-intro /> */}
         {/* <o-button onClick={this.clickHandler} style='width:200px;'>I am omiu button.</o-button> */}
         <table class="o-switch-dis" border="15">
           <tr>
             <th>Displays a custom welcome page at startup</th>
-            <th><o-switch onChange={this.clickShow} checked={this.show} /></th>
+            <th>
+              <o-switch onChange={this.onChangeA} checked={this.data.show} />
+            </th>
           </tr>
         </table>
       </div>

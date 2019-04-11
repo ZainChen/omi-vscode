@@ -69,8 +69,6 @@ class OmiTemplate {
     OpenWebview(link) {
         new ourl("omi", link);
     }
-    
-
 
 
 }
