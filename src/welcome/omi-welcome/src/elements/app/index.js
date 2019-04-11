@@ -4,6 +4,9 @@ import '../app-intro'
 // import 'omiu/button'
 import 'omiu'
 
+import PubSub from 'pubsub-js'
+
+
 const vscode = acquireVsCodeApi();
 let callbacks = {};
 
@@ -14,6 +17,7 @@ window.addEventListener('message', event => {
       console.log("vscodeCallback==>"+message.data);
       (callbacks[message.cbid] || function () { })(message.data);
       delete callbacks[message.cbid];
+      PubSub.publish('omips', null);
       break;
     default: break;
   }
@@ -34,6 +38,10 @@ define('my-app', class extends WeElement {
     this.data.time = this.getTime()
     this.callVscode({cmd: 'getConfig', key: 'omi.user.name'}, userName => this.data.userName = userName)
     this.callVscode({cmd: 'getConfig', key: 'omi.start.welcome'}, show => this.data.show = show)
+    PubSub.subscribe('omips', function () {  //待探索
+      console.log("aAAAAAAAAAAAA"+this.name);
+      this.update()
+    })
     console.log(this.data.userName)
     console.log(this.data.show)
   }
