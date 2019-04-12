@@ -406,7 +406,7 @@
 					"default": "Welcome to omi.",
 					"description": "Omi for Visual Studio Code"
 				},
-				"omi.start.welcome": {
+				"omi.open.welcome": {
 					"type": "boolean",
 					"default": true,
 					"description": "Whether to display a welcome prompt every time you start!"

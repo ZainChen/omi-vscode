@@ -41,11 +41,11 @@ new Vue({
     mounted() {
         this.time = this.getTime();
         callVscode({cmd: 'getConfig', key: 'omi.user.name'}, userName => this.userName = userName);
-        callVscode({cmd: 'getConfig', key: 'omi.start.welcome'}, show => this.show = show);
+        callVscode({cmd: 'getConfig', key: 'omi.open.welcome'}, show => this.show = show);
     },
     watch: {
         show(nv, ov) {
-            callVscode({cmd: 'setConfig', key: 'omi.start.welcome', value: nv}, null);
+            callVscode({cmd: 'setConfig', key: 'omi.open.welcome', value: nv}, null);
         }
     },
     methods: {
