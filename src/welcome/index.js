@@ -15,7 +15,7 @@ class OmiWelcome {
      */
     initWelcom() {
         // 如果设置里面开启了欢迎页显示，启动欢迎页
-        if (vscode.workspace.getConfiguration().get('omi.start.welcome')) {
+        if (vscode.workspace.getConfiguration().get('omi.open.welcome')) {
             vscode.commands.executeCommand('omi.cmd.welcome');
         }
     }
@@ -79,7 +79,7 @@ class OmiWelcome {
     setConfig(message) {
         // 写入配置文件，注意，默认写入工作区配置，而不是用户配置，最后一个true表示写入全局用户配置
         vscode.workspace.getConfiguration().update(message.key, message.value, true);
-        vscode.window.showInformationMessage('Configuration modification successful!');
+        //vscode.window.showInformationMessage('Configuration modification successful!');
     }
 
     /**
