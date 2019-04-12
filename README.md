@@ -34,7 +34,7 @@ This extension adds omi support for Visual Studio Code.
 # Omi ecosystem
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun5.gif" alt="omi"/></p>
 
-# Gitgub file view and download
+# GitHub file view and download
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun6.gif" alt="omi"/></p>
 
 # Omi Welcome
