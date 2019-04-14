@@ -1,3 +1,5 @@
+English | [简体中文](https://github.com/ZainChen/omi-vscode/blob/master/README.CN.md)
+
 # Omi Visual Studio Code extension
 [![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v2.0.9-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
 [![Downloads](https://img.shields.io/badge/Downloads-1.7K%2B-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
@@ -26,6 +28,7 @@ This extension adds omi support for Visual Studio Code.
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun3.gif" alt="omi"/></p>
 
 # Hover
+User-defined prompt information: https://github.com/ZainChen/omi-vscode/blob/master/src/hover/README.md
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun9.gif" alt="omi"/></p>
 
 # GitHub switch

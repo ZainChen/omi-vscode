@@ -1,54 +1,56 @@
-# omi鼠标悬停提示功能
+English | [简体中文](https://github.com/ZainChen/omi-vscode/blob/master/src/hover/README.CN.md)
 
-支持语言：`html`, `json`, `javascript`, `javascriptreact`, `typescript`, `typescriptreact`, `tex`, `c`, `cpp`, `css`, `markdown`, `php`, `python`, `jsonc`, `objective-c`, `xml`, `sql`, `java`, `swift`, `go`, `csharp`
+# Omi mouse hover prompt function
 
-## 1.结构
+Supported languages: `html`, `json`, `javascript`, `javascriptreact`, `typescript`, `typescriptreact`, `tex`, `c`, `cpp`, `css`, `markdown`, `php`, `python`, `jsonc`, `objective-c`, `xml`, `sql`, `java`, `swift`, `go`, `csharp`
 
->hoverjson `[鼠标悬停提示信息配置库]`
+## 1.structure
+
+>hoverjson `[Mouseover prompt information configuration library]`
 >
 >>hover-omi.json `[omi]`
 >>
 >>hover-omiu.json `[omiu]`
 >>
->>hover-package.json.json `[对package.json文件进行提示配置]`
+>>hover-package.json.json `[Prompt configuration of the package.json file]`
 >>
->>hover-zain.json `[zain自定义]`
+>>hover-zain.json `[zain customize]`
 >
->index.js `[功能实现代码]`
+>index.js `[Function implementation code]`
 
-## 2.用户自定义提示信息
+## 2.User-defined prompt information
 
-(PS:此方法也适用于在`omi-vscode`源码中添加提示，欢迎大家贡献：https://github.com/ZainChen/omi-vscode)
+(PS:This method is also suitable for adding hints in the `omi-vscode` source code. Welcome everyone to contribute: https://github.com/ZainChen/omi-vscode)
 
-### 2.1.安装好`omi`扩展后，进入`omi`扩展安装目录
+### 2.1.After installing the `omi` extension, go to the `omi` extension installation directory.
 
 ```
-C:\Users\[你的用户名]\.vscode-insiders[根据vscode版本不同有区别]\extensions\zainchen.omi-*[*为omi版本号]\src\hover\
+C:\Users\[your user]\.vscode-insiders[There are differences depending on the version of vscode]\extensions\zainchen.omi-*[* for omi version number]\src\hover\
 ```
 
-源码贡献目录
+Source code contribution directory
 
 ```
 omi-vscode/tree/master/src/hover
 ```
 
-### 2.2.添加自定义提示配置文件
+### 2.2.Add a custom prompt profile
 
-在`hoverjson`文件夹中新建json文件，文件名随意，按指定文件结构配置即可。
+Create a new json file in the `hoverjson` folder. The file name is free and can be configured according to the specified file structure.
 
-(PS:当前行有多个提示信息匹配会依次尾加提示)
+(PS:There are multiple prompt information matches in the current line, which will be followed by a prompt)
 
-配置文件结构说明：
+Configuration file structure description:
 
 ```js
 {
-    "fileTypes": [ ".*", ".js", "zain.js" ],  //支持鼠标提示的文件类型，'.*'为任意类型，'.js'为指定后缀名，'zain.js'为指定文件
-    "hovers": {  //所有提示信息
-        "o-button": {  //一个提示信息配置
-            "keyword": "o-button",  //提示信息匹配的关键字
-            "matchingMethod": "line",  //匹配模式(line光标所在整行匹配；continuous光标所在不含空格的连续字符串匹配)
-            "ignoreAZ": false,  //是否忽略大小写(true忽略，false不忽略)
-            "markdownText": "markdown text"  //提示文本，支持Markdown
+    "fileTypes": [ ".*", ".js", "zain.js" ],  //File type that supports mouse prompts, '.*' is any type, '.js' is the specified suffix name, and 'zain.js' is the specified file.
+    "hovers": {  //All tips
+        "o-button": {  //A prompt message configuration
+            "keyword": "o-button",  //Keyword matching keyword
+            "matchingMethod": "line",  //Match mode (the entire line of the line cursor matches; continuous string matches the continuous string without spaces)
+            "ignoreAZ": false,  //Whether to ignore case (true ignore, false not ignore)
+            "markdownText": "markdown text"  //Prompt text, support Markdown
         },
         "o-icon": {
             "keyword": "o-icon",
