@@ -412,10 +412,10 @@
 					"description": "Whether to display a welcome prompt every time you start!"
 				},
 				"omi.user.name": {
-                    "type": "string",
-                    "default": "zain",
-                    "description": "User name"
-                }
+					"type": "string",
+					"default": "zain",
+					"description": "User name"
+				}
 			}
 		}
 	},

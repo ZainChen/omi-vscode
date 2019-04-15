@@ -27,7 +27,7 @@ class OmiWelcome {
         this.panel = vscode.window.createWebviewPanel(
             'omiWelcome', //viewType
             "Omi welcome", //视图标题
-            vscode.ViewColumn.One, //显示在编辑器的哪个部位
+            vscode.ViewColumn.One,  //{ viewColumn: vscode.ViewColumn.One, preserveFocus: true }, //显示在编辑器的哪个部位(焦点设置只有第一次刷新有效)
             {
                 enableScripts: true, //启用JS，默认禁用
             }
