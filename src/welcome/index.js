@@ -21,7 +21,7 @@ class OmiWelcome {
     }
 
     /**
-     * 显示欢迎界面
+     * 欢迎界面入口
      */
     mainWelcome() {
         this.panel = vscode.window.createWebviewPanel(
