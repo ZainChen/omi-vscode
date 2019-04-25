@@ -32,6 +32,11 @@ class OmiTemplate {
                 let nodes = new Array();
                 let node = new vscode.TreeItem("omio", vscode.TreeItemCollapsibleState.None);
                 node.description = "兼容老浏览器的 Omi 版本(支持到IE8+和移动端浏览器)。";
+                node.command = {
+                    command: 'omi.cmd.tpShowProject',
+                    title: '',
+                    arguments: [this.context.extensionPath+"\\src\\template\\project\\omi\\index.html"]
+                }
                 nodes.push(node);
                 return Promise.resolve(nodes);
             }
@@ -45,7 +50,7 @@ class OmiTemplate {
                 dark: path.join(__filename, '..', '..', '..', 'assets', 'dark', 'file.svg')
             }
             node.command = {
-                command: 'omi.cmd.tpShowProject',
+                command: 'omi.cmd.welcome',
                 title: '',
                 arguments: [this.context.extensionPath+"\\src\\template\\project\\omi\\index.html"]
             }
