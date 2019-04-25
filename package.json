@@ -113,15 +113,15 @@
 	"activationEvents": [
 		"onView:omi.view.template",
 		"onView:omi.view.github",
-		"onCommand:omi.cmd.tpShowProject",
-		"onCommand:omi.cmd.ghOmi",
-		"onCommand:omi.cmd.ghGithubSwitch",
-		"onCommand:omi.cmd.ghRefresh",
-		"onCommand:omi.cmd.ghRefreshNode",
-		"onCommand:omi.cmd.ghOpenGithub",
-		"onCommand:omi.cmd.ghOpenGithubFile",
-		"onCommand:omi.cmd.ghClearCache",
-		"onCommand:omi.cmd.ghGithubFileDownload",
+		"onCommand:omi.cmd.templateShowProject",
+		"onCommand:omi.cmd.githubOmi",
+		"onCommand:omi.cmd.githubSwitch",
+		"onCommand:omi.cmd.githubRefresh",
+		"onCommand:omi.cmd.githubRefreshNode",
+		"onCommand:omi.cmd.githubOpenBrowser",
+		"onCommand:omi.cmd.githubOpenFile",
+		"onCommand:omi.cmd.githubClearCache",
+		"onCommand:omi.cmd.githubFileDownload",
 		"onLanguage:c",
 		"onLanguage:cpp",
 		"onLanguage:css",
@@ -152,7 +152,7 @@
 				"title": "Displays a custom welcome page"
 			},
 			{
-				"command": "omi.cmd.ghOmi",
+				"command": "omi.cmd.githubOmi",
 				"title": "Github switches to omi",
 				"icon": {
 					"light": "./assets/light/omi.svg",
@@ -160,7 +160,7 @@
 				}
 			},
 			{
-				"command": "omi.cmd.ghGithubSwitch",
+				"command": "omi.cmd.githubSwitch",
 				"title": "omi Github Switch",
 				"icon": {
 					"light": "./assets/light/github.svg",
@@ -168,7 +168,7 @@
 				}
 			},
 			{
-				"command": "omi.cmd.ghRefresh",
+				"command": "omi.cmd.githubRefresh",
 				"title": "omi refresh github",
 				"icon": {
 					"light": "./assets/light/refresh.svg",
@@ -176,7 +176,7 @@
 				}
 			},
 			{
-				"command": "omi.cmd.ghRefreshNode",
+				"command": "omi.cmd.githubRefreshNode",
 				"title": "omi refresh node github",
 				"icon": {
 					"light": "./assets/light/refresh.svg",
@@ -184,15 +184,15 @@
 				}
 			},
 			{
-				"command": "omi.cmd.ghOpenGithub",
-				"title": "open github",
+				"command": "omi.cmd.githubOpenBrowser",
+				"title": "browser open github",
 				"icon": {
 					"light": "./assets/light/github-web.svg",
 					"dark": "./assets/dark/github-web.svg"
 				}
 			},
 			{
-				"command": "omi.cmd.ghGithubFileDownload",
+				"command": "omi.cmd.githubFileDownload",
 				"title": "github file download",
 				"icon": {
 					"light": "./assets/light/download.svg",
@@ -200,7 +200,7 @@
 				}
 			},
 			{
-				"command": "omi.cmd.ghClearCache",
+				"command": "omi.cmd.githubClearCache",
 				"title": "clear cache",
 				"icon": {
 					"light": "./assets/add1.svg",
@@ -327,7 +327,7 @@
 		"menus": {
 			"editor/context": [
 				{
-					"command": "omi.cmd.ghOmi",
+					"command": "omi.cmd.githubOmi",
 					"when": "editorFocus",
 					"group": "navigation"
 				},
@@ -340,7 +340,7 @@
 			],
 			"editor/title": [
 				{
-					"command": "omi.cmd.ghOmi",
+					"command": "omi.cmd.githubOmi",
 					"group": "navigation"
 				},
 				{
@@ -352,38 +352,38 @@
 			],
 			"view/title": [
 				{
-					"command": "omi.cmd.ghGithubSwitch",
+					"command": "omi.cmd.githubSwitch",
 					"when": "view == omi.view.github",
 					"group": "navigation@2"
 				},
 				{
-					"command": "omi.cmd.ghRefresh",
+					"command": "omi.cmd.githubRefresh",
 					"when": "view == omi.view.github",
 					"group": "navigation@3"
 				},
 				{
-					"command": "omi.cmd.ghOmi",
+					"command": "omi.cmd.githubOmi",
 					"when": "view == omi.view.github",
 					"group": "navigation@1"
 				},
 				{
-					"command": "omi.cmd.ghClearCache",
+					"command": "omi.cmd.githubClearCache",
 					"when": "view == omi.view.github"
 				}
 			],
 			"view/item/context": [
 				{
-					"command": "omi.cmd.ghGithubFileDownload",
+					"command": "omi.cmd.githubFileDownload",
 					"when": "view == omi.view.github",
 					"group": "inline@1"
 				},
 				{
-					"command": "omi.cmd.ghOpenGithub",
+					"command": "omi.cmd.githubOpenBrowser",
 					"when": "view == omi.view.github",
 					"group": "inline@2"
 				},
 				{
-					"command": "omi.cmd.ghRefreshNode",
+					"command": "omi.cmd.githubRefreshNode",
 					"when": "view == omi.view.github",
 					"group": "inline@3"
 				}
@@ -391,7 +391,7 @@
 		},
 		"keybindings": [
 			{
-				"command": "omi.cmd.ghOmi",
+				"command": "omi.cmd.githubOmi",
 				"key": "ctrl+f10",
 				"mac": "cmd+f10",
 				"when": "editorTextFocus"

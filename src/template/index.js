@@ -33,7 +33,7 @@ class OmiTemplate {
                 let node = new vscode.TreeItem("omio", vscode.TreeItemCollapsibleState.None);
                 node.description = "兼容老浏览器的 Omi 版本(支持到IE8+和移动端浏览器)。";
                 node.command = {
-                    command: 'omi.cmd.tpShowProject',
+                    command: 'omi.cmd.templateShowProject',
                     title: '',
                     arguments: [this.context.extensionPath+"\\src\\template\\project\\omi\\index.html"]
                 }

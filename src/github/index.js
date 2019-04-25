@@ -121,7 +121,7 @@ class OmiGitHub {
                 return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.Collapsed, fileType);
             } else if(fileType == 'file') {
                 return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.None, fileType, {
-                    command: 'omi.cmd.ghOpenGithubFile',
+                    command: 'omi.cmd.githubOpenFile',
                     title: '',
                     arguments: [filePathlink]
                 });
@@ -167,7 +167,7 @@ class OmiGitHub {
                 return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.Collapsed, fileType);
             } else if(fileType == 'file') {
                 return new tri.OmiTreeItem(label, labelAdd, filePathlink, vscode.TreeItemCollapsibleState.None, fileType, {
-                    command: 'omi.cmd.ghOpenGithubFile',
+                    command: 'omi.cmd.githubOpenFile',
                     title: '',
                     arguments: [filePathlink]
                 });
