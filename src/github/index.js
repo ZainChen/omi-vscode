@@ -456,7 +456,7 @@ class OmiGitHub {
             fs.rmdirSync(ph);
             this.cacheNum = 0;  //记录缓存文件打开次数
             vscode.window.setStatusBarMessage("omi.coche:"+this.cacheNum.toString());  //状态栏显示缓存文件打开次数
-            vscode.window.showInformationMessage("clear success.(omi:0)");
+            // vscode.window.showInformationMessage("clear success.(omi:0)");
         }
     }
 

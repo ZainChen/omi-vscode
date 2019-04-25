@@ -22,8 +22,8 @@ define('my-app', class extends WeElement {
     this.callVscode({cmd: 'getConfig', key: 'omi.user.name'}, userName => this.data.userName = userName)
     this.callVscode({cmd: 'getConfig', key: 'omi.open.welcome'}, show => this.data.show = show)
     this.callVscode({cmd: 'getConfig', key: 'omi.author.dntzhang'}, say => this.data.say = say)
-    console.log(this.data.userName)
-    console.log(this.data.show)
+    // console.log(this.data.userName)
+    // console.log(this.data.show)
 
     window.addEventListener('message', event => {
       const message = event.data;

@@ -88,7 +88,7 @@ class OmiWelcome {
      * @param {*} resp 
      */
     invokeCallback(message, resp) {
-        console.log('callback message:', resp);
+        // console.log('callback message:', resp);
         // 错误码在400-600之间的，默认弹出错误提示
         if (typeof resp == 'object' && resp.code && resp.code >= 400 && resp.code < 600) {
             vscode.window.showInformationMessage('发生未知错误！');

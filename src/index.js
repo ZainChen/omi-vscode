@@ -34,7 +34,7 @@ function activate(context) {
 		//github菜单树，实时浏览，下载任意文件和子文件夹，切换任意github项目
 		//vscode.window.registerTreeDataProvider('omi.view.github', omiGithub);  //github菜单树注册(无法添加showCollapseAll功能)
 		//github菜单树创建和注册(用此方法可添加showCollapseAll功能)，支持此功能的vscode最低版本为1.30.1
-		vscode.window.createTreeView('omi.view.github', { treeDataProvider: omiGithub, showCollapseAll: true }),
+		vscode.window.createTreeView('omi.view.github', { treeDataProvider: omiGithub, showCollapseAll: true }),  //创建github菜单树视图
 		vscode.commands.registerCommand('omi.cmd.ghOmi', () => omiGithub.commandShowOmi()),  //github菜单树切换到Tencent/omi
 		vscode.commands.registerCommand('omi.cmd.ghGithubSwitch', () => omiGithub.githubSwitch()),  //切换github，生成新的菜单树
 		vscode.commands.registerCommand('omi.cmd.ghRefresh', () => omiGithub.refreshAll()),  //刷新所有菜单节点
