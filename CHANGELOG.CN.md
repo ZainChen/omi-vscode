@@ -1,23 +1,23 @@
-# Omi Visual Studio Code extension Change Log
+# Omi Visual Studio Code 扩展更新日志
 
-## Version *
+## 版本 *
 
-### New Features
+### 新增
 
-- 
+- 空
 
-### Modify
+### 修改
 
-- null
+- 更新欢迎界面，欢迎界面用omi框架重写。
 
-### Bug Fixes
+### 修复
 
-- null
+- 空
 
-### Problem
+### 问题
 
-- Menu icon need to be remade svg image.
-- omiu component need to add a new attribute completion button, the attribute completion trigger needs to be perfected.
+- 需重做菜单图标(svg 格式，中间透明，而不是白色)。
+- omiu 组件需要添加一个新的属性完成按钮，属性补全触发器需要完善。
 
 ---
 
