@@ -40,7 +40,7 @@ class OmiWelcome {
                 } else if(message.cmd == "setConfig") {
                     this.setConfig(message);
                 } else {
-                    vscode.window.showInformationMessage(`未找到名为 ${message.cmd} 回调方法!`);
+                    vscode.window.showInformationMessage(`No name found ${message.cmd} Callback method!`);
                 }
             },
             undefined,

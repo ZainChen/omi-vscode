@@ -15,6 +15,7 @@ class OmiTemplate {
      */
     getTreeItem(element) {
         return element;
+        
         // let treeItem = new vscode.TreeItem("zain", vscode.TreeItemCollapsibleState.None);
 
         // return treeItem;
@@ -28,7 +29,7 @@ class OmiTemplate {
      */
     getChildren(element) {
         if(element) {
-            if(element.label == "Base") {
+            if(element.id == "2") {
                 let nodes = new Array();
                 let node = new vscode.TreeItem("omio", vscode.TreeItemCollapsibleState.None);
                 node.description = "兼容老浏览器的 Omi 版本(支持到IE8+和移动端浏览器)。";
@@ -55,16 +56,21 @@ class OmiTemplate {
                 arguments: [this.context.extensionPath+"\\src\\template\\project\\omi\\index.html"]
             }
             nodes.push(node);
-            node = new vscode.TreeItem("Base", vscode.TreeItemCollapsibleState.Expanded);
+            //
+            node = new vscode.TreeItem("Project template", vscode.TreeItemCollapsibleState.Expanded);
             node.id = "1";
+            node.description = "Project template";
+            nodes.push(node);
+            node = new vscode.TreeItem("Base", vscode.TreeItemCollapsibleState.Expanded);
+            node.id = "2";
             node.description = "base ecology";
             nodes.push(node);
             node = new vscode.TreeItem("Mini Program", vscode.TreeItemCollapsibleState.Expanded);
-            node.id = "2";
+            node.id = "3";
             // node.description = "小程序生态";
             nodes.push(node);
             node = new vscode.TreeItem("Other", vscode.TreeItemCollapsibleState.Expanded);
-            node.id = "3";
+            node.id = "4";
             // node.description = "其它";
             nodes.push(node);
             return Promise.resolve(nodes);
