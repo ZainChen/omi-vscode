@@ -121,10 +121,13 @@ class OmiTemplate {
         })
     }
 
+    /**
+     * 打开webview
+     * @param {*} link webview视图链接
+     */
     OpenWebview(link) {
         new ourl("omi", link);
     }
-
 
 }
 exports.OmiTemplate = OmiTemplate;
