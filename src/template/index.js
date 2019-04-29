@@ -50,7 +50,7 @@ class OmiTemplate {
             let nodes = new Array();
             let node = new vscode.TreeItem("Omi", vscode.TreeItemCollapsibleState.None);
             node.id = "0";
-            node.description = "project creation overview";
+            node.description = "welcome to omi";
             node.iconPath = {
                 light: path.join(__filename, '..', '..', '..', 'assets', 'light', 'file.svg'),
                 dark: path.join(__filename, '..', '..', '..', 'assets', 'dark', 'file.svg')
