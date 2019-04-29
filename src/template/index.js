@@ -1,12 +1,16 @@
 const vscode = require('vscode');
 const path = require('path');
 
+//zain自定义模块
+const alg = require("../algorithm/index");  //算法模块
 const ourl = require('./open-url');  //webview打开网页功能
 
 class OmiTemplate {
     constructor(context) {
         this.context = context;
         this.text = new Object();
+
+        this.initText();
     }
 
     /**
@@ -76,6 +80,10 @@ class OmiTemplate {
             nodes.push(node);
             return Promise.resolve(nodes);
         }
+    }
+
+    initText() {
+
     }
 
     OpenWebview(link) {

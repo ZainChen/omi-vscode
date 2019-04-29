@@ -415,6 +415,12 @@
 					"type": "string",
 					"default": "zain",
 					"description": "User name"
+				},
+				"omi.language.template": {
+					"type": "string",
+					"enum": ["English", "简体中文", "한국어"],
+					"default": "English",
+					"description": "Template language"
 				}
 			}
 		}
