@@ -9,7 +9,7 @@ const ourl = require('./open-url');  //webview打开网页功能
 class OmiTemplate {
     constructor(context) {
         this.context = context;
-        this.text = new Object();
+        this.text = new Object();  //模板功能所有文本ID对应文本
         this._onDidChangeTreeData = new vscode.EventEmitter();  //刷新菜单节点使用
         this.onDidChangeTreeData = this._onDidChangeTreeData.event;  //刷新菜单节点使用
 
@@ -45,25 +45,48 @@ class OmiTemplate {
      * @param {*} element 菜单中单击选中的节点
      */
     createNodeAll(element) {
+        let nodes;
+        let node;
         if(element) {
-            let nodes;
-            let node;
             switch(element.id) {
                 case '1':
                     nodes = new Array();
-                    node = new vscode.TreeItem(this.text['menu']['2'], vscode.TreeItemCollapsibleState.None);
-                    node.description = this.text['menu']['8'];
+                    node = new vscode.TreeItem(this.text['menu']['9'], vscode.TreeItemCollapsibleState.None);
+                    node.id = "1.1";
+                    //node.description = this.text['menu']['9'];
                     node.command = {
                         command: 'omi.cmd.templateShowProject',
                         title: '',
                         arguments: [this.context.extensionPath+"\\src\\template\\project\\omi\\index.html"]
                     }
                     nodes.push(node);
+                    node = new vscode.TreeItem(this.text['menu']['10'], vscode.TreeItemCollapsibleState.None);
+                    node.id = "1.2";
+                    nodes.push(node);
+                    node = new vscode.TreeItem(this.text['menu']['11'], vscode.TreeItemCollapsibleState.None);
+                    node.id = "1.3";
+                    nodes.push(node);
+                    node = new vscode.TreeItem(this.text['menu']['12'], vscode.TreeItemCollapsibleState.None);
+                    node.id = "1.4";
+                    nodes.push(node);
+                    node = new vscode.TreeItem(this.text['menu']['13'], vscode.TreeItemCollapsibleState.None);
+                    node.id = "1.5";
+                    nodes.push(node);
+                    node = new vscode.TreeItem(this.text['menu']['14'], vscode.TreeItemCollapsibleState.None);
+                    node.id = "1.6";
+                    nodes.push(node);
+                    node = new vscode.TreeItem(this.text['menu']['15'], vscode.TreeItemCollapsibleState.None);
+                    node.id = "1.7";
+                    nodes.push(node);
+                    node = new vscode.TreeItem(this.text['menu']['16'], vscode.TreeItemCollapsibleState.None);
+                    node.id = "1.8";
+                    nodes.push(node);
                     return Promise.resolve(nodes);
                 case '2':
                     nodes = new Array();
                     node = new vscode.TreeItem(this.text['menu']['2'], vscode.TreeItemCollapsibleState.None);
-                    node.description = this.text['menu']['8'];
+                    node.id = "2.1";
+                    //node.description = this.text['menu']['8'];
                     node.command = {
                         command: 'omi.cmd.templateShowProject',
                         title: '',
@@ -75,10 +98,10 @@ class OmiTemplate {
                     break;
             }
         } else {
-            let nodes = new Array();
-            let node = new vscode.TreeItem(this.text['menu']['0'], vscode.TreeItemCollapsibleState.None);
+            nodes = new Array();
+            node = new vscode.TreeItem(this.text['menu']['0'], vscode.TreeItemCollapsibleState.None);
             node.id = "0";
-            node.description = this.text['menu']['3'];
+            //node.description = this.text['menu']['3'];
             node.iconPath = {
                 light: path.join(__filename, '..', '..', '..', 'assets', 'light', 'file.svg'),
                 dark: path.join(__filename, '..', '..', '..', 'assets', 'dark', 'file.svg')
@@ -89,22 +112,21 @@ class OmiTemplate {
                 arguments: [this.context.extensionPath+"\\src\\template\\project\\omi\\index.html"]
             }
             nodes.push(node);
-            //
             node = new vscode.TreeItem(this.text['menu']['4'], vscode.TreeItemCollapsibleState.Expanded);
             node.id = "1";
-            node.description = this.text['menu']['4'];
+            //node.description = this.text['menu']['4'];
             nodes.push(node);
             node = new vscode.TreeItem(this.text['menu']['5'], vscode.TreeItemCollapsibleState.Expanded);
             node.id = "2";
-            node.description = this.text['menu']['5'];
+            //node.description = this.text['menu']['5'];
             nodes.push(node);
             node = new vscode.TreeItem(this.text['menu']['6'], vscode.TreeItemCollapsibleState.Expanded);
             node.id = "3";
-            node.description = this.text['menu']['6'];
+            //node.description = this.text['menu']['6'];
             nodes.push(node);
             node = new vscode.TreeItem(this.text['menu']['7'], vscode.TreeItemCollapsibleState.Expanded);
             node.id = "4";
-            node.description = this.text['menu']['7'];
+            //node.description = this.text['menu']['7'];
             nodes.push(node);
             return Promise.resolve(nodes);
         }
