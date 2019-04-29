@@ -1,11 +1,14 @@
 {
-    "0": "Omi",
-    "1": "omi",
-    "2": "omio",
-    "3": "welcome to omi",
-    "4": "Project template",
-    "5": "Basic",
-    "6": "Mini Program",
-    "7": "Other",
-    "8": "Omi for old browsers with same api(IE8+ and mobile browsers)"
+    "menu": {
+        "0": "Omi",
+        "1": "omi",
+        "2": "omio",
+        "3": "welcome to omi",
+        "4": "Project template",
+        "5": "Basic",
+        "6": "Mini Program",
+        "7": "Other",
+        "8": "Omi for old browsers with same api(IE8+ and mobile browsers)",
+        "9": "Base Template(v3.3.0+)"
+    }
 }

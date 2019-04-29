@@ -46,23 +46,39 @@ class OmiTemplate {
      */
     createNodeAll(element) {
         if(element) {
-            if(element.id == "2") {
-                let nodes = new Array();
-                let node = new vscode.TreeItem(this.text['2'], vscode.TreeItemCollapsibleState.None);
-                node.description = this.text['8'];
-                node.command = {
-                    command: 'omi.cmd.templateShowProject',
-                    title: '',
-                    arguments: [this.context.extensionPath+"\\src\\template\\project\\omi\\index.html"]
-                }
-                nodes.push(node);
-                return Promise.resolve(nodes);
+            let nodes;
+            let node;
+            switch(element.id) {
+                case '1':
+                    nodes = new Array();
+                    node = new vscode.TreeItem(this.text['menu']['2'], vscode.TreeItemCollapsibleState.None);
+                    node.description = this.text['menu']['8'];
+                    node.command = {
+                        command: 'omi.cmd.templateShowProject',
+                        title: '',
+                        arguments: [this.context.extensionPath+"\\src\\template\\project\\omi\\index.html"]
+                    }
+                    nodes.push(node);
+                    return Promise.resolve(nodes);
+                case '2':
+                    nodes = new Array();
+                    node = new vscode.TreeItem(this.text['menu']['2'], vscode.TreeItemCollapsibleState.None);
+                    node.description = this.text['menu']['8'];
+                    node.command = {
+                        command: 'omi.cmd.templateShowProject',
+                        title: '',
+                        arguments: [this.context.extensionPath+"\\src\\template\\project\\omi\\index.html"]
+                    }
+                    nodes.push(node);
+                    return Promise.resolve(nodes);
+                default:
+                    break;
             }
         } else {
             let nodes = new Array();
-            let node = new vscode.TreeItem(this.text['0'], vscode.TreeItemCollapsibleState.None);
+            let node = new vscode.TreeItem(this.text['menu']['0'], vscode.TreeItemCollapsibleState.None);
             node.id = "0";
-            node.description = this.text['3'];
+            node.description = this.text['menu']['3'];
             node.iconPath = {
                 light: path.join(__filename, '..', '..', '..', 'assets', 'light', 'file.svg'),
                 dark: path.join(__filename, '..', '..', '..', 'assets', 'dark', 'file.svg')
@@ -74,21 +90,21 @@ class OmiTemplate {
             }
             nodes.push(node);
             //
-            node = new vscode.TreeItem(this.text['4'], vscode.TreeItemCollapsibleState.Expanded);
+            node = new vscode.TreeItem(this.text['menu']['4'], vscode.TreeItemCollapsibleState.Expanded);
             node.id = "1";
-            node.description = this.text['4'];
+            node.description = this.text['menu']['4'];
             nodes.push(node);
-            node = new vscode.TreeItem(this.text['5'], vscode.TreeItemCollapsibleState.Expanded);
+            node = new vscode.TreeItem(this.text['menu']['5'], vscode.TreeItemCollapsibleState.Expanded);
             node.id = "2";
-            node.description = this.text['5'];
+            node.description = this.text['menu']['5'];
             nodes.push(node);
-            node = new vscode.TreeItem(this.text['6'], vscode.TreeItemCollapsibleState.Expanded);
+            node = new vscode.TreeItem(this.text['menu']['6'], vscode.TreeItemCollapsibleState.Expanded);
             node.id = "3";
-            node.description = this.text['6'];
+            node.description = this.text['menu']['6'];
             nodes.push(node);
-            node = new vscode.TreeItem(this.text['7'], vscode.TreeItemCollapsibleState.Expanded);
+            node = new vscode.TreeItem(this.text['menu']['7'], vscode.TreeItemCollapsibleState.Expanded);
             node.id = "4";
-            node.description = this.text['7'];
+            node.description = this.text['menu']['7'];
             nodes.push(node);
             return Promise.resolve(nodes);
         }
