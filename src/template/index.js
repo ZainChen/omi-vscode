@@ -6,6 +6,7 @@ const ourl = require('./open-url');  //webview打开网页功能
 class OmiTemplate {
     constructor(context) {
         this.context = context;
+        this.text = new Object();
     }
 
     /**

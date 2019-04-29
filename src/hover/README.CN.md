@@ -6,7 +6,7 @@
 
 ## 1.结构
 
->hoverjson `[鼠标悬停提示信息配置库]`
+>config `[鼠标悬停提示信息配置库]`
 >
 >>hover-omi.json `[omi]`
 >>
@@ -36,7 +36,7 @@ omi-vscode/tree/master/src/hover
 
 ### 2.2.添加自定义提示配置文件
 
-在`hoverjson`文件夹中新建json文件，文件名随意，按指定文件结构配置即可。
+在`config`文件夹中新建json文件，文件名随意，按指定文件结构配置即可。
 
 (PS:当前行有多个提示信息匹配会依次尾加提示)
 
