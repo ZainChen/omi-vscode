@@ -1,5 +1,6 @@
 const vscode = require('vscode');
 const path = require('path');
+const fs = require('fs');
 
 //zain自定义模块
 const alg = require("../algorithm/index");  //算法模块
@@ -9,8 +10,11 @@ class OmiTemplate {
     constructor(context) {
         this.context = context;
         this.text = new Object();
+        this._onDidChangeTreeData = new vscode.EventEmitter();  //刷新菜单节点使用
+        this.onDidChangeTreeData = this._onDidChangeTreeData.event;  //刷新菜单节点使用
 
-        this.initText();
+        this.initText();  //初始化模板语言文本
+        this.onDidConfigTemplateLanguage();  //监听模板语言设置
     }
 
     /**
@@ -36,8 +40,8 @@ class OmiTemplate {
         if(element) {
             if(element.id == "2") {
                 let nodes = new Array();
-                let node = new vscode.TreeItem("omio", vscode.TreeItemCollapsibleState.None);
-                node.description = "兼容老浏览器的 Omi 版本(支持到IE8+和移动端浏览器)。";
+                let node = new vscode.TreeItem(this.text['2'], vscode.TreeItemCollapsibleState.None);
+                node.description = this.text['8'];
                 node.command = {
                     command: 'omi.cmd.templateShowProject',
                     title: '',
@@ -48,9 +52,9 @@ class OmiTemplate {
             }
         } else {
             let nodes = new Array();
-            let node = new vscode.TreeItem("Omi", vscode.TreeItemCollapsibleState.None);
+            let node = new vscode.TreeItem(this.text['0'], vscode.TreeItemCollapsibleState.None);
             node.id = "0";
-            node.description = "welcome to omi";
+            node.description = this.text['3'];
             node.iconPath = {
                 light: path.join(__filename, '..', '..', '..', 'assets', 'light', 'file.svg'),
                 dark: path.join(__filename, '..', '..', '..', 'assets', 'dark', 'file.svg')
@@ -62,28 +66,59 @@ class OmiTemplate {
             }
             nodes.push(node);
             //
-            node = new vscode.TreeItem("Project template", vscode.TreeItemCollapsibleState.Expanded);
+            node = new vscode.TreeItem(this.text['4'], vscode.TreeItemCollapsibleState.Expanded);
             node.id = "1";
-            node.description = "Project template";
+            node.description = this.text['4'];
             nodes.push(node);
-            node = new vscode.TreeItem("Base", vscode.TreeItemCollapsibleState.Expanded);
+            node = new vscode.TreeItem(this.text['5'], vscode.TreeItemCollapsibleState.Expanded);
             node.id = "2";
-            node.description = "base ecology";
+            node.description = this.text['5'];
             nodes.push(node);
-            node = new vscode.TreeItem("Mini Program", vscode.TreeItemCollapsibleState.Expanded);
+            node = new vscode.TreeItem(this.text['6'], vscode.TreeItemCollapsibleState.Expanded);
             node.id = "3";
-            // node.description = "小程序生态";
+            node.description = this.text['6'];
             nodes.push(node);
-            node = new vscode.TreeItem("Other", vscode.TreeItemCollapsibleState.Expanded);
+            node = new vscode.TreeItem(this.text['7'], vscode.TreeItemCollapsibleState.Expanded);
             node.id = "4";
-            // node.description = "其它";
+            node.description = this.text['7'];
             nodes.push(node);
             return Promise.resolve(nodes);
         }
     }
 
+    /**
+     * 初始化模板语言文本
+     */
     initText() {
+        const language = vscode.workspace.getConfiguration().get('omi.language.template');
+        //console.log(language);
+        //vscode.workspace.getConfiguration().update('omi.language.template', '简体中文', true);
+        switch(language) {
+            case "English":
+                this.text = JSON.parse(fs.readFileSync(__dirname+'/text/omi-template-en.json', 'utf8'));
+                break;
+            case "简体中文":
+                this.text = JSON.parse(fs.readFileSync(__dirname+'/text/omi-template-cn.json', 'utf8'));
+                break;
+            case "한국어":
+                this.text = JSON.parse(fs.readFileSync(__dirname+'/text/omi-template-kr.json', 'utf8'));
+                break;
+            default:
+                this.text = JSON.parse(fs.readFileSync(__dirname+'/text/omi-template-en.json', 'utf8'));
+                break;
+        }
+    }
 
+    /**
+     * 监听模板语言设置
+     */
+    onDidConfigTemplateLanguage() {
+        vscode.workspace.onDidChangeConfiguration((element) => {
+            if(element.affectsConfiguration('omi.language.template') === true) {
+                this.initText();
+                this._onDidChangeTreeData.fire();  //刷新所有模板菜单节点
+            }
+        })
     }
 
     OpenWebview(link) {
