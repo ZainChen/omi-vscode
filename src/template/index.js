@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 
 //zain自定义模块
-const alg = require("../algorithm/index");  //算法模块
+// const alg = require("../algorithm/index");  //算法模块
 const ourl = require('./open-url');  //webview打开网页功能
 
 class OmiTemplate {
@@ -34,9 +34,17 @@ class OmiTemplate {
     /**
      * 菜单树数据写入入口，生成子节点
      * @声明标识符 async 标识符标识当前函数是异步执行函数
-     * @param element 菜单中单击选中的节点文本
+     * @param element 菜单中单击选中的节点
      */
     getChildren(element) {
+        return this.createNodeAll(element);
+    }
+
+    /**
+     * 创建所有菜单节点
+     * @param {*} element 菜单中单击选中的节点
+     */
+    createNodeAll(element) {
         if(element) {
             if(element.id == "2") {
                 let nodes = new Array();
