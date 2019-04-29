@@ -16,6 +16,21 @@
         "13": "TypeScript template(omi-cli v3.3.0+)",
         "14": "Mobile template",
         "15": "omi-mp template(omi-cli v3.0.13+)",
-        "16": "MVVM template(omi-cli v3.0.22+)"
+        "16": "MVVM template(omi-cli v3.0.22+)",
+        "17": "omi-docs",
+        "18": "omis",
+        "19": "omiu",
+        "20": "omi-router",
+        "21": "omi-devtools",
+        "22": "omi-cli",
+        "23": "omil",
+        "24": "omi-cloud",
+        "25": "omip",
+        "26": "mps",
+        "27": "cax",
+        "28": "omix",
+        "29": "omi-mp",
+        "30": "comi",
+        "31": "wx-touch-event"
     }
 }

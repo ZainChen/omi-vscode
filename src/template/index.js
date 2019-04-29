@@ -84,7 +84,7 @@ class OmiTemplate {
                     return Promise.resolve(nodes);
                 case '2':
                     nodes = new Array();
-                    node = new vscode.TreeItem(this.text['menu']['2'], vscode.TreeItemCollapsibleState.None);
+                    node = new vscode.TreeItem(this.text['menu']['17'], vscode.TreeItemCollapsibleState.None);
                     node.id = "2.1";
                     //node.description = this.text['menu']['8'];
                     node.command = {
@@ -92,6 +92,54 @@ class OmiTemplate {
                         title: '',
                         arguments: [this.context.extensionPath+"\\src\\template\\project\\omi\\index.html"]
                     }
+                    nodes.push(node);
+                    node = new vscode.TreeItem(this.text['menu']['2'], vscode.TreeItemCollapsibleState.None);
+                    node.id = "2.2";
+                    nodes.push(node);
+                    node = new vscode.TreeItem(this.text['menu']['18'], vscode.TreeItemCollapsibleState.None);
+                    node.id = "2.3";
+                    nodes.push(node);
+                    node = new vscode.TreeItem(this.text['menu']['19'], vscode.TreeItemCollapsibleState.None);
+                    node.id = "2.4";
+                    nodes.push(node);
+                    node = new vscode.TreeItem(this.text['menu']['20'], vscode.TreeItemCollapsibleState.None);
+                    node.id = "2.5";
+                    nodes.push(node);
+                    node = new vscode.TreeItem(this.text['menu']['21'], vscode.TreeItemCollapsibleState.None);
+                    node.id = "2.6";
+                    nodes.push(node);
+                    node = new vscode.TreeItem(this.text['menu']['22'], vscode.TreeItemCollapsibleState.None);
+                    node.id = "2.7";
+                    nodes.push(node);
+                    node = new vscode.TreeItem(this.text['menu']['23'], vscode.TreeItemCollapsibleState.None);
+                    node.id = "2.8";
+                    nodes.push(node);
+                    return Promise.resolve(nodes);
+                case '3':
+                    nodes = new Array();
+                    node = new vscode.TreeItem(this.text['menu']['24'], vscode.TreeItemCollapsibleState.None);
+                    node.id = "3.1";
+                    nodes.push(node);
+                    node = new vscode.TreeItem(this.text['menu']['25'], vscode.TreeItemCollapsibleState.None);
+                    node.id = "3.2";
+                    nodes.push(node);
+                    node = new vscode.TreeItem(this.text['menu']['26'], vscode.TreeItemCollapsibleState.None);
+                    node.id = "3.3";
+                    nodes.push(node);
+                    node = new vscode.TreeItem(this.text['menu']['27'], vscode.TreeItemCollapsibleState.None);
+                    node.id = "3.4";
+                    nodes.push(node);
+                    node = new vscode.TreeItem(this.text['menu']['28'], vscode.TreeItemCollapsibleState.None);
+                    node.id = "3.5";
+                    nodes.push(node);
+                    node = new vscode.TreeItem(this.text['menu']['29'], vscode.TreeItemCollapsibleState.None);
+                    node.id = "3.6";
+                    nodes.push(node);
+                    node = new vscode.TreeItem(this.text['menu']['30'], vscode.TreeItemCollapsibleState.None);
+                    node.id = "3.7";
+                    nodes.push(node);
+                    node = new vscode.TreeItem(this.text['menu']['31'], vscode.TreeItemCollapsibleState.None);
+                    node.id = "3.8";
                     nodes.push(node);
                     return Promise.resolve(nodes);
                 default:
