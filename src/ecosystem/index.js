@@ -270,7 +270,7 @@ class OmiEcosystem {
      */
     OpenWebview(link) {
         new ourl("omi", link);
-        this.gitClone('git@github.com:ZainChen/vscode-json.git');
+        //this.gitClone('git@github.com:ZainChen/vscode-json.git');
     }
 
     /**
