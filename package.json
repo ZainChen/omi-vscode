@@ -149,7 +149,11 @@
 		"commands": [
 			{
 				"command": "omi.cmd.welcome",
-				"title": "Displays a custom welcome page"
+				"title": "Displays a custom welcome page",
+				"icon": {
+					"light": "./assets/light/omi.svg",
+					"dark": "./assets/dark/omi.svg"
+				}
 			},
 			{
 				"command": "omi.cmd.githubOmi",
@@ -340,7 +344,7 @@
 			],
 			"editor/title": [
 				{
-					"command": "omi.cmd.githubOmi",
+					"command": "omi.cmd.welcome",
 					"group": "navigation"
 				},
 				{
