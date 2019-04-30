@@ -6,7 +6,7 @@ const fs = require('fs');
 // const alg = require("../algorithm/index");  //算法模块
 const ourl = require('./open-url');  //webview打开网页功能
 
-class OmiTemplate {
+class OmiEcosystem {
     constructor(context) {
         this.context = context;
         this.text = new Object();  //模板功能所有文本ID对应文本
@@ -55,9 +55,9 @@ class OmiTemplate {
                     node.id = "1.1";
                     //node.description = this.text['menu']['9'];
                     node.command = {
-                        command: 'omi.cmd.templateShowProject',
+                        command: 'omi.cmd.ecosystemOpenWebview',
                         title: '',
-                        arguments: [this.context.extensionPath+"\\src\\template\\project\\omi\\index.html"]
+                        arguments: [this.context.extensionPath+"\\src\\ecosystem\\project\\omi\\index.html"]
                     }
                     nodes.push(node);
                     node = new vscode.TreeItem(this.text['menu']['10'], vscode.TreeItemCollapsibleState.None);
@@ -88,9 +88,9 @@ class OmiTemplate {
                     node.id = "2.1";
                     //node.description = this.text['menu']['8'];
                     node.command = {
-                        command: 'omi.cmd.templateShowProject',
+                        command: 'omi.cmd.ecosystemOpenWebview',
                         title: '',
-                        arguments: [this.context.extensionPath+"\\src\\template\\project\\omi\\index.html"]
+                        arguments: [this.context.extensionPath+"\\src\\ecosystem\\project\\omi\\index.html"]
                     }
                     nodes.push(node);
                     node = new vscode.TreeItem(this.text['menu']['2'], vscode.TreeItemCollapsibleState.None);
@@ -205,7 +205,7 @@ class OmiTemplate {
             node.command = {
                 command: 'omi.cmd.welcome',
                 title: '',
-                arguments: [this.context.extensionPath+"\\src\\template\\project\\omi\\index.html"]
+                arguments: [this.context.extensionPath+"\\src\\ecosystem\\project\\omi\\index.html"]
             }
             nodes.push(node);
             node = new vscode.TreeItem(this.text['menu']['4'], vscode.TreeItemCollapsibleState.Expanded);
@@ -232,21 +232,21 @@ class OmiTemplate {
      * 初始化模板语言文本
      */
     initText() {
-        const language = vscode.workspace.getConfiguration().get('omi.language.template');
+        const language = vscode.workspace.getConfiguration().get('omi.language.ecosystem');
         //console.log(language);
-        //vscode.workspace.getConfiguration().update('omi.language.template', '简体中文', true);
+        //vscode.workspace.getConfiguration().update('omi.language.ecosystem', '简体中文', true);
         switch(language) {
             case "English":
-                this.text = JSON.parse(fs.readFileSync(__dirname+'/text/omi-template-en.json', 'utf8'));
+                this.text = JSON.parse(fs.readFileSync(__dirname+'/text/omi-ecosystem-en.json', 'utf8'));
                 break;
             case "简体中文":
-                this.text = JSON.parse(fs.readFileSync(__dirname+'/text/omi-template-cn.json', 'utf8'));
+                this.text = JSON.parse(fs.readFileSync(__dirname+'/text/omi-ecosystem-cn.json', 'utf8'));
                 break;
             case "한국어":
-                this.text = JSON.parse(fs.readFileSync(__dirname+'/text/omi-template-kr.json', 'utf8'));
+                this.text = JSON.parse(fs.readFileSync(__dirname+'/text/omi-ecosystem-kr.json', 'utf8'));
                 break;
             default:
-                this.text = JSON.parse(fs.readFileSync(__dirname+'/text/omi-template-en.json', 'utf8'));
+                this.text = JSON.parse(fs.readFileSync(__dirname+'/text/omi-ecosystem-en.json', 'utf8'));
                 break;
         }
     }
@@ -256,7 +256,7 @@ class OmiTemplate {
      */
     onDidConfigTemplateLanguage() {
         vscode.workspace.onDidChangeConfiguration((element) => {
-            if(element.affectsConfiguration('omi.language.template') === true) {
+            if(element.affectsConfiguration('omi.language.ecosystem') === true) {
                 this.initText();
                 this._onDidChangeTreeData.fire();  //刷新所有模板菜单节点
             }
@@ -272,4 +272,4 @@ class OmiTemplate {
     }
 
 }
-exports.OmiTemplate = OmiTemplate;
+exports.OmiEcosystem = OmiEcosystem;

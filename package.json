@@ -111,9 +111,9 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onView:omi.view.template",
+		"onView:omi.view.ecosystem",
 		"onView:omi.view.github",
-		"onCommand:omi.cmd.templateShowProject",
+		"onCommand:omi.cmd.ecosystemOpenWebview",
 		"onCommand:omi.cmd.githubOmi",
 		"onCommand:omi.cmd.githubSwitch",
 		"onCommand:omi.cmd.githubRefresh",
@@ -315,8 +315,8 @@
 		"views": {
 			"omi-views": [
 				{
-					"id": "omi.view.template",
-					"name": "template"
+					"id": "omi.view.ecosystem",
+					"name": "ecosystem"
 				},
 				{
 					"id": "omi.view.github",
@@ -416,11 +416,11 @@
 					"default": "zain",
 					"description": "User name"
 				},
-				"omi.language.template": {
+				"omi.language.ecosystem": {
 					"type": "string",
 					"enum": ["English", "简体中文", "한국어"],
 					"default": "English",
-					"description": "Template language"
+					"description": "Ecosystem language"
 				}
 			}
 		}

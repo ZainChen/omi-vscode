@@ -1,7 +1,7 @@
 const vscode = require('vscode');  //导入模块并在下面的代码中使用别名vscode引用它(模块“vscode”包含VS代码可扩展性API)
 
 const welcome = require("./welcome/index");  //欢迎界面
-const template = require("./template/index");  //omi项目模板更新、下载、项目创建(创建项目包含在线(在线分为npm拉取和github拉取)和离线(离线为直接从omi-vscode扩展中数据拉取)两种方式)
+const ecosystem = require("./ecosystem/index");  //omi项目模板更新、下载、项目创建(创建项目包含在线(在线分为npm拉取和github拉取)和离线(离线为直接从omi-vscode扩展中数据拉取)两种方式)
 const github = require("./github/index");  //github菜单树，实时浏览，下载任意文件和子文件夹，切换任意github项目
 const completion = require("./completion/index");  //自动补全功能模块
 const hover = require("./hover/index");  //鼠标悬停提示功能模块
@@ -16,7 +16,7 @@ const jump = require("./jump/index");  //跳转功能模块
  */
 function activate(context) {
 	const omiWelcome =  new welcome.OmiWelcome(context);  //欢迎界面
-	const omiTemplate = new template.OmiTemplate(context);  //omi项目模板
+	const omiEcosystem = new ecosystem.OmiEcosystem(context);  //omi生态
 	const omiGithub = new github.OmiGitHub(context);  //omi生态更新、下载、项目创建(创建项目包含在线和离线两种方式)
 	const omiCompletion = new completion.OmiCompletion();  //自动补全功能
 	const omiHover = new hover.OmiHover();  //鼠标悬停提示功能
@@ -28,8 +28,8 @@ function activate(context) {
 		vscode.commands.registerCommand('omi.cmd.welcome', () => omiWelcome.mainWelcome()),  //欢迎界面入口
 
 		//omi项目模板更新、下载、项目创建(创建项目包含在线(在线分为npm拉取和github拉取)和离线(离线为直接从omi-vscode扩展中数据拉取)两种方式)
-		vscode.window.createTreeView('omi.view.template', { treeDataProvider: omiTemplate, showCollapseAll: true }),
-		vscode.commands.registerCommand('omi.cmd.templateShowProject', link => omiTemplate.OpenWebview(link)),
+		vscode.window.createTreeView('omi.view.ecosystem', { treeDataProvider: omiEcosystem, showCollapseAll: true }),
+		vscode.commands.registerCommand('omi.cmd.ecosystemOpenWebview', link => omiEcosystem.OpenWebview(link)),
 
 		//github菜单树，实时浏览，下载任意文件和子文件夹，切换任意github项目
 		//vscode.window.registerTreeDataProvider('omi.view.github', omiGithub);  //github菜单树注册(无法添加showCollapseAll功能)
