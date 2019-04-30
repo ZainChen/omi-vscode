@@ -14,6 +14,9 @@ class OmiEcosystem {
         this._onDidChangeTreeData = new vscode.EventEmitter();  //刷新菜单节点使用
         this.onDidChangeTreeData = this._onDidChangeTreeData.event;  //刷新菜单节点使用
 
+        this.terminal = vscode.window.createTerminal({name: "omi-ecosystem"});  //创建终端命令执行窗口
+        this.output = vscode.window.createOutputChannel("omi-ecosystem");  //创建终端输出消息窗口
+
         this.initText();  //初始化模板语言文本
         this.onDidConfigTemplateLanguage();  //监听模板语言设置
     }
