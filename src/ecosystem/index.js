@@ -270,11 +270,20 @@ class OmiEcosystem {
      */
     OpenWebview(link) {
         new ourl("omi", link);
+        // const terminal = vscode.window.createTerminal({
+        //     name: "omi"
+        // });
+        // terminal.show(true);
+        // terminal.sendText("ls", true);
+        // const output = vscode.window.createOutputChannel("zain");
+        // output.show(true);
+        // output.append("aaaaaagweagaaaa");
         //this.gitClone('git@github.com:ZainChen/vscode-json.git');
     }
 
     /**
      * 异步克隆指定git仓库，例：this.gitClone('git@github.com:Tencent/omi.git');
+     * child_process库中的方法，不采用，不能在终端显示过程
      * @param str git 仓库链接
      */
     gitClone(str) {
