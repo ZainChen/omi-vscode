@@ -31,6 +31,21 @@
         "28": "omix",
         "29": "omi-mp",
         "30": "comi",
-        "31": "wx-touch-event"
+        "31": "wx-touch-event",
+        "32": "omi-chart",
+        "33": "md2site",
+        "34": "omi-mvvm",
+        "35": "omi-30-seconds",
+        "36": "omi-canvas",
+        "37": "omi-swiper",
+        "38": "omi-vscode",
+        "39": "omi-ex",
+        "40": "omi-transform",
+        "41": "omi-tap",
+        "42": "omi-finger",
+        "43": "omi-touch",
+        "44": "omi-native",
+        "45": "omi-i18n",
+        "46": "omi-page"
     }
 }
