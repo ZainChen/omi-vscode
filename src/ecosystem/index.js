@@ -94,7 +94,7 @@ class OmiEcosystem {
                     node.command = {
                         command: 'omi.cmd.ecosystemOpenWebview',
                         title: '',
-                        arguments: [this.context.extensionPath+"\\src\\ecosystem\\project\\omi\\index.html"]
+                        arguments: [this.context.extensionPath+"\\src\\ecosystem\\project\\omi-docs\\index.html"]
                     }
                     nodes.push(node);
                     node = new vscode.TreeItem(this.text['menu']['2'], vscode.TreeItemCollapsibleState.None);
