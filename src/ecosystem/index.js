@@ -1,6 +1,7 @@
 const vscode = require('vscode');
 const path = require('path');
 const fs = require('fs');
+const { execFile } = require('child_process');
 
 //zain自定义模块
 // const alg = require("../algorithm/index");  //算法模块
@@ -269,6 +270,21 @@ class OmiEcosystem {
      */
     OpenWebview(link) {
         new ourl("omi", link);
+        this.gitClone('git@github.com:ZainChen/vscode-json.git');
+    }
+
+    /**
+     * 异步克隆指定git仓库，例：this.gitClone('git@github.com:Tencent/omi.git');
+     * @param str git 仓库链接
+     */
+    gitClone(str) {
+        execFile('git', ['clone', str], {cwd: path.join(__dirname, '..', '..', 'assets')}, (error, stdout, stderr) => {
+            if (error) {
+                console.log(error);
+                throw error;
+            }
+            console.log("clone complete."+stdout);
+        });
     }
 
 }
