@@ -15,25 +15,27 @@ class OpenURL {
   }
   getWebviewContent(url) {
     const html = `
-          <!DOCTYPE html >
-          <html lang="en">
-          <head>
-          <head>
+      <!DOCTYPE html >
+      <html lang="en">
+        <head>
           <style>
-            body, html
-              {
-                margin: 0; padding: 0; height: 100%; width: 100%;
-              }
-              .vscode-light {
-                  background: #282C34;
-              }
+            html, body {
+              position: relative;
+              margin: 0;
+              padding: 0;
+              height: 100%;
+              width: 100%;
+            }
+            img {
+              position: absolute;
+            }
           </style>
         </head>
         <body>
           <img src="${url}" alt="${url}" />
         </body>
-        </html>
-          `;
+      </html>
+    `;
     return html;
   }
 }
