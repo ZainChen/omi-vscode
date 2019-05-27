@@ -1,9 +1,9 @@
 [English](https://github.com/ZainChen/omi-vscode/blob/master/README.md) | 简体中文
 
 # Omi Visual Studio Code 扩展
-[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v2.0.9-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
-[![Downloads](https://img.shields.io/badge/Downloads-1.7K%2B-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
-[![UpdateTime](https://img.shields.io/badge/UpdateTime-2019%2F04%2F02%2017%3A30%3A30-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
+[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v2.1.0-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
+[![Downloads](https://img.shields.io/badge/Downloads-3.6K%2B-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
+[![UpdateTime](https://img.shields.io/badge/UpdateTime-2019%2F05%2F27%2011%3A11%3A11-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
 
 此扩展添加了对 Visual Studio Code 的 omi 支持。
 

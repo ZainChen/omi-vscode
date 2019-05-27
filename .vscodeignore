@@ -6,3 +6,13 @@ vsc-extension-quickstart.md
 **/jsconfig.json
 **/*.map
 **/.eslintrc.json
+src/welcome/omi-welcome/config
+src/welcome/omi-welcome/node_modules
+src/welcome/omi-welcome/public
+src/welcome/omi-welcome/scripts
+src/welcome/omi-welcome/src
+src/welcome/omi-welcome/.eslintrc
+src/welcome/omi-welcome/.gitignore
+src/welcome/omi-welcome/package.json
+src/welcome/omi-welcome/package-lock.json
+src/welcome/omi-welcome/README.md

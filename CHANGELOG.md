@@ -1,18 +1,18 @@
 # Omi Visual Studio Code extension Change Log
 
-## Version *
+## Version 2.1.0 May 27, 2019
 
 ### New Features
 
-- 
+- Add Omi eco template feature, developing...
 
 ### Modify
 
-- null
+- Update the welcome interface, the welcome interface is rewritten with the Omi framework.
 
 ### Bug Fixes
 
-- null
+- Remove some of the categories in categories.
 
 ### Problem
 
