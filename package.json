@@ -99,15 +99,10 @@
 	],
 	"categories": [
 		"Snippets",
-		"Themes",
 		"Extension Packs",
 		"Programming Languages",
-		"Azure",
-		"Debuggers",
 		"Formatters",
 		"Keymaps",
-		"Linters",
-		"SCM Providers",
 		"Other"
 	],
 	"activationEvents": [
@@ -422,7 +417,11 @@
 				},
 				"omi.language.ecosystem": {
 					"type": "string",
-					"enum": ["English", "简体中文", "한국어"],
+					"enum": [
+						"English",
+						"简体中文",
+						"한국어"
+					],
 					"default": "English",
 					"description": "Ecosystem language"
 				}
