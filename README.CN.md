@@ -8,7 +8,7 @@
 此扩展添加了对 Visual Studio Code 的 omi 支持。
 
 # 功能
-- Omi 生态系统 `[所有分支和版本]`
+- Omi 生态系统 `[所有分支和版本](近期开发)`
 - Omiu 组件标签和属性补全 `[补全提示支持 markdown 格式]`
 - Omi, Omiu 片段 `[omiu 所有组件片段。按 TAB 跳转到过渡位置]`
 - Omi, Omiu 鼠标悬停提示, 提示内容为 markdown 格式 `[支持用户自定义添加提示信息]`
