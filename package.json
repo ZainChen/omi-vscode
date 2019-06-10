@@ -211,11 +211,24 @@
 			{
 				"id": "html",
 				"extensions": [
-					".html"
+					".html",
+					".htm",
+					".shtml",
+					".xhtml",
+					".mdoc",
+					".jsp",
+					".asp",
+					".aspx",
+					".jshtm",
+					".volt",
+					".ejs",
+					".rhtml"
 				],
 				"aliases": [
 					"HTML",
-					"html"
+					"htm",
+					"html",
+					"xhtml"
 				]
 			},
 			{
@@ -300,6 +313,13 @@
 			{
 				"language": "json",
 				"path": "./src/snippets/omiu.json"
+			}
+		],
+		"grammars": [
+			{
+				"scopeName": "text.html.basic",
+				"path": "./src/syntaxes/omi.html.tmLanguage.json",
+				"injectTo": ["source.js"]
 			}
 		],
 		"viewsContainers": {
