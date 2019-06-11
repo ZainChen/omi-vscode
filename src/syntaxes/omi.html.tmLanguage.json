@@ -1,6 +1,6 @@
 {
 	"scopeName": "omi.source.html.json",
-	"injectionSelector": "L:meta.tag.custom.start.html",
+	"injectionSelector": "L:meta.tag.custom.start.html, L:meta.tag.structure",
 	"patterns": [
 	  {
 		"include": "#omi-html-attributes-json"
@@ -9,22 +9,16 @@
 	"repository": {
 	  "omi-html-attributes-json": {
 			"contentName": "meta.embedded.omi.html.attributes.json",
-			"begin": "(?x)(\\b(?:\\w+\\.)*(?:=)\\s*)(\")",
-			"end": "(\")",
+			"begin": "(?x)(\\b(?:\\w+\\.)*(?:((=)\\s*(\")))\\s*)(\\[|\\{)",
+			"end": "((\\]|\\})\\s*)(\")",
 			"beginCaptures": {
-				"2": {
+				"4": {
 					"name": "string.js"
-				},
-				"3": {
-					"name": "punctuation.definition.string.template.begin.js"
 				}
 			},
 			"endCaptures": {
-				"0": {
+				"3": {
 					"name": "string.js"
-				},
-				"1": {
-					"name": "punctuation.definition.string.template.end.js"
 				}
 			},
 			"patterns": [
