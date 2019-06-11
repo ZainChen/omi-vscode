@@ -317,9 +317,12 @@
 		],
 		"grammars": [
 			{
-				"scopeName": "text.html.basic",
+				"scopeName": "omi.source.html.json",
 				"path": "./src/syntaxes/omi.html.tmLanguage.json",
-				"injectTo": ["source.js"]
+				"injectTo": [
+					"text.html.derivative",
+					"text.html.basic"
+				]
 			}
 		],
 		"viewsContainers": {
