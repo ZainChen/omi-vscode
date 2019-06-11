@@ -317,11 +317,16 @@
 		],
 		"grammars": [
 			{
-				"scopeName": "omi.source.html.json",
-				"path": "./src/syntaxes/omi.html.tmLanguage.json",
+				"scopeName": "source.omi",
+				"path": "./src/syntaxes/omi.tmLanguage.json",
 				"injectTo": [
 					"text.html.derivative",
-					"text.html.basic"
+					"source.js",
+					"source.js.jsx",
+					"source.ts",
+					"source.tsx",
+					"text.html.omi",
+					"text.html.vue"
 				]
 			}
 		],

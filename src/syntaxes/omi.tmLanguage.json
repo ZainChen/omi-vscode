@@ -1,0 +1,74 @@
+{
+	"scopeName": "source.omi",
+	"injectionSelector": "L:meta.attribute, L:meta.tag.attributes, L:meta.tag.other.html, L:meta.tag.custom.start.html, L:meta.field.declaration.js",
+	"patterns": [
+	  {
+		"include": "#omi-attributes-js"
+	  },
+	  {
+		"include": "#omi-css-one"
+	  }
+	],
+	"repository": {
+	  "omi-attributes-js": {
+			"contentName": "meta.embedded.omi.attributes.js",
+			"begin": "(?x)(\\b(?:\\w+\\.)*(?:(\\s*(=)\\s*(\"|\\')))\\s*)(\\[|\\{)",
+			"end": "((\\]|\\})\\s*)(\"|\\')",
+			"beginCaptures": {
+				"4": {
+					"name": "string.js"
+				}
+			},
+			"endCaptures": {
+				"3": {
+					"name": "string.js"
+				}
+			},
+			"patterns": [
+				{"include": "source.js"}
+			]
+		},
+		"omi-css-one": {
+			"contentName": "meta.embedded.omi.css.one",
+			"begin": "(?x)\\b(?:\\w+\\.)*(?:(\\s*(css\\s*=)\\s*(\"|\\')))",
+			"end": "(\"|\\')",
+			"beginCaptures": {
+				"0": {
+					"name": "entity.other.attribute-name.html"
+				},
+				"3": {
+					"name": "string.js"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "string.js"
+				}
+			},
+			"patterns": [
+				{"include": "source.css"}
+			]
+		},
+		"omi-css-two": {
+			"contentName": "meta.embedded.omi.css.one",
+			"begin": "(?x)\\b(?:\\w+\\.)*(?:(\\s*(css\\s*=)\\s*(\"|\\')))",
+			"end": "(\"|\\')",
+			"beginCaptures": {
+				"0": {
+					"name": "variable.object.property.js"
+				},
+				"3": {
+					"name": "string.js"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "string.js"
+				}
+			},
+			"patterns": [
+				{"include": "source.css"}
+			]
+		}
+	}
+}
