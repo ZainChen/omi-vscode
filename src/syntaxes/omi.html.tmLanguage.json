@@ -9,7 +9,7 @@
 	"repository": {
 	  "omi-html-attributes-json": {
 			"contentName": "meta.embedded.omi.html.attributes.json",
-			"begin": "(?x)(\\b(?:\\w+\\.)*(?:((=)\\s*(\")))\\s*)(\\[|\\{)",
+			"begin": "(?x)(\\b(?:\\w+\\.)*(?:(\\s*(=)\\s*(\")))\\s*)(\\[|\\{)",
 			"end": "((\\]|\\})\\s*)(\")",
 			"beginCaptures": {
 				"4": {
