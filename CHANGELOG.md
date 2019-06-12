@@ -9,6 +9,7 @@
 ### Modify
 
 - How to use the left menu function `[under revision...]`
+- temporarily turn off ecosystem and github
 - Menu icon need to be remade svg image.`[The current version has been resolved]`
 
 ### Problem

@@ -14,9 +14,9 @@ This extension adds omi support for Visual Studio Code.
 - Omi mouse hover prompt, the prompt content is in markdown format `[Support user-defined add prompt information]`
 - Omi snippets `[All omiu component snippets. Multiple overlays, press TAB to jump to the transition position]`
 - Welcome omi `[Welcome Screen]`
-- GitHub switch `[GitHub tree view to switch url]`
-- GitHub file view `[open github file]`
-- Gitgub file download function. `[Any files and folders]`
+- GitHub switch `[GitHub tree view to switch url](Upgrading, temporarily closed)`
+- GitHub file view `[open github file](Upgrading, temporarily closed)`
+- Gitgub file download function. `[Any files and folders](Upgrading, temporarily closed)`
 - In development...
 
 # Label completion
