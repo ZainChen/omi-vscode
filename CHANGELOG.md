@@ -1,18 +1,18 @@
 # Omi Visual Studio Code extension Change Log
 
-## Version 2.1.5 June 11, 2019
+## Version 2.1.5 June 12, 2019
 
 ### New Features
 
-- Add omi custom code highlighting injection `[Html file tag attribute support json highlight]`
+- Add omi custom code highlighting injection `[Tag attribute support json highlight, omi css highlight]`
 
 ### Modify
 
 - How to use the left menu function `[under revision...]`
+- Menu icon need to be remade svg image.`[The current version has been resolved]`
 
 ### Problem
 
-- Menu icon need to be remade svg image.
 - omiu component need to add a new attribute completion button, the attribute completion trigger needs to be perfected.
 
 ---
