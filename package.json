@@ -98,9 +98,10 @@
 		"nodejs"
 	],
 	"categories": [
-		"Snippets",
 		"Extension Packs",
 		"Programming Languages",
+		"Snippets",
+		"Themes",
 		"Formatters",
 		"Keymaps",
 		"Other"
