@@ -330,27 +330,6 @@
 				]
 			}
 		],
-		"viewsContainers": {
-			"activitybar": [
-				{
-					"id": "omi-views",
-					"title": "omi",
-					"icon": "./assets/omi-logo-50-40-28.svg"
-				}
-			]
-		},
-		"views": {
-			"omi-views": [
-				{
-					"id": "omi.view.ecosystem",
-					"name": "ecosystem"
-				},
-				{
-					"id": "omi.view.github",
-					"name": "github"
-				}
-			]
-		},
 		"menus": {
 			"editor/context": [
 				{

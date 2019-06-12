@@ -27,22 +27,44 @@ function activate(context) {
 		//欢迎界面
 		vscode.commands.registerCommand('omi.cmd.welcome', () => omiWelcome.mainWelcome()),  //欢迎界面入口
 
+		//v2.1.5暂时关闭模板和github功能，准备更新使用方法
+		// "viewsContainers": {
+		// 	"activitybar": [
+		// 		{
+		// 			"id": "omi-views",
+		// 			"title": "omi",
+		// 			"icon": "./assets/omi-logo-50-40-28.svg"
+		// 		}
+		// 	]
+		// },
+		// "views": {
+		// 	"omi-views": [
+		// 		{
+		// 			"id": "omi.view.ecosystem",
+		// 			"name": "ecosystem"
+		// 		},
+		// 		{
+		// 			"id": "omi.view.github",
+		// 			"name": "github"
+		// 		}
+		// 	]
+		// },
 		//omi项目模板更新、下载、项目创建(创建项目包含在线(在线分为npm拉取和github拉取)和离线(离线为直接从omi-vscode扩展中数据拉取)两种方式)
-		vscode.window.createTreeView('omi.view.ecosystem', { treeDataProvider: omiEcosystem, showCollapseAll: true }),
-		vscode.commands.registerCommand('omi.cmd.ecosystemOpenWebview', link => omiEcosystem.OpenWebview(link)),
+		// vscode.window.createTreeView('omi.view.ecosystem', { treeDataProvider: omiEcosystem, showCollapseAll: true }),
+		// vscode.commands.registerCommand('omi.cmd.ecosystemOpenWebview', link => omiEcosystem.OpenWebview(link)),
 
 		//github菜单树，实时浏览，下载任意文件和子文件夹，切换任意github项目
 		//vscode.window.registerTreeDataProvider('omi.view.github', omiGithub);  //github菜单树注册(无法添加showCollapseAll功能)
 		//github菜单树创建和注册(用此方法可添加showCollapseAll功能)，支持此功能的vscode最低版本为1.30.1
-		vscode.window.createTreeView('omi.view.github', { treeDataProvider: omiGithub, showCollapseAll: true }),  //创建github菜单树视图
-		vscode.commands.registerCommand('omi.cmd.githubOmi', () => omiGithub.commandShowOmi()),  //github菜单树切换到Tencent/omi
-		vscode.commands.registerCommand('omi.cmd.githubSwitch', () => omiGithub.githubSwitch()),  //切换github，生成新的菜单树
-		vscode.commands.registerCommand('omi.cmd.githubRefresh', () => omiGithub.refreshAll()),  //刷新所有菜单节点
-		vscode.commands.registerCommand('omi.cmd.githubRefreshNode', node => omiGithub.refreshDesignation(node)),  //刷新指定菜单节点
-		vscode.commands.registerCommand('omi.cmd.githubOpenBrowser', node => omiGithub.openGithub(node)),  //打开当前菜单树节点链接的GitHub页面
-		vscode.commands.registerCommand('omi.cmd.githubOpenFile', nodeLink => omiGithub.openGithubFile(nodeLink)),  //vscode打开github文件
-		vscode.commands.registerCommand('omi.cmd.githubClearCache', () => omiGithub.clearCache()),  //清除缓存文件(查看文件时生成的)
-		vscode.commands.registerCommand('omi.cmd.githubFileDownload', node => omiGithub.githubFileDownload(node)),  //github文件下载(支持任意子文件和文件夹)
+		// vscode.window.createTreeView('omi.view.github', { treeDataProvider: omiGithub, showCollapseAll: true }),  //创建github菜单树视图
+		// vscode.commands.registerCommand('omi.cmd.githubOmi', () => omiGithub.commandShowOmi()),  //github菜单树切换到Tencent/omi
+		// vscode.commands.registerCommand('omi.cmd.githubSwitch', () => omiGithub.githubSwitch()),  //切换github，生成新的菜单树
+		// vscode.commands.registerCommand('omi.cmd.githubRefresh', () => omiGithub.refreshAll()),  //刷新所有菜单节点
+		// vscode.commands.registerCommand('omi.cmd.githubRefreshNode', node => omiGithub.refreshDesignation(node)),  //刷新指定菜单节点
+		// vscode.commands.registerCommand('omi.cmd.githubOpenBrowser', node => omiGithub.openGithub(node)),  //打开当前菜单树节点链接的GitHub页面
+		// vscode.commands.registerCommand('omi.cmd.githubOpenFile', nodeLink => omiGithub.openGithubFile(nodeLink)),  //vscode打开github文件
+		// vscode.commands.registerCommand('omi.cmd.githubClearCache', () => omiGithub.clearCache()),  //清除缓存文件(查看文件时生成的)
+		// vscode.commands.registerCommand('omi.cmd.githubFileDownload', node => omiGithub.githubFileDownload(node)),  //github文件下载(支持任意子文件和文件夹)
 		
 		//自动补全
 		vscode.languages.registerCompletionItemProvider(['html', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact'], omiCompletion, ' '),  //代码提示功能注册
