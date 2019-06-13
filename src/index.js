@@ -27,7 +27,7 @@ function activate(context) {
 		//欢迎界面
 		vscode.commands.registerCommand('omi.cmd.welcome', () => omiWelcome.mainWelcome()),  //欢迎界面入口
 
-		//v2.1.5暂时关闭模板和github功能，准备更新使用方法
+		//v2.1.5暂时关闭模板和 github 功能，准备更新使用方法，后续添加到 package.json 的 "grammars" 节点后
 		// "viewsContainers": {
 		// 	"activitybar": [
 		// 		{

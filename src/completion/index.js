@@ -1,7 +1,7 @@
 const vscode = require('vscode');
 const fs = require('fs');
 
-//const alg = require('../algorithm/index');
+const alg = require('../algorithm/index');
 
 /**
  * omi自动补全功能实现类
@@ -21,10 +21,7 @@ class OmiCompletion {
 	 *可以通过返回`undefined`，`null`或空数组来表示缺少结果。
 	 */
 	provideCompletionItems(document, position, token, context) {
-		if(JSON.stringify(this.objJsonOmiu) == "{}") {  //如果omiu标签属性库为空，则从文件读取导入
-			let data = fs.readFileSync(__dirname+'/comjson/omiu-com.json', 'utf8');  //同步获取json文件内容
-			this.objJsonOmiu = JSON.parse(data);  //字符串转json对象
-		}
+		this.initData(document);
 		let ctc = context.triggerCharacter;
 		let glc = this.getLastChar(document, position);  //获取当前输入的字符或字符串
 		let ch = ctc || glc;
@@ -54,20 +51,52 @@ class OmiCompletion {
 	}
 
 	/**
+	 * 初始化补全提示json数据
+	 */
+	initData(document) {
+		// if(JSON.stringify(this.objJsonOmiu) !== "{}") {  //静态加载补全配置(需重启vscode更新补全配置)，注释该if可实现动态加载(动态加载效率低于静态加载，但可实现实时更新用户自定义补全配置)。
+		// 	return false;
+		// }
+		this.objJsonOmiu = new Object();
+		const hoverfileName	= document.fileName;
+		const fileNames = alg.getfilePathName(__dirname+"/config");
+		for(let i = 0; i < fileNames.length; i++) {
+			let data = JSON.parse(fs.readFileSync(__dirname+'/config/'+fileNames[i], 'utf8'));  //同步获取json文件内容
+			let k = false;
+			for(let j = 0; j < data["fileTypes"].length; j++) {
+				if(data["fileTypes"][j] == ".*") {
+					k = true;
+					break;
+				}
+				if(alg.strTailMatch(hoverfileName, data["fileTypes"][j], 2)) {
+					k = true;
+					break;
+				}
+			}
+			if(k) {
+				this.objJsonOmiu[fileNames[i]] = data;
+			}
+		}
+		return true;
+	}
+
+	/**
 	 * 标签补全
 	 */
 	omiuLabelCompletion() {
 		let retCom = new Array();
-		for(let i in this.objJsonOmiu) {
-			let comp = new vscode.CompletionItem(this.objJsonOmiu[i]['label'], this.objJsonOmiu[i]['kind']);  //创建补全对象(初始化标签和类型)
-			comp.detail = this.objJsonOmiu[i]['detail'];  //提示信息
-			comp.insertText = new vscode.SnippetString(this.objJsonOmiu[i]['insertText']);  //插入的内容
-			comp.documentation = new vscode.MarkdownString(this.objJsonOmiu[i]['documentation']);  //Markdown说明
-			comp.sortText = this.objJsonOmiu[i]['sortText'];  //权值排序
-			if(this.objJsonOmiu[i]['cmd']) {
-				comp.command = this.autoSuggestCommand();  //补全后立马开启新的补全提示
+		for(let k in this.objJsonOmiu) {
+			for(let i in this.objJsonOmiu[k]["completion"]) {
+				let comp = new vscode.CompletionItem(this.objJsonOmiu[k]["completion"][i]['label'], this.objJsonOmiu[k]["completion"][i]['kind']);  //创建补全对象(初始化标签和类型)
+				comp.detail = this.objJsonOmiu[k]["completion"][i]['detail'];  //提示信息
+				comp.insertText = new vscode.SnippetString(this.objJsonOmiu[k]["completion"][i]['insertText']);  //插入的内容
+				comp.documentation = new vscode.MarkdownString(this.objJsonOmiu[k]["completion"][i]['documentation']);  //Markdown说明
+				comp.sortText = this.objJsonOmiu[k]["completion"][i]['sortText'];  //权值排序
+				if(this.objJsonOmiu[k]["completion"][i]['cmd']) {
+					comp.command = this.autoSuggestCommand();  //补全后立马开启新的补全提示
+				}
+				retCom.push(comp);
 			}
-			retCom.push(comp);
 		}
 		return retCom;
 	}
@@ -81,19 +110,24 @@ class OmiCompletion {
 		let retCom = [];
 		let objLabel = this.getPosOmiLabe(document, position);  //获取合法标签对象(包含标签、'<'和'>'的位置，如果标签和引号不合法，返回空对象)
 		if(objLabel.label != '') {
-			for(let i in this.objJsonOmiu[objLabel.label]['attribute']) {
-				if(this.labeHaveattributes(document, objLabel, this.objJsonOmiu[objLabel.label]['attribute'][i]['label'])) {  //标签内已有的属性值不添加(只支持光标在标签行)
+			for(let k in this.objJsonOmiu) {
+				if(typeof this.objJsonOmiu[k]["completion"][objLabel.label] === "undefined") {
 					continue;
 				}
-				let comp = new vscode.CompletionItem(this.objJsonOmiu[objLabel.label]['attribute'][i]['label'], this.objJsonOmiu[objLabel.label]['attribute'][i]['kind']);
-				comp.detail = this.objJsonOmiu[objLabel.label]['attribute'][i]['detail'];
-				comp.insertText = new vscode.SnippetString(this.objJsonOmiu[objLabel.label]['attribute'][i]['insertText']);
-				comp.documentation = new vscode.MarkdownString(this.objJsonOmiu[objLabel.label]['attribute'][i]['documentation']);
-				comp.sortText = this.objJsonOmiu[objLabel.label]['attribute'][i]['sortText'];
-				if(this.objJsonOmiu[objLabel.label]['attribute'][i]['cmd']) {
-					comp.command = this.autoSuggestCommand();
+				for(let i in this.objJsonOmiu[k]["completion"][objLabel.label]['attribute']) {
+					if(this.labeHaveattributes(document, objLabel, this.objJsonOmiu[k]["completion"][objLabel.label]['attribute'][i]['label'])) {  //标签内已有的属性值不添加(只支持光标在标签行)
+						continue;
+					}
+					let comp = new vscode.CompletionItem(this.objJsonOmiu[k]["completion"][objLabel.label]['attribute'][i]['label'], this.objJsonOmiu[k]["completion"][objLabel.label]['attribute'][i]['kind']);
+					comp.detail = this.objJsonOmiu[k]["completion"][objLabel.label]['attribute'][i]['detail'];
+					comp.insertText = new vscode.SnippetString(this.objJsonOmiu[k]["completion"][objLabel.label]['attribute'][i]['insertText']);
+					comp.documentation = new vscode.MarkdownString(this.objJsonOmiu[k]["completion"][objLabel.label]['attribute'][i]['documentation']);
+					comp.sortText = this.objJsonOmiu[k]["completion"][objLabel.label]['attribute'][i]['sortText'];
+					if(this.objJsonOmiu[k]["completion"][objLabel.label]['attribute'][i]['cmd']) {
+						comp.command = this.autoSuggestCommand();
+					}
+					retCom.push(comp);
 				}
-				retCom.push(comp);
 			}
 		}
 		return retCom;

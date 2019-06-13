@@ -36,7 +36,7 @@ omi-vscode/tree/master/src/hover
 
 ### 2.2.Add a custom prompt profile
 
-Create a new json file in the `config` folder. The file name is free and can be configured according to the specified file structure.
+Create a new json file in the `config` folder. The file name is free and can be configured according to the specified file structure, new subfolders are not supported.
 
 (PS:There are multiple prompt information matches in the current line, which will be followed by a prompt)
 
