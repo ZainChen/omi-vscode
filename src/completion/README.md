@@ -1,69 +1,81 @@
 English | [简体中文](https://github.com/ZainChen/omi-vscode/blob/master/src/completion/README.CN.md)
 
-# Omi mouse hover prompt function
+# Omi code completion function
+
+(PS: Only support omi component completion)
 
 Supported languages: `omi`, `vue`, `html`, `json`, `javascript`, `javascriptreact`, `typescript`, `typescriptreact`, `tex`, `c`, `cpp`, `css`, `markdown`, `php`, `python`, `jsonc`, `objective-c`, `xml`, `sql`, `java`, `swift`, `go`, `csharp`
 
 ## 1. structure
 
->config `[Mouseover prompt information configuration library]`
+>config `[Code completion configuration library]`
 >
->>other `[Store other prompt information profiles]`
+>>test `[Store the code completion configuration file for testing]`
 >>>
->>>other.json `[Customize other prompts]`
+>>>test.json `[Custom code completion for testing]`
 >>
->>omi.json `[Omi related tips]`
+>>omiu.json `[Omiu related code completion]`
 >>
->>omiu.json `[Omiu related tips]`
->>
->>package.json `[package.json file related tips]`
->>
->
 >index.js `[Function implementation code]`
 >
 >README.CN.md `[Chinese documentation]`
 >
 >README.md `[English documentation]`
 
-## 2. User-defined prompt information
+## 2. User-defined code completion information
 
-(PS:This method is also suitable for adding hints in the `omi-vscode` source code. Welcome everyone to contribute: https://github.com/ZainChen/omi-vscode)
+(PS: This method is also suitable for adding code completion in the `omi-vscode` source code. Welcome everyone to contribute：https://github.com/ZainChen/omi-vscode)
 
 ### 2.1. After installing the `omi` extension, go to the `omi` extension installation directory.
 
 ```
-C:\Users\[your user]\.vscode-insiders[There are differences depending on the version of vscode]\extensions\zainchen.omi-*[* for omi version number]\src\hover\
+C:\Users\[Your username]\.vscode-insiders[There are differences depending on the version of vscode]\extensions\zainchen.omi-*[* for omi version number]\src\completion\
 ```
 
 Source code contribution directory
 
 ```
-omi-vscode/tree/master/src/hover
+omi-vscode/tree/master/src/completion
 ```
 
-### 2.2. Add a custom prompt profile
+### 2.2. Add a custom code completion profile
 
-Create a new json file in the `config` folder. The file name is free and can be configured according to the specified file structure, support for adding any subfolders.
+Create a new json file in the `config` folder. The file name is free. It can be configured according to the specified file structure. Any subfolder can be added.
 
-(PS:There are multiple prompt information matches in the current line, which will be followed by a prompt)
+(PS: If there are multiple prompts in the current row, the matching will be followed by a prompt.)
 
 Configuration file structure description:
 
 ```js
 {
-    "fileTypes": [ ".*", ".js", "zain.js" ],  //File type that supports mouse prompts, '.*' is any type, '.js' is the specified suffix name, and 'zain.js' is the specified file.
-    "hovers": {  //All tips
-        "o-button": {  //A prompt message configuration
-            "keyword": "o-button",  //Keyword matching keyword
-            "matchingMethod": "line",  //Match mode (the entire line of the line cursor matches; continuous string matches the continuous string without spaces)
-            "ignoreAZ": false,  //Whether to ignore case (true ignore, false not ignore)
-            "markdownText": "markdown text"  //Prompt text, support Markdown
+  "fileTypes": [ ".*", '.js', 'zain.js' ],  // Supports the file type and specific file of the current configuration file code completion, '.*' is any type, '.js' is the specified suffix name, and 'zain.js' is the specified file
+  "completion": {  // All completion information
+    "o-button": {  // One label completion information configuration
+      "label": "o-button",  // Match keyword
+      "kind": 24,  // Completion type, determine the icon style on the left
+      "detail": "...",  // Prompt message
+      "insertText": "<o-button${1}>${2}</o-button>",  // Inserted content
+      "documentation": "...",  // Markdown description
+      "sortText": "a",  // Weight sort
+      "cmd": false,  // Whether to open a new completion prompt immediately after completion
+      "attribute": {  // Current tag all attribute completion information configuration
+        "type": {  // An attribute completion information configuration
+          "label": "type",  // Match keyword
+          "kind": 22,  // Completion type, determine the icon style on the left
+          "detail": "[omiu]o-button",  // Prompt message
+          "insertText": "type='${1|primary,default,warn,vcode|}'",  // Inserted content
+          "documentation": "...",  // Markdown description
+          "sortText": "a",  // Weight sort
+          "cmd": false  // Whether to open a new completion prompt immediately after completion
         },
-        "o-icon": {
-            "keyword": "o-icon",
-            "matchingMethod": "continuous",
-            "ignoreAZ": true,
-            "markdownText": "markdown text"
+        "size": {
+          ...
         }
+      }
+    },
+    "o-icon": {
+      ...
+    }
+  }
 }
 ```
