@@ -1,1 +1,25 @@
-44
+{
+    "fileTypes": [ ".*" ],
+    "completion": {
+        "m-button": {
+            "label": "m-button",
+            "kind": 24,
+            "detail": "[omim]Click or touch it to trigger an operation. The encapsulated logic is triggered in response to user clicks.",
+            "insertText": "<m-button${1}>${2}</m-button>",
+            "documentation": "---\n\n## Button 按钮\n\n简介：点击或触摸触发一个操作的元素。响应用户点击操作，触发封装的逻辑。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/button?index=1&subIndex=0'官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/button?index=1&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-button ripple icon=\"favorite\">Default</m-button>\n\n<m-button ripple dense>Dense</m-button>\n\n<m-button ripple svg-icon=\"{\n  path: '...',\n  color: '#0072d9',\n  scale: 1.3\n}\">ICON</m-button>\n```\n\n## Omi 中使用\n\n### JSX:\n\n```jsx\n<m-button ripple raised icon=\"favorite\">Default</m-button>\n\n<m-button ripple dense raised>Dense</m-button>\n\n<m-button ripple raised svgIcon={{\n  path: '...',\n  color: 'white',\n  scale: 1.3\n}}>ICON</m-button>\n```\n\n---\n\n## API\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| ripple | boolean | -- | 单击按钮形成波纹 |\n| raised | boolean | -- | 有填充，有阴影 |\n| dense | boolean | -- | 更小更精致的按钮 |\n| unelevated | boolean | -- | 有填充，无阴影 |\n| outlined | boolean | -- | 无填充，有边框 |\n| svg-icon | object | -- | svg图标 |\n| icon | string | -- | 图标 |\n\n\n---\n\n## 样例\n\n![button](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/button1.png 'button')\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attribute": {
+                "ripple": {
+                    "label": "ripple",
+                    "kind": 22,
+                    "detail": "[omim]m-button",
+                    "insertText": "ripple",
+                    "documentation": "---\n\n## ripple\n\n类型：boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        }
+    }
+}
