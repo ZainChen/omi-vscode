@@ -10,6 +10,7 @@ class OmiCompletion {
 	constructor() {
 		this.objJsonOmiu = new Object();
 	}
+
 	/**
 	 *提供给定职位和文件的完成项目。
 	 *
