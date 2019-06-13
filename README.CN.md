@@ -1,22 +1,22 @@
 [English](https://github.com/ZainChen/omi-vscode/blob/master/README.md) | 简体中文
 
 # Omi Visual Studio Code 扩展
-[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v2.1.5-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
-[![Downloads](https://img.shields.io/badge/Downloads-4.5K%2B-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
-[![UpdateTime](https://img.shields.io/badge/UpdateTime-2019%2F06%2F12%2011%3A30%3A25-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
+[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v2.1.6-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
+[![Downloads](https://img.shields.io/badge/Downloads-4.7K%2B-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
+[![UpdateTime](https://img.shields.io/badge/UpdateTime-2019%2F06%2F13%2011%3A30%3A25-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
 
 此扩展添加了对 Visual Studio Code 的 omi 支持。
 
 # 功能
-- Omi 生态系统 `[所有分支和版本](近期开发)`
+- Omi 生态系统 `[所有分支和版本(近期开发)]`
 - Omi 组件标签和属性补全 `[补全提示支持 markdown 格式]`
 - Omi 自定义代码高亮注入 `[标签属性支持 json 高亮, omi css 高亮]`
 - Omi 鼠标悬停提示, 提示内容为 markdown 格式 `[支持用户自定义添加提示信息]`
 - Omi 片段 `[omiu 所有组件片段。按 TAB 跳转到过渡位置]`
 - Omi 欢迎界面 `[欢迎大家使用 omi-vscode]`
-- GitHub 切换 `[GitHub 菜单树视图切换任意项目](正在升级，暂时关闭)`
-- GitHub 文件视图 `[打开 GitHub 文件](正在升级，暂时关闭)`
-- Gitgub 文件下载功能 `[任意文件和文件夹](正在升级，暂时关闭)`
+- GitHub 切换 `[GitHub 菜单树视图切换任意项目(正在升级，暂时关闭)]`
+- GitHub 文件视图 `[打开 GitHub 文件(正在升级，暂时关闭)]`
+- Gitgub 文件下载功能 `[任意文件和文件夹(正在升级，暂时关闭)]`
 - 更多功能开发中...
 
 # 标签补全
