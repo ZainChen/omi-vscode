@@ -1,4 +1,4 @@
-English | [简体中文](https://github.com/ZainChen/omi-vscode/blob/master/src/hover/README.CN.md)
+English | [简体中文](https://github.com/ZainChen/omi-vscode/blob/master/src/completion/README.CN.md)
 
 # Omi mouse hover prompt function
 
@@ -51,7 +51,7 @@ Configuration file structure description:
 
 ```js
 {
-    "fileTypes": [ ".*", ".js", "zain.js" ],  //File type that supports mouse prompts and specific documents, '.*' is any type, '.js' is the specified suffix name, and 'zain.js' is the specified file.
+    "fileTypes": [ ".*", ".js", "zain.js" ],  //File type that supports mouse prompts, '.*' is any type, '.js' is the specified suffix name, and 'zain.js' is the specified file.
     "hovers": {  //All tips
         "o-button": {  //A prompt message configuration
             "keyword": "o-button",  //Keyword matching keyword
@@ -60,7 +60,10 @@ Configuration file structure description:
             "markdownText": "markdown text"  //Prompt text, support Markdown
         },
         "o-icon": {
-            ...
+            "keyword": "o-icon",
+            "matchingMethod": "continuous",
+            "ignoreAZ": true,
+            "markdownText": "markdown text"
         }
 }
 ```

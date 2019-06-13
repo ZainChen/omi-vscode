@@ -59,9 +59,9 @@ class OmiCompletion {
 		// }
 		this.objJsonOmiu = new Object();
 		const hoverfileName	= document.fileName;
-		const fileNames = alg.getfilePathName(__dirname+"/config");
+		const fileNames = alg.getfilePathNameAll(__dirname+"/config");  //递归获取指定路径下所有文件，包含子文件夹
 		for(let i = 0; i < fileNames.length; i++) {
-			let data = JSON.parse(fs.readFileSync(__dirname+'/config/'+fileNames[i], 'utf8'));  //同步获取json文件内容
+			let data = JSON.parse(fs.readFileSync(fileNames[i], 'utf8'));  //同步获取json文件内容
 			let k = false;
 			for(let j = 0; j < data["fileTypes"].length; j++) {
 				if(data["fileTypes"][j] == ".*") {

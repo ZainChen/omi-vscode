@@ -11,6 +11,7 @@ module.exports = {
 	strTailMatch,
 	strInFindLP,
 	getfilePathName,
+	getfilePathNameAll,
 	getFileContent,
 	strDelHtLineSpace,
 	SplitStringChar,
@@ -135,6 +136,25 @@ function getfilePathName(strPath) {
 	return fs.readdirSync(path.join(strPath));  //获取当前文件夹下所有文件名
 	// console.log(__dirname);  // 当前文件所在的绝对路径。
 	// console.log(__filename);  // 当前文件的文件名,包括全路径。  __dirname和__filename都是全局对象。
+}
+
+/**
+ * 递归获取指定路径下所有文件名 (包含子文件夹)
+ * @param {*} dir 文件路径，不能带有文件名
+ * @param {*} filesList 递归储存所有文件路径
+ */
+function getfilePathNameAll(dir, filesList = []) {
+    const files = fs.readdirSync(dir);
+    files.forEach((item) => {
+        var fullPath = path.join(dir, item);
+        const stat = fs.statSync(fullPath);
+        if (stat.isDirectory()) {
+            getfilePathNameAll(path.join(dir, item), filesList);  //递归读取文件
+        } else {
+            filesList.push(fullPath);
+        }
+    });
+    return filesList;
 }
 
 /**

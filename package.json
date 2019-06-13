@@ -109,6 +109,7 @@
 	"activationEvents": [
 		"onView:omi.view.ecosystem",
 		"onView:omi.view.github",
+		"onCommand:omi.cmd.welcome",
 		"onCommand:omi.cmd.ecosystemOpenWebview",
 		"onCommand:omi.cmd.githubOmi",
 		"onCommand:omi.cmd.githubSwitch",
@@ -118,6 +119,8 @@
 		"onCommand:omi.cmd.githubOpenFile",
 		"onCommand:omi.cmd.githubClearCache",
 		"onCommand:omi.cmd.githubFileDownload",
+		"onLanguage:omi",
+		"onLanguage:vue",
 		"onLanguage:c",
 		"onLanguage:cpp",
 		"onLanguage:css",
@@ -260,6 +263,26 @@
 				],
 				"aliases": [
 					"text"
+				]
+			},
+			{
+				"id": "omi",
+				"extensions": [
+					".omi"
+				],
+				"aliases": [
+					"Omi",
+					"omi"
+				]
+			},
+			{
+				"id": "vue",
+				"extensions": [
+					".vue"
+				],
+				"aliases": [
+					"Vue",
+					"vue"
 				]
 			}
 		],

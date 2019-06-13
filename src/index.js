@@ -66,11 +66,13 @@ function activate(context) {
 		// vscode.commands.registerCommand('omi.cmd.githubClearCache', () => omiGithub.clearCache()),  //清除缓存文件(查看文件时生成的)
 		// vscode.commands.registerCommand('omi.cmd.githubFileDownload', node => omiGithub.githubFileDownload(node)),  //github文件下载(支持任意子文件和文件夹)
 		
+		//语言标示值参考：https://code.visualstudio.com/docs/languages/identifiers
+
 		//自动补全
-		vscode.languages.registerCompletionItemProvider(['html', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact'], omiCompletion, ' '),  //代码提示功能注册
+		vscode.languages.registerCompletionItemProvider(['omi', 'vue', 'html', 'json', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'tex', 'c', 'cpp', 'css', 'markdown', 'php', 'python', 'jsonc', 'objective-c', 'xml', 'sql', 'java', 'swift', 'go', 'csharp'], omiCompletion, ' '),  //代码提示功能注册
 		
 		//鼠标悬停提示功能
-		vscode.languages.registerHoverProvider(['html', 'json', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'tex', 'c', 'cpp', 'css', 'markdown', 'php', 'python', 'jsonc', 'objective-c', 'xml', 'sql', 'java', 'swift', 'go', 'csharp'], omiHover),  //鼠标悬停提示功能注册
+		vscode.languages.registerHoverProvider(['omi', 'vue', 'html', 'json', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'tex', 'c', 'cpp', 'css', 'markdown', 'php', 'python', 'jsonc', 'objective-c', 'xml', 'sql', 'java', 'swift', 'go', 'csharp'], omiHover),  //鼠标悬停提示功能注册
 	
 		//跳转功能
 		vscode.languages.registerDefinitionProvider(['html', 'json', 'javascript'], {provideDefinition}),  //跳转功能注册
