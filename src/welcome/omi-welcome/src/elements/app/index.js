@@ -82,7 +82,8 @@ define('my-app', class extends WeElement {
             class="app-logo"
             alt="logo"
           />
-          <h2 class="app-title">Hi {this.data.userName}, {this.data.time}！{this.data.say}</h2>
+          {/* <h2 class="app-title">Hi {this.data.userName}, {this.data.time}！{this.data.say}</h2> */}
+          <h2 class="app-title">{this.data.say}</h2>
         </header>
         {/* <app-intro /> */}
         {/* <o-button onClick={this.clickHandler} style='width:200px;'>I am omiu button.</o-button> */}
