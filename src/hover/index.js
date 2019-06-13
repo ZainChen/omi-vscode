@@ -42,9 +42,13 @@ class OmiHover {
 		const hoverfileName	= document.fileName;
 		const fileNames = alg.getfilePathNameAll(__dirname+"/config");
 		for(let i = 0; i < fileNames.length; i++) {
-			let data = JSON.parse(fs.readFileSync(fileNames[i], 'utf8'));
+			const content = fs.readFileSync(fileNames[i], 'utf8');
+			if(content === '') {
+				continue;
+			}
+			let data = JSON.parse(content);
 			let k = false;
-			for(let j = 0; j < data["fileTypes"].length; j++) {
+			for(let j = 0; typeof data["fileTypes"] !== "undefined" && j < data["fileTypes"].length; j++) {
 				if(data["fileTypes"][j] == ".*") {
 					k = true;
 					break;

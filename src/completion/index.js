@@ -59,17 +59,21 @@ class OmiCompletion {
 		// 	return false;
 		// }
 		this.objJsonOmiu = new Object();
-		const hoverfileName	= document.fileName;
+		const completionfileName = document.fileName;
 		const fileNames = alg.getfilePathNameAll(__dirname+"/config");  //递归获取指定路径下所有文件，包含子文件夹
 		for(let i = 0; i < fileNames.length; i++) {
-			let data = JSON.parse(fs.readFileSync(fileNames[i], 'utf8'));  //同步获取json文件内容
+			const content = fs.readFileSync(fileNames[i], 'utf8');
+			if(content === '') {
+				continue;
+			}
+			let data = JSON.parse(content);  //同步获取json文件内容
 			let k = false;
-			for(let j = 0; j < data["fileTypes"].length; j++) {
+			for(let j = 0; typeof data["fileTypes"] !== "undefined" && j < data["fileTypes"].length; j++) {
 				if(data["fileTypes"][j] == ".*") {
 					k = true;
 					break;
 				}
-				if(alg.strTailMatch(hoverfileName, data["fileTypes"][j], 2)) {
+				if(alg.strTailMatch(completionfileName, data["fileTypes"][j], 2)) {
 					k = true;
 					break;
 				}
@@ -212,17 +216,19 @@ class OmiCompletion {
 		}
 		//console.log(">:"+pr.x+"\t"+pr.y);
 
-		//判断光标是否在引号中(''或"")，从而判断是否要给属性提示
-		//算法：扫描'<'位置到光标当前位置，计算'或"数量，如果为双数则光标不在其中,如果为单数且光标右边还有'或"则光标在其中
-		//记录单引号数量'character
-		let on = this.findCharNum(doc, pl, pos, '\'');  //坐标区间查找字符出现数量，不包含坐标位置。
-		if(on%2 != 0) {
-			return objLabel;
-		}
-		//记录双引号数量"
-		let en = this.findCharNum(doc, pl, pos, '\"');  //坐标区间查找字符出现数量，不包含坐标位置。
-		if(en%2 != 0) {
-			return objLabel;
+		if(!alg.strTailMatch(doc.fileName, ".html", 2)) {  //*.html 文件中的引号内属性支持补全
+			//判断光标是否在引号中(''或"")，从而判断是否要给属性提示
+			//算法：扫描'<'位置到光标当前位置，计算'或"数量，如果为双数则光标不在其中,如果为单数且光标右边还有'或"则光标在其中
+			//记录单引号数量'character
+			let on = this.findCharNum(doc, pl, pos, '\'');  //坐标区间查找字符出现数量，不包含坐标位置。
+			if(on%2 != 0) {
+				return objLabel;
+			}
+			//记录双引号数量"
+			let en = this.findCharNum(doc, pl, pos, '\"');  //坐标区间查找字符出现数量，不包含坐标位置。
+			if(en%2 != 0) {
+				return objLabel;
+			}
 		}
 		
 		//获取标签值
