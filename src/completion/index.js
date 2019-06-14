@@ -279,7 +279,7 @@ class OmiCompletion {
 			let slLen = strLine.length;
 			let findStr = '';  //待查找的字符串
 			if(x == ol.posl.x && x == ol.posr.x) {
-				for(let y = ol.posl.y; y < ol.posr.y; y++) {
+				for(let y = ol.posl.y; y <= ol.posr.y; y++) {
 					findStr += strLine[y];
 				}
 			} else if(x == ol.posl.x) {
