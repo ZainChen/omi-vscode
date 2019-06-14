@@ -1,21 +1,176 @@
 {
     "fileTypes": [ ".*" ],
-    "completion": {
+    "completions": {
         "m-button": {
             "label": "m-button",
             "kind": 24,
             "detail": "[omim]Click or touch it to trigger an operation. The encapsulated logic is triggered in response to user clicks.",
             "insertText": "<m-button${1}>${2}</m-button>",
-            "documentation": "---\n\n## Button 按钮\n\n简介：点击或触摸触发一个操作的元素。响应用户点击操作，触发封装的逻辑。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/button?index=1&subIndex=0'官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/button?index=1&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-button ripple icon=\"favorite\">Default</m-button>\n\n<m-button ripple dense>Dense</m-button>\n\n<m-button ripple svg-icon=\"{\n  path: '...',\n  color: '#0072d9',\n  scale: 1.3\n}\">ICON</m-button>\n```\n\n## Omi 中使用\n\n### JSX:\n\n```jsx\n<m-button ripple raised icon=\"favorite\">Default</m-button>\n\n<m-button ripple dense raised>Dense</m-button>\n\n<m-button ripple raised svgIcon={{\n  path: '...',\n  color: 'white',\n  scale: 1.3\n}}>ICON</m-button>\n```\n\n---\n\n## API\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| ripple | boolean | -- | 单击按钮形成波纹 |\n| raised | boolean | -- | 有填充，有阴影 |\n| dense | boolean | -- | 更小更精致的按钮 |\n| unelevated | boolean | -- | 有填充，无阴影 |\n| outlined | boolean | -- | 无填充，有边框 |\n| svg-icon | object | -- | svg图标 |\n| icon | string | -- | 图标 |\n\n\n---\n\n## 样例\n\n![button](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/button1.png 'button')\n\n---",
+            "documentation": "---\n\n## Button 按钮\n\n简介：点击或触摸触发一个操作的元素。响应用户点击操作，触发封装的逻辑。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/button?index=1&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/button?index=1&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-button ripple icon=\"favorite\">Default</m-button>\n<m-button ripple dense>Dense</m-button>\n<m-button ripple svg-icon=\"{\n  path: '...',\n  color: '#0072d9',\n  scale: 1.3\n}\">ICON</m-button>\n```\n\n## Omi 中使用\n\n### JSX:\n\n```jsx\n<m-button ripple raised icon=\"favorite\">Default</m-button>\n<m-button ripple dense raised>Dense</m-button>\n<m-button ripple raised svgIcon={{\n  path: '...',\n  color: 'white',\n  scale: 1.3\n}}>ICON</m-button>\n```\n\n---\n\n## API\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| ripple | boolean | -- | 单击按钮形成波纹 |\n| raised | boolean | -- | 有填充，有阴影 |\n| dense | boolean | -- | 更小更精致的按钮 |\n| unelevated | boolean | -- | 有填充，无阴影 |\n| outlined | boolean | -- | 无填充，有边框 |\n| svg-icon | object | -- | svg图标 |\n| icon | string | -- | 图标 |\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "ripple": {
                     "label": "ripple",
                     "kind": 22,
                     "detail": "[omim]m-button",
                     "insertText": "ripple",
-                    "documentation": "---\n\n## ripple\n\n类型：boolean\n\n---",
+                    "documentation": "---\n\n## ripple\n\n类型: boolean\n\n默认值: --\n\n说明: 单击按钮形成波纹\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "raised": {
+                    "label": "raised",
+                    "kind": 22,
+                    "detail": "[omim]m-button",
+                    "insertText": "raised",
+                    "documentation": "---\n\n## raised\n\n类型: boolean\n\n默认值: --\n\n说明: 有填充，有阴影\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "dense": {
+                    "label": "dense",
+                    "kind": 22,
+                    "detail": "[omim]m-button",
+                    "insertText": "dense",
+                    "documentation": "---\n\n## dense\n\n类型: boolean\n\n默认值: --\n\n说明: 更小更精致的按钮\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "unelevated": {
+                    "label": "unelevated",
+                    "kind": 22,
+                    "detail": "[omim]m-button",
+                    "insertText": "unelevated",
+                    "documentation": "---\n\n## unelevated\n\n类型: boolean\n\n默认值: --\n\n说明: 有填充，无阴影\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "outlined": {
+                    "label": "outlined",
+                    "kind": 22,
+                    "detail": "[omim]m-button",
+                    "insertText": "outlined",
+                    "documentation": "---\n\n## outlined\n\n类型: boolean\n\n默认值: --\n\n说明: 无填充，有边框\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "icon": {
+                    "label": "icon",
+                    "kind": 22,
+                    "detail": "[omim]m-button",
+                    "insertText": "icon",
+                    "documentation": "---\n\n## icon\n\n类型: string\n\n默认值: --\n\n说明: 图标\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "svg-icon": {
+                    "label": "svg-icon",
+                    "kind": 22,
+                    "detail": "[omim]m-button",
+                    "insertText": "svg-icon={{${1}}}",
+                    "documentation": "---\n\n## svg-icon\n\n类型: object\n\n默认值: --\n\n说明: svg图标\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "paths:": {
+                    "label": "paths:",
+                    "kind": 21,
+                    "detail": "[omim]m-button, svg-icon",
+                    "insertText": "paths: [{${1}}]",
+                    "documentation": "---\n\n## paths:\n\n类型: object\n\n默认值: --\n\n说明: 多path多图标 (svg-icon 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "path:": {
+                    "label": "path:",
+                    "kind": 21,
+                    "detail": "[omim]m-button, svg-icon",
+                    "insertText": "path: '${1}'",
+                    "documentation": "---\n\n## path:\n\n类型: string\n\n默认值: --\n\n说明: 图标path (svg-icon 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "view:": {
+                    "label": "view:",
+                    "kind": 21,
+                    "detail": "[omim]m-button, svg-icon",
+                    "insertText": "view: ${1}",
+                    "documentation": "---\n\n## view:\n\n类型: number\n\n默认值: --\n\n说明: 视图大小 (svg-icon 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "color:": {
+                    "label": "color:",
+                    "kind": 21,
+                    "detail": "[omim]m-button, svg-icon",
+                    "insertText": "color: '${1}'",
+                    "documentation": "---\n\n## color:\n\n类型: string\n\n默认值: --\n\n说明: 图标颜色 (svg-icon 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "scale:": {
+                    "label": "scale:",
+                    "kind": 21,
+                    "detail": "[omim]m-button, svg-icon",
+                    "insertText": "scale: ${1}",
+                    "documentation": "---\n\n## scale:\n\n类型: number\n\n默认值: --\n\n说明: 放大倍数 (svg-icon 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "rotate:": {
+                    "label": "rotate:",
+                    "kind": 21,
+                    "detail": "[omim]m-button, svg-icon",
+                    "insertText": "rotate: ${1|true,false|}",
+                    "documentation": "---\n\n## rotate:\n\n类型: boolean\n\n默认值: --\n\n说明: 旋转动画 (svg-icon 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                }
+            }
+        },
+        "m-fab": {
+            "label": "m-fab",
+            "kind": 24,
+            "detail": "[omim]A floating action button represents the primary action in an application.",
+            "insertText": "<m-fab${1}>${2}</m-fab>",
+            "documentation": "---\n\n## Fab\n\n简介：浮动操作按钮表示应用程序中的主要操作。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/fab?index=1&subIndex=1 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/fab?index=1&subIndex=1 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-fab ripple icon=\"favorite_border\"></m-fab>\n<m-fab ripple mini icon=\"favorite\"></m-fab>\n<m-fab\n  ripple\n  mini\n  css=\".mdc-fab{\n    border-radius: 8px!important;\n  }\"\n  icon=\"favorite\">\n</m-fab>\n```\n\n## Omi 中使用\n\n### JSX:\n\n```jsx\n<m-fab ripple icon=\"favorite_border\"></m-fab>\n<m-fab ripple mini icon=\"favorite\"></m-fab>\n<m-fab\n  ripple\n  mini\n  css={`\n    .mdc-fab{\n      border-radius: 8px!important;\n    }\n  `}\n  icon=\"favorite\">\n</m-fab>\n```\n\n---\n\n## API\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| ripple | boolean | -- | 波纹效果 |\n| mini | boolean | -- | 小按钮 |\n| icon-right | boolean | -- | 图标是否在右边 |\n| icon | string | -- | 图标内容 |\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "ripple": {
+                    "label": "ripple",
+                    "kind": 22,
+                    "detail": "[omim]m-fab",
+                    "insertText": "ripple",
+                    "documentation": "---\n\n## ripple\n\n类型: boolean\n\n默认值: --\n\n说明: 单击 fab 形成波纹\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "mini": {
+                    "label": "mini",
+                    "kind": 22,
+                    "detail": "[omim]m-fab",
+                    "insertText": "mini",
+                    "documentation": "---\n\n## mini:\n\n类型: boolean\n\n默认值: --\n\n说明: 小按钮\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "icon-right": {
+                    "label": "icon-right",
+                    "kind": 22,
+                    "detail": "[omim]m-fab",
+                    "insertText": "icon-right",
+                    "documentation": "---\n\n## icon-right:\n\n类型: boolean\n\n默认值: --\n\n说明: 图标是否在右边\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "icon": {
+                    "label": "icon",
+                    "kind": 22,
+                    "detail": "[omim]m-fab",
+                    "insertText": "icon='${1}'",
+                    "documentation": "---\n\n## icon:\n\n类型: string\n\n默认值: --\n\n说明: 图标内容\n\n---",
                     "sortText": "a",
                     "cmd": false
                 }

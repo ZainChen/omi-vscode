@@ -1,6 +1,6 @@
 {
     "fileTypes": [ ".*" ],
-    "completion": {
+    "completions": {
         "o-button": {
             "label": "o-button",
             "kind": 24,
@@ -9,7 +9,7 @@
             "documentation": "---\n\n## Button 按钮\n\n简介：点击或触摸触发一个操作的元素。响应用户点击操作，触发封装的逻辑。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/button?index=1&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/button?index=1&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-button>我是按钮</o-button>\n```\n\n---\n\n## API\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n|:-------------|:-------------|:-----|:-------------|\n| type  | string| primary |Options: primary, default, warn, vcode|\n| size | string   |   normal |Options: normal, small|\n| disabled | bool| false ||\n| plain | bool | false ||\n\n\n---\n\n## 样例\n\n![button](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/button.png 'button')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "type": {
                     "label": "type",
                     "kind": 22,
@@ -65,7 +65,7 @@
             "documentation": "---\n\n## Icon \n\n简介：SVG 制作的 Icon.\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/icon?index=1&subIndex=1 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/icon?index=1&subIndex=1 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-icon \n  path='M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z'>\n</o-icon>\n```\n\n也可以支持多 path：\n\n```js\n<o-icon paths={[{\n  color: '#F98080',\n  path: 'M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z'\n}, {\n  color: '#F95050',\n  path: 'M464 688a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm24-112h48c4.4 0 8-3.6 8-8V296c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8z'\n}]} />\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| :------------- |:-------------|:-----|:-------------|\n| paths  | json array |--  | 传入 paths ， path 不用传入  |\n| path  | string|--  ||\n| scale | number   |   2 | |\n| color | string| black ||\n| rotate | bool| false ||\n| isFill | bool| false |不推荐，建议用 path|\n| type  | string| -- | 不推荐，建议用 path |\n\n* [→ 你可以直接使用 antd 的海量 svg path 作为 icon 的 path](https://ant.design/components/icon-cn/),你可以通过开发者工具查看对应 icon 的 path\n\n* [→ 也可以直接上 antd github 获取 svg path](https://github.com/ant-design/ant-design-icons/tree/master/packages/icons/svg)\n\n---\n\n## 样例\n\n![icon](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/icon.png 'icon')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "paths": {
                     "label": "paths",
                     "kind": 22,
@@ -166,7 +166,7 @@
             "documentation": "---\n\n## Row \n\n简介：24栅格布局里的一行。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/row?index=2&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/row?index=2&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-row>\n  <col span={12}>col12</col>\n  <col span={12}>col12</col>\n</o-row>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| :------------- |:-------------|:-----|:-------------|\n| children         |   json array with col   |    --   |             |\n\n---\n\n## 样例\n\n![row](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/row.png 'row')\n\n---",
             "sortText": "a",
             "cmd": true,
-            "attribute": {
+            "attributes": {
                 "class": {
                     "label": "class",
                     "kind": 22,
@@ -195,7 +195,7 @@
             "documentation": "---\n\n## Row \n\n简介：24栅格布局里的一行。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/row?index=2&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/row?index=2&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-row>\n  <col span={12}>col12</col>\n  <col span={12}>col12</col>\n</o-row>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| :------------- |:-------------|:-----|:-------------|\n| children         |   json array with col   |    --   |             |\n\n---\n\n## 样例\n\n![row](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/row.png 'row')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "class": {
                     "label": "class",
                     "kind": 22,
@@ -224,7 +224,7 @@
             "documentation": "---\n\n## EqualSpace  \n\n简介：横向平分空间布局。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/equal-space?index=2&subIndex=1 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/equal-space?index=2&subIndex=1 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-equal-space>\n  <div class='a'></div>\n  <div class='b'></div>\n  <div class='c'></div>\n  <div class='d'></div>\n  <div class='e'></div>\n</o-equal-space>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| children  | json array |   --    |           |\n\n---\n\n## 样例\n\n![equal-space](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/equal-space.png 'equal-space')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {}
+            "attributes": {}
         },
         "o-pagination": {
             "label": "o-pagination",
@@ -234,7 +234,7 @@
             "documentation": "---\n\n## Pagination \n\n简介：分页组件.\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/pagination?index=3&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/pagination?index=3&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-pagination\n  total={25}\n  currentPage={1}\n  pageSize={5}\n  onChange={this.onChange}\n/>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| :------------- |:-------------|:-----|:-------------|\n| total         | number|    --       |          |\n| currentPage  | number          |   0 |           |\n| pageSize | number            | 10   |        |\n| numDisplay | number| 5 ||\n| numEdge | number| 3 ||\n| ellipseText | string| ... ||\n\n---\n\n## 样例\n\n![pagination](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/pagination.png 'pagination')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "total": {
                     "label": "total",
                     "kind": 22,
@@ -308,7 +308,7 @@
             "documentation": "---\n\n## Timeline \n\n简介：时间线.\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/timeline?index=3&subIndex=1 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/timeline?index=3&subIndex=1 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-timeline data={[\n  { msgA: '2018.11.11', msgB: '15:22:09', msgC: 'create project', msgD: '[sub msg]' },\n  { msgA: '2018.11.11', msgB: '15:22:09', msgC: 'delete readme', msgD: '[sub msg]' },\n  { msgA: '2018.11.11', msgB: '15:22:09', msgC: 'update readme', msgD: '[sub msg]' },\n  { msgA: '2018.11.11', msgB: '15:22:09', msgC: 'others', msgD: '[sub others]' }\n]} />\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------|\n| data         | json array|    --       |  数组项的结构: <br> { <br>　msgA: '2018.11.11',<br>　msgB: '15:22:09', <br>　msgC: 'create project',<br>　msgD: '[sub msg]' <br>}     |\n\n---\n\n## 样例\n\n![timeline](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/timeline.png 'timeline')\n\n---",
             "sortText": "a",
             "cmd": true,
-            "attribute": {
+            "attributes": {
                 "data": {
                     "label": "data",
                     "kind": 22,
@@ -364,7 +364,7 @@
             "documentation": "---\n\n## Nav \n\n简介：导航。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/nav?index=3&subIndex=2 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/nav?index=3&subIndex=2 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-nav>\n  <item active={true}>NavA</item>\n  <item>NavB</item>\n</o-nav>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------|\n| onChange         |   function  |    --   |             |　\n| children         |    json array  |    --   |             | \n\n---\n\n## 样例\n\n![nav](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/nav.png 'nav')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "onChange": {
                     "label": "onChange",
                     "kind": 2,
@@ -393,7 +393,7 @@
             "documentation": "---\n\n## item \n\n简介：item。\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "value": {
                     "label": "value",
                     "kind": 22,
@@ -467,7 +467,7 @@
             "documentation": "---\n\n## Tab \n\n简介：选项卡。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/tab?index=3&subIndex=3 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/tab?index=3&subIndex=3 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-tab onChange={this.tabChange}>\n  <item active={true}>朋友相册</item>\n  <item >时刻视频</item>\n</o-tab>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------|\n| onChange         |   function  |    --   |             |　\n| children         |    json array  |    --   |             |　\n\n---\n\n## 样例\n\n![tab](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/tab.png 'tab')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "onChange": {
                     "label": "onChange",
                     "kind": 2,
@@ -496,7 +496,7 @@
             "documentation": "---\n\n## DropdownMenu \n\n简介：下拉菜单。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/dropdown-menu?index=3&subIndex=4 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/dropdown-menu?index=3&subIndex=4 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-dropdown-menu >\n  <item icon={{ path: path.pathA, color: '#F2F2F2' }} text='Chat'></item>\n  <item icon={{ path: path.pathB, color: '#F2F2F2' }} text='Add Friend'></item>\n  <item icon={{ path: path.pathC, color: '#F2F2F2' }} text='Scan'></item>\n  <item icon={{ path: path.pathD, color: '#F2F2F2' }} text='Pay'></item>\n</o-dropdown-menu>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------|\n| children         | json array|    --       |  数组项的结构: `<item icon={{ path: 'path string', color: 'any color string' }} text='any text string'></item>`    |　\n\n---\n\n## 样例\n\n![dropdown-menu](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/dropdown-menu.png 'dropdown-menu')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {}
+            "attributes": {}
         },
         "o-action-sheet": {
             "label": "o-action-sheet",
@@ -506,7 +506,7 @@
             "documentation": "---\n\n## ActionSheet \n\n简介：弹出式选择组件。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/action-sheet?index=4&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/action-sheet?index=4&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-action-sheet\n  menus={[{\n      label: 'Option 1',\n      onClick: () => { }\n    }, {\n      label: 'Option 2',\n      onClick: () => { }\n  }]}\n  actions={[\n      {\n        label: 'Cancel',\n        onClick: this.hide\n      }\n  ]}\n  show={true}\n  type='ios'\n  onClose={e => { }}\n/>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| menus  | json array|--  ||\n| actions  | json array| -- ||\n| scale | number   |   2 | |\n| show | bool| false ||\n| type | string| ios | options: ios, android|\n| onClose | function| -- ||\n\n---\n\n## 样例\n\n![action-sheet](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/action-sheet.png 'action-sheet')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "menus": {
                     "label": "menus",
                     "kind": 22,
@@ -571,7 +571,7 @@
             "documentation": "---\n\n## Toast \n\n简介：简单的提醒通知。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/toast?index=4&subIndex=1 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/toast?index=4&subIndex=1 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-toast type='success' show={true}>支付成功</o-toast>\n<o-toast type='loading' show={false}>加载中</o-toast>\n```\n\n你也可以使用命令的方式：\n\n```js\nimport toast from 'omiu/toast'\n\n//显示\ntoast.showLoading()\n//隐藏\ntoast.hideLoading()\n//支持自定义文字\ntoast.showLoading('请求中...')\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| show  | bool | false  ||\n| type  | string | -- |Options: loading, success|\n\n---\n\n## 样例\n\n![toast](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/toast.png 'toast')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "show": {
                     "label": "show",
                     "kind": 22,
@@ -600,7 +600,7 @@
             "documentation": "---\n\n## Popup  \n\n简介：弹出层。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/popup?index=4&subIndex=2 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/popup?index=4&subIndex=2 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-popup\n  onClose={this.closePopup}\n  onConfirm={this.onConfirm}\n  show={this.popupShow}  \n  title='My Title'\n  cancelText='cancel'\n  confirmText='confirm'\n>\n  <div>I am content</div>\n  <div>I am content</div>\n  <div>I am content</div>\n  <div>I am content</div>\n</o-popup>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| show  | bool |   --    |           |\n| title  | string |   --    |           |\n| width  | number |   --    |           |\n| cancelText  | string |   --    |           |\n| confirmText  | string |   --    |           |\n| onClose  |function |    --   |           |\n| onConfirm  | function |    --   |           |\n| children  | vdom json array |    --   |           |\n\n---\n\n## 样例\n\n![popup](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/popup.png 'popup')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "show": {
                     "label": "show",
                     "kind": 22,
@@ -674,7 +674,7 @@
             "documentation": "---\n\n## Dialog  \n\n简介：对话框。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/dialog?index=4&subIndex=3 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/dialog?index=4&subIndex=3 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-dialog\n  onClose={this.closePopup}\n  onConfirm={this.onConfirm}\n  show={this.popupShow}\n  type='confirm'\n  title='My Title'\n  msg='My Msg!'\n  cancelText='cancel'\n  confirmText='confirm'\n/>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| type  | string |   alert    | Options: alert, confirm  |\n| show  | bool |   --    |           |\n| title  | string |   --    |           |\n| msg  | string |    --   |           |\n| cancelText  | string |   --    |           |\n| confirmText  | string |   --    |           |\n| onClose  |function |    --   |           |\n| onConfirm  | function |    --   |           |\n\n---\n\n## 样例\n\n![dialog](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/dialog.png 'dialog')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "type": {
                     "label": "type",
                     "kind": 22,
@@ -757,7 +757,7 @@
             "documentation": "---\n\n## Popover  \n\n简介：气泡卡片。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/popover?index=4&subIndex=4 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/popover?index=4&subIndex=4 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-popover \n  show={this.popoverShow} \n  target={this.popoverTarget} \n  direction={this.direction} \n  onClose={this.onClose}>\n    <div>测试内容....</div>\n    <div>测试内容</div>\n    <div>测试内容测试内容</div>\n</o-popover>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| show  | bool |   --    |           |\n| target  | dom element |   --    |     环绕的目标      |\n| direction  | string |    --   |    环绕的方向       |\n| onClose  | function |   --    |           |\n| children  | json array |   --    |           |\n\n---\n\n## 样例\n\n![popover](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/popover.png 'popover')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "show": {
                     "label": "show",
                     "kind": 22,
@@ -804,7 +804,7 @@
             "documentation": "---\n\n## Input  \n\n简介：用户的输入框，输入一些内容用来提交给服务器。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/input?index=5&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/input?index=5&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-input  placeholder='请输入用户名' />\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| placeholder  | string|       |     占位字符串      |\n\n## 其他类型\n\n```js\n<o-input-label label='UserName' />\n<o-input-button buttonText='提交' onClick={this.onClick} />\n```\n\n---\n\n## 样例\n\n![input](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/input.png 'input')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "placeholder": {
                     "label": "placeholder",
                     "kind": 22,
@@ -824,7 +824,7 @@
             "documentation": "---\n\n## Input  \n\n简介：用户的输入框，输入一些内容用来提交给服务器。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/input?index=5&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/input?index=5&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-input  placeholder='请输入用户名' />\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| placeholder  | string|       |     占位字符串      |\n\n## 其他类型\n\n```js\n<o-input-label label='UserName' />\n<o-input-button buttonText='提交' onClick={this.onClick} />\n```\n\n---\n\n## 样例\n\n![input](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/input.png 'input')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "label": {
                     "label": "label",
                     "kind": 22,
@@ -844,7 +844,7 @@
             "documentation": "---\n\n## Input  \n\n简介：用户的输入框，输入一些内容用来提交给服务器。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/input?index=5&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/input?index=5&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-input  placeholder='请输入用户名' />\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| placeholder  | string|       |     占位字符串      |\n\n## 其他类型\n\n```js\n<o-input-label label='UserName' />\n<o-input-button buttonText='提交' onClick={this.onClick} />\n```\n\n---\n\n## 样例\n\n![input](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/input.png 'input')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "buttonText": {
                     "label": "buttonText",
                     "kind": 22,
@@ -873,7 +873,7 @@
             "documentation": "---\n\n## InputNumber \n\n简介：可以调整的数字输入框。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/input-number?index=5&subIndex=1 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/input-number?index=5&subIndex=1 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-input-number\n  onChange={this.onInputNumberChange}\n  min={1}\n  max={10}\n  step={1}\n  value={2}\n  label='描述文字'\n/>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| min  | number|--  ||\n| max  | number| -- |  |\n| step | number   |    | |\n| value | number| -- ||\n| label | string| -- ||\n| onChange | function| -- ||\n\n---\n\n## 样例\n\n![input-number](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/input-number.png 'input-number')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "min": {
                     "label": "min",
                     "kind": 22,
@@ -938,7 +938,7 @@
             "documentation": "---\n\n## Checkbox  \n\n简介：复选框。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/checkbox?index=5&subIndex=2 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/checkbox?index=5&subIndex=2 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-checkbox checked label='my label' />\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| checked  | bool|   false    |           |\n| label  | string|       |           |\n\n---\n\n## 样例\n\n![checkbox](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/checkbox.png 'checkbox')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "label": {
                     "label": "label",
                     "kind": 22,
@@ -967,7 +967,7 @@
             "documentation": "---\n\n## Radio  \n\n简介：单选框。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/radio?index=5&subIndex=3 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/radio?index=5&subIndex=3 '官网链接')\n\n---\n\n## Usage\n\n```js\n<o-radio name='group' checked label='my label' />\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| checked  | bool|   false    |           |\n| label  | string|       |           |\n| name  | string|       |           |\n\n---\n\n## 样例\n\n![radio](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/radio.png 'radio')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "label": {
                     "label": "label",
                     "kind": 22,
@@ -1005,7 +1005,7 @@
             "documentation": "---\n\n## Dropdown  \n\n简介：下拉框。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/dropdown?index=5&subIndex=4 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/dropdown?index=5&subIndex=4 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-dropdown selectedIndex={this.selectedIndex}\n  show={this.showSelect}\n  onToggle={this.onToggle}\n  onSelect={this.onSelect}>\n  <item value={1}>Item 1</item>\n  <item value={2}>Item 2</item>\n  <item value={3}>Item 3</item>\n</o-dropdown>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| selectedIndex  | number|       |           |\n| show  | bool|   false    |           |\n| children  | json array|       |           |\n| onToggle  | function|       |           |\n| onSelect  | function|       |           |\n\n---\n\n## 样例\n\n![dropdown](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/dropdown.png 'dropdown')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "selectedIndex": {
                     "label": "selectedIndex",
                     "kind": 22,
@@ -1052,7 +1052,7 @@
             "documentation": "---\n\n## Switch  \n\n简介：开关。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/switch?index=5&subIndex=5 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/switch?index=5&subIndex=5 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-switch onChange={this.onChangeB} checked={false} />\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| checked  | bool|  false     |           |\n| onChange  | function|  --     |           |\n\n---\n\n## 样例\n\n![switch](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/switch.png 'switch')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "checked": {
                     "label": "checked",
                     "kind": 22,
@@ -1081,7 +1081,7 @@
             "documentation": "---\n\n## DatePicker \n\n简介：日期选择器。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/date-picker?index=5&subIndex=6 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/date-picker?index=5&subIndex=6 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-date-picker\n  selectedDate={this.selectedDate}\n  onSelect={this.onSelect}\n  show={this.showPicker}\n  onToggle={this.onToggle}>\n</o-date-picker>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| show  | bool|--  ||\n| selectedDate  | string| -- |  |\n| onToggle | function   |  --  | |\n| onSelect | function| -- ||\n\n---\n\n## 样例\n\n![date-picker](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/date-picker.png 'date-picker')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "show": {
                     "label": "show",
                     "kind": 22,
@@ -1128,7 +1128,7 @@
             "documentation": "---\n\n## Rate \n\n简介：评分。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/rate?index=5&subIndex=7 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/rate?index=5&subIndex=7 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-rate \n  total={5} \n  value={this.valueA} \n  color='#07C160' \n  onSelect={this.onSelect} />\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------|\n| total         |   number  |    --   |      总的星星个数       |　\n| value         |    number  |    --   |   支持小数打半星          |　\n| color         |   string  |    --   |             |　\n| onSelect         |    function  |    --   |             |　\n\n---\n\n## 样例\n\n![rate](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/rate.png 'rate')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "total": {
                     "label": "total",
                     "kind": 22,
@@ -1175,7 +1175,7 @@
             "documentation": "---\n\n## SelectList\n\n简介：选项列表。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/select-list?index=5&subIndex=8 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/select-list?index=5&subIndex=8 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-select-list\n  onSelect={this.onSelect}\n  list={this.list}\n  selectedIndex={this.selectedIndex}\n/>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| list  | json array|       |           |\n| selectedIndex  | number |       |           |\n| onSelect  | function|       |           |\n\n---\n\n## 样例\n\n![select-list](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/select-list.png 'select-list')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "list": {
                     "label": "list",
                     "kind": 22,
@@ -1213,7 +1213,7 @@
             "documentation": "---\n\n## Table  \n\n简介：表格的形式展现和处理数据。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/table?index=6&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/table?index=6&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```js\ndefine('my-app', class extends WeElement {\n  dataSource = [{\n    id: 1,\n    name: 'xwang',\n    age: 18,\n    address: '腾讯大厦'\n  }, {\n    id: 2,\n    name: 'dntzhang',\n    age: 12,\n    address: '滨海大厦'\n  }, {\n    id: 3,\n    name: 'dntzhang2',\n    age: 12,\n    address: '滨海大厦'\n  }, {\n    id: 4,\n    name: 'dntzhang3',\n    age: 12,\n    address: '滨海大厦'\n  }, {\n    id: 5,\n    name: 'dntzhang4',\n    age: 12,\n    address: '滨海大厦'\n  }]\n\n  columns = [{\n    title: '姓名',\n    key: 'name',\n  }, {\n    title: '年龄',\n    key: 'age',\n  }, {\n    title: '住址',\n    key: 'address',\n  }, {\n    title: '操作',\n    render: (item) => (\n      <span>\n        <a href='javascript:;' onClick={e => { this.removeItem(item) }}>Delete</a>\n      </span>\n    )\n  }]\n\n  removeItem = (item) => {\n    this.table.removeItem(item)\n  }\n\n  render() {\n    return (\n      <o-table \n        ref={e => { this.table = e }} \n        dataSource={this.dataSource} \n        columns={this.columns}>\n      </o-table>\n    )\n  }\n})\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| dataSource  | json array |   --    |           |\n| columns  | json array |   --    |           |\n\n---\n\n## 样例\n\n![table](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/table.png 'table')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "dataSource": {
                     "label": "dataSource",
                     "kind": 22,
@@ -1242,7 +1242,7 @@
             "documentation": "---\n\n## InputTable  \n\n简介：可编辑的表格。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/input-table?index=6&subIndex=1 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/input-table?index=6&subIndex=1 '官网链接')\n\n---\n\n## 使用\n\n```js\ndefine('my-app', class extends WeElement {\n  dataSource = [{\n    id: 1,\n    name: 'xwang',\n    age: 18,\n    address: '腾讯大厦'\n  }, {\n    id: 2,\n    name: 'dntzhang',\n    age: 12,\n    address: '滨海大厦'\n  }, {\n    id: 3,\n    name: 'dntzhang2',\n    age: 12,\n    address: '滨海大厦'\n  }, {\n    id: 4,\n    name: 'dntzhang3',\n    age: 12,\n    address: '滨海大厦'\n  }, {\n    id: 5,\n    name: 'dntzhang4',\n    age: 12,\n    address: '滨海大厦'\n  }];\n\n  columns = [{\n    title: '姓名',\n    key: 'name',\n  }, {\n    title: '年龄',\n    key: 'age',\n  }, {\n    title: '住址',\n    key: 'address',\n  }]\n\n\n  render() {\n    return (\n      <o-input-table\n        dataSource={this.dataSource}\n        columns={this.columns}>\n      </o-input-table>\n    )\n  }\n})\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| dataSource  | json array |   --    |           |\n| columns  | json array |   --    |           |\n\n---\n\n## 样例\n\n![input-table](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/input-table.png 'input-table')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "dataSource": {
                     "label": "dataSource",
                     "kind": 22,
@@ -1271,7 +1271,7 @@
             "documentation": "---\n\n## Badge \n\n简介：图标右上角的圆形徽标数字。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/badge?index=6&subIndex=2 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/badge?index=6&subIndex=2 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-badge content={8}>\n  <o-icon type='chat' isFill color='#07C160' />\n</o-badge>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------|\n| content         |   string  |    --   |             |　\n| children         |    json array  |    --   |   数组的长度为 1          |　\n\n---\n\n## 样例\n\n![badge](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/badge.png 'badge')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "content": {
                     "label": "content",
                     "kind": 22,
@@ -1291,7 +1291,7 @@
             "documentation": "---\n\n## Progress \n\n简介：展示一个任务的进度.\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/progress?index=6&subIndex=3 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/progress?index=6&subIndex=3 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-progress bgColor='#ccc' innerColor='#07C160' value={50} />\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| value         | number|    0   |      最小是0，最大是100       |\n| bgColor         | string|    #CCCCCC   |        背景色     |\n| innerColor         | string|    #07C160   |     进度条的颜色        |\n\n---\n\n## 样例\n\n![progress](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/progress.png 'progress')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "value": {
                     "label": "value",
                     "kind": 22,
@@ -1329,7 +1329,7 @@
             "documentation": "---\n\n## PathProgress \n\n简介：使用 SVG 展示一个任务的进度。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/path-progress?index=6&subIndex=4 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/path-progress?index=6&subIndex=4 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-path-progress\n  type='Circle' \n  progress={0.5}\n  text={'test'}\n  options={options}\n  initialAnimate={true}\n  containerStyle={{\n    width: '200px',\n    height: '200px'\n  }}\n  containerClassName={'.progressbar'}\n></o-path-progress>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| type         | string|    -   |   支持 Circle,Line 和 SemiCircle     |\n| progress         | number|    0   |             |\n| text         | string|    -   |             |\n| options         | json |       |             |\n| initialAnimate         | bool|       |             |\n| containerStyle         | json|       |             |\n| containerClassName         | string|       |             |\n\n---\n\n## 样例\n\n![path-progress](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/path-progress.png 'path-progress')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "type": {
                     "label": "type",
                     "kind": 22,
@@ -1403,7 +1403,7 @@
             "documentation": "---\n\n## Step  \n\n简介：工作流或步骤进度。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omiu/examples/build/zh-cn.html#/step?index=6&subIndex=5 '官网链接') | [English](https://tencent.github.io/omi/packages/omiu/examples/build/index.html#/step?index=6&subIndex=5 '官网链接')\n\n---\n\n## 使用\n\n```js\n<o-step items={[\n    { name: 'Finished', description: 'This is a description.', state: state.DONE },\n    { name: 'In Progress', description: 'This is a description.', state: state.DOING },\n    { name: 'Waiting', description: 'This is a description.', state: state.TODO }\n  ]} />\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| items  | json array |        |           |\n\n---\n\n## 样例\n\n![step](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/omiu/step.png 'step')\n\n---",
             "sortText": "a",
             "cmd": false,
-            "attribute": {
+            "attributes": {
                 "items": {
                     "label": "items",
                     "kind": 22,
