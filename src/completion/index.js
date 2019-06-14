@@ -26,7 +26,7 @@ class OmiCompletion {
 		let ctc = context.triggerCharacter;
 		let glc = this.getLastChar(document, position);  //获取当前输入的字符或字符串
 		let ch = ctc || glc;
-		//console.log("\""+ctc+"\"\t\""+glc+"\"");
+		console.log("\""+ctc+"\"\t\""+glc+"\"");
 		if(ch != '-' && ch != ' ') {
 			return this.omiuLabelCompletion();  //标签补全(准备将函数内循环放到函数外只载入一次数据，提高效率)
 		} else if(ch == ' ') {
@@ -112,7 +112,7 @@ class OmiCompletion {
 	 * @param position 调用命令的位置。
 	 */
 	omiuAttributesCompletion(document, position) {
-		let retCom = [];
+		let retCom = new Array();
 		let objLabel = this.getPosOmiLabe(document, position);  //获取合法标签对象(包含标签、'<'和'>'的位置，如果标签和引号不合法，返回空对象)
 		if(objLabel.label != '') {
 			for(let k in this.objJsonOmiu) {

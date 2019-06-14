@@ -175,6 +175,35 @@
                     "cmd": false
                 }
             }
+        },
+        "m-icon": {
+            "label": "m-icon",
+            "kind": 24,
+            "detail": "[omim]Icon using svg.",
+            "insertText": "<m-icon${1}>${2}</m-icon>",
+            "documentation": "---\n\n## Icon\n\n简介：SVG 制作的 Icon.\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/icon?index=1&subIndex=2 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/icon?index=1&subIndex=2 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-icon \n  path='...'>\n</m-icon>\n<m-icon \n paths=\"[{ \n    color: '#F98080', \n    path: '...'\n  }, \n  { \n    color: '#F95050', \n    path: '...'\n  }]\">\n</m-icon>\n```\n\n## Omi 中使用\n\n### JSX:\n\n```jsx\n<m-icon path='...' />\n<m-icon paths={[{\n  color: '#F98080',\n  path: '...'\n}, {\n  color: '#F95050',\n  path: '...'\n}]} />\n```\n\n---\n\n## API\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| paths  | object | --  | 支持多图标 path |\n| path  | string | --  | 图标的 path 值 |\n| view  | number | 1024 | 视图大小 |\n| scale | number   | 2 | 图标放大倍数 |\n| color | string | black | 颜色 |\n| rotate | bool | false | 旋转动画 |\n\n* [→ 你可以直接使用 antd 的海量 svg path 作为 icon 的 path](https://ant.design/components/icon-cn/),你可以通过开发者工具查看对应 icon 的 path\n* [→ 也可以直接上 antd github 获取 svg path](https://github.com/ant-design/ant-design-icons/tree/master/packages/icons/svg)\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "paths": {
+                    "label": "paths",
+                    "kind": 22,
+                    "detail": "[omim]m-icon",
+                    "insertText": "paths={{${1}}}",
+                    "documentation": "---\n\n## paths:\n\n类型: object\n\n默认值: --\n\n说明: 支持多图标 path\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-icon <m-icon />": {
+            "label": "m-icon <m-icon />",
+            "kind": 24,
+            "detail": "[omiu]Icon using svg.",
+            "insertText": "<m-icon${1} />",
+            "documentation": "---\n\n## Icon\n\n简介：SVG 制作的 Icon.\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/icon?index=1&subIndex=2 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/icon?index=1&subIndex=2 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-icon \n  path='...'>\n</m-icon>\n<m-icon \n paths=\"[{ \n    color: '#F98080', \n    path: '...'\n  }, \n  { \n    color: '#F95050', \n    path: '...'\n  }]\">\n</m-icon>\n```\n\n## Omi 中使用\n\n### JSX:\n\n```jsx\n<m-icon path='...' />\n<m-icon paths={[{\n  color: '#F98080',\n  path: '...'\n}, {\n  color: '#F95050',\n  path: '...'\n}]} />\n```\n\n---\n\n## API\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| paths  | object | --  | 支持多图标 path |\n| path  | string | --  | 图标的 path 值 |\n| view  | number | 1024 | 视图大小 |\n| scale | number   | 2 | 图标放大倍数 |\n| color | string | black | 颜色 |\n| rotate | bool | false | 旋转动画 |\n\n* [→ 你可以直接使用 antd 的海量 svg path 作为 icon 的 path](https://ant.design/components/icon-cn/),你可以通过开发者工具查看对应 icon 的 path\n* [→ 也可以直接上 antd github 获取 svg path](https://github.com/ant-design/ant-design-icons/tree/master/packages/icons/svg)\n\n---",
+            "sortText": "a",
+            "cmd": false
         }
     }
 }
