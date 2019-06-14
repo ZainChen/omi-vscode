@@ -12,7 +12,7 @@ class OmiCompletion {
 	}
 
 	/**
-	 *提供给定职位和文件的完成项目。
+	 *提供给定职位和文件的完成项目。(PS: vscode-insider v1.36.0 未打断点无法正常触发，打断点可触发)
 	 *
 	 * @param document 调用命令的文档。
 	 * @param position 调用命令的位置。
@@ -26,7 +26,7 @@ class OmiCompletion {
 		let ctc = context.triggerCharacter;
 		let glc = this.getLastChar(document, position);  //获取当前输入的字符或字符串
 		let ch = ctc || glc;
-		console.log("\""+ctc+"\"\t\""+glc+"\"");
+		// console.log("\""+ctc+"\"\t\""+glc+"\"");
 		if(ch != '-' && ch != ' ') {
 			return this.omiuLabelCompletion();  //标签补全(准备将函数内循环放到函数外只载入一次数据，提高效率)
 		} else if(ch == ' ') {
@@ -278,7 +278,11 @@ class OmiCompletion {
 			let strLine = doc.lineAt(x).text;  //获取当前行的整行内容
 			let slLen = strLine.length;
 			let findStr = '';  //待查找的字符串
-			if(x == ol.posl.x) {
+			if(x == ol.posl.x && x == ol.posr.x) {
+				for(let y = ol.posl.y; y < ol.posr.y; y++) {
+					findStr += strLine[y];
+				}
+			} else if(x == ol.posl.x) {
 				for(let y = ol.posl.y; y < slLen; y++) {
 					findStr += strLine[y];
 				}
