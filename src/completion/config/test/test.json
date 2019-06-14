@@ -25,6 +25,15 @@
         "o-test21": { "label": "o-test21", "kind": 21 },
         "o-test22": { "label": "o-test22", "kind": 22 },
         "o-test23": { "label": "o-test23", "kind": 23 },
-        "o-test24": { "label": "o-test24", "kind": 24 }
+        "o-test24": { "label": "o-test24", "kind": 24 },
+        "zain": {
+            "label": "zain",
+            "kind": 2,
+            "detail": "zain",
+            "insertText": "<zain${1}>${2}</zain>",
+            "documentation": "sflajengfieegniewgioiew",
+            "sortText": "a",
+            "cmd": false
+        }
     }
 }

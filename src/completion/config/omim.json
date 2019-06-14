@@ -59,7 +59,7 @@
                     "label": "icon",
                     "kind": 22,
                     "detail": "[omim]m-button",
-                    "insertText": "icon",
+                    "insertText": "icon='${1}'",
                     "documentation": "---\n\n## icon\n\n类型: string\n\n默认值: --\n\n说明: 图标\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -192,6 +192,69 @@
                     "insertText": "paths={{${1}}}",
                     "documentation": "---\n\n## paths:\n\n类型: object\n\n默认值: --\n\n说明: 支持多图标 path\n\n---",
                     "sortText": "a",
+                    "cmd": false
+                },
+                "path": {
+                    "label": "path",
+                    "kind": 22,
+                    "detail": "[omim]m-icon",
+                    "insertText": "path='${1}'",
+                    "documentation": "---\n\n## path:\n\n类型: string\n\n默认值: --\n\n说明: 图标的 path 值\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "view": {
+                    "label": "view",
+                    "kind": 22,
+                    "detail": "[omim]m-icon",
+                    "insertText": "view={${1}}",
+                    "documentation": "---\n\n## view:\n\n类型: number\n\n默认值: 1024\n\n说明: 视图大小\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "scale": {
+                    "label": "scale",
+                    "kind": 22,
+                    "detail": "[omim]m-icon",
+                    "insertText": "scale={${1}}",
+                    "documentation": "---\n\n## scale:\n\n类型: number\n\n默认值: 2\n\n说明: 图标放大倍数\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "color": {
+                    "label": "color",
+                    "kind": 22,
+                    "detail": "[omim]m-icon",
+                    "insertText": "color='${1}'",
+                    "documentation": "---\n\n## color:\n\n类型: string\n\n默认值: black\n\n说明: 颜色\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "rotate": {
+                    "label": "rotate",
+                    "kind": 22,
+                    "detail": "[omim]m-icon",
+                    "insertText": "rotate",
+                    "documentation": "---\n\n## rotate:\n\n类型: bool\n\n默认值: false\n\n说明: 旋转动画\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "color:": {
+                    "label": "color:",
+                    "kind": 21,
+                    "detail": "[omim]m-icon",
+                    "insertText": "color: '${1}'",
+                    "documentation": "---\n\n## color:\n\n类型: string\n\n默认值: black\n\n说明: 颜色 (paths 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "path:": {
+                    "label": "path:",
+                    "kind": 21,
+                    "detail": "[omim]m-icon",
+                    "insertText": "path: '${1}'",
+                    "documentation": "---\n\n## path:\n\n类型: string\n\n默认值: --\n\n说明: 图标的 path 值 (paths 内部属性)\n\n---",
+                    "sortText": "b",
                     "cmd": false
                 }
             }
