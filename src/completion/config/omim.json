@@ -267,6 +267,80 @@
             "documentation": "---\n\n## Icon\n\n简介：SVG 制作的 Icon.\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/icon?index=1&subIndex=2 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/icon?index=1&subIndex=2 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-icon \n  path='...'>\n</m-icon>\n<m-icon \n paths=\"[{ \n    color: '#F98080', \n    path: '...'\n  }, \n  { \n    color: '#F95050', \n    path: '...'\n  }]\">\n</m-icon>\n```\n\n## Omi 中使用\n\n### JSX:\n\n```jsx\n<m-icon path='...' />\n<m-icon paths={[{\n  color: '#F98080',\n  path: '...'\n}, {\n  color: '#F95050',\n  path: '...'\n}]} />\n```\n\n---\n\n## API\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| paths  | object | --  | 支持多图标 path |\n| path  | string | --  | 图标的 path 值 |\n| view  | number | 1024 | 视图大小 |\n| scale | number   | 2 | 图标放大倍数 |\n| color | string | black | 颜色 |\n| rotate | bool | false | 旋转动画 |\n\n* [→ 你可以直接使用 antd 的海量 svg path 作为 icon 的 path](https://ant.design/components/icon-cn/),你可以通过开发者工具查看对应 icon 的 path\n* [→ 也可以直接上 antd github 获取 svg path](https://github.com/ant-design/ant-design-icons/tree/master/packages/icons/svg)\n\n---",
             "sortText": "a",
             "cmd": false
+        },
+        "m-icon-button": {
+            "label": "m-icon-button",
+            "kind": 24,
+            "detail": "[omim]Icon button allow users to take actions, and make choices, with a single tap.",
+            "insertText": "<m-icon-button${1}>${2}</m-icon-button>",
+            "documentation": "---\n\n## Icon Button \n\n简介：Icon Button 允许用户只需点击一次就可以进行操作和做出选择。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/icon-button?index=1&subIndex=3 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/icon-button?index=1&subIndex=3 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-icon-button color=\"red\" icons=\"['favorite', 'favorite_border']\"></m-icon-button>\n<m-icon-button>\n  <svg viewBox=\"0 0 24 24\" class=\"\" width=\"2em\" height=\"2em\" aria-hidden=\"true\">\n    <path d=\"...\"></path>\n  </svg>\n  <svg viewBox=\"0 0 1024 1024\" class=\"\" width=\"2em\" height=\"2em\" aria-hidden=\"true\">\n    <path d=\"...\"\n      fill=\"#F98080\"></path>\n    <path d=\"...\"\n      fill=\"#F95050\"></path>\n  </svg>\n</m-icon-button>\n```\n\n## Omi 中使用\n\n### JSX:\n\n```jsx\n<m-icon-button color=\"red\" icons={['favorite', 'favorite_border']}></m-icon-button>\n```\n\n---\n\n## API\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| ripple | boolean | -- | 波纹效果 |\n| toggle | object | -- |  |\n| icons | object | -- | 多个图标 |\n| icon | string | -- | 图标 |\n| imgs | object | -- | 图片路径 |\n| svg | object | -- | svg图标 |\n| color | string | -- | 颜色 |\n| disabled | boolean | -- | 使图标按钮失效 |\n| onChange | function | -- | 图标变化触发 |\n\n* [→ 你可以使用 Google 的字体图标素材](https://material.io/tools/icons)\n* [→ 也可以直接使用 antd 的海量 svg path 作为 icon 的 path](https://ant.design/components/icon-cn/),你可以通过开发者工具查看对应 icon 的 path\n* [→ 也可以直接上 antd github 获取 svg path](https://github.com/ant-design/ant-design-icons/tree/master/packages/icons/svg)\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "ripple": {
+                    "label": "ripple",
+                    "kind": 22,
+                    "detail": "[omim]m-icon-button",
+                    "insertText": "ripple",
+                    "documentation": "---\n\n## ripple:\n\n类型: boolean\n\n默认值: --\n\n说明: 波纹效果\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "icons": {
+                    "label": "icons",
+                    "kind": 22,
+                    "detail": "[omim]m-icon-button",
+                    "insertText": "icons={[${1}${2}]}",
+                    "documentation": "---\n\n## icons:\n\n类型: object\n\n默认值: --\n\n说明: 多个图标\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "icon": {
+                    "label": "icon",
+                    "kind": 22,
+                    "detail": "[omim]m-icon-button",
+                    "insertText": "icon='${1}'",
+                    "documentation": "---\n\n## icon:\n\n类型: string\n\n默认值: --\n\n说明: 图标\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "imgs": {
+                    "label": "imgs",
+                    "kind": 22,
+                    "detail": "[omim]m-icon-button",
+                    "insertText": "imgs={[${1}]}",
+                    "documentation": "---\n\n## imgs:\n\n类型: object\n\n默认值: --\n\n说明: 图片路径\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "color": {
+                    "label": "color",
+                    "kind": 22,
+                    "detail": "[omim]m-icon-button",
+                    "insertText": "color='${1}'",
+                    "documentation": "---\n\n## color:\n\n类型: string\n\n默认值: black\n\n说明: 颜色\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "disabled": {
+                    "label": "disabled",
+                    "kind": 22,
+                    "detail": "[omim]m-icon-button",
+                    "insertText": "disabled",
+                    "documentation": "---\n\n## disabled:\n\n类型: boolean\n\n默认值: --\n\n说明: 使图标按钮失效\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "onChange": {
+                    "label": "onChange",
+                    "kind": 2,
+                    "detail": "[omim]m-icon-button",
+                    "insertText": "onChange={${1}}",
+                    "documentation": "---\n\n## onChange:\n\n类型: function\n\n默认值: --\n\n说明: 图标变化触发\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                }
+            }
         }
     }
 }
