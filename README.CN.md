@@ -3,7 +3,7 @@
 # Omi Visual Studio Code 扩展
 [![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v2.1.8-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
 [![Downloads](https://img.shields.io/badge/Downloads-5.1K%2B-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
-[![UpdateTime](https://img.shields.io/badge/UpdateTime-2019%2F06%2F15%2009%3A30%3A25-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
+[![UpdateTime](https://img.shields.io/badge/UpdateTime-2019%2F06%2F15%2013%3A30%3A25-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
 
 此扩展添加了对 Visual Studio Code 的 omi 支持。
 
@@ -38,20 +38,11 @@
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun9.gif" alt="omi"/></p>
 
 ## 代码高亮注入
-自定义代码高亮注入 `[html 文件标签属性支持 json 高亮]`
+自定义代码高亮注入 `[html 文件标签属性支持 json 高亮, omi css 高亮]`
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun10.png" alt="omi"/></p>
 
 ## 片段功能
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun3.gif" alt="omi"/></p>
-
-## Omi 生态 (即将开发)
-<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun5.gif" alt="omi"/></p>
-
-## GitHub 切换 (正在升级，暂时关闭)
-<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun4.gif" alt="omi"/></p>
-
-## GitHub 文件视图和下载 (正在升级，暂时关闭)
-<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun6.gif" alt="omi"/></p>
 
 ## Omi 设置
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun8.png" alt="omi"/></p>

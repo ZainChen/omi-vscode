@@ -3,7 +3,7 @@ English | [简体中文](https://github.com/ZainChen/omi-vscode/blob/master/READ
 # Omi Visual Studio Code extension
 [![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v2.1.8-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
 [![Downloads](https://img.shields.io/badge/Downloads-5.1K%2B-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
-[![UpdateTime](https://img.shields.io/badge/UpdateTime-2019%2F06%2F15%2009%3A30%3A25-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
+[![UpdateTime](https://img.shields.io/badge/UpdateTime-2019%2F06%2F15%2013%3A30%3A25-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
 
 This extension adds omi support for Visual Studio Code.
 
@@ -38,20 +38,11 @@ User-defined prompt information: https://github.com/ZainChen/omi-vscode/blob/mas
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun9.gif" alt="omi"/></p>
 
 ## Code highlighting injection
-Custom code highlighting injection `[Html file tag attribute support json highlight]`
+Custom code highlighting injection `[Html file tag attribute support json highlight, omi css highlight]`
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun10.png" alt="omi"/></p>
 
 ## Function snippets
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun3.gif" alt="omi"/></p>
-
-## Omi ecosystem (Coming soon)
-<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun5.gif" alt="omi"/></p>
-
-## GitHub switch (Upgrading, temporarily closed)
-<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun4.gif" alt="omi"/></p>
-
-## GitHub file view and download (Upgrading, temporarily closed)
-<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun6.gif" alt="omi"/></p>
 
 ## Omi set
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun8.png" alt="omi"/></p>
