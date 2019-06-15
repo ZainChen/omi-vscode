@@ -1,5 +1,5 @@
 {
-    "fileTypes": [ ".*" ],
+    "fileTypes": [ ".test" ],
     "completions": {
         "o-test0": { "label": "o-test0", "kind": 0, "insertText": "<o-test0${1}>${2}</o-test0>" },
         "o-test1": { "label": "o-test1", "kind": 1 },

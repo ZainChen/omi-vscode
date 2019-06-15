@@ -341,6 +341,80 @@
                     "cmd": false
                 }
             }
+        },
+        "m-avatar": {
+            "label": "m-avatar",
+            "kind": 24,
+            "detail": "[omim]Used to represent users or things, supporting the display of pictures, icons or characters.",
+            "insertText": "<m-avatar${1}>${2}</m-avatar>",
+            "documentation": "---\n\n## Avatar\n\n简介：用来代表用户或事物，支持图片、图标或字符展示。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/avatar?index=1&subIndex=4 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/avatar?index=1&subIndex=4 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-avatar size=\"60\" src=\"avatar.jpg\"></m-avatar>\n<m-avatar icon=\"person\"></m-avatar>\n```\n\n---\n\n## API\n\n```jsx\n{\n    alt?: string;\n    src?: string;\n    size?: number;\n    square?: boolean;\n    icon?: string;\n    color?: string;\n    backgroundColor?: string;\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "alt": {
+                    "label": "alt",
+                    "kind": 22,
+                    "detail": "[omim]m-avatar",
+                    "insertText": "alt='${1}'",
+                    "documentation": "---\n\n## alt:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "src": {
+                    "label": "src",
+                    "kind": 22,
+                    "detail": "[omim]m-avatar",
+                    "insertText": "src='${1}'",
+                    "documentation": "---\n\n## src:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "size": {
+                    "label": "size",
+                    "kind": 22,
+                    "detail": "[omim]m-avatar",
+                    "insertText": "size={${1}}",
+                    "documentation": "---\n\n## size:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "square": {
+                    "label": "square",
+                    "kind": 22,
+                    "detail": "[omim]m-avatar",
+                    "insertText": "square",
+                    "documentation": "---\n\n## square:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "icon": {
+                    "label": "icon",
+                    "kind": 22,
+                    "detail": "[omim]m-avatar",
+                    "insertText": "icon='${1}'",
+                    "documentation": "---\n\n## icon:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "color": {
+                    "label": "color",
+                    "kind": 22,
+                    "detail": "[omim]m-avatar",
+                    "insertText": "color='${1}'",
+                    "documentation": "---\n\n## color:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "background-color": {
+                    "label": "background-color",
+                    "kind": 22,
+                    "detail": "[omim]m-avatar",
+                    "insertText": "background-color='${1}'",
+                    "documentation": "---\n\n## background-color:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
         }
     }
 }

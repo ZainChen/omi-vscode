@@ -1,54 +1,59 @@
 English | [简体中文](https://github.com/ZainChen/omi-vscode/blob/master/README.CN.md)
 
 # Omi Visual Studio Code extension
-[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v2.1.6-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
-[![Downloads](https://img.shields.io/badge/Downloads-4.7K%2B-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
-[![UpdateTime](https://img.shields.io/badge/UpdateTime-2019%2F06%2F13%2011%3A30%3A25-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
+[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v2.1.8-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
+[![Downloads](https://img.shields.io/badge/Downloads-5.1K%2B-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
+[![UpdateTime](https://img.shields.io/badge/UpdateTime-2019%2F06%2F15%2009%3A30%3A25-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
 
 This extension adds omi support for Visual Studio Code.
 
 # Function
-- Omi ecosystem `[All branches and versions(Upgrading, temporarily closed)]`
-- Omi component tag and attribute completion `[Completion prompt for markdown format]`
-- Omi custom code highlighting injection `[Tag attribute support json highlight, omi css highlight]`
-- Omi mouse hover prompt, the prompt content is in markdown format `[Support user-defined add prompt information]`
-- Omi snippets `[All omiu component snippets. Multiple overlays, press TAB to jump to the transition position]`
 - Welcome omi `[Welcome Screen]`
+- Omi component tag and attribute completion `[Completion prompt for markdown format]`
+- Omi mouse hover prompt, the prompt content is in markdown format `[Support user-defined add prompt information]`
+- Omi custom code highlighting injection `[Tag attribute support json highlight, omi css highlight]`
+- Omi snippets `[All omiu component snippets. Multiple overlays, press TAB to jump to the transition position]`
+
+# Development Plan
+- Omi ecosystem `[All branches and versions(Upgrading, temporarily closed)]`
 - GitHub switch `[GitHub tree view to switch url(Upgrading, temporarily closed)]`
 - GitHub file view `[open github file(Upgrading, temporarily closed)]`
 - Gitgub file download function. `[Any files and folders(Upgrading, temporarily closed)]`
-- In development...
 
-# Label completion
+# Function Description
+
+## Omi Welcome
+<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun7.png" alt="omi"/></p>
+
+## Label completion
+User-defined prompt information: https://github.com/ZainChen/omi-vscode/blob/master/src/completion/README.md
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun1.gif" alt="omi"/></p>
 
-# Attribute completion
+## Attribute completion
+User-defined prompt information: https://github.com/ZainChen/omi-vscode/blob/master/src/completion/README.md
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun2.gif" alt="omi"/></p>
 
-# Code highlighting injection
-Custom code highlighting injection `[Html file tag attribute support json highlight]`
-<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun10.png" alt="omi"/></p>
-
-# Function snippets
-<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun3.gif" alt="omi"/></p>
-
-# Hover
+## Hover
 User-defined prompt information: https://github.com/ZainChen/omi-vscode/blob/master/src/hover/README.md
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun9.gif" alt="omi"/></p>
 
-# GitHub switch
-<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun4.gif" alt="omi"/></p>
+## Code highlighting injection
+Custom code highlighting injection `[Html file tag attribute support json highlight]`
+<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun10.png" alt="omi"/></p>
 
-# Omi ecosystem
+## Function snippets
+<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun3.gif" alt="omi"/></p>
+
+## Omi ecosystem (Coming soon)
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun5.gif" alt="omi"/></p>
 
-# GitHub file view and download
+## GitHub switch (Upgrading, temporarily closed)
+<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun4.gif" alt="omi"/></p>
+
+## GitHub file view and download (Upgrading, temporarily closed)
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun6.gif" alt="omi"/></p>
 
-# Omi Welcome
-<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun7.png" alt="omi"/></p>
-
-# Omi set
+## Omi set
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun8.png" alt="omi"/></p>
 
 # About
