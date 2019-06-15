@@ -14,7 +14,9 @@ Supported languages: `omi`, `vue`, `html`, `json`, `javascript`, `javascriptreac
 >>>
 >>>test.json `[Custom code completion for testing]`
 >>
->>omiu.json `[Omiu related code completion]`
+>>omiu.json `[Omiu related completion]`
+>>
+>>omim.json `[Omim related completion]`
 >>
 >index.js `[Function implementation code]`
 >

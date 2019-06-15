@@ -14,7 +14,9 @@
 >>>
 >>>test.json `[自定义用于测试的代码补全]`
 >>
->>omiu.json `[omiu 相关代码补全]`
+>>omiu.json `[omiu 相关补全]`
+>>
+>>omim.json `[omim 相关补全]`
 >>
 >index.js `[功能实现代码]`
 >
