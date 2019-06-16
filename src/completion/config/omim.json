@@ -64,12 +64,12 @@
                     "sortText": "a",
                     "cmd": false
                 },
-                "svg-icon": {
-                    "label": "svg-icon",
+                "svgIcon": {
+                    "label": "svgIcon",
                     "kind": 22,
                     "detail": "[omim]m-button",
-                    "insertText": "svg-icon={{${1}}}",
-                    "documentation": "---\n\n## svg-icon\n\n类型: object\n\n默认值: --\n\n说明: svg图标\n\n---",
+                    "insertText": "svgIcon={{${1}}}",
+                    "documentation": "---\n\n## svgIcon\n\n类型: object\n\n默认值: --\n\n说明: svg图标\n\n---",
                     "sortText": "a",
                     "cmd": false
                 },
@@ -156,12 +156,12 @@
                     "sortText": "a",
                     "cmd": false
                 },
-                "icon-right": {
-                    "label": "icon-right",
+                "iconRight": {
+                    "label": "iconRight",
                     "kind": 22,
                     "detail": "[omim]m-fab",
-                    "insertText": "icon-right",
-                    "documentation": "---\n\n## icon-right:\n\n类型: boolean\n\n默认值: --\n\n说明: 图标是否在右边\n\n---",
+                    "insertText": "iconRight",
+                    "documentation": "---\n\n## iconRight:\n\n类型: boolean\n\n默认值: --\n\n说明: 图标是否在右边\n\n---",
                     "sortText": "a",
                     "cmd": false
                 },
@@ -411,6 +411,1046 @@
                     "detail": "[omim]m-avatar",
                     "insertText": "background-color='${1}'",
                     "documentation": "---\n\n## background-color:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-loading": {
+            "label": "m-loading",
+            "kind": 24,
+            "detail": "[omim]Loading element With a variety of colors and sizes to choose.",
+            "insertText": "<m-loading${1}>${2}</m-loading>",
+            "documentation": "---\n\n## Loading\n\n简介：Loading 元素，拥有多种色彩和大小可以选。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/loading?index=1&subIndex=5 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/loading?index=1&subIndex=5 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-loading size=\"55\" color=\"#2170b8\"></m-loading>\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n  size?: number,\n  color?: string\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "size": {
+                    "label": "size",
+                    "kind": 22,
+                    "detail": "[omim]m-loading",
+                    "insertText": "size={${1}}",
+                    "documentation": "---\n\n## size:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "color": {
+                    "label": "color",
+                    "kind": 22,
+                    "detail": "[omim]m-loading",
+                    "insertText": "color='${1}'",
+                    "documentation": "---\n\n## color:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-breadcrumb": {
+            "label": "m-breadcrumb",
+            "kind": 24,
+            "detail": "[omim]Breadcrumb.",
+            "insertText": "<m-breadcrumb${1}>${2}</m-breadcrumb>",
+            "documentation": "---\n\n## Breadcrumb\n\n简介：面包屑。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/breadcrumb?index=1&subIndex=6 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/breadcrumb?index=1&subIndex=6 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-breadcrumb split=\"/\" items=\"[\n  { text: 'Home' },\n  { text: 'Helper' },\n  { text: 'About' }\n]\"></m-breadcrumb>\n<m-breadcrumb  split=\"/\" items=\"[\n  { text: 'Home', href:'https://tencent.github.io/omi/', icon:'home' },\n  { text: 'Helper', icon:'help' },\n  { text: 'About', icon: 'people' }\n]\"></m-breadcrumb>\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n  items: object,\n  split: string\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "items": {
+                    "label": "items",
+                    "kind": 22,
+                    "detail": "[omim]m-breadcrumb",
+                    "insertText": "items={${1}}",
+                    "documentation": "---\n\n## items:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "split": {
+                    "label": "split",
+                    "kind": 22,
+                    "detail": "[omim]m-breadcrumb",
+                    "insertText": "split='${1}'",
+                    "documentation": "---\n\n## split:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-transition": {
+            "label": "m-transition",
+            "kind": 24,
+            "detail": "[omim]Transition & Transition Group. An easy way to perform animations when dom enters or leaves.",
+            "insertText": "<m-transition${1}>${2}</m-transition>",
+            "documentation": "---\n\n## Transition\n\n简介：Transition & Transition Group. 很容易运动一个或者一堆 dom 元素，提供优雅的进入或者离开过渡动画。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/transition?index=2&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/transition?index=2&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-transition-group></m-transition-group>\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n  appear?: boolean,\n  show?: boolean,\n  name: string,\n  removable?: boolean,\n  removed?: boolean\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "appear": {
+                    "label": "appear",
+                    "kind": 22,
+                    "detail": "[omim]m-transition",
+                    "insertText": "appear",
+                    "documentation": "---\n\n## appear:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "show": {
+                    "label": "show",
+                    "kind": 22,
+                    "detail": "[omim]m-transition",
+                    "insertText": "show",
+                    "documentation": "---\n\n## show:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "removable": {
+                    "label": "removable",
+                    "kind": 22,
+                    "detail": "[omim]m-transition",
+                    "insertText": "removable",
+                    "documentation": "---\n\n## removable:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "removed": {
+                    "label": "removed",
+                    "kind": 22,
+                    "detail": "[omim]m-transition",
+                    "insertText": "removed",
+                    "documentation": "---\n\n## removed:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "name": {
+                    "label": "name",
+                    "kind": 22,
+                    "detail": "[omim]m-transition",
+                    "insertText": "name='${1}'",
+                    "documentation": "---\n\n## name:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-transition-group": {
+            "label": "m-transition-group",
+            "kind": 24,
+            "detail": "[omim]Transition & Transition Group. An easy way to perform animations when dom enters or leaves.",
+            "insertText": "<m-transition-group${1}>${2}</m-transition-group>",
+            "documentation": "---\n\n## Transition\n\n简介：Transition & Transition Group. 很容易运动一个或者一堆 dom 元素，提供优雅的进入或者离开过渡动画。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/transition?index=2&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/transition?index=2&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-transition-group></m-transition-group>\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n  name: String,\n  appear: Boolean,\n  show: Boolean,\n  remove: Boolean,\n  delay: Number\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "name": {
+                    "label": "name",
+                    "kind": 22,
+                    "detail": "[omim]m-transition-group",
+                    "insertText": "name='${1}'",
+                    "documentation": "---\n\n## name:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "appear": {
+                    "label": "appear",
+                    "kind": 22,
+                    "detail": "[omim]m-transition-group",
+                    "insertText": "appear",
+                    "documentation": "---\n\n## appear:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "show": {
+                    "label": "show",
+                    "kind": 22,
+                    "detail": "[omim]m-transition-group",
+                    "insertText": "show",
+                    "documentation": "---\n\n## show:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "remove": {
+                    "label": "remove",
+                    "kind": 22,
+                    "detail": "[omim]m-transition-group",
+                    "insertText": "remove",
+                    "documentation": "---\n\n## remove:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "delay": {
+                    "label": "delay",
+                    "kind": 22,
+                    "detail": "[omim]m-transition-group",
+                    "insertText": "delay={${1}}",
+                    "documentation": "---\n\n## delay:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-to": {
+            "label": "m-to",
+            "kind": 24,
+            "detail": "[omim]Animate anything with m-to tag.",
+            "insertText": "<m-to${1}>${2}</m-to>",
+            "documentation": "---\n\n## To\n\n简介：使用 m-to 运动一切。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/to?index=2&subIndex=1 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/to?index=2&subIndex=1 '官网链接')\n\n---\n\n## 在 Omi 中使用\n\n```jsx\n<m-to \n  from={{ number: 1 }} \n  to={{ number: 100 }} \n  duration={600}\n  easing='bounce-in' \n  out={this.out} \n  delay={200}\n  onProgress={this.onProgress}\n  onBegin={this.onProgress}\n  onEnd={this.onEnd}>\n</m-to>\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n  from: object;\n  to: object;\n  duration: number;\n  out: object;\n  delay: number;\n  //easing graphs http://tweenjs.github.io/tween.js/examples/03_graphs.html\n  easing: \"quadratic-in\" | \"quadratic-out\" | \"quadratic-in-out\" | \"cubic-in\" | \"cubic-out\" | \"cubic-in-out\" | \"quartic-in\" | \"quartic-out\" | \"quartic-in-out\" | \"quintic-in\" | \"quintic-out\" | \"quintic-in-out\" | \"sinusoidal-in\" | \"sinusoidal-out\" | \"sinusoidal-in-out\" | \"exponential-in\" | \"exponential-out\" | \"exponential-in-out\" | \"circular-in\" | \"circular-out\" | \"circular-in-out\" | \"elastic-in\" | \"elastic-out\" | \"elastic-in-out\" | \"back-in\" | \"back-out\" | \"back-in-out\" | \"bounce-in\" | \"bounce-out\" | \"bounce-in-out\";\n  start: boolean;\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "from": {
+                    "label": "from",
+                    "kind": 22,
+                    "detail": "[omim]m-to",
+                    "insertText": "from={${1}}",
+                    "documentation": "---\n\n## from:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "to": {
+                    "label": "to",
+                    "kind": 22,
+                    "detail": "[omim]m-to",
+                    "insertText": "to={${1}}",
+                    "documentation": "---\n\n## to:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "duration": {
+                    "label": "duration",
+                    "kind": 22,
+                    "detail": "[omim]m-to",
+                    "insertText": "duration={${1}}",
+                    "documentation": "---\n\n## duration:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "delay": {
+                    "label": "delay",
+                    "kind": 22,
+                    "detail": "[omim]m-to",
+                    "insertText": "delay={${1}}",
+                    "documentation": "---\n\n## delay:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "out": {
+                    "label": "out",
+                    "kind": 22,
+                    "detail": "[omim]m-to",
+                    "insertText": "out={${1}}",
+                    "documentation": "---\n\n## out:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "start": {
+                    "label": "start",
+                    "kind": 22,
+                    "detail": "[omim]m-to",
+                    "insertText": "start",
+                    "documentation": "---\n\n## start:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "easing": {
+                    "label": "easing",
+                    "kind": 22,
+                    "detail": "[omim]m-to",
+                    "insertText": "easing='${1|quadratic-in,quadratic-out,quadratic-in-out,cubic-in,cubic-out,cubic-in-out,quartic-in,quartic-out,quartic-in-out,quintic-in,quintic-out,quintic-in-out,sinusoidal-in,sinusoidal-out,sinusoidal-in-out,exponential-in,exponential-out,exponential-in-out,circular-in,circular-out,circular-in-out,elastic-in,elastic-out,elastic-in-out,back-in,back-out,back-in-out,bounce-in,bounce-out,bounce-in-out|}'",
+                    "documentation": "---\n\n## easing:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-row": {
+            "label": "m-row",
+            "kind": 24,
+            "detail": "[omim]24 Grids System.",
+            "insertText": "<m-row${1}>${2}</m-row>",
+            "documentation": "---\n\n## Row\n\n简介：24 栅格系统。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/row?index=3&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/row?index=3&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-row cols=\"[8, 8, 8]\">\n  <div>col-8-0</div>\n  <div>col-8-1</div>\n  <div>col-8-2</div>\n</m-row>\n```\n\n---\n\n## 在 Omi 中使用\n\n```jsx\n<m-row cols={[8, 8, 8]}>\n  <div>col-8-0</div>\n  <div>col-8-1</div>\n  <div>col-8-2</div>\n</m-row>\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n    cols: object,\n    gutter?: number,\n    justify?: string,\n    align?: string,\n    type?: string\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "cols": {
+                    "label": "cols",
+                    "kind": 22,
+                    "detail": "[omim]m-row",
+                    "insertText": "cols={${1}}",
+                    "documentation": "---\n\n## cols:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "gutter": {
+                    "label": "gutter",
+                    "kind": 22,
+                    "detail": "[omim]m-row",
+                    "insertText": "gutter={${1}}",
+                    "documentation": "---\n\n## gutter:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "justify": {
+                    "label": "justify",
+                    "kind": 22,
+                    "detail": "[omim]m-row",
+                    "insertText": "justify='${1}'",
+                    "documentation": "---\n\n## justify:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "align": {
+                    "label": "align",
+                    "kind": 22,
+                    "detail": "[omim]m-row",
+                    "insertText": "align='${1}'",
+                    "documentation": "---\n\n## align:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "type": {
+                    "label": "type",
+                    "kind": 22,
+                    "detail": "[omim]m-row",
+                    "insertText": "type='${1}'",
+                    "documentation": "---\n\n## type:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-elevation": {
+            "label": "m-elevation",
+            "kind": 24,
+            "detail": "[omim]Shadows provide important visual cues about objects’ depth and directional movement. They are the only visual cue indicating the amount of separation between surfaces. An object’s elevation determines the appearance of its shadow. The elevation values are mapped out in a “z-space” and range from 0 to 24.",
+            "insertText": "<m-elevation${1}>${2}</m-elevation>",
+            "documentation": "---\n\n## Elevation\n\n简介：阴影提供关于物体深度和方向运动的重要视觉线索。 它们是唯一的视觉提示，表明表面之间的分离量。 对象的高程确定其阴影的外观。 高程值在“z-space”中映射，范围从0到24。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/elevation?index=3&subIndex=1 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/elevation?index=3&subIndex=1 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-elevation\n  css=\".mdc-elevation {\n    width: 100%;\n    height: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\"\n  class=\"elevation-demo-surface\"\n  z=\"1\"\n>1dp</m-elevation>\n```\n\n---\n\n## 在 Omi 中使用\n\n```jsx\n<m-elevation\n  css={`\n    .mdc-elevation {\n      width: 100%;\n      height: 100%;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n    }\n  `}\n  class=\"elevation-demo-surface\"\n  z=\"1\"\n>1dp</m-elevation>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| z | number | -- | 阴影外观控制 |\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "z": {
+                    "label": "z",
+                    "kind": 22,
+                    "detail": "[omim]m-elevation",
+                    "insertText": "z={${1}}",
+                    "documentation": "---\n\n## z:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-image-list": {
+            "label": "m-image-list",
+            "kind": 24,
+            "detail": "[omim]Image List provides a RTL-aware Material Design image list component. An Image List consists of several items, each containing an image and optionally supporting content (i.e. a text label).",
+            "insertText": "<m-image-list${1}>${2}</m-image-list>",
+            "documentation": "---\n\n## Image List\n\n简介：图像列表提供了一个支持RTL的材料设计图像列表组件。 图像列表由若干项组成，每个项包含图像和可选的支持内容（即文本标签）。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/image-list?index=3&subIndex=2 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/image-list?index=3&subIndex=2 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-image-list\n  list=\"[\n    { src: './image-list/3x2-1.jpg', label: 'Text label' },\n    { src: './image-list/3x2-2.jpg', label: 'Text label' },\n    ...\n  ]\"\n></m-image-list>\n```\n\n---\n\n## 在 Omi 中使用\n\n```jsx\n<image-list\n  list={[\n    { src: './image-list/3x2-1.jpg', label: 'Text label' },\n    { src: './image-list/3x2-2.jpg', label: 'Text label' },\n    ...\n  ]}\n></image-list>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| masonry | boolean | -- | 图片列表使用 Masonry 样式 |\n| list | object | -- | 图片内容 |\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "masonry": {
+                    "label": "masonry",
+                    "kind": 22,
+                    "detail": "[omim]m-image-list",
+                    "insertText": "masonry",
+                    "documentation": "---\n\n## masonry:\n\n类型: boolean\n\n默认值: --\n\n说明: 图片列表使用 Masonry 样式\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "list": {
+                    "label": "list",
+                    "kind": 22,
+                    "detail": "[omim]m-image-list",
+                    "insertText": "list={[\n\t{${1} }${2}\n]}",
+                    "documentation": "---\n\n## list:\n\n类型: object\n\n默认值: --\n\n说明: 图片内容\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "src": {
+                    "label": "src",
+                    "kind": 21,
+                    "detail": "[omim]m-image-list",
+                    "insertText": "src: '${1}'",
+                    "documentation": "---\n\n## src:\n\n类型: string\n\n默认值: --\n\n说明: 图片链接 (list 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "label": {
+                    "label": "label",
+                    "kind": 21,
+                    "detail": "[omim]m-image-list",
+                    "insertText": "label: '${1}'",
+                    "documentation": "---\n\n## label:\n\n类型: string\n\n默认值: --\n\n说明: 图片标签 (list 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                }
+            }
+        },
+        "m-menu": {
+            "label": "m-menu",
+            "kind": 24,
+            "detail": "[omim]A menu displays a list of choices on a temporary surface. They appear when users interact with a button, action, or other control.",
+            "insertText": "<m-menu${1}>${2}</m-menu>",
+            "documentation": "---\n\n## Menu\n\n简介：菜单显示临时表面选项列表。 当用户与按钮，操作或其他控件交互时，它们会出现。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/menu?index=4&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/menu?index=4&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-menu anchor id=\"menu\" onSelected=\"onSelected()\" list=\"[\n  { text: 'A Menu Item' },\n  { text: 'A Disabled Menu Item', disabled: true },\n  { text: 'Another Menu Item' }\n]\"></m-menu>\n```\n\n---\n\n## 在 Omi 中使用\n\n```jsx\n<m-menu anchor show={this.show} onSelected={this.onSelected} list={[\n  { text: 'A Menu Item' },\n  { text: 'A Disabled Menu Item', disabled: true },\n  { text: 'Another Menu Item' }\n]}></m-menu>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| show | boolean | -- | 是否显示菜单 |\n| list | object | -- | 列表内容 |\n| anchor | boolean | -- | 自动确定父元素 |\n| onSelected | function | -- | 选择触发 |\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "show": {
+                    "label": "show",
+                    "kind": 22,
+                    "detail": "[omim]m-menu",
+                    "insertText": "show",
+                    "documentation": "---\n\n## show:\n\n类型: boolean\n\n默认值: --\n\n说明: 是否显示菜单\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "anchor": {
+                    "label": "anchor",
+                    "kind": 22,
+                    "detail": "[omim]m-menu",
+                    "insertText": "anchor",
+                    "documentation": "---\n\n## anchor:\n\n类型: boolean\n\n默认值: --\n\n说明: 自动确定父元素\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "list": {
+                    "label": "list",
+                    "kind": 22,
+                    "detail": "[omim]m-menu",
+                    "insertText": "list={[\n\t{${1} }${2}\n]}",
+                    "documentation": "---\n\n## list:\n\n类型: object\n\n默认值: --\n\n说明: 列表内容\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "onSelected": {
+                    "label": "onSelected",
+                    "kind": 2,
+                    "detail": "[omim]m-menu",
+                    "insertText": "onSelected={${1}}",
+                    "documentation": "---\n\n## onSelected:\n\n类型: function\n\n默认值: --\n\n说明: 选择触发\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                },
+                "text": {
+                    "label": "text",
+                    "kind": 21,
+                    "detail": "[omim]m-menu",
+                    "insertText": "text: '${1}'",
+                    "documentation": "---\n\n## text:\n\n类型: string\n\n默认值: --\n\n说明: 列表文本 (list 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "disabled": {
+                    "label": "disabled",
+                    "kind": 21,
+                    "detail": "[omim]m-menu",
+                    "insertText": "disabled: ${1|true\\,,false\\,|}",
+                    "documentation": "---\n\n## disabled:\n\n类型: boolean\n\n默认值: --\n\n说明: 是否禁用当前列 (list 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                }
+            }
+        },
+        "m-drawer": {
+            "label": "m-drawer",
+            "kind": 24,
+            "detail": "[omim]The Navigation Drawer is used to organize access to destinations and other functionality on an app.",
+            "insertText": "<m-drawer${1}>${2}</m-drawer>",
+            "documentation": "---\n\n## Drawer\n\n简介：导航抽屉用于组织对应用程序的目标和其他功能的访问。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/drawer?index=4&subIndex=1 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/drawer?index=4&subIndex=1 '官网链接')\n\n---\n\n## 使用\n\n```html\n <m-drawer\n  show\n  position=\"left\">\n  <m-list\n    single-selection\n    css=\"ul{\n      width:200px;\n      height:100vh;\n      border: 1px solid rgba(0,0,0,.1);\n      background:#fff;\n    }\"\n    items=\"...\">\n  </m-list>\n</m-drawer>\n```\n\n---\n\n## 在 Omi 中使用\n\n```jsx\n<m-drawer\n  show={this.show}\n  position='left'\n  onClose={this.onClose}>\n  <m-list\n    singleSelection\n    css={`ul{\n      width:200px;\n      height:100vh;\n      border: 1px solid rgba(0,0,0,.1);\n      background:#fff;\n    }`}\n    items={this.items}\n    onItemClick={this.onItemClick}>\n  </m-list>\n</m-drawer>\n```\n\n---\n\n## API\n\n### Props\n\n{\n  position?: 'left' | 'right' | 'top' | 'bottom',\n  show?: boolean\n}\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "position": {
+                    "label": "position",
+                    "kind": 22,
+                    "detail": "[omim]m-menu",
+                    "insertText": "position='${1|left,right,top,bottom|}'",
+                    "documentation": "---\n\n## position:\n\n类型: string\n\n默认值: --\n\n说明: 弹出方向\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "show": {
+                    "label": "show",
+                    "kind": 22,
+                    "detail": "[omim]m-menu",
+                    "insertText": "show",
+                    "documentation": "---\n\n## show:\n\n类型: boolean\n\n默认值: --\n\n说明: 是否显示\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-tab": {
+            "label": "m-tab",
+            "kind": 24,
+            "detail": "[omim]Tabs organize and allow navigation between groups of content that are related and at the same level of hierarchy. The Tab Bar contains the Tab Scroller and Tab components.",
+            "insertText": "<m-tab${1}>${2}</m-tab>",
+            "documentation": "---\n\n## Tab\n\n简介：选项卡组织并允许在相关内容组之间以及在同一层次结构级别上导航。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/tab?index=4&subIndex=2 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/tab?index=4&subIndex=2 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-tab default-active=\"speed\" onChange=\"change(event)\" align=\"end\">\n    <item label=\"Recents\" value=\"a\" icon=\"access_time\"></item>\n    <item label=\"Nearby\" value=\"b\" icon=\"near_me\"></item>\n    <item label=\"Favorites\" value=\"c\" icon=\"favorite\"></item>\n</m-tab>\n```\n\n---\n\n## API\n\n### Props\n\n{\n    defaultActive: string,\n    width: string,\n    align: 'start' | 'end' | 'center', \n    useMinWidth: boolean,\n    stacked: boolean\n}\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "defaultActive": {
+                    "label": "defaultActive",
+                    "kind": 22,
+                    "detail": "[omim]m-tab",
+                    "insertText": "defaultActive='${1}'",
+                    "documentation": "---\n\n## defaultActive:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "width": {
+                    "label": "width",
+                    "kind": 22,
+                    "detail": "[omim]m-tab",
+                    "insertText": "width='${1}'",
+                    "documentation": "---\n\n## width:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "align": {
+                    "label": "align",
+                    "kind": 22,
+                    "detail": "[omim]m-tab",
+                    "insertText": "align='${1|start,end,center|}'",
+                    "documentation": "---\n\n## align:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "useMinWidth": {
+                    "label": "useMinWidth",
+                    "kind": 22,
+                    "detail": "[omim]m-tab",
+                    "insertText": "useMinWidth",
+                    "documentation": "---\n\n## useMinWidth:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "stacked": {
+                    "label": "stacked",
+                    "kind": 22,
+                    "detail": "[omim]m-tab",
+                    "insertText": "stacked",
+                    "documentation": "---\n\n## stacked:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-nav": {
+            "label": "m-nav",
+            "kind": 24,
+            "detail": "[omim]Menu list of Navigation.",
+            "insertText": "<m-nav${1}>${2}</m-nav>",
+            "documentation": "---\n\n## Nav\n\n简介：导航的菜单列表。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/nav?index=4&subIndex=3 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/nav?index=4&subIndex=3 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-nav id='myNav' nodes=\"[{\n  title: 'p-0',\n  id: 1,\n  icon: 'account_balance_wallet',\n  children: [\n    {\n      title: 'p-1',\n      id: 2,\n      icon: 'assignment_ind',\n      children: [\n        { title: 'p-2', id: 3, icon: 'chrome_reader_mode', checked: true },\n        { title: 'p-2.5', id: 13, icon: 'chrome_reader_mode' }\n      ]\n    },\n    {\n      title: 'p-4',\n      id: 4,\n      icon: 'extension',\n\n      children: [\n        {\n          title: 'p-5', id: 5, selected: true, icon: 'dashboard', checked: true,\n          disabled: true\n        },\n        { title: '项目六', id: 6, icon: 'favorite' },\n        { title: '项目7', id: 7 }\n      ]\n    }\n  ]\n},\n{\n  title: 'p-11',\n  id: 14,\n  icon: 'group_work',\n\n  children: [\n    {\n      title: 'p-12', id: 12, icon: 'fingerprint', checked: true\n    }\n  ]\n}]\">\n</m-nav>\n```\n\n## Javascript\n\n```js\nvar myNav = document.querySelector('#myNav')\nvar nodeData = myNav.props.nodes\n\nmyNav.addEventListener('toggle', (evt) => {\n  const node = getNodeById(evt.detail.id, nodeData)\n  node.close = !node.close\n  myNav.setAttribute('nodes', nodeData)\n})\n\nmyNav.addEventListener('nodeclick', (evt) => {\n  const pre = getNodeById(evt.detail.pre, nodeData)\n  pre.selected = false\n  const node = getNodeById(evt.detail.id, nodeData)\n  node.selected = true\n  myNav.setAttribute('nodes', nodeData)\n})\n\nfunction getNodeById(id, nodes) {\n  for (let i = 0, len = nodes.length; i < len; i++) {\n    let child = nodes[i]\n    let target = this._getNodeById(id, child)\n    if (target) {\n      return target\n    }\n  }\n}\n\nfunction _getNodeById(id, node) {\n  if (node.id === id) return node\n  if (node.children) {\n    for (let i = 0, len = node.children.length; i < len; i++) {\n      let child = node.children[i]\n      let target = _getNodeById(id, child)\n      if (target) {\n        return target\n      }\n    }\n  }\n}\n```\n\n---\n\n## API\n\n### Props\n\n```js\n{\n    nodes: obj\n}\n```\n\n### Event\n\n```js\n{\n    toggle: function, \n    nodeclick: function\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "nodes": {
+                    "label": "nodes",
+                    "kind": 22,
+                    "detail": "[omim]m-tab",
+                    "insertText": "nodes={${1}}",
+                    "documentation": "---\n\n## nodes:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "onToggle": {
+                    "label": "onToggle",
+                    "kind": 2,
+                    "detail": "[omim]m-tab",
+                    "insertText": "onToggle={${1}}",
+                    "documentation": "---\n\n## onToggle:\n\n类型: function\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                },
+                "onNodeclick": {
+                    "label": "onNodeclick",
+                    "kind": 2,
+                    "detail": "[omim]m-tab",
+                    "insertText": "onNodeclick={${1}}",
+                    "documentation": "---\n\n## onNodeclick:\n\n类型: function\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                }
+            }
+        },
+        "m-pagination": {
+            "label": "m-pagination",
+            "kind": 24,
+            "detail": "[omim]Pagination.",
+            "insertText": "<m-pagination${1}>${2}</m-pagination>",
+            "documentation": "---\n\n## Pagination\n\n简介：分页器。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/pagination?index=4&subIndex=4 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/pagination?index=4&subIndex=4 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-pagination total=\"125\" current-page=\"1\" page-size=\"5\" id=\"myPagination\">\n</m-pagination>\n<script>\n  var pagination = document.querySelector('#myPagination')\n  pagination.addEventListener('change', function (evt) {\n    console.log(evt.detail)\n  })\n</script>\n```\n\n## Omi 中使用\n\n```jsx\n<m-pagination\n  total={125}\n  currentPage={1}\n  pageSize={5}\n  onChange={this.onChange}\n/>\n```\n\n---\n\n## API\n\n### Props\n\n```js\n{\n    total: number,\n    pageSize: number,\n    numDisplay: number,\n    currentPage: number,\n    numEdge: number,\n    linkTo: string,\n    prevText: string,\n    nextText: string,\n    ellipseText: string,\n    prevShow: boolean,\n    nextShow: boolean\n}\n```\n\n### Default Props\n\n```js\n{\n  total: 0,\n  pageSize: 10,\n  numDisplay: 5,\n  currentPage: 0,\n  numEdge: 3,\n  linkTo: '#',\n  prevText: 'Prev',\n  nextText: 'Next',\n  ellipseText: '...',\n  prevShow: true,\n  nextShow: true\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "total": {
+                    "label": "total",
+                    "kind": 22,
+                    "detail": "[omim]m-pagination",
+                    "insertText": "total={${1}}",
+                    "documentation": "---\n\n## total:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "pageSize": {
+                    "label": "pageSize",
+                    "kind": 22,
+                    "detail": "[omim]m-pagination",
+                    "insertText": "pageSize={${1}}",
+                    "documentation": "---\n\n## pageSize:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "numDisplay": {
+                    "label": "numDisplay",
+                    "kind": 22,
+                    "detail": "[omim]m-pagination",
+                    "insertText": "numDisplay={${1}}",
+                    "documentation": "---\n\n## numDisplay:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "currentPage": {
+                    "label": "currentPage",
+                    "kind": 22,
+                    "detail": "[omim]m-pagination",
+                    "insertText": "currentPage={${1}}",
+                    "documentation": "---\n\n## currentPage:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "numEdge": {
+                    "label": "numEdge",
+                    "kind": 22,
+                    "detail": "[omim]m-pagination",
+                    "insertText": "numEdge={${1}}",
+                    "documentation": "---\n\n## numEdge:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "linkTo": {
+                    "label": "linkTo",
+                    "kind": 22,
+                    "detail": "[omim]m-pagination",
+                    "insertText": "linkTo='${1}'",
+                    "documentation": "---\n\n## linkTo:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "prevText": {
+                    "label": "prevText",
+                    "kind": 22,
+                    "detail": "[omim]m-pagination",
+                    "insertText": "prevText='${1}'",
+                    "documentation": "---\n\n## prevText:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "nextText": {
+                    "label": "nextText",
+                    "kind": 22,
+                    "detail": "[omim]m-pagination",
+                    "insertText": "nextText='${1}'",
+                    "documentation": "---\n\n## nextText:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "ellipseText": {
+                    "label": "ellipseText",
+                    "kind": 22,
+                    "detail": "[omim]m-pagination",
+                    "insertText": "ellipseText='${1}'",
+                    "documentation": "---\n\n## ellipseText:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "prevShow": {
+                    "label": "prevShow",
+                    "kind": 22,
+                    "detail": "[omim]m-pagination",
+                    "insertText": "prevShow",
+                    "documentation": "---\n\n## prevShow:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "nextShow": {
+                    "label": "nextShow",
+                    "kind": 22,
+                    "detail": "[omim]m-pagination",
+                    "insertText": "nextShow",
+                    "documentation": "---\n\n## nextShow:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-top-app-bar": {
+            "label": "m-top-app-bar",
+            "kind": 24,
+            "detail": "[omim]Top App Bar acts as a container for items such as application title, navigation icon, and action items.",
+            "insertText": "<m-top-app-bar${1}>${2}</m-top-app-bar>",
+            "documentation": "---\n\n## Top App Bar\n\n简介：Top App Bar充当应用程序标题，导航图标和操作项等项目的容器。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/top-app-bar?index=4&subIndex=5 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/top-app-bar?index=4&subIndex=5 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-top-app-bar adjust dense fixed\n  heading='Omim'\n  navigations=\"['favorite']\"\n  action-items=\"[{text: 'Omim'}, 'favorite_border', 'favorite_border']\"\n></m-top-app-bar>\n```\n\n## Omi 中使用\n\n```jsx\n<m-top-app-bar adjust dense fixed\n  heading='Omim'\n  navigations={['favorite']}\n  action-items={[{text: 'Omim'}, 'favorite_border', 'favorite_border']}\n  onNavigation={this.onMenu}\n  onAction={this.onMenu}\n/>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| heading | string | -- | 标题内容 |\n| short | boolean | -- | 带有缩短动动画 |\n| shortCollapsed | boolean | -- | 固定为缩短状态 |\n| prominent | boolean | -- | 突出显示标题 |\n| dense | boolean | -- | 更紧凑的顶部应用栏 |\n| fixed | boolean | -- | 固定顶部应用栏 |\n| adjust | boolean | -- | 自动填充顶部应用栏高度 |\n| bottom | boolean | -- | 底部应用栏 |\n| navigations | object | -- | 左侧导航按钮 |\n| actionItems | object | -- | 右侧按钮 |\n| scrollTarget | EventTarget | window | 设置目标滚动条(JSX 使用) |\n| scrollTargetId | string | window | 设置目标滚动条(原生 js 使用) |\n| onNavigation | function | -- | 单击左侧导航栏触发 |\n| onAction | function | -- | 单击右侧按钮触发 |\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "heading": {
+                    "label": "heading",
+                    "kind": 22,
+                    "detail": "[omim]m-top-app-bar",
+                    "insertText": "heading='${1}'",
+                    "documentation": "---\n\n## heading:\n\n类型: string\n\n默认值: --\n\n说明: 标题内容\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "short": {
+                    "label": "short",
+                    "kind": 22,
+                    "detail": "[omim]m-top-app-bar",
+                    "insertText": "short",
+                    "documentation": "---\n\n## short:\n\n类型: boolean\n\n默认值: --\n\n说明: 带有缩短动动画\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "shortCollapsed": {
+                    "label": "shortCollapsed",
+                    "kind": 22,
+                    "detail": "[omim]m-top-app-bar",
+                    "insertText": "shortCollapsed",
+                    "documentation": "---\n\n## shortCollapsed:\n\n类型: boolean\n\n默认值: --\n\n说明: 固定为缩短状态\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "prominent": {
+                    "label": "prominent",
+                    "kind": 22,
+                    "detail": "[omim]m-top-app-bar",
+                    "insertText": "prominent",
+                    "documentation": "---\n\n## prominent:\n\n类型: boolean\n\n默认值: --\n\n说明: 突出显示标题\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "dense": {
+                    "label": "dense",
+                    "kind": 22,
+                    "detail": "[omim]m-top-app-bar",
+                    "insertText": "dense",
+                    "documentation": "---\n\n## dense:\n\n类型: boolean\n\n默认值: --\n\n说明: 更紧凑的顶部应用栏\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "fixed": {
+                    "label": "fixed",
+                    "kind": 22,
+                    "detail": "[omim]m-top-app-bar",
+                    "insertText": "fixed",
+                    "documentation": "---\n\n## fixed:\n\n类型: boolean\n\n默认值: --\n\n说明: 固定顶部应用栏\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "adjust": {
+                    "label": "adjust",
+                    "kind": 22,
+                    "detail": "[omim]m-top-app-bar",
+                    "insertText": "adjust",
+                    "documentation": "---\n\n## adjust:\n\n类型: boolean\n\n默认值: --\n\n说明: 自动填充顶部应用栏高度\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "bottom": {
+                    "label": "bottom",
+                    "kind": 22,
+                    "detail": "[omim]m-top-app-bar",
+                    "insertText": "bottom",
+                    "documentation": "---\n\n## bottom:\n\n类型: boolean\n\n默认值: --\n\n说明: 底部应用栏\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "navigations": {
+                    "label": "navigations",
+                    "kind": 22,
+                    "detail": "[omim]m-top-app-bar",
+                    "insertText": "navigations={[${1}]}",
+                    "documentation": "---\n\n## navigations:\n\n类型: object\n\n默认值: --\n\n说明: 左侧导航按钮\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "actionItems": {
+                    "label": "actionItems",
+                    "kind": 22,
+                    "detail": "[omim]m-top-app-bar",
+                    "insertText": "actionItems={[${1}]}",
+                    "documentation": "---\n\n## actionItems:\n\n类型: object\n\n默认值: --\n\n说明: 右侧按钮\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "scrollTarget": {
+                    "label": "scrollTarget",
+                    "kind": 22,
+                    "detail": "[omim]m-top-app-bar",
+                    "insertText": "scrollTarget={${1}}",
+                    "documentation": "---\n\n## scrollTarget:\n\n类型: EventTarget\n\n默认值: window\n\n说明: 设置目标滚动条(JSX 使用)\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "scrollTargetId": {
+                    "label": "scrollTargetId",
+                    "kind": 22,
+                    "detail": "[omim]m-top-app-bar",
+                    "insertText": "scrollTargetId='${1}'",
+                    "documentation": "---\n\n## scrollTargetId:\n\n类型: string\n\n默认值: window\n\n说明: 设置目标滚动条(原生 js 使用)\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "onNavigation": {
+                    "label": "onNavigation",
+                    "kind": 2,
+                    "detail": "[omim]m-top-app-bar",
+                    "insertText": "onNavigation={${1}}",
+                    "documentation": "---\n\n## onNavigation:\n\n类型: function\n\n默认值: --\n\n说明: 单击左侧导航栏触发\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                },
+                "onAction": {
+                    "label": "onAction",
+                    "kind": 2,
+                    "detail": "[omim]m-top-app-bar",
+                    "insertText": "onAction={${1}}",
+                    "documentation": "---\n\n## onAction:\n\n类型: function\n\n默认值: --\n\n说明: 单击右侧按钮触发\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                }
+            }
+        },
+        "m-dialog": {
+            "label": "m-dialog",
+            "kind": 24,
+            "detail": "[omim]Dialogs inform users about a task and can contain critical information, require decisions, or involve multiple tasks.",
+            "insertText": "<m-dialog${1}>${2}</m-dialog>",
+            "documentation": "---\n\n## Dialog\n\n简介：对话框通知用户任务，可以包含关键信息，需要决策或涉及多个任务。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/dialog?index=5&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/dialog?index=5&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-dialog cancel-button=\"{text: 'Cancel'}\" confirm-button=\"{text: 'Discard'}\">\n  <p class=\"m-dialog-alert-p\">Discard draft?</p>\n</m-dialog>\n```\n\n## Omi 中使用\n\n```jsx\n<m-dialog cancel-button={{text: 'Cancel'}} confirm-button={{text: 'Discard'}}>\n  <p style='margin:0'>Discard draft?</p>\n</m-dialog>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| show | boolean | -- | 是否显示对话框 |\n| scrollable | boolean | -- | 对话框内容溢出保证滚动 |\n| title | string | -- | 对话框标题 |\n| cancel-button | object | -- | 对话框取消按钮内容，支持所有 m-icon 属性 |\n| confirm-button | object | -- | 对话框确认按钮内容，支持所有 m-icon 属性 |\n| onOpening | function | -- | 对话框打开过程触发 |\n| onOpened | function | -- | 对话框打开完成后触发 |\n| onClosing | function | -- | 对话框关闭过程触发 |\n| onClosed | function | -- | 对话框关闭完成触发 |\n| onScrim | function | -- | 单击对话框周围黑色透明区域触发 |\n| onCancel | function | -- | 单击对话框取消按钮触发 |\n| onConfirm | function | -- | 单击对话框确认按钮触发 |\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "show": {
+                    "label": "show",
+                    "kind": 22,
+                    "detail": "[omim]m-dialog",
+                    "insertText": "show",
+                    "documentation": "---\n\n## show:\n\n类型: boolean\n\n默认值: --\n\n说明: 是否显示对话框\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "scrollable": {
+                    "label": "scrollable",
+                    "kind": 22,
+                    "detail": "[omim]m-dialog",
+                    "insertText": "scrollable",
+                    "documentation": "---\n\n## scrollable:\n\n类型: boolean\n\n默认值: --\n\n说明: 是否显示对话框\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "title": {
+                    "label": "title",
+                    "kind": 22,
+                    "detail": "[omim]m-dialog",
+                    "insertText": "title='${1}'",
+                    "documentation": "---\n\n## title:\n\n类型: string\n\n默认值: --\n\n说明: 对话框标题\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "cancelButton": {
+                    "label": "cancelButton",
+                    "kind": 22,
+                    "detail": "[omim]m-dialog",
+                    "insertText": "cancelButton={{${1}}}",
+                    "documentation": "---\n\n## cancelButton:\n\n类型: object\n\n默认值: --\n\n说明: 对话框取消按钮内容，支持所有 m-button 属性\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "confirmButton": {
+                    "label": "confirmButton",
+                    "kind": 22,
+                    "detail": "[omim]m-dialog",
+                    "insertText": "confirmButton={{${1}}}",
+                    "documentation": "---\n\n## confirmButton:\n\n类型: object\n\n默认值: --\n\n说明: 对话框确认按钮内容，支持所有 m-button 属性\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "onOpening": {
+                    "label": "onOpening",
+                    "kind": 2,
+                    "detail": "[omim]m-dialog",
+                    "insertText": "onOpening={${1}}",
+                    "documentation": "---\n\n## onOpening:\n\n类型: function\n\n默认值: --\n\n说明: 对话框打开过程触发\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                },
+                "onOpened": {
+                    "label": "onOpened",
+                    "kind": 2,
+                    "detail": "[omim]m-dialog",
+                    "insertText": "onOpened={${1}}",
+                    "documentation": "---\n\n## onOpened:\n\n类型: function\n\n默认值: --\n\n说明: 对话框打开完成后触发\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                },
+                "onClosing": {
+                    "label": "onClosing",
+                    "kind": 2,
+                    "detail": "[omim]m-dialog",
+                    "insertText": "onClosing={${1}}",
+                    "documentation": "---\n\n## onClosing:\n\n类型: function\n\n默认值: --\n\n说明: 对话框关闭过程触发\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                },
+                "onClosed": {
+                    "label": "onClosed",
+                    "kind": 2,
+                    "detail": "[omim]m-dialog",
+                    "insertText": "onClosed={${1}}",
+                    "documentation": "---\n\n## onClosed:\n\n类型: function\n\n默认值: --\n\n说明: 对话框关闭完成触发\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                },
+                "onScrim": {
+                    "label": "onScrim",
+                    "kind": 2,
+                    "detail": "[omim]m-dialog",
+                    "insertText": "onScrim={${1}}",
+                    "documentation": "---\n\n## onScrim:\n\n类型: function\n\n默认值: --\n\n说明: 单击对话框周围黑色透明区域触发\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                },
+                "onCancel": {
+                    "label": "onCancel",
+                    "kind": 2,
+                    "detail": "[omim]m-dialog",
+                    "insertText": "onCancel={${1}}",
+                    "documentation": "---\n\n## onCancel:\n\n类型: function\n\n默认值: --\n\n说明: 单击对话框取消按钮触发\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                },
+                "onConfirm": {
+                    "label": "onConfirm",
+                    "kind": 2,
+                    "detail": "[omim]m-dialog",
+                    "insertText": "onConfirm={${1}}",
+                    "documentation": "---\n\n## onConfirm:\n\n类型: function\n\n默认值: --\n\n说明: 单击对话框确认按钮触发\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                },
+                "ripple": {
+                    "label": "ripple",
+                    "kind": 21,
+                    "detail": "[omim]m-dialog",
+                    "insertText": "ripple",
+                    "documentation": "---\n\n## ripple:\n\n类型: boolean\n\n默认值: --\n\n说明: 单击按钮形成波纹 (cancelButton 和 confirmButton 内部元素)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "raised": {
+                    "label": "raised",
+                    "kind": 21,
+                    "detail": "[omim]m-dialog",
+                    "insertText": "raised",
+                    "documentation": "---\n\n## raised:\n\n类型: boolean\n\n默认值: --\n\n说明: 有填充，有阴影 (cancelButton 和 confirmButton 内部元素)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "dense": {
+                    "label": "dense",
+                    "kind": 21,
+                    "detail": "[omim]m-dialog",
+                    "insertText": "dense",
+                    "documentation": "---\n\n## dense:\n\n类型: boolean\n\n默认值: --\n\n说明: 更小更精致的按钮 (cancelButton 和 confirmButton 内部元素)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "unelevated": {
+                    "label": "unelevated",
+                    "kind": 21,
+                    "detail": "[omim]m-dialog",
+                    "insertText": "unelevated",
+                    "documentation": "---\n\n## unelevated:\n\n类型: boolean\n\n默认值: --\n\n说明: 有填充，无阴影 (cancelButton 和 confirmButton 内部元素)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "outlined": {
+                    "label": "outlined",
+                    "kind": 21,
+                    "detail": "[omim]m-dialog",
+                    "insertText": "outlined",
+                    "documentation": "---\n\n## outlined:\n\n类型: boolean\n\n默认值: --\n\n说明: 无填充，有边框 (cancelButton 和 confirmButton 内部元素)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "svgIcon": {
+                    "label": "svgIcon",
+                    "kind": 21,
+                    "detail": "[omim]m-dialog",
+                    "insertText": "svgIcon: {${1}}",
+                    "documentation": "---\n\n## svgIcon:\n\n类型: object\n\n默认值: --\n\n说明: svg图标 (cancelButton 和 confirmButton 内部元素)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "icon": {
+                    "label": "icon",
+                    "kind": 21,
+                    "detail": "[omim]m-dialog",
+                    "insertText": "icon: '${1}'",
+                    "documentation": "---\n\n## icon:\n\n类型: string\n\n默认值: --\n\n说明: 图标 (cancelButton 和 confirmButton 内部元素)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "text": {
+                    "label": "text",
+                    "kind": 21,
+                    "detail": "[omim]m-dialog",
+                    "insertText": "text: '${1}'",
+                    "documentation": "---\n\n## text:\n\n类型: string\n\n默认值: --\n\n说明: 按钮文本 (cancelButton 和 confirmButton 内部元素)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "path": {
+                    "label": "path",
+                    "kind": 21,
+                    "detail": "[omim]m-dialog",
+                    "insertText": "path: '${1}'",
+                    "documentation": "---\n\n## path:\n\n类型: string\n\n默认值: --\n\n说明: 按钮文本 (svgIcon 内部元素)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "color": {
+                    "label": "color",
+                    "kind": 21,
+                    "detail": "[omim]m-dialog",
+                    "insertText": "color: '${1}'",
+                    "documentation": "---\n\n## color:\n\n类型: string\n\n默认值: --\n\n说明: 按钮文本 (svgIcon 内部元素)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "scale": {
+                    "label": "scale",
+                    "kind": 21,
+                    "detail": "[omim]m-dialog",
+                    "insertText": "scale: ${1}",
+                    "documentation": "---\n\n## scale:\n\n类型: number\n\n默认值: --\n\n说明: 按钮文本 (svgIcon 内部元素)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                }
+            }
+        },
+        "m-dialog": {
+            "label": "m-dialog",
+            "kind": 24,
+            "detail": "[omim]Dialogs inform users about a task and can contain critical information, require decisions, or involve multiple tasks.",
+            "insertText": "<m-dialog${1}>${2}</m-dialog>",
+            "documentation": "---\n\n## Dialog\n\n简介：对话框通知用户任务，可以包含关键信息，需要决策或涉及多个任务。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/dialog?index=5&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/dialog?index=5&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-dialog cancel-button=\"{text: 'Cancel'}\" confirm-button=\"{text: 'Discard'}\">\n  <p class=\"m-dialog-alert-p\">Discard draft?</p>\n</m-dialog>\n```\n\n## Omi 中使用\n\n```jsx\n<m-dialog cancel-button={{text: 'Cancel'}} confirm-button={{text: 'Discard'}}>\n  <p style='margin:0'>Discard draft?</p>\n</m-dialog>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| show | boolean | -- | 是否显示对话框 |\n| scrollable | boolean | -- | 对话框内容溢出保证滚动 |\n| title | string | -- | 对话框标题 |\n| cancel-button | object | -- | 对话框取消按钮内容，支持所有 m-icon 属性 |\n| confirm-button | object | -- | 对话框确认按钮内容，支持所有 m-icon 属性 |\n| onOpening | function | -- | 对话框打开过程触发 |\n| onOpened | function | -- | 对话框打开完成后触发 |\n| onClosing | function | -- | 对话框关闭过程触发 |\n| onClosed | function | -- | 对话框关闭完成触发 |\n| onScrim | function | -- | 单击对话框周围黑色透明区域触发 |\n| onCancel | function | -- | 单击对话框取消按钮触发 |\n| onConfirm | function | -- | 单击对话框确认按钮触发 |\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "show": {
+                    "label": "show",
+                    "kind": 22,
+                    "detail": "[omim]m-dialog",
+                    "insertText": "show",
+                    "documentation": "---\n\n## show:\n\n类型: boolean\n\n默认值: --\n\n说明: 是否显示对话框\n\n---",
                     "sortText": "a",
                     "cmd": false
                 }

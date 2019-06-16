@@ -26,11 +26,11 @@ This extension adds omi support for Visual Studio Code.
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun7.png" alt="omi"/></p>
 
 ## Label completion
-User-defined prompt information: https://github.com/ZainChen/omi-vscode/blob/master/src/completion/README.md
+User-defined completion information: https://github.com/ZainChen/omi-vscode/blob/master/src/completion/README.md
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun1.gif" alt="omi"/></p>
 
 ## Attribute completion
-User-defined prompt information: https://github.com/ZainChen/omi-vscode/blob/master/src/completion/README.md
+User-defined completion information: https://github.com/ZainChen/omi-vscode/blob/master/src/completion/README.md
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun2.gif" alt="omi"/></p>
 
 ## Hover

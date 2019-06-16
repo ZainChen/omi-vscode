@@ -26,11 +26,11 @@
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun7.png" alt="omi"/></p>
 
 ## 标签补全
-用户自定义提示信息说明: https://github.com/ZainChen/omi-vscode/blob/master/src/completion/README.md
+用户自定义补全信息说明: https://github.com/ZainChen/omi-vscode/blob/master/src/completion/README.md
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun1.gif" alt="omi"/></p>
 
 ## 属性补全
-用户自定义提示信息说明: https://github.com/ZainChen/omi-vscode/blob/master/src/completion/README.md
+用户自定义补全信息说明: https://github.com/ZainChen/omi-vscode/blob/master/src/completion/README.md
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun2.gif" alt="omi"/></p>
 
 ## 鼠标悬停提示

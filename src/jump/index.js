@@ -23,7 +23,7 @@ function provideDefinition(document, position, token) {
     const word        = document.getText(document.getWordRangeAtPosition(position));
     const line        = document.lineAt(position);
 
-    console.log(word, line.text);
+    // console.log(word, line.text);
     
     // 只处理package.json文件
     if (/package\.json$/.test(fileName)) {
