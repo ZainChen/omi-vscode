@@ -1929,6 +1929,203 @@
             "documentation": "---\n\n## TextField\n\n简介：用户的输入框，输入一些内容用来提交给服务器。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/text-field?index=6&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/text-field?index=6&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-text-field label='Label' helper-text='helper text' ></m-text-field>\n<m-text-field\n  helper-text='Helper Text'\n  icon-right\n  path='...'\n  label='Label2'\n  css='\n    .mdc-text-field {\n      width:200px;\n    }\n  '\n></m-text-field>\n```\n\n## Omi 中使用\n\nJSX:\n\n```jsx\n<m-text-field label='Label1' helperText='Helper Text' />\n<m-text-field\n  helperText='Helper Text'\n  iconRight\n  path='...'\n  label='Label2'\n  css={`\n    .mdc-text-field { \n        width:200px;\n    }\n  `}\n/>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| full-width | boolean | -- | 使用父级元素宽度 |\n| textarea | boolean | -- | 多行输入，且可鼠标拖拽设置输入框大小 |\n| outlined | boolean | -- | 给输入框添加边框 |\n| no-label | boolean | -- | 输入框无默认标签 |\n| show-helper | boolean | true | 显示帮助文本 |\n| helper-text | string | -- | 帮助文本 |\n| icon-right | boolean | -- | 图标在右侧 |\n| counter | boolean | -- | 记录输入字符个数，配合 min-length, max-length 一起使用 |\n| path | string | -- | 图标 path |\n| paths | string | -- | 多图标 path |\n| label | string | -- | 默认标签 |\n| required | boolean | -- | 检测输入框是否为空 |\n| pattern | string | -- | 输入值限制及检测 |\n| min-length | number | -- | 输入字符最小长度，配合 counter 一起使用 |\n| max-length | number | -- | 输入字符最大长度，配合 counter 一起使用 |\n| min | number | -- |  |\n| max | number | -- |  |\n| step | number | -- |  |\n| rows | number | -- | 多行输入框高度，数值表示n倍行高 |\n| cols | number | -- |  多行输入框宽度，数值表示n个字符宽度 |\n| value | string | -- | 默认输入值 |\n| disabled | boolean | -- | 输入框失效 |\n\n---",
             "sortText": "a",
             "cmd": false
+        },
+        "m-select": {
+            "label": "m-select",
+            "kind": 24,
+            "detail": "[omim]Select provides Material Design single-option select menus. It is fully accessible, and fully RTL-aware.",
+            "insertText": "<m-select${1}>${2}</m-select>",
+            "documentation": "---\n\n## Select\n\n简介：Select提供单选项选择菜单。 它完全可访问，并且完全支持RTL。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/select?index=6&subIndex=1 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/select?index=6&subIndex=1 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-select menu=\"[\n  { text: 'Google', value: 0 },\n  { text: 'Omi', value: 1 },\n  { text: 'Tencent', value: 2 }\n]\" label=\"Choose One Item\" onchange=\"changeB(event)\" >\n</m-select>\n```\n\n## Omi 中使用\n\n```jsx\n<m-select menu={[\n  { text: 'Google', value: 0 },\n  { text: 'Omi', value: 1 },\n  { text: 'Tencent', value: 2 }\n]} label=\"Choose One Item\" onChange={(e) => { console.log(e.detail) }}>\n</m-select>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| label | String | -- | 选框标题文本 |\n| menu | Object | -- | 菜单内容 |\n| onChange | function | -- | 选择触发 |\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "label": {
+                    "label": "label",
+                    "kind": 22,
+                    "detail": "[omim]m-select",
+                    "insertText": "label='${1}'",
+                    "documentation": "---\n\n## label:\n\n类型: string\n\n默认值: --\n\n说明: 选框标题文本\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "menu": {
+                    "label": "menu",
+                    "kind": 22,
+                    "detail": "[omim]m-select",
+                    "insertText": "menu={[\n\t{${1} },\n]}",
+                    "documentation": "---\n\n## menu:\n\n类型: object\n\n默认值: --\n\n说明: 菜单内容\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "text": {
+                    "label": "text",
+                    "kind": 21,
+                    "detail": "[omim]m-select",
+                    "insertText": "text: '${1}'",
+                    "documentation": "---\n\n## text:\n\n类型: string\n\n默认值: --\n\n说明: 列表文本 (menu 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "value": {
+                    "label": "value",
+                    "kind": 21,
+                    "detail": "[omim]m-select",
+                    "insertText": "value: ${1}",
+                    "documentation": "---\n\n## value:\n\n类型: string\n\n默认值: --\n\n说明: 列表值 (menu 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "onChange": {
+                    "label": "onChange",
+                    "kind": 2,
+                    "detail": "[omim]m-select",
+                    "insertText": "onChange={${1}}",
+                    "documentation": "---\n\n## onChange:\n\n类型: function\n\n默认值: --\n\n说明: 选择触发\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                }
+            }
+        },
+        "m-checkbox": {
+            "label": "m-checkbox",
+            "kind": 24,
+            "detail": "[omim]Checkbox allow the user to select one or more items from a set.",
+            "insertText": "<m-checkbox${1}>${2}</m-checkbox>",
+            "documentation": "---\n\n## Checkbox\n\n简介：复选框允许用户从一组中选择一个或多个项目。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/checkbox?index=6&subIndex=2 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/checkbox?index=6&subIndex=2 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-checkbox label='Label'> </m-checkbox>\n<m-checkbox checked label='checked'> </m-checkbox>\n<m-checkbox indeterminate label='indeterminate'> </m-checkbox>\n<m-checkbox disabled label='disabled'> </m-checkbox>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| label | string | -- | 复选框右侧内容 |\n| disabled | boolean | -- | 使复选框失效 |\n| indeterminate | boolean | -- | 有中立选项 |\n| checked | boolean | -- | 初始状态为选中 |\n| value | string | -- | 复选框的值 |\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "label": {
+                    "label": "label",
+                    "kind": 22,
+                    "detail": "[omim]m-checkbox",
+                    "insertText": "label='${1}'",
+                    "documentation": "---\n\n## label:\n\n类型: string\n\n默认值: --\n\n说明: 复选框右侧内容\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "disabled": {
+                    "label": "disabled",
+                    "kind": 22,
+                    "detail": "[omim]m-checkbox",
+                    "insertText": "disabled",
+                    "documentation": "---\n\n## disabled:\n\n类型: boolean\n\n默认值: --\n\n说明: 使复选框失效\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "indeterminate": {
+                    "label": "indeterminate",
+                    "kind": 22,
+                    "detail": "[omim]m-checkbox",
+                    "insertText": "indeterminate",
+                    "documentation": "---\n\n## indeterminate:\n\n类型: boolean\n\n默认值: --\n\n说明: 有中立选项\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "checked": {
+                    "label": "checked",
+                    "kind": 22,
+                    "detail": "[omim]m-checkbox",
+                    "insertText": "checked",
+                    "documentation": "---\n\n## checked:\n\n类型: boolean\n\n默认值: --\n\n说明: 初始状态为选中\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "value": {
+                    "label": "value",
+                    "kind": 22,
+                    "detail": "[omim]m-checkbox",
+                    "insertText": "value='${1}'",
+                    "documentation": "---\n\n## value:\n\n类型: string\n\n默认值: --\n\n说明: 复选框的值\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-radio": {
+            "label": "m-radio",
+            "kind": 24,
+            "detail": "[omim]Radio buttons allow the user to select one option from a set while seeing all available options.",
+            "insertText": "<m-radio${1}>${2}</m-radio>",
+            "documentation": "---\n\n## Radio\n\n简介：单选按钮允许用户在查看所有可用选项时从一组中选择一个选项。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/radio?index=6&subIndex=3 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/radio?index=6&subIndex=3'官网链接')\n\n---\n\n## 使用\n\n```html\n<m-radio id='r1' value=\"1\" label='Label' checked name=\"abc\"> </m-radio>\n<m-radio id='r2' value=\"2\" label='Label' name=\"abc\"> </m-radio>\n<m-radio checked label='checked'> </m-radio>\n<m-radio disabled label='disabled'> </m-radio>\n```\n\n## Omi 中使用\n\nJSX:\n\n```jsx\n<m-radio onSelected={this.onSelected} value={1} label='Label' checked={!this.checked} name=\"abc\"></m-radio>\n<m-radio  onSelected={this.onSelected} value={2} label='Label' checked={this.checked} name=\"abc\"></m-radio>\n<m-radio checked label='checked' onclick={()=>{this.update()}}> </m-radio>\n<m-radio disabled label='disabled'></m-radio>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| label | string | -- | 右侧文本内容 |\n| disabled | boolean | -- | 禁用单选按钮 |\n| checked | boolean | -- | 初始状态为选中 |\n| value | string | -- | 单选按钮的值 |\n| name | string | -- | 为单选按钮分组 |\n| onSelected | function | -- | 选择触发 |\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "label": {
+                    "label": "label",
+                    "kind": 22,
+                    "detail": "[omim]m-checkbox",
+                    "insertText": "label='${1}'",
+                    "documentation": "---\n\n## label:\n\n类型: string\n\n默认值: --\n\n说明: 复选框右侧内容\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "disabled": {
+                    "label": "disabled",
+                    "kind": 22,
+                    "detail": "[omim]m-radio",
+                    "insertText": "disabled",
+                    "documentation": "---\n\n## disabled:\n\n类型: boolean\n\n默认值: --\n\n说明: 禁用单选按钮\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "checked": {
+                    "label": "checked",
+                    "kind": 22,
+                    "detail": "[omim]m-radio",
+                    "insertText": "checked",
+                    "documentation": "---\n\n## checked:\n\n类型: boolean\n\n默认值: --\n\n说明: 初始状态为选中\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "value": {
+                    "label": "value",
+                    "kind": 22,
+                    "detail": "[omim]m-radio",
+                    "insertText": "value='${1}'",
+                    "documentation": "---\n\n## value:\n\n类型: string\n\n默认值: --\n\n说明: 单选按钮的值\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "name": {
+                    "label": "name",
+                    "kind": 22,
+                    "detail": "[omim]m-radio",
+                    "insertText": "name='${1}'",
+                    "documentation": "---\n\n## name:\n\n类型: string\n\n默认值: --\n\n说明: 为单选按钮分组\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "onSelected": {
+                    "label": "onSelected",
+                    "kind": 2,
+                    "detail": "[omim]m-radio",
+                    "insertText": "onSelected={${1}}",
+                    "documentation": "---\n\n## onSelected:\n\n类型: function\n\n默认值: --\n\n说明: 选择触发\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                }
+            }
+        },
+        "m-radio": {
+            "label": "m-radio",
+            "kind": 24,
+            "detail": "[omim]Radio buttons allow the user to select one option from a set while seeing all available options.",
+            "insertText": "<m-radio${1}>${2}</m-radio>",
+            "documentation": "---\n\n## Radio\n\n简介：单选按钮允许用户在查看所有可用选项时从一组中选择一个选项。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/radio?index=6&subIndex=3 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/radio?index=6&subIndex=3'官网链接')\n\n---\n\n## 使用\n\n```html\n<m-radio id='r1' value=\"1\" label='Label' checked name=\"abc\"> </m-radio>\n<m-radio id='r2' value=\"2\" label='Label' name=\"abc\"> </m-radio>\n<m-radio checked label='checked'> </m-radio>\n<m-radio disabled label='disabled'> </m-radio>\n```\n\n## Omi 中使用\n\nJSX:\n\n```jsx\n<m-radio onSelected={this.onSelected} value={1} label='Label' checked={!this.checked} name=\"abc\"></m-radio>\n<m-radio  onSelected={this.onSelected} value={2} label='Label' checked={this.checked} name=\"abc\"></m-radio>\n<m-radio checked label='checked' onclick={()=>{this.update()}}> </m-radio>\n<m-radio disabled label='disabled'></m-radio>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| label | string | -- | 右侧文本内容 |\n| disabled | boolean | -- | 禁用单选按钮 |\n| checked | boolean | -- | 初始状态为选中 |\n| value | string | -- | 单选按钮的值 |\n| name | string | -- | 为单选按钮分组 |\n| onSelected | function | -- | 选择触发 |\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "label": {
+                    "label": "label",
+                    "kind": 22,
+                    "detail": "[omim]m-checkbox",
+                    "insertText": "label='${1}'",
+                    "documentation": "---\n\n## label:\n\n类型: string\n\n默认值: --\n\n说明: 复选框右侧内容\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
         }
     }
 }
