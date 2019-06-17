@@ -1436,25 +1436,499 @@
                 }
             }
         },
-        "m-dialog": {
-            "label": "m-dialog",
+        "m-snackbar": {
+            "label": "m-snackbar",
             "kind": 24,
-            "detail": "[omim]Dialogs inform users about a task and can contain critical information, require decisions, or involve multiple tasks.",
-            "insertText": "<m-dialog${1}>${2}</m-dialog>",
-            "documentation": "---\n\n## Dialog\n\n简介：对话框通知用户任务，可以包含关键信息，需要决策或涉及多个任务。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/dialog?index=5&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/dialog?index=5&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-dialog cancel-button=\"{text: 'Cancel'}\" confirm-button=\"{text: 'Discard'}\">\n  <p class=\"m-dialog-alert-p\">Discard draft?</p>\n</m-dialog>\n```\n\n## Omi 中使用\n\n```jsx\n<m-dialog cancel-button={{text: 'Cancel'}} confirm-button={{text: 'Discard'}}>\n  <p style='margin:0'>Discard draft?</p>\n</m-dialog>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| show | boolean | -- | 是否显示对话框 |\n| scrollable | boolean | -- | 对话框内容溢出保证滚动 |\n| title | string | -- | 对话框标题 |\n| cancel-button | object | -- | 对话框取消按钮内容，支持所有 m-icon 属性 |\n| confirm-button | object | -- | 对话框确认按钮内容，支持所有 m-icon 属性 |\n| onOpening | function | -- | 对话框打开过程触发 |\n| onOpened | function | -- | 对话框打开完成后触发 |\n| onClosing | function | -- | 对话框关闭过程触发 |\n| onClosed | function | -- | 对话框关闭完成触发 |\n| onScrim | function | -- | 单击对话框周围黑色透明区域触发 |\n| onCancel | function | -- | 单击对话框取消按钮触发 |\n| onConfirm | function | -- | 单击对话框确认按钮触发 |\n\n---",
+            "detail": "[omim]Snackbar provide brief messages about app processes at the bottom of the screen.",
+            "insertText": "<m-snackbar${1}>${2}</m-snackbar>",
+            "documentation": "---\n\n## Snackbar\n\n简介：Snackbar 在屏幕底部提供关于应用程序进程的简短消息。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/snackbar?index=5&subIndex=1 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/snackbar?index=5&subIndex=1 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-snackbar id=\"m-snackbar-a\" button-text=\"RETRY\" msg=\"Can't send photo. Retry in 5 seconds.\"></m-snackbar>\n<m-snackbar id=\"m-snackbar-b\" button-text=\"UNDO\" msg=\"Your photo has been archived.\" leading></m-snackbar>\n<m-snackbar id=\"m-snackbar-c\" stacked msg='This item already has the label \"travel\". You can add a new label.' button-text=\"ADD A NEW LABEL\"></m-snackbar>\n```\n\n## Omi 中使用\n\n```jsx\n<m-snackbar\n  onClosed={this.onClosedA}\n  onButtonClick={this.onButtonClickA}\n  onIconButtonClick={this.onIconButtonClickA}\n  buttonText=\"RETRY\"\n  msg=\"Can't send photo. Retry in 5 seconds.\"\n  show={this.aShow}\n></m-snackbar>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| show | boolean | -- | 是否显示弹窗 |\n| stacked | boolean | -- | 按钮与文本分两层 |\n| msg | string | -- | 提示内容 |\n| buttonText | string | -- | 按钮文本 |\n| leading | boolean | -- | 弹窗出现在主窗口角落 |\n| onOpened | function | -- | 打开完成后触发 |\n| onClosed | function | -- | 关闭完成后触发 |\n| onButtonClick | function | -- | 单击按钮触发 |\n| onIconButtonClick | function | -- | 单击图标按钮触发 |\n\n---",
             "sortText": "a",
             "cmd": false,
             "attributes": {
                 "show": {
                     "label": "show",
                     "kind": 22,
-                    "detail": "[omim]m-dialog",
+                    "detail": "[omim]m-snackbar",
                     "insertText": "show",
-                    "documentation": "---\n\n## show:\n\n类型: boolean\n\n默认值: --\n\n说明: 是否显示对话框\n\n---",
+                    "documentation": "---\n\n## show:\n\n类型: boolean\n\n默认值: --\n\n说明: 是否显示弹窗\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "stacked": {
+                    "label": "stacked",
+                    "kind": 22,
+                    "detail": "[omim]m-snackbar",
+                    "insertText": "stacked",
+                    "documentation": "---\n\n## stacked:\n\n类型: boolean\n\n默认值: --\n\n说明: 按钮与文本分两层\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "msg": {
+                    "label": "msg",
+                    "kind": 22,
+                    "detail": "[omim]m-snackbar",
+                    "insertText": "msg='${1}'",
+                    "documentation": "---\n\n## msg:\n\n类型: string\n\n默认值: --\n\n说明: 提示内容\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "buttonText": {
+                    "label": "buttonText",
+                    "kind": 22,
+                    "detail": "[omim]m-snackbar",
+                    "insertText": "buttonText='${1}'",
+                    "documentation": "---\n\n## buttonText:\n\n类型: string\n\n默认值: --\n\n说明: 按钮文本\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "leading": {
+                    "label": "leading",
+                    "kind": 22,
+                    "detail": "[omim]m-snackbar",
+                    "insertText": "leading",
+                    "documentation": "---\n\n## leading:\n\n类型: boolean\n\n默认值: --\n\n说明: 弹窗出现在主窗口角落\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "onOpened": {
+                    "label": "onOpened",
+                    "kind": 2,
+                    "detail": "[omim]m-snackbar",
+                    "insertText": "onOpened",
+                    "documentation": "---\n\n## onOpened:\n\n类型: function\n\n默认值: --\n\n说明: 打开完成后触发\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                },
+                "onClosed": {
+                    "label": "onClosed",
+                    "kind": 2,
+                    "detail": "[omim]m-snackbar",
+                    "insertText": "onClosed",
+                    "documentation": "---\n\n## onClosed:\n\n类型: function\n\n默认值: --\n\n说明: 关闭完成后触发\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                },
+                "onButtonClick": {
+                    "label": "onButtonClick",
+                    "kind": 2,
+                    "detail": "[omim]m-snackbar",
+                    "insertText": "onButtonClick",
+                    "documentation": "---\n\n## onButtonClick:\n\n类型: function\n\n默认值: --\n\n说明: 单击按钮触发\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                },
+                "onIconButtonClick": {
+                    "label": "onIconButtonClick",
+                    "kind": 2,
+                    "detail": "[omim]m-snackbar",
+                    "insertText": "onIconButtonClick",
+                    "documentation": "---\n\n## onIconButtonClick:\n\n类型: function\n\n默认值: --\n\n说明: 单击图标按钮触发\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                }
+            }
+        },
+        "m-color-picker": {
+            "label": "m-color-picker",
+            "kind": 24,
+            "detail": "[omim]ColorPicker base on [pickr](https://github.com/Simonwep/pickr).",
+            "insertText": "<m-color-picker${1}>${2}</m-color-picker>",
+            "documentation": "---\n\n## ColorPicker\n\n简介：基于 [pickr](https://github.com/Simonwep/pickr) 改造得颜色选择器。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/color-picker?index=5&subIndex=3 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/color-picker?index=5&subIndex=3 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-color-picker \n  id='picker' \n  save=\"0\" \n  preview=\"0\" \n  button='0' \n  clear='0' \n  width=\"300px\">\n</m-color-picker>\n<script>\n  var picker = document.querySelector('#picker')\n  picker.addEventListener('change', function(evt){\n    console.log(evt.detail.color)\n  })\n</script>\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n  button?: boolean;\n  preview?: boolean;\n  opacity?: boolean;\n  hue?: boolean;\n  hex?: boolean;\n  rgba?: boolean;\n  hsla?: boolean;\n  hsva?: boolean;\n  input?: boolean;\n  clear?: boolean;\n  save?: boolean;\n  cmyk?: boolean;\n  default?: string;\n  swatches?: string[];\n  inline?: boolean;\n  strings?: {\n      save: string;\n      clear: string;\n  };\n  width?: string;\n}\n```\n\n### defaultProps\n\n```jsx\n{\n  button: true,\n  preview: true,\n  opacity: true,\n  hue: true,\n\n  hex: true,\n  rgba: true,\n  hsla: true,\n  hsva: false,\n  input: true,\n  clear: true,\n  save: true,\n  cmyk: false,\n\n  default: '#3365B7',\n\n  swatches: [],\n  inline: true,\n\n  strings: {\n    save: 'Save',  // 保存按钮的文字\n    clear: 'Clear' // 清楚按钮的文字\n  }\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "button": {
+                    "label": "button",
+                    "kind": 22,
+                    "detail": "[omim]m-color-picker",
+                    "insertText": "button",
+                    "documentation": "---\n\n## button:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "preview": {
+                    "label": "preview",
+                    "kind": 22,
+                    "detail": "[omim]m-color-picker",
+                    "insertText": "preview",
+                    "documentation": "---\n\n## preview:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "opacity": {
+                    "label": "opacity",
+                    "kind": 22,
+                    "detail": "[omim]m-color-picker",
+                    "insertText": "opacity",
+                    "documentation": "---\n\n## opacity:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "hue": {
+                    "label": "hue",
+                    "kind": 22,
+                    "detail": "[omim]m-color-picker",
+                    "insertText": "hue",
+                    "documentation": "---\n\n## hue:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "hex": {
+                    "label": "hex",
+                    "kind": 22,
+                    "detail": "[omim]m-color-picker",
+                    "insertText": "hex",
+                    "documentation": "---\n\n## hex:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "rgba": {
+                    "label": "rgba",
+                    "kind": 22,
+                    "detail": "[omim]m-color-picker",
+                    "insertText": "rgba",
+                    "documentation": "---\n\n## rgba:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "hsla": {
+                    "label": "hsla",
+                    "kind": 22,
+                    "detail": "[omim]m-color-picker",
+                    "insertText": "hsla",
+                    "documentation": "---\n\n## hsla:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "hsva": {
+                    "label": "hsva",
+                    "kind": 22,
+                    "detail": "[omim]m-color-picker",
+                    "insertText": "hsva",
+                    "documentation": "---\n\n## hsva:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "input": {
+                    "label": "input",
+                    "kind": 22,
+                    "detail": "[omim]m-color-picker",
+                    "insertText": "input",
+                    "documentation": "---\n\n## input:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "clear": {
+                    "label": "clear",
+                    "kind": 22,
+                    "detail": "[omim]m-color-picker",
+                    "insertText": "clear",
+                    "documentation": "---\n\n## clear:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "save": {
+                    "label": "save",
+                    "kind": 22,
+                    "detail": "[omim]m-color-picker",
+                    "insertText": "save",
+                    "documentation": "---\n\n## save:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "cmyk": {
+                    "label": "cmyk",
+                    "kind": 22,
+                    "detail": "[omim]m-color-picker",
+                    "insertText": "cmyk",
+                    "documentation": "---\n\n## cmyk:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "default": {
+                    "label": "default",
+                    "kind": 22,
+                    "detail": "[omim]m-color-picker",
+                    "insertText": "default='${1}'",
+                    "documentation": "---\n\n## default:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "swatches": {
+                    "label": "swatches",
+                    "kind": 22,
+                    "detail": "[omim]m-color-picker",
+                    "insertText": "swatches={[${1}]}",
+                    "documentation": "---\n\n## swatches:\n\n类型: string[]\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "inline": {
+                    "label": "inline",
+                    "kind": 22,
+                    "detail": "[omim]m-color-picker",
+                    "insertText": "inline",
+                    "documentation": "---\n\n## inline:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "strings": {
+                    "label": "strings",
+                    "kind": 22,
+                    "detail": "[omim]m-color-picker",
+                    "insertText": "strings={{${1}}}",
+                    "documentation": "---\n\n## strings:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "width": {
+                    "label": "width",
+                    "kind": 22,
+                    "detail": "[omim]m-color-picker",
+                    "insertText": "width='${1}'",
+                    "documentation": "---\n\n## width:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "save:": {
+                    "label": "save:",
+                    "kind": 21,
+                    "detail": "[omim]m-color-picker",
+                    "insertText": "save: '${1}'",
+                    "documentation": "---\n\n## 'save:':\n\n类型: string (strings 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "clear:": {
+                    "label": "clear:",
+                    "kind": 21,
+                    "detail": "[omim]m-color-picker",
+                    "insertText": "clear: '${1}'",
+                    "documentation": "---\n\n## 'clear:':\n\n类型: string (strings 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                }
+            }
+        },
+        "m-popover": {
+            "label": "m-popover",
+            "kind": 24,
+            "detail": "[omim]Popover。",
+            "insertText": "<m-popover${1}>${2}</m-popover>",
+            "documentation": "---\n\n## Popover\n\n简介：Popover。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/popover?index=5&subIndex=4 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/popover?index=5&subIndex=4 '官网链接')\n\n---\n\n## 使用\n\n```html\n<div style=\"position:relative;left:100px;top:100px;\">\n  <m-button id='myBtn'>top-left</m-button>\n</div>\n<m-popover id=\"myPopover\" target=\"#myBtn\">\n  <div>Test Content</div>\n  <div>Test Content</div>\n  <div>Test Content..</div>\n</m-popover>\n<script>\n  var myPopover = document.querySelector('#myPopover')\n  var myBtn = document.querySelector('#myBtn')\n  myBtn.addEventListener('click', function () {\n    myPopover.pureSetAttribute('direction', 'top-left')\n    myPopover.setAttribute('show', '')\n  })\n</script>\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n  show: boolean;\n  x: number,\n  y: number,\n  direction: string,\n  target: string | HTMLElement \n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "show": {
+                    "label": "show",
+                    "kind": 22,
+                    "detail": "[omim]m-snackbar",
+                    "insertText": "show",
+                    "documentation": "---\n\n## show:\n\n类型: boolean\n\n默认值: --\n\n说明: 是否显示弹窗\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "x": {
+                    "label": "x",
+                    "kind": 22,
+                    "detail": "[omim]m-snackbar",
+                    "insertText": "x={${1}}",
+                    "documentation": "---\n\n## x:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "y": {
+                    "label": "y",
+                    "kind": 22,
+                    "detail": "[omim]m-snackbar",
+                    "insertText": "y={${1}}",
+                    "documentation": "---\n\n## y:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "direction": {
+                    "label": "direction",
+                    "kind": 22,
+                    "detail": "[omim]m-snackbar",
+                    "insertText": "direction='${1}'",
+                    "documentation": "---\n\n## direction:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "target": {
+                    "label": "target",
+                    "kind": 22,
+                    "detail": "[omim]m-snackbar",
+                    "insertText": "target='${1}'",
+                    "documentation": "---\n\n## target:\n\n类型: string | HTMLElement\n\n---",
                     "sortText": "a",
                     "cmd": false
                 }
             }
+        },
+        "m-text-field": {
+            "label": "m-text-field",
+            "kind": 24,
+            "detail": "[omim]User's input box, enter some content for submission to the server.",
+            "insertText": "<m-text-field${1}></m-text-field>",
+            "documentation": "---\n\n## TextField\n\n简介：用户的输入框，输入一些内容用来提交给服务器。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/text-field?index=6&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/text-field?index=6&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-text-field label='Label' helper-text='helper text' ></m-text-field>\n<m-text-field\n  helper-text='Helper Text'\n  icon-right\n  path='...'\n  label='Label2'\n  css='\n    .mdc-text-field {\n      width:200px;\n    }\n  '\n></m-text-field>\n```\n\n## Omi 中使用\n\nJSX:\n\n```jsx\n<m-text-field label='Label1' helperText='Helper Text' />\n<m-text-field\n  helperText='Helper Text'\n  iconRight\n  path='...'\n  label='Label2'\n  css={`\n    .mdc-text-field { \n        width:200px;\n    }\n  `}\n/>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| full-width | boolean | -- | 使用父级元素宽度 |\n| textarea | boolean | -- | 多行输入，且可鼠标拖拽设置输入框大小 |\n| outlined | boolean | -- | 给输入框添加边框 |\n| no-label | boolean | -- | 输入框无默认标签 |\n| show-helper | boolean | true | 显示帮助文本 |\n| helper-text | string | -- | 帮助文本 |\n| icon-right | boolean | -- | 图标在右侧 |\n| counter | boolean | -- | 记录输入字符个数，配合 min-length, max-length 一起使用 |\n| path | string | -- | 图标 path |\n| paths | string | -- | 多图标 path |\n| label | string | -- | 默认标签 |\n| required | boolean | -- | 检测输入框是否为空 |\n| pattern | string | -- | 输入值限制及检测 |\n| min-length | number | -- | 输入字符最小长度，配合 counter 一起使用 |\n| max-length | number | -- | 输入字符最大长度，配合 counter 一起使用 |\n| min | number | -- |  |\n| max | number | -- |  |\n| step | number | -- |  |\n| rows | number | -- | 多行输入框高度，数值表示n倍行高 |\n| cols | number | -- |  多行输入框宽度，数值表示n个字符宽度 |\n| value | string | -- | 默认输入值 |\n| disabled | boolean | -- | 输入框失效 |\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "fullWidth": {
+                    "label": "fullWidth",
+                    "kind": 22,
+                    "detail": "[omim]m-text-field",
+                    "insertText": "fullWidth",
+                    "documentation": "---\n\n## fullWidth:\n\n类型: boolean\n\n默认值: --\n\n说明: 使用父级元素宽度\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "textarea": {
+                    "label": "textarea",
+                    "kind": 22,
+                    "detail": "[omim]m-text-field",
+                    "insertText": "textarea",
+                    "documentation": "---\n\n## textarea:\n\n类型: boolean\n\n默认值: --\n\n说明: 多行输入，且可鼠标拖拽设置输入框大小\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "outlined": {
+                    "label": "outlined",
+                    "kind": 22,
+                    "detail": "[omim]m-text-field",
+                    "insertText": "outlined",
+                    "documentation": "---\n\n## outlined:\n\n类型: boolean\n\n默认值: --\n\n说明: 给输入框添加边框\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "noLabel": {
+                    "label": "noLabel",
+                    "kind": 22,
+                    "detail": "[omim]m-text-field",
+                    "insertText": "noLabel",
+                    "documentation": "---\n\n## noLabel:\n\n类型: boolean\n\n默认值: --\n\n说明: 输入框无默认标签\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "showHelper": {
+                    "label": "showHelper",
+                    "kind": 22,
+                    "detail": "[omim]m-text-field",
+                    "insertText": "showHelper",
+                    "documentation": "---\n\n## showHelper:\n\n类型: boolean\n\n默认值: true\n\n说明: 显示帮助文本\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "helperText": {
+                    "label": "helperText",
+                    "kind": 22,
+                    "detail": "[omim]m-text-field",
+                    "insertText": "helperText='${1}'",
+                    "documentation": "---\n\n## helperText:\n\n类型: string\n\n默认值: --\n\n说明: 帮助文本\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "iconRight": {
+                    "label": "iconRight",
+                    "kind": 22,
+                    "detail": "[omim]m-text-field",
+                    "insertText": "iconRight",
+                    "documentation": "---\n\n## iconRight:\n\n类型: boolean\n\n默认值: --\n\n说明: 图标在右侧\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "counter": {
+                    "label": "counter",
+                    "kind": 22,
+                    "detail": "[omim]m-text-field",
+                    "insertText": "counter",
+                    "documentation": "---\n\n## counter:\n\n类型: boolean\n\n默认值: --\n\n说明: 记录输入字符个数，配合 min-length, max-length 一起使用\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "path": {
+                    "label": "path",
+                    "kind": 22,
+                    "detail": "[omim]m-text-field",
+                    "insertText": "path='${1}'",
+                    "documentation": "---\n\n## path:\n\n类型: string\n\n默认值: --\n\n说明: 图标 path\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "paths": {
+                    "label": "paths",
+                    "kind": 22,
+                    "detail": "[omim]m-text-field",
+                    "insertText": "paths={{${1}}}",
+                    "documentation": "---\n\n## paths:\n\n类型: object\n\n默认值: --\n\n说明: 多图标 path\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "label": {
+                    "label": "label",
+                    "kind": 22,
+                    "detail": "[omim]m-text-field",
+                    "insertText": "label='${1}'",
+                    "documentation": "---\n\n## label:\n\n类型: string\n\n默认值: --\n\n说明: 默认标签\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "required": {
+                    "label": "required",
+                    "kind": 22,
+                    "detail": "[omim]m-text-field",
+                    "insertText": "required='${1}'",
+                    "documentation": "---\n\n## required:\n\n类型: boolean\n\n默认值: --\n\n说明: 检测输入框是否为空\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "pattern": {
+                    "label": "pattern",
+                    "kind": 22,
+                    "detail": "[omim]m-text-field",
+                    "insertText": "pattern='${1}'",
+                    "documentation": "---\n\n## pattern:\n\n类型: string\n\n默认值: --\n\n说明: 输入值限制及检测\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "minLength": {
+                    "label": "pattern",
+                    "kind": 22,
+                    "detail": "[omim]m-text-field",
+                    "insertText": "pattern='${1}'",
+                    "documentation": "---\n\n## pattern:\n\n类型: string\n\n默认值: --\n\n说明: 输入值限制及检测\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "path:": {
+                    "label": "path:",
+                    "kind": 21,
+                    "detail": "[omim]m-button, svg-icon",
+                    "insertText": "path: '${1}'",
+                    "documentation": "---\n\n## path:\n\n类型: string\n\n默认值: --\n\n说明: 图标path (paths 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "color:": {
+                    "label": "color:",
+                    "kind": 21,
+                    "detail": "[omim]m-button, svg-icon",
+                    "insertText": "color: '${1}'",
+                    "documentation": "---\n\n## color:\n\n类型: string\n\n默认值: --\n\n说明: 图标颜色 (paths 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                }
+            }
+        },
+        "m-text-field <m-text-field />": {
+            "label": "m-text-field <m-text-field />",
+            "kind": 24,
+            "detail": "[omim]User's input box, enter some content for submission to the server.",
+            "insertText": "<m-text-field${1} />",
+            "documentation": "---\n\n## TextField\n\n简介：用户的输入框，输入一些内容用来提交给服务器。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/text-field?index=6&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/text-field?index=6&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-text-field label='Label' helper-text='helper text' ></m-text-field>\n<m-text-field\n  helper-text='Helper Text'\n  icon-right\n  path='...'\n  label='Label2'\n  css='\n    .mdc-text-field {\n      width:200px;\n    }\n  '\n></m-text-field>\n```\n\n## Omi 中使用\n\nJSX:\n\n```jsx\n<m-text-field label='Label1' helperText='Helper Text' />\n<m-text-field\n  helperText='Helper Text'\n  iconRight\n  path='...'\n  label='Label2'\n  css={`\n    .mdc-text-field { \n        width:200px;\n    }\n  `}\n/>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| full-width | boolean | -- | 使用父级元素宽度 |\n| textarea | boolean | -- | 多行输入，且可鼠标拖拽设置输入框大小 |\n| outlined | boolean | -- | 给输入框添加边框 |\n| no-label | boolean | -- | 输入框无默认标签 |\n| show-helper | boolean | true | 显示帮助文本 |\n| helper-text | string | -- | 帮助文本 |\n| icon-right | boolean | -- | 图标在右侧 |\n| counter | boolean | -- | 记录输入字符个数，配合 min-length, max-length 一起使用 |\n| path | string | -- | 图标 path |\n| paths | string | -- | 多图标 path |\n| label | string | -- | 默认标签 |\n| required | boolean | -- | 检测输入框是否为空 |\n| pattern | string | -- | 输入值限制及检测 |\n| min-length | number | -- | 输入字符最小长度，配合 counter 一起使用 |\n| max-length | number | -- | 输入字符最大长度，配合 counter 一起使用 |\n| min | number | -- |  |\n| max | number | -- |  |\n| step | number | -- |  |\n| rows | number | -- | 多行输入框高度，数值表示n倍行高 |\n| cols | number | -- |  多行输入框宽度，数值表示n个字符宽度 |\n| value | string | -- | 默认输入值 |\n| disabled | boolean | -- | 输入框失效 |\n\n---",
+            "sortText": "a",
+            "cmd": false
         }
     }
 }
