@@ -1,5 +1,5 @@
 {
-    "fileTypes": [ ".*" ],
+    "fileTypes": [ ".json", ".js", ".jsx", ".ts", ".tsx", ".omi", ".vue" ],
     "completions": {
         "m-button": {
             "label": "m-button",
@@ -2056,7 +2056,7 @@
                     "kind": 22,
                     "detail": "[omim]m-checkbox",
                     "insertText": "label='${1}'",
-                    "documentation": "---\n\n## label:\n\n类型: string\n\n默认值: --\n\n说明: 复选框右侧内容\n\n---",
+                    "documentation": "---\n\n## label:\n\n类型: string\n\n默认值: --\n\n说明: 右侧文本内容\n\n---",
                     "sortText": "a",
                     "cmd": false
                 },
@@ -2107,21 +2107,1659 @@
                 }
             }
         },
-        "m-radio": {
-            "label": "m-radio",
+        "m-switch": {
+            "label": "m-switch",
             "kind": 24,
-            "detail": "[omim]Radio buttons allow the user to select one option from a set while seeing all available options.",
-            "insertText": "<m-radio${1}>${2}</m-radio>",
-            "documentation": "---\n\n## Radio\n\n简介：单选按钮允许用户在查看所有可用选项时从一组中选择一个选项。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/radio?index=6&subIndex=3 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/radio?index=6&subIndex=3'官网链接')\n\n---\n\n## 使用\n\n```html\n<m-radio id='r1' value=\"1\" label='Label' checked name=\"abc\"> </m-radio>\n<m-radio id='r2' value=\"2\" label='Label' name=\"abc\"> </m-radio>\n<m-radio checked label='checked'> </m-radio>\n<m-radio disabled label='disabled'> </m-radio>\n```\n\n## Omi 中使用\n\nJSX:\n\n```jsx\n<m-radio onSelected={this.onSelected} value={1} label='Label' checked={!this.checked} name=\"abc\"></m-radio>\n<m-radio  onSelected={this.onSelected} value={2} label='Label' checked={this.checked} name=\"abc\"></m-radio>\n<m-radio checked label='checked' onclick={()=>{this.update()}}> </m-radio>\n<m-radio disabled label='disabled'></m-radio>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| label | string | -- | 右侧文本内容 |\n| disabled | boolean | -- | 禁用单选按钮 |\n| checked | boolean | -- | 初始状态为选中 |\n| value | string | -- | 单选按钮的值 |\n| name | string | -- | 为单选按钮分组 |\n| onSelected | function | -- | 选择触发 |\n\n---",
+            "detail": "[omim]Switch toggle the state of a single setting on or off. They are the preferred way to adjust settings on mobile.",
+            "insertText": "<m-switch${1}>${2}</m-switch>",
+            "documentation": "---\n\n## Switch\n\n简介：切换打开或关闭单个设置的状态。 它们是调整移动设置的首选方式。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/switch?index=6&subIndex=4 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/switch?index=6&subIndex=4 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-switch id='m-switch-d' label='LabelD' value='omim D' checked disabled></m-switch>\n<m-switch id='m-switch-disabled-d' label='LabelD-Disabled' value='omim D-Disabled' checked></m-switch>\n```\n\n## Omi 中使用\n\nJSX:\n\n```jsx\n<m-switch label='LabelD' value='omim D' checked={this.checkedD} disabled={this.disabledD} onChange={this.onChangeD}></m-switch>\n<m-switch label='LabelD-Disabled' value='omim D-Disabled' checked={this.checkedDisabledD} onChange={this.onChangeDisabledD}></m-switch>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| label | string | -- | 右侧文本内容 |\n| disabled | boolean / string | -- | 是否禁用 |\n| checked | boolean / string | -- | 初始状态是否选中 |\n| value | string | -- | 值 |\n\n---",
             "sortText": "a",
             "cmd": false,
             "attributes": {
                 "label": {
                     "label": "label",
                     "kind": 22,
-                    "detail": "[omim]m-checkbox",
+                    "detail": "[omim]m-switch",
                     "insertText": "label='${1}'",
-                    "documentation": "---\n\n## label:\n\n类型: string\n\n默认值: --\n\n说明: 复选框右侧内容\n\n---",
+                    "documentation": "---\n\n## label:\n\n类型: string\n\n默认值: --\n\n说明: 右侧文本内容\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "disabled": {
+                    "label": "disabled",
+                    "kind": 22,
+                    "detail": "[omim]m-switch",
+                    "insertText": "disabled",
+                    "documentation": "---\n\n## disabled:\n\n类型: boolean / string\n\n默认值: --\n\n说明: 是否禁用\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "checked": {
+                    "label": "checked",
+                    "kind": 22,
+                    "detail": "[omim]m-switch",
+                    "insertText": "checked",
+                    "documentation": "---\n\n## checked:\n\n类型: boolean / string\n\n默认值: --\n\n说明: 初始状态是否选中\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "value": {
+                    "label": "value",
+                    "kind": 22,
+                    "detail": "[omim]m-switch",
+                    "insertText": "value='${1}'",
+                    "documentation": "---\n\n## value:\n\n类型: string\n\n默认值: --\n\n说明: 值\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-date-time-picker": {
+            "label": "m-date-time-picker",
+            "kind": 24,
+            "detail": "[omim]Date Time Picker.",
+            "insertText": "<m-date-time-picker${1}>${2}</m-date-time-picker>",
+            "documentation": "---\n\n## DateTimePicker\n\n简介：日期时间选择器。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/date-time-picker?index=6&subIndex=5 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/date-time-picker?index=6&subIndex=5 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-date-time-picker type=\"date\" past=\"20180101\" future=\"20200101\" lan=\"zh-cn\" show>\n</m-date-time-picker>\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n  show?: boolean,\n  type?: 'date' | 'time',\n  init?: string,\n  past?: string,\n  future?: string,\n  lan?: string\n}\n```\n\n### Default Props\n\n```jsx\n{\n  type: 'date',\n  show: false\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "show": {
+                    "label": "show",
+                    "kind": 22,
+                    "detail": "[omim]m-date-time-picker",
+                    "insertText": "show",
+                    "documentation": "---\n\n## show:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "type": {
+                    "label": "type",
+                    "kind": 22,
+                    "detail": "[omim]m-date-time-picker",
+                    "insertText": "type='${1|date,time|}'",
+                    "documentation": "---\n\n## type:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "init": {
+                    "label": "init",
+                    "kind": 22,
+                    "detail": "[omim]m-date-time-picker",
+                    "insertText": "init='${1}'",
+                    "documentation": "---\n\n## init:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "past": {
+                    "label": "past",
+                    "kind": 22,
+                    "detail": "[omim]m-date-time-picker",
+                    "insertText": "past='${1}'",
+                    "documentation": "---\n\n## past:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "future": {
+                    "label": "future",
+                    "kind": 22,
+                    "detail": "[omim]m-date-time-picker",
+                    "insertText": "future='${1}'",
+                    "documentation": "---\n\n## future:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "lan": {
+                    "label": "lan",
+                    "kind": 22,
+                    "detail": "[omim]m-date-time-picker",
+                    "insertText": "lan='${1}'",
+                    "documentation": "---\n\n## lan:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-picker": {
+            "label": "m-picker",
+            "kind": 24,
+            "detail": "[omim]Native pickers(date, time, color).",
+            "insertText": "<m-picker${1}>${2}</m-picker>",
+            "documentation": "---\n\n## Picker\n\n简介：日期、时间和颜色的原生选择器。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/picker?index=6&subIndex=6 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/picker?index=6&subIndex=6 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-picker type=\"date\" label=\"date\"></m-picker>\n<m-picker type=\"time\" label=\"time\"></m-picker>\n<m-picker type=\"color\" label=\"color\"></m-picker>\n<m-picker type=\"datetime-local\" label=\"datetime-local\"></m-picker>\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n type: 'date' | 'time' | 'color' | 'datetime-local',\n label: string\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "label": {
+                    "label": "label",
+                    "kind": 22,
+                    "detail": "[omim]m-picker",
+                    "insertText": "label='${1}'",
+                    "documentation": "---\n\n## label:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "type": {
+                    "label": "type",
+                    "kind": 22,
+                    "detail": "[omim]m-picker",
+                    "insertText": "type='${1|date,time,color,datetime-local|}'",
+                    "documentation": "---\n\n## type:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-transfer-list": {
+            "label": "m-transfer-list",
+            "kind": 24,
+            "detail": "[omim]A transfer list enables the user to move one or more list items between lists.",
+            "insertText": "<m-transfer-list${1}>${2}</m-transfer-list>",
+            "documentation": "---\n\n## Transfer List\n\n简介：传输列表允许用户在列表之间移动一个或多个列表项。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/transfer-list?index=6&subIndex=7 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/transfer-list?index=6&subIndex=7 '官网链接')\n\n---\n\n## 使用\n\n```html\n<script src=\"https://tencent.github.io/omi/packages/omi/dist/omi.dev.js\"></script>\n<script src=\"../../src/transfer-list/index.js\"></script>\n<m-transfer-list \n  id=\"myTransferList\" \n  onChange={this.onChange} \n  left=\"[{\n      text: 'Line item1'\n    },\n    {\n      text: 'Line item2',\n      checked: true\n    },\n    {\n      text: 'Line item3'\n    },\n    {\n      text: 'Line item4'\n    }]\" \n  right=\"[{\n      text: 'Line item5'\n    },\n    {\n      text: 'Line item6'\n    },\n    {\n      text: 'Line item7'\n    }]\">\n</m-transfer-list>\n<script>\n  document.querySelector('#myTransferList').addEventListener('change', function (evt) {\n    console.log(evt.detail.left)\n    console.log(evt.detail.right)\n  })\n</script>\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n  left: object[]\n  right: object[]\n}\n```\n\n\n### Event\n\n* change\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "left": {
+                    "label": "left",
+                    "kind": 22,
+                    "detail": "[omim]m-transfer-list",
+                    "insertText": "left={[{${1}}]}",
+                    "documentation": "---\n\n## left:\n\n类型: object[]\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "right": {
+                    "label": "right",
+                    "kind": 22,
+                    "detail": "[omim]m-transfer-list",
+                    "insertText": "right={[{${1}}]}",
+                    "documentation": "---\n\n## right:\n\n类型: object[]\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-list": {
+            "label": "m-list",
+            "kind": 24,
+            "detail": "[omim]Lists are continuous, vertical indexes of text or images.",
+            "insertText": "<m-list${1}>${2}</m-list>",
+            "documentation": "---\n\n## list\n\n简介：列表是文本或图像的连续垂直索引。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/list?index=7&subIndex=0 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/list?index=7&subIndex=0 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-list\n  single-selection \n  items=\"[{\n    text: 'Line item1',\n    icon: 'wifi'\n  },\n  { divider: true },\n  {\n    text: 'Line item2',\n    selected: true,\n    icon: 'bluetooth'\n  },\n  { divider: true },\n  {\n    text: 'Line item3',\n    icon: 'data_usage'\n  }]\"></m-list>\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n  items: object,\n  singleSelection: boolean,\n  checkbox: boolean,\n  radio: boolean,\n  onItemClick: (evt: CustomEvent) => void\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "items": {
+                    "label": "items",
+                    "kind": 22,
+                    "detail": "[omim]m-list",
+                    "insertText": "items={[{${1}}]}",
+                    "documentation": "---\n\n## items:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "singleSelection": {
+                    "label": "singleSelection",
+                    "kind": 22,
+                    "detail": "[omim]m-list",
+                    "insertText": "singleSelection",
+                    "documentation": "---\n\n## singleSelection:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "checkbox": {
+                    "label": "checkbox",
+                    "kind": 22,
+                    "detail": "[omim]m-list",
+                    "insertText": "checkbox",
+                    "documentation": "---\n\n## checkbox:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "radio": {
+                    "label": "radio",
+                    "kind": 22,
+                    "detail": "[omim]m-list",
+                    "insertText": "radio",
+                    "documentation": "---\n\n## radio:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "text": {
+                    "label": "text",
+                    "kind": 21,
+                    "detail": "[omim]m-list",
+                    "insertText": "text: '${1}'",
+                    "documentation": "---\n\n## text:\n\n类型: string (items 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "icon": {
+                    "label": "icon",
+                    "kind": 21,
+                    "detail": "[omim]m-list",
+                    "insertText": "icon: '${1}'",
+                    "documentation": "---\n\n## icon:\n\n类型: string (items 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "selected": {
+                    "label": "selected",
+                    "kind": 21,
+                    "detail": "[omim]m-list",
+                    "insertText": "selected: ${1|true,false|}",
+                    "documentation": "---\n\n## selected:\n\n类型: boolean (items 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "divider": {
+                    "label": "divider",
+                    "kind": 21,
+                    "detail": "[omim]m-list",
+                    "insertText": "divider: ${1|true,false|}",
+                    "documentation": "---\n\n## divider:\n\n类型: boolean (items 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "onItemClick": {
+                    "label": "onItemClick",
+                    "kind": 2,
+                    "detail": "[omim]m-list",
+                    "insertText": "onItemClick={${1}}",
+                    "documentation": "---\n\n## onItemClick:\n\n类型: function\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                }
+            }
+        },
+        "m-table": {
+            "label": "m-table",
+            "kind": 24,
+            "detail": "[omim]Table for displaying two-dimensional data.",
+            "insertText": "<m-table${1}>${2}</m-table>",
+            "documentation": "---\n\n## Table\n\n简介：表格，用于显示二维数据。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/table?index=7&subIndex=1 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/table?index=7&subIndex=1 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-table id=\"myTable\"></m-table>\n<script>\n  const table = document.querySelector('#myTable')\n  table.checkbox = true\n  table.dataSource = [{\n    id: 1,\n    name: 'xwang',\n    age: 18,\n    address: 'Tencent'\n  }, {\n    id: 2,\n    name: 'dntzhang',\n    age: 12,\n    address: 'Tencent'\n  }, {\n    id: 3,\n    name: 'lucy',\n    age: 12,\n    address: 'Tencent'\n  }, {\n    id: 4,\n    name: 'john',\n    age: 12,\n    address: 'Tencent'\n  }, {\n    id: 5,\n    name: 'tim',\n    age: 12,\n    address: 'Tencent'\n  }]\n\n  table.columns = [{\n    title: 'Name',\n    key: 'name',\n  }, {\n    title: 'Age',\n    key: 'age',\n  }, {\n    title: 'Address',\n    key: 'address',\n  }, {\n    title: '操作',\n    render: (item) => (\n      Omi.html`<span>\n        <a href=\"javascript:;\" onClick=${e => {\n          table.dataSource.splice(table.dataSource.indexOf(item), 1)\n          table.update()\n        }}>Delete</a>\n      </span>`\n    )\n  }]\n\n  table.update()\n</script>\n```\n\n## Omi 中使用\n\n```jsx\n<m-table\n  checkbox\n  dataSource={this.dataSource}\n  columns={this.columns}>\n</m-table>\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n  dataSource: any[],\n  columns: any[],\n  checkbox?: boolean\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "dataSource": {
+                    "label": "dataSource",
+                    "kind": 22,
+                    "detail": "[omim]m-table",
+                    "insertText": "dataSource={${1}}",
+                    "documentation": "---\n\n## dataSource:\n\n类型: any[]\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "columns": {
+                    "label": "columns",
+                    "kind": 22,
+                    "detail": "[omim]m-table",
+                    "insertText": "columns={${1}}",
+                    "documentation": "---\n\n## columns:\n\n类型: any[]\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "checkbox": {
+                    "label": "checkbox",
+                    "kind": 22,
+                    "detail": "[omim]m-table",
+                    "insertText": "checkbox",
+                    "documentation": "---\n\n## checkbox:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-linear-progress": {
+            "label": "m-linear-progress",
+            "kind": 24,
+            "detail": "[omim]Linear Progress component is a spec-aligned linear progress indicator component adhering to the Material Design progress & activity requirements.",
+            "insertText": "<m-linear-progress${1}>${2}</m-linear-progress>",
+            "documentation": "---\n\n## Linear Progress\n\n简介：线性进度组件是符合材料设计进度和活动要求的规范对齐线性进度指示器组件。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/linear-progress?index=7&subIndex=2 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/linear-progress?index=7&subIndex=2 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-linear-progress value='0.3' buffer='0.5'></m-linear-progress>\n<m-linear-progress value='0.1'> </m-linear-progress>\n<m-linear-progress indeterminate > </m-linear-progress>\n<m-linear-progress reversed value=\"0.2\"> </m-linear-progress>\n```\n\n## Omi 中使用\n\n```jsx\n<m-linear-progress value={0.1}  buffer={0.5}> </m-linear-progress>\n<m-linear-progress value={0.2}  > </m-linear-progress>\n<m-linear-progress indeterminate > </m-linear-progress>\n<m-linear-progress reversed value={0.3}> </m-linear-progress>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| buffer | number | -- | 缓冲区进度值 |\n| value | number | -- | 主进度值 |\n| indeterminate | boolean | -- | 未知进度动画 |\n| reversed | boolean | -- | 反方向进度 |\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "buffer": {
+                    "label": "buffer",
+                    "kind": 22,
+                    "detail": "[omim]m-linear-progress",
+                    "insertText": "buffer={${1}}",
+                    "documentation": "---\n\n## buffer:\n\n类型: number\n\n默认值: --\n\n说明: 缓冲区进度值\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "value": {
+                    "label": "value",
+                    "kind": 22,
+                    "detail": "[omim]m-linear-progress",
+                    "insertText": "value={${1}}",
+                    "documentation": "---\n\n## value:\n\n类型: number\n\n默认值: --\n\n说明: 主进度值\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "indeterminate": {
+                    "label": "indeterminate",
+                    "kind": 22,
+                    "detail": "[omim]m-linear-progress",
+                    "insertText": "indeterminate",
+                    "documentation": "---\n\n## indeterminate:\n\n类型: boolean\n\n默认值: --\n\n说明: 未知进度动画\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "reversed": {
+                    "label": "reversed",
+                    "kind": 22,
+                    "detail": "[omim]m-linear-progress",
+                    "insertText": "reversed",
+                    "documentation": "---\n\n## reversed:\n\n类型: boolean\n\n默认值: --\n\n说明: 反方向进度\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-slider": {
+            "label": "m-slider",
+            "kind": 24,
+            "detail": "[omim]Slider provides an implementation of the Material Design slider component. Sliders are fully RTL-aware, and conform to the WAI-ARIA slider authoring practices.",
+            "insertText": "<m-slider${1}>${2}</m-slider>",
+            "documentation": "---\n\n## Slider\n\n简介：Slider提供了“材质设计”滑块组件的实现。 滑块完全支持RTL，并符合WAI-ARIA滑块创作实践。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/slider?index=7&subIndex=3 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/slider?index=7&subIndex=3 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-slider onchange='change(event)'> </m-slider>\n<m-slider value=\"10\" discrete> </m-slider>\n<m-slider disabled > </m-slider>\n<m-slider discrete display-markers step=\"2\"> </m-slider>\n```\n\n## Omi 中使用\n\n```jsx\n<m-slider onChange={(evt) => {\n  console.log(evt.detail.value)\n}}> </m-slider>\n<m-slider value={10} onChange={(evt) => {\n  console.log(evt.detail.value)\n}} discrete> </m-slider>\n<m-slider disabled > </m-slider>\n<m-slider discrete displayMarkers step={2}> </m-slider>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| discrete | boolean | -- | 与 display-markers 一起使用显示标记 |\n| value | number | 0 | 滑块初始值 |\n| disabled | boolean | -- | 禁用滑块 |\n| min | number | 0 | 最小值 |\n| max | number | 100 | 最大值 |\n| step | number | 1 | 跨度 |\n| display-markers | boolean | -- | 与 discrete 一起使用显示标记 |\n| onChange | function | -- | 选择触发 |\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "discrete": {
+                    "label": "discrete",
+                    "kind": 22,
+                    "detail": "[omim]m-slider",
+                    "insertText": "discrete",
+                    "documentation": "---\n\n## discrete:\n\n类型: boolean\n\n默认值: --\n\n说明: 与 display-markers 一起使用显示标记\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "value": {
+                    "label": "value",
+                    "kind": 22,
+                    "detail": "[omim]m-slider",
+                    "insertText": "value={${1}}",
+                    "documentation": "---\n\n## value:\n\n类型: number\n\n默认值: --\n\n说明: 滑块初始值\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "disabled": {
+                    "label": "disabled",
+                    "kind": 22,
+                    "detail": "[omim]m-slider",
+                    "insertText": "disabled",
+                    "documentation": "---\n\n## disabled:\n\n类型: boolean\n\n默认值: --\n\n说明: 禁用滑块\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "min": {
+                    "label": "min",
+                    "kind": 22,
+                    "detail": "[omim]m-slider",
+                    "insertText": "min={${1}}",
+                    "documentation": "---\n\n## min:\n\n类型: number\n\n默认值: --\n\n说明: 最小值\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "max": {
+                    "label": "max",
+                    "kind": 22,
+                    "detail": "[omim]m-slider",
+                    "insertText": "max={${1}}",
+                    "documentation": "---\n\n## max:\n\n类型: number\n\n默认值: --\n\n说明: 最小值\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "step": {
+                    "label": "step",
+                    "kind": 22,
+                    "detail": "[omim]m-slider",
+                    "insertText": "step={${1}}",
+                    "documentation": "---\n\n## step:\n\n类型: number\n\n默认值: --\n\n说明: 跨度\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "display-markers": {
+                    "label": "display-markers",
+                    "kind": 22,
+                    "detail": "[omim]m-slider",
+                    "insertText": "display-markers",
+                    "documentation": "---\n\n## display-markers:\n\n类型: boolean\n\n默认值: --\n\n说明: 与 discrete 一起使用显示标记\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "onChange": {
+                    "label": "onChange",
+                    "kind": 2,
+                    "detail": "[omim]m-slider",
+                    "insertText": "onChange={${1}}",
+                    "documentation": "---\n\n## onChange:\n\n类型: function\n\n默认值: --\n\n说明: 选择触发\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                }
+            }
+        },
+        "m-chips": {
+            "label": "m-chips",
+            "kind": 24,
+            "detail": "[omim]Chips are compact elements that allow users to enter information, select a choice, filter content, or trigger an action.",
+            "insertText": "<m-chips${1}>${2}</m-chips>",
+            "documentation": "---\n\n## Chips\n\n简介：Chips 是紧凑的元素，允许用户输入信息、选择、过滤内容或触发操作。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/chips?index=7&subIndex=4 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/chips?index=7&subIndex=4 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-chips choice chips=\"[\n  { text: 'Chip1' },\n  {\n    text: 'Chip2',\n    selected: true,\n    leading: {\n      icon: {\n        path: 'M923 283.6a260.04 260.04 0 0 0-56.9-82.8 264.4 264.4 0 0 0-84-55.5A265.34 265.34 0 0 0 679.7 125c-49.3 0-97.4 13.5-139.2 39-10 6.1-19.5 12.8-28.5 20.1-9-7.3-18.5-14-28.5-20.1-41.8-25.5-89.9-39-139.2-39-35.5 0-69.9 6.8-102.4 20.3-31.4 13-59.7 31.7-84 55.5a258.44 258.44 0 0 0-56.9 82.8c-13.9 32.3-21 66.6-21 101.9 0 33.3 6.8 68 20.3 103.3 11.3 29.5 27.5 60.1 48.2 91 32.8 48.9 77.9 99.9 133.9 151.6 92.8 85.7 184.7 144.9 188.6 147.3l23.7 15.2c10.5 6.7 24 6.7 34.5 0l23.7-15.2c3.9-2.5 95.7-61.6 188.6-147.3 56-51.7 101.1-102.7 133.9-151.6 20.7-30.9 37-61.5 48.2-91 13.5-35.3 20.3-70 20.3-103.3.1-35.3-7-69.6-20.9-101.9zM512 814.8S156 586.7 156 385.5C156 283.6 240.3 201 344.3 201c73.1 0 136.5 40.8 167.7 100.4C543.2 241.8 606.6 201 679.7 201c104 0 188.3 82.6 188.3 184.5 0 201.2-356 429.3-356 429.3z',\n        color: '#333',\n        scale: 1\n      }\n    }\n  },\n  {\n    text: 'Chip3',\n    trailing: {\n      icon: {\n        path: 'M923 283.6a260.04 260.04 0 0 0-56.9-82.8 264.4 264.4 0 0 0-84-55.5A265.34 265.34 0 0 0 679.7 125c-49.3 0-97.4 13.5-139.2 39-10 6.1-19.5 12.8-28.5 20.1-9-7.3-18.5-14-28.5-20.1-41.8-25.5-89.9-39-139.2-39-35.5 0-69.9 6.8-102.4 20.3-31.4 13-59.7 31.7-84 55.5a258.44 258.44 0 0 0-56.9 82.8c-13.9 32.3-21 66.6-21 101.9 0 33.3 6.8 68 20.3 103.3 11.3 29.5 27.5 60.1 48.2 91 32.8 48.9 77.9 99.9 133.9 151.6 92.8 85.7 184.7 144.9 188.6 147.3l23.7 15.2c10.5 6.7 24 6.7 34.5 0l23.7-15.2c3.9-2.5 95.7-61.6 188.6-147.3 56-51.7 101.1-102.7 133.9-151.6 20.7-30.9 37-61.5 48.2-91 13.5-35.3 20.3-70 20.3-103.3.1-35.3-7-69.6-20.9-101.9zM512 814.8S156 586.7 156 385.5C156 283.6 240.3 201 344.3 201c73.1 0 136.5 40.8 167.7 100.4C543.2 241.8 606.6 201 679.7 201c104 0 188.3 82.6 188.3 184.5 0 201.2-356 429.3-356 429.3z',\n        color: '#333',\n        scale: 1\n      }\n    }\n  }\n]\">\n</m-chips>\n```\n\n## Omi 中使用\n\n```jsx\n<m-chips filter chips={[\n  {\n    text: 'checkmark with selected',\n    checkmark: true,\n    selected: true,\n    leading: {\n      icon: {\n        path: 'M923 283.6a260.04 260.04 0 0 0-56.9-82.8 264.4 264.4 0 0 0-84-55.5A265.34 265.34 0 0 0 679.7 125c-49.3 0-97.4 13.5-139.2 39-10 6.1-19.5 12.8-28.5 20.1-9-7.3-18.5-14-28.5-20.1-41.8-25.5-89.9-39-139.2-39-35.5 0-69.9 6.8-102.4 20.3-31.4 13-59.7 31.7-84 55.5a258.44 258.44 0 0 0-56.9 82.8c-13.9 32.3-21 66.6-21 101.9 0 33.3 6.8 68 20.3 103.3 11.3 29.5 27.5 60.1 48.2 91 32.8 48.9 77.9 99.9 133.9 151.6 92.8 85.7 184.7 144.9 188.6 147.3l23.7 15.2c10.5 6.7 24 6.7 34.5 0l23.7-15.2c3.9-2.5 95.7-61.6 188.6-147.3 56-51.7 101.1-102.7 133.9-151.6 20.7-30.9 37-61.5 48.2-91 13.5-35.3 20.3-70 20.3-103.3.1-35.3-7-69.6-20.9-101.9zM512 814.8S156 586.7 156 385.5C156 283.6 240.3 201 344.3 201c73.1 0 136.5 40.8 167.7 100.4C543.2 241.8 606.6 201 679.7 201c104 0 188.3 82.6 188.3 184.5 0 201.2-356 429.3-356 429.3z',\n        color: '#333',\n        scale: 1\n      }\n    }\n  },\n  {\n    text: 'Chip3-checkmark',\n    checkmark: true\n  },\n  {\n    text: 'Chip4-checkmark-selected',\n    checkmark: true,\n    selected: true\n  }\n]}></m-chips>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| ripple | boolean | -- | 单击标签形成波纹 |\n| filter | boolean | -- | 过滤模式 |\n| choice | boolean | -- | 选择模式 |\n| input | boolean | -- | 表示该组中的芯片是输入芯片，通过将文本转换为芯片来实现用户输入。 |\n| chips | object | -- | 自定义标签内容 |\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "ripple": {
+                    "label": "ripple",
+                    "kind": 22,
+                    "detail": "[omim]m-chips",
+                    "insertText": "ripple",
+                    "documentation": "---\n\n## ripple:\n\n类型: boolean\n\n默认值: --\n\n说明: 单击标签形成波纹\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "filter": {
+                    "label": "filter",
+                    "kind": 22,
+                    "detail": "[omim]m-chips",
+                    "insertText": "filter",
+                    "documentation": "---\n\n## filter:\n\n类型: boolean\n\n默认值: --\n\n说明: 过滤模式\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "choice": {
+                    "label": "choice",
+                    "kind": 22,
+                    "detail": "[omim]m-chips",
+                    "insertText": "choice",
+                    "documentation": "---\n\n## choice:\n\n类型: boolean\n\n默认值: --\n\n说明: 选择模式\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "input": {
+                    "label": "input",
+                    "kind": 22,
+                    "detail": "[omim]m-chips",
+                    "insertText": "input",
+                    "documentation": "---\n\n## input:\n\n类型: boolean\n\n默认值: --\n\n说明: 表示该组中的芯片是输入芯片，通过将文本转换为芯片来实现用户输入。\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "chips": {
+                    "label": "chips",
+                    "kind": 22,
+                    "detail": "[omim]m-chips",
+                    "insertText": "chips={${1}}",
+                    "documentation": "---\n\n## chips:\n\n类型: object\n\n默认值: --\n\n说明: 自定义标签内容\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "text": {
+                    "label": "text",
+                    "kind": 21,
+                    "detail": "[omim]m-chips",
+                    "insertText": "text: '${1}'",
+                    "documentation": "---\n\n## text:\n\n类型: string (chips 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "checkmark": {
+                    "label": "checkmark",
+                    "kind": 21,
+                    "detail": "[omim]m-chips",
+                    "insertText": "checkmark: ${1|true,false|}",
+                    "documentation": "---\n\n## checkmark:\n\n类型: boolean (chips 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "selected": {
+                    "label": "selected",
+                    "kind": 21,
+                    "detail": "[omim]m-chips",
+                    "insertText": "selected: ${1|true,false|}",
+                    "documentation": "---\n\n## selected:\n\n类型: boolean (chips 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "leading": {
+                    "label": "leading",
+                    "kind": 21,
+                    "detail": "[omim]m-chips",
+                    "insertText": "leading: {${1}}",
+                    "documentation": "---\n\n## leading:\n\n类型: object (chips 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "icon": {
+                    "label": "icon",
+                    "kind": 21,
+                    "detail": "[omim]m-chips",
+                    "insertText": "icon: {${1}}",
+                    "documentation": "---\n\n## icon:\n\n类型: object (leading 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "path": {
+                    "label": "path",
+                    "kind": 21,
+                    "detail": "[omim]m-chips",
+                    "insertText": "path: '${1}'",
+                    "documentation": "---\n\n## path:\n\n类型: string (icon 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "color": {
+                    "label": "color",
+                    "kind": 21,
+                    "detail": "[omim]m-chips",
+                    "insertText": "color: '${1}'",
+                    "documentation": "---\n\n## color:\n\n类型: string (icon 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "scale": {
+                    "label": "scale",
+                    "kind": 21,
+                    "detail": "[omim]m-chips",
+                    "insertText": "scale: ${1}",
+                    "documentation": "---\n\n## scale:\n\n类型: number (icon 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                }
+            }
+        },
+        "m-tag": {
+            "label": "m-tag",
+            "kind": 24,
+            "detail": "[omim]Tag can display categories and categorize things.",
+            "insertText": "<m-tag${1}>${2}</m-tag>",
+            "documentation": "---\n\n## Tag\n\n简介：Tag 可以显示类别，为东西分类。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/tag?index=7&subIndex=5 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/tag?index=7&subIndex=5 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-tag icon=\"wifi\">default</m-tag>\n<m-tag  svg-icon=\"{\n  path: '...',\n  color: '#0072d9',\n  scale: 1.3\n}\">default</m-tag>\n```\n\n## Omi 中使用\n\n```jsx\n<m-tag onClick={clickHandler} icon=\"wifi\">default</m-tag>\n<m-tag onClick={clickHandler} svgIcon={{\n  path: '...',\n  color: '#0072d9',\n  scale: 1.3\n}}>default</m-tag>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| type | string | -- | 标签类型 |\n| size | string | -- | 标签大小 |\n| icon | string | -- | 标签图标 |\n| svgIcon | object | -- | svg data |\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "type": {
+                    "label": "type",
+                    "kind": 22,
+                    "detail": "[omim]m-tag",
+                    "insertText": "type='${1}'",
+                    "documentation": "---\n\n## type:\n\n类型: string\n\n默认值: --\n\n说明: 标签类型\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "size": {
+                    "label": "size",
+                    "kind": 22,
+                    "detail": "[omim]m-tag",
+                    "insertText": "size='${1}'",
+                    "documentation": "---\n\n## size:\n\n类型: string\n\n默认值: --\n\n说明: 标签大小\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "icon": {
+                    "label": "icon",
+                    "kind": 22,
+                    "detail": "[omim]m-tag",
+                    "insertText": "icon='${1}'",
+                    "documentation": "---\n\n## icon:\n\n类型: string\n\n默认值: --\n\n说明: 标签图标\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "svgIcon": {
+                    "label": "svgIcon",
+                    "kind": 22,
+                    "detail": "[omim]m-tag",
+                    "insertText": "svgIcon={${1}}",
+                    "documentation": "---\n\n## svgIcon:\n\n类型: object\n\n默认值: --\n\n说明: svg data\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-badge": {
+            "label": "m-badge",
+            "kind": 24,
+            "detail": "[omim]Badge generates a small badge to the top-right of its child(ren).",
+            "insertText": "<m-badge${1}>${2}</m-badge>",
+            "documentation": "---\n\n## Badge\n\n简介：徽章会在其子项的右上角生成一个小徽章。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/badge?index=7&subIndex=6 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/badge?index=7&subIndex=6 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-badge content=\"99\">\n  <m-icon path=\"...\" color=\"red\" />\n</m-badge>\n```\n\n## Omi 中使用\n\n```jsx\n<m-badge content={99}>\n  <m-icon path=\"...\" color=\"red\" />\n</m-badge>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| dot | boolean | -- | 徽章内容为一个点 |\n| content | string | -- | 自定义徽章内容 |\n| x | number | 0 | 徽章横向偏移量 |\n| y | number | 0 | 徽章竖向偏移量 |\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "dot": {
+                    "label": "dot",
+                    "kind": 22,
+                    "detail": "[omim]m-badge",
+                    "insertText": "dot",
+                    "documentation": "---\n\n## dot:\n\n类型: boolean\n\n默认值: --\n\n说明: 徽章内容为一个点\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "content": {
+                    "label": "content",
+                    "kind": 22,
+                    "detail": "[omim]m-badge",
+                    "insertText": "content='${1}'",
+                    "documentation": "---\n\n## content:\n\n类型: string\n\n默认值: --\n\n说明: 自定义徽章内容\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "x": {
+                    "label": "x",
+                    "kind": 22,
+                    "detail": "[omim]m-badge",
+                    "insertText": "x={${1}}",
+                    "documentation": "---\n\n## x:\n\n类型: number\n\n默认值: --\n\n说明: 徽章横向偏移量\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "y": {
+                    "label": "y",
+                    "kind": 22,
+                    "detail": "[omim]m-badge",
+                    "insertText": "y={${1}}",
+                    "documentation": "---\n\n## y:\n\n类型: number\n\n默认值: --\n\n说明: 徽章竖向偏移量\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-tree": {
+            "label": "m-tree",
+            "kind": 24,
+            "detail": "[omim]Many things can be represented in a tree structure, such as directories, organizational hierarchies, taxonomy, and so on. The tree component is a way of representing the hierarchical relationship between these things. You can also expand, collapse, and select tree nodes in the tree.",
+            "insertText": "<m-tree${1}>${2}</m-tree>",
+            "documentation": "---\n\n## Tree\n\n简介：许多东西都可以用树结构表示，如目录，组织层次结构，生物分类，等。树组件是表示这些事物之间层次关系的一种方式。还可以展开，折叠和选择树中的树节点。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/tree?index=7&subIndex=7 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/tree?index=7&subIndex=7 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-tree id='myTree' checkbox node=\"{\n  title: 'p-0',\n  id: 1,\n  icon: 'account_balance_wallet',\n  children: [\n    {\n      title: 'p-1',\n      id: 2,\n      icon: 'assignment_ind',\n      children: [\n        { title: 'p-2', id: 3, icon: 'chrome_reader_mode', checked: true },\n        { title: 'p-2.5', id: 13, icon: 'chrome_reader_mode' }\n      ]\n    },\n    {\n      title: 'p-4',\n      id: 4,\n      icon: 'extension',\n\n      children: [\n        {\n          title: 'p-5', id: 5, selected: true, icon: 'dashboard', checked: true,\n          disabled: true\n        },\n        { title: '项目六', id: 6, icon: 'favorite' },\n        { title: '项目7', id: 7 }\n      ]\n    },\n    {\n      title: 'p-11',\n      id: 14,\n      icon: 'group_work',\n      children: [\n        {\n          title: 'p-12', id: 12, icon: 'fingerprint', checked: true\n        }\n      ]\n    }\n  ]\n}\">\n</m-tree>\n```\n\n## Javascript\n\n```js\nvar myTree = document.querySelector('#myTree')\nvar nodeData = myTree.props.node\n\nmyTree.addEventListener('check', (evt) => {\n  const node = getNodeById(evt.detail.id, nodeData)\n  if (!node.children) {\n    node.checked = evt.detail.checked\n  } else {\n    checkAll(node, evt.detail.state !== 'checked')\n  }\n  myTree.setAttribute('node', nodeData)\n})\n\n\nmyTree.addEventListener('toggle', (evt) => {\n  const node = getNodeById(evt.detail.id, nodeData)\n  node.close = !node.close\n  myTree.setAttribute('node', nodeData)\n})\n\nmyTree.addEventListener('nodeclick', (evt) => {\n  const pre = getNodeById(evt.detail.pre, nodeData)\n  pre.selected = false\n  const node = getNodeById(evt.detail.id, nodeData)\n  node.selected = true\n  myTree.setAttribute('node', nodeData)\n})\n\n\nfunction checkAll(node, checked) {\n  node.children && node.children.forEach(child => {\n    child.checked = checked\n    checkAll(child, checked)\n  })\n}\n\nfunction getNodeById(id, node) {\n  if (node.id === id) return node\n  if (node.children) {\n    for (let i = 0, len = node.children.length; i < len; i++) {\n      let child = node.children[i]\n      let target = getNodeById(id, child)\n      if (target) {\n        return target\n      }\n    }\n  }\n}\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n  node: obj,\n  checkbox: boolean\n}\n```\n\n### Event\n\n```jsx\n{\n  toggle: function, \n  nodeclick: function,\n  check: function\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "node": {
+                    "label": "node",
+                    "kind": 22,
+                    "detail": "[omim]m-tree",
+                    "insertText": "node={${1}}",
+                    "documentation": "---\n\n## node:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "checkbox": {
+                    "label": "checkbox",
+                    "kind": 22,
+                    "detail": "[omim]m-tree",
+                    "insertText": "checkbox",
+                    "documentation": "---\n\n## checkbox:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "onToggle": {
+                    "label": "onToggle",
+                    "kind": 2,
+                    "detail": "[omim]m-tree",
+                    "insertText": "onToggle={${1}}",
+                    "documentation": "---\n\n## onToggle:\n\n类型: function\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                },
+                "onNodeclick": {
+                    "label": "onNodeclick",
+                    "kind": 2,
+                    "detail": "[omim]m-tree",
+                    "insertText": "onNodeclick={${1}}",
+                    "documentation": "---\n\n## onNodeclick:\n\n类型: function\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                },
+                "onCheck": {
+                    "label": "onCheck",
+                    "kind": 2,
+                    "detail": "[omim]m-tree",
+                    "insertText": "onCheck={${1}}",
+                    "documentation": "---\n\n## onCheck:\n\n类型: function\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                }
+            }
+        },
+        "m-card": {
+            "label": "m-card",
+            "kind": 24,
+            "detail": "[omim]Card contain content and actions about a single subject.",
+            "insertText": "<m-card${1}>${2}</m-card>",
+            "documentation": "---\n\n## Card\n\n简介：卡片包含关于单个主题的内容和操作。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/card?index=7&subIndex=8 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/card?index=7&subIndex=8 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-card width='350px' title='Our Changing Planet' sub-title='by Kurt Wagner' content='Visit ten places on our planet that are undergoing the biggest changes today.'\n  img='https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg' buttons=\"['READ', 'BOOKMARK']\"\n  icons=\"['wifi', ['favorite', 'favorite_border'], 'share']\" id=\"myCart\">\n</m-card>\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n  width?: string,\n  img?: string,\n  title: string,\n  subTitle?: string,\n  content: string,\n  buttons?: object,\n  icons?: object,\n  topTitle?: boolean,\n  overImg?: boolean\n}\n```\n\n### Event\n\n```jsx\n{\n  onButtonAction?: function,\n  onIconAction?: function\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "width": {
+                    "label": "width",
+                    "kind": 22,
+                    "detail": "[omim]m-card",
+                    "insertText": "width='${1}'",
+                    "documentation": "---\n\n## width:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "img": {
+                    "label": "img",
+                    "kind": 22,
+                    "detail": "[omim]m-card",
+                    "insertText": "img='${1}'",
+                    "documentation": "---\n\n## img:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "title": {
+                    "label": "title",
+                    "kind": 22,
+                    "detail": "[omim]m-card",
+                    "insertText": "title='${1}'",
+                    "documentation": "---\n\n## title:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "subTitle": {
+                    "label": "subTitle",
+                    "kind": 22,
+                    "detail": "[omim]m-card",
+                    "insertText": "subTitle='${1}'",
+                    "documentation": "---\n\n## subTitle:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "content": {
+                    "label": "content",
+                    "kind": 22,
+                    "detail": "[omim]m-card",
+                    "insertText": "content='${1}'",
+                    "documentation": "---\n\n## content:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "buttons": {
+                    "label": "buttons",
+                    "kind": 22,
+                    "detail": "[omim]m-card",
+                    "insertText": "buttons={${1}}",
+                    "documentation": "---\n\n## buttons:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "icons": {
+                    "label": "icons",
+                    "kind": 22,
+                    "detail": "[omim]m-card",
+                    "insertText": "icons={[${1}]}",
+                    "documentation": "---\n\n## icons:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "topTitle": {
+                    "label": "topTitle",
+                    "kind": 22,
+                    "detail": "[omim]m-card",
+                    "insertText": "topTitle",
+                    "documentation": "---\n\n## topTitle:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "overImg": {
+                    "label": "overImg",
+                    "kind": 22,
+                    "detail": "[omim]m-card",
+                    "insertText": "overImg",
+                    "documentation": "---\n\n## overImg:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "onButtonAction": {
+                    "label": "onButtonAction",
+                    "kind": 2,
+                    "detail": "[omim]m-card",
+                    "insertText": "onButtonAction={${1}}",
+                    "documentation": "---\n\n## onButtonAction:\n\n类型: function\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                },
+                "onIconAction": {
+                    "label": "onIconAction",
+                    "kind": 2,
+                    "detail": "[omim]m-card",
+                    "insertText": "onIconAction={${1}}",
+                    "documentation": "---\n\n## onIconAction:\n\n类型: function\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                }
+            }
+        },
+        "m-path-progress": {
+            "label": "m-path-progress",
+            "kind": 24,
+            "detail": "[omim]Three ways of displaying progress.",
+            "insertText": "<m-path-progress${1}>${2}</m-path-progress>",
+            "documentation": "---\n\n## Path Progress\n\n简介：三种进度展示方式。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/path-progress?index=7&subIndex=9 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/path-progress?index=7&subIndex=9 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-path-progress \n  type=\"Line\" \n  progress=\"0.5\" \n  text='test' \n  options=\"{\n    strokeWidth: 2,\n    color: '#0072d9',\n    trailColor: '#ddd'\n  }\"\n  initial-animate \n  container-style=\"{\n    width: '200px',\n    height: '20px'\n  }\">\n</m-path-progress>\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n  type: string,\n  options: object,\n  progress: number,\n  text: string,\n  initialAnimate: boolean,\n  containerStyle: object\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "type": {
+                    "label": "type",
+                    "kind": 22,
+                    "detail": "[omim]m-path-progress",
+                    "insertText": "type='${1}'",
+                    "documentation": "---\n\n## type:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "options": {
+                    "label": "options",
+                    "kind": 22,
+                    "detail": "[omim]m-path-progress",
+                    "insertText": "options={${1}}",
+                    "documentation": "---\n\n## options:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "progress": {
+                    "label": "progress",
+                    "kind": 22,
+                    "detail": "[omim]m-path-progress",
+                    "insertText": "progress={${1}}",
+                    "documentation": "---\n\n## progress:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "text": {
+                    "label": "text",
+                    "kind": 22,
+                    "detail": "[omim]m-path-progress",
+                    "insertText": "text='${1}'",
+                    "documentation": "---\n\n## text:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "initialAnimate": {
+                    "label": "initialAnimate",
+                    "kind": 22,
+                    "detail": "[omim]m-path-progress",
+                    "insertText": "initialAnimate",
+                    "documentation": "---\n\n## initialAnimate:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "containerStyle": {
+                    "label": "containerStyle",
+                    "kind": 22,
+                    "detail": "[omim]m-path-progress",
+                    "insertText": "containerStyle={${1}}",
+                    "documentation": "---\n\n## containerStyle:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "strokeWidth": {
+                    "label": "strokeWidth",
+                    "kind": 21,
+                    "detail": "[omim]m-path-progress",
+                    "insertText": "strokeWidth: ${1}",
+                    "documentation": "---\n\n## strokeWidth:\n\n类型: number (options 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "color": {
+                    "label": "color",
+                    "kind": 21,
+                    "detail": "[omim]m-path-progress",
+                    "insertText": "color: '${1}'",
+                    "documentation": "---\n\n## color:\n\n类型: string (options 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "trailColor": {
+                    "label": "trailColor",
+                    "kind": 21,
+                    "detail": "[omim]m-path-progress",
+                    "insertText": "trailColor: '${1}'",
+                    "documentation": "---\n\n## trailColor:\n\n类型: string (options 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "width": {
+                    "label": "width",
+                    "kind": 21,
+                    "detail": "[omim]m-path-progress",
+                    "insertText": "width: '${1}'",
+                    "documentation": "---\n\n## width:\n\n类型: string (containerStyle 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "height": {
+                    "label": "height",
+                    "kind": 21,
+                    "detail": "[omim]m-path-progress",
+                    "insertText": "height: '${1}'",
+                    "documentation": "---\n\n## height:\n\n类型: string (containerStyle 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                }
+            }
+        },
+        "m-paper": {
+            "label": "m-paper",
+            "kind": 24,
+            "detail": "[omim]The physical properties of the paper are displayed on the screen.",
+            "insertText": "<m-paper${1}>${2}</m-paper>",
+            "documentation": "---\n\n## Paper\n\n简介：在屏幕上展现纸张的物理属性。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/paper?index=7&subIndex=10 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/paper?index=7&subIndex=10 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-paper elevation='1' square='true'>\n  <h3>This is a sheet of paper.</h3>\n  <p>Paper can be used to build surface or other elements for your </p>\n</m-paper>\n```\n\n## Omi 中使用\n\nJSX:\n\n```jsx\n<m-paper elevation={1} square={true}>\n  <h3>This is a sheet of paper.</h3>\n  <p>Paper can be used to build surface or other elements for your </p>\n</m-paper>\n```\n\n---\n\n## API\n\n### Props\n\n|  **Name**  | **Type**        | **Defaults**  | **Details**  |\n| ------------- |:-------------:|:-----:|:-------------:|\n| elevation | number | 1 | 阴影深度，对应 dp 规范。它接受 0 到 24 之间的值。 |\n| square | boolean | false | 如果 true，圆角被禁用。 |\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "elevation": {
+                    "label": "elevation",
+                    "kind": 22,
+                    "detail": "[omim]m-paper",
+                    "insertText": "elevation={${1}}",
+                    "documentation": "---\n\n## elevation:\n\n类型: number\n\n默认值: 1\n\n说明: 阴影深度，对应 dp 规范。它接受 0 到 24 之间的值。\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "square": {
+                    "label": "square",
+                    "kind": 22,
+                    "detail": "[omim]m-paper",
+                    "insertText": "square",
+                    "documentation": "---\n\n## square:\n\n类型: boolean\n\n默认值: 1\n\n说明: 如果 true，圆角被禁用。\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-step": {
+            "label": "m-step",
+            "kind": 24,
+            "detail": "[omim]Show progress of Workflow.",
+            "insertText": "<m-step${1}>${2}</m-step>",
+            "documentation": "---\n\n## Step\n\n简介：展示工作流中的进度。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/step?index=7&subIndex=11 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/step?index=7&subIndex=11 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-step \n  items=\"[\n    { name: 'Finished', description: 'This is a description.', state: 0 },\n    { name: 'In Progress', description: 'This is a description.', state: 2 },\n    { name: 'Waiting', description: 'This is a description.', state: 3 }\n  ]\" \n  vertical >\n</m-step>\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n  items: object,\n  vertical?: boolean\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "items": {
+                    "label": "items",
+                    "kind": 22,
+                    "detail": "[omim]m-step",
+                    "insertText": "items={${1}}",
+                    "documentation": "---\n\n## items:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "vertical": {
+                    "label": "vertical",
+                    "kind": 22,
+                    "detail": "[omim]m-step",
+                    "insertText": "vertical",
+                    "documentation": "---\n\n## vertical:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "name": {
+                    "label": "name",
+                    "kind": 21,
+                    "detail": "[omim]m-step",
+                    "insertText": "name: '${1}'",
+                    "documentation": "---\n\n## name:\n\n类型: string\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "description": {
+                    "label": "description",
+                    "kind": 21,
+                    "detail": "[omim]m-step",
+                    "insertText": "description: '${1}'",
+                    "documentation": "---\n\n## description:\n\n类型: string\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "state": {
+                    "label": "state",
+                    "kind": 21,
+                    "detail": "[omim]m-step",
+                    "insertText": "state: ${1}",
+                    "documentation": "---\n\n## state:\n\n类型: number\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                }
+            }
+        },
+        "m-simple-card": {
+            "label": "m-simple-card",
+            "kind": 24,
+            "detail": "[omim]Simple Card.",
+            "insertText": "<m-simple-card${1}>${2}</m-simple-card>",
+            "documentation": "---\n\n## Simple Card\n\n简介：简单的卡片，用于展示一个类别或者品牌的一项信息。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/simple-card?index=7&subIndex=12 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/simple-card?index=7&subIndex=12 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-simple-card\n  color='#03a9f4'\n  info='98'\n  caption='转发'\n  path='M928 254.3c-30.6 13.2-63.9 22.7-98.2 26.4a170.1 170.1 0 0 0 75-94 336.64 336.64 0 0 1-108.2 41.2A170.1 170.1 0 0 0 672 174c-94.5 0-170.5 76.6-170.5 170.6 0 13.2 1.6 26.4 4.2 39.1-141.5-7.4-267.7-75-351.6-178.5a169.32 169.32 0 0 0-23.2 86.1c0 59.2 30.1 111.4 76 142.1a172 172 0 0 1-77.1-21.7v2.1c0 82.9 58.6 151.6 136.7 167.4a180.6 180.6 0 0 1-44.9 5.8c-11.1 0-21.6-1.1-32.2-2.6C211 652 273.9 701.1 348.8 702.7c-58.6 45.9-132 72.9-211.7 72.9-14.3 0-27.5-.5-41.2-2.1C171.5 822 261.2 850 357.8 850 671.4 850 843 590.2 843 364.7c0-7.4 0-14.8-.5-22.2 33.2-24.3 62.3-54.4 85.5-88.2z'>\n</m-simple-card>\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n  color: string,\n  path: string,\n  info: string,\n  caption: string\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "color": {
+                    "label": "color",
+                    "kind": 22,
+                    "detail": "[omim]m-simple-card",
+                    "insertText": "color='${1}'",
+                    "documentation": "---\n\n## color:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "path": {
+                    "label": "path",
+                    "kind": 22,
+                    "detail": "[omim]m-simple-card",
+                    "insertText": "path='${1}'",
+                    "documentation": "---\n\n## path:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "info": {
+                    "label": "info",
+                    "kind": 22,
+                    "detail": "[omim]m-simple-card",
+                    "insertText": "info='${1}'",
+                    "documentation": "---\n\n## info:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "caption": {
+                    "label": "caption",
+                    "kind": 22,
+                    "detail": "[omim]m-simple-card",
+                    "insertText": "caption='${1}'",
+                    "documentation": "---\n\n## caption:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-editor": {
+            "label": "m-editor",
+            "kind": 24,
+            "detail": "[omim]Show progress of Workflow.",
+            "insertText": "<m-editor${1}>${2}</m-editor>",
+            "documentation": "---\n\n## Editor\n\n简介：富文本编辑器。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/editor?index=7&subIndex=13 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/editor?index=7&subIndex=13 '官网链接')\n\n---\n\n## Demo\n\n```jsx\nimport { render, h } from 'omi'\nimport '@omim/core/editor'\n\nrender(\n  <div>\n    <m-editor onTextChange={onTextChange}>\n      <h1 class=\"ql-align-center\">Quill Rich Text Editor</h1>\n      <p><br /></p>\n      <p>Quill is a free, <a href=\"https://github.com/quilljs/quill/\">open source</a> WYSIWYG editor built for the modern web. With its <a href=\"https://quilljs.com/docs/modules/\">modular architecture</a> and expressive <a href=\"https://quilljs.com/docs/api/\">API</a>, it is completely customizable to fit any need.</p>\n      <p><br /></p>\n      <iframe class=\"ql-video ql-align-center\" src=\"https://player.vimeo.com/video/253905163\" width=\"500\" height=\"280\" allowfullscreen></iframe>\n      <p><br /></p>\n      <h2 class=\"ql-align-center\">Getting Started is Easy</h2>\n    </m-editor>\n  </div>, 'body')\n\nfunction onTextChange(evt) {\n  console.log(evt)\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "onTextChange": {
+                    "label": "onTextChange",
+                    "kind": 2,
+                    "detail": "[omim]m-editor",
+                    "insertText": "onTextChange={${1}}",
+                    "documentation": "---\n\n## onTextChange:\n\n类型: function\n\n---",
+                    "sortText": "c",
+                    "cmd": false
+                }
+            }
+        },
+        "m-spreadsheet": {
+            "label": "m-spreadsheet",
+            "kind": 24,
+            "detail": "[omim]Spreadsheet powered by [x-spreadsheet](https://github.com/myliang/x-spreadsheet) and omi.",
+            "insertText": "<m-spreadsheet${1}>${2}</m-spreadsheet>",
+            "documentation": "---\n\n## Spreadsheet\n\n简介：Omi 和 [x-spreadsheet](https://github.com/myliang/x-spreadsheet) 打造表格标签。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/spreadsheet?index=7&subIndex=14 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/spreadsheet?index=7&subIndex=14 '官网链接')\n\n---\n\n## 使用\n\n```jsx\n<m-spreadsheet\n  onChange={(evt)=>{\n    console.log(evt.detail)\n  }}\n  width={500}\n  height={500}\n  data={\n    {\n      freeze: 'B3',\n      styles: [{\n        bgcolor: '#f4f5f8',\n        textwrap: true,\n        color: '#900b09',\n        border: {\n          top: ['thin', '#0366d6'],\n          bottom: ['thin', '#0366d6'],\n          right: ['thin', '#0366d6'],\n          left: ['thin', '#0366d6']\n        }\n      }],\n      merges: [\n        'C3:D4'\n      ],\n      rows: {\n        1: {\n          cells: {\n            0: { text: 'testingtesttestetst' },\n            2: { text: 'testing' }\n          }\n        },\n        2: {\n          cells: {\n            0: { text: 'render', style: 0 },\n            1: { text: 'Hello' },\n            2: { text: 'haha', merge: [1, 1] }\n          }\n        },\n        8: {\n          cells: {\n            8: { text: 'border test', style: 0 }\n          }\n        }\n      }\n    }}>\n</m-spreadsheet>\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "width": {
+                    "label": "width",
+                    "kind": 22,
+                    "detail": "[omim]m-spreadsheet",
+                    "insertText": "width={${1}}",
+                    "documentation": "---\n\n## width:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "height": {
+                    "label": "height",
+                    "kind": 22,
+                    "detail": "[omim]m-spreadsheet",
+                    "insertText": "height={${1}}",
+                    "documentation": "---\n\n## height:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "data": {
+                    "label": "data",
+                    "kind": 22,
+                    "detail": "[omim]m-spreadsheet",
+                    "insertText": "data={${1}}",
+                    "documentation": "---\n\n## data:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-rate": {
+            "label": "m-rate",
+            "kind": 24,
+            "detail": "[omim]Rate.",
+            "insertText": "<m-rate${1}>${2}</m-rate>",
+            "documentation": "---\n\n## Rate\n\n简介：评分组件。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/rate?index=7&subIndex=15 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/rate?index=7&subIndex=15 '官网链接')\n\n---\n\n## 使用\n\n```html\n<h3>Simple</h3>\n<m-rate total=\"5\" value=\"1\" color='#0072d9'></m-rate>\n<h3>With Event</h3>\n<m-rate id=\"myRate\" total=\"5\" value=\"2\" color='#f57c00'></m-rate>\n<h3>Half</h3>\n<m-rate total=\"5\" half value=\"3\" color='red'></m-rate>\n\n<script src=\"https://tencent.github.io/omi/packages/omi/dist/omi.js\"></script>\n<script src=\"../../src/rate/index.js\"></script>\n<script>\ndocument.querySelector(\"#myRate\").addEventListener('selected', function (evt) {\n  console.log(evt.detail)\n})\n</script>\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n  total: number\n  half?: boolean\n  value?: number\n  color?: string\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "total": {
+                    "label": "total",
+                    "kind": 22,
+                    "detail": "[omim]m-rate",
+                    "insertText": "total={${1}}",
+                    "documentation": "---\n\n## total:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "half": {
+                    "label": "half",
+                    "kind": 22,
+                    "detail": "[omim]m-rate",
+                    "insertText": "half",
+                    "documentation": "---\n\n## half:\n\n类型: boolean\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "value": {
+                    "label": "value",
+                    "kind": 22,
+                    "detail": "[omim]m-rate",
+                    "insertText": "value={${1}}",
+                    "documentation": "---\n\n## value:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "color": {
+                    "label": "color",
+                    "kind": 22,
+                    "detail": "[omim]m-rate",
+                    "insertText": "color='${1}'",
+                    "documentation": "---\n\n## color:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-bar": {
+            "label": "m-bar",
+            "kind": 24,
+            "detail": "[omim]Bar chart.",
+            "insertText": "<m-bar${1}>${2}</m-bar>",
+            "documentation": "---\n\n## Bar\n\n简介：柱状图。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/bar?index=8&subIndex=1 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/bar?index=8&subIndex=1 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-bar id=\"myBar\" width=\"600\" height=\"300\" data=\"{\n  labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],\n  datasets: [{\n    label: '# of Votes',\n    data: [12, 19, 3, 5, 2, 3],\n    backgroundColor: [\n      'rgba(255, 99, 132, 0.2)',\n      'rgba(54, 162, 235, 0.2)',\n      'rgba(255, 206, 86, 0.2)',\n      'rgba(75, 192, 192, 0.2)',\n      'rgba(153, 102, 255, 0.2)',\n      'rgba(255, 159, 64, 0.2)'\n    ],\n    borderColor: [\n      'rgba(255,99,132,1)',\n      'rgba(54, 162, 235, 1)',\n      'rgba(255, 206, 86, 1)',\n      'rgba(75, 192, 192, 1)',\n      'rgba(153, 102, 255, 1)',\n      'rgba(255, 159, 64, 1)'\n    ],\n    borderWidth: 1\n  }]\n}\"\n  options=\"{\n  legend: {\n    display: false\n  },\n  scales: {\n    yAxes: [{\n      ticks: {\n        beginAtZero: true\n      }\n    }]\n  }\n}\"></m-bar>\n```\n\n## 更新图表\n\n```js\n//获取该元素\nvar chart = document.querySelector('#myBar')\n//更改图表的数据\nchart.props.data.datasets.forEach(dataset => {\n  dataset.data.forEach((item, index) => {\n    dataset.data[index] = Math.random() * 100\n  })\n})\n//更新图表视图\nchart.update()\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n  data: object,\n  options: object,\n  width: number,\n  height: number,\n  horizontal?: string\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "data": {
+                    "label": "data",
+                    "kind": 22,
+                    "detail": "[omim]m-bar",
+                    "insertText": "data={${1}}",
+                    "documentation": "---\n\n## data:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "options": {
+                    "label": "options",
+                    "kind": 22,
+                    "detail": "[omim]m-bar",
+                    "insertText": "options={${1}}",
+                    "documentation": "---\n\n## options:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "width": {
+                    "label": "width",
+                    "kind": 22,
+                    "detail": "[omim]m-bar",
+                    "insertText": "width={${1}}",
+                    "documentation": "---\n\n## width:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "height": {
+                    "label": "height",
+                    "kind": 22,
+                    "detail": "[omim]m-bar",
+                    "insertText": "height={${1}}",
+                    "documentation": "---\n\n## height:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "horizontal": {
+                    "label": "horizontal",
+                    "kind": 22,
+                    "detail": "[omim]m-bar",
+                    "insertText": "horizontal='${1}'",
+                    "documentation": "---\n\n## horizontal:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "labels": {
+                    "label": "labels",
+                    "kind": 21,
+                    "detail": "[omim]m-bar",
+                    "insertText": "labels: [${1}]",
+                    "documentation": "---\n\n## labels:\n\n类型: Array (data 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "datasets": {
+                    "label": "datasets",
+                    "kind": 21,
+                    "detail": "[omim]m-bar",
+                    "insertText": "datasets: [${1}]",
+                    "documentation": "---\n\n## datasets:\n\n类型: Array (data 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "borderWidth": {
+                    "label": "borderWidth",
+                    "kind": 21,
+                    "detail": "[omim]m-bar",
+                    "insertText": "borderWidth: {${1}}",
+                    "documentation": "---\n\n## borderWidth:\n\n类型: number (data 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "label": {
+                    "label": "label",
+                    "kind": 21,
+                    "detail": "[omim]m-bar",
+                    "insertText": "label: '${1}'",
+                    "documentation": "---\n\n## label:\n\n类型: string (datasets 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "data:": {
+                    "label": "data:",
+                    "kind": 21,
+                    "detail": "[omim]m-bar",
+                    "insertText": "data: [${1}]",
+                    "documentation": "---\n\n## 'data:':\n\n类型: Array (datasets 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "backgroundColor": {
+                    "label": "backgroundColor",
+                    "kind": 21,
+                    "detail": "[omim]m-bar",
+                    "insertText": "backgroundColor: [${1}]",
+                    "documentation": "---\n\n## 'backgroundColor':\n\n类型: Array (datasets 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "legend": {
+                    "label": "legend",
+                    "kind": 21,
+                    "detail": "[omim]m-bar",
+                    "insertText": "legend: {${1}}",
+                    "documentation": "---\n\n## 'legend':\n\n类型: object (options 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "display": {
+                    "label": "display",
+                    "kind": 21,
+                    "detail": "[omim]m-bar",
+                    "insertText": "display: ${1|true,false|}",
+                    "documentation": "---\n\n## 'display':\n\n类型: boolean (legend 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "beginAtZero": {
+                    "label": "beginAtZero",
+                    "kind": 21,
+                    "detail": "[omim]m-bar",
+                    "insertText": "beginAtZero: ${1|true,false|}",
+                    "documentation": "---\n\n## 'beginAtZero':\n\n类型: boolean (ticks 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "scales": {
+                    "label": "scales",
+                    "kind": 21,
+                    "detail": "[omim]m-bar",
+                    "insertText": "scales: {${1}}",
+                    "documentation": "---\n\n## 'scales':\n\n类型: object (options 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "yAxes": {
+                    "label": "yAxes",
+                    "kind": 21,
+                    "detail": "[omim]m-bar",
+                    "insertText": "yAxes: [${1}]",
+                    "documentation": "---\n\n## yAxes:\n\n类型: Array (scales 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                },
+                "ticks": {
+                    "label": "ticks",
+                    "kind": 21,
+                    "detail": "[omim]m-bar",
+                    "insertText": "ticks: {${1}}",
+                    "documentation": "---\n\n## ticks:\n\n类型: object (yAxes 内部属性)\n\n---",
+                    "sortText": "b",
+                    "cmd": false
+                }
+            }
+        },
+        "m-line": {
+            "label": "m-line",
+            "kind": 24,
+            "detail": "[omim]Line chart.",
+            "insertText": "<m-line${1}>${2}</m-line>",
+            "documentation": "---\n\n## Line\n\n简介：线状图。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/line?index=8&subIndex=2 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/line?index=8&subIndex=2 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-line id=\"myLine\" width=\"600\" height=\"300\" \n  data=\"{\n    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],\n    datasets: [{\n      label: '# of Votes',\n      data: [12, 19, 3, 5, 2, 3],\n      backgroundColor: 'rgba(255, 99, 132, .4)',\n      borderColor: 'rgb(255, 99, 132)',\n      borderWidth: 1\n    }]\n  }\"\n\n  options=\"{\n    responsive: true,\n    title: {\n      display: true,\n      text: 'Omi-chart Line Chart'\n    },\n    tooltips: {\n      mode: 'index',\n      intersect: false\n    },\n    hover: {\n      mode: 'nearest',\n      intersect: true\n    },\n    scales: {\n      xAxes: [{\n        display: true,\n        scaleLabel: {\n          display: true,\n          labelString: 'Month'\n        }\n      }],\n      yAxes: [{\n        display: true,\n        scaleLabel: {\n          display: true,\n          labelString: 'Value'\n        }\n      }]\n    }\n  }\">\n</m-line>\n```\n\n## 更新图表\n\n```js\n//获取该元素\nvar chart = document.querySelector('#myLine')\n//更改图表的数据\nchart.props.data.datasets.forEach(dataset => {\n  dataset.data.forEach((item, index) => {\n    dataset.data[index] = Math.random() * 100\n  })\n})\n//更新图表视图\nchart.update()\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n  data: object,\n  options: object,\n  width: number,\n  height: number\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "data": {
+                    "label": "data",
+                    "kind": 22,
+                    "detail": "[omim]m-line",
+                    "insertText": "data={${1}}",
+                    "documentation": "---\n\n## data:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "options": {
+                    "label": "options",
+                    "kind": 22,
+                    "detail": "[omim]m-line",
+                    "insertText": "options={${1}}",
+                    "documentation": "---\n\n## options:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "width": {
+                    "label": "width",
+                    "kind": 22,
+                    "detail": "[omim]m-line",
+                    "insertText": "width={${1}}",
+                    "documentation": "---\n\n## width:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "height": {
+                    "label": "height",
+                    "kind": 22,
+                    "detail": "[omim]m-line",
+                    "insertText": "height={${1}}",
+                    "documentation": "---\n\n## height:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-scatter": {
+            "label": "m-scatter",
+            "kind": 24,
+            "detail": "[omim]Scatter chart.",
+            "insertText": "<m-scatter${1}>${2}</m-scatter>",
+            "documentation": "---\n\n## Scatter\n\n简介：散点图。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/scatter?index=8&subIndex=3 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/scatter?index=8&subIndex=3 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-scatter id=\"myScatter\" width=\"600\" height=\"300\" data=\" {\n  datasets: [{\n      label: 'My First dataset',\n      borderColor: 'rgb(255, 99, 132)',\n      backgroundColor: 'rgba(255, 99, 132, .2)',\n      data: [{\n        x: 50,\n        y: 32\n      }, {\n        x: 22,\n        y: 10\n      }, {\n        x: 80,\n        y: 44\n      }, {\n        x: 22,\n        y: 77\n      }, {\n        x: 3,\n        y: 9\n      }, {\n        x: 44,\n        y: 11\n      }, {\n        x: 12,\n        y: 100\n      }]\n    }, {\n      label: 'My Second dataset',\n      borderColor: 'rgb(54, 162, 235)',\n      backgroundColor: 'rgba(54, 162, 235, .2)',\n      data: [{\n        x: 20,\n        y: 132\n      }, {\n        x: 32,\n        y: 40\n      }, {\n        x: 80,\n        y: 84\n      }, {\n        x: 32,\n        y: 77\n      }, {\n        x: 13,\n        y: 9\n      }, {\n        x: 24,\n        y: 11\n      }, {\n        x: 12,\n        y: 60\n      }]\n    }]\n  }\"\n\n  options=\"{\n    title: {\n      display: true,\n      text: 'Omim Scatter Chart'\n    }\n  }\">\n</m-scatter>\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n  data: object,\n  options: object,\n  width: number,\n  height: number\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "data": {
+                    "label": "data",
+                    "kind": 22,
+                    "detail": "[omim]m-scatter",
+                    "insertText": "data={${1}}",
+                    "documentation": "---\n\n## data:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "options": {
+                    "label": "options",
+                    "kind": 22,
+                    "detail": "[omim]m-scatter",
+                    "insertText": "options={${1}}",
+                    "documentation": "---\n\n## options:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "width": {
+                    "label": "width",
+                    "kind": 22,
+                    "detail": "[omim]m-scatter",
+                    "insertText": "width={${1}}",
+                    "documentation": "---\n\n## width:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "height": {
+                    "label": "height",
+                    "kind": 22,
+                    "detail": "[omim]m-scatter",
+                    "insertText": "height={${1}}",
+                    "documentation": "---\n\n## height:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-pie": {
+            "label": "m-pie",
+            "kind": 24,
+            "detail": "[omim]Pie chart.",
+            "insertText": "<m-pie${1}>${2}</m-pie>",
+            "documentation": "---\n\n## pie\n\n简介：饼图。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/pie?index=8&subIndex=4 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/pie?index=8&subIndex=4 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-pie id=\"myPie\" width=\"600\" height=\"300\" \n  data=\"{\n    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],\n    datasets: [{\n      label: '# of Votes',\n      data: [12, 19, 3, 5, 2, 3],\n      backgroundColor: [\n        'rgba(255,99,132,1)',\n        'rgba(54, 162, 235, 1)',\n        'rgba(255, 206, 86, 1)',\n        'rgba(75, 192, 192, 1)',\n        'rgba(153, 102, 255, 1)',\n        'rgba(255, 159, 64, 1)'\n      ],\n      borderColor: 'white',\n      borderWidth: 1\n    }]\n  }\"\n\n  options=\"{\n    responsive: true,\n    legend: {\n      position: 'top'\n    },\n    title: {\n      display: true,\n      text: 'Omim Pie Chart'\n    },\n    animation: {\n      animateScale: true,\n      animateRotate: true\n    }\n  }\">\n</m-pie>\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n  data: object,\n  options: object,\n  width: number,\n  height: number\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "data": {
+                    "label": "data",
+                    "kind": 22,
+                    "detail": "[omim]m-pie",
+                    "insertText": "data={${1}}",
+                    "documentation": "---\n\n## data:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "options": {
+                    "label": "options",
+                    "kind": 22,
+                    "detail": "[omim]m-pie",
+                    "insertText": "options={${1}}",
+                    "documentation": "---\n\n## options:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "width": {
+                    "label": "width",
+                    "kind": 22,
+                    "detail": "[omim]m-pie",
+                    "insertText": "width={${1}}",
+                    "documentation": "---\n\n## width:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "height": {
+                    "label": "height",
+                    "kind": 22,
+                    "detail": "[omim]m-pie",
+                    "insertText": "height={${1}}",
+                    "documentation": "---\n\n## height:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-doughnut": {
+            "label": "m-doughnut",
+            "kind": 24,
+            "detail": "[omim]Doughnut chart.",
+            "insertText": "<m-doughnut${1}>${2}</m-doughnut>",
+            "documentation": "---\n\n## Doughnut\n\n简介：环状图。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/doughnut?index=8&subIndex=5 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/doughnut?index=8&subIndex=5 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-doughnut id=\"myDoughnut\" width=\"600\" height=\"300\" \n  data=\"{\n    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],\n    datasets: [{\n      label: '# of Votes',\n      data: [12, 19, 3, 5, 2, 3],\n      backgroundColor: [\n        'rgba(255,99,132,1)',\n        'rgba(54, 162, 235, 1)',\n        'rgba(255, 206, 86, 1)',\n        'rgba(75, 192, 192, 1)',\n        'rgba(153, 102, 255, 1)',\n        'rgba(255, 159, 64, 1)'\n      ],\n      borderColor: 'white',\n      borderWidth: 1\n    }]\n  }\"\n\n  options=\"{\n    responsive: true,\n    legend: {\n      position: 'top'\n    },\n    title: {\n      display: true,\n      text: 'Omim Doughnut Chart'\n    },\n    animation: {\n      animateScale: true,\n      animateRotate: true\n    }\n  }\">\n</m-doughnut>\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n  data: object,\n  options: object,\n  width: number,\n  height: number\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "data": {
+                    "label": "data",
+                    "kind": 22,
+                    "detail": "[omim]m-doughnut",
+                    "insertText": "data={${1}}",
+                    "documentation": "---\n\n## data:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "options": {
+                    "label": "options",
+                    "kind": 22,
+                    "detail": "[omim]m-doughnut",
+                    "insertText": "options={${1}}",
+                    "documentation": "---\n\n## options:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "width": {
+                    "label": "width",
+                    "kind": 22,
+                    "detail": "[omim]m-doughnut",
+                    "insertText": "width={${1}}",
+                    "documentation": "---\n\n## width:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "height": {
+                    "label": "height",
+                    "kind": 22,
+                    "detail": "[omim]m-doughnut",
+                    "insertText": "height={${1}}",
+                    "documentation": "---\n\n## height:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-radar": {
+            "label": "m-radar",
+            "kind": 24,
+            "detail": "[omim]Radar chart.",
+            "insertText": "<m-radar${1}>${2}</m-radar>",
+            "documentation": "---\n\n## Radar\n\n简介：雷达图。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/radar?index=8&subIndex=6 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/radar?index=8&subIndex=6 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-radar id=\"myRadar\" width=\"600\" height=\"300\" \n  data=\"{\n    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],\n    datasets: [{\n      label: '# of Votes',\n      data: [12, 19, 3, 5, 2, 3],\n      backgroundColor: 'rgba(255, 99, 132, .2)',\n      borderColor: 'rgb(255, 99, 132)',\n      borderWidth: 1\n    }]\n  }\"\n\n  options=\"{\n    maintainAspectRatio: true,\n    spanGaps: false,\n    elements: {\n      line: {\n        tension: 0.000001\n      }\n    },\n    plugins: {\n      filler: {\n        propagate: false\n      },\n      'samples-filler-analyser': {\n        target: 'chart-analyser'\n      }\n    }\n  }\">\n</m-radar>\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n  data: object,\n  options: object,\n  width: number,\n  height: number\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "data": {
+                    "label": "data",
+                    "kind": 22,
+                    "detail": "[omim]m-radar",
+                    "insertText": "data={${1}}",
+                    "documentation": "---\n\n## data:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "options": {
+                    "label": "options",
+                    "kind": 22,
+                    "detail": "[omim]m-radar",
+                    "insertText": "options={${1}}",
+                    "documentation": "---\n\n## options:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "width": {
+                    "label": "width",
+                    "kind": 22,
+                    "detail": "[omim]m-radar",
+                    "insertText": "width={${1}}",
+                    "documentation": "---\n\n## width:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "height": {
+                    "label": "height",
+                    "kind": 22,
+                    "detail": "[omim]m-radar",
+                    "insertText": "height={${1}}",
+                    "documentation": "---\n\n## height:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-polar-area": {
+            "label": "m-polar-area",
+            "kind": 24,
+            "detail": "[omim]PolarArea chart.",
+            "insertText": "<m-polar-area${1}>${2}</m-polar-area>",
+            "documentation": "---\n\n## PolarArea\n\n简介：极区图。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/polar-area?index=8&subIndex=7 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/polar-area?index=8&subIndex=7 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-polar-area id=\"myChart\" width=\"600\" height=\"350\" \n  data=\"{\n    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],\n    datasets: [{\n      label: '# of Votes',\n      data: [12, 19, 3, 5, 2, 3],\n      backgroundColor: [\n        'rgba(255,99,132,1)',\n        'rgba(54, 162, 235, 1)',\n        'rgba(255, 206, 86, 1)',\n        'rgba(75, 192, 192, 1)',\n        'rgba(153, 102, 255, 1)',\n        'rgba(255, 159, 64, 1)'\n      ],\n      borderColor: 'white',\n      borderWidth: 1\n    }]\n  }\"\n\n  options=\"{\n    responsive: true,\n    legend: {\n      position: 'top',\n    },\n    title: {\n      display: true,\n      text: 'Omim Pie Chart'\n    },\n    animation: {\n      animateScale: true,\n      animateRotate: true\n    }\n  }\">\n</m-polar-area>\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n  data: object,\n  options: object,\n  width: number,\n  height: number\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "data": {
+                    "label": "data",
+                    "kind": 22,
+                    "detail": "[omim]m-polar-area",
+                    "insertText": "data={${1}}",
+                    "documentation": "---\n\n## data:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "options": {
+                    "label": "options",
+                    "kind": 22,
+                    "detail": "[omim]m-polar-area",
+                    "insertText": "options={${1}}",
+                    "documentation": "---\n\n## options:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "width": {
+                    "label": "width",
+                    "kind": 22,
+                    "detail": "[omim]m-polar-area",
+                    "insertText": "width={${1}}",
+                    "documentation": "---\n\n## width:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "height": {
+                    "label": "height",
+                    "kind": 22,
+                    "detail": "[omim]m-polar-area",
+                    "insertText": "height={${1}}",
+                    "documentation": "---\n\n## height:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
+        },
+        "m-bubble": {
+            "label": "m-bubble",
+            "kind": 24,
+            "detail": "[omim]Bubble chart.",
+            "insertText": "<m-bubble${1}>${2}</m-bubble>",
+            "documentation": "---\n\n## Bubble\n\n简介：气泡图。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/bubble?index=8&subIndex=8 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/bubble?index=8&subIndex=8 '官网链接')\n\n---\n\n## 使用\n\n```html\n<m-bubble id=\"myChart\" width=\"300\" height=\"350\" \n  data=\"{\n    datasets: [{\n      label: 'My First dataset',\n      borderColor: 'rgb(55,99,132)',\n      backgroundColor: 'transparent',\n      data: [\n        { x: 11, y: 44, v: 22 }, \n        { x: 77, y: 11, v: 11 }, \n        { x: 55, y: 22, v: 99 }, \n        { x: 44, y: 33, v: 34 }, \n        { x: 33, y: 9, v: 98 }, \n        { x: 20, y: 1, v: 1 }, \n        { x: 55, y: 3, v: 2 }\n      ]\n      }, {\n        label: 'My Second dataset',\n        borderColor: 'rgb(255,99,132)',\n        backgroundColor: 'transparent',\n        data: [\n        { x: 18, y: 44, v: 22 }, \n        { x: 77, y: 21, v: 11 }, \n        { x: 55, y: 122, v: 99 }, \n        { x: 84, y: 3, v: 34 }, \n        { x: 33, y: 29, v: 98 }, \n        { x: 20, y: 111, v: 1 }, \n        { x: 55, y: 13, v: 2 }\n        ]\n      }]\n    }\"\n\n  options=\"{\n    aspectRatio: 1,\n    legend: false,\n    tooltips: false,\n\n    elements: {\n      point: {\n        borderColor: '#ccc',\n\n        borderWidth: 1,\n\n        hoverBackgroundColor: 'transparent',\n\n        hoverBorderColor: 'red',\n\n        hoverBorderWidth: 2,\n\n        radius: '3 + Math.abs($v)/100 * $w/24'\n      }\n    }\n  }\">\n</m-bubble>\n```\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n  data: object,\n  options: object,\n  width: number,\n  height: number\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "data": {
+                    "label": "data",
+                    "kind": 22,
+                    "detail": "[omim]m-bubble",
+                    "insertText": "data={${1}}",
+                    "documentation": "---\n\n## data:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "options": {
+                    "label": "options",
+                    "kind": 22,
+                    "detail": "[omim]m-bubble",
+                    "insertText": "options={${1}}",
+                    "documentation": "---\n\n## options:\n\n类型: object\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "width": {
+                    "label": "width",
+                    "kind": 22,
+                    "detail": "[omim]m-bubble",
+                    "insertText": "width={${1}}",
+                    "documentation": "---\n\n## width:\n\n类型: number\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                },
+                "height": {
+                    "label": "height",
+                    "kind": 22,
+                    "detail": "[omim]m-bubble",
+                    "insertText": "height={${1}}",
+                    "documentation": "---\n\n## height:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
                 }
