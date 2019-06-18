@@ -3,7 +3,7 @@
 # Omi Visual Studio Code 扩展
 [![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v2.2.0-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
 [![Downloads](https://img.shields.io/badge/Downloads-5.5K%2B-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
-[![UpdateTime](https://img.shields.io/badge/UpdateTime-2019%2F06%2F18%2020%3A00%3A00-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
+[![UpdateTime](https://img.shields.io/badge/UpdateTime-2019%2F06%2F18%2023%3A00%3A00-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
 
 此扩展添加了对 Visual Studio Code 的 omi 支持。
 
@@ -12,7 +12,7 @@
 - Omi 组件标签和属性补全, 补全提示支持 markdown (补全库包含 omiu 和 omim 组件) `[支持用户自定义添加组件补全信息, 按 TAB 跳转到过渡位置]`
 - Omi 鼠标悬停提示, 提示内容支持 markdown (提示库包含 omiu 组件提示和其它提示) `[支持用户自定义添加提示信息]`
 - Omi 自定义代码高亮注入 `[标签属性值支持 json 高亮, 支持 omi css 高亮]`
-- Omi 片段 `[omiu 所有组件片段, 按 TAB 跳转到过渡位置]`
+- Omi 片段 `[omi 常用片段, 按 TAB 跳转到过渡位置]`
 
 # 开发计划
 - Omi 生态系统 `[所有模板下载图形界面]`
@@ -23,7 +23,7 @@
 # 功能说明
 
 ## Omi 欢迎界面
-<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun7.png" alt="omi"/></p>
+<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun7.gif" alt="omi"/></p>
 
 ## 标签和属性补全
 用户自定义补全信息说明: https://github.com/ZainChen/omi-vscode/blob/master/src/completion/README.md

@@ -1,18 +1,18 @@
 English | [简体中文](https://github.com/ZainChen/omi-vscode/blob/master/README.CN.md)
 
 # Omi Visual Studio Code extension
-[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v2.1.8-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
-[![Downloads](https://img.shields.io/badge/Downloads-5.1K%2B-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
-[![UpdateTime](https://img.shields.io/badge/UpdateTime-2019%2F06%2F15%2013%3A30%3A25-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
+[![VisualStudioMarketplace](https://img.shields.io/badge/VisualStudioMarketplace-v2.2.0-orange.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
+[![Downloads](https://img.shields.io/badge/Downloads-5.5K%2B-brightgreen.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
+[![UpdateTime](https://img.shields.io/badge/UpdateTime-2019%2F06%2F18%2023%3A00%3A00-blue.svg)](https://marketplace.visualstudio.com/items?itemName=ZainChen.omi)
 
 This extension adds omi support for Visual Studio Code.
 
 # Function
 - Welcome omi `[Welcome Screen]`
 - Omi component tag and attribute completion `[Completion prompt for markdown format]`
-- Omi mouse hover prompt, the prompt content is in markdown format `[Support user-defined add prompt information]`
-- Omi custom code highlighting injection `[Tag attribute support json highlight, omi css highlight]`
-- Omi snippets `[All omiu component snippets. Multiple overlays, press TAB to jump to the transition position]`
+- Omi mouse hover prompt, the prompt content is in markdown format (Complete library contains omiu and omim components) `[Support user-defined add component completion information, press TAB to jump to the transition location]`
+- Omi custom code highlighting injection `[Tag attribute values support json highlighting, support omi css highlighting]`
+- Omi snippets `[Omi Common clip, press TAB to jump to the transition positionn]`
 
 # Development Plan
 - Omi ecosystem `[All branches and versions(Upgrading, temporarily closed)]`
@@ -23,9 +23,9 @@ This extension adds omi support for Visual Studio Code.
 # Function Description
 
 ## Omi Welcome
-<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun7.png" alt="omi"/></p>
+<p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun7.gif" alt="omi"/></p>
 
-## Label completion
+## Label and attribute completion
 User-defined completion information: https://github.com/ZainChen/omi-vscode/blob/master/src/completion/README.md
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun1.gif" alt="omi"/></p>
 
