@@ -55,9 +55,9 @@ class OmiCompletion {
 	 * 初始化补全提示json数据
 	 */
 	initData() {
-		if(JSON.stringify(this.objJsonOmiu) !== "{}") {  //静态加载补全配置(需重启vscode更新补全配置)，注释该if可实现动态加载(动态加载效率低于静态加载，但可实现实时更新用户自定义补全配置)。
-			return false;
-		}
+		// if(JSON.stringify(this.objJsonOmiu) !== "{}") {  //静态加载补全配置(需重启vscode更新补全配置)，注释该if可实现动态加载(动态加载效率低于静态加载，但可实现实时更新用户自定义补全配置)。
+		// 	return false;
+		// }
 		this.objJsonOmiu = new Object();
 		const fileNames = alg.getfilePathNameAll(__dirname+"/config");  //递归获取指定路径下所有文件，包含子文件夹
 		for(let i = 0; i < fileNames.length; i++) {

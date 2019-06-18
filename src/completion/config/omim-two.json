@@ -59,7 +59,7 @@
                     "label": "icon",
                     "kind": 22,
                     "detail": "[omim]m-button",
-                    "insertText": "icon='${1}'",
+                    "insertText": "icon=\"${1}\"",
                     "documentation": "---\n\n## icon\n\n类型: string\n\n默认值: --\n\n说明: 图标\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -68,7 +68,7 @@
                     "label": "svgIcon",
                     "kind": 22,
                     "detail": "[omim]m-button",
-                    "insertText": "svgIcon={{${1}}}",
+                    "insertText": "svgIcon=\"{${1}}\"",
                     "documentation": "---\n\n## svgIcon\n\n类型: object\n\n默认值: --\n\n说明: svg图标\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -169,7 +169,7 @@
                     "label": "icon",
                     "kind": 22,
                     "detail": "[omim]m-fab",
-                    "insertText": "icon='${1}'",
+                    "insertText": "icon=\"${1}\"",
                     "documentation": "---\n\n## icon:\n\n类型: string\n\n默认值: --\n\n说明: 图标内容\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -189,7 +189,7 @@
                     "label": "paths",
                     "kind": 22,
                     "detail": "[omim]m-icon",
-                    "insertText": "paths={{${1}}}",
+                    "insertText": "paths=\"{${1}}\"",
                     "documentation": "---\n\n## paths:\n\n类型: object\n\n默认值: --\n\n说明: 支持多图标 path\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -198,7 +198,7 @@
                     "label": "path",
                     "kind": 22,
                     "detail": "[omim]m-icon",
-                    "insertText": "path='${1}'",
+                    "insertText": "path=\"${1}\"",
                     "documentation": "---\n\n## path:\n\n类型: string\n\n默认值: --\n\n说明: 图标的 path 值\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -207,7 +207,7 @@
                     "label": "view",
                     "kind": 22,
                     "detail": "[omim]m-icon",
-                    "insertText": "view={${1}}",
+                    "insertText": "view=\"${1}\"",
                     "documentation": "---\n\n## view:\n\n类型: number\n\n默认值: 1024\n\n说明: 视图大小\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -216,7 +216,7 @@
                     "label": "scale",
                     "kind": 22,
                     "detail": "[omim]m-icon",
-                    "insertText": "scale={${1}}",
+                    "insertText": "scale=\"${1}\"",
                     "documentation": "---\n\n## scale:\n\n类型: number\n\n默认值: 2\n\n说明: 图标放大倍数\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -225,7 +225,7 @@
                     "label": "color",
                     "kind": 22,
                     "detail": "[omim]m-icon",
-                    "insertText": "color='${1}'",
+                    "insertText": "color=\"${1}\"",
                     "documentation": "---\n\n## color:\n\n类型: string\n\n默认值: black\n\n说明: 颜色\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -290,7 +290,7 @@
                     "label": "icons",
                     "kind": 22,
                     "detail": "[omim]m-icon-button",
-                    "insertText": "icons={[${1}${2}]}",
+                    "insertText": "icons=\"[${1}${2}]\"",
                     "documentation": "---\n\n## icons:\n\n类型: object\n\n默认值: --\n\n说明: 多个图标\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -299,7 +299,7 @@
                     "label": "icon",
                     "kind": 22,
                     "detail": "[omim]m-icon-button",
-                    "insertText": "icon='${1}'",
+                    "insertText": "icon=\"${1}\"",
                     "documentation": "---\n\n## icon:\n\n类型: string\n\n默认值: --\n\n说明: 图标\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -308,7 +308,7 @@
                     "label": "imgs",
                     "kind": 22,
                     "detail": "[omim]m-icon-button",
-                    "insertText": "imgs={[${1}]}",
+                    "insertText": "imgs=\"[${1}]\"",
                     "documentation": "---\n\n## imgs:\n\n类型: object\n\n默认值: --\n\n说明: 图片路径\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -317,7 +317,7 @@
                     "label": "color",
                     "kind": 22,
                     "detail": "[omim]m-icon-button",
-                    "insertText": "color='${1}'",
+                    "insertText": "color=\"${1}\"",
                     "documentation": "---\n\n## color:\n\n类型: string\n\n默认值: black\n\n说明: 颜色\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -329,15 +329,6 @@
                     "insertText": "disabled",
                     "documentation": "---\n\n## disabled:\n\n类型: boolean\n\n默认值: --\n\n说明: 使图标按钮失效\n\n---",
                     "sortText": "a",
-                    "cmd": false
-                },
-                "onChange": {
-                    "label": "onChange",
-                    "kind": 2,
-                    "detail": "[omim]m-icon-button",
-                    "insertText": "onChange={${1}}",
-                    "documentation": "---\n\n## onChange:\n\n类型: function\n\n默认值: --\n\n说明: 图标变化触发\n\n---",
-                    "sortText": "c",
                     "cmd": false
                 }
             }
@@ -355,7 +346,7 @@
                     "label": "alt",
                     "kind": 22,
                     "detail": "[omim]m-avatar",
-                    "insertText": "alt='${1}'",
+                    "insertText": "alt=\"${1}\"",
                     "documentation": "---\n\n## alt:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -364,7 +355,7 @@
                     "label": "src",
                     "kind": 22,
                     "detail": "[omim]m-avatar",
-                    "insertText": "src='${1}'",
+                    "insertText": "src=\"${1}\"",
                     "documentation": "---\n\n## src:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -373,7 +364,7 @@
                     "label": "size",
                     "kind": 22,
                     "detail": "[omim]m-avatar",
-                    "insertText": "size={${1}}",
+                    "insertText": "size=\"${1}\"",
                     "documentation": "---\n\n## size:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -391,7 +382,7 @@
                     "label": "icon",
                     "kind": 22,
                     "detail": "[omim]m-avatar",
-                    "insertText": "icon='${1}'",
+                    "insertText": "icon=\"${1}\"",
                     "documentation": "---\n\n## icon:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -400,7 +391,7 @@
                     "label": "color",
                     "kind": 22,
                     "detail": "[omim]m-avatar",
-                    "insertText": "color='${1}'",
+                    "insertText": "color=\"${1}\"",
                     "documentation": "---\n\n## color:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -409,7 +400,7 @@
                     "label": "background-color",
                     "kind": 22,
                     "detail": "[omim]m-avatar",
-                    "insertText": "background-color='${1}'",
+                    "insertText": "background-color=\"${1}\"",
                     "documentation": "---\n\n## background-color:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -429,7 +420,7 @@
                     "label": "size",
                     "kind": 22,
                     "detail": "[omim]m-loading",
-                    "insertText": "size={${1}}",
+                    "insertText": "size=\"${1}\"",
                     "documentation": "---\n\n## size:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -438,7 +429,7 @@
                     "label": "color",
                     "kind": 22,
                     "detail": "[omim]m-loading",
-                    "insertText": "color='${1}'",
+                    "insertText": "color=\"${1}\"",
                     "documentation": "---\n\n## color:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -458,7 +449,7 @@
                     "label": "items",
                     "kind": 22,
                     "detail": "[omim]m-breadcrumb",
-                    "insertText": "items={${1}}",
+                    "insertText": "items=\"${1}\"",
                     "documentation": "---\n\n## items:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -467,7 +458,7 @@
                     "label": "split",
                     "kind": 22,
                     "detail": "[omim]m-breadcrumb",
-                    "insertText": "split='${1}'",
+                    "insertText": "split=\"${1}\"",
                     "documentation": "---\n\n## split:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -523,7 +514,7 @@
                     "label": "name",
                     "kind": 22,
                     "detail": "[omim]m-transition",
-                    "insertText": "name='${1}'",
+                    "insertText": "name=\"${1}\"",
                     "documentation": "---\n\n## name:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -543,7 +534,7 @@
                     "label": "name",
                     "kind": 22,
                     "detail": "[omim]m-transition-group",
-                    "insertText": "name='${1}'",
+                    "insertText": "name=\"${1}\"",
                     "documentation": "---\n\n## name:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -579,7 +570,7 @@
                     "label": "delay",
                     "kind": 22,
                     "detail": "[omim]m-transition-group",
-                    "insertText": "delay={${1}}",
+                    "insertText": "delay=\"${1}\"",
                     "documentation": "---\n\n## delay:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -599,7 +590,7 @@
                     "label": "from",
                     "kind": 22,
                     "detail": "[omim]m-to",
-                    "insertText": "from={${1}}",
+                    "insertText": "from=\"${1}\"",
                     "documentation": "---\n\n## from:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -608,7 +599,7 @@
                     "label": "to",
                     "kind": 22,
                     "detail": "[omim]m-to",
-                    "insertText": "to={${1}}",
+                    "insertText": "to=\"${1}\"",
                     "documentation": "---\n\n## to:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -617,7 +608,7 @@
                     "label": "duration",
                     "kind": 22,
                     "detail": "[omim]m-to",
-                    "insertText": "duration={${1}}",
+                    "insertText": "duration=\"${1}\"",
                     "documentation": "---\n\n## duration:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -626,7 +617,7 @@
                     "label": "delay",
                     "kind": 22,
                     "detail": "[omim]m-to",
-                    "insertText": "delay={${1}}",
+                    "insertText": "delay=\"${1}\"",
                     "documentation": "---\n\n## delay:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -635,7 +626,7 @@
                     "label": "out",
                     "kind": 22,
                     "detail": "[omim]m-to",
-                    "insertText": "out={${1}}",
+                    "insertText": "out=\"${1}\"",
                     "documentation": "---\n\n## out:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -653,7 +644,7 @@
                     "label": "easing",
                     "kind": 22,
                     "detail": "[omim]m-to",
-                    "insertText": "easing='${1|quadratic-in,quadratic-out,quadratic-in-out,cubic-in,cubic-out,cubic-in-out,quartic-in,quartic-out,quartic-in-out,quintic-in,quintic-out,quintic-in-out,sinusoidal-in,sinusoidal-out,sinusoidal-in-out,exponential-in,exponential-out,exponential-in-out,circular-in,circular-out,circular-in-out,elastic-in,elastic-out,elastic-in-out,back-in,back-out,back-in-out,bounce-in,bounce-out,bounce-in-out|}'",
+                    "insertText": "easing=\"${1|quadratic-in,quadratic-out,quadratic-in-out,cubic-in,cubic-out,cubic-in-out,quartic-in,quartic-out,quartic-in-out,quintic-in,quintic-out,quintic-in-out,sinusoidal-in,sinusoidal-out,sinusoidal-in-out,exponential-in,exponential-out,exponential-in-out,circular-in,circular-out,circular-in-out,elastic-in,elastic-out,elastic-in-out,back-in,back-out,back-in-out,bounce-in,bounce-out,bounce-in-out|}\"",
                     "documentation": "---\n\n## easing:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -673,7 +664,7 @@
                     "label": "cols",
                     "kind": 22,
                     "detail": "[omim]m-row",
-                    "insertText": "cols={${1}}",
+                    "insertText": "cols=\"${1}\"",
                     "documentation": "---\n\n## cols:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -682,7 +673,7 @@
                     "label": "gutter",
                     "kind": 22,
                     "detail": "[omim]m-row",
-                    "insertText": "gutter={${1}}",
+                    "insertText": "gutter=\"${1}\"",
                     "documentation": "---\n\n## gutter:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -691,7 +682,7 @@
                     "label": "justify",
                     "kind": 22,
                     "detail": "[omim]m-row",
-                    "insertText": "justify='${1}'",
+                    "insertText": "justify=\"${1}\"",
                     "documentation": "---\n\n## justify:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -700,7 +691,7 @@
                     "label": "align",
                     "kind": 22,
                     "detail": "[omim]m-row",
-                    "insertText": "align='${1}'",
+                    "insertText": "align=\"${1}\"",
                     "documentation": "---\n\n## align:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -709,7 +700,7 @@
                     "label": "type",
                     "kind": 22,
                     "detail": "[omim]m-row",
-                    "insertText": "type='${1}'",
+                    "insertText": "type=\"${1}\"",
                     "documentation": "---\n\n## type:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -729,7 +720,7 @@
                     "label": "z",
                     "kind": 22,
                     "detail": "[omim]m-elevation",
-                    "insertText": "z={${1}}",
+                    "insertText": "z=\"${1}\"",
                     "documentation": "---\n\n## z:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -758,7 +749,7 @@
                     "label": "list",
                     "kind": 22,
                     "detail": "[omim]m-image-list",
-                    "insertText": "list={[\n\t{${1} }${2}\n]}",
+                    "insertText": "list=\"[\n\t{${1} }${2}\n]\"",
                     "documentation": "---\n\n## list:\n\n类型: object\n\n默认值: --\n\n说明: 图片内容\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -767,7 +758,7 @@
                     "label": "src",
                     "kind": 21,
                     "detail": "[omim]m-image-list",
-                    "insertText": "src: '${1}'",
+                    "insertText": "src: \"${1}\"",
                     "documentation": "---\n\n## src:\n\n类型: string\n\n默认值: --\n\n说明: 图片链接 (list 内部属性)\n\n---",
                     "sortText": "b",
                     "cmd": false
@@ -776,7 +767,7 @@
                     "label": "label",
                     "kind": 21,
                     "detail": "[omim]m-image-list",
-                    "insertText": "label: '${1}'",
+                    "insertText": "label: \"${1}\"",
                     "documentation": "---\n\n## label:\n\n类型: string\n\n默认值: --\n\n说明: 图片标签 (list 内部属性)\n\n---",
                     "sortText": "b",
                     "cmd": false
@@ -814,7 +805,7 @@
                     "label": "list",
                     "kind": 22,
                     "detail": "[omim]m-menu",
-                    "insertText": "list={[\n\t{${1} }${2}\n]}",
+                    "insertText": "list=\"[\n\t{${1} }${2}\n]\"",
                     "documentation": "---\n\n## list:\n\n类型: object\n\n默认值: --\n\n说明: 列表内容\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -823,7 +814,7 @@
                     "label": "onSelected",
                     "kind": 2,
                     "detail": "[omim]m-menu",
-                    "insertText": "onSelected={${1}}",
+                    "insertText": "onSelected=\"${1}\"",
                     "documentation": "---\n\n## onSelected:\n\n类型: function\n\n默认值: --\n\n说明: 选择触发\n\n---",
                     "sortText": "c",
                     "cmd": false
@@ -861,7 +852,7 @@
                     "label": "position",
                     "kind": 22,
                     "detail": "[omim]m-menu",
-                    "insertText": "position='${1|left,right,top,bottom|}'",
+                    "insertText": "position=\"${1|left,right,top,bottom|}\"",
                     "documentation": "---\n\n## position:\n\n类型: string\n\n默认值: --\n\n说明: 弹出方向\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -890,7 +881,7 @@
                     "label": "defaultActive",
                     "kind": 22,
                     "detail": "[omim]m-tab",
-                    "insertText": "defaultActive='${1}'",
+                    "insertText": "defaultActive=\"${1}\"",
                     "documentation": "---\n\n## defaultActive:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -899,7 +890,7 @@
                     "label": "width",
                     "kind": 22,
                     "detail": "[omim]m-tab",
-                    "insertText": "width='${1}'",
+                    "insertText": "width=\"${1}\"",
                     "documentation": "---\n\n## width:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -908,7 +899,7 @@
                     "label": "align",
                     "kind": 22,
                     "detail": "[omim]m-tab",
-                    "insertText": "align='${1|start,end,center|}'",
+                    "insertText": "align=\"${1|start,end,center|}\"",
                     "documentation": "---\n\n## align:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -946,27 +937,9 @@
                     "label": "nodes",
                     "kind": 22,
                     "detail": "[omim]m-tab",
-                    "insertText": "nodes={${1}}",
+                    "insertText": "nodes=\"${1}\"",
                     "documentation": "---\n\n## nodes:\n\n类型: object\n\n---",
                     "sortText": "a",
-                    "cmd": false
-                },
-                "onToggle": {
-                    "label": "onToggle",
-                    "kind": 2,
-                    "detail": "[omim]m-tab",
-                    "insertText": "onToggle={${1}}",
-                    "documentation": "---\n\n## onToggle:\n\n类型: function\n\n---",
-                    "sortText": "c",
-                    "cmd": false
-                },
-                "onNodeclick": {
-                    "label": "onNodeclick",
-                    "kind": 2,
-                    "detail": "[omim]m-tab",
-                    "insertText": "onNodeclick={${1}}",
-                    "documentation": "---\n\n## onNodeclick:\n\n类型: function\n\n---",
-                    "sortText": "c",
                     "cmd": false
                 }
             }
@@ -984,7 +957,7 @@
                     "label": "total",
                     "kind": 22,
                     "detail": "[omim]m-pagination",
-                    "insertText": "total={${1}}",
+                    "insertText": "total=\"${1}\"",
                     "documentation": "---\n\n## total:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -993,7 +966,7 @@
                     "label": "pageSize",
                     "kind": 22,
                     "detail": "[omim]m-pagination",
-                    "insertText": "pageSize={${1}}",
+                    "insertText": "pageSize=\"${1}\"",
                     "documentation": "---\n\n## pageSize:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1002,7 +975,7 @@
                     "label": "numDisplay",
                     "kind": 22,
                     "detail": "[omim]m-pagination",
-                    "insertText": "numDisplay={${1}}",
+                    "insertText": "numDisplay=\"${1}\"",
                     "documentation": "---\n\n## numDisplay:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1011,7 +984,7 @@
                     "label": "currentPage",
                     "kind": 22,
                     "detail": "[omim]m-pagination",
-                    "insertText": "currentPage={${1}}",
+                    "insertText": "currentPage=\"${1}\"",
                     "documentation": "---\n\n## currentPage:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1020,7 +993,7 @@
                     "label": "numEdge",
                     "kind": 22,
                     "detail": "[omim]m-pagination",
-                    "insertText": "numEdge={${1}}",
+                    "insertText": "numEdge=\"${1}\"",
                     "documentation": "---\n\n## numEdge:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1029,7 +1002,7 @@
                     "label": "linkTo",
                     "kind": 22,
                     "detail": "[omim]m-pagination",
-                    "insertText": "linkTo='${1}'",
+                    "insertText": "linkTo=\"${1}\"",
                     "documentation": "---\n\n## linkTo:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1038,7 +1011,7 @@
                     "label": "prevText",
                     "kind": 22,
                     "detail": "[omim]m-pagination",
-                    "insertText": "prevText='${1}'",
+                    "insertText": "prevText=\"${1}\"",
                     "documentation": "---\n\n## prevText:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1047,7 +1020,7 @@
                     "label": "nextText",
                     "kind": 22,
                     "detail": "[omim]m-pagination",
-                    "insertText": "nextText='${1}'",
+                    "insertText": "nextText=\"${1}\"",
                     "documentation": "---\n\n## nextText:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1056,7 +1029,7 @@
                     "label": "ellipseText",
                     "kind": 22,
                     "detail": "[omim]m-pagination",
-                    "insertText": "ellipseText='${1}'",
+                    "insertText": "ellipseText=\"${1}\"",
                     "documentation": "---\n\n## ellipseText:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1094,7 +1067,7 @@
                     "label": "heading",
                     "kind": 22,
                     "detail": "[omim]m-top-app-bar",
-                    "insertText": "heading='${1}'",
+                    "insertText": "heading=\"${1}\"",
                     "documentation": "---\n\n## heading:\n\n类型: string\n\n默认值: --\n\n说明: 标题内容\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1166,7 +1139,7 @@
                     "label": "navigations",
                     "kind": 22,
                     "detail": "[omim]m-top-app-bar",
-                    "insertText": "navigations={[${1}]}",
+                    "insertText": "navigations=\"[${1}]\"",
                     "documentation": "---\n\n## navigations:\n\n类型: object\n\n默认值: --\n\n说明: 左侧导航按钮\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1175,7 +1148,7 @@
                     "label": "actionItems",
                     "kind": 22,
                     "detail": "[omim]m-top-app-bar",
-                    "insertText": "actionItems={[${1}]}",
+                    "insertText": "actionItems=\"[${1}]\"",
                     "documentation": "---\n\n## actionItems:\n\n类型: object\n\n默认值: --\n\n说明: 右侧按钮\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1184,7 +1157,7 @@
                     "label": "scrollTarget",
                     "kind": 22,
                     "detail": "[omim]m-top-app-bar",
-                    "insertText": "scrollTarget={${1}}",
+                    "insertText": "scrollTarget=\"${1}\"",
                     "documentation": "---\n\n## scrollTarget:\n\n类型: EventTarget\n\n默认值: window\n\n说明: 设置目标滚动条(JSX 使用)\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1193,27 +1166,9 @@
                     "label": "scrollTargetId",
                     "kind": 22,
                     "detail": "[omim]m-top-app-bar",
-                    "insertText": "scrollTargetId='${1}'",
+                    "insertText": "scrollTargetId=\"${1}\"",
                     "documentation": "---\n\n## scrollTargetId:\n\n类型: string\n\n默认值: window\n\n说明: 设置目标滚动条(原生 js 使用)\n\n---",
                     "sortText": "a",
-                    "cmd": false
-                },
-                "onNavigation": {
-                    "label": "onNavigation",
-                    "kind": 2,
-                    "detail": "[omim]m-top-app-bar",
-                    "insertText": "onNavigation={${1}}",
-                    "documentation": "---\n\n## onNavigation:\n\n类型: function\n\n默认值: --\n\n说明: 单击左侧导航栏触发\n\n---",
-                    "sortText": "c",
-                    "cmd": false
-                },
-                "onAction": {
-                    "label": "onAction",
-                    "kind": 2,
-                    "detail": "[omim]m-top-app-bar",
-                    "insertText": "onAction={${1}}",
-                    "documentation": "---\n\n## onAction:\n\n类型: function\n\n默认值: --\n\n说明: 单击右侧按钮触发\n\n---",
-                    "sortText": "c",
                     "cmd": false
                 }
             }
@@ -1249,7 +1204,7 @@
                     "label": "title",
                     "kind": 22,
                     "detail": "[omim]m-dialog",
-                    "insertText": "title='${1}'",
+                    "insertText": "title=\"${1}\"",
                     "documentation": "---\n\n## title:\n\n类型: string\n\n默认值: --\n\n说明: 对话框标题\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1258,7 +1213,7 @@
                     "label": "cancelButton",
                     "kind": 22,
                     "detail": "[omim]m-dialog",
-                    "insertText": "cancelButton={{${1}}}",
+                    "insertText": "cancelButton=\"{${1}}\"",
                     "documentation": "---\n\n## cancelButton:\n\n类型: object\n\n默认值: --\n\n说明: 对话框取消按钮内容，支持所有 m-button 属性\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1267,72 +1222,9 @@
                     "label": "confirmButton",
                     "kind": 22,
                     "detail": "[omim]m-dialog",
-                    "insertText": "confirmButton={{${1}}}",
+                    "insertText": "confirmButton=\"{${1}}\"",
                     "documentation": "---\n\n## confirmButton:\n\n类型: object\n\n默认值: --\n\n说明: 对话框确认按钮内容，支持所有 m-button 属性\n\n---",
                     "sortText": "a",
-                    "cmd": false
-                },
-                "onOpening": {
-                    "label": "onOpening",
-                    "kind": 2,
-                    "detail": "[omim]m-dialog",
-                    "insertText": "onOpening={${1}}",
-                    "documentation": "---\n\n## onOpening:\n\n类型: function\n\n默认值: --\n\n说明: 对话框打开过程触发\n\n---",
-                    "sortText": "c",
-                    "cmd": false
-                },
-                "onOpened": {
-                    "label": "onOpened",
-                    "kind": 2,
-                    "detail": "[omim]m-dialog",
-                    "insertText": "onOpened={${1}}",
-                    "documentation": "---\n\n## onOpened:\n\n类型: function\n\n默认值: --\n\n说明: 对话框打开完成后触发\n\n---",
-                    "sortText": "c",
-                    "cmd": false
-                },
-                "onClosing": {
-                    "label": "onClosing",
-                    "kind": 2,
-                    "detail": "[omim]m-dialog",
-                    "insertText": "onClosing={${1}}",
-                    "documentation": "---\n\n## onClosing:\n\n类型: function\n\n默认值: --\n\n说明: 对话框关闭过程触发\n\n---",
-                    "sortText": "c",
-                    "cmd": false
-                },
-                "onClosed": {
-                    "label": "onClosed",
-                    "kind": 2,
-                    "detail": "[omim]m-dialog",
-                    "insertText": "onClosed={${1}}",
-                    "documentation": "---\n\n## onClosed:\n\n类型: function\n\n默认值: --\n\n说明: 对话框关闭完成触发\n\n---",
-                    "sortText": "c",
-                    "cmd": false
-                },
-                "onScrim": {
-                    "label": "onScrim",
-                    "kind": 2,
-                    "detail": "[omim]m-dialog",
-                    "insertText": "onScrim={${1}}",
-                    "documentation": "---\n\n## onScrim:\n\n类型: function\n\n默认值: --\n\n说明: 单击对话框周围黑色透明区域触发\n\n---",
-                    "sortText": "c",
-                    "cmd": false
-                },
-                "onCancel": {
-                    "label": "onCancel",
-                    "kind": 2,
-                    "detail": "[omim]m-dialog",
-                    "insertText": "onCancel={${1}}",
-                    "documentation": "---\n\n## onCancel:\n\n类型: function\n\n默认值: --\n\n说明: 单击对话框取消按钮触发\n\n---",
-                    "sortText": "c",
-                    "cmd": false
-                },
-                "onConfirm": {
-                    "label": "onConfirm",
-                    "kind": 2,
-                    "detail": "[omim]m-dialog",
-                    "insertText": "onConfirm={${1}}",
-                    "documentation": "---\n\n## onConfirm:\n\n类型: function\n\n默认值: --\n\n说明: 单击对话框确认按钮触发\n\n---",
-                    "sortText": "c",
                     "cmd": false
                 },
                 "ripple": {
@@ -1384,7 +1276,7 @@
                     "label": "svgIcon",
                     "kind": 21,
                     "detail": "[omim]m-dialog",
-                    "insertText": "svgIcon: {${1}}",
+                    "insertText": "svgIcon: \"${1}\"",
                     "documentation": "---\n\n## svgIcon:\n\n类型: object\n\n默认值: --\n\n说明: svg图标 (cancelButton 和 confirmButton 内部元素)\n\n---",
                     "sortText": "b",
                     "cmd": false
@@ -1467,7 +1359,7 @@
                     "label": "msg",
                     "kind": 22,
                     "detail": "[omim]m-snackbar",
-                    "insertText": "msg='${1}'",
+                    "insertText": "msg=\"${1}\"",
                     "documentation": "---\n\n## msg:\n\n类型: string\n\n默认值: --\n\n说明: 提示内容\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1476,7 +1368,7 @@
                     "label": "buttonText",
                     "kind": 22,
                     "detail": "[omim]m-snackbar",
-                    "insertText": "buttonText='${1}'",
+                    "insertText": "buttonText=\"${1}\"",
                     "documentation": "---\n\n## buttonText:\n\n类型: string\n\n默认值: --\n\n说明: 按钮文本\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1488,42 +1380,6 @@
                     "insertText": "leading",
                     "documentation": "---\n\n## leading:\n\n类型: boolean\n\n默认值: --\n\n说明: 弹窗出现在主窗口角落\n\n---",
                     "sortText": "a",
-                    "cmd": false
-                },
-                "onOpened": {
-                    "label": "onOpened",
-                    "kind": 2,
-                    "detail": "[omim]m-snackbar",
-                    "insertText": "onOpened",
-                    "documentation": "---\n\n## onOpened:\n\n类型: function\n\n默认值: --\n\n说明: 打开完成后触发\n\n---",
-                    "sortText": "c",
-                    "cmd": false
-                },
-                "onClosed": {
-                    "label": "onClosed",
-                    "kind": 2,
-                    "detail": "[omim]m-snackbar",
-                    "insertText": "onClosed",
-                    "documentation": "---\n\n## onClosed:\n\n类型: function\n\n默认值: --\n\n说明: 关闭完成后触发\n\n---",
-                    "sortText": "c",
-                    "cmd": false
-                },
-                "onButtonClick": {
-                    "label": "onButtonClick",
-                    "kind": 2,
-                    "detail": "[omim]m-snackbar",
-                    "insertText": "onButtonClick",
-                    "documentation": "---\n\n## onButtonClick:\n\n类型: function\n\n默认值: --\n\n说明: 单击按钮触发\n\n---",
-                    "sortText": "c",
-                    "cmd": false
-                },
-                "onIconButtonClick": {
-                    "label": "onIconButtonClick",
-                    "kind": 2,
-                    "detail": "[omim]m-snackbar",
-                    "insertText": "onIconButtonClick",
-                    "documentation": "---\n\n## onIconButtonClick:\n\n类型: function\n\n默认值: --\n\n说明: 单击图标按钮触发\n\n---",
-                    "sortText": "c",
                     "cmd": false
                 }
             }
@@ -1649,7 +1505,7 @@
                     "label": "default",
                     "kind": 22,
                     "detail": "[omim]m-color-picker",
-                    "insertText": "default='${1}'",
+                    "insertText": "default=\"${1}\"",
                     "documentation": "---\n\n## default:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1658,7 +1514,7 @@
                     "label": "swatches",
                     "kind": 22,
                     "detail": "[omim]m-color-picker",
-                    "insertText": "swatches={[${1}]}",
+                    "insertText": "swatches=\"[${1}]\"",
                     "documentation": "---\n\n## swatches:\n\n类型: string[]\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1676,7 +1532,7 @@
                     "label": "strings",
                     "kind": 22,
                     "detail": "[omim]m-color-picker",
-                    "insertText": "strings={{${1}}}",
+                    "insertText": "strings=\"{${1}}\"",
                     "documentation": "---\n\n## strings:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1685,7 +1541,7 @@
                     "label": "width",
                     "kind": 22,
                     "detail": "[omim]m-color-picker",
-                    "insertText": "width='${1}'",
+                    "insertText": "width=\"${1}\"",
                     "documentation": "---\n\n## width:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1732,7 +1588,7 @@
                     "label": "x",
                     "kind": 22,
                     "detail": "[omim]m-snackbar",
-                    "insertText": "x={${1}}",
+                    "insertText": "x=\"${1}\"",
                     "documentation": "---\n\n## x:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1741,7 +1597,7 @@
                     "label": "y",
                     "kind": 22,
                     "detail": "[omim]m-snackbar",
-                    "insertText": "y={${1}}",
+                    "insertText": "y=\"${1}\"",
                     "documentation": "---\n\n## y:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1750,7 +1606,7 @@
                     "label": "direction",
                     "kind": 22,
                     "detail": "[omim]m-snackbar",
-                    "insertText": "direction='${1}'",
+                    "insertText": "direction=\"${1}\"",
                     "documentation": "---\n\n## direction:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1759,7 +1615,7 @@
                     "label": "target",
                     "kind": 22,
                     "detail": "[omim]m-snackbar",
-                    "insertText": "target='${1}'",
+                    "insertText": "target=\"${1}\"",
                     "documentation": "---\n\n## target:\n\n类型: string | HTMLElement\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1824,7 +1680,7 @@
                     "label": "helperText",
                     "kind": 22,
                     "detail": "[omim]m-text-field",
-                    "insertText": "helperText='${1}'",
+                    "insertText": "helperText=\"${1}\"",
                     "documentation": "---\n\n## helperText:\n\n类型: string\n\n默认值: --\n\n说明: 帮助文本\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1851,7 +1707,7 @@
                     "label": "path",
                     "kind": 22,
                     "detail": "[omim]m-text-field",
-                    "insertText": "path='${1}'",
+                    "insertText": "path=\"${1}\"",
                     "documentation": "---\n\n## path:\n\n类型: string\n\n默认值: --\n\n说明: 图标 path\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1860,7 +1716,7 @@
                     "label": "paths",
                     "kind": 22,
                     "detail": "[omim]m-text-field",
-                    "insertText": "paths={{${1}}}",
+                    "insertText": "paths=\"{${1}}\"",
                     "documentation": "---\n\n## paths:\n\n类型: object\n\n默认值: --\n\n说明: 多图标 path\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1869,7 +1725,7 @@
                     "label": "label",
                     "kind": 22,
                     "detail": "[omim]m-text-field",
-                    "insertText": "label='${1}'",
+                    "insertText": "label=\"${1}\"",
                     "documentation": "---\n\n## label:\n\n类型: string\n\n默认值: --\n\n说明: 默认标签\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1878,7 +1734,7 @@
                     "label": "required",
                     "kind": 22,
                     "detail": "[omim]m-text-field",
-                    "insertText": "required='${1}'",
+                    "insertText": "required=\"${1}\"",
                     "documentation": "---\n\n## required:\n\n类型: boolean\n\n默认值: --\n\n说明: 检测输入框是否为空\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1887,7 +1743,7 @@
                     "label": "pattern",
                     "kind": 22,
                     "detail": "[omim]m-text-field",
-                    "insertText": "pattern='${1}'",
+                    "insertText": "pattern=\"${1}\"",
                     "documentation": "---\n\n## pattern:\n\n类型: string\n\n默认值: --\n\n说明: 输入值限制及检测\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1896,7 +1752,7 @@
                     "label": "pattern",
                     "kind": 22,
                     "detail": "[omim]m-text-field",
-                    "insertText": "pattern='${1}'",
+                    "insertText": "pattern=\"${1}\"",
                     "documentation": "---\n\n## pattern:\n\n类型: string\n\n默认值: --\n\n说明: 输入值限制及检测\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1943,7 +1799,7 @@
                     "label": "label",
                     "kind": 22,
                     "detail": "[omim]m-select",
-                    "insertText": "label='${1}'",
+                    "insertText": "label=\"${1}\"",
                     "documentation": "---\n\n## label:\n\n类型: string\n\n默认值: --\n\n说明: 选框标题文本\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1952,7 +1808,7 @@
                     "label": "menu",
                     "kind": 22,
                     "detail": "[omim]m-select",
-                    "insertText": "menu={[\n\t{${1} },\n]}",
+                    "insertText": "menu=\"[\n\t{${1} },\n]\"",
                     "documentation": "---\n\n## menu:\n\n类型: object\n\n默认值: --\n\n说明: 菜单内容\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -1974,15 +1830,6 @@
                     "documentation": "---\n\n## value:\n\n类型: string\n\n默认值: --\n\n说明: 列表值 (menu 内部属性)\n\n---",
                     "sortText": "b",
                     "cmd": false
-                },
-                "onChange": {
-                    "label": "onChange",
-                    "kind": 2,
-                    "detail": "[omim]m-select",
-                    "insertText": "onChange={${1}}",
-                    "documentation": "---\n\n## onChange:\n\n类型: function\n\n默认值: --\n\n说明: 选择触发\n\n---",
-                    "sortText": "c",
-                    "cmd": false
                 }
             }
         },
@@ -1999,7 +1846,7 @@
                     "label": "label",
                     "kind": 22,
                     "detail": "[omim]m-checkbox",
-                    "insertText": "label='${1}'",
+                    "insertText": "label=\"${1}\"",
                     "documentation": "---\n\n## label:\n\n类型: string\n\n默认值: --\n\n说明: 复选框右侧内容\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2035,7 +1882,7 @@
                     "label": "value",
                     "kind": 22,
                     "detail": "[omim]m-checkbox",
-                    "insertText": "value='${1}'",
+                    "insertText": "value=\"${1}\"",
                     "documentation": "---\n\n## value:\n\n类型: string\n\n默认值: --\n\n说明: 复选框的值\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2055,7 +1902,7 @@
                     "label": "label",
                     "kind": 22,
                     "detail": "[omim]m-checkbox",
-                    "insertText": "label='${1}'",
+                    "insertText": "label=\"${1}\"",
                     "documentation": "---\n\n## label:\n\n类型: string\n\n默认值: --\n\n说明: 右侧文本内容\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2082,7 +1929,7 @@
                     "label": "value",
                     "kind": 22,
                     "detail": "[omim]m-radio",
-                    "insertText": "value='${1}'",
+                    "insertText": "value=\"${1}\"",
                     "documentation": "---\n\n## value:\n\n类型: string\n\n默认值: --\n\n说明: 单选按钮的值\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2091,7 +1938,7 @@
                     "label": "name",
                     "kind": 22,
                     "detail": "[omim]m-radio",
-                    "insertText": "name='${1}'",
+                    "insertText": "name=\"${1}\"",
                     "documentation": "---\n\n## name:\n\n类型: string\n\n默认值: --\n\n说明: 为单选按钮分组\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2100,7 +1947,7 @@
                     "label": "onSelected",
                     "kind": 2,
                     "detail": "[omim]m-radio",
-                    "insertText": "onSelected={${1}}",
+                    "insertText": "onSelected=\"${1}\"",
                     "documentation": "---\n\n## onSelected:\n\n类型: function\n\n默认值: --\n\n说明: 选择触发\n\n---",
                     "sortText": "c",
                     "cmd": false
@@ -2120,7 +1967,7 @@
                     "label": "label",
                     "kind": 22,
                     "detail": "[omim]m-switch",
-                    "insertText": "label='${1}'",
+                    "insertText": "label=\"${1}\"",
                     "documentation": "---\n\n## label:\n\n类型: string\n\n默认值: --\n\n说明: 右侧文本内容\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2147,7 +1994,7 @@
                     "label": "value",
                     "kind": 22,
                     "detail": "[omim]m-switch",
-                    "insertText": "value='${1}'",
+                    "insertText": "value=\"${1}\"",
                     "documentation": "---\n\n## value:\n\n类型: string\n\n默认值: --\n\n说明: 值\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2176,7 +2023,7 @@
                     "label": "type",
                     "kind": 22,
                     "detail": "[omim]m-date-time-picker",
-                    "insertText": "type='${1|date,time|}'",
+                    "insertText": "type=\"${1|date,time|}\"",
                     "documentation": "---\n\n## type:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2185,7 +2032,7 @@
                     "label": "init",
                     "kind": 22,
                     "detail": "[omim]m-date-time-picker",
-                    "insertText": "init='${1}'",
+                    "insertText": "init=\"${1}\"",
                     "documentation": "---\n\n## init:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2194,7 +2041,7 @@
                     "label": "past",
                     "kind": 22,
                     "detail": "[omim]m-date-time-picker",
-                    "insertText": "past='${1}'",
+                    "insertText": "past=\"${1}\"",
                     "documentation": "---\n\n## past:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2203,7 +2050,7 @@
                     "label": "future",
                     "kind": 22,
                     "detail": "[omim]m-date-time-picker",
-                    "insertText": "future='${1}'",
+                    "insertText": "future=\"${1}\"",
                     "documentation": "---\n\n## future:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2212,7 +2059,7 @@
                     "label": "lan",
                     "kind": 22,
                     "detail": "[omim]m-date-time-picker",
-                    "insertText": "lan='${1}'",
+                    "insertText": "lan=\"${1}\"",
                     "documentation": "---\n\n## lan:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2232,7 +2079,7 @@
                     "label": "label",
                     "kind": 22,
                     "detail": "[omim]m-picker",
-                    "insertText": "label='${1}'",
+                    "insertText": "label=\"${1}\"",
                     "documentation": "---\n\n## label:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2241,7 +2088,7 @@
                     "label": "type",
                     "kind": 22,
                     "detail": "[omim]m-picker",
-                    "insertText": "type='${1|date,time,color,datetime-local|}'",
+                    "insertText": "type=\"${1|date,time,color,datetime-local|}\"",
                     "documentation": "---\n\n## type:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2261,7 +2108,7 @@
                     "label": "left",
                     "kind": 22,
                     "detail": "[omim]m-transfer-list",
-                    "insertText": "left={[{${1}}]}",
+                    "insertText": "left=\"[{${1}}]\"",
                     "documentation": "---\n\n## left:\n\n类型: object[]\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2270,7 +2117,7 @@
                     "label": "right",
                     "kind": 22,
                     "detail": "[omim]m-transfer-list",
-                    "insertText": "right={[{${1}}]}",
+                    "insertText": "right=\"[{${1}}]\"",
                     "documentation": "---\n\n## right:\n\n类型: object[]\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2290,7 +2137,7 @@
                     "label": "items",
                     "kind": 22,
                     "detail": "[omim]m-list",
-                    "insertText": "items={[{${1}}]}",
+                    "insertText": "items=\"[{${1}}]\"",
                     "documentation": "---\n\n## items:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2357,15 +2204,6 @@
                     "documentation": "---\n\n## divider:\n\n类型: boolean (items 内部属性)\n\n---",
                     "sortText": "b",
                     "cmd": false
-                },
-                "onItemClick": {
-                    "label": "onItemClick",
-                    "kind": 2,
-                    "detail": "[omim]m-list",
-                    "insertText": "onItemClick={${1}}",
-                    "documentation": "---\n\n## onItemClick:\n\n类型: function\n\n---",
-                    "sortText": "c",
-                    "cmd": false
                 }
             }
         },
@@ -2382,7 +2220,7 @@
                     "label": "dataSource",
                     "kind": 22,
                     "detail": "[omim]m-table",
-                    "insertText": "dataSource={${1}}",
+                    "insertText": "dataSource=\"${1}\"",
                     "documentation": "---\n\n## dataSource:\n\n类型: any[]\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2391,7 +2229,7 @@
                     "label": "columns",
                     "kind": 22,
                     "detail": "[omim]m-table",
-                    "insertText": "columns={${1}}",
+                    "insertText": "columns=\"${1}\"",
                     "documentation": "---\n\n## columns:\n\n类型: any[]\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2420,7 +2258,7 @@
                     "label": "buffer",
                     "kind": 22,
                     "detail": "[omim]m-linear-progress",
-                    "insertText": "buffer={${1}}",
+                    "insertText": "buffer=\"${1}\"",
                     "documentation": "---\n\n## buffer:\n\n类型: number\n\n默认值: --\n\n说明: 缓冲区进度值\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2429,7 +2267,7 @@
                     "label": "value",
                     "kind": 22,
                     "detail": "[omim]m-linear-progress",
-                    "insertText": "value={${1}}",
+                    "insertText": "value=\"${1}\"",
                     "documentation": "---\n\n## value:\n\n类型: number\n\n默认值: --\n\n说明: 主进度值\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2476,7 +2314,7 @@
                     "label": "value",
                     "kind": 22,
                     "detail": "[omim]m-slider",
-                    "insertText": "value={${1}}",
+                    "insertText": "value=\"${1}\"",
                     "documentation": "---\n\n## value:\n\n类型: number\n\n默认值: --\n\n说明: 滑块初始值\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2494,7 +2332,7 @@
                     "label": "min",
                     "kind": 22,
                     "detail": "[omim]m-slider",
-                    "insertText": "min={${1}}",
+                    "insertText": "min=\"${1}\"",
                     "documentation": "---\n\n## min:\n\n类型: number\n\n默认值: --\n\n说明: 最小值\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2503,7 +2341,7 @@
                     "label": "max",
                     "kind": 22,
                     "detail": "[omim]m-slider",
-                    "insertText": "max={${1}}",
+                    "insertText": "max=\"${1}\"",
                     "documentation": "---\n\n## max:\n\n类型: number\n\n默认值: --\n\n说明: 最小值\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2512,7 +2350,7 @@
                     "label": "step",
                     "kind": 22,
                     "detail": "[omim]m-slider",
-                    "insertText": "step={${1}}",
+                    "insertText": "step=\"${1}\"",
                     "documentation": "---\n\n## step:\n\n类型: number\n\n默认值: --\n\n说明: 跨度\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2530,7 +2368,7 @@
                     "label": "onChange",
                     "kind": 2,
                     "detail": "[omim]m-slider",
-                    "insertText": "onChange={${1}}",
+                    "insertText": "onChange=\"${1}\"",
                     "documentation": "---\n\n## onChange:\n\n类型: function\n\n默认值: --\n\n说明: 选择触发\n\n---",
                     "sortText": "c",
                     "cmd": false
@@ -2586,7 +2424,7 @@
                     "label": "chips",
                     "kind": 22,
                     "detail": "[omim]m-chips",
-                    "insertText": "chips={${1}}",
+                    "insertText": "chips=\"${1}\"",
                     "documentation": "---\n\n## chips:\n\n类型: object\n\n默认值: --\n\n说明: 自定义标签内容\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2622,7 +2460,7 @@
                     "label": "leading",
                     "kind": 21,
                     "detail": "[omim]m-chips",
-                    "insertText": "leading: {${1}}",
+                    "insertText": "leading: \"${1}\"",
                     "documentation": "---\n\n## leading:\n\n类型: object (chips 内部属性)\n\n---",
                     "sortText": "b",
                     "cmd": false
@@ -2631,7 +2469,7 @@
                     "label": "icon",
                     "kind": 21,
                     "detail": "[omim]m-chips",
-                    "insertText": "icon: {${1}}",
+                    "insertText": "icon: \"${1}\"",
                     "documentation": "---\n\n## icon:\n\n类型: object (leading 内部属性)\n\n---",
                     "sortText": "b",
                     "cmd": false
@@ -2678,7 +2516,7 @@
                     "label": "type",
                     "kind": 22,
                     "detail": "[omim]m-tag",
-                    "insertText": "type='${1}'",
+                    "insertText": "type=\"${1}\"",
                     "documentation": "---\n\n## type:\n\n类型: string\n\n默认值: --\n\n说明: 标签类型\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2687,7 +2525,7 @@
                     "label": "size",
                     "kind": 22,
                     "detail": "[omim]m-tag",
-                    "insertText": "size='${1}'",
+                    "insertText": "size=\"${1}\"",
                     "documentation": "---\n\n## size:\n\n类型: string\n\n默认值: --\n\n说明: 标签大小\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2696,7 +2534,7 @@
                     "label": "icon",
                     "kind": 22,
                     "detail": "[omim]m-tag",
-                    "insertText": "icon='${1}'",
+                    "insertText": "icon=\"${1}\"",
                     "documentation": "---\n\n## icon:\n\n类型: string\n\n默认值: --\n\n说明: 标签图标\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2705,7 +2543,7 @@
                     "label": "svgIcon",
                     "kind": 22,
                     "detail": "[omim]m-tag",
-                    "insertText": "svgIcon={${1}}",
+                    "insertText": "svgIcon=\"${1}\"",
                     "documentation": "---\n\n## svgIcon:\n\n类型: object\n\n默认值: --\n\n说明: svg data\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2734,7 +2572,7 @@
                     "label": "content",
                     "kind": 22,
                     "detail": "[omim]m-badge",
-                    "insertText": "content='${1}'",
+                    "insertText": "content=\"${1}\"",
                     "documentation": "---\n\n## content:\n\n类型: string\n\n默认值: --\n\n说明: 自定义徽章内容\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2743,7 +2581,7 @@
                     "label": "x",
                     "kind": 22,
                     "detail": "[omim]m-badge",
-                    "insertText": "x={${1}}",
+                    "insertText": "x=\"${1}\"",
                     "documentation": "---\n\n## x:\n\n类型: number\n\n默认值: --\n\n说明: 徽章横向偏移量\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2752,7 +2590,7 @@
                     "label": "y",
                     "kind": 22,
                     "detail": "[omim]m-badge",
-                    "insertText": "y={${1}}",
+                    "insertText": "y=\"${1}\"",
                     "documentation": "---\n\n## y:\n\n类型: number\n\n默认值: --\n\n说明: 徽章竖向偏移量\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2772,7 +2610,7 @@
                     "label": "node",
                     "kind": 22,
                     "detail": "[omim]m-tree",
-                    "insertText": "node={${1}}",
+                    "insertText": "node=\"${1}\"",
                     "documentation": "---\n\n## node:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2784,33 +2622,6 @@
                     "insertText": "checkbox",
                     "documentation": "---\n\n## checkbox:\n\n类型: boolean\n\n---",
                     "sortText": "a",
-                    "cmd": false
-                },
-                "onToggle": {
-                    "label": "onToggle",
-                    "kind": 2,
-                    "detail": "[omim]m-tree",
-                    "insertText": "onToggle={${1}}",
-                    "documentation": "---\n\n## onToggle:\n\n类型: function\n\n---",
-                    "sortText": "c",
-                    "cmd": false
-                },
-                "onNodeclick": {
-                    "label": "onNodeclick",
-                    "kind": 2,
-                    "detail": "[omim]m-tree",
-                    "insertText": "onNodeclick={${1}}",
-                    "documentation": "---\n\n## onNodeclick:\n\n类型: function\n\n---",
-                    "sortText": "c",
-                    "cmd": false
-                },
-                "onCheck": {
-                    "label": "onCheck",
-                    "kind": 2,
-                    "detail": "[omim]m-tree",
-                    "insertText": "onCheck={${1}}",
-                    "documentation": "---\n\n## onCheck:\n\n类型: function\n\n---",
-                    "sortText": "c",
                     "cmd": false
                 }
             }
@@ -2828,7 +2639,7 @@
                     "label": "width",
                     "kind": 22,
                     "detail": "[omim]m-card",
-                    "insertText": "width='${1}'",
+                    "insertText": "width=\"${1}\"",
                     "documentation": "---\n\n## width:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2837,7 +2648,7 @@
                     "label": "img",
                     "kind": 22,
                     "detail": "[omim]m-card",
-                    "insertText": "img='${1}'",
+                    "insertText": "img=\"${1}\"",
                     "documentation": "---\n\n## img:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2846,7 +2657,7 @@
                     "label": "title",
                     "kind": 22,
                     "detail": "[omim]m-card",
-                    "insertText": "title='${1}'",
+                    "insertText": "title=\"${1}\"",
                     "documentation": "---\n\n## title:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2855,7 +2666,7 @@
                     "label": "subTitle",
                     "kind": 22,
                     "detail": "[omim]m-card",
-                    "insertText": "subTitle='${1}'",
+                    "insertText": "subTitle=\"${1}\"",
                     "documentation": "---\n\n## subTitle:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2864,7 +2675,7 @@
                     "label": "content",
                     "kind": 22,
                     "detail": "[omim]m-card",
-                    "insertText": "content='${1}'",
+                    "insertText": "content=\"${1}\"",
                     "documentation": "---\n\n## content:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2873,7 +2684,7 @@
                     "label": "buttons",
                     "kind": 22,
                     "detail": "[omim]m-card",
-                    "insertText": "buttons={${1}}",
+                    "insertText": "buttons=\"${1}\"",
                     "documentation": "---\n\n## buttons:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2882,7 +2693,7 @@
                     "label": "icons",
                     "kind": 22,
                     "detail": "[omim]m-card",
-                    "insertText": "icons={[${1}]}",
+                    "insertText": "icons=\"[${1}]\"",
                     "documentation": "---\n\n## icons:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2904,24 +2715,6 @@
                     "documentation": "---\n\n## overImg:\n\n类型: boolean\n\n---",
                     "sortText": "a",
                     "cmd": false
-                },
-                "onButtonAction": {
-                    "label": "onButtonAction",
-                    "kind": 2,
-                    "detail": "[omim]m-card",
-                    "insertText": "onButtonAction={${1}}",
-                    "documentation": "---\n\n## onButtonAction:\n\n类型: function\n\n---",
-                    "sortText": "c",
-                    "cmd": false
-                },
-                "onIconAction": {
-                    "label": "onIconAction",
-                    "kind": 2,
-                    "detail": "[omim]m-card",
-                    "insertText": "onIconAction={${1}}",
-                    "documentation": "---\n\n## onIconAction:\n\n类型: function\n\n---",
-                    "sortText": "c",
-                    "cmd": false
                 }
             }
         },
@@ -2938,7 +2731,7 @@
                     "label": "type",
                     "kind": 22,
                     "detail": "[omim]m-path-progress",
-                    "insertText": "type='${1}'",
+                    "insertText": "type=\"${1}\"",
                     "documentation": "---\n\n## type:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2947,7 +2740,7 @@
                     "label": "options",
                     "kind": 22,
                     "detail": "[omim]m-path-progress",
-                    "insertText": "options={${1}}",
+                    "insertText": "options=\"${1}\"",
                     "documentation": "---\n\n## options:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2956,7 +2749,7 @@
                     "label": "progress",
                     "kind": 22,
                     "detail": "[omim]m-path-progress",
-                    "insertText": "progress={${1}}",
+                    "insertText": "progress=\"${1}\"",
                     "documentation": "---\n\n## progress:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2965,7 +2758,7 @@
                     "label": "text",
                     "kind": 22,
                     "detail": "[omim]m-path-progress",
-                    "insertText": "text='${1}'",
+                    "insertText": "text=\"${1}\"",
                     "documentation": "---\n\n## text:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -2983,7 +2776,7 @@
                     "label": "containerStyle",
                     "kind": 22,
                     "detail": "[omim]m-path-progress",
-                    "insertText": "containerStyle={${1}}",
+                    "insertText": "containerStyle=\"${1}\"",
                     "documentation": "---\n\n## containerStyle:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3048,7 +2841,7 @@
                     "label": "elevation",
                     "kind": 22,
                     "detail": "[omim]m-paper",
-                    "insertText": "elevation={${1}}",
+                    "insertText": "elevation=\"${1}\"",
                     "documentation": "---\n\n## elevation:\n\n类型: number\n\n默认值: 1\n\n说明: 阴影深度，对应 dp 规范。它接受 0 到 24 之间的值。\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3077,7 +2870,7 @@
                     "label": "items",
                     "kind": 22,
                     "detail": "[omim]m-step",
-                    "insertText": "items={${1}}",
+                    "insertText": "items=\"${1}\"",
                     "documentation": "---\n\n## items:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3133,7 +2926,7 @@
                     "label": "color",
                     "kind": 22,
                     "detail": "[omim]m-simple-card",
-                    "insertText": "color='${1}'",
+                    "insertText": "color=\"${1}\"",
                     "documentation": "---\n\n## color:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3142,7 +2935,7 @@
                     "label": "path",
                     "kind": 22,
                     "detail": "[omim]m-simple-card",
-                    "insertText": "path='${1}'",
+                    "insertText": "path=\"${1}\"",
                     "documentation": "---\n\n## path:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3151,7 +2944,7 @@
                     "label": "info",
                     "kind": 22,
                     "detail": "[omim]m-simple-card",
-                    "insertText": "info='${1}'",
+                    "insertText": "info=\"${1}\"",
                     "documentation": "---\n\n## info:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3160,7 +2953,7 @@
                     "label": "caption",
                     "kind": 22,
                     "detail": "[omim]m-simple-card",
-                    "insertText": "caption='${1}'",
+                    "insertText": "caption=\"${1}\"",
                     "documentation": "---\n\n## caption:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3174,18 +2967,7 @@
             "insertText": "<m-editor${1}>${2}</m-editor>",
             "documentation": "---\n\n## Editor\n\n简介：富文本编辑器。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/editor?index=7&subIndex=13 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/editor?index=7&subIndex=13 '官网链接')\n\n---\n\n## Demo\n\n```jsx\nimport { render, h } from 'omi'\nimport '@omim/core/editor'\n\nrender(\n  <div>\n    <m-editor onTextChange={onTextChange}>\n      <h1 class=\"ql-align-center\">Quill Rich Text Editor</h1>\n      <p><br /></p>\n      <p>Quill is a free, <a href=\"https://github.com/quilljs/quill/\">open source</a> WYSIWYG editor built for the modern web. With its <a href=\"https://quilljs.com/docs/modules/\">modular architecture</a> and expressive <a href=\"https://quilljs.com/docs/api/\">API</a>, it is completely customizable to fit any need.</p>\n      <p><br /></p>\n      <iframe class=\"ql-video ql-align-center\" src=\"https://player.vimeo.com/video/253905163\" width=\"500\" height=\"280\" allowfullscreen></iframe>\n      <p><br /></p>\n      <h2 class=\"ql-align-center\">Getting Started is Easy</h2>\n    </m-editor>\n  </div>, 'body')\n\nfunction onTextChange(evt) {\n  console.log(evt)\n}\n```\n\n---",
             "sortText": "a",
-            "cmd": false,
-            "attributes": {
-                "onTextChange": {
-                    "label": "onTextChange",
-                    "kind": 2,
-                    "detail": "[omim]m-editor",
-                    "insertText": "onTextChange={${1}}",
-                    "documentation": "---\n\n## onTextChange:\n\n类型: function\n\n---",
-                    "sortText": "c",
-                    "cmd": false
-                }
-            }
+            "cmd": false
         },
         "m-spreadsheet": {
             "label": "m-spreadsheet",
@@ -3200,7 +2982,7 @@
                     "label": "width",
                     "kind": 22,
                     "detail": "[omim]m-spreadsheet",
-                    "insertText": "width={${1}}",
+                    "insertText": "width=\"${1}\"",
                     "documentation": "---\n\n## width:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3209,7 +2991,7 @@
                     "label": "height",
                     "kind": 22,
                     "detail": "[omim]m-spreadsheet",
-                    "insertText": "height={${1}}",
+                    "insertText": "height=\"${1}\"",
                     "documentation": "---\n\n## height:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3218,7 +3000,7 @@
                     "label": "data",
                     "kind": 22,
                     "detail": "[omim]m-spreadsheet",
-                    "insertText": "data={${1}}",
+                    "insertText": "data=\"${1}\"",
                     "documentation": "---\n\n## data:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3238,7 +3020,7 @@
                     "label": "total",
                     "kind": 22,
                     "detail": "[omim]m-rate",
-                    "insertText": "total={${1}}",
+                    "insertText": "total=\"${1}\"",
                     "documentation": "---\n\n## total:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3256,7 +3038,7 @@
                     "label": "value",
                     "kind": 22,
                     "detail": "[omim]m-rate",
-                    "insertText": "value={${1}}",
+                    "insertText": "value=\"${1}\"",
                     "documentation": "---\n\n## value:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3265,7 +3047,7 @@
                     "label": "color",
                     "kind": 22,
                     "detail": "[omim]m-rate",
-                    "insertText": "color='${1}'",
+                    "insertText": "color=\"${1}\"",
                     "documentation": "---\n\n## color:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3285,7 +3067,7 @@
                     "label": "data",
                     "kind": 22,
                     "detail": "[omim]m-bar",
-                    "insertText": "data={${1}}",
+                    "insertText": "data=\"${1}\"",
                     "documentation": "---\n\n## data:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3294,7 +3076,7 @@
                     "label": "options",
                     "kind": 22,
                     "detail": "[omim]m-bar",
-                    "insertText": "options={${1}}",
+                    "insertText": "options=\"${1}\"",
                     "documentation": "---\n\n## options:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3303,7 +3085,7 @@
                     "label": "width",
                     "kind": 22,
                     "detail": "[omim]m-bar",
-                    "insertText": "width={${1}}",
+                    "insertText": "width=\"${1}\"",
                     "documentation": "---\n\n## width:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3312,7 +3094,7 @@
                     "label": "height",
                     "kind": 22,
                     "detail": "[omim]m-bar",
-                    "insertText": "height={${1}}",
+                    "insertText": "height=\"${1}\"",
                     "documentation": "---\n\n## height:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3321,7 +3103,7 @@
                     "label": "horizontal",
                     "kind": 22,
                     "detail": "[omim]m-bar",
-                    "insertText": "horizontal='${1}'",
+                    "insertText": "horizontal=\"${1}\"",
                     "documentation": "---\n\n## horizontal:\n\n类型: string\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3348,7 +3130,7 @@
                     "label": "borderWidth",
                     "kind": 21,
                     "detail": "[omim]m-bar",
-                    "insertText": "borderWidth: {${1}}",
+                    "insertText": "borderWidth: \"${1}\"",
                     "documentation": "---\n\n## borderWidth:\n\n类型: number (data 内部属性)\n\n---",
                     "sortText": "b",
                     "cmd": false
@@ -3384,7 +3166,7 @@
                     "label": "legend",
                     "kind": 21,
                     "detail": "[omim]m-bar",
-                    "insertText": "legend: {${1}}",
+                    "insertText": "legend: \"${1}\"",
                     "documentation": "---\n\n## 'legend':\n\n类型: object (options 内部属性)\n\n---",
                     "sortText": "b",
                     "cmd": false
@@ -3411,7 +3193,7 @@
                     "label": "scales",
                     "kind": 21,
                     "detail": "[omim]m-bar",
-                    "insertText": "scales: {${1}}",
+                    "insertText": "scales: \"${1}\"",
                     "documentation": "---\n\n## 'scales':\n\n类型: object (options 内部属性)\n\n---",
                     "sortText": "b",
                     "cmd": false
@@ -3449,7 +3231,7 @@
                     "label": "data",
                     "kind": 22,
                     "detail": "[omim]m-line",
-                    "insertText": "data={${1}}",
+                    "insertText": "data=\"${1}\"",
                     "documentation": "---\n\n## data:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3458,7 +3240,7 @@
                     "label": "options",
                     "kind": 22,
                     "detail": "[omim]m-line",
-                    "insertText": "options={${1}}",
+                    "insertText": "options=\"${1}\"",
                     "documentation": "---\n\n## options:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3467,7 +3249,7 @@
                     "label": "width",
                     "kind": 22,
                     "detail": "[omim]m-line",
-                    "insertText": "width={${1}}",
+                    "insertText": "width=\"${1}\"",
                     "documentation": "---\n\n## width:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3476,7 +3258,7 @@
                     "label": "height",
                     "kind": 22,
                     "detail": "[omim]m-line",
-                    "insertText": "height={${1}}",
+                    "insertText": "height=\"${1}\"",
                     "documentation": "---\n\n## height:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3496,7 +3278,7 @@
                     "label": "data",
                     "kind": 22,
                     "detail": "[omim]m-scatter",
-                    "insertText": "data={${1}}",
+                    "insertText": "data=\"${1}\"",
                     "documentation": "---\n\n## data:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3505,7 +3287,7 @@
                     "label": "options",
                     "kind": 22,
                     "detail": "[omim]m-scatter",
-                    "insertText": "options={${1}}",
+                    "insertText": "options=\"${1}\"",
                     "documentation": "---\n\n## options:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3514,7 +3296,7 @@
                     "label": "width",
                     "kind": 22,
                     "detail": "[omim]m-scatter",
-                    "insertText": "width={${1}}",
+                    "insertText": "width=\"${1}\"",
                     "documentation": "---\n\n## width:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3523,7 +3305,7 @@
                     "label": "height",
                     "kind": 22,
                     "detail": "[omim]m-scatter",
-                    "insertText": "height={${1}}",
+                    "insertText": "height=\"${1}\"",
                     "documentation": "---\n\n## height:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3543,7 +3325,7 @@
                     "label": "data",
                     "kind": 22,
                     "detail": "[omim]m-pie",
-                    "insertText": "data={${1}}",
+                    "insertText": "data=\"${1}\"",
                     "documentation": "---\n\n## data:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3552,7 +3334,7 @@
                     "label": "options",
                     "kind": 22,
                     "detail": "[omim]m-pie",
-                    "insertText": "options={${1}}",
+                    "insertText": "options=\"${1}\"",
                     "documentation": "---\n\n## options:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3561,7 +3343,7 @@
                     "label": "width",
                     "kind": 22,
                     "detail": "[omim]m-pie",
-                    "insertText": "width={${1}}",
+                    "insertText": "width=\"${1}\"",
                     "documentation": "---\n\n## width:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3570,7 +3352,7 @@
                     "label": "height",
                     "kind": 22,
                     "detail": "[omim]m-pie",
-                    "insertText": "height={${1}}",
+                    "insertText": "height=\"${1}\"",
                     "documentation": "---\n\n## height:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3590,7 +3372,7 @@
                     "label": "data",
                     "kind": 22,
                     "detail": "[omim]m-doughnut",
-                    "insertText": "data={${1}}",
+                    "insertText": "data=\"${1}\"",
                     "documentation": "---\n\n## data:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3599,7 +3381,7 @@
                     "label": "options",
                     "kind": 22,
                     "detail": "[omim]m-doughnut",
-                    "insertText": "options={${1}}",
+                    "insertText": "options=\"${1}\"",
                     "documentation": "---\n\n## options:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3608,7 +3390,7 @@
                     "label": "width",
                     "kind": 22,
                     "detail": "[omim]m-doughnut",
-                    "insertText": "width={${1}}",
+                    "insertText": "width=\"${1}\"",
                     "documentation": "---\n\n## width:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3617,7 +3399,7 @@
                     "label": "height",
                     "kind": 22,
                     "detail": "[omim]m-doughnut",
-                    "insertText": "height={${1}}",
+                    "insertText": "height=\"${1}\"",
                     "documentation": "---\n\n## height:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3637,7 +3419,7 @@
                     "label": "data",
                     "kind": 22,
                     "detail": "[omim]m-radar",
-                    "insertText": "data={${1}}",
+                    "insertText": "data=\"${1}\"",
                     "documentation": "---\n\n## data:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3646,7 +3428,7 @@
                     "label": "options",
                     "kind": 22,
                     "detail": "[omim]m-radar",
-                    "insertText": "options={${1}}",
+                    "insertText": "options=\"${1}\"",
                     "documentation": "---\n\n## options:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3655,7 +3437,7 @@
                     "label": "width",
                     "kind": 22,
                     "detail": "[omim]m-radar",
-                    "insertText": "width={${1}}",
+                    "insertText": "width=\"${1}\"",
                     "documentation": "---\n\n## width:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3664,7 +3446,7 @@
                     "label": "height",
                     "kind": 22,
                     "detail": "[omim]m-radar",
-                    "insertText": "height={${1}}",
+                    "insertText": "height=\"${1}\"",
                     "documentation": "---\n\n## height:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3684,7 +3466,7 @@
                     "label": "data",
                     "kind": 22,
                     "detail": "[omim]m-polar-area",
-                    "insertText": "data={${1}}",
+                    "insertText": "data=\"${1}\"",
                     "documentation": "---\n\n## data:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3693,7 +3475,7 @@
                     "label": "options",
                     "kind": 22,
                     "detail": "[omim]m-polar-area",
-                    "insertText": "options={${1}}",
+                    "insertText": "options=\"${1}\"",
                     "documentation": "---\n\n## options:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3702,7 +3484,7 @@
                     "label": "width",
                     "kind": 22,
                     "detail": "[omim]m-polar-area",
-                    "insertText": "width={${1}}",
+                    "insertText": "width=\"${1}\"",
                     "documentation": "---\n\n## width:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3711,7 +3493,7 @@
                     "label": "height",
                     "kind": 22,
                     "detail": "[omim]m-polar-area",
-                    "insertText": "height={${1}}",
+                    "insertText": "height=\"${1}\"",
                     "documentation": "---\n\n## height:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3731,7 +3513,7 @@
                     "label": "data",
                     "kind": 22,
                     "detail": "[omim]m-bubble",
-                    "insertText": "data={${1}}",
+                    "insertText": "data=\"${1}\"",
                     "documentation": "---\n\n## data:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3740,7 +3522,7 @@
                     "label": "options",
                     "kind": 22,
                     "detail": "[omim]m-bubble",
-                    "insertText": "options={${1}}",
+                    "insertText": "options=\"${1}\"",
                     "documentation": "---\n\n## options:\n\n类型: object\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3749,7 +3531,7 @@
                     "label": "width",
                     "kind": 22,
                     "detail": "[omim]m-bubble",
-                    "insertText": "width={${1}}",
+                    "insertText": "width=\"${1}\"",
                     "documentation": "---\n\n## width:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false
@@ -3758,7 +3540,7 @@
                     "label": "height",
                     "kind": 22,
                     "detail": "[omim]m-bubble",
-                    "insertText": "height={${1}}",
+                    "insertText": "height=\"${1}\"",
                     "documentation": "---\n\n## height:\n\n类型: number\n\n---",
                     "sortText": "a",
                     "cmd": false

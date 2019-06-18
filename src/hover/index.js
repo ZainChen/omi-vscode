@@ -27,39 +27,23 @@ class OmiHover {
 	 * @return 悬停或可解决的问题。可以通过返回“undefined”或“null”来表示缺少结果。
 	 */
 	provideHover(document, position, token) {
-		this.initData(document);
+		this.initData();
 		return { contents: [this.addHover(document, position)] };
 	}
 
 	/**
 	 * 初始化鼠标悬停json数据
 	 */
-	initData(document) {
-		// if(JSON.stringify(this.jsonData) !== "{}") {  //静态加载补全配置(需重启vscode更新补全配置)，注释该if可实现动态加载(动态加载效率低于静态加载，但可实现实时更新用户自定义补全配置)。
+	initData() {
+		// if(JSON.stringify(this.jsonData) !== "{}") {  //静态加载鼠标悬停配置(需重启vscode更新鼠标悬停配置)，注释该if可实现动态加载(动态加载效率低于静态加载，但可实现实时更新用户自定义鼠标悬停配置)。
 		// 	return false;
 		// }
 		this.jsonData = new Object();
-		const hoverfileName	= document.fileName;
-		const fileNames = alg.getfilePathNameAll(__dirname+"/config");
+		const fileNames = alg.getfilePathNameAll(__dirname+"/config");  //递归获取指定路径下所有文件，包含子文件夹
 		for(let i = 0; i < fileNames.length; i++) {
 			const content = fs.readFileSync(fileNames[i], 'utf8');
-			if(content === '') {
-				continue;
-			}
-			let data = JSON.parse(content);
-			let k = false;
-			for(let j = 0; typeof data["fileTypes"] !== "undefined" && j < data["fileTypes"].length; j++) {
-				if(data["fileTypes"][j] == ".*") {
-					k = true;
-					break;
-				}
-				if(alg.strTailMatch(hoverfileName, data["fileTypes"][j], 2)) {
-					k = true;
-					break;
-				}
-			}
-			if(k) {
-				this.jsonData[fileNames[i]] = data;
+			if(content !== '') {
+				this.jsonData[fileNames[i]] = JSON.parse(content);  //同步获取json文件内容
 			}
 		}
 		return true;
@@ -79,6 +63,9 @@ class OmiHover {
 		
 		let showText = "";
 		for(let k in this.jsonData) {
+			if(this.findFileType(document.fileName, this.jsonData[k]["fileTypes"]) === false) {
+				continue;
+			}
 			for(let i in this.jsonData[k]["hovers"]) {
 				if(this.jsonData[k]["hovers"][i]["matchingMethod"] == "line") {  //整行匹配
 					if(this.jsonData[k]["hovers"][i]["ignoreAZ"]) {  //忽略大小写匹配
@@ -106,6 +93,15 @@ class OmiHover {
 			}
 		}
 		return showText;
+	}
+
+	findFileType(fileName, fileAll) {
+		for(let i = 0; i < fileAll.length; i++) {
+			if(fileAll[i] === ".*" || alg.strTailMatch(fileName, fileAll[i], 2)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**

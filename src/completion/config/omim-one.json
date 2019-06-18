@@ -1494,7 +1494,7 @@
                     "label": "onOpened",
                     "kind": 2,
                     "detail": "[omim]m-snackbar",
-                    "insertText": "onOpened",
+                    "insertText": "onOpened={${1}}",
                     "documentation": "---\n\n## onOpened:\n\n类型: function\n\n默认值: --\n\n说明: 打开完成后触发\n\n---",
                     "sortText": "c",
                     "cmd": false
@@ -1503,7 +1503,7 @@
                     "label": "onClosed",
                     "kind": 2,
                     "detail": "[omim]m-snackbar",
-                    "insertText": "onClosed",
+                    "insertText": "onClosed={${1}}",
                     "documentation": "---\n\n## onClosed:\n\n类型: function\n\n默认值: --\n\n说明: 关闭完成后触发\n\n---",
                     "sortText": "c",
                     "cmd": false
@@ -1512,7 +1512,7 @@
                     "label": "onButtonClick",
                     "kind": 2,
                     "detail": "[omim]m-snackbar",
-                    "insertText": "onButtonClick",
+                    "insertText": "onButtonClick={${1}}",
                     "documentation": "---\n\n## onButtonClick:\n\n类型: function\n\n默认值: --\n\n说明: 单击按钮触发\n\n---",
                     "sortText": "c",
                     "cmd": false
@@ -1521,7 +1521,7 @@
                     "label": "onIconButtonClick",
                     "kind": 2,
                     "detail": "[omim]m-snackbar",
-                    "insertText": "onIconButtonClick",
+                    "insertText": "onIconButtonClick={${1}}",
                     "documentation": "---\n\n## onIconButtonClick:\n\n类型: function\n\n默认值: --\n\n说明: 单击图标按钮触发\n\n---",
                     "sortText": "c",
                     "cmd": false
