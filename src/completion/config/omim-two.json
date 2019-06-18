@@ -3546,6 +3546,26 @@
                     "cmd": false
                 }
             }
+        },
+        "m-player": {
+            "label": "m-player",
+            "kind": 24,
+            "detail": "[omim]Bubble chart.",
+            "insertText": "<m-player${1}>${2}</m-player>",
+            "documentation": "---\n\n## Player\n\n简介：视频播放器，修改自[eplayer](https://github.com/132yse/eplayer)。\n\n组件链接：[简体中文](https://tencent.github.io/omi/packages/omim/docs/build/cn.html#/player?index=1&subIndex=7 '官网链接') | [English](https://tencent.github.io/omi/packages/omim/docs/build/index.html#/player?index=1&subIndex=7 '官网链接')\n\n---\n\n## 使用\n\n```html\n<script src=\"https://tencent.github.io/omi/packages/omi/dist/omi.js\"></script>\n<script src=\"../../src/player/index.js\"></script>\n<div style=\"margin:20px auto;width:800px;height:450px;\">\n  <m-player src=\"https://gss3.baidu.com/6LZ0ej3k1Qd3ote6lo7D0j9wehsv/tieba-smallvideo/607272_2fc490269fcdf87707804278a309891a.mp4\">\n  </m-player>\n</div>\n```\n\nor\n\n```jsx\nimport '@omim/core/player'\n\n//using tag anywhere\n\n<m-player\n  src=\"https://gss3.baidu.com/6LZ0ej3k1Qd3ote6lo7D0j9wehsv/tieba-smallvideo/607272_2fc490269fcdf87707804278a309891a.mp4\">\n</m-player>\n```\n\n---\n\n## 谁在使用?\n\n* [clicli.us - C 站](https://www.clicli.us/)\n* [ayypd.cn - 爱看动漫网](http://sp.ayypd.cn/)\n* [Tencent Omi Team](https://github.com/Tencent/omi)\n\n---\n\n## API\n\n### Props\n\n```jsx\n{\n  src: string\n}\n```\n\n---",
+            "sortText": "a",
+            "cmd": false,
+            "attributes": {
+                "src": {
+                    "label": "src",
+                    "kind": 22,
+                    "detail": "[omim]m-player",
+                    "insertText": "src=\"${1}\"",
+                    "documentation": "---\n\n## src:\n\n类型: string\n\n---",
+                    "sortText": "a",
+                    "cmd": false
+                }
+            }
         }
     }
 }
