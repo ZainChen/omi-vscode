@@ -1,5 +1,21 @@
 # Omi Visual Studio Code extension Change Log
 
+## Version 2.2.0 June 18, 2019
+
+### New Features
+
+- Add all of Omim's existing component completions.
+
+### Modify
+
+- Optimized completion and mouseover hints.
+
+### Problem
+
+- omiu component need to add a new attribute completion button, the attribute completion trigger needs to be perfected.
+
+---
+
 ## Version 2.1.8 June 15, 2019
 
 ### New Features
