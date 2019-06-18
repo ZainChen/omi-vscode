@@ -22,13 +22,13 @@ class OmiCompletion {
 	 *可以通过返回`undefined`，`null`或空数组来表示缺少结果。
 	 */
 	provideCompletionItems(document, position, token, context) {
-		this.initData(document);
+		this.initData();
 		let ctc = context.triggerCharacter;
 		let glc = this.getLastChar(document, position);  //获取当前输入的字符或字符串
 		let ch = ctc || glc;
 		// console.log("\""+ctc+"\"\t\""+glc+"\"");
 		if(ch != '-' && ch != ' ') {
-			return this.omiuLabelCompletion();  //标签补全(准备将函数内循环放到函数外只载入一次数据，提高效率)
+			return this.omiuLabelCompletion(document);  //标签补全(准备将函数内循环放到函数外只载入一次数据，提高效率)
 		} else if(ch == ' ') {
 			return this.omiuAttributesCompletion(document, position);  //属性补全(准备将函数内循环放到函数外只载入一次数据，提高效率)
 		} else {
@@ -54,32 +54,16 @@ class OmiCompletion {
 	/**
 	 * 初始化补全提示json数据
 	 */
-	initData(document) {
-		// if(JSON.stringify(this.objJsonOmiu) !== "{}") {  //静态加载补全配置(需重启vscode更新补全配置)，注释该if可实现动态加载(动态加载效率低于静态加载，但可实现实时更新用户自定义补全配置)。
-		// 	return false;
-		// }
+	initData() {
+		if(JSON.stringify(this.objJsonOmiu) !== "{}") {  //静态加载补全配置(需重启vscode更新补全配置)，注释该if可实现动态加载(动态加载效率低于静态加载，但可实现实时更新用户自定义补全配置)。
+			return false;
+		}
 		this.objJsonOmiu = new Object();
-		const completionfileName = document.fileName;
 		const fileNames = alg.getfilePathNameAll(__dirname+"/config");  //递归获取指定路径下所有文件，包含子文件夹
 		for(let i = 0; i < fileNames.length; i++) {
 			const content = fs.readFileSync(fileNames[i], 'utf8');
-			if(content === '') {
-				continue;
-			}
-			let data = JSON.parse(content);  //同步获取json文件内容
-			let k = false;
-			for(let j = 0; typeof data["fileTypes"] !== "undefined" && j < data["fileTypes"].length; j++) {
-				if(data["fileTypes"][j] == ".*") {
-					k = true;
-					break;
-				}
-				if(alg.strTailMatch(completionfileName, data["fileTypes"][j], 2)) {
-					k = true;
-					break;
-				}
-			}
-			if(k) {
-				this.objJsonOmiu[fileNames[i]] = data;
+			if(content !== '') {
+				this.objJsonOmiu[fileNames[i]] = JSON.parse(content);  //同步获取json文件内容
 			}
 		}
 		return true;
@@ -88,9 +72,12 @@ class OmiCompletion {
 	/**
 	 * 标签补全
 	 */
-	omiuLabelCompletion() {
+	omiuLabelCompletion(document) {
 		let retCom = new Array();
 		for(let k in this.objJsonOmiu) {
+			if(this.findFileType(document.fileName, this.objJsonOmiu[k]["fileTypes"]) === false) {
+				continue;
+			}
 			for(let i in this.objJsonOmiu[k]["completions"]) {
 				let comp = new vscode.CompletionItem(this.objJsonOmiu[k]["completions"][i]['label'], this.objJsonOmiu[k]["completions"][i]['kind']);  //创建补全对象(初始化标签和类型)
 				comp.detail = this.objJsonOmiu[k]["completions"][i]['detail'];  //提示信息
@@ -116,6 +103,9 @@ class OmiCompletion {
 		let objLabel = this.getPosOmiLabe(document, position);  //获取合法标签对象(包含标签、'<'和'>'的位置，如果标签和引号不合法，返回空对象)
 		if(objLabel.label != '') {
 			for(let k in this.objJsonOmiu) {
+				if(this.findFileType(document.fileName, this.objJsonOmiu[k]["fileTypes"]) === false) {
+					continue;
+				}
 				if(typeof this.objJsonOmiu[k]["completions"][objLabel.label] === "undefined") {
 					continue;
 				}
@@ -148,6 +138,15 @@ class OmiCompletion {
 
 	getLastChar(doc, pos) {
 		return doc.getText(new vscode.Range(new vscode.Position(pos.line, pos.character - 1), pos));
+	}
+
+	findFileType(fileName, fileAll) {
+		for(let i = 0; i < fileAll.length; i++) {
+			if(fileAll[i] === ".*" || alg.strTailMatch(fileName, fileAll[i], 2)) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	/**
