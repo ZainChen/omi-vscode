@@ -1276,7 +1276,7 @@
                     "label": "svgIcon",
                     "kind": 21,
                     "detail": "[omim]m-dialog",
-                    "insertText": "svgIcon: \"${1}\"",
+                    "insertText": "svgIcon: {${1}}",
                     "documentation": "---\n\n## svgIcon:\n\n类型: object\n\n默认值: --\n\n说明: svg图标 (cancelButton 和 confirmButton 内部元素)\n\n---",
                     "sortText": "b",
                     "cmd": false
