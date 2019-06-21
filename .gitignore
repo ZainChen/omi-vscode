@@ -3,4 +3,4 @@ node_modules
 .vscode/settings.json
 tsconfig.json
 src/github/cache
-*.vsix
+package-lock.json
