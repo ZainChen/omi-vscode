@@ -51,7 +51,7 @@ Configuration file structure description:
 ```js
 {
   "fileTypes": [ ".*", '.js', 'zain.js' ],  // Supports the file type and specific file of the current configuration file code completion, '.*' is any type, '.js' is the specified suffix name, and 'zain.js' is the specified file
-  "completion": {  // All completion information
+  "completions": {  // All completion information
     "o-button": {  // One label completion information configuration
       "label": "o-button",  // Match keyword
       "kind": 24,  // Completion type, determine the icon style on the left
@@ -60,7 +60,7 @@ Configuration file structure description:
       "documentation": "...",  // Markdown description
       "sortText": "a",  // Weight sort
       "cmd": false,  // Whether to open a new completion prompt immediately after completion
-      "attribute": {  // Current tag all attribute completion information configuration
+      "attributes": {  // Current tag all attribute completion information configuration
         "type": {  // An attribute completion information configuration
           "label": "type",  // Match keyword
           "kind": 22,  // Completion type, determine the icon style on the left

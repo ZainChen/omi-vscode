@@ -51,7 +51,7 @@ omi-vscode/tree/master/src/completion
 ```js
 {
   "fileTypes": [ ".*", '.js', 'zain.js' ],  // 支持当前配置文件代码补全的文件类型及具体文件，'.*'为任意类型，'.js'为指定后缀名，'zain.js'为指定文件
-  "completion": {  // 所有补全信息
+  "completions": {  // 所有补全信息
     "o-button": {  // 一个标签补全信息配置
       "label": "o-button",  // 匹配关键字
       "kind": 24,  // 补全类型，决定左侧图标样式
@@ -60,7 +60,7 @@ omi-vscode/tree/master/src/completion
       "documentation": "...",  // Markdown 说明
       "sortText": "a",  // 权值排序
       "cmd": false,  // 补全后是否立马开启新的补全提示
-      "attribute": {  // 当前标签所有属性补全信息配置
+      "attributes": {  // 当前标签所有属性补全信息配置
         "type": {  // 一个属性补全信息配置
           "label": "type",  // 匹配关键字
           "kind": 22,  // 补全类型，决定左侧图标样式
