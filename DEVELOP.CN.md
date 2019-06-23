@@ -14,15 +14,19 @@ npm install
 >>[launch.json](./.vscode/launch.json "launch.json") `运行调试具体配置`
 >
 >assets `资源文件`
+>>
 >>...
 >
 >node_modules `nodejs模块库`
+>>
 >>...
 >
 >src `omi-vscode所有功能实现代码`
+>>
 >>...
 >
 >test `vscode测试环境调试配置`
+>>
 >>...
 >
 >[.eslintrc.json](./.eslintrc.json ".eslintrc.json") `匹配的工具，代码一致性，避免错误(具体作用暂未知)`
@@ -39,7 +43,7 @@ npm install
 >
 >[LICENSE](./LICENSE "LICENSE") `许可证`
 >
->[omi-develop-\*.\*.\*.vsix](./ "omi-develop-\*.\*.\*.vsix") `打包好的扩展文件`
+>[omi-\*.\*.\*.vsix](./ "omi-develop-\*.\*.\*.vsix") `打包好的扩展文件`
 >
 >[package.json](./package.json "package.json") `omi-vscode工程配置文件`
 >
