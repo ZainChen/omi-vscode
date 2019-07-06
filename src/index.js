@@ -23,8 +23,7 @@ function activate(context) {
 	const provideDefinition = jump.provideDefinition;  //跳转功能
 
 	context.subscriptions.push(
-
-		//vscode.commands.executeCommand('setContext', 'omi.views.show', true);  // 设置when, (需要写到某个类中)
+		// vscode.commands.executeCommand('setContext', 'omi.views.show', true);  // 设置when, (需要写到某个类中)
 
 		//欢迎界面
 		vscode.commands.registerCommand('omi.cmd.welcome', () => omiWelcome.mainWelcome()),  //欢迎界面入口

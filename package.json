@@ -110,6 +110,7 @@
 		"onView:omi.view.ecosystem",
 		"onView:omi.view.github",
 		"onCommand:omi.cmd.welcome",
+		"onCommand:omi.cmd.viewsShow",
 		"onCommand:omi.cmd.ecosystemOpenWebview",
 		"onCommand:omi.cmd.githubOmi",
 		"onCommand:omi.cmd.githubSwitch",
@@ -152,6 +153,14 @@
 				"icon": {
 					"light": "./assets/light/omi.svg",
 					"dark": "./assets/dark/omi.svg"
+				}
+			},
+			{
+				"command": "omi.cmd.viewsShow",
+				"title": "Show views",
+				"icon": {
+					"light": "./assets/light/omi-show-views.svg",
+					"dark": "./assets/dark/omi-show-views.svg"
 				}
 			},
 			{
@@ -382,7 +391,11 @@
 				{
 					"command": "omi.cmd.githubOmi",
 					"when": "editorFocus",
-					"group": "navigation"
+					"group": "navigation@1"
+				},{
+					"command": "omi.cmd.viewsShow",
+					"when": "editorFocus",
+					"group": "navigation@1"
 				},
 				{
 					"when": "resourceLangId == markdown",
@@ -447,6 +460,12 @@
 				"command": "omi.cmd.githubOmi",
 				"key": "ctrl+f10",
 				"mac": "cmd+f10",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "omi.cmd.viewsShow",
+				"key": "ctrl+f1",
+				"mac": "cmd+f1",
 				"when": "editorTextFocus"
 			}
 		],
