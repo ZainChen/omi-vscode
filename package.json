@@ -367,11 +367,13 @@
 			"omi-views": [
 				{
 					"id": "omi.view.ecosystem",
-					"name": "ecosystem"
+					"name": "ecosystem",
+					"when": "omi.views.show"
 				},
 				{
 					"id": "omi.view.github",
-					"name": "github"
+					"name": "github",
+					"when": "omi.views.show"
 				}
 			]
 		},

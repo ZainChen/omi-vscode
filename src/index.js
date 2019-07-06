@@ -16,13 +16,15 @@ const jump = require("./jump/index");  //跳转功能模块
  */
 function activate(context) {
 	const omiWelcome =  new welcome.OmiWelcome(context);  //欢迎界面
-	const omiEcosystem = new ecosystem.OmiEcosystem(context);  //omi生态
-	const omiGithub = new github.OmiGitHub(context);  //omi生态更新、下载、项目创建(创建项目包含在线和离线两种方式)
+	const omiEcosystem = new ecosystem.OmiEcosystem(context);  //omi生态更新、下载、项目创建(创建项目包含在线和离线两种方式)
+	const omiGithub = new github.OmiGitHub(context);  //omi github
 	const omiCompletion = new completion.OmiCompletion();  //自动补全功能
 	const omiHover = new hover.OmiHover();  //鼠标悬停提示功能
 	const provideDefinition = jump.provideDefinition;  //跳转功能
 
 	context.subscriptions.push(
+
+		//vscode.commands.executeCommand('setContext', 'omi.views.show', true);  // 设置when, (需要写到某个类中)
 
 		//欢迎界面
 		vscode.commands.registerCommand('omi.cmd.welcome', () => omiWelcome.mainWelcome()),  //欢迎界面入口
