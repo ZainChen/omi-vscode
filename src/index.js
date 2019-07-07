@@ -23,10 +23,20 @@ function activate(context) {
 	const provideDefinition = jump.provideDefinition;  //跳转功能
 
 	context.subscriptions.push(
-		// vscode.commands.executeCommand('setContext', 'omi.views.show', true);  // 设置when, (需要写到某个类中)
 
 		//欢迎界面
 		vscode.commands.registerCommand('omi.cmd.welcome', () => omiWelcome.mainWelcome()),  //欢迎界面入口
+
+		//开启 omi views
+		vscode.commands.registerCommand('omi.cmd.viewsShow', () => {
+			if(vscode.workspace.getConfiguration().get('omi.views.setShow')) {
+				vscode.workspace.getConfiguration().update('omi.views.setShow', false, true);
+				vscode.commands.executeCommand('setContext', 'omi.views.show', false);  // 设置when, (需要写到某个类中)
+			} else {
+				vscode.workspace.getConfiguration().update('omi.views.setShow', true, true);
+				vscode.commands.executeCommand('setContext', 'omi.views.show', true);  // 设置when, (需要写到某个类中)
+			}
+		}),
 
 		//omi项目模板更新、下载、项目创建(创建项目包含在线(在线分为npm拉取和github拉取)和离线(离线为直接从omi-vscode扩展中数据拉取)两种方式)
 		vscode.window.createTreeView('omi.view.ecosystem', { treeDataProvider: omiEcosystem, showCollapseAll: true }),
@@ -54,7 +64,7 @@ function activate(context) {
 		vscode.languages.registerHoverProvider(['omi', 'vue', 'html', 'json', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'tex', 'c', 'cpp', 'css', 'markdown', 'php', 'python', 'jsonc', 'objective-c', 'xml', 'sql', 'java', 'swift', 'go', 'csharp'], omiHover),  //鼠标悬停提示功能注册
 	
 		//跳转功能
-		vscode.languages.registerDefinitionProvider(['html', 'json', 'javascript'], {provideDefinition}),  //跳转功能注册
+		vscode.languages.registerDefinitionProvider(['html', 'json', 'javascript'], {provideDefinition})  //跳转功能注册
 
 	);
 	

@@ -157,7 +157,7 @@
 			},
 			{
 				"command": "omi.cmd.viewsShow",
-				"title": "Show views",
+				"title": "Omi show views",
 				"icon": {
 					"light": "./assets/light/omi-show-views.svg",
 					"dark": "./assets/dark/omi-show-views.svg"
@@ -165,7 +165,7 @@
 			},
 			{
 				"command": "omi.cmd.githubOmi",
-				"title": "Github switches to omi",
+				"title": "Omi github switches to omi",
 				"icon": {
 					"light": "./assets/light/omi.svg",
 					"dark": "./assets/dark/omi.svg"
@@ -389,19 +389,14 @@
 		"menus": {
 			"editor/context": [
 				{
-					"command": "omi.cmd.githubOmi",
-					"when": "editorFocus",
-					"group": "navigation@1"
-				},{
 					"command": "omi.cmd.viewsShow",
 					"when": "editorFocus",
-					"group": "navigation@1"
+					"group": "omiGroup@1"
 				},
 				{
-					"when": "resourceLangId == markdown",
-					"command": "markdown.showPreview",
-					"alt": "markdown.showPreviewToSide",
-					"group": "navigation"
+					"command": "omi.cmd.githubOmi",
+					"when": "editorFocus",
+					"group": "omiGroup@2"
 				}
 			],
 			"editor/title": [
@@ -457,16 +452,15 @@
 		},
 		"keybindings": [
 			{
+				"command": "omi.cmd.viewsShow",
+				"key": "ctrl+f1",
+				"mac": "cmd+f1"
+			},
+			{
 				"command": "omi.cmd.githubOmi",
 				"key": "ctrl+f10",
 				"mac": "cmd+f10",
-				"when": "editorTextFocus"
-			},
-			{
-				"command": "omi.cmd.viewsShow",
-				"key": "ctrl+f1",
-				"mac": "cmd+f1",
-				"when": "editorTextFocus"
+				"when": "editorFocus"
 			}
 		],
 		"configuration": {
@@ -478,15 +472,20 @@
 					"default": "Welcome to omi.",
 					"description": "Omi for Visual Studio Code"
 				},
+				"omi.user.name": {
+					"type": "string",
+					"default": "zain",
+					"description": "User name"
+				},
 				"omi.open.welcome": {
 					"type": "boolean",
 					"default": true,
 					"description": "Whether to display a welcome prompt every time you start!"
 				},
-				"omi.user.name": {
-					"type": "string",
-					"default": "zain",
-					"description": "User name"
+				"omi.views.setShow": {
+					"type": "boolean",
+					"default": false,
+					"description": "Show views"
 				},
 				"omi.language.ecosystem": {
 					"type": "string",
