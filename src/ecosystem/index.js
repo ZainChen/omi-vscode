@@ -18,7 +18,11 @@ class OmiEcosystem {
         this.output = vscode.window.createOutputChannel("omi-ecosystem");  //创建终端输出消息窗口
 
         this.initText();  //初始化模板语言文本
+
+        this.viewShow();  //初始判断 omi 菜单视图是否显示
+
         this.onDidConfigTemplateLanguage();  //监听模板语言设置
+        this.onDidConfigViewShow();  //监听 omi 菜单视图显示设置
     }
 
     /**
@@ -301,7 +305,7 @@ class OmiEcosystem {
 
 
     /**
-     * 快捷键开启或关闭 omi views
+     * 开启或关闭 omi views
      */
     viewShow() {
         if(vscode.workspace.getConfiguration().get('omi.views.setShow')) {
@@ -311,6 +315,21 @@ class OmiEcosystem {
             vscode.workspace.getConfiguration().update('omi.views.setShow', true, true);
             vscode.commands.executeCommand('setContext', 'omi.views.show', true);  // 设置when
         }
+    }
+
+    /**
+     * 监听 omi 菜单视图显示设置
+     */
+    onDidConfigViewShow() {
+        vscode.workspace.onDidChangeConfiguration((element) => {
+            if(element.affectsConfiguration('omi.views.setShow') === true) {
+                if(vscode.workspace.getConfiguration().get('omi.views.setShow')) {
+                    vscode.commands.executeCommand('setContext', 'omi.views.show', true);  // 设置when
+                } else {
+                    vscode.commands.executeCommand('setContext', 'omi.views.show', false);  // 设置when
+                }
+            }
+        })
     }
 
 }

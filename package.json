@@ -110,7 +110,6 @@
 		"onView:omi.view.ecosystem",
 		"onView:omi.view.github",
 		"onCommand:omi.cmd.welcome",
-		"onCommand:omi.cmd.viewsShow",
 		"onCommand:omi.cmd.ecosystemOpenWebview",
 		"onCommand:omi.cmd.githubOmi",
 		"onCommand:omi.cmd.githubSwitch",
