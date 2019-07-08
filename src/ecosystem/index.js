@@ -19,7 +19,7 @@ class OmiEcosystem {
 
         this.initText();  //初始化模板语言文本
 
-        this.viewShow();  //初始判断 omi 菜单视图是否显示
+        this.initViewShow();  //初始判断 omi 菜单视图是否显示
 
         this.onDidConfigTemplateLanguage();  //监听模板语言设置
         this.onDidConfigViewShow();  //监听 omi 菜单视图显示设置
@@ -65,7 +65,7 @@ class OmiEcosystem {
                     node.command = {
                         command: 'omi.cmd.ecosystemOpenWebview',
                         title: '',
-                        arguments: [this.context.extensionPath+"\\src\\ecosystem\\project\\omi\\index.html"]
+                        arguments: [this.context.extensionPath+"\\src\\ecosystem\\packages\\omi\\index.html"]
                     }
                     nodes.push(node);
                     node = new vscode.TreeItem(this.text['menu']['10'], vscode.TreeItemCollapsibleState.None);
@@ -98,7 +98,7 @@ class OmiEcosystem {
                     node.command = {
                         command: 'omi.cmd.ecosystemOpenWebview',
                         title: '',
-                        arguments: [this.context.extensionPath+"\\src\\ecosystem\\project\\omi-docs\\index.html"]
+                        arguments: [this.context.extensionPath+"\\src\\ecosystem\\packages\\omi-docs\\index.html"]
                     }
                     nodes.push(node);
                     node = new vscode.TreeItem(this.text['menu']['2'], vscode.TreeItemCollapsibleState.None);
@@ -213,7 +213,7 @@ class OmiEcosystem {
             node.command = {
                 command: 'omi.cmd.welcome',
                 title: '',
-                arguments: [this.context.extensionPath+"\\src\\ecosystem\\project\\omi\\index.html"]
+                arguments: [this.context.extensionPath+"\\src\\ecosystem\\packages\\omi\\index.html"]
             }
             nodes.push(node);
             node = new vscode.TreeItem(this.text['menu']['4'], vscode.TreeItemCollapsibleState.Expanded);
@@ -303,11 +303,21 @@ class OmiEcosystem {
         });
     }
 
+    /**
+     * 初始判断 omi 菜单视图是否显示
+     */
+    initViewShow() {
+        if(vscode.workspace.getConfiguration().get('omi.views.setShow')) {
+            vscode.commands.executeCommand('setContext', 'omi.views.show', true);  // 设置when
+        } else {
+            vscode.commands.executeCommand('setContext', 'omi.views.show', false);  // 设置when
+        }
+    }
 
     /**
      * 开启或关闭 omi views
      */
-    viewShow() {
+    setViewShow() {
         if(vscode.workspace.getConfiguration().get('omi.views.setShow')) {
             vscode.workspace.getConfiguration().update('omi.views.setShow', false, true);
             vscode.commands.executeCommand('setContext', 'omi.views.show', false);  // 设置when
