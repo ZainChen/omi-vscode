@@ -299,5 +299,19 @@ class OmiEcosystem {
         });
     }
 
+
+    /**
+     * 快捷键开启或关闭 omi views
+     */
+    keyViewShow() {
+        if(vscode.workspace.getConfiguration().get('omi.views.setShow')) {
+            vscode.workspace.getConfiguration().update('omi.views.setShow', false, true);
+            vscode.commands.executeCommand('setContext', 'omi.views.show', false);  // 设置when
+        } else {
+            vscode.workspace.getConfiguration().update('omi.views.setShow', true, true);
+            vscode.commands.executeCommand('setContext', 'omi.views.show', true);  // 设置when
+        }
+    }
+
 }
 exports.OmiEcosystem = OmiEcosystem;
