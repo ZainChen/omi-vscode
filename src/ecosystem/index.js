@@ -63,9 +63,9 @@ class OmiEcosystem {
                     node.id = "1.1";
                     //node.description = this.text['menu']['omi.base.template'];
                     node.command = {
-                        command: 'omi.cmd.ecosystemOpenWebview',
+                        command: 'omi.cmd.ecosystemOpenWebviewLink',
                         title: 'base-template',
-                        arguments: [this.context.extensionPath+"\\src\\ecosystem\\page\\build\\index.html"]
+                        arguments: [this.context.extensionPath+"\\src\\ecosystem\\page\\build\\index.html", "base-template"]
                     }
                     nodes.push(node);
                     // node = new vscode.TreeItem(this.text['menu']['10'], vscode.TreeItemCollapsibleState.None);
@@ -96,7 +96,7 @@ class OmiEcosystem {
                     node.id = "2.1";
                     node.description = this.text['menu']['omi.official.document'];
                     node.command = {
-                        command: 'omi.cmd.ecosystemOpenWebview',
+                        command: 'omi.cmd.ecosystemOpenWebviewLink',
                         title: '',
                         arguments: [this.context.extensionPath+"\\src\\ecosystem\\packages\\omi-docs\\index.html", "omi-docs"]
                         // arguments: ["https://tencent.github.io/omi/site/docs/cn.html"]
@@ -212,7 +212,7 @@ class OmiEcosystem {
                 dark: path.join(__filename, '..', '..', '..', 'assets', 'dark', 'omi-eco.svg')
             }
             node.command = {
-                command: 'omi.cmd.ecosystemOpenWebview',
+                command: 'omi.cmd.ecosystemOpenWebviewPage',
                 title: 'omi-ecosystem',
                 arguments: [this.context.extensionPath+"\\src\\ecosystem\\page\\build\\index.html", "omi-ecosystem"]
             }
@@ -273,10 +273,11 @@ class OmiEcosystem {
     }
 
     /**
-     * 打开 webview
+     * 打开 webview (通过连接打开)
      * @param {*} link webview 视图链接
+     * @param {*} title webview 标题
      */
-    OpenWebview(link, title) {
+    openWebviewLink(link, title) {
         if(typeof title === "undefined") {
             new ourl("omi", link);
         } else {
@@ -291,6 +292,13 @@ class OmiEcosystem {
         // output.show(true);
         // output.append("aaaaaagweagaaaa");
         //this.gitClone('git@github.com:ZainChen/vscode-json.git');
+    }
+    
+    /**
+     * 打开指定项目的 webview 页面
+     */
+    openWebviewPage() {
+
     }
 
     /**
@@ -313,9 +321,9 @@ class OmiEcosystem {
      */
     initViewShow() {
         if(vscode.workspace.getConfiguration().get('omi.views.setShow')) {
-            vscode.commands.executeCommand('setContext', 'omi.views.show', true);  // 设置when
+            vscode.commands.executeCommand('setContext', 'omi.views.whenShow', true);  // 设置when
         } else {
-            vscode.commands.executeCommand('setContext', 'omi.views.show', false);  // 设置when
+            vscode.commands.executeCommand('setContext', 'omi.views.whenShow', false);  // 设置when
         }
     }
 
@@ -325,10 +333,10 @@ class OmiEcosystem {
     setViewShow() {
         if(vscode.workspace.getConfiguration().get('omi.views.setShow')) {
             vscode.workspace.getConfiguration().update('omi.views.setShow', false, true);
-            vscode.commands.executeCommand('setContext', 'omi.views.show', false);  // 设置when
+            vscode.commands.executeCommand('setContext', 'omi.views.whenShow', false);  // 设置when
         } else {
             vscode.workspace.getConfiguration().update('omi.views.setShow', true, true);
-            vscode.commands.executeCommand('setContext', 'omi.views.show', true);  // 设置when
+            vscode.commands.executeCommand('setContext', 'omi.views.whenShow', true);  // 设置when
         }
     }
 
@@ -339,9 +347,9 @@ class OmiEcosystem {
         vscode.workspace.onDidChangeConfiguration((element) => {
             if(element.affectsConfiguration('omi.views.setShow') === true) {
                 if(vscode.workspace.getConfiguration().get('omi.views.setShow')) {
-                    vscode.commands.executeCommand('setContext', 'omi.views.show', true);  // 设置when
+                    vscode.commands.executeCommand('setContext', 'omi.views.whenShow', true);  // 设置when
                 } else {
-                    vscode.commands.executeCommand('setContext', 'omi.views.show', false);  // 设置when
+                    vscode.commands.executeCommand('setContext', 'omi.views.whenShow', false);  // 设置when
                 }
             }
         })

@@ -110,8 +110,9 @@
 		"onView:omi.view.ecosystem",
 		"onView:omi.view.github",
 		"onCommand:omi.cmd.welcome",
-		"onCommand:omi.cmd.viewsShow",
-		"onCommand:omi.cmd.ecosystemOpenWebview",
+		"onCommand:omi.cmd.ecosystemViewsShow",
+		"onCommand:omi.cmd.ecosystemOpenWebviewLink",
+		"onCommand:omi.cmd.ecosystemOpenWebviewPage",
 		"onCommand:omi.cmd.githubOmi",
 		"onCommand:omi.cmd.githubSwitch",
 		"onCommand:omi.cmd.githubRefresh",
@@ -156,7 +157,7 @@
 				}
 			},
 			{
-				"command": "omi.cmd.viewsShow",
+				"command": "omi.cmd.ecosystemViewsShow",
 				"title": "Omi show views",
 				"icon": {
 					"light": "./assets/light/omi-show-views.svg",
@@ -377,19 +378,19 @@
 				{
 					"id": "omi.view.ecosystem",
 					"name": "ecosystem",
-					"when": "omi.views.show"
+					"when": "omi.views.whenShow"
 				},
 				{
 					"id": "omi.view.github",
 					"name": "github",
-					"when": "omi.views.show"
+					"when": "omi.views.whenShow"
 				}
 			]
 		},
 		"menus": {
 			"editor/context": [
 				{
-					"command": "omi.cmd.viewsShow",
+					"command": "omi.cmd.ecosystemViewsShow",
 					"when": "editorFocus",
 					"group": "omiGroup@1"
 				},
@@ -452,7 +453,7 @@
 		},
 		"keybindings": [
 			{
-				"command": "omi.cmd.viewsShow",
+				"command": "omi.cmd.ecosystemViewsShow",
 				"key": "ctrl+f1",
 				"mac": "cmd+f1"
 			},
