@@ -30,7 +30,7 @@ function activate(context) {
 		//omi项目模板更新、下载、项目创建(创建项目包含在线(在线分为npm拉取和github拉取)和离线(离线为直接从omi-vscode扩展中数据拉取)两种方式)
 		vscode.window.createTreeView('omi.view.ecosystem', { treeDataProvider: omiEcosystem, showCollapseAll: true }),
 		vscode.commands.registerCommand('omi.cmd.viewsShow', () => omiEcosystem.setViewShow()),  //开启或关闭 omi views
-		vscode.commands.registerCommand('omi.cmd.ecosystemOpenWebview', link => omiEcosystem.OpenWebview(link)),
+		vscode.commands.registerCommand('omi.cmd.ecosystemOpenWebview', (link, title) => omiEcosystem.OpenWebview(link, title)),
 
 		//github菜单树，实时浏览，下载任意文件和子文件夹，切换任意github项目
 		//vscode.window.registerTreeDataProvider('omi.view.github', omiGithub);  //github菜单树注册(无法添加showCollapseAll功能)

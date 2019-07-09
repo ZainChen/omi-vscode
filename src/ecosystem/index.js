@@ -64,8 +64,8 @@ class OmiEcosystem {
                     //node.description = this.text['menu']['omi.base.template'];
                     node.command = {
                         command: 'omi.cmd.ecosystemOpenWebview',
-                        title: '',
-                        arguments: [this.context.extensionPath+"\\src\\ecosystem\\packages\\omi\\index.html"]
+                        title: 'base-template',
+                        arguments: [this.context.extensionPath+"\\src\\ecosystem\\page\\build\\index.html"]
                     }
                     nodes.push(node);
                     // node = new vscode.TreeItem(this.text['menu']['10'], vscode.TreeItemCollapsibleState.None);
@@ -98,8 +98,8 @@ class OmiEcosystem {
                     node.command = {
                         command: 'omi.cmd.ecosystemOpenWebview',
                         title: '',
-                        // arguments: [this.context.extensionPath+"\\src\\ecosystem\\packages\\omi-docs\\index.html"]
-                        arguments: ["https://tencent.github.io/omi/site/docs/cn.html"]
+                        arguments: [this.context.extensionPath+"\\src\\ecosystem\\packages\\omi-docs\\index.html", "omi-docs"]
+                        // arguments: ["https://tencent.github.io/omi/site/docs/cn.html"]
                     }
                     nodes.push(node);
                     // node = new vscode.TreeItem(this.text['menu']['omi.omio.one'], vscode.TreeItemCollapsibleState.None);
@@ -212,9 +212,9 @@ class OmiEcosystem {
                 dark: path.join(__filename, '..', '..', '..', 'assets', 'dark', 'omi-eco.svg')
             }
             node.command = {
-                command: 'omi.cmd.welcome',
-                title: '',
-                arguments: [this.context.extensionPath+"\\src\\ecosystem\\packages\\omi\\index.html"]
+                command: 'omi.cmd.ecosystemOpenWebview',
+                title: 'omi-ecosystem',
+                arguments: [this.context.extensionPath+"\\src\\ecosystem\\page\\build\\index.html", "omi-ecosystem"]
             }
             nodes.push(node);
             node = new vscode.TreeItem(this.text['menu']['omi.project.template'], vscode.TreeItemCollapsibleState.Expanded);
@@ -273,11 +273,15 @@ class OmiEcosystem {
     }
 
     /**
-     * 打开webview
-     * @param {*} link webview视图链接
+     * 打开 webview
+     * @param {*} link webview 视图链接
      */
-    OpenWebview(link) {
-        new ourl("omi", link);
+    OpenWebview(link, title) {
+        if(typeof title === "undefined") {
+            new ourl("omi", link);
+        } else {
+            new ourl(title, link);
+        }
         // const terminal = vscode.window.createTerminal({
         //     name: "omi"
         // });
