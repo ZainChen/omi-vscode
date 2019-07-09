@@ -92,13 +92,14 @@ class OmiEcosystem {
                     return Promise.resolve(nodes);
                 case '2':
                     nodes = new Array();
-                    node = new vscode.TreeItem(this.text['menu']['17'], vscode.TreeItemCollapsibleState.None);
+                    node = new vscode.TreeItem(this.text['menu']['omi.docs'], vscode.TreeItemCollapsibleState.None);
                     node.id = "2.1";
-                    //node.description = this.text['menu']['8'];
+                    node.description = this.text['menu']['omi.official.document'];
                     node.command = {
                         command: 'omi.cmd.ecosystemOpenWebview',
                         title: '',
-                        arguments: [this.context.extensionPath+"\\src\\ecosystem\\packages\\omi-docs\\index.html"]
+                        // arguments: [this.context.extensionPath+"\\src\\ecosystem\\packages\\omi-docs\\index.html"]
+                        arguments: ["https://tencent.github.io/omi/site/docs/cn.html"]
                     }
                     nodes.push(node);
                     node = new vscode.TreeItem(this.text['menu']['2'], vscode.TreeItemCollapsibleState.None);
