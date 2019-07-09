@@ -208,8 +208,8 @@ class OmiEcosystem {
             node.id = "0";
             node.description = this.text['menu']['omi.description.one'];
             node.iconPath = {
-                light: path.join(__filename, '..', '..', '..', 'assets', 'light', 'omi-small.svg'),
-                dark: path.join(__filename, '..', '..', '..', 'assets', 'dark', 'omi-small.svg')
+                light: path.join(__filename, '..', '..', '..', 'assets', 'light', 'omi-eco.svg'),
+                dark: path.join(__filename, '..', '..', '..', 'assets', 'dark', 'omi-eco.svg')
             }
             node.command = {
                 command: 'omi.cmd.welcome',
