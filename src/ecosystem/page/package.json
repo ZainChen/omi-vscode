@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "omi-welcome",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -53,7 +53,6 @@
     "promise": "8.0.1",
     "raf": "3.4.0",
     "react-dev-utils": "^7.0.1",
-    "reomi": "latest",
     "resolve": "1.6.0",
     "style-loader": "0.19.0",
     "sw-precache-webpack-plugin": "^0.11.5",
@@ -136,8 +135,5 @@
     "semi": false,
     "tabWidth": 2,
     "useTabs": false
-  },
-  "alias": {
-    "omi": "omi"
   }
 }

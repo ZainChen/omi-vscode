@@ -1,9 +1,8 @@
 {
-  "admin.js": "./static/js/admin.065d393c.js",
-  "admin.js.map": "./static/js/admin.065d393c.js.map",
-  "index.js": "./static/js/index.f2c1e1fc.js",
-  "index.js.map": "./static/js/index.f2c1e1fc.js.map",
+  "admin.js": "./static/js/admin.307cac3c.js",
+  "admin.js.map": "./static/js/admin.307cac3c.js.map",
+  "index.js": "./static/js/index.56726421.js",
+  "index.js.map": "./static/js/index.56726421.js.map",
   "admin.html": "./admin.html",
-  "index.html": "./index.html",
-  "static/media/logo.svg": "./static/media/logo.9d19420d.svg"
+  "index.html": "./index.html"
 }

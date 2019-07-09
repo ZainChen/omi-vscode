@@ -1,19 +1,11 @@
-@bg-color: #222;
- 
-.app {
-	text-align: center;
-}
-
 .app-logo {
 	animation: app-logo-spin infinite 20s linear;
 	height: 80px;
 }
 
 .app-header {
-	background-color: @bg-color;
-	height: 150px;
-	padding: 20px;
-	color: white;
+	padding-top: 15px;
+	text-align: center;
 }
 
 .app-title {
@@ -32,3 +24,13 @@
 		transform: rotate(360deg);
 	}
 }
+
+.o-switch-dis {
+	margin: 0 auto;
+}
+
+.o-switch-dis o-switch {
+	display: block;
+	padding-top: 3px;
+}
+

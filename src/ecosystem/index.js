@@ -11,6 +11,9 @@ class OmiEcosystem {
     constructor(context) {
         this.context = context;
         this.text = new Object();  //模板功能所有文本ID对应文本
+
+        this.panel = null;
+
         this._onDidChangeTreeData = new vscode.EventEmitter();  //刷新菜单节点使用
         this.onDidChangeTreeData = this._onDidChangeTreeData.event;  //刷新菜单节点使用
 
@@ -307,14 +310,26 @@ class OmiEcosystem {
             }
         );
         this.panel.webview.html = this.getWebViewContent();
-
+        this.panel.webview.onDidReceiveMessage(
+            message => {
+                if(message.cmd == "getConfig") {
+                    this.getConfig(message);
+                } else if(message.cmd == "setConfig") {
+                    this.setConfig(message);
+                } else {
+                    vscode.window.showInformationMessage(`No name found ${message.cmd} Callback method!`);
+                }
+            },
+            undefined,
+            this.context.subscriptions
+        );
     }
 
     /**
      * HTML文件读内容并将本地资源链接转换为vscode支持的链接
      */
     getWebViewContent() {
-        const resourcePath = path.join(__dirname, 'page', 'build', 'index.html');
+        const resourcePath = path.join(__dirname, 'omi-welcome', 'build', 'index.html');
         //const resourcePath = path.join(this.context.extensionPath, 'src', 'welcome', 'omi-welcome-bf', 'index.html');
         const dirPath = path.dirname(resourcePath);
         let html = fs.readFileSync(resourcePath, 'utf-8');
@@ -323,6 +338,39 @@ class OmiEcosystem {
             return $1 + vscode.Uri.file(path.resolve(dirPath, $2)).with({ scheme: 'vscode-resource' }).toString() + '"';
         });
         return html;
+    }
+
+    /**
+     * 获取扩展设置中的配置信息，传递到webview的window.addEventListener('message', event => { ... })中
+     * @param {*} message 
+     */
+    getConfig(message) {
+        const result = vscode.workspace.getConfiguration().get(message.key);
+        this.invokeCallback(message, result);
+    }
+
+    /**
+     * 获取webview中的配置信息，传递到扩展中
+     * @param {*} message 
+     */
+    setConfig(message) {
+        // 写入配置文件，注意，默认写入工作区配置，而不是用户配置，最后一个true表示写入全局用户配置
+        vscode.workspace.getConfiguration().update(message.key, message.value, true);
+        //vscode.window.showInformationMessage('Configuration modification successful!');
+    }
+
+    /**
+     * 传递信息到webview中
+     * @param {*} message 
+     * @param {*} resp 
+     */
+    invokeCallback(message, resp) {
+        // console.log('callback message:', resp);
+        // 错误码在400-600之间的，默认弹出错误提示
+        if (typeof resp == 'object' && resp.code && resp.code >= 400 && resp.code < 600) {
+            vscode.window.showInformationMessage('发生未知错误！');
+        }
+        this.panel.webview.postMessage({cmd: 'vscodeCallback', cbid: message.cbid, data: resp});
     }
 
     /**
