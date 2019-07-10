@@ -302,8 +302,8 @@ class OmiEcosystem {
      */
     openWebviewPage() {
         this.panel = vscode.window.createWebviewPanel(
-            'omiWelcome', //viewType
-            "Omi welcome", //视图标题
+            'omiEcosystem', //viewType
+            "omi-ecosystem", //视图标题
             { viewColumn: vscode.ViewColumn.One, preserveFocus: true },  //vscode.ViewColumn.One //显示在编辑器的哪个部位(焦点设置只有第一次刷新有效)
             {
                 enableScripts: true, //启用JS，默认禁用
@@ -329,7 +329,7 @@ class OmiEcosystem {
      * HTML文件读内容并将本地资源链接转换为vscode支持的链接
      */
     getWebViewContent() {
-        const resourcePath = path.join(__dirname, 'omi-welcome', 'build', 'index.html');
+        const resourcePath = path.join(__dirname, 'page', 'build', 'index.html');
         //const resourcePath = path.join(this.context.extensionPath, 'src', 'welcome', 'omi-welcome-bf', 'index.html');
         const dirPath = path.dirname(resourcePath);
         let html = fs.readFileSync(resourcePath, 'utf-8');
