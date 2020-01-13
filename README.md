@@ -25,6 +25,8 @@ This extension adds omi support for Visual Studio Code.
 ## Omi Welcome
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun7.gif" alt="omi"/></p>
 
+![图片alt](https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun7.gif "图片title")
+
 ## Label and attribute completion
 User-defined completion information: https://github.com/ZainChen/omi-vscode/blob/master/src/completion/README.md
 <p><img src="https://raw.githubusercontent.com/ZainChen/omi-vscode/master/assets/function/fun1.gif" alt="omi"/></p>
